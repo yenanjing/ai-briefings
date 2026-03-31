@@ -35,12 +35,28 @@
 <div class="toolbar">
   <div class="back"><a href="https://yenanjing.github.io/ai-briefings/">← 返回简报列表</a></div>
   {% if page.date %}
-  <a class="download-btn" href="https://raw.githubusercontent.com/yenanjing/ai-briefings/main/{{ page.date | date: '%Y-%m-%d' }}.md" download="{{ page.date | date: '%Y-%m-%d' }}.md">
+  <a class="download-btn" href="#" onclick="downloadMd('{{ page.date | date: "%Y-%m-%d" }}'); return false;">
     <svg viewBox="0 0 16 16"><path d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM1.75 13.5a.75.75 0 000 1.5h12.5a.75.75 0 000-1.5H1.75z"/></svg>
     下载 Markdown
   </a>
   {% endif %}
 </div>
 {{ content }}
+<script>
+function downloadMd(date) {
+  var url = 'https://raw.githubusercontent.com/yenanjing/ai-briefings/main/' + date + '.md';
+  fetch(url)
+    .then(function(r) { return r.text(); })
+    .then(function(text) {
+      var blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'AI-Research-Briefing-' + date + '.md';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    })
+    .catch(function() { alert('下载失败，请稍后重试'); });
+}
+</script>
 </body>
 </html>

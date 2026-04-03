@@ -1,5 +1,4 @@
-title: AI Research Briefings
-description: Daily AI papers from arXiv + GitHub Trending
+title: "AI Research Briefings"
+description: "Daily AI papers from arXiv + GitHub Trending"
 baseurl: "/ai-briefings"
-url: "https://yenanjing.github.io/ai-briefings"
-theme: null
+url: "https://yenanjing.github.io"

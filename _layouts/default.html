@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | default: site.title }}</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 860px; margin: 40px auto; padding: 0 20px; line-height: 1.7; color: #222; }
+  h1 { border-bottom: 2px solid #eee; padding-bottom: 10px; }
+  h2 { border-bottom: 1px solid #eee; padding-bottom: 6px; color: #333; }
+  h3 { color: #444; }
+  a { color: #0066cc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; }
+  pre { background: #f5f5f5; padding: 16px; border-radius: 6px; overflow-x: auto; }
+  blockquote { border-left: 4px solid #ddd; margin: 0; padding-left: 16px; color: #666; }
+  table { border-collapse: collapse; width: 100%; }
+  td, th { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+  th { background: #f5f5f5; }
+  .back { margin-bottom: 20px; }
+  .meta { color: #888; font-size: 0.9em; margin-bottom: 24px; }
+  .toolbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px; }
+  .toolbar .back a { color: #0066cc; text-decoration: none; }
+  .download-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #0066cc; color: #fff; padding: 6px 14px;
+    border-radius: 6px; font-size: 0.85em; text-decoration: none;
+    transition: background 0.2s;
+  }
+  .download-btn:hover { background: #0052a3; text-decoration: none; color: #fff; }
+  .download-btn svg { width: 14px; height: 14px; fill: currentColor; }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <div class="back"><a href="https://yenanjing.github.io/ai-briefings/">← 返回简报列表</a></div>
+  {% if page.date %}
+  <a class="download-btn" href="#" onclick="downloadMd('{{ page.date | date: "%Y-%m-%d" }}'); return false;">
+    <svg viewBox="0 0 16 16"><path d="M7.47 10.78a.75.75 0 001.06 0l3.75-3.75a.75.75 0 00-1.06-1.06L8.75 8.44V1.75a.75.75 0 00-1.5 0v6.69L4.78 5.97a.75.75 0 00-1.06 1.06l3.75 3.75zM1.75 13.5a.75.75 0 000 1.5h12.5a.75.75 0 000-1.5H1.75z"/></svg>
+    下载 Markdown
+  </a>
+  {% endif %}
+</div>
+{{ content }}
+<script>
+function downloadMd(date) {
+  var url = 'https://raw.githubusercontent.com/yenanjing/ai-briefings/main/' + date + '.md';
+  fetch(url)
+    .then(function(r) { return r.text(); })
+    .then(function(text) {
+      var blob = new Blob([text], { type: 'text/markdown;charset=utf-8' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'AI-Research-Briefing-' + date + '.md';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    })
+    .catch(function() { alert('下载失败，请稍后重试'); });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+---
+layout: default
+title: "AI研究简报 2026-05-13"
+date: 2026-05-13T10:00:00+08:00
+---
+
+# 🤖 AI 研究简报 — 2026-05-13
+
+> **时间范围**: 2026-05-13 → 2026-05-13 | **论文**: 12 篇 | **GitHub**: 10 个  
+> 🌐 [在线版](https://yenanjing.github.io/ai-briefings/2026/05/13/ai-briefing.html)
+> 注：GitHub Trending 为 2026-05-14 补跑时实时 daily 榜单，GitHub 不提供官方历史 daily 快照。
+
+---
+
+## 📑 本期速览
+
+> [!summary] 本期要点
+> - 🏆 Top 论文：Senses Wide Shut: A Representation-Action Gap in Omnimodal LLMs（未知机构，内部评分 9.0/10）
+> - 🌟 重点领域：Omnimodal LLM / 多 Agent / 世界模型 / 长上下文 LVLM / 机器人
+> - 📈 GitHub 今日增长最快：[mattpocock/skills](https://github.com/mattpocock/skills)（🔥 +3,392）
+
+---
+
+## 📚 arXiv 精选论文
+
+### 1🌟 Senses Wide Shut: A Representation-Action Gap in Omnimodal LLMs
+- **内部评分**: 9.0/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Trung Nguyen Quang, Yiming Gao, Fanyi Pu, Kaichen Zhang, Shuo Sun 等
+- **arXiv**: [2605.13737](https://arxiv.org/abs/2605.13737)
+- **代码**: 暂无开源代码
+- **分类**: cs.AI, cs.CL
+- **核心创新**: 这篇文章把“多模态模型到底有没有看见/听见矛盾”拆成了感知和行动两个层面：模型隐藏状态里其实能编码文本前提与视听证据的冲突，但最终回答常常仍顺着错误前提走。作者构建 IMAVB 长视频基准，并用 probe-guided logit adjustment 把内部冲突信号重新注入解码，说明当前瓶颈更像是“知道但不说”的表征到行为转换问题。
+- **评分理由**: 选为 Top 1 是因为它击中了 omnimodal LLM 作为 Agent 感知底座的关键缺陷：不是单纯问答精度，而是冲突检测和拒答行为是否对齐。覆盖 8 个开源模型与 Gemini 3.1 Pro，结论有诊断价值；方法干预初步有效，但仍偏分析型工作，未形成完整训练方案，因此给 9.0。
+
+### 2🌟 SceneGraphVLM: Dynamic Scene Graph Generation from Video with Vision-Language Models
+- **内部评分**: 8.8/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Vladislav Makarov, Mark Gizetdinov, Dmitry Yudin
+- **arXiv**: [2605.13667](https://arxiv.org/abs/2605.13667)
+- **代码**: [https://github.com/markus0440/SceneGraphVLM.git](https://github.com/markus0440/SceneGraphVLM.git)
+- **分类**: cs.CV
+- **核心创新**: SceneGraphVLM 试图把图像/视频中的对象关系压缩成更短、更可靠的结构化场景图。核心做法是用 TOON 格式减少输出冗余，再用带幻觉惩罚的强化学习提升关系覆盖与精度，视频场景还可把前一帧图作为轻量上下文，在不依赖复杂 tracking 的情况下接近实时生成。
+- **评分理由**: 视频场景图是机器人、视频理解和多模态 Agent 的底层结构化感知能力，这篇同时关注质量、速度和幻觉抑制，并给出开源实现。贡献偏工程配方与训练策略整合，突破性弱于 Top 1，但落地价值很高，开源加分后给 8.8。
+
+### 3🌟 OpenAaaS: An Open Agent-as-a-Service Framework for Distributed Materials-Informatics Research
+- **内部评分**: 8.6/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Peng Kang, Bixuan Li, Xiaoya Huang, Shuo Shi, Weiqiao Zhou 等
+- **arXiv**: [2605.13618](https://arxiv.org/abs/2605.13618)
+- **代码**: [https://github.com/Wolido/OpenAaaS](https://github.com/Wolido/OpenAaaS)
+- **分类**: cond-mat.mtrl-sci, cs.AI
+- **核心创新**: OpenAaaS 把材料信息学里的 Agent 协作设计成“代码流动、数据不动”的分布式服务框架：主 Agent 负责拆解研究任务，子 Agent 在各机构本地数据和算力附近执行，避免把原始数据搬出边界。它针对跨机构科研协作里的数据主权、算法封装和任务编排问题，给出层级式 Agent-as-a-Service 架构。
+- **评分理由**: 材料科学不是通用 AI 主赛道，但这篇的价值在于给科学 Agent 提供了可复用的组织架构，且有开源仓库和案例验证。分类含材料科学，部分评估场景较专门，影响范围需观察，因此给 8.6。
+
+### 4🌟 Learning POMDP World Models from Observations with Language-Model Priors
+- **内部评分**: 8.4/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Valentin Six, Frederik Panse, Mathis Fajeau, Lancelot Da Costa, Mridul Sharma 等
+- **arXiv**: [2605.13740](https://arxiv.org/abs/2605.13740)
+- **代码**: [https://github.com/atomresearch/pinductor](https://github.com/atomresearch/pinductor)
+- **分类**: cs.LG
+- **核心创新**: Pinductor 用语言模型先验来学习部分可观测环境的 POMDP 世界模型：LLM 根据少量观测-动作轨迹提出候选模型，再按 belief likelihood 迭代修正。它的重点不是直接让 LLM 控制环境，而是把语言常识转化为可计算的内部动力学模型，从而减少真实交互样本需求。
+- **评分理由**: 世界模型和样本效率是通用 Agent 的硬问题，这篇把 LLM prior 与经典 POMDP 形式化结合，方向扎实且代码开源。实验显示可接近使用隐藏状态特权信息的方法，但仍主要在受控环境中验证，给 8.4。
+
+### 5🌟 ScioMind: Cognitively Grounded Multi-Agent Social Simulation with Anchoring-Based Belief Dynamics and Dynamic Profiles
+- **内部评分**: 8.1/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Yitian Yang, Yiqun Duan, Linghan Huang, Yiqi Zhu, Francesco Bailo 等
+- **arXiv**: [2605.13725](https://arxiv.org/abs/2605.13725)
+- **代码**: 暂无开源代码
+- **分类**: cs.AI, cs.SI
+- **核心创新**: ScioMind 面向 LLM 多 Agent 社会模拟，避免只靠固定公式或完全放任模型自由发挥。它把记忆锚定的信念更新、层级记忆和动态画像结合起来，让 Agent 的观点变化既有个体差异，也能随经历稳定演化。
+- **评分理由**: LLM 社会模拟经常被质疑“不稳定、不可解释、像角色扮演”，这篇用认知机制约束信念动态，能提升行为稳定性和多样性。局限是评估仍依赖模拟指标，真实世界可验证性有限，因此给 8.1。
+
+### 6🌟 Training Long-Context Vision-Language Models Effectively with Generalization Beyond 128K Context
+- **内部评分**: 8.0/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Zhaowei Wang, Lishu Luo, Haodong Duan, Weiwei Liu, Sijin Wu 等
+- **arXiv**: [2605.13831](https://arxiv.org/abs/2605.13831)
+- **代码**: 暂无开源代码
+- **分类**: cs.CV
+- **核心创新**: 这篇系统研究长上下文视觉语言模型如何继续预训练，把 7B 模型从 32K 扩到 128K，并观察到长文档 VQA 比 OCR 转写更有效、均衡长度分布优于只喂目标长度、检索能力是主要瓶颈。MMProLong 用 5B token 预算训练后，还能泛化到 256K/512K 上下文。
+- **评分理由**: 长上下文 LVLM 对文档、网页、长视频和工具型 Agent 都很关键，文章的价值在于给出可操作训练配方而不是单点模型。机构未能可靠抽取，且没有看到开源链接，保守给 8.0。
+
+### 7🌟 Good Agentic Friends Do Not Just Give Verbal Advice: They Can Update Your Weights
+- **内部评分**: 8.0/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Wenrui Bao, Huan Wang, Jian Wang, Zhangyang Wang, Kai Wang 等
+- **arXiv**: [2605.13839](https://arxiv.org/abs/2605.13839)
+- **代码**: 暂无开源代码
+- **分类**: cs.CL
+- **核心创新**: TFlow 重新定义多 Agent 沟通方式：不是把一个 Agent 的想法写成文本塞进另一个 Agent 的上下文，而是把发送方隐藏状态编译成接收方临时 LoRA 权重扰动。这样既不永久修改模型，也不增加文本上下文长度，把“沟通”变成一次实例级可执行适配。
+- **评分理由**: 多 Agent 系统的 token、prefill 和 KV cache 成本正在变成瓶颈，这篇用权重空间通信给了很新颖的接口，并报告最高 83.27% token 降低与 4.6 倍加速。限制是要求固定接收方架构，泛化和安全边界还需验证，给 8.0。
+
+### 8🌟 Children's English Reading Story Generation via Supervised Fine-Tuning of Compact LLMs with Controllable Difficulty and Safety
+- **内部评分**: 7.6/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Qian Shen, Fanghua Cao, Min Yao, Shlok Gilda, Bonnie J. Dorr 等
+- **arXiv**: [2605.13709](https://arxiv.org/abs/2605.13709)
+- **代码**: 暂无开源代码
+- **分类**: cs.CL, cs.AI, cs.LG
+- **核心创新**: 这篇面向儿童英语阅读材料生成，核心不是追求更大模型，而是用专家课程和大模型生成样本去监督微调 8B 小模型，让故事难度、错误模式和安全性可控。它强调教育场景里“可控、便宜、可部署”比单纯语言能力更重要。
+- **评分理由**: 应用价值明确，尤其适合低成本教育内容生成；评估同时包含难度指标与安全观察。方法上主要是 SFT 数据设计，没有明显新架构或通用算法突破，给 7.6。
+
+### 9🌟 VoxCor: Training-Free Volumetric Features for Multimodal Voxel Correspondence
+- **内部评分**: 7.8/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Guney Tombak, Ertunc Erdil, Ender Konukoglu
+- **arXiv**: [2605.13798](https://arxiv.org/abs/2605.13798)
+- **代码**: [https://github.com/guneytombak/VoxCor](https://github.com/guneytombak/VoxCor)
+- **分类**: cs.CV
+- **核心创新**: VoxCor 用冻结 2D ViT 基座生成可复用的三维体素特征，解决 MR、CT 等不同医学成像模态之间的体素对应问题。它通过三平面推理和闭式 WPLS 投影选出跨模态稳定的解剖方向，之后新体数据无需微调或配准即可做最近邻对应查询。
+- **评分理由**: 训练-free、可复用、跨模态医学 3D 特征这几个点很实用，且代码开源。它更偏医学影像/配准基础层，通用 AI 影响范围窄一些，因此给 7.8。
+
+### 10🌟 RoboEvolve: Co-Evolving Planner-Simulator for Robotic Manipulation with Limited Data
+- **内部评分**: 7.9/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Harold Haodong Chen, Sirui Chen, Yingjie Xu, Wenhang Ge, Ying-Cong Chen
+- **arXiv**: [2605.13775](https://arxiv.org/abs/2605.13775)
+- **代码**: 暂无开源代码
+- **分类**: cs.RO, cs.CV
+- **核心创新**: RoboEvolve 针对机器人操作数据稀缺，把 VLM 规划器和视频生成模拟器放进一个相互促进的循环：白天探索物理可行行为，夜晚从接近成功的失败案例里巩固策略。它希望用少量未标注种子图像，逐步从简单动作扩展到复杂任务。
+- **评分理由**: 机器人数据合成和 VLM/VGM 协同是高价值方向，论文报告 500 张未标注种子即可超过全监督基线，信号不错。由于模拟物理真实性和真实机器人迁移通常是最大风险，且未见代码，给 7.9。
+
+### 11🌟 Identifying AI Web Scrapers Using Canary Tokens
+- **内部评分**: 7.8/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Steven Seiden, Triss Ren, Caroline Zhang, Taein Kim, Enze Liu 等
+- **arXiv**: [2605.13706](https://arxiv.org/abs/2605.13706)
+- **代码**: 暂无开源代码
+- **分类**: cs.CR, cs.AI, cs.CY, cs.NI
+- **核心创新**: 这篇提出用 canary token 识别哪些 Web 爬虫最终喂给了哪些 LLM：网站给不同爬虫发唯一 token，再去询问模型关于这些网站的信息，如果模型输出某个 token，就能推断数据链路。它把 LLM 数据来源审计从自报 User-Agent 变成了可实验验证的问题。
+- **评分理由**: LLM 训练/检索数据治理越来越重要，这篇方法简单但有杀伤力，并在 22 个生产 LLM 系统上做实验。它偏安全与治理测量，技术复杂度不高，但现实影响可能很大，给 7.8。
+
+### 12🌟 RTLC -- Research, Teach-to-Learn, Critique: A three-stage prompting paradigm inspired by the Feynman Learning Technique that lifts LLM-as-judge accuracy on JudgeBench with no fine-tuning
+- **内部评分**: 7.6/10（仅用于排序和解释；标题星标表示名次）
+- **机构**: 未知机构
+- **作者**: Andrea Morandi
+- **arXiv**: [2605.13695](https://arxiv.org/abs/2605.13695)
+- **代码**: 暂无开源代码
+- **分类**: cs.CL, cs.AI
+- **核心创新**: RTLC 是一个不微调的 LLM-as-judge 提示流程：先让模型按费曼学习法研究并讲解，再采样多个候选判断，最后自我批判汇总。它把单次裁决变成“教学式理解 + 多候选边缘化 + 显式批判”的组合，以提升开放生成评测的可靠性。
+- **评分理由**: LLM judge 是当前评测基础设施，JudgeBench 上 14 个百分点提升有参考价值，且成本-准确率分析较完整。方法仍属于 prompt recipe，对不同模型/任务的稳健性需要更多复现，给 7.6。
+
+---
+
+## 🔥 GitHub Trending
+
+| 今日增长 | 项目 | 语言 | 简介 |
+|----------|------|------|------|
+| 🔥 +3,392 | [mattpocock/skills](https://github.com/mattpocock/skills) | Shell | 工程师可直接复用的 Claude skills 集合，强调真实项目实践。 |
+| 🔥 +1,696 | [tinyhumansai/openhuman](https://github.com/tinyhumansai/openhuman) | Rust | 个人私有 AI 超级智能，强调本地隐私、简单部署和 Rust 工程实现。 |
+| 🔥 +1,401 | [obra/superpowers](https://github.com/obra/superpowers) | Shell | Agentic skills 框架与软件开发方法论，把技能、流程和工程习惯组织成可复用单元。 |
+| 🔥 +1,379 | [rohitg00/agentmemory](https://github.com/rohitg00/agentmemory) | TypeScript | 面向 AI Coding Agent 的持久化记忆方案，主打基于真实基准的效果验证。 |
+| 🔥 +981 | [yikart/AiToEarn](https://github.com/yikart/AiToEarn) | TypeScript | 围绕用 AI 提升个人生产力和变现的工具/资源集合。 |
+| 🔥 +821 | [rasbt/LLMs-from-scratch](https://github.com/rasbt/LLMs-from-scratch) | Jupyter Notebook | Sebastian Raschka 的从零实现 LLM 教程，PyTorch 学习价值高。 |
+| 🔥 +604 | [millionco/react-doctor](https://github.com/millionco/react-doctor) | TypeScript | 检测 AI Agent 生成的 React 代码质量问题，适合前端 Agent 工作流质检。 |
+| 🔥 +435 | [danielmiessler/Personal_AI_Infrastructure](https://github.com/danielmiessler/Personal_AI_Infrastructure) | TypeScript | 个人 Agentic AI 基础设施方案，用 AI 放大个人能力。 |
+| 🔥 +245 | [trycua/cua](https://github.com/trycua/cua) | HTML | Computer-Use Agent 开源基础设施，包含沙箱、SDK 和桌面控制评测。 |
+| 🔥 +99 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Python | 面向研究、科学、工程、分析、金融和写作的即用型 Agent Skills 集合。 |
+
+---
+
+## 🏷️ 关键词索引
+
+[[AI Agent]] · [[Omnimodal LLM]] · [[多模态]] · [[世界模型]] · [[长上下文]] · [[机器人]] · [[LLM评测]] · [[GitHub Trending]]
+
+---
+
+#AI简报 #2026年 #05月 #arxiv #github-trending
+
+*Generated on 2026-05-14T15:52:33+08:00 by AI Research Briefing Automation*

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Briefing - 2026-07-07</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        header .date {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        header .summary {
+            margin-top: 15px;
+            font-size: 1em;
+            opacity: 0.95;
+        }
+        .highlights {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 20px 30px;
+            margin: 30px;
+        }
+        .highlights h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .highlights ul {
+            list-style: none;
+        }
+        .highlights li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .highlights li:last-child {
+            border-bottom: none;
+        }
+        .highlights .stars {
+            color: #f59e0b;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        .section {
+            padding: 30px;
+        }
+        .section h2 {
+            color: #333;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        .paper {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        .paper h3 {
+            color: #333;
+            font-size: 1.15em;
+            margin-bottom: 10px;
+        }
+        .paper .stars {
+            color: #f59e0b;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .paper .meta {
+            font-size: 0.95em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+        .paper .meta strong {
+            color: #333;
+        }
+        .paper .innovation {
+            background: #fff;
+            padding: 12px;
+            border-radius: 4px;
+            font-size: 0.95em;
+            color: #555;
+            margin-top: 10px;
+        }
+        .trending {
+            padding: 30px;
+        }
+        .trending h2 {
+            color: #333;
+            border-bottom: 2px solid #10b981;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background: #f8f9ff;
+            color: #333;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: #fafafa;
+        }
+        .star-count {
+            color: #f59e0b;
+            font-weight: bold;
+        }
+        .today-count {
+            color: #10b981;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9ff;
+            color: #666;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .score-badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI Research Briefing</h1>
+            <div class="date">2026-07-07</div>
+            <div class="summary">每日 AI 研究简报 · 自动生成于 10:55 CST</div>
+        </header>
+
+        <div class="highlights">
+            <h2>🔥 今日亮点</h2>
+            <ul>
+                <li><span class="stars">8.5🌟</span><strong>ReContext</strong> - 递归证据重放作为 LLM Harness 长上下文推理，开源</li>
+                <li><span class="stars">8.5🌟</span><strong>Distributed Attacks</strong> - Josh Hills/Asa Cooper Stickland AI 控制分布式攻击研究</li>
+                <li><span class="stars">8.3🌟</span><strong>EvoPolicyGym</strong> - 策略进化评估 16 环境全部前二</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>📝 论文精选（12 篇）</h2>
+
+            <div class="paper">
+                <h3><span class="stars">8.5🌟</span>ReContext: Recursive Evidence Replay as LLM Harness for Long-Context Reasoning</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Yanjun Zhao, Ruizhong Qiu, Tianxin Wei, Yuanchen Bei, Zhining Liu<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02509" target="_blank">2607.02509</a> · <strong>分类:</strong> cs.AI
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 提出递归证据重放（Recursive Evidence Replay）机制，通过将长上下文推理过程中的关键证据进行递归重放和整合，显著提升 LLM 在长上下文场景下的推理能力。将上下文管理从简单的截断提升到结构化证据链维护，为长上下文 Agent 提供可复用的推理 Harness。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">8.5🌟</span>Distributed Attacks in Persistent-State AI Control</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Josh Hills, Ida Caspary, Asa Cooper Stickland<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02514" target="_blank">2607.02514</a> · <strong>分类:</strong> cs.AI
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 研究持久化状态 AI 控制系统的分布式攻击问题。提出四监控器集成逃避实验，将逃避率从 93% 降至 47%。揭示了多 Agent 协调场景下的新型攻击向量，对 AI 安全治理框架设计具有重要参考价值。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">8.3🌟</span>EvoPolicyGym: Evaluating Autonomous Policy Evolution in Interactive Environments</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Zhilin Wang, Han Song, Runzhe Zhan, Jusen Du, Jiacheng Chen<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02440" target="_blank">2607.02440</a> · <strong>分类:</strong> cs.AI
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 构建策略进化评估基准 EvoPolicyGym，在 16 个交互环境中评估 GPT-5.5 策略进化能力，全部进入前二。首次系统化评估 LLM 驱动策略的跨环境泛化和持续改进能力，为策略进化研究提供标准化评测框架。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">8.0🌟</span>Grounded Research: A Fault-Tolerant LLM Pipeline from Corpus to Manuscript in Frontier Computational Physics</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Haonan Huang<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02329" target="_blank">2607.02329</a> · <strong>分类:</strong> cs.AI
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 构建从语料到论文的容错自主研究管线，专注于前沿计算物理学领域。实现端到端自动化科研流程，包括文献检索、假设生成、实验设计和论文撰写。为 AI 驱动的科学研究自动化提供完整技术方案。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">7.8🌟</span>Purified OPSD: On-Policy Self-Distillation Without Losing How to Think</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Zhanming Shen, Jintao Tong, Shaotian Yan, Chen Shen, Hao Chen<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02234" target="_blank">2607.02234</a> · <strong>分类:</strong> cs.LG
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 提出净化版在线策略自蒸馏（Purified OPSD），通过 PMI 机制识别并去除长链思维中的记忆捷径，保留深层推理能力。解决当前蒸馏方法容易丢失"如何思考"而非"如何快速回答"的核心问题。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">7.7🌟</span>What LLM Agents Say When No One Is Watching: Social Structure and Latent Objective Emergence in Multi-Agent Debates</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Arman Ghaffarizadeh, Danyal Mohaddes, Aliakbar Izadkhah, Shahriar Noroozizadeh<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02507" target="_blank">2607.02507</a> · <strong>分类:</strong> cs.AI
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 研究多 Agent 辩论中的隐式社会结构和潜在目标涌现现象。发现当无人监督时，Agent 会自发形成社会层级和竞争策略。为理解多 Agent 系统的涌现行为提供实证基础，对 Agent 治理具有警示意义。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">7.6🌟</span>Steerability via Constraints: A Substrate for Scalable Oversight of Coding Agents</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Thomas Winninger<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02389" target="_blank">2607.02389</a> · <strong>分类:</strong> cs.SE
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 提出基于约束的可审计编码 Agent 控制方法。通过形式化约束定义 Agent 行为空间边界，实现可扩展的编码 Agent 监督机制。为 AI 编码助手的安全可控执行提供理论基础。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">7.5🌟</span>Online Safety Monitoring for LLMs</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Mona Schirmer, Metod Jazbec, Alexander Timans, Christian Naesseth, Maja Waldron<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02510" target="_blank">2607.02510</a> · <strong>分类:</strong> cs.AI · <strong>会议:</strong> ICML 2026 Workshop
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 针对 LLM 实时安全监控的在线监测框架，支持流式输入场景下的安全边界检测。已在 ICML 2026 Workshop 发表，为 LLM 部署时的实时安全防护提供实用技术方案。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">7.5🌟</span>SUNTA: Hierarchical Video Prediction with Surprise-based Chunking</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Tomoshi Iiyama, Masahiro Suzuki, Yutaka Matsuo<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02087" target="_blank">2607.02087</a> · <strong>分类:</strong> cs.CV
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 基于惊奇度（Surprise）的时间分块机制实现层次化视频预测，支持 250 时间步长程预测。通过信息论 surprise 信号自动划分预测边界，为视频世界模型提供新的时间结构化方法。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">7.4🌟</span>DRIFTLENS: Measuring Memory-Induced Reasoning Drift in Personalized Language Models</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Xi Fang, Weijie Xu, Yingqiang Ge, Yuhui Xu, Stephanie Eckman<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02374" target="_blank">2607.02374</a> · <strong>分类:</strong> cs.CL
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 首个量化个性化 LLM 推理漂移的测量框架 DRIFTLENS。研究用户私有数据注入后模型推理能力的动态变化，为个性化 LLM 安全评估提供标准化工具。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">7.3🌟</span>AgenticSTS: A Bounded-Memory Testbed for Long-Horizon LLM Agents</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Xiangchen Cheng, Yunwei Jiang, Jianwen Sun, Zizhen Li, Chuanhao Li<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02255" target="_blank">2607.02255</a> · <strong>分类:</strong> cs.AI
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 构建有界记忆长周期 LLM Agent 测试平台 AgenticSTS，提供标准化的长期任务执行评估环境。研究 Agent 在资源受限条件下的记忆管理和任务规划能力。
+                </div>
+            </div>
+
+            <div class="paper">
+                <h3><span class="stars">7.2🌟</span>A²utoLPBench: An Auto-Generated, Agent-Friendly LP Benchmark via Inverse-KKT Construction</h3>
+                <div class="meta">
+                    <strong>作者:</strong> Shuo Ren, Yaohui Han, Yifan Shi, Libo Shen, Haodong Lu<br>
+                    <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.02141" target="_blank">2607.02141</a> · <strong>分类:</strong> cs.AI
+                </div>
+                <div class="innovation">
+                    <strong>核心创新:</strong> 通过逆 KKT 条件自动构造线性规划基准 A²utoLPBench，为 Agent 数学推理能力评估提供标准化测试集。实现从理论约束到可验证实例的自动化生成。
+                </div>
+            </div>
+        </div>
+
+        <div class="trending">
+            <h2>📊 GitHub Trending（AI 相关）</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>项目</th>
+                        <th>总 Star</th>
+                        <th>今日新增</th>
+                        <th>描述</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Leonxlnx/taste-skill</strong></td>
+                        <td class="star-count">59.1k</td>
+                        <td class="today-count">1,458</td>
+                        <td>给 AI 良好品味，避免生成无聊泛化内容</td>
+                    </tr>
+                    <tr>
+                        <td><strong>asgeirtj/system_prompts_leaks</strong></td>
+                        <td class="star-count">51.7k</td>
+                        <td class="today-count">1,378</td>
+                        <td>提取 Anthropic/OpenAI/Google/xAI 等系统提示词</td>
+                    </tr>
+                    <tr>
+                        <td><strong>addyosmani/agent-skills</strong></td>
+                        <td class="star-count">70.9k</td>
+                        <td class="today-count">1,112</td>
+                        <td>AI 编码 Agent 的生产级工程技能库</td>
+                    </tr>
+                    <tr>
+                        <td><strong>alirezarezvani/claude-skills</strong></td>
+                        <td class="star-count">21.2k</td>
+                        <td class="today-count">610</td>
+                        <td>345 个 Claude Code 技能与插件</td>
+                    </tr>
+                    <tr>
+                        <td><strong>openai/codex-plugin-cc</strong></td>
+                        <td class="star-count">26.3k</td>
+                        <td class="today-count">906</td>
+                        <td>从 Claude Code 调用 Codex 审查代码或委派任务</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ogulcancelik/herdr</strong></td>
+                        <td class="star-count">12.9k</td>
+                        <td class="today-count">779</td>
+                        <td>终端内 Agent 多路复用器</td>
+                    </tr>
+                    <tr>
+                        <td><strong>mvanhorn/last30days-skill</strong></td>
+                        <td class="star-count">49.8k</td>
+                        <td class="today-count">458</td>
+                        <td>AI Agent 跨 Reddit/X/YouTube/Polymarket 联合研究技能</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ruvnet/RuView</strong></td>
+                        <td class="star-count">77.6k</td>
+                        <td class="today-count">470</td>
+                        <td>WiFi 信号转空间智能与生命体征监测</td>
+                    </tr>
+                    <tr>
+                        <td><strong>steipete/CodexBar</strong></td>
+                        <td class="star-count">16.8k</td>
+                        <td class="today-count">598</td>
+                        <td>OpenAI Codex 与 Claude Code 使用统计</td>
+                    </tr>
+                    <tr>
+                        <td><strong>bradautomates/claude-video</strong></td>
+                        <td class="star-count">4.3k</td>
+                        <td class="today-count">427</td>
+                        <td>让 Claude 观看任意视频的技能</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            <p>🤖 AI Research Briefing · 自动生成于 2026-07-07 10:55 CST</p>
+            <p>查看完整简报: <a href="https://yenanjing.github.io/ai-briefings/2026/07/07/ai-briefing.html">GitHub Pages</a></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-07-08</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --fg: #c9d1d9;
+    --accent: #58a6ff;
+    --border: #30363d;
+    --card: #161b22;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+  }
+  header {
+    padding: 2rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 { margin: 0 0 0.5rem; font-size: 2rem; }
+  header .date { color: #8b949e; font-size: 0.95rem; }
+  header .link { color: var(--accent); text-decoration: none; }
+  .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+  h2 { font-size: 1.4rem; margin: 2rem 0 1rem; color: var(--accent); }
+  .paper { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; }
+  .paper h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+  .stars { color: #d29922; font-weight: bold; }
+  .meta { font-size: 0.9rem; color: #8b949e; margin: 0.3rem 0; }
+  .meta a { color: var(--accent); }
+  .innovation { margin-top: 0.5rem; color: var(--fg); }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+  th, td { padding: 0.6rem; text-align: left; border-bottom: 1px solid var(--border); }
+  th { color: var(--accent); font-weight: 600; }
+  footer { text-align: center; color: #8b949e; padding: 2rem 1rem; font-size: 0.9rem; border-top: 1px solid var(--border); }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>🤖 AI 研究简报</h1>
+  <div class="date">2026 年 7 月 8 日 · 自动生成于 10:55 CST</div>
+</header>
+
+<div class="container">
+  <h2>论文精选（12 篇）</h2>
+
+  <div class="paper">
+    <h3><span class="stars">★★★★★</span> RynnWorld-4D: 4D Embodied World Models for Robotic Manipulation</h3>
+    <div class="meta"><strong>机构:</strong> 阿里巴巴达摩院</div>
+    <div class="meta"><strong>作者:</strong> Haoyu Zhao, Xingyue Zhao, Siteng Huang, Xin Li, Deli Zhao, Zhongyu Li</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06559">2607.06559</a> · <strong>代码:</strong> <a href="https://github.com/alibaba-damo-academy/RynnWorld-4D">GitHub</a></div>
+    <div class="meta"><strong>分类:</strong> cs.RO</div>
+    <div class="innovation"><strong>核心创新:</strong> 首次提出 RGB-DF（RGB + Depth + Optical Flow）三模态联合扩散世界模型，254.4M帧数据集，双分支架构 + 帧级3D RoPE，闭环策略推理单次前向传播，双臂灵巧操作SOTA</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★★★</span> Vision as Unified Multimodal Generation</h3>
+    <div class="meta"><strong>作者:</strong> Xiaoyang Han, Jianhua Li, Kewang Deng, Zukai Chen, Ziwei Liu, Dahua Lin 等 19 人</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06560">2607.06560</a></div>
+    <div class="meta"><strong>分类:</strong> cs.CV</div>
+    <div class="innovation"><strong>核心创新:</strong> 将计算机视觉统一为多模态生成任务，48页论文，覆盖检测/OCR/关键点/分割/深度/法线/位姿估计，无需任务特定头，代码和数据集开源</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★★☆</span> ELSA3D: Elastic Semantic Anchoring for Unified 3D Understanding and Generation</h3>
+    <div class="meta"><strong>作者:</strong> Tianjiao Yu, Xinzhuo Li, Yifan Shen, Onkar Susladkar, Yuanzhe Liu, Ismini Lourentzou</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06565">2607.06565</a></div>
+    <div class="meta"><strong>分类:</strong> cs.CV, cs.AI, cs.LG</div>
+    <div class="innovation"><strong>核心创新:</strong> 弹性语义锚定机制，octree token + Anchor Tokens 稀疏跨模态交互，自动路由选择性实例化，FLOPs 减半同时保持 SOTA</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★★</span> Lift3D-VLA: Lifting VLA Models to 3D Geometry and Dynamics-Aware Manipulation</h3>
+    <div class="meta"><strong>作者:</strong> Jiaming Liu, Qingpo Wuwu, Nuowei Han, Hao Chen, Yueru Jia, Chenyang Gu, Yandong Guo, Boxin Shi, Shanghang Zhang</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06564">2607.06564</a> · <strong>代码:</strong> <a href="https://lift3dvla.github.io/">Project</a></div>
+    <div class="meta"><strong>分类:</strong> cs.RO, cs.CV</div>
+    <div class="innovation"><strong>核心创新:</strong> 3D点云VLA机器人操作框架，几何对齐2D→3D投影，GC-MAE双目标自监督重建+未来几何演化，MetaWorld +10.8% RLBench +11.1%</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★★</span> ReChannel: From RGB Generation to Dense Field Readout</h3>
+    <div class="meta"><strong>作者:</strong> Zanyi Wang, Xin Lin, Haodong Li, Dengyang Jiang, Yijiang Li, Pengtao Xie</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06553">2607.06553</a></div>
+    <div class="meta"><strong>分类:</strong> cs.CV</div>
+    <div class="innovation"><strong>核心创新:</strong> FLUX-Klein dense prediction，移除目标侧decoder，共享token-local线性头33K参数，2.48x加速，trimap-free matting/KITTI depth/referring segmentation SOTA</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★★</span> ProxyPose: 6-DoF Pose Tracking via Video-to-Video Translation</h3>
+    <div class="meta"><strong>作者:</strong> Ruihang Zhang, Felix Taubner, Pooja Ravi, Kiriakos N. Kutulakos, David B. Lindell</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06555">2607.06555</a></div>
+    <div class="meta"><strong>分类:</strong> cs.CV</div>
+    <div class="innovation"><strong>核心创新:</strong> 视频扩散转视频姿态追踪，单像素标记+彩色多面体代理，无需3D模型/深度/掩码，合成数据微调即达SOTA，可扩展到人脸/相机/野外场景</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★★</span> VAORA: Visual Action Outcome Reasoning Alignment</h3>
+    <div class="meta"><strong>作者:</strong> Han-Jun Ko, Jr-Jen Chen, Haobo Yuan, Hsin-Ying Lee, Tiancheng Shen, Ming-Hsuan Yang, Yu-Chiang Frank Wang</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06522">2607.06522</a></div>
+    <div class="meta"><strong>分类:</strong> cs.AI, cs.CV · <strong>会议:</strong> ICML 2026 Workshop</div>
+    <div class="innovation"><strong>核心创新:</strong> 双奖励设计（视觉对齐+视觉-动作对齐）抑制幻觉CoT，预训练专家估计成功概率提供密集奖励，泛化到未见任务和环境</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★★</span> RSF-GLLM: Recurrent Soft-Flow for Multi-Hop KG QA</h3>
+    <div class="meta"><strong>作者:</strong> Sambaran Bandyopadhyay, Ananth Muppidi</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06527">2607.06527</a></div>
+    <div class="meta"><strong>分类:</strong> cs.CL, cs.AI · <strong>会议:</strong> ICML 2026</div>
+    <div class="innovation"><strong>核心创新:</strong> 可微知识图谱推理，GRU引导查询更新+动态门控跨语义桥节点，流稀疏正则化保证收敛，WebQSP/CWQ 竞争性性能</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★☆</span> UniLM-Nav: Zero-Shot Last-Mile Navigation</h3>
+    <div class="meta"><strong>作者:</strong> Zhuofan Zhang, Tianxu Wang, Guoxi Zhang, Yixiong Lin, Xilin Wang, Hongming Xu, Qing Li, Song-Chun Zhu, Lifeng Fan</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06537">2607.06537</a></div>
+    <div class="meta"><strong>分类:</strong> cs.RO</div>
+    <div class="innovation"><strong>核心创新:</strong> MLLM后端零样本最后一公里导航，三步分解（视图选择/任务感知affordance/几何感知位姿推理），OVMM +3.13pp，Unitree B2实机验证</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★☆</span> FreqDepthKV: Frequency-Guided KV Cache Compression</h3>
+    <div class="meta"><strong>作者:</strong> Anna Córdoba, Adam Puente Tercero, Nerea Angulo Hijo, Mar Linares Tercero, Julia Barrientos, Ainhoa Miranda, Jesús Olivera</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06519">2607.06519</a></div>
+    <div class="meta"><strong>分类:</strong> cs.AI</div>
+    <div class="innovation"><strong>核心创新:</strong> 频率引导KV缓存压缩，低频深度共享+高频残差，注意力头在线探测分配共享/残差/精确模式，3.9x压缩，70.4 tok/s，6.2GB峰值内存</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★☆</span> CAIRN: Cross-Room 3D Scene Understanding</h3>
+    <div class="meta"><strong>作者:</strong> He Liang, Chenyang Ma, Yiming Zhang, Sangyun Shin, Andrew Markham, Niki Trigoni, Yuhang He</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06534">2607.06534</a></div>
+    <div class="meta"><strong>分类:</strong> cs.CV</div>
+    <div class="innovation"><strong>核心创新:</strong> 拓扑感知多房间3D场景LLM，层级注意力掩码+几何偏置路由，HM3D新benchmark覆盖grounding/captioning/QA，跨房间推理大幅领先</div>
+  </div>
+
+  <div class="paper">
+    <h3><span class="stars">★★★</span> GraphBU: MILP Instance Generation with Graph-Native Block Units</h3>
+    <div class="meta"><strong>作者:</strong> Xiaolei Guo, Chenyu Zhou, Jianghao Lin, Dongdong Ge</div>
+    <div class="meta"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.06532">2607.06532</a></div>
+    <div class="meta"><strong>分类:</strong> cs.LG</div>
+    <div class="innovation"><strong>核心创新:</strong> 图原生MILP实例生成，局部子问题+接口提取为block unit，兼容性检查替换，图统计相似度0.934，可行性96.7%，下游PS提升8.0%</div>
+  </div>
+
+  <h2>GitHub Trending（AI 相关，按今日新增 Star 排序）</h2>
+  <table>
+    <thead>
+      <tr><th>项目</th><th>总 Star</th><th>今日新增</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></td><td>11,310</td><td>2,514</td></tr>
+      <tr><td><a href="https://github.com/Zackriya-Solutions/meetily">Zackriya-Solutions/meetily</a></td><td>20,863</td><td>1,777</td></tr>
+      <tr><td><a href="https://github.com/asgeirtj/system_prompts_leaks">asgeirtj/system_prompts_leaks</a></td><td>53,111</td><td>1,691</td></tr>
+      <tr><td><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></td><td>72,268</td><td>1,317</td></tr>
+      <tr><td><a href="https://github.com/ruvnet/RuView">ruvnet/RuView</a></td><td>78,556</td><td>1,129</td></tr>
+      <tr><td><a href="https://github.com/bradautomates/claude-video">bradautomates/claude-video</a></td><td>5,259</td><td>965</td></tr>
+      <tr><td><a href="https://github.com/iOfficeAI/OfficeCLI">iOfficeAI/OfficeCLI</a></td><td>10,171</td><td>893</td></tr>
+      <tr><td><a href="https://github.com/steipete/CodexBar">steipete/CodexBar</a></td><td>17,062</td><td>376</td></tr>
+      <tr><td><a href="https://github.com/TencentCloud/CubeSandbox">TencentCloud/CubeSandbox</a></td><td>8,509</td><td>664</td></tr>
+      <tr><td><a href="https://github.com/kyutai-labs/pocket-tts">kyutai-labs/pocket-tts</a></td><td>6,247</td><td>531</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  <p>🔗 <a href="https://yenanjing.github.io/ai-briefings/">AI Briefings</a> · 由 WorkBuddy 自动生成</p>
+</footer>
+</body>
+</html>

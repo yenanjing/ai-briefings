@@ -11,6 +11,8 @@ title: AI Research Briefings
 
 | 日期 | 链接 |
 |------|------|
-{% for post in site.posts limit:30 %}| {{ post.date | date: "%Y-%m-%d" }} | [查看简报]({{ post.url | relative_url }}) |
+{% for entry in site.data.briefings %}
+| {{ entry.date }} | [查看简报]({{ entry.url | relative_url }}) |
 {% endfor %}
-
+{% for post in site.posts %}| {{ post.date | date: "%Y-%m-%d" }} | [查看简报]({{ post.url | relative_url }}) |
+{% endfor %}

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 - 2026-07-09</title>
+<style>
+  :root { --bg:#0f172a; --card:#1e293b; --accent:#3b82f6; --text:#e2e8f0; --muted:#94a3b8; --border:#334155; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.7; padding: 20px; max-width: 900px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  header h1 { font-size: 28px; margin-bottom: 8px; }
+  header .sub { color: var(--muted); font-size: 14px; }
+  .section { margin-bottom: 32px; }
+  .section h2 { font-size: 20px; margin-bottom: 16px; color: var(--accent); display: flex; align-items: center; gap: 8px; }
+  .paper { background: var(--card); border-radius: 8px; padding: 16px; margin-bottom: 12px; border-left: 3px solid var(--accent); }
+  .paper h3 { font-size: 16px; margin-bottom: 8px; color: var(--text); }
+  .paper .score { color: #fbbf24; font-weight: bold; margin-right: 4px; }
+  .paper .meta { font-size: 13px; color: var(--muted); margin: 4px 0; }
+  .paper .meta a { color: var(--accent); text-decoration: none; }
+  .paper .meta a:hover { text-decoration: underline; }
+  .paper .innovation { font-size: 14px; color: var(--text); margin-top: 8px; padding: 8px 12px; background: rgba(59,130,246,0.1); border-radius: 4px; }
+  .gh-project { background: var(--card); border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .gh-project .name { font-weight: 600; font-size: 15px; }
+  .gh-project .desc { color: var(--muted); font-size: 13px; }
+  .gh-project .stars { color: #fbbf24; font-size: 13px; }
+  .tag { display: inline-block; background: rgba(59,130,246,0.2); color: var(--accent); font-size: 12px; padding: 2px 6px; border-radius: 3px; margin-right: 4px; }
+  footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--border); }
+  footer a { color: var(--accent); text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🤖 AI 研究简报</h1>
+  <div class="sub">2026-07-09 · 周四 · 12 篇精选论文 + 10 个 GitHub Trending 项目</div>
+</header>
+
+<div class="section">
+  <h2>📝 论文精选</h2>
+
+  <article class="paper">
+    <h3><span class="score">8.5🌟</span>Agon: Competitive Cross-Model RL with Implicit Rival Grading of Reasoning</h3>
+    <div class="meta">作者: Vladislav Beliaev</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07690" target="_blank">2607.07690</a></div>
+    <div class="meta">分类: cs.LG / cs.AI / cs.CL</div>
+    <div class="innovation">提出 Agon 框架：让两个竞争模型互相充当对方的"阅卷者"，通过隐式推理评估实现无需过程标注的 RL 训练。在 DeepMath 硬分裂数学题上，Qwen3 上 pass@1 翻倍（GRPO 的 8 倍提升），可推广到代码和多模型家族。推理即竞争。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">8.3🌟</span>Max Out GRPO Signal: Adaptive Trace Prefix Control for Hard Reasoning Problems</h3>
+    <div class="meta">作者: Vladislav Beliaev</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07674" target="_blank">2607.07674</a></div>
+    <div class="meta">分类: cs.LG / cs.CL</div>
+    <div class="innovation">AdaPrefix-GRPO 将 GRPO 的前缀辅助从固定值变成反馈控制器：训练过程中动态调整参考解的前缀长度，保持成功率在 50% 附近（梯度信号最大点），然后完全撤除辅助。0.6B 模型 AIME 提升 1.7×，trace 长度减半，小模型收益更大。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">8.2🌟</span>Co-LMLM: Continuous-Query Limited Memory Language Models</h3>
+    <div class="meta">作者: Yair Feldman, Linxi Zhao, Nathan Godey, Yoav Artzi, Kilian Q. Weinberger 等</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07707" target="_blank">2607.07707</a></div>
+    <div class="meta">分类: cs.CL / cs.AI / cs.LG</div>
+    <div class="innovation">LMLM（有限记忆语言模型）新范式：用连续向量键替代传统关系型知识库。模型在生成时以极低成本生成灵活的向量查询，同时保留人类可读的归因知识。360M 模型在 40× 更少数据上达到 gpt-4o-mini 级别的 SimpleQA 精度，超越 Claude Sonnet 4.5。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">8.0🌟</span>SciReasoner: Deep Native Structural Reasoning for Materials/Chemistry/Biology</h3>
+    <div class="meta">作者: Chen Tang, Yizhou Wang, Wanli Ouyang, Phil Torr, Lei Bai 等 34 人</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07708" target="_blank">2607.07708</a></div>
+    <div class="meta">分类: cs.CL / cs.AI / cs.LG</div>
+    <div class="innovation">多模态科学基础模型 SciReasoner：将蛋白质、小分子、晶体的坐标/拓扑/周期性统一为结构感知词表，结构 token 作为可检验的推理证据。86 个基准中 67 个 SOTA，双盲专家评估 98% 优于前沿 LLM 的推理痕迹。跨学科统一科学推理。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">7.9🌟</span>LingBot-Video: MoE Video Pretraining for Embodied Intelligence</h3>
+    <div class="meta">作者: Shuailei Ma, Jiaqi Liao, Yujun Shen 等（Robbyant）</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07675" target="_blank">2607.07675</a></div>
+    <div class="meta">代码: <a href="https://technology.robbyant.com/lingbot-video" target="_blank">Robbyant</a></div>
+    <div class="meta">分类: cs.CV</div>
+    <div class="innovation">首个大规模开源 MoE 视频基础模型 LingBot-Video：针对具身智能优化的 DiT 视频预训练。数据画像引擎增强标准互联网视频，加入操作/导航/第一视角数据。多维奖励系统强制物理合理性与任务完成对齐，超越传统美学/运动一致性标准。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">7.8🌟</span>SkillCenter: 216K+ Source-Grounded Skills for AI Agents</h3>
+    <div class="meta">作者: Tianming Sha, Yue Zhao, Lichao Sun, Yushun Dong</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07676" target="_blank">2607.07676</a></div>
+    <div class="meta">代码: <a href="https://github.com/LabRAI/SkillCenter" target="_blank">GitHub</a> · 数据: <a href="https://huggingface.co/datasets/Tommysha/skillcenter-bundles" target="_blank">HuggingFace</a></div>
+    <div class="meta">分类: cs.AI</div>
+    <div class="innovation">最大规模开放 Agent 技能库：216,938 个结构化技能，覆盖 24 个领域。114,565 个来自同行评审期刊/ArXiv/24,000+ 技术源，102,373 个来自 GitHub 和 ClawHub。每个声明可追溯到源文件精确引用。SQLite FTS5 离线可搜索。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">7.7🌟</span>STRACE: Structural Trajectory Analysis and Causal Extraction</h3>
+    <div class="meta">作者: Ying Chang, Jiahang Xu, Xuan Feng, Peng Cheng, Yuqing Yang</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07702" target="_blank">2607.07702</a></div>
+    <div class="meta">代码: <a href="https://github.com/moomight/STRACE" target="_blank">GitHub</a></div>
+    <div class="meta">分类: cs.CL</div>
+    <div class="innovation">Agent 优化框架：在批级通过模式挖掘去重真实失败；在单条轨迹内构建文本依赖图进行因果定位，移除非因果步骤。在 VeruSAGE-Bench 形式验证任务上，将专家设计 Agent 的成功率从 42.5% 提升至 58.5%（+1.4×）。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">7.6🌟</span>IABench-CA: Institutional Red-Teaming for Multi-Agent Safety</h3>
+    <div class="meta">作者: Yujiao Chen</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07695" target="_blank">2607.07695</a></div>
+    <div class="meta">分类: cs.AI / cs.GT / cs.MA</div>
+    <div class="innovation">机构红队方法论：固定 Agent、目标和任务状态，仅改变部署规则，因果归因规则对集体安全的影响。228 个场景、5 条规范规则、7 个模型种群（33,924 局）。发现：规则改变使平均死亡率变化 22-58 个百分点；身份定位是机制（匿名化使定向消除从 22% 升至 81%）。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">7.5🌟</span>MedPMC: 11M Medical Image-Text Pairs from PubMed Central</h3>
+    <div class="meta">作者: Hyunjae Kim, Hoifung Poon, Hua Xu, Jaewoo Kang, Qingyu Chen 等</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07673" target="_blank">2607.07673</a></div>
+    <div class="meta">分类: cs.CV / cs.LG</div>
+    <div class="innovation">自动化医学多模态数据基础设施：从 610 万 PMC 文章生成 1100 万图-文对。多面板检测 F1=96.5、图分类 F1=96.5、人工评审 95.3% 医学相关。CLIP 风格模型在 26 个跨 11 个专科的基准上 AUC 平均提升 7.1 个百分点。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">7.4🌟</span>Guidance Breaks the Fitted Operator: Terminal-Fitted Repair for CFG</h3>
+    <div class="meta">作者: Shiheng Zhang</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07665" target="_blank">2607.07665</a></div>
+    <div class="meta">分类: cs.LG / math.NA</div>
+    <div class="innovation">从数值分析角度分析 CFG（分类器自由引导）：在判别子空间上，引导以异常指数 1+w 重新刚性化 DDIM。推导出引导时钟障碍的三个有序步长阈值，提出零额外 NFE 修复：将 CFG 的 w(r-1) 替换为 r^(1+w)-r。在 CIFAR-10 和 Stable Diffusion 1.5 上验证为高引导稳定器。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">7.3🌟</span>Recursive Self-Improvement in AI: Survey of 1,250 Papers</h3>
+    <div class="meta">作者: Mingguang Chen, Licheng Wang, Bo Qu</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07663" target="_blank">2607.07663</a></div>
+    <div class="meta">分类: cs.AI</div>
+    <div class="innovation">系统综述 2024-2026 年 1,250 篇 RSI 论文。提出二维分类：改进什么（行为/策略/评估器/研究过程）× 循环闭合度（人机/全自动）。验证强度层级：形式化验证器 → 过程奖励模型 → 自评估，已证明的自改进强度严格遵循该层级。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">7.2🌟</span>The Key to Going Linear: Analysis-Driven Transformer Linearization</h3>
+    <div class="meta">作者: Anna Kuzina, Paul N. Whatmough, Babak Ehteshami Bejnordi</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07706" target="_blank">2607.07706</a></div>
+    <div class="meta">分类: cs.LG</div>
+    <div class="innovation">在严格冻结骨干网络设定下研究 Transformer 线性化。发现 softmax 依赖于秩-1 正交投影，解释了 delta-style 网络为何优于纯门控累加。引入 sink tokens、短卷积和固定预算缓存路由干预。在 LLaMA 和 Qwen 模型（最高 32B）上 MMLU 超越先前 post-hoc 基线。</div>
+  </article>
+
+  <article class="paper">
+    <h3><span class="score">7.1🌟</span>How Data Shapes RoPE Frequency Usage: Scale Matching &amp; Length Generalization</h3>
+    <div class="meta">作者: Xinyi Wu, Siyuan Liu, Ali Jadbabaie (MIT)</div>
+    <div class="meta">arXiv: <a href="https://arxiv.org/abs/2607.07678" target="_blank">2607.07678</a></div>
+    <div class="meta">分类: cs.LG</div>
+    <div class="innovation">数据驱动的 RoPE 频率使用机制解释：每个频率作为位置透镜，最优频率与数据诱导依赖宽度 W 成反比。自然语言的多尺度依赖结构解释了中低频段的涌现。连接频率选择与位置插值长度泛化：测试时频率缩放能否成功取决于依赖结构是否与训练时呈近似自相似。</div>
+  </article>
+</div>
+
+<div class="section">
+  <h2>🔥 GitHub Trending（AI 相关）</h2>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">addyosmani/agent-skills</div>
+      <div class="desc">Production-grade engineering skills for AI coding agents</div>
+    </div>
+    <div class="stars">⭐ 74.3K · <strong>1,297 today</strong></div>
+  </div>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">asgeirtj/system_prompts_leaks</div>
+      <div class="desc">Extracted system prompts from Claude, ChatGPT, Gemini, Grok, Cursor 等</div>
+    </div>
+    <div class="stars">⭐ 54.3K · <strong>1,218 today</strong></div>
+  </div>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">iOfficeAI/OfficeCLI</div>
+      <div class="desc">AI agents 读取/编辑 Word/Excel/PowerPoint 的开源套件</div>
+    </div>
+    <div class="stars">⭐ 12.0K · <strong>1,717 today</strong></div>
+  </div>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">obra/superpowers</div>
+      <div class="desc">An agentic skills framework &amp; software development methodology</div>
+    </div>
+    <div class="stars">⭐ 249.9K · <strong>1,116 today</strong></div>
+  </div>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">Diolinux/PhotoGIMP</div>
+      <div class="desc">GIMP 3+ Photoshop 风格界面补丁</div>
+    </div>
+    <div class="stars">⭐ 15.1K · <strong>1,125 today</strong></div>
+  </div>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">TencentCloud/CubeSandbox</div>
+      <div class="desc">Instant, Concurrent, Secure &amp; Lightweight Sandbox for AI Agents</div>
+    </div>
+    <div class="stars">⭐ 8.9K · <strong>564 today</strong></div>
+  </div>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">bradautomates/claude-video</div>
+      <div class="desc">Give Claude the ability to watch any video</div>
+    </div>
+    <div class="stars">⭐ 6.1K · <strong>951 today</strong></div>
+  </div>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">mvanhorn/last30days-skill</div>
+      <div class="desc">跨 Reddit/X/YouTube/HN/Polymarket 的 AI Agent 调研技能</div>
+    </div>
+    <div class="stars">⭐ 50.8K · <strong>352 today</strong></div>
+  </div>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">alibaba/zvec</div>
+      <div class="desc">轻量级高性能进程内向量数据库</div>
+    </div>
+    <div class="stars">⭐ 14.4K · <strong>395 today</strong></div>
+  </div>
+
+  <div class="gh-project">
+    <div>
+      <div class="name">TencentCloud/TencentDB-Agent-Memory</div>
+      <div class="desc">AI Agent 全本地长期记忆，4 层渐进式管道，零外部 API</div>
+    </div>
+    <div class="stars">⭐ 7.7K · <strong>318 today</strong></div>
+  </div>
+</div>
+
+<footer>
+  <p>🤖 AI 研究简报 · 自动生成于 2026-07-09 10:55 CST</p>
+  <p>查看历史简报：<a href="https://yenanjing.github.io/ai-briefings/" target="_blank">yenanjing.github.io/ai-briefings</a></p>
+</footer>
+
+</body>
+</html>

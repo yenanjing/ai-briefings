@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing - 2026-07-13</title>
+<style>
+  :root { --bg: #0f172a; --card: #1e293b; --text: #e2e8f0; --accent: #38bdf8; --border: #334155; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 20px; margin: 0; }
+  .container { max-width: 900px; margin: 0 auto; }
+  header { text-align: center; margin-bottom: 30px; }
+  header h1 { font-size: 28px; margin: 0; }
+  header .date { color: #94a3b8; font-size: 14px; margin-top: 8px; }
+  header .source { color: #64748b; font-size: 13px; margin-top: 4px; }
+  .section { background: var(--card); border-radius: 8px; padding: 20px; margin-bottom: 20px; border: 1px solid var(--border); }
+  .section h2 { font-size: 20px; margin-top: 0; margin-bottom: 15px; color: var(--accent); }
+  .paper { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid var(--border); }
+  .paper:last-child { border-bottom: none; }
+  .stars { color: #fbbf24; font-weight: bold; font-size: 18px; }
+  .paper h3 { font-size: 16px; margin: 8px 0 10px 0; }
+  .paper h3 a { color: var(--accent); text-decoration: none; }
+  .paper h3 a:hover { text-decoration: underline; }
+  .meta { font-size: 13px; color: #cbd5e1; margin-bottom: 6px; }
+  .meta span { margin-right: 12px; }
+  .summary { font-size: 14px; color: #e2e8f0; }
+  .github-table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .github-table th { text-align: left; padding: 10px; background: #0f172a; color: var(--accent); border-bottom: 2px solid var(--border); }
+  .github-table td { padding: 10px; border-bottom: 1px solid var(--border); }
+  .github-table tr:hover { background: #1e293b; }
+  .stars-col { text-align: right; font-weight: bold; color: #fbbf24; }
+  .footer { text-align: center; color: #64748b; font-size: 13px; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
+  .footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🤖 AI 研究简报</h1>
+    <div class="date">2026-07-13（周一）</div>
+    <div class="source">数据来源：arXiv cs.AI/cs.LG/cs.CL/cs.CV recent pages（API 限流 429，fallback）| 论文日期：主要 2026-07-10</div>
+  </header>
+
+  <section class="section">
+    <h2>📚 论文精选（12 篇）</h2>
+
+    <div class="paper">
+      <div class="stars">9🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.09474" target="_blank">ProofCouncil: An LLM Agent for Solving Open Mathematical Problems</a></h3>
+      <div class="meta">
+        <span>作者: Johannes Schmitt, Tim Gehrunger, Jasper Dekoninck, Gergely Bérczi 等</span><br>
+        <span>分类: cs.AI</span> · <span>代码: <a href="https://github.com/eth-sri/proof-council" style="color:var(--accent)">eth-sri/proof-council</a></span>
+      </div>
+      <div class="summary">基于 author-critic 架构的数学证明 Agent，在 FirstProof 第二批 10 个真实数学问题中 6 个被裁判判定正确，30 个开放问题 5 个完全正确。开源 Agent 构建库。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">8.5🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.09153" target="_blank">KV-PRM: Efficient Process Reward Modeling via KV-Cache Transfer</a></h3>
+      <div class="meta">
+        <span>作者: Peng Kuang, Haibo Jin, Xiaoyu Han 等</span><br>
+        <span>分类: cs.AI</span>
+      </div>
+      <div class="summary">通过直接读取 KV-Cache 进行过程奖励建模，评分成本从 O(L²) 降至 O(L)。MATH/GSM8K/AIME 上匹配或超越文本 PRM，FLOPs 降低 5000×、延迟降低 37×。形式化证明 KV-Cache 信息容量严格大于文本。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">8.5🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.09661" target="_blank">PanoWorld: Real-World Panoramic Generation</a></h3>
+      <div class="meta">
+        <span>作者: Haoyuan Li, Dizhe Zhang, Ming-Hsuan Yang, Lu Qi 等</span><br>
+        <span>分类: cs.CV</span> · <span>代码: <a href="https://github.com/Insta360-Research-Team/PanoWorld" style="color:var(--accent)">Insta360-Research-Team/PanoWorld</a></span>
+      </div>
+      <div class="summary">利用全景旋转等变性简化轨迹为平移，通过 DPRC 和 GMA 解决全景世界模型长程记忆。构建 World360 大规模数据集，开源模型、代码和数据。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">8.3🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.09328" target="_blank">WILDTRACE: Benchmarking Natural Evidence Trails in Long-Context Reasoning</a></h3>
+      <div class="meta">
+        <span>作者: Zixin Chen, Peng Liu, Huamin Qu 等 10 人</span><br>
+        <span>分类: cs.CL</span>
+      </div>
+      <div class="summary">481 任务、214 篇真实长文档的长上下文推理基准。定义 7 种源内证据几何结构，基于 Pearl 因果层次从文档结构挖掘候选证据链。填补现有基准依赖人工植入证据的空白。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">8.0🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.09600" target="_blank">Agora: Enhancing LLM Agent Reasoning Via Auction-Based Task Allocation</a></h3>
+      <div class="meta">
+        <span>作者: Kaiji Zhou, Ales Leonardis, Yue Feng</span><br>
+        <span>分类: cs.AI</span>
+      </div>
+      <div class="summary">引入激励相容的拍卖机制动态分配任务。推理步骤作为可交易物品，Agent 基于 rectified competence 投标。5 个基准上超越匹配单模型、路由和级联基线，单参数控制成本-质量权衡。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">8.0🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.09532" target="_blank">Statistically Undetectable Backdoors in Deep Neural Networks</a></h3>
+      <div class="meta">
+        <span>作者: Andrej Bogdanov, Alon Rosen, Neekon Vafa</span><br>
+        <span>分类: cs.LG</span> · <span>ICML 2026</span>
+      </div>
+      <div class="summary">展示对抗性训练者可在前馈 DNN 中植入统计不可检测的后门（白盒下 TV 距离不可区分），提供基于不变性的对抗样本。证明无后门情况下多项式时间内无法生成此类样本。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">7.8🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.08894" target="_blank">GATS: Graph-Augmented Tree Search for Efficient Agent Planning</a></h3>
+      <div class="meta">
+        <span>作者: Maureese Williams, Dymitr Nowicki</span><br>
+        <span>分类: cs.AI</span>
+      </div>
+      <div class="summary">三层世界模型（符号匹配→统计学习→LLM 预测）+ UCB1 树搜索，推理时零 LLM 调用。合成任务 100% vs LATS 92%/ReAct 64%；12 个压力测试 100% vs LATS 88.9%/ReAct 23.9%。方差为零的确定性规划。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">7.7🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.08768" target="_blank">UniClawBench: A Universal Benchmark for Proactive Agents</a></h3>
+      <div class="meta">
+        <span>作者: Zhekai Chen, Chengqi Duan, Xihui Liu 等</span><br>
+        <span>分类: cs.CL</span> · <span>代码: <a href="https://github.com/HKU-MMLab/UniClawBench" style="color:var(--accent)">HKU-MMLab/UniClawBench</a></span>
+      </div>
+      <div class="summary">首个能力驱动的主动 Agent 基准，围绕 5 大能力设计 400 个双语真实任务。活体 Docker 容器评估 + 隐式监督 Agent 防泄漏评分。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">7.6🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.08662" target="_blank">WebSwarm: Recursive Multi-Agent Orchestration for Deep-and-Wide Web Search</a></h3>
+      <div class="meta">
+        <span>作者: Xiaoshuai Song, Liancheng Zhang, Kun Gai, Ji-Rong Wen, Zhicheng Dou 等</span><br>
+        <span>分类: cs.CL</span>
+      </div>
+      <div class="summary">递归分层委托框架，Agent 节点可自解或进一步委托子节点。先探测网页信息组织方式再展开节点。BrowseComp-Plus/WideSearch/DeepWideSearch/GISA 上超越基线。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">7.5🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.09126" target="_blank">VTaMo: Video-Text Alignment Model for Sign Language Translation</a></h3>
+      <div class="meta">
+        <span>作者: Junyi Hu, Zhewen He, Yi Fang 等</span><br>
+        <span>分类: cs.CV</span> · <span>代码: <a href="https://github.com/junyi2005/vtamo" style="color:var(--accent)">junyi2005/vtamo</a></span> · <span>ECCV 2026</span>
+      </div>
+      <div class="summary">三层多粒度对齐框架：局部（熵正则化最优传输）、全局（可学习正交变换）、位置对齐对比学习。Phoenix-2014T/CSL-Daily/How2Sign/OpenASL SOTA。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">7.4🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.09655" target="_blank">OpenLongTail: Generative Scaling of Long-Tail Driving Data</a></h3>
+      <div class="meta">
+        <span>作者: Lulin Liu, Boris Ivanovic, Zhangyang Wang, Marco Pavone 等 18 人</span><br>
+        <span>分类: cs.CV</span>
+      </div>
+      <div class="summary">开源生成式数据引擎，将异构长尾驾驶数据通过姿态感知外推视图合成转换为多视角时序对齐资产。Plücker 射线几何注入可扩展生成引擎。</div>
+    </div>
+
+    <div class="paper">
+      <div class="stars">7.3🌟</div>
+      <h3><a href="https://arxiv.org/abs/2607.09657" target="_blank">Scalable Visual Pretraining for Language Intelligence</a></h3>
+      <div class="meta">
+        <span>作者: Yiming Zhang, Zhonghan Zhao, Wenwei Zhang 等 16 人</span><br>
+        <span>分类: cs.CV</span>
+      </div>
+      <div class="summary">挑战 LM 必须基于纯文本预训练的假设。无需文本提取直接利用视觉文档的无监督视觉预训练范式。在多个骨干和基准上视觉预训练一致超越纯文本预训练。</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 排序）</h2>
+    <table class="github-table">
+      <thead>
+        <tr><th>项目</th><th class="stars-col">总 ⭐</th><th class="stars-col">今日 +⭐</th><th>描述</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="https://github.com/HKUDS/Vibe-Trading" target="_blank">HKUDS/Vibe-Trading</a></td><td class="stars-col">20.7K</td><td class="stars-col">768</td><td>个人交易 Agent</td></tr>
+        <tr><td><a href="https://github.com/anthropics/claude-cookbooks" target="_blank">anthropics/claude-cookbooks</a></td><td class="stars-col">48.5K</td><td class="stars-col">459</td><td>Claude 使用笔记本/配方集合</td></tr>
+        <tr><td><a href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank">Shubhamsaboo/awesome-llm-apps</a></td><td class="stars-col">118.7K</td><td class="stars-col">408</td><td>100+ 可运行的 AI Agent & RAG 应用</td></tr>
+        <tr><td><a href="https://github.com/Dicklesworthstone/destructive_command_guard" target="_blank">Dicklesworthstone/destructive_command_guard</a></td><td class="stars-col">3.0K</td><td class="stars-col">444</td><td>阻止 Agent 执行危险 git/shell 命令</td></tr>
+        <tr><td><a href="https://github.com/Crosstalk-Solutions/project-nomad" target="_blank">Crosstalk-Solutions/project-nomad</a></td><td class="stars-col">33.8K</td><td class="stars-col">125</td><td>离线生存计算机 + AI</td></tr>
+        <tr><td><a href="https://github.com/virattt/ai-hedge-fund" target="_blank">virattt/ai-hedge-fund</a></td><td class="stars-col">61.4K</td><td class="stars-col">115</td><td>AI 对冲基金团队</td></tr>
+        <tr><td><a href="https://github.com/davila7/claude-code-templates" target="_blank">davila7/claude-code-templates</a></td><td class="stars-col">29.3K</td><td class="stars-col">274</td><td>Claude Code CLI 配置和监控工具</td></tr>
+        <tr><td><a href="https://github.com/wonderwhy-er/DesktopCommanderMCP" target="_blank">wonderwhy-er/DesktopCommanderMCP</a></td><td class="stars-col">8.0K</td><td class="stars-col">210</td><td>Claude 终端/文件系统 MCP Server</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <div class="footer">
+    <p>生成时间：2026-07-13 10:55 CST</p>
+    <p>在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/07/13/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/07/13/ai-briefing.html</a></p>
+  </div>
+</div>
+</body>
+</html>

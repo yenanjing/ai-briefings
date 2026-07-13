@@ -9,10 +9,25 @@ title: AI Research Briefings
 
 ## 历史简报
 
-| 日期 | 链接 |
-|------|------|
-{% for entry in site.data.briefings %}
-| {{ entry.date }} | [查看简报]({{ entry.url | relative_url }}) |
-{% endfor %}
-{% for post in site.posts %}| {{ post.date | date: "%Y-%m-%d" }} | [查看简报]({{ post.url | relative_url }}) |
-{% endfor %}
+<table>
+  <thead>
+    <tr>
+      <th>日期</th>
+      <th>链接</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entry in site.data.briefings %}
+    <tr>
+      <td>{{ entry.date }}</td>
+      <td><a href="{{ entry.url | relative_url }}">查看简报</a></td>
+    </tr>
+    {% endfor %}
+    {% for post in site.posts %}
+    <tr>
+      <td>{{ post.date | date: "%Y-%m-%d" }}</td>
+      <td><a href="{{ post.url | relative_url }}">查看简报</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>

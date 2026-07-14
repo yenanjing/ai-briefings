@@ -1,6 +1,9 @@
 # AI 研究简报 - 静态 HTML 版索引（供首页列表使用）
 # 这些日期的简报以静态 HTML 方式发布，直接链接到 /ai-briefings/{YYYY}/{MM}/{DD}/ai-briefing.html
 
+- date: 2026-07-14
+  url: /2026/07/14/ai-briefing.html
+
 - date: 2026-07-13
   url: /2026/07/13/ai-briefing.html
 

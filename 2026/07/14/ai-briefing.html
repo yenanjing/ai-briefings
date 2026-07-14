@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-07-14</title>
+<style>
+  :root { --bg:#0f172a; --panel:#1e293b; --panel2:#273449; --line:#334155; --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --accent2:#10b981; --warn:#f59e0b; --hot:#ef4444; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { margin: 0 0 4px; font-size: 28px; }
+  header .sub { color: var(--muted); font-size: 14px; }
+  .stat-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 24px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); padding: 6px 12px; border-radius: 16px; font-size: 13px; }
+  .stat b { color: var(--accent); margin-right: 4px; }
+  article { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
+  article h2 { margin: 0 0 8px; font-size: 18px; }
+  article h2 .stars { color: var(--hot); margin-right: 4px; }
+  article h2 .cat { color: var(--muted); font-weight: 400; margin-left: 8px; font-size: 13px; }
+  article p { margin: 4px 0; font-size: 14px; color: var(--muted); }
+  article p a { color: var(--accent); text-decoration: none; }
+  article p a:hover { text-decoration: underline; }
+  article .core { color: var(--text); margin-top: 6px; }
+  .gh { margin-top: 24px; }
+  .gh h2 { font-size: 20px; margin-bottom: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; padding: 8px; background: var(--panel2); color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--line); }
+  td { padding: 8px; border-bottom: 1px solid var(--line); }
+  td.nums { text-align: right; color: var(--muted); }
+  tr:hover td { background: rgba(56,189,248,.04); }
+  td a { color: var(--accent); text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; text-align: center; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🤖 AI 研究简报</h1>
+    <div class="sub">2026-07-14 · 论文来源：arXiv API（2026-07-13 提交，25 篇候选）</div>
+  </header>
+  <div class="stat-bar">
+    <span class="stat"><b>12</b>精选论文</span>
+    <span class="stat"><b>10</b>GitHub 项目</span>
+    <span class="stat"><b>9</b>领域覆盖</span>
+  </div>
+
+  <article>
+    <h2><span class="stars">★★★★★</span> Requential Coding <span class="cat">cs.LG</span></h2>
+    <p>作者: Shikai Qiu, Marc Finzi, Yujia Zheng, Kun Zhang, <b>Andrew Gordon Wilson</b> (NYU)</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11883">2607.11883</a> · 代码: <a href="https://github.com/shikaiqiu/requential-coding">github.com/shikaiqiu/requential-coding</a></p>
+    <p class="core">训练自由的模型压缩方法，通过 teacher 从 student 自身分布中选择训练样本，code length 独立于参数量和数据熵。连接 PAC-Bayes 界与模型压缩，为十亿参数 LLM 提供当前最优通用化保证。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★★</span> Inside the Unfair Judge <span class="cat">cs.LG</span></h2>
+    <p>作者: Zixiang Xu, Sixian Li, Huaxing Liu, Xiang Wang, Shuai Li, Zirui Song, Xiuying Chen</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11871">2607.11871</a> · 项目页: <a href="https://xzx34.github.io/unfair-judge/">xzx34.github.io/unfair-judge/</a></p>
+    <p class="core">首次从机制可解释性角度研究 LLM-as-Judge 偏见。发现偏见输入在隐藏状态中沿低维子空间位移，因果控制实验证明沿偏见方向操纵 hidden states 可双向驱动评分。线性投影预测 3 个未见 benchmark 上 judge 失败。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★★</span> E-VQA: Evidence-Backed Video QA <span class="cat">cs.CV · Salesforce</span></h2>
+    <p>作者: Shijie Wang, Honglu Zhou, Ziyang Wang, Ran Xu, Caiming Xiong, Silvio Savarese, Chen Sun, Juan Carlos Niebles</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11862">2607.11862</a> · 代码: <a href="https://github.com/SalesforceAIResearch/EVQA">SalesforceAIResearch/EVQA</a> · <b>ECCV 2026</b></p>
+    <p class="core">可验证视频 QA。ST-Evidence 是首个像素级 grounding 人工验证数据集，发现 QA 准确率与真实视觉感知解耦、scaling 无法弥合。160K ST-Evidence-Instruct 数据集微调后 7B 模型 t-mean +27.2、J&F +13.8。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★☆</span> SpectraReward <span class="cat">cs.CV</span></h2>
+    <p>作者: Runhui Huang, Qihui Zhang, Zhe Liu, Yu Gao, Jie Wu, Hengshuang Zhao</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11886">2607.11886</a> · 项目页: <a href="https://huangrh99.github.io/SpectraReward/">huangrh99.github.io/SpectraReward/</a></p>
+    <p class="core">无需训练的图像生成 RL 奖励函数，利用 MLLM image-text 对齐重建 prompt。覆盖 2 扩散模型、3 RL 算法、9 MLLM 骨干（4B-235B）。Self-SpectraReward（策略自身理解分支作 reward）匹配甚至超越更大外部 reward model。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★☆</span> Cycle-World <span class="cat">cs.CV</span></h2>
+    <p>作者: Zihan Su, Teng Hu, Jiangning Zhang, Ruiyan Wang, Ran Yi, Lizhuang Ma, Dacheng Tao</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11836">2607.11836</a> · <b>ECCV 2026</b></p>
+    <p class="core">长视频世界模型。反向预测循环一致性将前向生成漂移严格限界，训练时嵌入因果约束，推理时用冻结反向模型作运行时 corrector。60 秒视频合成达到 SOTA 整体质量和长时序一致性。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★☆</span> MoF: Mixture of Frames Policy <span class="cat">cs.RO</span></h2>
+    <p>作者: Dian Wang, Jisang Park, Xiaomeng Xu, Han Zhang, <b>Shuran Song</b>, <b>Jeannette Bohg</b> (CMU)</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11884">2607.11884</a> · 项目页: <a href="https://mofpo.github.io">mofpo.github.io</a></p>
+    <p class="core">扩散策略跨多坐标系同步动作去噪，引入列式 6D 旋转表示支持精确可微分 SE(3) 帧变换。9 个双臂操作任务验证最优帧因任务而异，真机实验优于所有单帧基线。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★☆</span> AdvancedMathBench <span class="cat">cs.CL</span></h2>
+    <p>作者: Lingkai Kong, Zijian Wu, Yuzhe Gu, Haiteng Zhao 等 13 人</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11849">2607.11849</a></p>
+    <p class="core">高级数学证明生成/验证基准。ProverBench 含 296 题（本科/博士资格考），自动验证管道与专家标注强一致。GPT-5.5-xhigh 在 QE 分割仅 66.1%。VerifierBench 含 888 条模型生成证明轨迹，验证 F1 仅 65.1%。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★☆</span> LLM Metacognition Survey <span class="cat">cs.CL · Yale-NLP</span></h2>
+    <p>作者: Gabrielle Liu, Areeb Gani, Jacqueline Lu, Jordan Thomas, Mark Steyvers, Arman Cohan</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11881">2607.11881</a> · 代码: <a href="https://github.com/yale-nlp/LLM-Metacognition">yale-nlp/LLM-Metacognition</a></p>
+    <p class="core">首个 LLM 元认知综合综述（50 作者），涵盖测量方法、提升技术、应用场景与未来方向。系统化梳理 LLM 元认知能力，为透明化 AI 系统研究提供框架。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★☆</span> MM-ToolSandBox <span class="cat">cs.CV · Apple</span></h2>
+    <p>作者: Kaixin Ma, Di Feng, Alexander Metz, Jiarui Lu, Eshan Verma, Afshin Dehghan</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11818">2607.11818</a> · 代码: <a href="https://github.com/apple/ml-mmtoolsandbox">apple/ml-mmtoolsandbox</a></p>
+    <p class="core">500+ 工具、16 应用域的多模态 Agent 评测框架。评估 12 个模型（4B 开源到前沿闭源），最佳模型成功率仍 <50%。失败分析：53% 失败源于图像信息提取错误。呈现「规划到精度」交叉点。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★☆</span> HASTE <span class="cat">cs.CV · Microsoft</span></h2>
+    <p>作者: Caleb Robinson, Anthony Ortiz, Simone Fobi Nsutezo 等 11 人</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11838">2607.11838</a> · 代码: <a href="https://github.com/microsoft/haste">microsoft/haste</a></p>
+    <p class="core">无代码灾难响应建筑损毁评估平台。两种方法共享界面，foundation model 嵌入用 1/20 标签匹配全监督 ResNet-50。自 2023 年以来支持 30+ 次真实灾难响应。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★☆</span> Latent-Identity Tuning <span class="cat">cs.CV</span></h2>
+    <p>作者: Daniel Garibi, Ronen Kamenetsky, Hadar Averbuch-Elor, <b>Daniel Cohen-Or</b>, <b>Or Patashnik</b> (TAU)</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11885">2607.11885</a> · 项目页: <a href="https://garibida.github.io/IdentityTuning/">garibida.github.io/IdentityTuning/</a></p>
+    <p class="core">无需训练的潜在空间面部身份微调。发现 latent tokens 对应特定空间/语义面部区域，在子空间内识别语义方向，实现局部化、细粒度编辑，保持跨图像身份一致性。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★</span> Invariant Learning Dynamics <span class="cat">cs.LG · ETH</span></h2>
+    <p>作者: Tiberiu Musat, Tiago Pimentel, Nicholas Zucchet, <b>Thomas Hofmann</b></p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.11875">2607.11875</a></p>
+    <p class="core">理论证明 Transformer 归纳推理训练动力学可限制在低维不变量流形上，用少量坐标描述学习过程。统一 in-context 与 in-weights 学习竞争、随机初始化决定的「获胜电路」，以及已学习电路的自动检测。</p>
+  </article>
+
+  <h2>GitHub Trending AI 项目（按今日新增 Star 排序）</h2>
+  <table>
+    <tr><th>项目</th><th>总 ⭐</th><th>今日 ⭐</th><th>描述</th></tr>
+    <tr><td><a href="https://github.com/OpenCut-app/OpenCut">OpenCut-app/OpenCut</a></td><td class="nums">66.8K</td><td class="nums" style="color:var(--hot)">1,229</td><td>开源 CapCut 替代</td></tr>
+    <tr><td><a href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a></td><td class="nums">21.9K</td><td class="nums" style="color:var(--hot)">1,153</td><td>个人交易 Agent</td></tr>
+    <tr><td><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a></td><td class="nums">84.9K</td><td class="nums" style="color:var(--hot)">1,095</td><td>代码知识图谱 AI 助手</td></tr>
+    <tr><td><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a></td><td class="nums">119.8K</td><td class="nums" style="color:var(--hot)">996</td><td>100+ Agent/RAG 应用</td></tr>
+    <tr><td><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a></td><td class="nums">5.3K</td><td class="nums" style="color:var(--hot)">794</td><td>Claude Code 反 AI 设计技能</td></tr>
+    <tr><td><a href="https://github.com/moeru-ai/airi">moeru-ai/airi</a></td><td class="nums">42.0K</td><td class="nums">78</td><td>AI 伴侣容器</td></tr>
+    <tr><td><a href="https://github.com/hasaneyldrm/exercises-dataset">hasaneyldrm/exercises-dataset</a></td><td class="nums">12.7K</td><td class="nums">451</td><td>健身数据集</td></tr>
+    <tr><td><a href="https://github.com/github/spec-kit">github/spec-kit</a></td><td class="nums">120.7K</td><td class="nums">543</td><td>Spec-Driven Development 工具包</td></tr>
+    <tr><td><a href="https://github.com/Raphire/Win11Debloat">Raphire/Win11Debloat</a></td><td class="nums">50.9K</td><td class="nums">118</td><td>Windows 精简脚本</td></tr>
+    <tr><td><a href="https://github.com/coreyhaines31/marketingskills">coreyhaines31/marketingskills</a></td><td class="nums">38.7K</td><td class="nums">299</td><td>营销技能库</td></tr>
+  </table>
+
+  <footer>
+    <a href="https://yenanjing.github.io/ai-briefings/2026/07/14/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/07/14/ai-briefing.html</a>
+  </footer>
+</div>
+</body>
+</html>

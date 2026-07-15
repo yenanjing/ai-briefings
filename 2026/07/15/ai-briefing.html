@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-07-15</title>
+<style>
+  :root { --bg:#0f172a; --panel:#1e293b; --panel2:#273449; --line:#334155; --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --accent2:#10b981; --warn:#f59e0b; --hot:#ef4444; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { margin: 0 0 4px; font-size: 28px; }
+  header .sub { color: var(--muted); font-size: 14px; }
+  .stat-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 24px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); padding: 6px 12px; border-radius: 16px; font-size: 13px; }
+  .stat b { color: var(--accent); margin-right: 4px; }
+  article { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
+  article h2 { margin: 0 0 8px; font-size: 18px; }
+  article h2 .stars { color: var(--hot); margin-right: 4px; }
+  article h2 .cat { color: var(--muted); font-weight: 400; margin-left: 8px; font-size: 13px; }
+  article p { margin: 4px 0; font-size: 14px; color: var(--muted); }
+  article p a { color: var(--accent); text-decoration: none; }
+  article p a:hover { text-decoration: underline; }
+  article .core { color: var(--text); margin-top: 6px; }
+  .gh { margin-top: 24px; }
+  .gh h2 { font-size: 20px; margin-bottom: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; padding: 8px; background: var(--panel2); color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--line); }
+  td { padding: 8px; border-bottom: 1px solid var(--line); }
+  td.nums { text-align: right; color: var(--muted); }
+  tr:hover td { background: rgba(56,189,248,.04); }
+  td a { color: var(--accent); text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; text-align: center; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🤖 AI 研究简报</h1>
+    <div class="sub">2026-07-15 · 论文来源：arXiv API（2026-07-14 提交，25 篇候选）</div>
+  </header>
+  <div class="stat-bar">
+    <span class="stat"><b>12</b>精选论文</span>
+    <span class="stat"><b>8</b>GitHub 项目</span>
+    <span class="stat"><b>9</b>领域覆盖</span>
+  </div>
+
+  <article>
+    <h2><span class="stars">★★★★</span> 8.0🌟 The Illusion of Robustness: Aggregate Accuracy Hides Prediction Flips under Task-Irrelevant Context <span class="cat">cs.CL</span></h2>
+    <p>作者: Yanzhe Zhang, Sanmi Koyejo, Diyi Yang</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.12963">2607.12963</a></p>
+    <p class="core">发现 SOTA 模型在聚合层面看似对无关上下文鲁棒，但掩盖了显著的逐样本不稳定性：随机拼凑的无意义伪词也能翻转一小部分样本的预测。该双 sided 效应跨模型/数据集稳定存在，受上下文类型、长度、测试时计算量调节，揭示被聚合准确率掩盖的上下文诱导尾部风险，主张逐样本可靠性评测。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.9🌟 PalmClaw: A Native On-Device Agent Framework for Mobile Phones <span class="cat">cs.CL</span></h2>
+    <p>作者: Hongru Cai, Yongqi Li, Ran Wei, Wenjie Li</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.13027">2607.13027</a> · 代码: <a href="https://github.com/ModalityDance/PalmClaw">github.com/ModalityDance/PalmClaw</a></p>
+    <p class="core">首个在手机端原生运行的 Agent 框架，直接在设备上管理会话、记忆、技能、工具与 agent loop。将设备能力暴露为带显式参数与执行边界的 device tools，使 agent 直接调用能力而非仅依赖 GUI 点击。相比最强基线任务成功率 +11.5%、完成时间 −94.9%。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.8🌟 The Spectrum Is Not Enough: When Context Helps Time-Series Forecasting <span class="cat">cs.LG</span></h2>
+    <p>作者: Mert Onur Cakiroglu, Mehmet Dalkilic, Hasan Kurban</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.13006">2607.13006</a> · 代码: <a href="https://anonymous.4open.science/r/SINE">anonymous.4open.science/r/SINE</a></p>
+    <p class="core">给出不可能性结论：基于功率谱的可预测性指标无法判断「加上下文是否帮助」，因谱指标在相位随机化下不变，而检索/基础模型提供的超越二阶价值并非如此。提出无标签诊断 coverage deficit，在 7 个基准上证实检索价值在 surrogate 对间塌缩而谱指标冻结。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.6🌟 DenseReward: Dense Reward Learning via Failure Synthesis for Robotic Manipulation <span class="cat">cs.RO</span></h2>
+    <p>作者: Yu Fang, Wanxi Dong, Jiaqi Liu, Yue Yang, Mingxiao Huo, Yao Mu, Huaxiu Yao, Li Erran Li, Daniel Szafir, Mingyu Ding</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.13033">2607.13033</a></p>
+    <p class="core">提出自动化失败数据生成管线，在仿真中合成物理真实的失败轨迹（碰撞、漏抓、掉落、恢复），覆盖多样物理失败模式且无需人工标注。DenseReward 从视觉观测与语言指令预测帧级密集奖励，在仿真与真实操作中超越通用 VLM 与现有机器人奖励模型，并为下游 MPC/RL 提供有效引导。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.6🌟 TerraZero: Procedural Driving Simulation for Zero-Demonstration Self-Play at Scale <span class="cat">cs.LG</span></h2>
+    <p>作者: Zhouchonghao Wu, Akshay Rangesh, Weixin Li, Wei-Jer Chang, Zachary Lee, Tim Wang, Wei Zhan</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.13028">2607.13028</a></p>
+    <p class="core">提出程序化驾驶仿真与自博弈训练栈，C 引擎在 CPU 仿真、GPU 推理经零拷贝路径单卡达 1.3M agent-steps/秒，远快于现有对象级仿真器。仅以真实地图几何为种子随机化交通参与者与动力学，每地图产生无限场景；纯 RL 从零训练的策略零样本泛化跨城市，并首次在 InterPlan 长尾基准上超越更大规模学习型规划器。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.6🌟 DermDepth: Toward Monocular Metric Scale 3D Reconstruction Models for Dermatology <span class="cat">cs.CV</span></h2>
+    <p>作者: Héctor Carrión, Narges Norouzi</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.13010">2607.13010</a> · 代码: <a href="https://github.com/hectorcarrion/dermdepth">github.com/hectorcarrion/dermdepth</a></p>
+    <p class="core">首个面向皮肤科的单视图度量尺度 3D 重建模型，无需额外硬件或多张拍摄即可获得密集单目 3D 重建、度量尺度测量与表面法线纹理。提出首个人工像素级 3D 信息的合成皮肤镜数据集 D-Synth，将真实皮肤镜数据度量误差从 16× 纠正到 1.1× 以内，并在三个真实基准上泛化。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.6🌟 Controllable Generation of Diverse Dermatological Imagery for Fair and Efficient Malignancy Classification (cgDDI) <span class="cat">cs.CV</span></h2>
+    <p>作者: Héctor Carrión, Narges Norouzi</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.12987">2607.12987</a> · 代码: <a href="https://github.com/hectorcarrion/ControllableGenDDI">github.com/hectorcarrion/ControllableGenDDI</a></p>
+    <p class="core">混合框架合成健康皮肤样本、将罕见病灶非参数映射到新肤色/部位，并支持仅 10 张训练样本的参数化生成，提升皮肤病诊断的公平性。将 656 张数据集扩增 400× 以上，DDI 基准上合成训练达 86.4%、真实微调达 90.9% SOTA，开源 266K+ 合成图像与生成模型。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.4🌟 The Seriality Gap in Video Diffusion Models <span class="cat">cs.LG</span></h2>
+    <p>作者: Jorge Diaz Chao, Konpat Preechakul, Yuxi Liu, Yutong Bai</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.13031">2607.13031</a></p>
+    <p class="core">在多球硬球动力学的受控实验中，发现标准双向视频扩散性能随因果链变长而退化，且增加去噪步数无效；单球对照中退化基本消失，隔离出「依赖事件结构」而非视频长度为根因。证明确定性视频预测中去噪步数不增加主干之外的串行计算，揭示视频扩散在串行推理/仿真上的结构性障碍。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.3🌟 Do AI Agents Know When a Task Is Simple? Toward Complexity-Aware Reasoning and Execution (E3) <span class="cat">cs.AI</span></h2>
+    <p>作者: Junjie Yin, Xinyu Feng</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.13034">2607.13034</a></p>
+    <p class="core">提出任务感知执行范围估计：在投入预算前判断任务难度、所需信息与最短可靠路径，形式化最小充分执行与 Agent 认知冗余比（ACRR）。E3（Estimate-Execute-Expand）在 121 次编辑基准上以 100% 成功率匹配最强基线，同时成本 −85%、token −91%、审阅文件 −92%，并在真实 gpt-4o agent 编辑开源库上得到验证。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.2🌟 Watermark Forensics for Generative Models: An Information-Theoretic Perspective <span class="cat">cs.CR</span></h2>
+    <p>作者: Xiaoyu Li, Zheng Gao, Xiaoyan Feng, Jiaojiao Jiang, Yulei Sui, Jiankun Hu</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.13003">2607.13003</a></p>
+    <p class="core">将水印能力组织为取证阶梯：检测、归因到用户、提取隐藏载荷、定位可存活编辑部分，并用信息剖面 ν(t) 刻画每 token 揭示的秘密信息。给出失真无关方案下多用户归因的紧熵率定律 Θ(log N/h)，并证明仅需阈值化各候选的已实现surprisal 才能达率且几乎不冤枉无辜用户，GPT-2/Pythia/Qwen 实验吻合预测常数。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.1🌟 FlowWAM: Optical Flow as a Unified Action Representation for World Action Models <span class="cat">cs.RO</span></h2>
+    <p>作者: Yixiang Chen, Peiyan Li, Yuan Xu, Qisen Ma, Kai Wang, Liang Wang 等 16 人</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.13017">2607.13017</a></p>
+    <p class="core">提出双流扩散框架 FlowWAM，以光流作为统一、视频原生的动作表示，与预训练视频生成器共享模态、天然对齐。策略模式下生成光流预测动作，世界模型模式下用目标光流引导未来视频生成；因光流可从原始视频无标注提取，可借大规模无动作标注视频预训练。RoboTwin 上清洁/随机设定成功率分别达 92.94%/92.14%。</p>
+  </article>
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.1🌟 ViCo3D: Empowering LiDAR-based Collaborative 3D Object Detection with Vision Foundation Models <span class="cat">cs.CV</span></h2>
+    <p>作者: Haojie Ren, Songrui Luo, Lingfeng Wang, Yan Xia, Yanyong Zhang 等 9 人</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.12959">2607.12959</a></p>
+    <p class="core">将视觉基础模型（DINOv2）适配到 LiDAR 协同感知：将点云投影为 BEV 三通道图像使 DINOv2 提取 BEV 视觉特征，引入多尺度 BEV 融合模块整合几何特征，并采用以自车为中心跨 agent 融合聚合互补信息。在 DAIR-V2X 与 V2XSet 上达到 SOTA，协同增益最高达先前方法的 1.8×。</p>
+  </article>
+
+  <div class="gh">
+  <h2>GitHub Trending AI 项目（按今日新增 Star 排序）</h2>
+  <table>
+    <tr><th>项目</th><th>总 ⭐</th><th>今日 ⭐</th><th>描述</th></tr>
+    <tr><td><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a></td><td class="nums">86.7K</td><td class="nums" style="color:var(--hot)">1,851</td><td>代码知识图谱 AI 编码助手技能（Claude Code/Codex/Cursor/Gemini CLI）</td></tr>
+    <tr><td><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></td><td class="nums">170.7K</td><td class="nums" style="color:var(--hot)">1,679</td><td>面向真实工程师的 Claude 技能集</td></tr>
+    <tr><td><a href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a></td><td class="nums">23.1K</td><td class="nums" style="color:var(--hot)">1,256</td><td>个人交易 Agent</td></tr>
+    <tr><td><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a></td><td class="nums">6.3K</td><td class="nums" style="color:var(--hot)">1,015</td><td>面向 Claude Code/Cursor/Codex 的反 AI-slop 设计技能</td></tr>
+    <tr><td><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a></td><td class="nums">121.1K</td><td class="nums" style="color:var(--hot)">1,106</td><td>100+ 可运行的 AI Agent 与 RAG 应用</td></tr>
+    <tr><td><a href="https://github.com/chenyme/grok2api">chenyme/grok2api</a></td><td class="nums">5.9K</td><td class="nums" style="color:var(--hot)">186</td><td>面向 Grok 的多账号 API 网关</td></tr>
+    <tr><td><a href="https://github.com/HenryNdubuaku/maths-cs-ai-compendium">HenryNdubuaku/maths-cs-ai-compendium</a></td><td class="nums">5.4K</td><td class="nums" style="color:var(--hot)">112</td><td>成为顶尖 AI/ML 研究工程师的学习纲要</td></tr>
+    <tr><td><a href="https://github.com/viratt/ai-hedge-fund">virattt/ai-hedge-fund</a></td><td class="nums">62.0K</td><td class="nums" style="color:var(--hot)">109</td><td>AI 对冲基金团队</td></tr>
+  </table>
+  </div>
+
+  <footer>
+    <a href="https://yenanjing.github.io/ai-briefings/2026/07/15/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/07/15/ai-briefing.html</a>
+  </footer>
+</div>
+</body>
+</html>

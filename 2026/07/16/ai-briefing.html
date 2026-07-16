@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-07-16</title>
+<style>
+  :root { --bg:#0f172a; --panel:#1e293b; --panel2:#273449; --line:#334155; --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --accent2:#10b981; --warn:#f59e0b; --hot:#ef4444; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 24px 20px 60px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { margin: 0 0 4px; font-size: 28px; }
+  header .sub { color: var(--muted); font-size: 14px; }
+  .stat-bar { display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 24px; }
+  .stat { background: var(--panel); border: 1px solid var(--line); padding: 6px 12px; border-radius: 16px; font-size: 13px; }
+  .stat b { color: var(--accent); margin-right: 4px; }
+  article { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
+  article h2 { margin: 0 0 8px; font-size: 18px; }
+  article h2 .stars { color: var(--hot); margin-right: 4px; }
+  article h2 .cat { color: var(--muted); font-weight: 400; margin-left: 8px; font-size: 13px; }
+  article p { margin: 4px 0; font-size: 14px; color: var(--muted); }
+  article p a { color: var(--accent); text-decoration: none; }
+  article p a:hover { text-decoration: underline; }
+  article .core { color: var(--text); margin-top: 6px; }
+  .gh { margin-top: 24px; }
+  .gh h2 { font-size: 20px; margin-bottom: 12px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th { text-align: left; padding: 8px; background: var(--panel2); color: var(--muted); font-weight: 500; border-bottom: 1px solid var(--line); }
+  td { padding: 8px; border-bottom: 1px solid var(--line); }
+  td.nums { text-align: right; color: var(--muted); }
+  tr:hover td { background: rgba(56,189,248,.04); }
+  td a { color: var(--accent); text-decoration: none; }
+  td a:hover { text-decoration: underline; }
+  footer { margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; text-align: center; }
+  footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🤖 AI 研究简报</h1>
+    <div class="sub">2026-07-16 · 论文来源：arXiv API（2026-07-15 提交，25 篇候选）</div>
+  </header>
+  <div class="stat-bar">
+    <span class="stat"><b>12</b>精选论文</span>
+    <span class="stat"><b>10</b>GitHub 项目</span>
+    <span class="stat"><b>9</b>领域覆盖</span>
+  </div>
+
+  <article>
+    <h2><span class="stars">★★★★</span> 8.0🌟 VideoRAE: Taming Video Foundation Models for Generative Modeling via Representation Autoencoders <span class="cat">cs.CV</span></h2>
+    <p>作者: Zhihao Xie, Junfeng Wu, Xinting Hu, Junchao Huang, Li Jiang</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14088">2607.14088</a> · 代码: <a href="https://zhxie0117.github.io/VideoRAE">zhxie0117.github.io/VideoRAE</a></p>
+    <p class="core">利用冻结视频基础模型多尺度层次特征+轻量1D自注意力投影器构建表示自编码器，支持连续DiT和离散自回归双路径。UCF-101上AR gFVD 40、DiT gFVD 93，收敛速度比竞品快5×。证明冻结VFM表征可作为通用视频latent。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★</span> 7.9🌟 PhysClaw-0: A Symbiotic Agentic System for Robot Autonomy via Language Corrections <span class="cat">cs.RO</span></h2>
+    <p>作者: Boyuan Wang, Zhenyuan Zhang, Zhiqin Yang 等18人</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14047">2607.14047</a></p>
+    <p class="core">人机共生机器人数据收集Agent系统，自然语言纠正被存储复用跨轮次。桌面清理真实机器人测试中匹配遥操作成功率，人类工时降至16%；语言纠正使单次成功率从12.5%提升至47.5%。纠正记忆实现"同类错误不再重复纠正"。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★</span> 7.8🌟 From Pixels to States: Rethinking Interactive World Models as Game Engines <span class="cat">cs.CV</span></h2>
+    <p>作者: Zhen Li, Zian Meng, Shuwei Shi, Mingliang Zhai, Jiaming Tan, Chuanhao Li, Kaipeng Zhang</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14076">2607.14076</a></p>
+    <p class="core">首个从游戏引擎视角系统审视交互式世界模型的框架，提出四维分析（动作控制、状态动力学、状态-观测持久化、实时生成）。配套发布黑神话悟空90小时数据引擎（玩家动作+真实状态+视觉观测对齐），为state-aware游戏世界建模提供基准资源。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★</span> 7.7🌟 Deep Interaction: An Efficient Human-AI Interaction Method for Large Reasoning Models <span class="cat">cs.AI</span></h2>
+    <p>作者: Hefeng Zhou, Jinxuan Zhang, Jiong Lou, Yuxin Liu, Chaochao Lu, Jingjing Qu, Jie Li</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14049">2607.14049</a></p>
+    <p class="core">提出直接编辑原始CoT响应的高效人类干预机制，将纠错后的推理路径蒸馏为提示引导LLM。STEM任务上修正成功率提升25%+，token使用减少约40%。解决当前LLM纠错后"同样错误反复出现"的痛点。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★★</span> 7.6🌟 Hindcast: Replaying Prediction Markets to Evaluate LLM Forecasters <span class="cat">cs.CL</span></h2>
+    <p>作者: Xiao Ye, Jacob Dineen, Evan Zhu, Shijie Lu, Kevin Song, Ben Zhou</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14051">2607.14051</a></p>
+    <p class="core">通过冻结时间点$t_0$前的Reddit快照评估LLM预测能力，同时屏蔽检索泄露和训练数据污染。在Polymarket预测市场上回放，将模型预测与$t_0$时刻市场价格对比。发现检索在有预先讨论的事件上有帮助，纯投机事件上反而有害。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.5🌟 Early Adoption of Agentic Coding Tools by GitHub Projects <span class="cat">cs.SE</span></h2>
+    <p>作者: Maliha Noushin Raida, Daqing Hou</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14037">2607.14037</a></p>
+    <p class="core">25,264个Agent PR、2,361个仓库的大规模实证研究。发现：中位仓库3个月仅生成1-2个Agent PR，密集采用集中在少数项目；小项目(1-5人)参与率和活跃度反而高于中大型项目；人类-Agent协作以单人审查为主导模式。提供Agent编码工具落地的早期经验证据。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.4🌟 MetaPerch: Learning from Metadata for Bioacoustics Foundation Models <span class="cat">cs.LG</span></h2>
+    <p>作者: Mustafa Chasmai, Vincent Dumoulin, Jenny Hamer</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14072">2607.14072</a></p>
+    <p class="core">首次系统性研究录音元数据（位置、时间等9种来源）作为辅助监督信号。在17个生物声学数据集上证明元数据辅助损失可提升跨域泛化，物种分布和声学域偏移鲁棒性增强。无需额外标注即可利用Xeno-Canto等平台元数据。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.3🌟 Multi-Expert Routing for Multi-Domain Low-Resource OCR <span class="cat">cs.CV</span></h2>
+    <p>作者: Zhan Chen, Jiqiao Ma, Chih-wen Kuo</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14041">2607.14041</a></p>
+    <p class="core">满族手写体三风格（正楷、行书、宫廷草书）多专家路由OCR系统。复用迭代微调过程中的checkpoint作为领域专家，轻量页面级图像分类器路由分发。三风格CER分别达0.30%、1.57%、4.83%；路由器域分类准确率99.3%，匹配领域标签oracle精度。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.2🌟 Linear ICA via Optimal Transport <span class="cat">cs.LG</span></h2>
+    <p>作者: Ashutosh Jha, Michel Besserve, Simon Buchholz</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14081">2607.14081</a></p>
+    <p class="core">用$W_2^2$ Wasserstein距离替代传统negentropy代理函数做ICA。证明标准正态分布到数据线性投影的Wasserstein距离在独立分量处达到最大值。OT-ICA在不同潜变量分布上均优于基于代理函数的方法。应用于EEG去噪和经济学价格发现，无需分布假设。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.1🌟 Screening of Biosecurity Features in Metagenomic Data with Evo 2 Probes <span class="cat">cs.LG</span></h2>
+    <p>作者: Jeremy Guntoro, Alexander Dack, Dylan Danno 等</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14070">2607.14070</a></p>
+    <p class="core">在冻结Evo 2第26层激活上训练线性/注意力探针，无需微调即可检测AMR。单头注意力探针ROC-AUC达0.977，可区分抗性亚类与无关功能基因。在短读模拟上保持性能，可用于高计算成本场景的预筛。AIxBio Hackathon 2026成果。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★★☆</span> 7.0🌟 Leveraging Unlabelled Data for Generalizable Neural Population Decoding <span class="cat">cs.LG</span></h2>
+    <p>作者: Ximeng Mao, Nanda H. Krishna, Avery Hee-Woon Ryoo, Matthew G. Perich, Guillaume Lajoie</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14086">2607.14086</a></p>
+    <p class="core">MOJO框架联合自监督学习（掩码自编码）和监督学习训练神经元解码模型。在猕猴运动皮层和小鼠多区域记录上，少样本微调表现显著优于纯SL模型。自监督增强可解释的神经表征，改善脑区分类和发放统计预测。推广至人类ECoG语音任务，性能接近专门为连续信号设计的NFMs。</p>
+  </article>
+
+  <article>
+    <h2><span class="stars">★★☆☆</span> 6.8🌟 AI-accelerated End-to-End Framework for Rapid Professional Upskilling <span class="cat">cs.AI</span></h2>
+    <p>作者: Tam Nguyen, Hung Nguyen, Robert Ogburn</p>
+    <p>arXiv: <a href="https://arxiv.org/abs/2607.14044">2607.14044</a></p>
+    <p class="core">端到端AI加速培训框架，覆盖知识获取→内容开发→评审→教学→评估五阶段。三个外部验证信号：美国州会计委员会批准基于该框架的CPE学分项目；3名学习者通过NVIDIA Agentic AI认证（14名进行中）；知识库支撑1,267项多Agent系统风险数据集生产。</p>
+  </article>
+
+  <div class="gh">
+    <h2>🐙 GitHub Trending AI 项目（按当日新增 ⭐ 排序）</h2>
+    <table>
+      <tr><th>项目</th><th>总 ⭐</th><th>当日 ⭐</th></tr>
+      <tr><td><a href="https://github.com/OpenCut-app/OpenCut">OpenCut-app/OpenCut</a> — 开源 CapCut 替代</td><td class="nums">72.1K</td><td class="nums">1,664</td></tr>
+      <tr><td><a href="https://github.com/mattpocock/skills">mattpocock/skills</a> — 真实工程师 AI 技能库</td><td class="nums">172.5K</td><td class="nums">2,130</td></tr>
+      <tr><td><a href="https://github.com/Shubhamsaboo/awesome-llm-apps">Shubhamsaboo/awesome-llm-apps</a> — 100+ 可运行 LLM 应用</td><td class="nums">122.0K</td><td class="nums">1,236</td></tr>
+      <tr><td><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a> — Claude/Cursor/Codex 反 AI 套路设计技能</td><td class="nums">8.8K</td><td class="nums">1,277</td></tr>
+      <tr><td><a href="https://github.com/HKUDS/Vibe-Trading">HKUDS/Vibe-Trading</a> — 个人交易 Agent</td><td class="nums">23.8K</td><td class="nums">915</td></tr>
+      <tr><td><a href="https://github.com/hasaneyldrm/exercises-dataset">hasaneyldrm/exercises-dataset</a> — 1324 项健身数据集</td><td class="nums">14.4K</td><td class="nums">949</td></tr>
+      <tr><td><a href="https://github.com/HenryNdubuaku/maths-cs-ai-compendium">HenryNdubuaku/maths-cs-ai-compendium</a> — AI/ML 研究工程师学习路线</td><td class="nums">6.0K</td><td class="nums">725</td></tr>
+      <tr><td><a href="https://github.com/Dicklesworthstone/destructive_command_guard">Dicklesworthstone/destructive_command_guard</a> — Agent 危险命令拦截</td><td class="nums">4.8K</td><td class="nums">471</td></tr>
+      <tr><td><a href="https://github.com/openinterpreter/openinterpreter">openinterpreter/openinterpreter</a> — 低成本模型 Coding Agent</td><td class="nums">65.5K</td><td class="nums">299</td></tr>
+      <tr><td><a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a> — 终身个性化 AI 导师</td><td class="nums">26.4K</td><td class="nums">172</td></tr>
+    </table>
+  </div>
+
+  <footer>
+    <p>Generated by <a href="https://github.com/yenanjing/ai-briefings">AI Briefings</a> · <a href="https://yenanjing.github.io/ai-briefings/2026/07/16/ai-briefing.html">2026-07-16</a></p>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-07-17</title>
+<style>
+:root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --muted: #8b949e; --accent: #58a6ff; --red: #f85149; --green: #3fb950; --yellow: #d29922; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+.meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); }
+.paper { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; }
+.paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.stars { color: var(--yellow); font-weight: bold; }
+.paper-meta { font-size: 0.85rem; color: var(--muted); }
+.paper-meta a { color: var(--accent); text-decoration: none; }
+.innovation { margin-top: 0.5rem; font-size: 0.9rem; color: var(--text); }
+.gh-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.gh-table th { background: var(--card); border: 1px solid var(--border); padding: 0.5rem; text-align: left; font-size: 0.85rem; color: var(--muted); }
+.gh-table td { border: 1px solid var(--border); padding: 0.5rem; font-size: 0.85rem; }
+.gh-table tr:hover { background: var(--card); }
+.today { color: var(--green); font-weight: bold; }
+.footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; text-align: center; }
+.tag { display: inline-block; background: var(--border); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.75rem; color: var(--muted); margin-right: 0.3rem; }
+</style>
+</head>
+<body>
+
+<h1>🤖 AI Research Briefing</h1>
+<div class="meta">📅 2026-07-17（周五） | 📰 arXiv 最新论文 + 🔥 GitHub Trending</div>
+
+<h2>📚 Top 12 论文精选</h2>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> Pretraining Data Can Be Poisoned through Computational Propaganda</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Victoria Graf, Hannaneh Hajishirzi, Noah A. Smith, David Kohlbrenner, Kyle Lo<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15267" target="_blank">2607.15267</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: Noah A. Smith + Hannaneh Hajishirzi + Kyle Lo 全明星阵容。提出「计算宣传」新型预训练数据投毒范式——不依赖已知数据源（如维基百科），而是通过生成大量似是而非的合成内容来操纵模型信念分布。安全/对齐领域的重要工作。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> SceneBind: Binding What and Where Across Vision, Audio and Language</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Mingfei Chen, Zijun Cui, Ruoke Zhang, Hyeonggon Ryu, Eli Shlizerman<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15265" target="_blank">2607.15265</a>
+<br><strong>机构</strong>: Microsoft Research<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Multimedia (cs.MM)</span><p class="innovation"><strong>💡 核心创新</strong>: SceneBind 首次实现视觉-音频-语言三模态的联合语义+3D空间绑定表示。现有omni-modal编码器仅擅长实例级语义，本文补充了空间定位能力。微软研究院出品，场景理解方向的基础性进展。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> SearchOS-V1: Towards Robust Open-Domain Information-Seeking Agent Collaboration</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Yuyao Zhang, Junjie Gao, Zhengxian Wu, Jiaming Fan, Jin Zhang, Shihan Ma, Yao Yao, Weiran Qi, Chuyan Jin, Guiyu Ma, Xingzhong Xu, Kai Yang, Ji-Rong Wen, Zhicheng Dou<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15257" target="_blank">2607.15257</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Information Retrieval (cs.IR)</span><p class="innovation"><strong>💡 核心创新</strong>: 人大高瓴智能学院（Ji-Rong Wen团队）的搜索Agent协作框架。核心问题：随着交互历史增长，Agent难以追踪任务进度导致重复失败。提出SearchOS分层架构，将长期记忆与短期执行分离，显著提升开放域信息搜寻的鲁棒性。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> In-Place Tokenizer Expansion for Pre-trained LLMs</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Jimmy T.H. Smith, Tarek Dakhran, Alberto Cabrera, Simon S. Lee, Paul Pak, Aditya Tadimeti, Tim Seyde, Maxime Labonne, Alexander Amini, Mathias Lechner<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15232" target="_blank">2607.15232</a>
+<br><strong>机构</strong>: MIT<br><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Machine Learning (cs.LG)</span><p class="innovation"><strong>💡 核心创新</strong>: MIT团队提出In-Place Tokenizer Expansion——在不重新训练的情况下扩展预训练LLM的词表。解决部署优先级变化后新增语言被过度切分的问题。实用性强，对多语言部署有直接价值。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> When Words Are Safe But Actions Kill: Probing Physical Danger Beyond Text Safety in Hidden-State Risk Space</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Weimeng Wang, Ziqiang Wang, Zihang Zhan, Chuanpu Fu, Qi Li, Ke Xu<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15218" target="_blank">2607.15218</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Cryptography and Security (cs.CR)</span><p class="innovation"><strong>💡 核心创新</strong>: 「言语安全但行动致命」——研究LLM作为具身Agent高层规划器时，语言层面 benign 的指令在物理世界中可能变得危险。提出隐状态风险空间探测方法，揭示文本安全≠物理安全的根本差距。AI安全重要议题。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> SciDiagramEdit: Learning to Edit Scientific Diagrams from Paper Revisions</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Yasheng Sun, Zezi Zeng, Yifan Yang, Chong Luo, Wenyi Wang, Ziwei Liu, Jürgen Schmidhuber<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15272" target="_blank">2607.15272</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: Ziwei Liu + Jürgen Schmidhuber 合作。从论文修订版本中学习科学图表编辑——自动处理标签重命名、面板重排、视觉风格调整等日常科研中的繁琐操作。兼具实用价值和学术趣味。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> AutoSynthesis: An agentic system for automated meta-analysis</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Moein Taherinezhad, Sebastian Maier, Gerardo Vitagliano, Francesco Pierri, Stefan Feuerriegel<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15247" target="_blank">2607.15247</a>
+<br><strong>机构</strong>: ETH Zürich<br><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: ETH Zürich 的 AutoSynthesis——首个自动化meta分析的Agent系统。证据综合对科学、医学、政策至关重要但高度依赖人工。该系统实现了从文献检索到定量合成的端到端自动化。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> BadWAM: When World-Action Models Dream Right but Act Wrong</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Qi Li, Xingyi Yang, Xinchao Wang<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15207" target="_blank">2607.15207</a>
+<br><span class="tag">Machine Learning (cs.LG)</span><span class="tag">Robotics (cs.RO)</span><p class="innovation"><strong>💡 核心创新</strong>: 「梦对了却做错了」——世界-动作模型（WAM）同时学习动作生成和未来预测，通常认为两者耦合是优势。本文证明存在「预测正确但行动错误」的反直觉现象，揭示了WAM表征学习的根本挑战。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> Hierarchical Denoising For Multi-Step Visual Reasoning</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Zezhong Qian, Xiaowei Chi, Chak-Wing Mak, Tianze Zhou, Ruibin Yuan, Yuhan Rui, Hengzhe Sun, Zhuoqun Wu, Yuming Li, Siyuan Qian, Sirui Han, Shanghang Zhang<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15278" target="_blank">2607.15278</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: 视频模型正演化为视觉基础模型，但仍缺乏人类式多步推理能力。本文提出层次化去噪框架，结合流式自回归扩散的高效性和双向扩散的全局修正能力，在多步视觉推理任务上取得显著改进。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> Mask-Aware Policy Gradients for Diffusion Language Models</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Haran Raajesh, Kulin Shah, Adam Klivans, Philipp Krähenbühl<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15200" target="_blank">2607.15200</a>
+<br><strong>机构</strong>: UT Austin<br><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Machine Learning (cs.LG)</span><p class="innovation"><strong>💡 核心创新</strong>: 将强化学习扩展到Masked Diffusion Language Models的关键技术障碍是log-likelihood估计不可行。本文提出Mask-Aware Policy Gradient，通过掩码感知的重要性采样绕过这一难题。理论优雅。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> MAGiSt3R: Multi-Agent Feed-forward 3D Reconstruction from Monocular RGB Videos</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Ziren Gong, Xiaohan Li, Fabio Tosi, Ninghui Xu, Stefano Mattoccia, Jianfei Cai, Matteo Poggi<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15211" target="_blank">2607.15211</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: MAGiSt3R 多Agent前馈3D重建框架，单目RGB视频输入下近10 FPS的重建+相机跟踪速度。基于3R家族前馈模型，通过多Agent分工实现效率突破。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> MeanFlowNFT: Bringing Forward-Process RL to Average-Velocity Generators</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Yushi Huang, Xiangxin Zhou, Jun Zhang, Liefeng Bo, Tianyu Pang<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.15273" target="_blank">2607.15273</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><span class="tag">Machine Learning (cs.LG)</span><p class="innovation"><strong>💡 核心创新</strong>: MeanFlow 生成器通过预测时间间隔平均速度实现快速少步采样。本文将Forward-Process RL引入平均速度生成器，在保持高效采样的同时提升生成质量。Liefeng Bo团队在flow matching方向的持续贡献。</p></div></div>
+<h2>🔥 GitHub Trending AI 项目</h2>
+<table class="gh-table">
+<tr><th>#</th><th>项目</th><th>⭐</th><th>今日</th><th>描述</th></tr>
+<tr><td>1</td><td><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></td><td>174.4K</td><td class="today">+2060</td><td>Skills for Real Engineers. Straight from my `.claude` directory.</td></tr>
+<tr><td>2</td><td><a href="https://github.com/Graphify-Labs/graphify" target="_blank">Graphify-Labs/graphify</a></td><td>89.2K</td><td class="today">+1107</td><td>AI coding assistant. Turn code/docs into queryable knowledge graph.</td></tr>
+<tr><td>3</td><td><a href="https://github.com/Shubhamsaboo/awesome-llm-apps" target="_blank">Shubhamsaboo/awesome-llm-apps</a></td><td>123.0K</td><td class="today">+923</td><td>100+ AI Agent & RAG apps you can actually run.</td></tr>
+<tr><td>4</td><td><a href="https://github.com/openinterpreter/openinterpreter" target="_blank">openinterpreter/openinterpreter</a></td><td>66.0K</td><td class="today">+661</td><td>A coding agent for open models like Kimi K3.</td></tr>
+<tr><td>5</td><td><a href="https://github.com/HKUDS/DeepTutor" target="_blank">HKUDS/DeepTutor</a></td><td>26.9K</td><td class="today">+656</td><td>Lifelong Personalized Tutoring.</td></tr>
+<tr><td>6</td><td><a href="https://github.com/PrismML-Eng/Bonsai-demo" target="_blank">PrismML-Eng/Bonsai-demo</a></td><td>1.5K</td><td class="today">+196</td><td>Bonsai Demo (PrismML engine).</td></tr>
+<tr><td>7</td><td><a href="https://github.com/lobehub/lobehub" target="_blank">lobehub/lobehub</a></td><td>80.2K</td><td class="today">+71</td><td>Chief Agent Operator, organizing agents into 7×24 operations.</td></tr>
+<tr><td>8</td><td><a href="https://github.com/PostHog/posthog" target="_blank">PostHog/posthog</a></td><td>35.9K</td><td class="today">+77</td><td>AI observability, analytics, session replay, flags.</td></tr>
+<tr><td>9</td><td><a href="https://github.com/apache/ossie" target="_blank">apache/ossie</a></td><td>939</td><td class="today">+60</td><td>Standardize semantic metadata exchange across AI/BI platforms.</td></tr>
+<tr><td>10</td><td><a href="https://github.com/github/copilot-sdk" target="_blank">github/copilot-sdk</a></td><td>9.7K</td><td class="today">+13</td><td>Multi-platform SDK for GitHub Copilot Agent integration.</td></tr>
+
+</table>
+
+<div class="footer">
+  AI Research Briefing 自动生成 | <a href="https://yenanjing.github.io/ai-briefings/2026/07/17/ai-briefing.html" style="color:var(--accent)">查看在线版</a>
+</div>
+
+</body>
+</html>

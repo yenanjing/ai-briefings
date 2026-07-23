@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-07-23</title>
+<style>
+:root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --muted: #8b949e; --accent: #58a6ff; --red: #f85149; --green: #3fb950; --yellow: #d29922; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+.meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); }
+.paper { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; }
+.paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.stars { color: var(--yellow); font-weight: bold; }
+.paper-meta { font-size: 0.85rem; color: var(--muted); }
+.paper-meta a { color: var(--accent); text-decoration: none; }
+.innovation { margin-top: 0.5rem; font-size: 0.9rem; color: var(--text); }
+.gh-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.gh-table th { background: var(--card); border: 1px solid var(--border); padding: 0.5rem; text-align: left; font-size: 0.85rem; color: var(--muted); }
+.gh-table td { border: 1px solid var(--border); padding: 0.5rem; font-size: 0.85rem; }
+.gh-table tr:hover { background: var(--card); }
+.today { color: var(--green); font-weight: bold; }
+.footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; text-align: center; }
+.tag { display: inline-block; background: var(--border); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.75rem; color: var(--muted); margin-right: 0.3rem; }
+</style>
+</head>
+<body>
+
+<h1>🤖 AI Research Briefing</h1>
+<div class="meta">📅 2026-07-23（周四） | 📰 arXiv 最新论文 + 🔥 GitHub Trending</div>
+
+<h2>📚 Top 12 论文精选</h2>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> PercepCap: Video Captioner with Structured Spatio-Temporal Perception</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Yifan Xu, Zihao Wang, Zhixiao Wang, Jiaming Zhang, Yichun Yang, Desen Meng, Yuanxing Zhang, Pengfei Wan, Limin Wang<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20389" target="_blank">2607.20389</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: 提出「感知-描述」两阶段视频字幕生成框架——模型先输出包含物体轨迹和时间事件的时空感知trace，再生成最终caption。配合Perception-Grounded RL联合优化感知链和描述质量。在Qwen3-VL基础上显著提升caption质量和caption-to-QA表现。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> Look Less, Think Faster: Joint Token-Compute Adaptation for Multimodal LLMs</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Pengcheng Wang, Zhiquan Wang, Jayoung Lee, Zhuoyan Xu, Ran Xu, Saurabh Bagchi, Yin Li, Somali Chaterji<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20357" target="_blank">2607.20357</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: 同时优化视觉token数量和LLM计算量的联合自适应推理框架。MLLM推理成本高来自两方面：大量视觉token和重型LLM计算。本文提出动态调整两者配比的方法，在保持精度的同时显著降低推理成本。对边缘部署有直接价值。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> Self Gradient Forcing: Native Long Video Extrapolation</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Junhao Zhuang, Shiyi Zhang, Yuxuan Bian, Yaowei Li, Yawen Luo, Yijun Liu, Weiyang Jin, Songchun Zhang, Xianglong He, Xuying Zhang, Haoran Li, Haoyang Huang, Zeyue Xue, Nan Duan<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20368" target="_blank">2607.20368</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: 针对自回归视频扩散模型的长视频外推问题，提出Self Gradient Forcing方法。现有Self Forcing虽减轻exposure bias但KV cache仅作为context使用。本文让未来帧的self-generated历史也参与梯度更新，实现原生长视频外推能力。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> Train the Model, Not the Reader: Decodability Supervision for Verifiable Activation Explanations</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Hiskias Dingeto<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20379" target="_blank">2607.20379</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 指出自然语言自编码器（NLA）的可解释性评估存在结构性缺陷——reconstruction-based faithfulness测试对单个虚假声明不敏感。提出Decodability Supervision：训练模型使激活可从解释中解码出来，从而获得可验证的faithfulness保证。机制可解释性方向的重要方法论贡献。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> DEED: Closing the Lab-to-Store Gap — A Data-Efficient Post-Training and Experience-Driven Learning VLA Framework for Retail Humanoids</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Roger Sala Sisó, Tiago Silvério, Jakob Sand, Tran Nguyen Le<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20345" target="_blank">2607.20345</a>
+<br><span class="tag">Robotics (cs.RO)</span><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: DEED框架解决VLA人形机器人从实验室到真实零售环境的部署鸿沟。核心挑战是执行错误、分布偏移和环境变化。通过数据高效的后训练和经验驱动学习，使机器人能在真实商店中可靠运行。具身AI落地的重要一步。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> SoftReason: A Fully Differentiable Neuro-Soft-Symbolic Deductive Reasoning Architecture over High-Dimensional Perceptual Data</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Wael AbdAlmageed<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20402" target="_blank">2607.20402</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 提出完全可微的神经-软符号演绎推理架构。核心创新是将演绎状态表示为候选常量和谓词上的局部软解释张量，感知模块提出概率基事实，知识图谱三元组作为高置信度软证据注入，所有查询锚点、谓词选择和闭包更新均保持可微。在Knowledge-aware VQA上验证。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> PyroDash: Cost-Efficient Token-Level Small-Large Language Model Collaborative Inference</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Niqi Lyu, Pengtao Shi, Wei Qiu, Jianlin Zhong, Sicong Xia, Jianyao Ma, Yicheng Ding<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20327" target="_blank">2607.20327</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 提出token级别的SLM-LLM协作推理框架。在生成过程中动态决定每个token由小模型还是大模型处理，在保证推理质量的同时显著降低服务成本。对大规模LLM部署具有直接经济价值。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> ATSplat: Compact Feed-forward 3D Gaussian Splatting with Adaptive Token Expansion</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Cho In, Jeonghwan Cho, Mijin Yoo, Gim Hee Lee, Seon Joo Kim<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20417" target="_blank">2607.20417</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: 提出ATSplat前馈3DGS框架，通过Adaptive 3D Tokens恢复传统3DGS的自适应容量分配能力。稀疏3D anchor tokens形成场景骨架，再通过Adaptive Token Expansion选择性扩展高不确定性区域。RealEstate10K和DL3DV上SOTA，高斯数量减少5.7×，1136 FPS渲染速度。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> Distributed Motion Planning with Safety Guarantees for Self-Reconfiguring Robotic Boats</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Alejandro Gonzalez-Garcia, Wei Wang, Wei Xiao, Wilm Decre, Jan Swevers, Carlo Ratti, Daniela Rus<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20352" target="_blank">2607.20352</a>
+<br><span class="tag">Robotics (cs.RO)</span><p class="innovation"><strong>💡 核心创新</strong>: MIT CSAIL（Daniela Rus团队）的水上自重构机器人分布式运动规划框架。结合分布式MPC与控制屏障函数（CBF），在多船形状重构中提供严格的安全保证。理论与实船实验并重，多Agent安全控制的扎实工作。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> Test-Time Training for Modality Order Consistency in Vision-Language Models</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Aditi Gupta, Yossi Gandelsman<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20351" target="_blank">2607.20351</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 发现VLM对图像和问题输入顺序敏感——image-first consistently优于question-first。这一模态顺序效应在三个模型和三个基准上均复现。提出Test-Time Training方法缓解该问题。揭示了当前VLM架构的一个基础性缺陷。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★☆</span> LKValues: Aligning Large Language Models with Sri Lankan Societal Values</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Nethmi Muthugala, Supryadi, Surangika Ranathunga, Nisansa de Silva, Ruijie Tao, Ovindu Gunatunga, Pengyun Zhu, Shaowei Zhang, Jingting Zheng, Deyi Xiong<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20410" target="_blank">2607.20410</a>
+<br><strong>代码</strong>: <a href="https://github.com/NextME14/LKValues" target="_blank">github.com/NextME14/LKValues</a><br>
+<span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 首个斯里兰卡社会价值观对齐资源套件。基于205人三语调查提取40个主流价值观，构建150K Sinhala-English指令数据集和1K评估基准。填补低资源语言文化价值对齐的空白，提供可复制的国家特定多元价值对齐流程。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★☆</span> Notes to Self: Can LLMs Benefit from Experiential Abstractions?</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Chang Liu, Xinyu Li, Artur Dubrawski<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20372" target="_blank">2607.20372</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 研究LLM是否能像人类一样从经验中提炼可复用的抽象策略。从MATH数据集上的解题轨迹中提取experiential abstractions（策略性提醒和警示），在后续推理中应用。探索LLM持续自我改进的新路径。</p></div></div>
+
+<h2>🔥 GitHub Trending AI 项目</h2>
+<table class="gh-table">
+<thead><tr><th>项目</th><th>描述</th><th>⭐ Total</th><th class="today">⭐ Today</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a></td><td>AI驱动的实时全球情报仪表盘，地缘政治监控+基础设施追踪</td><td>69,832</td><td class="today">4,139</td></tr>
+<tr><td><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw/OmniRoute</a></td><td>免费MIT AI网关：278+提供商、500+模型的统一接入端点</td><td>25,831</td><td class="today">1,651</td></tr>
+<tr><td><a href="https://github.com/ayghri/i-have-adhd" target="_blank">ayghri/i-have-adhd</a></td><td>Coding Agent技能插件——ADHD友好的简洁输出模式</td><td>8,632</td><td class="today">1,699</td></tr>
+<tr><td><a href="https://github.com/oblien/openship" target="_blank">oblien/openship</a></td><td>自托管部署平台</td><td>7,493</td><td class="today">1,302</td></tr>
+<tr><td><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205/code-review-graph</a></td><td>本地优先的代码智能图谱，为MCP/CLI构建持久化代码库映射</td><td>25,529</td><td class="today">882</td></tr>
+<tr><td><a href="https://github.com/chrislgarry/Apollo-11" target="_blank">chrislgarry/Apollo-11</a></td><td>阿波罗11号登月舱原始源代码</td><td>70,759</td><td class="today">768</td></tr>
+<tr><td><a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a></td><td>WiFi信号转实时空间智能，无需摄像头的人体生命体征监测</td><td>84,233</td><td class="today">741</td></tr>
+<tr><td><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></td><td>AI工程从零到部署完整教程</td><td>42,512</td><td class="today">652</td></tr>
+<tr><td><a href="https://github.com/jamiepine/voicebox" target="_blank">jamiepine/voicebox</a></td><td>开源AI语音工作室——克隆、听写、创作</td><td>45,992</td><td class="today">557</td></tr>
+<tr><td><a href="https://github.com/DioxusLabs/dioxus" target="_blank">DioxusLabs/dioxus</a></td><td>全栈Rust应用框架，支持Web/桌面/移动端</td><td>38,117</td><td class="today">420</td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+AI Research Briefing | Generated automatically | <a href="https://yenanjing.github.io/ai-briefings/" style="color:var(--accent)">Archive</a>
+</div>
+
+</body>
+</html>

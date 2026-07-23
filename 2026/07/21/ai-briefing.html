@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-07-21</title>
+<style>
+:root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --muted: #8b949e; --accent: #58a6ff; --red: #f85149; --green: #3fb950; --yellow: #d29922; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+.meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); }
+.paper { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; }
+.paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.stars { color: var(--yellow); font-weight: bold; }
+.paper-meta { font-size: 0.85rem; color: var(--muted); }
+.paper-meta a { color: var(--accent); text-decoration: none; }
+.innovation { margin-top: 0.5rem; font-size: 0.9rem; color: var(--text); }
+.gh-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.gh-table th { background: var(--card); border: 1px solid var(--border); padding: 0.5rem; text-align: left; font-size: 0.85rem; color: var(--muted); }
+.gh-table td { border: 1px solid var(--border); padding: 0.5rem; font-size: 0.85rem; }
+.gh-table tr:hover { background: var(--card); }
+.today { color: var(--green); font-weight: bold; }
+.footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; text-align: center; }
+.tag { display: inline-block; background: var(--border); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.75rem; color: var(--muted); margin-right: 0.3rem; }
+</style>
+</head>
+<body>
+
+<h1>🤖 AI Research Briefing</h1>
+<div class="meta">📅 2026-07-21（周二） | 📰 arXiv 最新论文 + 🔥 GitHub Trending</div>
+
+<h2>📚 Top 12 论文精选</h2>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★★★★★</span> Mage-Flow: An Efficient Native-Resolution Foundation Model for Image Generation and Editing</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Xinjie Zhang, Peng Zhang, Shicheng Zheng, Jinghao Guo, Zhaoyang Jia, Yifei Shen et al.<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19064" target="_blank">2607.19064</a><br><strong>代码</strong>: <a href="https://github.com/microsoft/Mage" target="_blank">github.com/microsoft/Mage</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span> <span class="tag">Artificial Intelligence (cs.AI)</span> <span class="tag">Machine Learning (cs.LG)</span> <span class="tag">Multimedia (cs.MM)</span> <span class="tag">Image and Video Processing (eess.IV)</span><p class="innovation"><strong>💡 核心创新</strong>: 微软提出的紧凑 4B 级文生图/图像编辑基础栈。核心是两部件协同设计：Mage-VAE 用一步扩散式编解码 + anchor-latent 正则做轻量高保真潜空间 tokenizer，分词成本较强公开 VAE 降一个数量级以上；主干为原生分辨率 Multimodal Diffusion Transformer（rectified flow matching）。配合原生分辨率打包与栈级 CUDA kernel 融合，支持灵活分辨率训练，并给出 Base、RL 对齐（Diffusion-NFT 提升 prompt 跟随/文字渲染/美学）、Turbo（4 步对抗感知蒸馏，单张 A100 1024² 生成 0.59s）变体。说明 tokenizer–backbone–系统协同设计可在 4B 规模达到强竞争力，让高分辨率生成与编辑在消费级延迟下可用。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★★★★</span> RF-Agent: A Practical Framework for Building Language Agents for RFIC Design</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Yueqi Xing, Houbo He, Jolie Wang, Erin Ni, Shikai Wang, Qiufeng Li et al.<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18772" target="_blank">2607.18772</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 面向射频/毫米波电路（RFIC）设计的语言智能体框架。痛点在于 RF 领域缺乏专业数据集与基准。作者用多智能体 QTSA（Question–Thinking–Solution–Answer）流水线把 7 本经典教材转化为 1.1 万+ 条 RF 领域推理数据与配套选择题基准；并对比 SFT 与三种 RAG（语义/关键词/混合）适配策略。发现领域 SFT 显著提升中小模型 RF 推理能力，其中语义检索最优，说明 embedding 级上下文对齐更契合 RF 推理。为 LLM 辅助 EDA/电路设计提供可复用基础。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★★★</span> CASE: Causal Alignment and Structural Enforcement for Improving Chain-of-Thought Faithfulness</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Ziming Wang, Yinghua Yao, Changwu Huang, Ke Tang, Xin Yao<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18820" target="_blank">2607.18820</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 从因果视角提升思维链（CoT）忠实度。忠实的 CoT 应满足 Z→X→Y（指令→推理→答案），但自回归 LLM 让答案同时依赖指令与 CoT，留下“指令直达答案”的短路。CASE 结合训练期因果对齐（构造反事实-CoT、偏置指令、空指令数据 + 选择性损失微调以强化 CoT→答案依赖、抑制指令捷径）与推理期结构强制（掩码直接注意力防止绕过生成出的 CoT），并用信息论分析佐证。在多模型上提升忠实性，是可解释推理方向扎实的方法论贡献。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★★</span> Fishing Out Free Riders: Shapley-Based Reward Attribution for Parallel Reasoning via Reinforcement Learning</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Wentao Zhang, Haoyu Zhang, Xinke Jiang, Yuxuan Cheng, Yuhan Pan, Miao Li et al.<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18979" target="_blank">2607.18979</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 并行推理中精细化的路径级信用分配。现有并行推理对多条轨迹给统一结果奖励，冗余/误导路径造成模糊信号与训练不稳定。本文把每条推理路径当作合作博弈中的玩家，用 Shapley 值量化其边际贡献，以生成式奖励模型评估路径效用 + 蒙特卡洛采样估计。从而能“钓出”搭便车的 free-rider 路径，让模型区分各路径真实价值，提升并行推理学习效率。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> SciHazard: A Benchmark for Measuring Scientific Safety Risks with Decomposed Harm Scoring</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Chunxiao Li, Yuan Xiong, Lijun Li, Tianyi Du, Wenlong Zhang, Lei Bai et al.<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18665" target="_blank">2607.18665</a><br><strong>代码</strong>: <a href="https://anonymous.4open.science/r/DeharmScore-7B55" target="_blank">anonymous.4open.science/r/DeharmScore-7B55</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 面向科学安全的真实风险基准。现有基准多用模板化查询、LLM-as-Judge 缺领域根基。SciHazard 含 12 个学科 2400 道危险问题 + 600 道过安全问题，均扎根于受监管实体与已记录失败场景的数据集，并提出 DeHarm-Score：分解查询危险度、拒答行为与响应级风险（可执行性 + 净新增风险，经检索增强声明提取与合成壁垒验证）。评测 31 个前沿 LLM 与 deep research 智能体，发现自主智能体的平均风险显著高于普通 LLM，暴露其为当前安全防御的盲区。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> Adopting Reinforcement Learning with Verifiable Rewards for Molecular Generation</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Mingxuan Ouyang, Hao Lan, Wanyu Lin<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19044" target="_blank">2607.19044</a>
+<br><span class="tag">Machine Learning (cs.LG)</span><p class="innovation"><strong>💡 核心创新</strong>: 用可验证奖励强化学习做定向分子生成。把分子设计建模为目标条件序列预测，第一阶段 SFT 捕获化学语法与分子分布，第二阶段引入 RLVR（基于属性的可验证奖励），并用 GRPO 稳定离散序列优化的高方差问题，使生成分子朝任务特定目标属性对齐，弥补监督微调难以直接优化的短板。是把 RLVR 范式从数学/代码推理拓展到化学分子设计的有代表性尝试。（机构据通讯作者 Wanyu Lin 推断为香港理工大学，论文首页未显式标注）</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> MeetingToM: Evaluating Multimodal LLMs on Theory-of-Mind Reasoning in Multi-Party Meetings</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Ziyi Wang, Yuhang Wu, Dongxu Piao, Xingyu Liu, Tianhui Zhou, Miao Liu<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19235" target="_blank">2607.19235</a>
+<br><span class="tag">Computation and Language (cs.CL)</span> <span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: 多方会议场景中的多模态心智理论（ToM）评测基准。现有多模态 ToM 基准偏重显性、外部可验证信号，忽视潜在社会状态与群体动态。MeetingToM 基于自然会议构建，覆盖伪共识（pseudo-consensus，表面一致掩盖私下异议）、听话人理解、群体共识推理等现象，并按 subject/dyadic/group 三层级组织以评估不同社会粒度下的 ToM。揭示当前 MLLM 在分布式社交线索下的显著短板。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★</span> Dual Adversarial Fine-tuning for Enhancing Robustness of Large Vision Language Model</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Sibo Wang, Jie Zhang, Shiguang Shan, Xilin Chen, Wen Gao<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18958" target="_blank">2607.18958</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span> <span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 提升大模型视觉语言模型（LVLM）对抗鲁棒性的双对抗微调。现有防御多针对单任务（如零样本分类），跨任务泛化差。本文联合优化两个分支：视觉监督分支用冻结原视觉编码器提取的特征引导对抗鲁棒性；语义监督分支用 caption–image 对齐作为上下文信号保持攻击下的语义一致性。仅需替换原模型中的 CLIP 视觉编码器即可跨零样本分类/图像描述/VQA 多任务获得鲁棒性，无需任务特定重训。（机构：中科院计算技术研究所，基于 Shan/Chen/Gao 团队）</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★★</span> SciCodePile: A 128GB Corpus and Executable Benchmark for Challenging Scientific Code Generation</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Weifeng Sun, Ye Fan, Yuchen Chen, Gou Tan, Jieke Shi, Yuan Yidi et al.<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19104" target="_blank">2607.19104</a>
+<br><span class="tag">Software Engineering (cs.SE)</span> <span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 迄今最大的科学代码语料与可执行基准。从 37,737 个公开仓库构建 128GB 跨学科科学代码语料，并从中筛出 200 道带沙箱执行环境与自动测试的科学代码生成任务，支持功能级验证。填补科学代码生成在规模、领域覆盖与可执行验证上的评测空白，对 15 个 LLM 做了系统评估，揭示通用代码能力向科学代码迁移的真实差距。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★★</span> Beyond Score Prediction: LLM-Based Essay Scoring and Feedback Generation via Reinforcement Learning with Rubric Rewards</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Xuefeng Jin, Jiashuo Zhang, Teng Cao, Bin Yang<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19219" target="_blank">2607.19219</a><br><strong>代码</strong>: <a href="https://github.com/hellomuyi/RLAES" target="_blank">github.com/hellomuyi/RLAES</a>
+<br><span class="tag">Computation and Language (cs.CL)</span> <span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 用强化学习（rubric 奖励）统一做作文评分与反馈生成。提出 RFE：166 条细粒度二元 rubric 的反馈评估框架，使反馈质量可度量、可解释、可用于训练；在此基础上用自适应门控反馈优化（AGFO）按需激活 rubric 奖励，降低评估开销。在 ASAP 基准上 QWK=0.803，居 LLM 方法首位，反馈质量媲美 GPT-5.5，且避免“仅分数 RL”导致的反馈退化。教育场景落地价值明确。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★★</span> Inference-Time Steering for Cross-Lingual Factual Consistency in LLMs</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Alexander Manev<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19243" target="_blank">2607.19243</a>
+<br><span class="tag">Computation and Language (cs.CL)</span> <span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 推理期干预缓解跨语言事实不一致。LLM 内部知识偏向高资源语言，仅改变提示语言就会改变答案分布。作者评测四种干预：persona 提示、CAA 表示干预、轻量 DPO adapter，并构建文化根植的泛化基准检验干预是否迁移到更广泛的目标语言中心偏好。结论是 persona 提示综合最优（兼顾有效性、安全性与域外泛化），DPO adapter 增益永久但更窄且难迁移。对多语言部署有直接参考价值。</p></div></div>
+
+<div class="paper">
+<h3><span class="stars">★</span> Mitigating Modality and Language-Style Gaps for Zero-Shot Video Moment Retrieval</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Jihyun Lee, Cheol-Ho Cho, Woojin Jun, Woojin Jeong, Jae-Pil Heo<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19027" target="_blank">2607.19027</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: 缓解零样本视频时刻检索（ZMR）的模态与语言风格鸿沟。现有 ZMR 依赖 query–video 内容相似度，对模态差异与语言风格差异脆弱。本文提出 Self-SiMS：利用视频内部自相似关系生成稳健时段提议与打分，绕开噪声的 query–帧/query–描述相似度，从而同时缓解模态与语言风格鸿沟；并引入 query-aware 的 MLLM 推理阶段进一步锐化。在多个 ZMR 基准达到 SOTA。</p></div></div>
+
+<h2>🔥 GitHub Trending AI 项目</h2>
+<table class="gh-table">
+<thead><tr><th>项目</th><th>描述</th><th>⭐ Total</th><th class="today">⭐ Today</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a></td><td>Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface</td><td>70,010</td><td class="today">4,139</td></tr>
+<tr><td><a href="https://github.com/ayghri/i-have-adhd" target="_blank">ayghri/i-have-adhd</a></td><td>A skill for your coding agent to stop it from burying the answer. ADHD-friendly output.</td><td>8,706</td><td class="today">1,699</td></tr>
+<tr><td><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw/OmniRoute</a></td><td>Never stop coding. Free MIT AI gateway: one endpoint, 278+ providers (90+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors</td><td>25,932</td><td class="today">1,651</td></tr>
+<tr><td><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205/code-review-graph</a></td><td>Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.</td><td>25,565</td><td class="today">882</td></tr>
+<tr><td><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></td><td>Learn it. Build it. Ship it for others.</td><td>42,570</td><td class="today">652</td></tr>
+<tr><td><a href="https://github.com/jamiepine/voicebox" target="_blank">jamiepine/voicebox</a></td><td>The open-source AI voice studio. Clone, dictate, create.</td><td>46,028</td><td class="today">557</td></tr>
+<tr><td><a href="https://github.com/dottxt-ai/outlines" target="_blank">dottxt-ai/outlines</a></td><td>Structured Outputs</td><td>15,213</td><td class="today">364</td></tr>
+<tr><td><a href="https://github.com/agegr/pi-web" target="_blank">agegr/pi-web</a></td><td>Web UI for the pi coding agent</td><td>2,172</td><td class="today">314</td></tr>
+<tr><td><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a></td><td>A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows</td><td>69,021</td><td class="today">163</td></tr>
+<tr><td><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></td><td>Kronos: A Foundation Model for the Language of Financial Markets</td><td>32,746</td><td class="today">137</td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+AI Research Briefing | Generated automatically | <a href="https://yenanjing.github.io/ai-briefings/" style="color:var(--accent)">Archive</a>
+</div>
+
+</body>
+</html>

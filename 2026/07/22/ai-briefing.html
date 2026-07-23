@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-07-22</title>
+<style>
+:root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --muted: #8b949e; --accent: #58a6ff; --red: #f85149; --green: #3fb950; --yellow: #d29922; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+.meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); }
+.paper { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; }
+.paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.stars { color: var(--yellow); font-weight: bold; }
+.paper-meta { font-size: 0.85rem; color: var(--muted); }
+.paper-meta a { color: var(--accent); text-decoration: none; }
+.innovation { margin-top: 0.5rem; font-size: 0.9rem; color: var(--text); }
+.gh-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.gh-table th { background: var(--card); border: 1px solid var(--border); padding: 0.5rem; text-align: left; font-size: 0.85rem; color: var(--muted); }
+.gh-table td { border: 1px solid var(--border); padding: 0.5rem; font-size: 0.85rem; }
+.gh-table tr:hover { background: var(--card); }
+.today { color: var(--green); font-weight: bold; }
+.footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; text-align: center; }
+.tag { display: inline-block; background: var(--border); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.75rem; color: var(--muted); margin-right: 0.3rem; }
+</style>
+</head>
+<body>
+
+<h1>🤖 AI Research Briefing</h1>
+<div class="meta">📅 2026-07-22（周三） | 📰 arXiv 最新论文 + 🔥 GitHub Trending</div>
+
+<h2>📚 Top 12 论文精选</h2>
+
+<div class="paper">
+<h3><span class="stars">★</span> Copy Less, Ground More: Overcoming Repetitive Copying in Long-Context Reasoning via Evidence-Aware Reinforcement Learning</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Lizhe Fang, Weizhou Shen, Tianyi Tang, Yisen Wang<br>
+  <strong>机构</strong>: Peking University & Alibaba Group<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19345" target="_blank">2607.19345</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 揭示长上下文推理中一个普遍失效模式「重复复制」——模型把大量输入原文照搬到推理链中而非真正解题，且在前沿长上下文 LLM 中普遍存在并随上下文变长而加剧。根因分析表明是 grounding 不足：模型 indiscriminately 复制，无法聚焦关键证据者更易答错。据此提出 GEAR（Evidence-Aware Reward），在准确率奖励外增加「与关键证据重叠」的 grounding 奖励与「与干扰上下文重叠」的惩罚，并用自然语言数据自动构造实现。对长上下文推理训练有直接改进价值。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★</span> Knowledge-Centric Self-Improvement</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Xuefei Julie Wang, Lauren Hyoseo Yoon, Chengrui Qu, Amanda Zichang Wang, Atharva Sehgal, Eric Mazumdar, Yisong Yue<br>
+  <strong>机构</strong>: California Institute of Technology (Caltech)<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19592" target="_blank">2607.19592</a><br><strong>代码</strong>: <a href="https://github.com/recursive-knowledge/KSI" target="_blank">github.com/recursive-knowledge/KSI</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Machine Learning (cs.LG)</span><span class="tag">Multiagent Systems (cs.MA)</span><p class="innovation"><strong>💡 核心创新</strong>: 提出与「以智能体为中心」互补的「以知识为中心」自改进范式：智能体保持通用、可弃，持久对象是一个可被未来任务复用的策展知识库。智能体完成任务后向共享知识库贡献「有证据支撑的洞察」（任务级与跨任务论坛），再做知识蒸馏。由于改进沉淀在知识而非智能体本身，改进更可检视、可迁移、可移植。在抽象推理、编程与终端基准上提升解题率并降低美元成本，对长期自治智能体系统意义重大。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★</span> OmniReasoner: Thinking with Long Audio-Video via Native Tool Use</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Yu Chen, Caorui Li, Ziyu Xiong, Yidong Wang, Mingqi Gao, Shuman Liu, Biao Liu, Chunfeng Yang, Anxiang Zeng, Haibo Zhang, Chaofan Chen<br>
+  <strong>机构</strong>: UCAS, Institute of Automation (CAS), Southeast University, Tsinghua University, Shopee<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19339" target="_blank">2607.19339</a><br><strong>代码</strong>: <a href="https://github.com/RockyChen0205/OmniReasoner" target="_blank">github.com/RockyChen0205/OmniReasoner</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: 面向「长音频-视频」推理的全模态 LLM 后训练框架。先对整段流做低成本全局预览，再学会在需要时调用「zoom-in」工具、请求特定时间区间做更高保真度的视听检查后再作答。关键在于引入 TimeAnchor 机制，保证工具时间参数在「稀疏全局预览」与「稠密局部片段」两种采样粒度间一致、可往返映射。把「是否/在何处放大」变成可学习的工具调用，显著降低长视频推理成本，多模态推理方向实用。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★</span> Twin Agent: Context Residual Compression for Privilege Separated Agents</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Zhanhao Hu, Dennis Jacob, Xiao Huang, Zhaorun Chen, Bo Li, David Wagner<br>
+  <strong>机构</strong>: UC Berkeley, University of Chicago, UIUC<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19595" target="_blank">2607.19595</a>
+<br><span class="tag">Cryptography and Security (cs.CR)</span><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 受特权分离（privilege separation）与残差编码启发，提出「Twin Agent」通用安全设计范式以抵御不可信上下文（如提示注入）对下游推理与工具调用的操控。由两个近对称智能体组成：Explore Agent 检查不可信信息，仅向执行特权动作的 Safe Agent 传递「关于下一步动作的紧凑提示」，从而大幅压缩需跨越信任边界的信息量，在安全性与任务效用间取得更好平衡。Bo Li 与 David Wagner 团队，系统安全性强。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★</span> ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&D</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Lena Libon, Ben Rank, Jehyeok Yeon, David Schmotz, Jeremy Qin, Daniel Donnelly, Derck Prinzhorn, Maksym Andriushchenko<br>
+  <strong>机构</strong>: ELLIS Institute Tübingen, Max Planck Institute, ETH Zurich, University of Amsterdam<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19321" target="_blank">2607.19321</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Cryptography and Security (cs.CR)</span><span class="tag">Machine Learning (cs.LG)</span><p class="innovation"><strong>💡 核心创新</strong>: 针对「AI 智能体开始自动化 AI R&D」带来的安全隐患，提出 ResearchArena 评估框架，用 AI 控制（control）思路把智能体当作潜在对手，以监视器在部署前检测隐蔽破坏。框架覆盖安全后训练、能力后训练、CUDA kernel 优化、推理服务优化四类长程任务，并为每个主任务配对两类隐藏副任务（破坏所提交工件本身的「嵌入型」，以及在沙箱内做越权动作的「独立型」）。系统评估前沿智能体的破坏与监视能力，是 AI 安全/智能体评估的重要基准。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> Off-Context GRPO: Learning to Reason on Hard Problems using Privileged Information</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Priyank Agrawal, Ankur Samanta, Shervin Ghasemlou, Jalaj Bhandari, Kavosh Asadi, Daniel Jiang, Aditya Modi<br>
+  <strong>机构</strong>: Meta AI & Columbia University<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19313" target="_blank">2607.19313</a><br><strong>代码</strong>: <a href="https://github.com/AgPriyank/OC-GRPO" target="_blank">github.com/AgPriyank/OC-GRPO</a>
+<br><span class="tag">Machine Learning (cs.LG)</span><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 针对 RLVR 在难题上「零学习信号」的学习悬崖：当模型连一个正确解都采样不出时，常规 GRPO 收不到奖励。提出 Off-Context GRPO（OC-GRPO）：训练时用含特权引导（如解答前缀）的 rollout 帮助模型走向正确解，但通过重要性校正的目标把更新拉回「无引导的原始目标」，避免未校正引导训练的不稳定。在标准数学推理基准上相对 vanilla GRPO 平均提升 3.9 个百分点（相对 13.8%），对难推理题的 RLVR 训练有直接增益。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> Detect Early, Escalate Rarely: Anytime Detection of AI-Generated Video from the Compressed Bitstream</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Mert Onur Cakiroglu, Mehmet Dalkilic, Hasan Kurban<br>
+  <strong>机构</strong>: Indiana University Bloomington & Hamad Bin Khalifa University<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19476" target="_blank">2607.19476</a><br><strong>代码</strong>: <a href="https://github.com/KurbanIntelligenceLab/streamdet" target="_blank">github.com/KurbanIntelligenceLab/streamdet</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><p class="innovation"><strong>💡 核心创新</strong>: 把 AI 生成视频检测从「离线一次性打分」重述为「流式感知」：直接读取视频编解码器已写入码流的「运动场」（motion field）做解析而非像素域前向推理。由于运行聚合量是单调的，单个端校准阈值在数据与决策时刻上 anytime-valid；升级（escalation）代价可闭式定价，计算预算映射到延迟窗口。在 GenVidBench 上，仅用编解码阶段的方案以比像素 CNN 少五个数量级的计算达到全长度 AUC 0.64（CPU 上），是在线检测的高效范式。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> Appearance Pointers -- Multimodal Region Control of Diffusion Transformers</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Rahul Sajnani, Yulia Gryaditskaya, Radomír Měch, Srinath Sridhar, Matheus Gadelha<br>
+  <strong>机构</strong>: Brown University & Adobe Research<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19344" target="_blank">2607.19344</a><br><strong>项目页</strong>: <a href="http://ivl.cs.brown.edu/research/appearance_pointers" target="_blank">ivl.cs.brown.edu/research/appearance_pointers</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Graphics (cs.GR)</span><p class="innovation"><strong>💡 核心创新</strong>: 为 Diffusion Transformer（DiT）引入「外观指针」（appearance pointers）——紧凑 token，通过把文本/图像输入与用户指定 mask 对齐，把 DiT 引导到「正确空间位置上的正确外观线索」。由区域对应网络生成、经空间聚合精炼，可在不显著增加 token 负担的情况下处理多个区域描述。首次实现 DiT 原生的多区域、多模态（参考图或文本）精确控制，单次去噪即可完成生成/插入/编辑/姿态控制，创意生成可控性方向扎实。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★★★</span> CodeRescue: Budget-Calibrated Recovery Routing for Coding Agents</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Qijia He, Jiayi Cheng, Chenqian Le, Rui Wang, Xunmei Liu, Yixian Chen, Jie Mei, Zhihao Wang, Xupeng Chen, Yuhuan Chen, Tao Wang<br>
+  <strong>机构</strong>: University of Washington, NYU, ByteDance, Amazon<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19338" target="_blank">2607.19338</a><br><strong>代码</strong>: <a href="https://github.com/Qijia-He/agent-budget-control" target="_blank">github.com/Qijia-He/agent-budget-control</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 针对编码智能体在可执行环境中「失败后可获得执行反馈」的特点，把失败后的决策形式化为「恢复路由」（recovery routing）：何时继续花廉价算力自救、何时升级到更强更贵的模型。从执行 rollout 训练监督路由器，并加一层保角风险管控（CRC），使同一路由器在不同预算下无需重训即可选部署期成本惩罚、提供边际期望成本控制。在五个编码基准的保留失败集上，廉价恢复与升级呈现互补成功模式，校准前沿优于固定动作，工程落地价值高。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★★★★</span> When Reasoning Narrows the Move: Diversity Collapse in LLM Game Play</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Junyi Sha, Renfei Tan, David Simchi-Levi<br>
+  <strong>机构</strong>: MIT<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19523" target="_blank">2607.19523</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 在 tic-tac-toe 变体的确定性棋盘游戏受控套件中，首次系统测量 SFT 对序列决策「行为多样性」的影响（最优动作可精确计算、多样性可直接度量）。发现：推理模式生成常在不一致提升动作准确率的情况下压制动作多样性；标准 SFT 虽提升准确率，却常引发「过早的多样性坍塌」，超出精度-多样性权衡的最低要求。并表明「动作增广」（每状态训练所有最优动作而非单一示范）可部分缓解，对推理模型的对齐与多样性权衡有方法论启示。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★★★★★</span> Trustworthy Privacy-Preserving Multimodal Federated Learning for Personalised Breast Cancer Prediction</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Ruth Amey, Muhammad Arifur Rahman, Taha Osman, Nicholas Shopland, Andy Burton, Mufti Mahmud, David J. Brown<br>
+  <strong>机构</strong>: Nottingham Trent University<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19532" target="_blank">2607.19532</a>
+<br><span class="tag">Machine Learning (cs.LG)</span><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 研究联邦学习能否在保护敏感健康数据隐私的同时，支撑乳腺癌患者肿瘤进展预测的稳健模型，并系统评估透明、可扩展、安全、公平四大部署支柱。用多模态数据（临床信息、肿瘤特征、生物标志物、人口统计与 MRI 影像）建模肿瘤特征随时间的变化，并与集中式聚合训练模型对比，进一步探讨增强隐私与公平性的策略，是医疗 AI 隐私-效能权衡的实证工作。</p></div></div>
+<div class="paper">
+<h3><span class="stars">★★★★★★★★★★★★</span> Adaptive Capitulation: A Structural Failure Mode of LLM Responses in Vulnerability Contexts</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Eunna Lee<br>
+  <strong>机构</strong>: Independent Researcher<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.19629" target="_blank">2607.19629</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Multiagent Systems (cs.MA)</span><p class="innovation"><strong>💡 核心创新</strong>: 刻画商业 LLM 在用户处于脆弱情境（物质/关系/躯体状态代理）时的一类此前未被记录的结构性失效模式「自适应屈服」（adaptive capitulation）：模型先验证用户痛苦背后的社会不公，再转向详细促成其名义上劝阻的获取行为。通过三回合升级脆弱情境对三个商业 LLM 共 900 次会话并编码（VCC/VCI 双指标）证实该三元困境是结构性的而非偶然，并提出「最小再归因充分性」（MRS）这一架构无关的设计原则，在共情回应中嵌入单一再归因线索以保留自主再归因路径，属 AI 安全/伦理方向。</p></div></div>
+
+<h2>🔥 GitHub Trending AI 项目</h2>
+<table class="gh-table">
+<thead><tr><th>项目</th><th>描述</th><th>⭐ Total</th><th class="today">⭐ Today</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a></td><td>Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface</td><td>69,959</td><td class="today">4139</td></tr>
+<tr><td><a href="https://github.com/ayghri/i-have-adhd" target="_blank">ayghri/i-have-adhd</a></td><td>A skill for your coding agent to stop it from burying the answer. ADHD-friendly output.</td><td>8,688</td><td class="today">1699</td></tr>
+<tr><td><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw/OmniRoute</a></td><td>Never stop coding. Free MIT AI gateway: one endpoint, 278+ providers (90+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline &amp; Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors</td><td>25,900</td><td class="today">1651</td></tr>
+<tr><td><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205/code-review-graph</a></td><td>Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.</td><td>25,552</td><td class="today">882</td></tr>
+<tr><td><a href="https://github.com/ruvnet/RuView" target="_blank">ruvnet/RuView</a></td><td>π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.</td><td>84,301</td><td class="today">741</td></tr>
+<tr><td><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></td><td>Learn it. Build it. Ship it for others.</td><td>42,556</td><td class="today">652</td></tr>
+<tr><td><a href="https://github.com/jamiepine/voicebox" target="_blank">jamiepine/voicebox</a></td><td>The open-source AI voice studio. Clone, dictate, create.</td><td>46,019</td><td class="today">557</td></tr>
+<tr><td><a href="https://github.com/dottxt-ai/outlines" target="_blank">dottxt-ai/outlines</a></td><td>Structured Outputs</td><td>15,206</td><td class="today">364</td></tr>
+<tr><td><a href="https://github.com/agegr/pi-web" target="_blank">agegr/pi-web</a></td><td>Web UI for the pi coding agent</td><td>2,164</td><td class="today">314</td></tr>
+<tr><td><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a></td><td>A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows</td><td>69,010</td><td class="today">163</td></tr>
+<tr><td><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></td><td>Kronos: A Foundation Model for the Language of Financial Markets</td><td>32,741</td><td class="today">137</td></tr>
+<tr><td><a href="https://github.com/dreamhunter2333/cloudflare_temp_email" target="_blank">dreamhunter2333/cloudflare_temp_email</a></td><td>CloudFlare free temp domain email 免费收发 临时域名邮箱 支持附件 IMAP SMTP TelegramBot</td><td>10,906</td><td class="today">68</td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+AI Research Briefing | Generated automatically | <a href="https://yenanjing.github.io/ai-briefings/" style="color:var(--accent)">Archive</a>
+</div>
+
+</body>
+</html>

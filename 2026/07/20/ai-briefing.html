@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-07-20</title>
+<style>
+:root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --muted: #8b949e; --accent: #58a6ff; --red: #f85149; --green: #3fb950; --yellow: #d29922; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+.meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); }
+.paper { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; }
+.paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.stars { color: var(--yellow); font-weight: bold; }
+.paper-meta { font-size: 0.85rem; color: var(--muted); }
+.paper-meta a { color: var(--accent); text-decoration: none; }
+.innovation { margin-top: 0.5rem; font-size: 0.9rem; color: var(--text); }
+.gh-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.gh-table th { background: var(--card); border: 1px solid var(--border); padding: 0.5rem; text-align: left; font-size: 0.85rem; color: var(--muted); }
+.gh-table td { border: 1px solid var(--border); padding: 0.5rem; font-size: 0.85rem; }
+.gh-table tr:hover { background: var(--card); }
+.today { color: var(--green); font-weight: bold; }
+.footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; text-align: center; }
+.tag { display: inline-block; background: var(--border); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.75rem; color: var(--muted); margin-right: 0.3rem; }
+</style>
+</head>
+<body>
+
+<h1>🤖 AI Research Briefing</h1>
+<div class="meta">📅 2026-07-20（周一） | 📰 arXiv 最新论文 + 🔥 GitHub Trending</div>
+
+<h2>📚 Top 12 论文精选</h2>
+
+<div class="paper">
+<h3><span class="stars">★</span> ST-Veto: Spatio-Temporal Token Veto for Diffusion MLLMs via Taylor Prediction and Visual Grounding</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Keuntae Kim, Beomseok Lee, Hyunwoo Kim, Yong Suk Choi<br>
+  <strong>机构</strong>: Hanyang University & LG Electronics (Korea)<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.17884" target="_blank">2607.17884</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 针对扩散式多模态大模型(dMLLM)的推理增强,提出无需训练的「时空 Token Veto(ST-Veto)」方法。dMLLM 在每个去噪步可同时观察所有 token 位置,本文据此:①用二阶泰勒预测置信度动态,否决时间上不稳定的 token;②用视觉 grounding 过滤弱对齐 token。在不训练的前提下提升扩散 MLLM 的推理质量与自修正能力,兼顾生成效率。</p></div></div><div class="paper">
+<h3><span class="stars">★★</span> Patch Policy: Efficient Embodied Control via Dense Visual Representations</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Gaoyue Zhou, Zichen Jeff Cui, Ada Langford, Bowen Tan, Yann LeCun, Lerrel Pinto<br>
+  <strong>机构</strong>: New York University (Courant Institute) & Meta-FAIR<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18236" target="_blank">2607.18236</a><br><strong>项目页</strong>: <a href="https://patch-policy.github.io" target="_blank">patch-policy.github.io</a>
+<br><span class="tag">Robotics (cs.RO)</span><span class="tag">Machine Learning (cs.LG)</span><p class="innovation"><strong>💡 核心创新</strong>: 指出机器人策略要么把观测压成单个全局 token、要么从零训练视觉骨干,牺牲了细粒度空间细节与大规模视觉预训练收益。提出 Patch Policy——一个极简架构扩展,让 transformer 策略直接消费预训练 ViT 的稠密 patch 特征,以最小开销恢复空间信息,在多个操控基准上相对提升约 40%。</p></div></div><div class="paper">
+<h3><span class="stars">★★★</span> Operational Hallucination and Safety Drift in AI Agents</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Shasha Yu, Fiona Carroll, Barry L. Bentley<br>
+  <strong>机构</strong>: Cardiff Metropolitan University 等<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18366" target="_blank">2607.18366</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Computers and Society (cs.CY)</span><p class="innovation"><strong>💡 核心创新</strong>: 实证刻画工具型自主智能体在多轮执行中的两类结构性失效:①Safety Drift——初始对齐随时间退化,出现「先文本拒绝、后侦察并执行」等违规;②Operational Hallucination——因状态感知错误导致重复工具调用的活锁。揭示单轮安全机制在长程交互中的脆弱性,为智能体可靠性评估提供新视角。</p></div></div><div class="paper">
+<h3><span class="stars">★★★★</span> C²KV: Compressed and Composable KV Cache Reuse for Efficient LLM Inference</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Chuheng Du, Junyi Chen, Hanlin Tang, Kan Liu, Tao Lan, Lin Qu, Chaoyue Niu, Shengzhong Liu, Guihai Chen, Fan Wu<br>
+  <strong>机构</strong>: Alibaba Group & Shanghai Jiao Tong University<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.17715" target="_blank">2607.17715</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 长上下文推理中,KV cache 的存储与访问才是关键瓶颈。提出 C²KV——统一非前缀 KV 复用的框架,联合优化 KV 抽取与压缩,在复用非前缀历史的同时保持精度,显著降低长上下文 LLM 服务的内存与计算成本。</p></div></div><div class="paper">
+<h3><span class="stars">★★★★★</span> ReViV: Reconstructing the Viewer and the View in 4D from Monocular Egocentric Video</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Xiaozhong Lyu, Gen Li, Zhiyin Qian, Xucong Zhang, Marc Pollefeys, Siyu Tang<br>
+  <strong>机构</strong>: ETH Zurich & Delft University of Technology & Microsoft<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.17790" target="_blank">2607.17790</a><br><strong>项目页</strong>: <a href="https://reviv4d.github.io" target="_blank">reviv4d.github.io</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 首个统一的第一人称(egocentric)4D 重建框架 ReViV:从单目 RGB 视频同时重建「观察者」与「被观察场景」的动态。打破依赖预计算相机轨迹、将场景感知与人自身运动建模割裂的做法,实现高效端到端 4D 重建。</p></div></div><div class="paper">
+<h3><span class="stars">★★★★★★</span> FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Krish Agarwal, Zhuoming Chen, Yanyuan Qin, Zhenyu Gu, Atri Rudra, Beidi Chen<br>
+  <strong>机构</strong>: Carnegie Mellon University & AMD & University at Buffalo<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18171" target="_blank">2607.18171</a>
+<br><span class="tag">Machine Learning (cs.LG)</span><p class="innovation"><strong>💡 核心创新</strong>: 实时多模态应用(语音智能体、交互式视频生成)需把异构模型编排成高效流水线。提出 FlashRT——一个智能体框架,引导 coding agent 把开发者写的参考实现「提升」为面向多 GPU 的优化部署,用 chain-of-program 范式灵活权衡延迟/吞吐,免去手工并行化。</p></div></div><div class="paper">
+<h3><span class="stars">★★★★★★★</span> SEE: Structure-aware Exploring & Exploiting for Long-horizon GUI Agent Trajectory Synthesis</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Zhuohang Fan, Beichen Zhang, Yuanfa Li, Changqiao Wu, Wei Liu, Jian Luan, Weigang Zhang<br>
+  <strong>机构</strong>: Harbin Institute of Technology (Weihai)<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18046" target="_blank">2607.18046</a>
+<br><span class="tag">Machine Learning (cs.LG)</span><p class="innovation"><strong>💡 核心创新</strong>: 针对 GUI 智能体缺乏长程、高覆盖交互轨迹的问题,提出 SEE 两阶段数据合成框架:①高效探索阶段在屏幕/元素上构建显式 UI 转移图;②基于图的合成阶段组合多样多步轨迹,覆盖长尾状态与复杂流程,提升移动端自动化能力。</p></div></div><div class="paper">
+<h3><span class="stars">★★★★★★★★</span> SWE-Pruner Pro: The Coder LLM Already Knows What to Prune</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Yuhang Wang, Yuling Shi, Shaoqiu Zhang, Jialiang Liang, Shilin He, Siyu Ye, Yuting Chen, Kai Cai, Xiaodong Gu<br>
+  <strong>机构</strong>: Shanghai Jiao Tong University (LLM4SE Lab)<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18213" target="_blank">2607.18213</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Software Engineering (cs.SE)</span><p class="innovation"><strong>💡 核心创新</strong>: 发现 coding agent 自身在读工具输出时已编码了代码上下文相关性的内部表征。据此提出 SWE-Pruner Pro:在 agent 内部用一个小头把内部表征转成逐行「保留/剪枝」标签,直接在 agent 内完成上下文剪枝,在两个开源骨干与四个多轮基准上最高节省 39% token。</p></div></div><div class="paper">
+<h3><span class="stars">★★★★★★★★★</span> MADA-RL: Multi-Agent Debate-Aware Reinforcement Learning for Parameter-Efficient Reasoning in Compact Models</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Martino M. L. Pulici, Cuong Xuan Chu, Evgeny Kharlamov, Zifeng Ding, Volker Tresp, Yunpu Ma<br>
+  <strong>机构</strong>: Bosch Center for AI & University of Oslo & University of Cambridge<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18006" target="_blank">2607.18006</a>
+<br><span class="tag">Machine Learning (cs.LG)</span><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Multiagent Systems (cs.MA)</span><p class="innovation"><strong>💡 核心创新</strong>: 面向 ≤4B 紧凑模型的低成本后训练。将模型特化为 generator 与 critic 双角色,用辩论感知的学习信号配合 LoRA 微调。核心贡献是反事实 critic 优势:把 critic 的优势重定义为「奖励减去 generator 集成在该实例上的准确率」,显式优化 critic 超越 generator 共识。</p></div></div><div class="paper">
+<h3><span class="stars">★★★★★★★★★★</span> Zero Hallucination, by Construction: Hallucination-Aware Layered Oversight for Trustworthy Enterprise AI</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Bogdan Raduta, Horia Velicu, Alexandru Preda, Serban Chiricescu<br>
+  <strong>机构</strong>: FlowX.ai<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.17883" target="_blank">2607.17883</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 主张「零幻觉」不是模型固有属性而是系统强制属性。提出 HALO(Hallucination-Aware Layered Oversight)——分层监督架构,用多道关卡(检索校验、约束判定、可审计追踪)把不可信的生成约束在受控边界内,为企业部署可信 AI 提供工程化方案。</p></div></div><div class="paper">
+<h3><span class="stars">★★★★★★★★★★★</span> Rethinking Heterogeneous LLM Merging: A Weighted Model Averaging Perspective</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Jiahe Fan, Yinghao Hou, Si Chen, Aiyuan Zhang, Hong Xie, Defu Lian<br>
+  <strong>机构</strong>: University of Science and Technology of China (USTC)<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18026" target="_blank">2607.18026</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><p class="innovation"><strong>💡 核心创新</strong>: 重新研究「能否直接加权平均参数空间差异巨大的 LLM 而无需训练或语义对齐」。通过免训练维度适配 + 比例可控插值,在并集式(小模型扩展到大参数空间)与交集式(大模型截断到小参数空间)两种合并中实现有效融合,挑战了现有异质融合必须引入蒸馏/路由的假设。</p></div></div><div class="paper">
+<h3><span class="stars">★★★★★★★★★★★★</span> Search-on-Graph-R1: Training Large Language Models to Search Knowledge Graphs with Reinforcement Learning</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Jia Ao Sun, Hao Yu, Fengran Mo, Zhan Su, Yuchen Hui, Bang Liu, Jian-Yun Nie<br>
+  <strong>机构</strong>: Université de Montréal & Mila & McGill University<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.18481" target="_blank">2607.18481</a>
+<br><span class="tag">Computation and Language (cs.CL)</span><p class="innovation"><strong>💡 核心创新</strong>: 知识图谱问答通常依赖前沿大模型用检索工具在图上探索,成本高。提出 Search-on-Graph-R1:用 SFT + RL 把图导航内化进一个紧凑的 8B 模型。核心是用 gold SPARQL 查询为前沿教师搭建路径,使其沿已知答案路径用实时 Search 工具遍历,从而把导航能力蒸馏给小模型。</p></div></div>
+
+<h2>🔥 GitHub Trending AI 项目</h2>
+<p class="meta">说明：历史每日榜不可回溯，以下为抓取时的 <strong>daily</strong> 快照，按今日新增 Star 降序。</p>
+<table class="gh-table">
+<thead><tr><th>项目</th><th>描述</th><th>⭐ Total</th><th class="today">⭐ Today</th></tr></thead>
+<tbody>
+<tr><td><a href="https://github.com/koala73/worldmonitor" target="_blank">koala73/worldmonitor</a></td><td>Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface</td><td>69,999</td><td class="today">4,139</td></tr><tr><td><a href="https://github.com/ayghri/i-have-adhd" target="_blank">ayghri/i-have-adhd</a></td><td>A skill for your coding agent to stop it from burying the answer. ADHD-friendly output.</td><td>8,701</td><td class="today">1,699</td></tr><tr><td><a href="https://github.com/diegosouzapw/OmniRoute" target="_blank">diegosouzapw/OmniRoute</a></td><td>Never stop coding. Free MIT AI gateway: one endpoint, 278+ providers (90+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline &amp; Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors</td><td>25,925</td><td class="today">1,651</td></tr><tr><td><a href="https://github.com/tirth8205/code-review-graph" target="_blank">tirth8205/code-review-graph</a></td><td>Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.</td><td>25,561</td><td class="today">882</td></tr><tr><td><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></td><td>Learn it. Build it. Ship it for others.</td><td>42,567</td><td class="today">652</td></tr><tr><td><a href="https://github.com/jamiepine/voicebox" target="_blank">jamiepine/voicebox</a></td><td>The open-source AI voice studio. Clone, dictate, create.</td><td>46,024</td><td class="today">557</td></tr><tr><td><a href="https://github.com/agegr/pi-web" target="_blank">agegr/pi-web</a></td><td>Web UI for the pi coding agent</td><td>2,171</td><td class="today">314</td></tr><tr><td><a href="https://github.com/ComposioHQ/awesome-claude-skills" target="_blank">ComposioHQ/awesome-claude-skills</a></td><td>A curated list of awesome Claude Skills, resources, and tools for customizing Claude AI workflows</td><td>69,018</td><td class="today">163</td></tr><tr><td><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></td><td>Kronos: A Foundation Model for the Language of Financial Markets</td><td>32,745</td><td class="today">137</td></tr><tr><td><a href="https://github.com/dreamhunter2333/cloudflare_temp_email" target="_blank">dreamhunter2333/cloudflare_temp_email</a></td><td>CloudFlare free temp domain email 免费收发 临时域名邮箱 支持附件 IMAP SMTP TelegramBot</td><td>10,913</td><td class="today">68</td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+AI Research Briefing | Generated automatically | <a href="https://yenanjing.github.io/ai-briefings/" style="color:var(--accent)">Archive</a>
+</div>
+
+</body>
+</html>

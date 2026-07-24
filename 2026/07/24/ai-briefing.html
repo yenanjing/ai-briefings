@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-07-24</title>
+<style>
+:root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #c9d1d9; --muted: #8b949e; --accent: #58a6ff; --red: #f85149; --green: #3fb950; --yellow: #d29922; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+.meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+h2 { font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem; color: var(--accent); }
+.paper { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; }
+.paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
+.stars { color: var(--yellow); font-weight: bold; }
+.paper-meta { font-size: 0.85rem; color: var(--muted); }
+.paper-meta a { color: var(--accent); text-decoration: none; }
+.innovation { margin-top: 0.5rem; font-size: 0.9rem; color: var(--text); }
+.gh-table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+.gh-table th { background: var(--card); border: 1px solid var(--border); padding: 0.5rem; text-align: left; font-size: 0.85rem; color: var(--muted); }
+.gh-table td { border: 1px solid var(--border); padding: 0.5rem; font-size: 0.85rem; }
+.gh-table tr:hover { background: var(--card); }
+.today { color: var(--green); font-weight: bold; }
+.footer { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.8rem; text-align: center; }
+.tag { display: inline-block; background: var(--border); padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.75rem; color: var(--muted); margin-right: 0.3rem; }
+.note { background: #1a1f2b; border-left: 3px solid var(--yellow); padding: 0.8rem 1rem; margin: 1rem 0; font-size: 0.85rem; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<h1>🤖 AI Research Briefing</h1>
+<div class="meta">📅 2026-07-24（周五） | 📰 arXiv 最新论文 + 🔥 GitHub Trending</div>
+<div class="note">⚠️ arXiv export API 两次超时（各30秒），使用 4 分类 recent page fallback，约 200 篇候选，抓取摘要后精选 12 篇。</div>
+
+<h2>📚 Top 12 论文精选</h2>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> AREX: Towards a Recursively Self-Improving Agent for Deep Research</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Shuqi Lu, Chaofan Li, Kun Luo, Zhang Zhang, Hui Wang, Hongwang Xiao, Zheng Liu, Lei Xiong, Jiahao Wang, Sen Wang, Xiyan Jiang, Wanli Li, Yuyang Hu, Hongjin Qian, Bingyu Yan, Ziyi Xia, Yingxia Shao, Kang Liu, Zhicheng Dou, Di He, Chaozhuo Li, Qiwei Ye, Zhongyuan Wang, Zheng Liu<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21461" target="_blank">2607.21461</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 提出递归自改进（RSI）深度研究 Agent 框架 AREX——内层研究循环收集证据构建临时答案，外层自改进循环逐约束审计并定位未解决声明后定向跟进。引入自主上下文更新工具压缩交互历史为紧凑改进状态。训练 4B dense 和 122B-A10B MoE 模型，在 BrowseComp、WideSearch、DeepSearchQA、HLE 等基准上显著超越同规模基线。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> OpenForgeRL: Train Harness-native Agents in Any Environment</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Xiao Yu, Baolin Peng, Ruize Xu, Hao Zou, Qianhui Wu, Hao Cheng, Wenlin Yao, Nikhil Singh, Zhou Yu, Jianfeng Gao<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21557" target="_blank">2607.21557</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Computation and Language (cs.CL)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 开源框架 OpenForgeRL 通过轻量级代理记录 harness 调用作为 RL 训练数据，配合 K8s 编排器实现任意 harness（Claude Code/Codex/OpenClaw）在任何环境中的端到端 RL 训练。解耦训练与推理，OpenForgeClaw 在 ClawEval 达 31.7 pass³/55.9 pass@3，GUI 设置 OSWorld-Verified 达 37.7，匹配或超越数倍更大模型。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★★</span> WorldWeaver: Streaming Multi-Agent Autoregressive Diffusion Model with World State Registers</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Sicheng Mo, Yuheng Li, Ziyang Leng, Krishna Kumar Singh, Bolei Zhou (UCLA)<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21594" target="_blank">2607.21594</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 多 Agent 视频扩散模型 WorldWeaver 引入跨 Agent 世界状态寄存器（可学习 token）存储共享世界信息、跟踪个体 Agent 状态，每生成 chunk 后动态更新。MoT（Mixture-of-Transformers）设计分离世界状态建模和视觉帧建模权重。双 Agent Minecraft 视频生成中显著提升逻辑一致性和质量。<a href="https://vail-ucla.github.io/worldweaver/" style="color:var(--accent)">项目页</a></p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> MIRROR: Learning from the Other View for Multi-Modal Reasoning</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Wen Ye, Yuxiao Qu, Aviral Kumar, Xuezhe Ma<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21552" target="_blank">2607.21552</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span><span class="tag">Machine Learning (cs.LG)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 发现 VLM 在不同视图（纯文本/纯图/图文结合）下表现出互补的推理行为和失败模式。构建 ODA-Data 配对多模态几何数据集，提出 MIRROR——用表现最好的视图作为教师，通过 reverse-KL 目标训练其他视图。在几何推理基准上优于标准 RL，跨模态行为更准确一致。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> ReMo: Token Compression for Omni-LLMs</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Suho Yoo, Youngjoon Jang, Hyebin Cho, Joon Son Chung<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21179" target="_blank">2607.21179</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 无需训练的 ReMo 框架将视觉 token 信息跨模态重分布来压缩 Omni-LLM 输入——仅保留信息未在其他模态出现的视觉 token，并用紧凑文本代理替换物体级视觉 token。Qwen2.5-Omni 上移除 54% 输入 token 且精度无损（101.2%/101.3% 相对全 token 模型）。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> Surprisal Theory is Tautological (without Rational Grounding)</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Ryan Cotterell (ETH Zürich)<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21574" target="_blank">2607.21574</a>
+<br><span class="tag">Computation and Language (cs.CL)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 论证 surprisal 理论在无额外约束下是同义反复——对任何非负难度度量，存在语言模型使其 surprisal 与之成仿射关系。打破同义反复需要理性主义干预：语言模型必须从非经验驱动的 comprehension 模型推导（如基于记忆约束或处理目标）。对心理语言学基础理论的深刻反思。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> MemTools: A Unified Research Framework for Interoperable Agent Memory</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Chengfeng Zhao, Jinhui Chen, Sirui Liang, Shizhu He, Yequan Wang, Jun Zhao, Kang Liu<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21404" target="_blank">2607.21404</a>
+<br><span class="tag">Computation and Language (cs.CL)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: Agent 记忆系统的互操作性研究框架 MemTools，通过声明式数据契约标准化记忆生命周期，正交分离基准数据集与执行协议，提供统一计算接口协调符号/神经/多模态记忆表示。支持跨系统组件集成、评估协议重构和异构记忆协调。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★★</span> The Dark Room in the Reward Channel: Dense Prediction Rewards Collapse GRPO-Trained LLM Agents</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Yu Wang<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21273" target="_blank">2607.21273</a>
+<br><span class="tag">Machine Learning (cs.LG)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 揭示 GRPO 训练中密集预测奖励导致策略崩溃的"暗室"病理——全部失败组中 z-scored advantage 对 shaping 系数不变，有界奖励变成无界压力。提出方差剖面准则解释信号崩溃条件，辅助损失通道比奖励通道有效约 20 点。对 GRPO 强化学习的重要诊断。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> VLM-IE3D: 3D-Aware VLMs with Implicit and Explicit Geometries</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Wenhao Li, Xueying Jiang, Quanhao Qian, Deli Zhao, Ran Xu, Shijian Lu, Gongjie Zhang<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21595" target="_blank">2607.21595</a>
+<br><span class="tag">Computer Vision and Pattern Recognition (cs.CV)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: VLM-IE3D 通过隐式几何 token（IGT）和显式几何 token（EGT）增强 VLM 的 3D 空间感知能力，仅需 RGB 视频输入。3D-aware adapter 融合两种几何表示与 2D 视觉线索。在 3D 视频检测、视觉 grounding、密集 captioning 和空间推理任务上取得优异性能。ECCV 2026 录用并<a href="https://github.com/Vegetebird/VLM-IE3D" style="color:var(--accent)">开源</a>。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> Context-weighted Discrete Flow Matching</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Daniil Cherniavskii, Daniel Severo, Karen Ullrich<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21427" target="_blank">2607.21427</a>
+<br><span class="tag">Machine Learning (cs.LG)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 发现离散 flow matching 中 token 不确定性与局部上下文密度相关，提出 context-weighted sampler 和 scaled cross-entropy loss，在 OpenWebText 上将生成困惑度降低 63%，同时保持任意顺序生成能力。NeurIPS 2026 在审。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Pengyu Zhu, Lijun Li, Longju Yang, Sen Su<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.20891" target="_blank">2607.20891</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 提出 MisKnow-Agent 框架构建可控权威级别和风格的误导性知识实例（5,933 条），揭示当前 Deep Research Agent 即使有限暴露于误导性知识也会导致最终报告采纳错误结论。搜索验证器能识别误导但长程研究中仍被采纳，前后防御只能缓解不能完全阻止。</p>
+</div>
+
+<div class="paper">
+<h3><span class="stars">★★★★★★</span> ICAE-Bench: Evaluating Coding Agents as Interactive Project Builders</h3>
+<div class="paper-meta">
+  <strong>作者</strong>: Zhongyuan Peng, Dan Huang, Chuyu Zhang, Caijun Xu, Changyi Xiao, Shibo Hong, David Lo, Lin Qiu, Xuezhi Cao, Jiyuan He, Yixin Cao<br>
+  <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2607.21217" target="_blank">2607.21217</a>
+<br><span class="tag">Artificial Intelligence (cs.AI)</span></div>
+<p class="innovation"><strong>💡 核心创新</strong>: 针对 vibe-coding 工作流趋势，提出交互式项目构建评测基准 ICAE-Bench，从模糊产品需求出发通过自动化 User Agent 模拟动态交互。三大设计：基于真实开源仓库的可执行行为衍生歧义、User Agent Data 保证高质量用户模拟、标准化黑盒测试+多维诊断公平评估开放式仓库。</p>
+</div>
+
+<h2>🔥 GitHub Trending AI 项目（Top 10 by stars today）</h2>
+
+<table class="gh-table">
+<thead><tr><th>#</th><th>项目</th><th>⭐ Today</th><th>⭐ Total</th><th>简介</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><a href="https://github.com/diegosouzapw/OmniRoute" style="color:var(--accent)" target="_blank">diegosouzapw/OmniRoute</a></td><td class="today">1,929</td><td>27.3K</td><td>MIT AI 网关：290+ 提供商、500+ 模型的免费统一接入</td></tr>
+<tr><td>2</td><td><a href="https://github.com/ruvnet/RuView" style="color:var(--accent)" target="_blank">ruvnet/RuView</a></td><td class="today">1,708</td><td>85.2K</td><td>WiFi 信号转实时空间智能，生命体征监测</td></tr>
+<tr><td>3</td><td><a href="https://github.com/ComposioHQ/awesome-claude-skills" style="color:var(--accent)" target="_blank">ComposioHQ/awesome-claude-skills</a></td><td class="today">636</td><td>69.5K</td><td>Claude Skills 精选资源列表</td></tr>
+<tr><td>4</td><td><a href="https://github.com/chrislgarry/Apollo-11" style="color:var(--accent)" target="_blank">chrislgarry/Apollo-11</a></td><td class="today">592</td><td>71.1K</td><td>阿波罗 11 号制导计算机原始源代码</td></tr>
+<tr><td>5</td><td><a href="https://github.com/likec4/likec4" style="color:var(--accent)" target="_blank">likec4/likec4</a></td><td class="today">472</td><td>4.7K</td><td>从代码生成实时架构图</td></tr>
+<tr><td>6</td><td><a href="https://github.com/shiyu-coder/Kronos" style="color:var(--accent)" target="_blank">shiyu-coder/Kronos</a></td><td class="today">401</td><td>33.1K</td><td>金融市场语言基础模型</td></tr>
+<tr><td>7</td><td><a href="https://github.com/agegr/pi-web" style="color:var(--accent)" target="_blank">agegr/pi-web</a></td><td class="today">315</td><td>2.4K</td><td>pi coding agent 的 Web UI</td></tr>
+<tr><td>8</td><td><a href="https://github.com/earthtojake/text-to-cad" style="color:var(--accent)" target="_blank">earthtojake/text-to-cad</a></td><td class="today">230</td><td>10.0K</td><td>CAD/机器人/硬件设计的 Agent skills</td></tr>
+<tr><td>9</td><td><a href="https://github.com/citrolabs/ego-lite" style="color:var(--accent)" target="_blank">citrolabs/ego-lite</a></td><td class="today">247</td><td>1.7K</td><td>人和 AI Agent 并行工作的浏览器</td></tr>
+<tr><td>10</td><td><a href="https://github.com/alibaba/open-code-review" style="color:var(--accent)" target="_blank">alibaba/open-code-review</a></td><td class="today">180</td><td>11.6K</td><td>阿里开源代码审查工具：确定性流水线+LLM Agent</td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+Generated by AI Research Briefing automation | <a href="https://yenanjing.github.io/ai-briefings/" style="color:var(--accent)">Archive</a>
+</div>
+
+</body>
+</html>

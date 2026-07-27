@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-07-27</title>
+<style>
+:root{--bg:#ffffff;--fg:#1f2937;--muted:#6b7280;--accent:#2563eb;--border:#e5e7eb;--card:#f9fafb}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;padding:2rem 1rem;max-width:900px;margin:0 auto}
+h1{font-size:1.75rem;border-bottom:2px solid var(--accent);padding-bottom:.5rem;margin-bottom:1.5rem}
+h2{font-size:1.25rem;margin:2rem 0 1rem;color:var(--accent)}
+h3{font-size:1rem;margin:1.25rem 0 .5rem;font-weight:600}
+.meta{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem}
+.paper{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem}
+.paper h3{margin-top:0}
+.tags{display:inline-block;background:#dbeafe;color:#1e40af;font-size:.75rem;padding:.125rem .5rem;border-radius:999px;margin-right:.25rem}
+.link{color:var(--accent);text-decoration:none}
+.link:hover{text-decoration:underline}
+table{width:100%;border-collapse:collapse;margin:1rem 0}
+th,td{padding:.5rem .75rem;text-align:left;border-bottom:1px solid var(--border)}
+th{background:var(--card);font-weight:600;font-size:.85rem}
+td{font-size:.85rem}
+tr:hover td{background:var(--card)}
+.footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem;text-align:center}
+.badge{display:inline-block;background:#fef3c7;color:#92400e;font-size:.7rem;padding:.1rem .4rem;border-radius:4px;margin-left:.25rem}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing</h1>
+<div class="meta">2026-07-27（周一）· arXiv API 限流，使用 4 分类 recent page fallback（~190 篇候选），精选 12 篇</div>
+
+<h2>📄 Top 12 论文</h2>
+
+<div class="paper">
+<h3>8🌟 Skill Self-Play: Pushing the Frontier of LLM Capability with Co-Evolving Skills <span class="badge">cs.CL</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">arXiv: <a href="https://arxiv.org/abs/2607.22529" class="link">2607.22529</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">提出技能自博弈（Skill Self-Play）框架，让LLM通过与共演化的技能库交互实现自我提升，突破现有自演化方法在任务多样性与质量之间的权衡困境。</p>
+</div>
+
+<div class="paper">
+<h3>8🌟 The Regression Tax: Decomposing Why Skills Help and Hurt LLM Agents <span class="badge">cs.AI</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">Darshan Tank, Baran Nama · arXiv: <a href="https://arxiv.org/abs/2607.22520" class="link">2607.22520</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">揭示LLM Agent技能评估中的「回归税」现象：技能不仅可能帮助也可能损害Agent表现，平均成功率掩盖了这一隐性成本。提出分解评估方法量化技能的正负效应。</p>
+</div>
+
+<div class="paper">
+<h3>8🌟 Do Agent Benchmarks Measure Capability? Protocol Validity in the Age of Agentic AI <span class="badge">cs.AI</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">arXiv: <a href="https://arxiv.org/abs/2607.22368" class="link">2607.22368</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">系统性质疑当前Agent基准测试的有效性：随着Agent能力快速演进，评估协议是否仍能有效衡量真实能力？对protocol validity提出严格检验框架。</p>
+</div>
+
+<div class="paper">
+<h3>8🌟 Opaque Epistemic Mediation: How LLM Deployment Configurations Shape the Validation of Scientific Claims <span class="badge">cs.CY</span><span class="badge">cs.AI</span><span class="badge">cs.CL</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">arXiv: <a href="https://arxiv.org/abs/2607.22513" class="link">2607.22513</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">实证研究四大商业LLM对有争议科学主张的立场稳定性与透明度，发现部署配置显著影响模型的知识验证行为——揭示了LLM作为知识中介的「不透明认识论调解」问题。</p>
+</div>
+
+<div class="paper">
+<h3>7🌟 TRACE-ROUTER: Task-Consistent and Adaptive Online Routing for Agentic AI <span class="badge">cs.AI</span><span class="badge">cs.LG</span><span class="badge">cs.MA</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">Ritik Raj et al. · arXiv: <a href="https://arxiv.org/abs/2607.22465" class="link">2607.22465</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">TRACE-ROUTER提出任务一致且自适应的在线LLM路由机制，解决企业级AI部署中多模型成本-质量权衡的动态选择问题。</p>
+</div>
+
+<div class="paper">
+<h3>7🌟 IDEAgent: Agentic Quality-Diversity Search for Research Idea Generation <span class="badge">cs.AI</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">arXiv: <a href="https://arxiv.org/abs/2607.22375" class="link">2607.22375</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">IDEAgent将Quality-Diversity搜索引入科研idea生成，让LLM不仅优化单一最优解而是维护多样化的高质量研究想法集合。</p>
+</div>
+
+<div class="paper">
+<h3>7🌟 Agentic Root Cause Analysis through Evidence-Grounded Reasoning <span class="badge">cs.AI</span><span class="badge">cs.LG</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">arXiv: <a href="https://arxiv.org/abs/2607.22385" class="link">2607.22385</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">证据锚定的Agent根因分析框架，自动构建假设、收集传感器证据并进行推理，应用于工业异常诊断场景。</p>
+</div>
+
+<div class="paper">
+<h3>7🌟 SceneActBench: Can Agents Act on the 3D Scenes They See? <span class="badge">cs.AI</span><span class="badge">cs.CV</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">Yifei Zhao et al. · arXiv: <a href="https://arxiv.org/abs/2607.22393" class="link">2607.22393</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">SceneActBench首个评估VLM Agent在3D场景中工具操作能力的基准，超越传统文本响应或单物体操作评测。</p>
+</div>
+
+<div class="paper">
+<h3>7🌟 κ-LoRA: Condition Numbers Reveal Which LoRA Matrices Worth Updating <span class="badge">cs.LG</span><span class="badge">cs.AI</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">arXiv: <a href="https://arxiv.org/abs/2607.22489" class="link">2607.22489</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">κ-LoRA通过条件数分析揭示哪些LoRA矩阵值得更新，从理论角度指导高效微调的参数选择策略。</p>
+</div>
+
+<div class="paper">
+<h3>7🌟 A Factorial Study of Synthetic Data Generation for Low-Resource Machine Translation <span class="badge">cs.CL</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">arXiv: <a href="https://arxiv.org/abs/2607.22376" class="link">2607.22376</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">利用LLM从描述性语法书生成合成平行数据的因子实验研究，为濒危语言机器翻译提供低成本解决方案。</p>
+</div>
+
+<div class="paper">
+<h3>7🌟 Dynamic Capability Scoping for Enterprise AI Agents <span class="badge">cs.AI</span><span class="badge">cs.CR</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">Halil Burak Noyan · arXiv: <a href="https://arxiv.org/abs/2607.22445" class="link">2607.22445</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">ICML 2026 Workshop on Agents in the Wild (AIWILD)。提出企业AI Agent动态能力范围控制架构，以合成数据集和三源权限机制解决Agent持久过度授权的安全风险。</p>
+</div>
+
+<div class="paper">
+<h3>7🌟 Phylogenetic signal in marine mammal and bird vocalizations captured by audio foundation models <span class="badge">cs.LG</span><span class="badge">cs.AI</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">arXiv: <a href="https://arxiv.org/abs/2607.22458" class="link">2607.22458</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">发现预训练音频基础模型（AST/CLAP/BEATs/BirdNET）竟能捕获海洋哺乳动物和鸟类叫声中的系统发育信号——一种未被显式训练的生物学结构。</p>
+</div>
+
+<h2>💻 GitHub Trending（AI相关，按当日新增Star排序）</h2>
+<table>
+<thead><tr><th>#</th><th>项目</th><th>今日⭐</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><a href="https://github.com/citrolabs/ego-lite" class="link">citrolabs/ego-lite</a></td><td>900</td><td>最快的AI Agent浏览器，用于Web自动化</td></tr>
+<tr><td>2</td><td><a href="https://github.com/CoreBunch/Instatic" class="link">CoreBunch/Instatic</a></td><td>888</td><td>Webflow/Framer的开源替代方案</td></tr>
+<tr><td>3</td><td><a href="https://github.com/alibaba/open-code-review" class="link">alibaba/open-code-review</a></td><td>832</td><td>阿里巴巴开源的代码审查工具</td></tr>
+<tr><td>4</td><td><a href="https://github.com/pbakaus/impeccable" class="link">pbakaus/impeccable</a></td><td>413</td><td>让AI harness更出色的设计语言</td></tr>
+<tr><td>5</td><td><a href="https://github.com/OtterMind/Chat2DB" class="link">OtterMind/Chat2DB</a></td><td>398</td><td>AI驱动的数据库工具和SQL客户端</td></tr>
+<tr><td>6</td><td><a href="https://github.com/anthropics/claude-cookbooks" class="link">anthropics/claude-cookbooks</a></td><td>379</td><td>Claude使用技巧Notebook合集</td></tr>
+<tr><td>7</td><td><a href="https://github.com/shiyu-coder/Kronos" class="link">shiyu-coder/Kronos</a></td><td>321</td><td>金融语言基础模型</td></tr>
+<tr><td>8</td><td><a href="https://github.com/andrewyng/aisuite" class="link">andrewyng/aisuite</a></td><td>187</td><td>多生成式AI统一接口</td></tr>
+<tr><td>9</td><td><a href="https://github.com/block/buzz" class="link">block/buzz</a></td><td>1,710</td><td>群体思维通信平台</td></tr>
+<tr><td>10</td><td><a href="https://github.com/permissionlesstech/bitchat" class="link">permissionlesstech/bitchat</a></td><td>1,166</td><td>蓝牙Mesh聊天，IRC风格</td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+自动生成于 2026-07-27 10:55 CST · <a href="https://yenanjing.github.io/ai-briefings/" class="link">返回首页</a>
+</div>
+
+</body>
+</html>

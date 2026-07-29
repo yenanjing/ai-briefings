@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-07-29</title>
+<style>
+:root{--bg:#ffffff;--fg:#1f2937;--muted:#6b7280;--accent:#2563eb;--border:#e5e7eb;--card:#f9fafb}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);line-height:1.6;padding:2rem 1rem;max-width:900px;margin:0 auto}
+h1{font-size:1.75rem;border-bottom:2px solid var(--accent);padding-bottom:.5rem;margin-bottom:1.5rem}
+h2{font-size:1.25rem;margin:2rem 0 1rem;color:var(--accent)}
+h3{font-size:1rem;margin:1.25rem 0 .5rem;font-weight:600}
+.meta{color:var(--muted);font-size:.85rem;margin-bottom:1.5rem}
+.paper{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.25rem;margin-bottom:1rem}
+.paper h3{margin-top:0}
+.tags{display:inline-block;background:#dbeafe;color:#1e40af;font-size:.75rem;padding:.125rem .5rem;border-radius:999px;margin-right:.25rem}
+.link{color:var(--accent);text-decoration:none}
+.link:hover{text-decoration:underline}
+table{width:100%;border-collapse:collapse;margin:1rem 0}
+th,td{padding:.5rem .75rem;text-align:left;border-bottom:1px solid var(--border)}
+th{background:var(--card);font-weight:600;font-size:.85rem}
+td{font-size:.85rem}
+tr:hover td{background:var(--card)}
+.footer{margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);color:var(--muted);font-size:.8rem;text-align:center}
+.badge{display:inline-block;background:#fef3c7;color:#92400e;font-size:.7rem;padding:.1rem .4rem;border-radius:4px;margin-left:.25rem}
+.proj{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:.75rem}
+.proj-name{font-weight:600;font-size:.95rem}
+.proj-desc{font-size:.85rem;color:var(--muted);margin:.25rem 0}
+.proj-stars{font-size:.75rem;color:var(--accent)}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing</h1>
+<div class="meta">2026-07-29（周三）· arXiv API 正常返回 25 篇候选（2026-07-28 提交），精选 12 篇</div>
+
+<h2>📄 Top 12 论文</h2>
+
+<div class="paper">
+<h3>7.8🌟 Wonder: Video World Model Done Better <span class="badge">cs.CV</span><span class="badge">cs.GR</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Jiacong Xu, Hanwen Jiang, Zhixin Shu, Kalyan Sunkavalli, Vishal M. Patel, Yiqun Mei · arXiv: <a href="https://arxiv.org/abs/2607.26037v1" class="link">2607.26037v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">Wonder 是一个通用视频世界模型，支持实时、相机可控的世界探索。给定单张图像或条件视频，构建可交互的虚拟环境，用户可通过相机移动导航发现未见过区域并重新访问已观察场景。</p>
+</div>
+
+<div class="paper">
+<h3>7.6🌟 Pictura: Perspective-View Self-Play at Scale for Driving <span class="badge">cs.CV</span><span class="badge">cs.AI</span><span class="badge">cs.RO</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Yuan Yin, Elias Ramzi, Marc Lafon, Valentin Charraut, Victor Bares, Yihong Xu, Éloi Zablocki, Alexandre Boulch, Thibault Buhet, Andrei Bursuc, Matthieu Cord · arXiv: <a href="https://arxiv.org/abs/2607.26005v1" class="link">2607.26005v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">Pictura 将自博弈扩展到透视视角下的驾驶策略训练，直接在像素级观测上进行自博弈而非特权向量表示，消除感知与决策间的表征鸿沟，在大规模仿真中生成鲁棒驾驶策略。</p>
+</div>
+
+<div class="paper">
+<h3>7.5🌟 $π\mathbf{R}^2$: Reactive Real-time Flow Policies <span class="badge">cs.RO</span><span class="badge">cs.AI</span><span class="badge">cs.LG</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Sungjae Park, Shubham Tulsiani · arXiv: <a href="https://arxiv.org/abs/2607.26055v1" class="link">2607.26055v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">Shubham Tulsiani (CMU) 提出 πR²，针对通用操作流策略的开环执行缺乏反应性问题，在流匹配策略中引入中间观测重规划机制，实现实时反应性而不牺牲效率。</p>
+</div>
+
+<div class="paper">
+<h3>7.4🌟 UniMem: Complementary Episodic-to-Parametric Memory for Boundary-Agnostic Task Streams <span class="badge">cs.CL</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Siyu Xia, Chenheng Zhang, Yanting Wu, Haoxuan Li, Jiajun Chai, Xiaohan Wang, Guojun Yin, Wei Lin, Zhouchen Lin, Haifeng Zhang, Jun Wang · arXiv: <a href="https://arxiv.org/abs/2607.26017v1" class="link">2607.26017v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">UniMem 提出互补的情景记忆到参数记忆框架，解决 LLM Agent 在无边界任务流中的稳定性-可塑性困境。外部检索记忆快速吸收新经验，内部参数更新渐进巩固长期知识。</p>
+</div>
+
+<div class="paper">
+<h3>7.3🌟 INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models <span class="badge">cs.RO</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Junhan Sun, Hao Zhao, Guofeng Zhang · arXiv: <a href="https://arxiv.org/abs/2607.26056v1" class="link">2607.26056v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">提出 INTACT，一种同构意图到动作学习的 JEPA 框架，将带动作标注的无奖励轨迹转化为可部署的意图到动作接口，无需测试时搜索即可从期望场景变化恢复动作序列。</p>
+</div>
+
+<div class="paper">
+<h3>7.2🌟 Pass the Baton: Trajectory-Relayed On-Policy Distillation <span class="badge">cs.CL</span><span class="badge">cs.AI</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Haolei Xu, Xiaowen Xu, Haiwen Hong, Zixuan Ni, Hongxing Li, Yiwen Qiu, Weiming Lu, Yongliang Shen · arXiv: <a href="https://arxiv.org/abs/2607.26057v1" class="link">2607.26057v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">针对 On-Policy Distillation 的前缀失败问题，提出轨迹接力式 OPD 方法，当学生模型偏离正确推理方向时，通过教师模型接管并重置生成轨迹，显著提升长程推理蒸馏效果。</p>
+</div>
+
+<div class="paper">
+<h3>7.1🌟 MemLens: A Value-Aware Memory Management System with Interactive Analytics for LLM-based Agents <span class="badge">cs.DB</span><span class="badge">cs.AI</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Shuyue Wei, Chang Liu, Zimu Zhou, Yongxin Tong, Lizhen Cui · arXiv: <a href="https://arxiv.org/abs/2607.25992v1" class="link">2607.25992v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">MemLens 是一个价值感知的 LLM Agent 记忆管理系统，提供交互式分析能力。区别于传统粗粒度效用无关的记忆管理，MemLens 根据异质用户查询的价值动态调整记忆存储和检索策略。</p>
+</div>
+
+<div class="paper">
+<h3>7.0🌟 Reinformed Dreamer: An Asymmetric World Model Efficiently Trained through Latent Guidance <span class="badge">cs.LG</span><span class="badge">stat.ML</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Gaspard Lambrechts, Adrien Bolland, Daniel Ebi, Damien Ernst · arXiv: <a href="https://arxiv.org/abs/2607.26040v1" class="link">2607.26040v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">Reinformed Dreamer 提出通过潜在引导高效训练的非对称世界模型，借鉴人类学习中指导信号的作用，在奖励之外引入额外监督信息以学习更好的表征和行为。</p>
+</div>
+
+<div class="paper">
+<h3>6.9🌟 Spend Experts Where You Are Unsure: Confidence-Adaptive Routing for Mixture-of-Experts LoRA <span class="badge">cs.LG</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Tom Saliencro, Rohan Desai, Priya Nair, Maya Lindqvist, Daniel Whitmore · arXiv: <a href="https://arxiv.org/abs/2607.26052v1" class="link">2607.26052v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">针对 MoE-LoRA 固定专家数 k 导致简单 token 过度消费、困难 token 服务不足的问题，利用路由器输出分布作为不确定性代理，实现置信度自适应的动态专家分配。</p>
+</div>
+
+<div class="paper">
+<h3>6.8🌟 CHARM: A Multimodal Graph Foundation Model with Hierarchical Context Modeling for Zero-Shot Transfer <span class="badge">cs.AI</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Ankang Yang, Jitao Zhao, Di Jin, Yuxiao Huang, Dongxiao He · arXiv: <a href="https://arxiv.org/abs/2607.26023v1" class="link">2607.26023v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">CHARM 是一个具有层次化上下文建模能力的多模态图基础模型，支持零样本跨域迁移。联合建模文本、图像等多模态节点属性与图的层次化结构上下文。</p>
+</div>
+
+<div class="paper">
+<h3>6.8🌟 Sharpness-Aware Minimization and Muon: Robustness under the Spectral Norm <span class="badge">cs.CV</span><span class="badge">cs.LG</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Wenzhi Zhong, Edward Milsom, Michael Murray · arXiv: <a href="https://arxiv.org/abs/2607.26001v1" class="link">2607.26001v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">提出并行解码蒸馏方法加速视频扩散/流模型的迭代采样过程。不同于依赖 VSD 和对抗损失的现有方法，该方法通过并行解码策略实现高效的一步/少步生成蒸馏。</p>
+</div>
+
+<div class="paper">
+<h3>6.7🌟 Desktop-Delta Bench: Do Computer-Use Models Understand Desktop GUI Transitions? <span class="badge">cs.AI</span><span class="badge">cs.CV</span></h3>
+<p style="font-size:.85rem;color:var(--muted);margin:.25rem 0">作者: Abhishek Pillai, Samir Kumar Nayak, Yuan Chen · arXiv: <a href="https://arxiv.org/abs/2607.26041v1" class="link">2607.26041v1</a></p>
+<p style="font-size:.9rem;margin-top:.5rem">Desktop-Delta Bench 评估计算机使用模型对桌面 GUI 状态转换的理解能力。现有基准仅测量任务成功率或单帧定位，该工作首次隔离模型重建动作产生的因果任务相关转换的能力。</p>
+</div>
+
+<h2>🔥 GitHub Trending (AI 相关)</h2>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/bradautomates/claude-video" class="link">bradautomates/claude-video</a> <span style="font-size:.75rem;color:var(--muted)">· Python</span></div>
+<div class="proj-desc">给 Claude 添加观看任意视频的能力，/watch 下载+抽帧+转录+交给 Claude</div>
+<div class="proj-stars">988⭐ today</div>
+</div>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/moeru-ai/airi" class="link">moeru-ai/airi</a> <span style="font-size:.75rem;color:var(--muted)">· TypeScript</span></div>
+<div class="proj-desc">自托管 Grok Companion，支持实时语音聊天、Minecraft/Factorio 游戏</div>
+<div class="proj-stars">797⭐ today</div>
+</div>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/opengeos/GeoLibre" class="link">opengeos/GeoLibre</a> <span style="font-size:.75rem;color:var(--muted)">· TypeScript</span></div>
+<div class="proj-desc">轻量级云原生 GIS 平台，浏览器/桌面/移动端/Jupyter 均可运行</div>
+<div class="proj-stars">607⭐ today</div>
+</div>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/yorukot/superfile" class="link">yorukot/superfile</a> <span style="font-size:.75rem;color:var(--muted)">· Go</span></div>
+<div class="proj-desc">精美现代化的终端文件管理器</div>
+<div class="proj-stars">662⭐ today</div>
+</div>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/affaan-m/ECC" class="link">affaan-m/ECC</a> <span style="font-size:.75rem;color:var(--muted)">· JavaScript</span></div>
+<div class="proj-desc">Agent harness 性能优化系统，技能/本能/记忆/安全一体化</div>
+<div class="proj-stars">636⭐ today</div>
+</div>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/virgiliojr94/book-to-skill" class="link">virgiliojr94/book-to-skill</a> <span style="font-size:.75rem;color:var(--muted)">· Python</span></div>
+<div class="proj-desc">将任意技术书籍 PDF 转为 Claude Code skill</div>
+<div class="proj-stars">423⭐ today</div>
+</div>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/paperswithbacktest/awesome-systematic-trading" class="link">paperswithbacktest/awesome-systematic-trading</a> <span style="font-size:.75rem;color:var(--muted)">· Python</span></div>
+<div class="proj-desc">量化交易库/策略/书籍/教程精选列表</div>
+<div class="proj-stars">309⭐ today</div>
+</div>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/huggingface/speech-to-speech" class="link">huggingface/speech-to-speech</a> <span style="font-size:.75rem;color:var(--muted)">· Python</span></div>
+<div class="proj-desc">用开源模型构建本地语音 Agent</div>
+<div class="proj-stars">227⭐ today</div>
+</div>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/jenkinsci/jenkins" class="link">jenkinsci/jenkins</a> <span style="font-size:.75rem;color:var(--muted)">· Java</span></div>
+<div class="proj-desc">Jenkins 自动化服务器</div>
+<div class="proj-stars">180⭐ today</div>
+</div>
+
+<div class="proj">
+<div class="proj-name"><a href="https://github.com/pascalorg/editor" class="link">pascalorg/editor</a> <span style="font-size:.75rem;color:var(--muted)">· TypeScript</span></div>
+<div class="proj-desc">创建和分享 3D 建筑项目</div>
+<div class="proj-stars">341⭐ today</div>
+</div>
+
+<div class="footer">
+AI Research Briefing · <a href="https://yenanjing.github.io/ai-briefings/2026/07/29/ai-briefing.html" class="link">在线版</a> · 自动生成于 2026-07-29
+</div>
+
+</body>
+</html>

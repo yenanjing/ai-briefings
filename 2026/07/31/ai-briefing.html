@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing — 2026-07-31</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #24292f;
+    --muted: #57606a;
+    --accent: #0969da;
+    --border: #d0d7de;
+    --card-bg: #f6f8fa;
+    --star: #e3b341;
+    --tag-bg: #ddf4ff;
+    --tag-fg: #0969da;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    line-height: 1.6; padding: 0; max-width: 900px; margin: 0 auto;
+  }
+  header {
+    background: linear-gradient(135deg, #0969da, #1f6feb);
+    color: #fff; padding: 48px 32px; text-align: center;
+  }
+  header h1 { font-size: 2em; font-weight: 700; margin-bottom: 8px; }
+  header p { opacity: 0.85; font-size: 1.05em; }
+  .meta {
+    display: flex; justify-content: center; gap: 24px;
+    margin-top: 16px; font-size: 0.9em; opacity: 0.8;
+  }
+  .meta span { background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 999px; }
+  main { padding: 32px; }
+  h2 { font-size: 1.4em; border-bottom: 2px solid var(--border); padding-bottom: 8px; margin: 32px 0 16px; color: #1f6feb; }
+  h3 { font-size: 1.1em; margin: 20px 0 8px; }
+  .paper {
+    background: var(--card-bg); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 24px; margin-bottom: 16px;
+  }
+  .paper-header { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .stars { color: var(--star); font-weight: 700; font-size: 1.2em; white-space: nowrap; }
+  .paper-title { font-weight: 600; font-size: 1.05em; color: var(--accent); }
+  .paper-meta { font-size: 0.88em; color: var(--muted); margin: 6px 0; }
+  .paper-meta a { color: var(--accent); text-decoration: none; }
+  .paper-meta a:hover { text-decoration: underline; }
+  .tag { display: inline-block; background: var(--tag-bg); color: var(--tag-fg); padding: 2px 8px; border-radius: 4px; font-size: 0.8em; margin-right: 6px; }
+  .innovation { font-size: 0.92em; margin-top: 8px; padding: 10px 14px; background: #fff; border-left: 3px solid #1f6feb; border-radius: 0 6px 6px 0; }
+  .innovation-label { font-weight: 600; color: #1f6feb; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9em; }
+  th { background: var(--card-bg); font-weight: 600; text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--border); }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  tr:hover td { background: var(--card-bg); }
+  .gh-stars { color: var(--star); font-weight: 600; white-space: nowrap; }
+  footer {
+    text-align: center; padding: 32px; color: var(--muted);
+    font-size: 0.85em; border-top: 1px solid var(--border); margin-top: 32px;
+  }
+  @media (max-width: 600px) {
+    header { padding: 32px 16px; }
+    header h1 { font-size: 1.5em; }
+    main { padding: 16px; }
+    .meta { flex-direction: column; gap: 8px; }
+    .paper { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>🤖 AI Research Briefing</h1>
+  <p>2026-07-31 · Friday</p>
+  <div class="meta">
+    <span>📑 12 papers</span>
+    <span>🔥 9 GitHub projects</span>
+    <span>📡 arXiv recent fallback</span>
+  </div>
+</header>
+<main>
+<h2>📄 Top 12 Papers</h2>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★★★</span>
+  <span class="paper-title">LEDGERMIND: Provenance-Constrained Multimodal Agentic Reasoning with a Structured Evidence Ledger</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Enjun Du, Hange Zhou, Chenxu Du, Siyi Liu, Zirong Chen, Ziyu Zheng, Yongqi Zhang<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.28374" target="_blank" rel="noopener">[2607.28374]</a>
+  <br>
+  <strong>Category:</strong> Machine Learning (cs.LG)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  We propose to treat a multimodal agent trajectory as a provenance-constrained state machine: tool outputs are normalized into a Structured Evidence Ledger that serves as the trajectory state, downstream reasoning and decision claims may cite only active ledger entries, grounding is checked at the entity and numeric level, and repair is realized as typed state transitions that cannot introduce content without tool-produced provenance. Multimodal agents for visual question answering increasingly operate as multi-step trajectories that interleave perception, retrieval, and reasoning, yet evaluation still largely reduces to final-answer accuracy.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★★</span>
+  <span class="paper-title">DualG-MRAG: Decoupling Macro-Reasoning and Micro-Matching for Multimodal Retrieval-Augmented Generation</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Jiacheng Tao, Qingyun Sun, Haonan Yuan, Ziwei Zhang, Jianxin Li<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.28580" target="_blank" rel="noopener">[2607.28580]</a>
+  <br>
+  <strong>Category:</strong> Artificial Intelligence (cs.AI)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  To address this dilemma, we propose DualG-MRAG, a Dual-tier framework that introduces a decoupled architecture comprising Macro-reasoning and Micro-matching Graphs for Multimodal RAG. Specifically, to suppress retrieval noise by isolating global structural reasoning from fine-grained evidence matching, we construct a Macro Graph for global topological routing and a Micro Graph for precise local verification.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★★</span>
+  <span class="paper-title">TAPO: Transition-Aware Policy Optimization for LLM Agents</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Cong Li, Peixi Peng, Yisen Zhao, Xinyu Hu, Shudong Liu, Zhan Su, Zhuojian Li<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.27973" target="_blank" rel="noopener">[2607.27973]</a>
+  <br>
+  <strong>Category:</strong> Machine Learning (cs.LG)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  Inspired by this, we propose TAPO: Transition-Aware Policy Optimization for LLM Agents, a unified training framework that alternates between policy optimization and transition supervision. Recently, Reinforcement Learning (RL) has emerged as a crucial paradigm for the post-training of Large Language Model (LLM) agents.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★★</span>
+  <span class="paper-title">RRM: Experience-Driven Reflective Retrieval Memory for Long-Horizon Multimodal Reasoning</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Jingxiang Fan, Junbao Zhuo, Bochao Zou<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.28156" target="_blank" rel="noopener">[2607.28156]</a>
+  <br>
+  <strong>Category:</strong> Computation and Language (cs.CL)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  We introduce Reflective Retrieval Memory (RRM), a reflective memory framework for long-horizon multimodal reasoning. Existing multimodal long-term memory agents use external memory to overcome the limited context available for long videos.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★★</span>
+  <span class="paper-title">What Makes Graph Unified? Principles and Generative Sliding-Window Transformer for Graph Foundation Models</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Dongxiao He, Siqi Liu, Jitao Zhao, Yawen Li, Yi Wang, Di Jin<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.27966" target="_blank" rel="noopener">[2607.27966]</a>
+  <br>
+  <strong>Category:</strong> Machine Learning (cs.LG)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  Guided by these principles, we propose SliGFM, a graph foundation model built upon topology-aware sliding-window feature encoding and generative reconstruction. Graph Foundation Models (GFMs) have recently emerged as a promising paradigm for general-purpose graph learning, aiming to learn reusable knowledge that generalizes across diverse graph domains and downstream tasks, reducing the need for specific model development.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★★</span>
+  <span class="paper-title">Why Are GUI Agents Correct but Late? Decode on the Decision-Time Critical Path, Tested with Pre-Compiled Policy Trees</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Zihan Dong, Rui Qian, Qishi Zhan, Dongshen Peng, Kaixin Li, Yu Li<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.28399" target="_blank" rel="noopener">[2607.28399]</a>
+  <br>
+  <strong>Category:</strong> Machine Learning (cs.LG)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  We propose Adaptive Anticipatory Policy Trees (AAPT), which eliminates this delay without modifying the underlying model. Computer-use agents often fail on transient GUI events because they produce the correct action only after the relevant window has already closed.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★★</span>
+  <span class="paper-title">ChronoMem: Version Control and Semantic Rollback for Large Language Model Agent Memory</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Yongye Su, Wujiang Xu, Chaoji Zuo, Elisa Bertino<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.27773" target="_blank" rel="noopener">[2607.27773]</a>
+  <br>
+  <strong>Category:</strong> Computation and Language (cs.CL)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  We present ChronoMem, a semantic version-control layer for agentic memory integrated into the production-ready, open-source Agent Development Kit by Google. LLM agents increasingly rely on long-term memory to support multi-session interaction and personalization.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★</span>
+  <span class="paper-title">ScaFE: Data-Efficient Scar Classification with LLM-Generated Clinical Feature Programs</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Ruman Wang, Hangting Ye<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.28538" target="_blank" rel="noopener">[2607.28538]</a>
+  <br>
+  <strong>Category:</strong> Computer Vision and Pattern Recognition (cs.CV)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  We introduce ScaFE (Scar Feature Engineering), which transfers clinical knowledge from a large language model (LLM) into deterministic, executable feature programs instead of asking the model to diagnose images. Classifying pathological scars from clinical photographs requires distinguishing keloids from hypertrophic scars despite limited expert-labeled data and substantial acquisition variation across hospitals.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★</span>
+  <span class="paper-title">$β$-OPSD: Deriving with Policy Optimization, Training with Self-Distillation</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Jiawei Xu, Minghui Liu, Juzheng Zhang, Tom Goldstein, Furong Huang<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.28582" target="_blank" rel="noopener">[2607.28582]</a>
+  <br>
+  <strong>Category:</strong> Machine Learning (cs.LG)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  We introduce $\beta$-OPSD and derive its optimal policy as a geometric interpolation between the reference policy and the privileged teacher. On-policy self-distillation (OPSD) is a promising approach to improve reasoning language models, but it remains brittle in practice: making it work reliably often requires substantial engineering effort.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★</span>
+  <span class="paper-title">PathView-Bench: Can Multimodal Large Language Models Achieve Fine-grained Multiscale Understanding of Pathology Images?</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Zongyi Chen, Yu Liang, Jie Lin, Liansheng Wang<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.28318" target="_blank" rel="noopener">[2607.28318]</a>
+  <br>
+  <strong>Category:</strong> Artificial Intelligence (cs.AI)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  We introduce PathVU, a vision-anchored benchmark for fine-grained and multiscale visual understanding in computational pathology. Multimodal large language models (MLLMs) are increasingly used to analyze pathology images.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★</span>
+  <span class="paper-title">LEEPS: Latent-Guided Explore-Exploit Prompt Sampling for Efficient RLVR in Large Language Models</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Shuang Liang, Haoyang Zhou, Yifan Gong, Guowei Wang, Xiting Wang<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.28077" target="_blank" rel="noopener">[2607.28077]</a>
+  <span class="tag">🔓 Open Source</span><br>
+  <strong>Category:</strong> Computation and Language (cs.CL)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  To address these limitations, we introduce LEEPS, a Latent-Guided Explore--Exploit Prompt Sampler that adaptively balances the reuse of previously observed informative prompts with continued exploration of uncertain ones. Reinforcement learning with verifiable rewards (RLVR) improves the reasoning capabilities of large language models, but prompt groups with identical rollout rewards consume generation budget without effective learning signals.
+</div>
+</div>
+<div class="paper">
+<div class="paper-header">
+  <span class="stars">★★★★★★</span>
+  <span class="paper-title">Group-Reflective Self-Distillation for Agentic Reinforcement Learning</span>
+</div>
+<div class="paper-meta">
+  <strong>Authors:</strong> Binbin Zheng, Zijun Xie, Guanqun Zhao, Enlei Gong, Xing Ma, Xiaoliang Fu, Zeyu Chen<br>
+  <strong>arXiv:</strong> <a href="https://arxiv.org/abs/2607.28076" target="_blank" rel="noopener">[2607.28076]</a>
+  <br>
+  <strong>Category:</strong> Artificial Intelligence (cs.AI)
+</div>
+<div class="innovation">
+  <div class="innovation-label">Core Innovation</div>
+  We propose Group-Reflective Self-Distillation (GRSD), which derives capability-aligned and outcome-discriminative guidance from the policy's own verified rollouts. Reinforcement learning with verifiable rewards (RLVR) is effective for training large language model agents.
+</div>
+</div>
+<h2>🔥 GitHub Trending AI Projects</h2>
+<table>
+<thead><tr><th>#</th><th>Repository</th><th>Stars Today</th><th>Language</th><th>Description</th></tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://github.com/different-ai/openwork" target="_blank" rel="noopener">different-ai/openwork</a></td>
+<td class="gh-stars">+915 ⭐</td>
+<td>TypeScript</td>
+<td>The open-source alternative to Claude Cowork (powered by opencode)</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://github.com/affaan-m/ECC" target="_blank" rel="noopener">affaan-m/ECC</a></td>
+<td class="gh-stars">+804 ⭐</td>
+<td>JavaScript</td>
+<td>The agent harness performance optimization system. Skills, instincts, </td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://github.com/huggingface/speech-to-speech" target="_blank" rel="noopener">huggingface/speech-to-speech</a></td>
+<td class="gh-stars">+628 ⭐</td>
+<td>Python</td>
+<td>Build local voice agents with open-source models</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://github.com/mvanhorn/last30days-skill" target="_blank" rel="noopener">mvanhorn/last30days-skill</a></td>
+<td class="gh-stars">+378 ⭐</td>
+<td>Python</td>
+<td>AI agent skill that researches any topic across Reddit, X, YouTube, HN</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://github.com/openai/whisper" target="_blank" rel="noopener">openai/whisper</a></td>
+<td class="gh-stars">+136 ⭐</td>
+<td>Python</td>
+<td>Robust Speech Recognition via Large-Scale Weak Supervision</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank" rel="noopener">microsoft/AI-For-Beginners</a></td>
+<td class="gh-stars">+155 ⭐</td>
+<td>Jupyter Notebook</td>
+<td>12 Weeks, 24 Lessons, AI for All!</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank" rel="noopener">AUTOMATIC1111/stable-diffusion-webui</a></td>
+<td class="gh-stars">+28 ⭐</td>
+<td>Python</td>
+<td>Stable Diffusion web UI</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://github.com/huggingface/diffusers" target="_blank" rel="noopener">huggingface/diffusers</a></td>
+<td class="gh-stars">+13 ⭐</td>
+<td>Python</td>
+<td>State-of-the-art diffusion models for image, video, and audio generati</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="https://github.com/voxel51/fiftyone" target="_blank" rel="noopener">voxel51/fiftyone</a></td>
+<td class="gh-stars">+3 ⭐</td>
+<td>TypeScript</td>
+<td>Refine high-quality datasets and visual AI models</td>
+</tr>
+</tbody></table></main>
+<footer>
+  <p>AI Research Briefing · 2026-07-31 · <a href="https://yenanjing.github.io/ai-briefings/2026/07/31/ai-briefing.html" style="color:#0969da;">Online Version</a></p>
+  <p>Generated automatically from arXiv API + GitHub Trending</p>
+</footer>
+</body>
+</html>

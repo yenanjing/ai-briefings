@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-04</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+.code-link {
+    display: inline-block; margin-top: 0.5rem; color: #3fb950;
+    text-decoration: none; font-size: 0.85rem;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-04（周二）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-04</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/04/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/04/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#1</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟🌟🌟</span>
+                <span class="badge badge-code">🔓 开源</span>
+            </div>
+            <h3 class="paper-title">TerraNova: A Foundation Model for the Anthropocene</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Carlos Rodriguez-Pardo, Massimo Tavoni</span>
+                <span class="meta-item">📑 cs.LG</span>
+                <a href="https://arxiv.org/abs/2607.29527" target="_blank" class="arxiv-link">arXiv:2607.29527</a>
+            </div>
+            <p class="paper-abstract">提出 TerraNova 基础模型，统一物理地球系统（512 个网格场）与人类社会指标（512 个国家变量）的几何表示鸿沟。专用编码器+交叉模态 Transformer 融合为共享时空状态，超网络生成 per-query 解码器。在竞争性地学编码器的同时覆盖时间、海洋和不确定性维度，冻结骨干可从稀疏观测重建稠密场并在消费级硬件上分钟级适应新变量。</p>
+            <br><a href="https://carlosrodriguezpardo.es/projects/TerraNova/" target="_blank" class="code-link">📂 https://carlosrodriguezpardo.es/projects/TerraNova/</a>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#2</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">When Does On-Policy Interaction Help? Representational Tradeoffs in Value-Based Imitation Learning</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Luca Viano, Antoine Moulin, Audrey Huang, Volkan Cevher, Philip Amortila, Dylan J. Foster</span>
+                <span class="meta-item">📑 cs.LG</span>
+                <a href="https://arxiv.org/abs/2607.29617" target="_blank" class="arxiv-link">arXiv:2607.29617</a>
+            </div>
+            <p class="paper-abstract">Dylan Foster / Volkan Cevher 团队研究模仿学习中专家交互与值函数估计的相互作用。核心发现：专家交互放宽了学习者的表征需求——只需能实现专家值函数的模型，绕过更严格的策略实现要求。提出 OVI 算法在可表示专家值函数时统计有效。证明无交互离线 IL 必须依赖专家策略类复杂度。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#3</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">The Parts Are Greater Than the Sum: Automated Task Sequencing for Efficient Training of Multi-Policy LLMs</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Jiajia Tang, Sizhe Yuen, Francisco Gomez Medina, Yali Du, Adam Sobey</span>
+                <span class="meta-item">📑 cs.LG</span>
+                <a href="https://arxiv.org/abs/2607.29601" target="_blank" class="arxiv-link">arXiv:2607.29601</a>
+            </div>
+            <p class="paper-abstract">Yali Du 团队提出多策略 PEFT 架构：通过任务分组和排序自动组织优化兼容的适配路径，每个路径用独立 QLoRA 实现异质任务解耦优化。TRACE benchmark 上自动多策略框架达 44.78，优于单纯增加适配器容量。表明优化路径组织比增加参数更有效。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#4</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">Mixture-of-Translators: Translating KV Caches Across Heterogeneous Large Language Models</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Jin-woo Lee, Minkyung Song, Junghyun Oh, Seunghoon Han, Soyoung Park, Gwangseon Jang, Sungsu Lim</span>
+                <span class="meta-item">📑 cs.CL</span>
+                <a href="https://arxiv.org/abs/2607.28979" target="_blank" class="arxiv-link">arXiv:2607.28979</a>
+            </div>
+            <p class="paper-abstract">提出 MoT 缓存翻译框架，将源 LLM 的 KV cache 映射到目标 LLM 的缓存空间。使用多个 translator 模块捕获多样映射，引入 Context Correction Loss 对齐重放轨迹。揭示传播翻译偏移和末态偏移两种失败模式。Qwen2.5-7B 规模翻译达 51.0% 封闭 QA 准确率，长上下文保留 96.3% 直接上下文质量。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#5</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                <span class="badge badge-code">🔓 开源</span>
+            </div>
+            <h3 class="paper-title">Zero-Mem: Zero-Token Memory Operations for LLM Agents</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Yilin Xiao, Zhehan Zhu, Yujing Zhang, Jin Chen, Zijin Hong, Luyao Zhuang, Qinggang Zhang, Shengyuan Chen, Xiaocao Ouyang, Lingfei Ren, Xiao Huang</span>
+                <span class="meta-item">📑 cs.CL</span>
+                <a href="https://arxiv.org/abs/2607.29377" target="_blank" class="arxiv-link">arXiv:2607.29377</a>
+            </div>
+            <p class="paper-abstract">提出零 token 记忆操作：除最终 QA 外不调用 LLM。实体-上下文图 + 时间层次双视图组织交互痕迹，确定性校准丢弃冲突证据。长记忆 QA 基准上消除记忆操作的 LLM 调用，记忆操作时间成本降低 57.6%。代码将在审核后开源 github.com/TheMoon0815/Zero-mem。</p>
+            <br><a href="https://github.com/TheMoon0815/Zero-mem" target="_blank" class="code-link">📂 https://github.com/TheMoon0815/Zero-mem</a>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#6</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                <span class="badge badge-code">🔓 开源</span>
+            </div>
+            <h3 class="paper-title">A Frozen Pixel-Space Diffusion Model Can Guide Itself with Its Own Samples</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Zixuan Fu, Chong Wang, Lanqing Guo, Kailai Zhou, Jiahao Nie, Bihan Wen</span>
+                <span class="meta-item">📑 cs.CV</span>
+                <a href="https://arxiv.org/abs/2607.29122" target="_blank" class="arxiv-link">arXiv:2607.29122</a>
+            </div>
+            <p class="paper-abstract">发现冻结预训练像素扩散模型的中间层可解码为粗糙预测，与最终输出的差异可作为自引导方向。Synthetic Self-Guidance (SSG) 仅需 <1% 全模型训练计算量，无需 CFG 下 FID 降低超 50%，JiT-H/16 从 1.86 降至 1.67，PixelREPA-H/16 从 1.81 降至 1.59。代码开源 github.com/zfu006/SSG。</p>
+            <br><a href="https://github.com/zfu006/SSG" target="_blank" class="code-link">📂 https://github.com/zfu006/SSG</a>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#7</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">TokenSwap: Benchmarking and Reducing the Modality Gap in Multimodal LLMs</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Andong Hua, Colton Bishop, Igor Mordatch, Arian Hosseini, Jindong Gu, Aleksandra Faust, Rebecca Roelofs, Yao Qin</span>
+                <span class="meta-item">📑 cs.CL</span>
+                <a href="https://arxiv.org/abs/2607.28640" target="_blank" class="arxiv-link">arXiv:2607.28640</a>
+            </div>
+            <p class="paper-abstract">Igor Mordatch / Aleksandra Faust 团队定义模态间隙为语义等价文本输入与多模态输入的性能差异。TokenSwap 方法将文本概念替换为语义对齐图像构建 image-interleaved 基准。42 个 MLLM 上平均 19.6%±3.3% 间隙，推理模型仅 10.1% vs 非推理 25.5%。TokenSwap 训练可有效缩小间隙。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#8</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">Learning Stateful Predictive Knowledge From Experience</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Yan Song, Xidong Feng, Bo Liu, Xinyu Cui, Haotian Fu, Zichen Liu, Mengyue Yang, Cheng Deng, Jian Zhao, Jun Wang</span>
+                <span class="meta-item">📑 cs.CL</span>
+                <a href="https://arxiv.org/abs/2607.28638" target="_blank" class="arxiv-link">arXiv:2607.28638</a>
+            </div>
+            <p class="paper-abstract">Jun Wang 团队提出 Stateful Knowledge Learning (SKL)，从轨迹级反思转向维护状态锚定的显式声明性预测评估。通过自蒸馏 (SKL-SD) 和强化学习 (SKL-RL) 训练智能体自主提取状态接地的预测知识。WebShop、ScienceWorld 和 ChessPuzzles 上显著超越当前反思式训练范式。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#9</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">ThinkReset: Learnable Intermediate Interface Construction for Bounded-Context Long-Horizon Reasoning</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Fei Ding, Yongkang Zhang, Runhao Liu, Yuhao Liao, Zijian Zeng</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2607.28642" target="_blank" class="arxiv-link">arXiv:2607.28642</a>
+            </div>
+            <p class="paper-abstract">指出有界上下文窗口下长程推理的核心瓶颈是可复用中间接口的缺失。识别 outcome-reward-driven 长链 RL 的关键失败模式：窗口将耗尽时鼓励过早猜测。ThinkReset 通过接口回写和重置显式构造可复用中间接口，直接优化重置后继续求解成功率。多个长程推理基准上一致提升。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#10</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">MAGA: Multi-Platform Self-Fusion of GUI Agents via Structured Action Distillation</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Hang Yan, Zhangxuan GU, Beitong Zhou, Jiaxuan Chen, Runze Li, Yusong Hu, Shuheng Shen, Changhua Meng</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2607.29320" target="_blank" class="arxiv-link">arXiv:2607.29320</a>
+            </div>
+            <p class="paper-abstract">GUI Agent 多平台融合问题。权重合并会因专家分歧破坏可执行动作，OPD 对 action token 和非 action token 同等对待忽略结构。MAGA 根据结构化动作正确性重新分配训练信号，抑制无效蒸馏信号聚焦错误动作。8B 规模超越最强 baseline 2.0%，达到与教师几乎相同的平均性能。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#11</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">The Grokked Illusion: True Equilibrium Mitigates Catastrophic Forgetting</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Xiaotian Zhang, Lai Shun Chan, Yue Shang, Entao Yang, Ge Zhang</span>
+                <span class="meta-item">📑 cs.LG</span>
+                <a href="https://arxiv.org/abs/2607.29503" target="_blank" class="arxiv-link">arXiv:2607.29503</a>
+            </div>
+            <p class="paper-abstract">比较 AdamW 训练的 Transformer 与 Wang-Landau 分子动力学采样的高熵模型在灾难性遗忘上的差异。AdamW 模型新数据训练后原任务准确率从 100% 降至 75% 以下，高熵模型保持约 95%。SVD 分析显示高熵模型注意力和 MLP 层有效秩更高，特征表示更丰富可作为抗干扰缓冲。提出 grokked illusion 概念。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#12</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">Beyond Retrieval: Analytic Memory for Multimodal Agents</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Zhoujin Tian, Yao Tian, Hao Zhang, Cheng Chen, Yakun Li, Lei Zhang, Xiaofang Zhou</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2607.29440" target="_blank" class="arxiv-link">arXiv:2607.29440</a>
+            </div>
+            <p class="paper-abstract">提出分析型记忆作为检索记忆的互补抽象：将从对话、图像和元数据中提取的 provenance-linked 属性-值观测组织为支持过滤、聚合、排名和时间比较的可查询结构。AdaMM 框架联合支持检索和分析记忆。MemEye 和 MemGallery 基准上分别提升 11.3% 和 7.3%。</p>
+            
+        </div>
+
+<h2 class="section-title">💻 GitHub Trending AI 项目</h2>
+<table>
+    <thead><tr><th>#</th><th>项目</th><th>今日 ⭐</th><th>描述</th></tr></thead>
+    <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://github.com/zhaoxuya520/reverse-skill" target="_blank">zhaoxuya520/reverse-skill</a></td>
+                <td><span class="star-badge">⭐ 2446</span></td>
+                <td class="gh-desc">Reverse Engineering / Authorized Penetration Testing skill framework</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://github.com/microsoft/AI-For-Beginners" target="_blank">microsoft/AI-For-Beginners</a></td>
+                <td><span class="star-badge">⭐ 1902</span></td>
+                <td class="gh-desc">12 Weeks, 24 Lessons, AI for All!</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://github.com/firecrawl/pdf-inspector" target="_blank">firecrawl/pdf-inspector</a></td>
+                <td><span class="star-badge">⭐ 1699</span></td>
+                <td class="gh-desc">Fast Rust library for PDF inspection, classification and extraction</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud/TencentDB-Agent-Memory</a></td>
+                <td><span class="star-badge">⭐ 1090</span></td>
+                <td class="gh-desc">Team-level knowledge memory for database operations</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="https://github.com/lyogavin/airllm" target="_blank">lyogavin/airllm</a></td>
+                <td><span class="star-badge">⭐ 1085</span></td>
+                <td class="gh-desc">AirLLM 70B inference with single 4GB GPU, no quantization needed</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="https://github.com/Panniantong/Agent-Reach" target="_blank">Panniantong/Agent-Reach</a></td>
+                <td><span class="star-badge">⭐ 1057</span></td>
+                <td class="gh-desc">Give your AI agent eyes to see the entire internet</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine/DeepSeek-Reasonix</a></td>
+                <td><span class="star-badge">⭐ 883</span></td>
+                <td class="gh-desc">DeepSeek-native AI coding agent for terminal</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">microsoft/generative-ai-for-beginners</a></td>
+                <td><span class="star-badge">⭐ 775</span></td>
+                <td class="gh-desc">21 Lessons, Get Started Building with Generative AI</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="https://github.com/jamiepine/voicebox" target="_blank">jamiepine/voicebox</a></td>
+                <td><span class="star-badge">⭐ 412</span></td>
+                <td class="gh-desc">Open-source AI voice studio. Clone, dictate, create.</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><a href="https://github.com/shiyu-coder/Kronos" target="_blank">shiyu-coder/Kronos</a></td>
+                <td><span class="star-badge">⭐ 200</span></td>
+                <td class="gh-desc">Foundation Model for the Language of Finance</td>
+            </tr></tbody>
+</table>
+
+<div class="footer">
+    AI Research Briefing 自动生成 | 数据来源: arXiv + GitHub Trending<br>
+    机构信息按规则严格省略（摘要无显式机构/企业 GitHub 组织信号）
+</div>
+
+</body>
+</html>

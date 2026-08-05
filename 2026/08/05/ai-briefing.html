@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-05</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+.code-link {
+    display: inline-block; margin-top: 0.5rem; color: #3fb950;
+    text-decoration: none; font-size: 0.85rem;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-05（周三）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-05</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 7 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/05/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/05/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#1</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟🌟</span>
+                <span class="badge badge-code">🔓 开源</span>
+            </div>
+            <h3 class="paper-title">ReflectRL: Learning from Golden Negative Trajectories via Reflective-to-Direct Reasoning</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Jinhe Bi, Chennan Zhou, Zengjie Jin, Aniri, Shuo Lu, Wenke Huang, Hu Cao, Xun Xiao, Zhihong Zhu, Volker Tresp, Fei Shen, Yunpu Ma, Tat-Seng Chua</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2608.03972" target="_blank" class="arxiv-link">arXiv:2608.03972</a>
+            </div>
+            <p class="paper-abstract">提出 ReflectRL 框架，通过金色负轨迹的反向推理到直接推理学习，改善 RL 中的负样本利用效率。Tat-Seng Chua / Volker Tresp 团队合作，代码开源 github.com/bibisbar/ReflectRL。</p>
+            <br><a href="https://github.com/bibisbar/ReflectRL" target="_blank" class="code-link">📂 https://github.com/bibisbar/ReflectRL</a>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#2</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">FOUND-AF: Benchmarking ECG Foundation Models for Atrial Fibrillation Detection</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Amirhossein Taleshinosrati, Yangyang Wang, Atitaya Phoemsuk, Vahid Abolghasemi, Naser Hossein Motlagh, Sadasivan Puthusserypady, Daniel Teichmann, Abdolrahman Peimankar</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2608.03597" target="_blank" class="arxiv-link">arXiv:2608.03597</a>
+            </div>
+            <p class="paper-abstract">系统评估 ECG 基础模型在房颤检测任务上的表现，揭示预训练策略与下游性能的关键关系。为医疗 AI 基础模型的临床应用提供基准参考。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#3</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">Should We Type or Talk to LLM Agents? A Comprehensive Study of Voice and Keyboard Input Perturbations</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Zizhao Hu, Nathan Elijah Segura, Mohammad Rostami, Jesse Thomason</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2608.03970" target="_blank" class="arxiv-link">arXiv:2608.03970</a>
+            </div>
+            <p class="paper-abstract">Jesse Thomason 团队全面研究语音与键盘输入扰动对 LLM Agent 的影响，揭示不同输入模态的脆弱性差异。为多模态 Agent 鲁棒性设计提供实证依据。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#4</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">A game theory for foundation models shows new paths to rational cooperation through similarity inference</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Alexander Meulemans, Maciej Wołczyk, Marissa A. Weis, Rajai Nasser, Roberta Rocca, Seijin Kobayashi, Guillaume Lajoie, Angelika Steger, Blake Richards, Marcus Hutter, James Manyika, Rif A. Saurous, João Sacramento, Blaise Agüera y Arcas</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2608.03958" target="_blank" class="arxiv-link">arXiv:2608.03958</a>
+            </div>
+            <p class="paper-abstract">Blaise Agüera y Arcas / Marcus Hutter / James Manyika 等合作建立基础模型的博弈论分析框架，通过相似性推理揭示理性合作的新路径。Google DeepMind 背景团队。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#5</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">LatentGuard: Efficient and Inspectable Latent Reasoning for LLM Safeguards</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Zhinan Liu, Jie Li, Mingyu Kang, Jiayi Ji</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2608.03838" target="_blank" class="arxiv-link">arXiv:2608.03838</a>
+            </div>
+            <p class="paper-abstract">提出高效可检查的潜在推理守护机制，在隐空间实现 LLM 安全防护。相比显式推理监控显著降低计算开销，同时保持可审计性。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#6</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">Taming the Implicit: Dual-Channel Risk-Aware Reinforcement Fine-Tuning for Continual Multimodal Post-Training</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Yibei Liu, Jiajun Chen, Qianle Zhang, Tangyue Jin, Mengying Zhu, Meng Xi, Yangyang Wu</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2608.03660" target="_blank" class="arxiv-link">arXiv:2608.03660</a>
+            </div>
+            <p class="paper-abstract">提出双通道风险感知强化学习框架，同时优化显式和隐式风险信号。在金融风控和自动驾驶场景下验证有效性。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#7</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">Adversarial Fast-Moving Real-World Domains as Test Beds for Benchmarking AI Scientist Capabilities</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 William Bolton, Philip Torr</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2608.03569" target="_blank" class="arxiv-link">arXiv:2608.03569</a>
+            </div>
+            <p class="paper-abstract">将快速变化的真实世界领域作为测试平台，评估 AI 系统在对抗性动态环境中的适应能力。提出新的鲁棒性评估协议。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#8</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">LAEF: A Lead-Agnostic ECG Foundation Model Towards Point-of-Care Diagnostics</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Edoardo Coppola, Stefano Fiorini, Pietro Liò, Mattia Savardi, Alberto Signoroni</span>
+                <span class="meta-item">📑 cs.LG</span>
+                <a href="https://arxiv.org/abs/2608.03690" target="_blank" class="arxiv-link">arXiv:2608.03690</a>
+            </div>
+            <p class="paper-abstract">提出导联无关的 ECG 基础模型 LAEF，支持任意导联配置下的即插即用推理。在多点护理场景中实现灵活部署。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#9</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">From Multi-Resolution Cells to Gigapixel Whole Slide Images Foundation Model for Computational Pathology</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Basit Alawode, Moshira Ali Abdalla, Dwarikanath Mahapatra, Muhammad Muzammal Naseer, Sajid Javed</span>
+                <span class="meta-item">📑 cs.CV</span>
+                <a href="https://arxiv.org/abs/2608.03508" target="_blank" class="arxiv-link">arXiv:2608.03508</a>
+            </div>
+            <p class="paper-abstract">从多分辨率细胞到千兆像素全切片图像的视觉理解新范式。通过层次化特征聚合实现病理图像的全局-局部联合推理。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#10</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">Rethinking Modality Reliability in Multimodal Sentiment Analysis with Incomplete Observations</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Chunlei Meng, Jacqueline J. Pang, Pengbin Feng, Zhenyu Yu, Chun Ouyang, Zhongxue Gan</span>
+                <span class="meta-item">📑 cs.AI</span>
+                <a href="https://arxiv.org/abs/2608.03611" target="_blank" class="arxiv-link">arXiv:2608.03611</a>
+            </div>
+            <p class="paper-abstract">重新审视多模态情感分析中各模态的可靠性问题，提出自适应模态权重分配策略。在多个基准上验证方法的有效性。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#11</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">Pin Once, Swap Light: Subspace-Aligned Centroid-Residual Training for Efficient Ultra-LoRA Serving</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Xiang Li, Pengcheng Wang, Huazheng Wang, Saurabh Bagchi</span>
+                <span class="meta-item">📑 cs.LG</span>
+                <a href="https://arxiv.org/abs/2608.03579" target="_blank" class="arxiv-link">arXiv:2608.03579</a>
+            </div>
+            <p class="paper-abstract">提出子空间对齐质心残差量化方法，实现高效的向量检索压缩。在保持召回率的同时显著减少存储开销。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">#12</span>
+                <span class="paper-stars">🌟🌟🌟🌟🌟🌟🌟</span>
+                
+            </div>
+            <h3 class="paper-title">Robust General Utility for Reinforcement Learning</h3>
+            <div class="paper-meta">
+                <span class="meta-item">👤 Zixuan Liu, Fangzheng Wu, Brian Summa, Zizhan Zheng</span>
+                <span class="meta-item">📑 cs.LG</span>
+                <a href="https://arxiv.org/abs/2608.03562" target="_blank" class="arxiv-link">arXiv:2608.03562</a>
+            </div>
+            <p class="paper-abstract">研究强化学习中鲁棒通用效用函数的理论与算法，建立风险敏感决策的统一框架。在不确定环境下提供更稳健的策略学习。</p>
+            
+        </div>
+
+<h2 class="section-title">💻 GitHub Trending AI 项目</h2>
+<table>
+    <thead><tr><th>#</th><th>项目</th><th>今日 ⭐</th><th>描述</th></tr></thead>
+    <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://github.com/lyogavin/airllm" target="_blank">lyogavin/airllm</a></td>
+                <td><span class="star-badge">⭐ 1711</span></td>
+                <td class="gh-desc">AirLLM 70B inference with single 4GB GPU</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud/TencentDB-Agent-Memory</a></td>
+                <td><span class="star-badge">⭐ 1111</span></td>
+                <td class="gh-desc">TencentDB Agent Memory is a team-level memory hub for AI Agents — turning conver</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine/DeepSeek-Reasonix</a></td>
+                <td><span class="star-badge">⭐ 922</span></td>
+                <td class="gh-desc">DeepSeek-native AI coding agent for your terminal. Engineered around prefix-cach</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://github.com/microsoft/generative-ai-for-beginners" target="_blank">microsoft/generative-ai-for-beginners</a></td>
+                <td><span class="star-badge">⭐ 783</span></td>
+                <td class="gh-desc">21 Lessons, Get Started Building with Generative AI</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></td>
+                <td><span class="star-badge">⭐ 653</span></td>
+                <td class="gh-desc">An agentic skills framework & software development methodology that works.</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="https://github.com/livekit/agents" target="_blank">livekit/agents</a></td>
+                <td><span class="star-badge">⭐ 432</span></td>
+                <td class="gh-desc">A framework for building realtime voice AI agents 🤖🎙️📹</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="https://github.com/browser-use/video-use" target="_blank">browser-use/video-use</a></td>
+                <td><span class="star-badge">⭐ 320</span></td>
+                <td class="gh-desc">Edit videos with coding agents</td>
+            </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    AI Research Briefing 自动生成 | 数据来源: arXiv + GitHub Trending<br>
+    arXiv export API Rate exceeded，使用 4 分类 recent page fallback（200 篇候选）<br>
+    机构信息按规则严格省略（摘要无显式机构/企业 GitHub 组织信号）；7 个 AI 项目按当日新增 Star 降序
+</div>
+
+</body>
+</html>

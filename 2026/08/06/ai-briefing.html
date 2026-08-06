@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-06</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+.code-link {
+    display: inline-block; margin-top: 0.5rem; color: #3fb950;
+    text-decoration: none; font-size: 0.85rem;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-06（周四）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-06</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 7 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/06/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/06/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Hierarchical Graph Memory for LLM Agents with Path-level Localization and Rewrite</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Xiawei Yue, Boran Wang, Xiaoqing Zhang, Shuxin Zheng, Ziwei Zhang</span>
+                <span class="meta-item">🏷️ cs.AI</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.05095" target="_blank">2608.05095</a></span>
+            </div>
+            <p class="paper-abstract">Agents for long term reasoning require a memory that can be efficiently and effectively updated over time, as new facts and external feedback continue to arrive. Recently, graph memory has been adopted to offer structural organization for multi-hop retrieval and reasoning. However, existing methods store all memories in a flat graph, and accumulated historical memories can introduce irrelevant con...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>MatrAIx: Simulating the World with 8.3 Billion Persona Agents</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Xiaomin Li, Yuexing Hao, Jianheng Hou, Jintao Huang, Qianfeng Wen, Shirley Huang, Yifan Liu, Xiaoyi Liu, Yilan Fan, Yijun Wang, Koutian Wu, Ruoqi Gao, Muhammad Ahmed Mohsin, Jing Tang, Brihi Joshi, Heming Liu, Zheyuan Deng, Zonglin Di, Sankalp Jajee, Jiuyao Lu, Zhiwei Zhang, Saksham Kapoor, Ishan Gupta, Yunhan Zhao, Chanwoo Park, Yucheng Lu, Bing Hu, Weihang Xiao, Aravind Mohan, Hanwen Xing, Runyu Zhang, Mihir Kulshreshtha, Yuanda Xu, Qianyu Zhu, Dianzhuo Wang, Yuxin Xiao, Bowen Jiang, Yongye Su, Wenhao Chai, Zuxin Liu, Lawrence Yunliang Chen, Xuandong Zhao, Ethan Ye, Shivam Patel, Jason Xie, Alex Martin Richmond, Weixiang Ding, Emre Okcular, Diya Mathew, Ziheng Wang, Rana M. Shahroz Khan, Zhejian Peng, Fang Wu, Fan Nie, Xinyang Han, Yubin Kim, Jiawei Zhang, Zhenting Qi, Huangyuan Su, Xu Pan, Abinitha Gourabathina, Hyewon Jeong, Hemanth Neelgund Ramesh, Kumail Alhamoud, Kimia Hamidieh, Zidi Xiong, Samuel Schmidgall, Pengrui Han, Yepeng Huang, Yongheng Wang, Bowen Yang, Alex Gu, Yuchu Wang, Akshay Paruchuri, Brenna Li, Hejie Cui, Jiayuan Ding, Chaosheng Dong, Jiahao Wang, Yixuan He, Chi Wang, Pamela Bhattacharya, Tianyi Peng, Paul Pu Liang, Mitchell Gordon, Yilun Du, Marinka Zitnik, James Zou, Prasanna Tambe, Philip Torr, Emily Fox, Asu Ozdaglar, Dawn Song</span>
+                <span class="meta-item">🏷️ cs.AI</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.04205" target="_blank">2608.04205</a></span>
+            </div>
+            <p class="paper-abstract">Human evaluation of AI systems and digital products is costly, slow, and difficult to scale. Offline evaluations are more scalable but often abstract away human diversity and interactive behavior. We therefore introduce MatrAIx, a population-scale simulated-user evaluation infrastructure for testing AI systems and digital products with heterogeneous users. MatrAIx has three core components: First,...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>A/B Agent: A Self-Evolving Agent for Strategy Iteration in Industrial A/B Testing</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhuohang Jiang, Yuxin Chen, Yongsen Pan, Zheng Hu, Wenqi Fan, Qing Li, Hongyang Wang, Jun Wang, Wenwu Ou</span>
+                <span class="meta-item">🏷️ cs.AI</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.04625" target="_blank">2608.04625</a></span>
+            </div>
+            <p class="paper-abstract">Industrial recommendation strategy iteration heavily relies on large-scale A/B experimentation. Traditional tuning requires experts to repeatedly design strategies, configure experiments, analyze results, and adjust parameters, making the process labor-intensive and time-consuming. Meanwhile, valuable knowledge from historical experiments is often fragmented, making systematic reuse difficult thro...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>The RAIL Principles for Neurosymbolic AI: Reasoning, Assurances, Interfacing and Learning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Agnese Chiatti, Michael Cochez, Cristina Cornelio, Sebastijan Dumancic, Artur d&#39;Avila Garcez, Luis C. Lamb, Lia Morra, Mathias Niepert, Robert Peharz, Alberto Speranzon, Maarten Stol, Annette Ten Teije, Thiviyan Thanapalasingam, Frank Van Harmelen, Emile Van Krieken, Antonio Vergari, Benjie Wang</span>
+                <span class="meta-item">🏷️ cs.AI</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.04285" target="_blank">2608.04285</a></span>
+            </div>
+            <p class="paper-abstract">Neurosymbolic AI systems that integrate machine learning and symbolic reasoning are rapidly gaining attention. They complement the data-intensive statistical approaches of neural networks and language models with symbolic reasoning algorithms to function in high-stakes domains or in low-data regimes that characterize many real-world applications. We argue that the neurosymbolic combination of mach...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>ODRA: Synthesizing Cognitive Behavioral Therapy Sessions with Structured Chain-Of-Thought and Dynamic Patient Resistance</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Javier Rodriguez-Juan, Hiba Arnaout, Jose Garcia-Rodriguez, David Tomás, Iryna Gurevych</span>
+                <span class="meta-item">🏷️ cs.CL</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.04524" target="_blank">2608.04524</a></span>
+            </div>
+            <p class="paper-abstract">Synthetic generation of Cognitive Behavioral Therapy (CBT) sessions is challenged by two competing demands: adhering to strict therapeutic structure while modeling the resistant, unpredictable behavior of real patients. Existing script-based methods fail to capture dynamic therapeutic interactions, while multi-agent approaches struggle to adhere to CBT&#39;s sequential structure; both suffer from ...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Above-ground Biomass Estimation with Geospatial Foundation Models</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Ghjulia Sialellia, Linus Scheibenreif, Jan Dirk Wegner, Konrad Schindler</span>
+                <span class="meta-item">🏷️ cs.LG</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.04792" target="_blank">2608.04792</a></span>
+            </div>
+            <p class="paper-abstract">Accurate estimation of Above-Ground Biomass (AGB) from satellite imagery is essential for the large-scale monitoring of carbon stocks, yet it remains a challenging regression task at global scale. Geospatial Foundation Models (GFMs) have recently emerged as a promising machine learning paradigm to derive general-purpose representations from Earth observation data, but their utility for quantitativ...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Towards Physics of Multimodal Pretraining: Knowledge Flow, Modality Synergy, Early Unification, and Recipes</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Junlin Han, Shengbang Tong, David Fan, Minghao Chen, Philip Torr, Filippos Kokkinos, Mike Lewis</span>
+                <span class="meta-item">🏷️ cs.CV</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.05000" target="_blank">2608.05000</a></span>
+            </div>
+            <p class="paper-abstract">Vision offers a critical axis for advancing foundation models, driving a shift towards natively unified multimodal pretraining. Despite this momentum, the design space and the fundamental mechanisms of how modalities interact during unified training remain underexplored. We provide empirical clarity through a systematic exploration of multimodal pretraining. Our controlled experiments on both synt...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Cooking beyond Frames: A Stereo Event Camera Dataset in the Kitchen</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Chengming Feng, Hesam Araghi, Liming Zheng, Julien Dupeyroux, Xucong Zhang, Jan van Gemert, Nergis Tömen</span>
+                <span class="meta-item">🏷️ cs.CV</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.04865" target="_blank">2608.04865</a></span>
+            </div>
+            <p class="paper-abstract">Event cameras, also known as neuromorphic cameras, have gained significant attention in recent years due to their high temporal resolution, high dynamic range, and low power consumption. While many studies and datasets in neuromorphic vision have focused on automotive and drone applications, human-centric daily-life scenarios remain largely underrepresented, despite their importance for developing...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Robust and Efficient Motion Reasoning for Privacy-Aware Classroom Incident Recognition</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Paritosh Parmar, Landy Lan, Hong Yang, Chen Yi, Chiat Pin Tay</span>
+                <span class="meta-item">🏷️ cs.AI</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.05115" target="_blank">2608.05115</a></span>
+            </div>
+            <p class="paper-abstract">Can computer vision help make classrooms safer? In this pilot study, we investigate privacy-aware and computationally efficient classroom incident recognition from CCTV-style observations. This setting remains underexplored, with limited benchmarks and few methods designed for the privacy, efficiency, and generalization demands of real-world deployment. We introduce a novel hybrid benchmark combin...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Generative Optimization for Incentivized Advertising with Global Level Constraints</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Gege Chen, Ning Luo, Hao Jiang, Da Li, Wenzheng Shu, Teng Sha, Yanxiang Zeng, Wenxin Tai, Fan Zhou, Xialong Liu</span>
+                <span class="meta-item">🏷️ cs.LG</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.04421" target="_blank">2608.04421</a></span>
+            </div>
+            <p class="paper-abstract">Incentivized advertising allocates monetary or virtual rewards to drive user engagement, where a key challenge is optimizing continuous incentive magnitudes under strict global constraints. This problem is complicated by high-frequency interactions, delayed feedback, and non-Markovian user dynamics such as fatigue, which limit the effectiveness of existing uplift modeling and constrained reinforce...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>OctoLong: Mid-Training On Cross-Repository Code Contexts Enhances Long-Context Modeling</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Indraneil Paul, Falko Helm, Goran Glavaš, Iryna Gurevych</span>
+                <span class="meta-item">🏷️ cs.AI</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.05141" target="_blank">2608.05141</a></span>
+            </div>
+            <p class="paper-abstract">Context lengths of language models (LMs) have dramatically increased, driven by the demands for in-context learning, self-improvement, and long-horizon agentic workflows. Existing long-context corpora, however, are dominated by books, academic articles, and code repositories, which are finite resources and often scarce in long-distance dependencies. In this work, we introduce OctoLong, a context e...</p>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>NSF-HRPT: Neural Semantic Field meets Hierarchical Risk Perception Tree for Safety-Critical Scenario Assessment</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yu Zhao, Jiangyu Pan, Tao Hu, Ming Yin, Fan Yang, Jiangfan Liu, Xiubo Liang</span>
+                <span class="meta-item">🏷️ cs.AI</span>
+                <span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.04776" target="_blank">2608.04776</a></span>
+            </div>
+            <p class="paper-abstract">The ability to accurately assess and anticipate risks in safety-critical scenarios is crucial for autonomous driving systems. While existing research has made progress in collision prediction, accurately quantifying risk levels from monocular vision inputs remains challenging due to the complex dynamics of multi-agent interactions and the inherent uncertainty in real-world environments. To address...</p>
+        </div>
+
+<h2 class="section-title">💻 GitHub Trending AI 项目</h2>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>项目</th>
+            <th>⭐ 今日</th>
+            <th>⭐ 总计</th>
+            <th>描述</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td><a href="https://github.com/TencentCloud/TencentDB-Agent-Memory" target="_blank">TencentCloud/TencentDB-Agent-Memory</a></td>
+            <td><span class="star-badge">+1892 ⭐</span></td>
+            <td>15,155</td>
+            <td class="gh-desc">TencentDB Agent Memory — team-level memory hub for AI Agents</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="https://github.com/firecrawl/pdf-inspector" target="_blank">firecrawl/pdf-inspector</a></td>
+            <td><span class="star-badge">+1582 ⭐</span></td>
+            <td>11,529</td>
+            <td class="gh-desc">Fast Rust library for PDF inspection, classification, and text extraction</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></td>
+            <td><span class="star-badge">+931 ⭐</span></td>
+            <td>267,348</td>
+            <td class="gh-desc">An agentic skills framework & software development methodology</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><a href="https://github.com/cloudflare/computer" target="_blank">cloudflare/computer</a></td>
+            <td><span class="star-badge">+891 ⭐</span></td>
+            <td>3,153</td>
+            <td class="gh-desc">Give your agent a computer 👾</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><a href="https://github.com/lyogavin/airllm" target="_blank">lyogavin/airllm</a></td>
+            <td><span class="star-badge">+833 ⭐</span></td>
+            <td>29,136</td>
+            <td class="gh-desc">AirLLM 70B inference with single 4GB GPU</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><a href="https://github.com/esengine/DeepSeek-Reasonix" target="_blank">esengine/DeepSeek-Reasonix</a></td>
+            <td><span class="star-badge">+747 ⭐</span></td>
+            <td>31,707</td>
+            <td class="gh-desc">DeepSeek-native AI coding agent for your terminal</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><a href="https://github.com/huangruiteng/loopx" target="_blank">huangruiteng/loopx</a></td>
+            <td><span class="star-badge">+326 ⭐</span></td>
+            <td>2,215</td>
+            <td class="gh-desc">Lightweight loop engineering state kernel for long-running AI agent teams</td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <p>AI Research Briefing | 每日 AI 研究简报 | 自动生成于 2026-08-06</p>
+    <p>数据来源: arXiv API (cs.AI/cs.LG/cs.CL/cs.CV), GitHub Trending</p>
+</div>
+
+</body>
+</html>

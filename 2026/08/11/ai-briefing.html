@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-11</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --card-bg: #161b22;
+  --border: #30363d;
+  --text-primary: #e6edf3;
+  --text-secondary: #8b949e;
+  --accent: #58a6ff;
+  --star: #f1c40f;
+  --tag-bg: #1f6feb33;
+  --tag-text: #58a6ff;
+  --link: #58a6ff;
+  --green: #3fb950;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  padding: 2rem;
+}
+.container { max-width: 900px; margin: 0 auto; }
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--text-secondary); font-size: 0.95rem; }
+.section-title {
+  font-size: 1.3rem;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.paper {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+.paper-header { display: flex; gap: 0.75rem; align-items: flex-start; margin-bottom: 0.5rem; }
+.stars { color: var(--star); font-weight: bold; white-space: nowrap; }
+.paper-title { font-weight: 600; font-size: 1.05rem; color: var(--accent); }
+.paper-meta {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+.paper-meta b { color: var(--text-primary); }
+.summary {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #c9d1d9;
+}
+.tag {
+  display: inline-block;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  margin-right: 0.3rem;
+  margin-top: 0.3rem;
+}
+.gh-item {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.gh-name { font-weight: 600; color: var(--accent); text-decoration: none; }
+.gh-desc { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.25rem; }
+.gh-stars { color: var(--star); font-weight: 600; white-space: nowrap; margin-left: 1rem; }
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>📰 AI Research Briefing</h1>
+  <div class="subtitle">2026-08-11 · 12 篇论文精选 · 8 个 GitHub Trending 项目</div>
+</header>
+
+<section>
+  <h2 class="section-title">📊 arXiv 论文精选</h2>
+
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★★★☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09771" class="paper-title" target="_blank">SLIM-0.5B: Learning Action-Grounded Predictive Latents for Robot Manipulation</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Jingkai Wang, Zihan Tang, Gu Zhang, Mingyu Cao, Jiapeng Chen, Yifan Zhu, Jiaqi Kang, Yichao Yan, Chenglin Wu, Wenxuan Song, Jia Zeng, Dahua Lin, Ziwei Liu<br>
+      <b>分类</b>: <span class="tag">cs.RO</span>
+    </div>
+    <div class="summary">VLA 模型通常依赖庞大的多模态骨干网络同时处理感知、语言理解和动作生成，但连续机器人操作实际上只需要紧凑的表征。本文提出 SLIM-0.5B，仅用 0.5B 参数学习动作接地的预测性潜在表征，在机器人操作基准上取得优异性能。核心思路是将开放域语义理解与操作所需的紧凑预测表征收敛分离，大幅降低计算开销的同时保持操控精度。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★★☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09732" class="paper-title" target="_blank">World Tokens: Enhancing Embodied Policies with Training-Time World Modeling</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Qu Tang, Benhui Zhuang, Bo Yuan, Xue Yu, Longteng Guo, Jing Liu, Xiaolin Hu<br>
+      <b>分类</b>: <span class="tag">cs.CV</span>
+    </div>
+    <div class="summary">视觉-语言-动作（VLA）模型擅长闭环控制，但无法显式建模任务执行过程中物理场景的演化。本文提出 World Tokens，在训练时为具身策略引入世界建模能力，使策略能够预测未来场景状态。该方法在反应式 VLA 和预测式世界模型之间架起桥梁，为提升长程任务规划能力提供了新路径。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★★☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09745" class="paper-title" target="_blank">SR-OPSD: Self-Referenced On-Policy Self-Distillation</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Zhuo Sun, Entong Li, Yanlong Zhao, Xiaoyuan Cheng, Wenxuan Yuan, Zhihong Tian, Minlie Huang<br>
+      <b>分类</b>: <span class="tag">cs.LG</span><span class="tag">cs.AI</span>
+    </div>
+    <div class="summary">On-policy self-distillation（OPSD）将反馈转化为策略生成轨迹上的稠密 token 级监督信号，是对稀疏结果奖励的有效补充。然而现有 OPSD 方法的自教师策略通常是固定的 stop-gradient 版本，无法随学生进步而调整。本文提出 SR-OPSD，引入自引用蒸馏机制，使教师策略持续适应学生的进展，在对齐和推理任务上均取得显著提升。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★★☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09762" class="paper-title" target="_blank">Efficient Real-World Online Reinforcement Learning for Robot Manipulation via Centralized Training and Critic Decomposition</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Changhao Li, Yifang Zhang, Heng Zhang, Davide Torielli, Damiano Gasperini, Federico Paredes-Vallés, Christian Kerl, Daniel Cremers<br>
+      <b>分类</b>: <span class="tag">cs.RO</span>
+    </div>
+    <div class="summary">真实世界在线强化学习直接在物理环境中训练机器人操作策略，避免了 sim-to-real 鸿沟并支持人机回环持续优化。本文提出集中式训练与评论家分解方法，显著提升样本效率。在多个真实机器人操作任务上验证了方法的有效性，展示了在线 RL 在实际部署中的可行性。Daniel Cremers（TUM）团队工作。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★☆☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09723" class="paper-title" target="_blank">LookAgain: Closed-Loop GUI Grounding with Visually Grounded Reflection</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Renshan Zhang, Haoyang Meng, Yixiao He, Rui Shao, April Hua Liu, Yinfei Yang, Zhe Gan<br>
+      <b>分类</b>: <span class="tag">cs.CV</span>
+    </div>
+    <div class="summary">当前 GUI 定位器在标准基准上单轮准确率很高，但在小目标、密集控件和分布外界面上表现急剧下降。本文提出 LookAgain，通过视觉接地反思实现闭环 GUI 定位——利用视觉反馈迭代修正预测。该方法显著提升了在挑战性 GUI 元素上的鲁棒性，为 GUI Agent 的可靠性改进提供了实用方案。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★☆☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09763" class="paper-title" target="_blank">Second-Order Muon Done Right: A Principled Marriage of Spectral Geometry and Curvature</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Tong Che<br>
+      <b>分类</b>: <span class="tag">cs.AI</span>
+    </div>
+    <div class="summary">Muon 优化器的极坐标更新在无权重谱几何下是精确的。本文提出 GO-MUON，使用匹配的数据依赖几何并在多个优化步骤中复用。其原始更新精确求解对应的加权谱问题，从理论上统一了谱几何与曲率信息。该方法为二阶优化提供了原则性框架，具有更好的收敛性质。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★☆☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09768" class="paper-title" target="_blank">ReliableNet: A Chance-Constrained Approach to Trustworthy Classification in Deep Learning</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Ange-Clément Akazan, Ineza Remy Mugenga, Abebe Geletu, Jean Medard Ngnotchouye, Issa Karambal<br>
+      <b>分类</b>: <span class="tag">cs.LG</span>
+    </div>
+    <div class="summary">高置信度但错误的预测是关键可靠性故障——它们恰好绕过了弃权机制和人工审查。经验风险最小化只控制平均损失而不直接控制此类故障。本文将可信分类形式化为机会约束优化问题，直接限制高置信度误分类的概率。方法提供理论保证并在多个基准上验证了有效性。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★☆☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09772" class="paper-title" target="_blank">PragMatch: Separating Pragmatic Incongruity from Cross-Modal Mismatch in Large Vision-Language Models</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Zhanna Mukhametsharip, Vera Demberg, Varsha Suresh<br>
+      <b>分类</b>: <span class="tag">cs.CL</span>
+    </div>
+    <div class="summary">大视觉语言模型在多模态基准上表现强劲，但它们是否真正理解图文关系还是依赖表面相关性仍不清楚。本文提出 PragMatch 诊断框架，将语用不一致性与跨模态不匹配分离开来。实验揭示当前 LVLM 中存在显著的捷径学习现象，为评估模型真正的多模态推理能力提供了新工具。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★☆☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09778" class="paper-title" target="_blank">RoboSeg: Online Part-Level Semantic Reconstruction for Robotic Manipulation via a Single Eye-in-Hand Camera</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Zhaochen Lan, Mengxiang Lin<br>
+      <b>分类</b>: <span class="tag">cs.RO</span>
+    </div>
+    <div class="summary">机器人操作需要感知系统识别可操作部件（把手、边缘、扳机、工具尖端），而非仅仅识别物体类别。本文提出 RoboSeg，一个部件级语义重建系统，将 VLM 的功能部件描述与单目手眼相机的在线 3D 重建相结合。该系统使机器人能够对未见过的物体进行精确操作。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★★☆☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09766" class="paper-title" target="_blank">Cultivar: A Contrastive and Locale-Oriented Translation Benchmark for Investigating Contamination and Localisation Robustness</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Pinzhen Chen, Koel Dutta Chowdhury, Xiaoya Xu, David Tan, Doreen Osmelak, Pinzhuo Tian, Barry Haddow, Alexandra Birch<br>
+      <b>分类</b>: <span class="tag">cs.CL</span><span class="tag">cs.AI</span>
+    </div>
+    <div class="summary">当前多语言翻译基准通常以英语为源语言，容易受到数据污染且忽视地域文化差异。本文提出 Cultivar，倡导源语言对比评估和本地化导向翻译。该基准为研究机器翻译系统中的数据污染和本地化能力提供了更稳健的评估框架。Barry Haddow 和 Alexandra Birch（爱丁堡大学）团队工作。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★☆☆☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09774" class="paper-title" target="_blank">C²A: Coupling Spatial Evidence with Clinical Priors via Co-occurrence Aware Class Attention for Multi-Label Chest X-Ray Classification</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Akash Gogineni, Nagur Shareef Shaik, Aasrith Mandava, Adnan Masood, Dong Hye Ye<br>
+      <b>分类</b>: <span class="tag">cs.LG</span><span class="tag">cs.CV</span>
+    </div>
+    <div class="summary">胸部病理很少孤立出现，但标准多标签分类器依赖共享全局描述符，丢弃了病变位置和共现关系信息。本文提出 C²A（共现感知类别注意力），通过新颖的注意力机制显式耦合空间证据与临床先验知识。该方法在胸部 X 光多标签分类任务上取得显著提升。</div>
+  </div>
+  <div class="paper">
+    <div class="paper-header">
+      <span class="stars">★★★★☆☆☆☆☆☆</span>
+      <a href="https://arxiv.org/abs/2608.09782" class="paper-title" target="_blank">NTIRE 2026 Low-light Enhancement: Twilight Cowboy Challenge</a>
+    </div>
+    <div class="paper-meta">
+      
+      
+      
+      <b>作者</b>: Aleksei Khalin, Egor Ershov, Artyom Panshin, Sergey Korchagin, Georgiy Lobarev, ..., Radu Timofte, Shuai Liu, Yuqian Zhang, Lize Zhang, Yibin Huang, Chaoyu Feng, Luyang Wang, Xiaotao Wang, Dongqing Zou, Lei Lei, Tianli Liu, Dejun Hao, Chunxia Lei<br>
+      <b>分类</b>: <span class="tag">cs.CV</span>
+    </div>
+    <div class="summary">本文综述了 NTIRE 2026 低光增强挑战赛。比赛目标是在低光条件下将多张未对齐的手机 raw 域图像融合为单张清晰图像，同时解决噪声、混合光源和手部运动导致的几何不一致问题。收集了 585 个真实场景数据集，十支队伍超越基线，PSNR 最高提升 6.49 dB。Radu Timofte 组织。</div>
+  </div>
+</section>
+
+<section>
+  <h2 class="section-title">🔥 GitHub Trending AI 项目</h2>
+
+  <div class="gh-item">
+    <div>
+      <a href="https://github.com/PrimeIntellect-ai/prime-agent" class="gh-name" target="_blank">PrimeIntellect-ai/prime-agent</a>
+      <div class="gh-desc">Self-improving RLM agent for coding workflows and long-running autonomous tasks</div>
+    </div>
+    <span class="gh-stars">★ 2642 today</span>
+  </div>
+  <div class="gh-item">
+    <div>
+      <a href="https://github.com/semantica-agi/semantica" class="gh-name" target="_blank">semantica-agi/semantica</a>
+      <div class="gh-desc">Graph-Native Infrastructure for Context and Accountable AI Systems</div>
+    </div>
+    <span class="gh-stars">★ 970 today</span>
+  </div>
+  <div class="gh-item">
+    <div>
+      <a href="https://github.com/Comfy-Org/ComfyUI" class="gh-name" target="_blank">Comfy-Org/ComfyUI</a>
+      <div class="gh-desc">Most powerful modular diffusion model GUI, API and backend with graph/nodes interface</div>
+    </div>
+    <span class="gh-stars">★ 922 today</span>
+  </div>
+  <div class="gh-item">
+    <div>
+      <a href="https://github.com/firecrawl/firecrawl" class="gh-name" target="_blank">firecrawl/firecrawl</a>
+      <div class="gh-desc">Context API to search, scrape, and interact with the web at scale</div>
+    </div>
+    <span class="gh-stars">★ 835 today</span>
+  </div>
+  <div class="gh-item">
+    <div>
+      <a href="https://github.com/vitali87/code-graph-rag" class="gh-name" target="_blank">vitali87/code-graph-rag</a>
+      <div class="gh-desc">Ultimate RAG for monorepo — query, understand, and edit codebases with AI + knowledge graphs</div>
+    </div>
+    <span class="gh-stars">★ 682 today</span>
+  </div>
+  <div class="gh-item">
+    <div>
+      <a href="https://github.com/addyosmani/agent-skills" class="gh-name" target="_blank">addyosmani/agent-skills</a>
+      <div class="gh-desc">Production-grade engineering skills for AI coding agents</div>
+    </div>
+    <span class="gh-stars">★ 659 today</span>
+  </div>
+  <div class="gh-item">
+    <div>
+      <a href="https://github.com/google-deepmind/weathernext" class="gh-name" target="_blank">google-deepmind/weathernext</a>
+      <div class="gh-desc">Weather forecasting model from Google DeepMind</div>
+    </div>
+    <span class="gh-stars">★ 325 today</span>
+  </div>
+  <div class="gh-item">
+    <div>
+      <a href="https://github.com/danielmiessler/LifeOS" class="gh-name" target="_blank">danielmiessler/LifeOS</a>
+      <div class="gh-desc">General Hill-climbing AI harness for moving from Current State to Ideal State</div>
+    </div>
+    <span class="gh-stars">★ 315 today</span>
+  </div>
+</section>
+
+<footer>
+  AI Research Briefing | Generated on 2026-08-11 | <a href="https://yenanjing.github.io/ai-briefings/2026/08/11/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/08/11/ai-briefing.html</a>
+</footer>
+</div>
+</body>
+</html>

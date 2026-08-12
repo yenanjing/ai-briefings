@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-12</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;color:#24292f;background:#f6f8fa}
+.container{max-width:900px;margin:0 auto;padding:40px 24px}
+header{border-bottom:2px solid #d0d7de;padding-bottom:24px;margin-bottom:32px}
+h1{font-size:28px;color:#1f2328;margin-bottom:8px}
+.date{color:#57606a;font-size:14px}
+.section{margin-bottom:36px}
+.section-title{font-size:22px;color:#1f2328;border-bottom:1px solid #d0d7de;padding-bottom:8px;margin-bottom:20px}
+.paper{background:#fff;border:1px solid #d0d7de;border-radius:8px;padding:20px;margin-bottom:16px}
+.paper-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.paper-title{font-size:16px;font-weight:600;color:#0969da;text-decoration:none}
+.paper-title:hover{text-decoration:underline}
+.stars{font-size:14px;white-space:nowrap;margin-left:12px}
+.paper-meta{font-size:13px;color:#57606a;margin-bottom:8px}
+.paper-meta strong{color:#24292f}
+.paper-abstract{font-size:13.5px;color:#424a56;line-height:1.7}
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:500;margin-right:4px}
+.tag-cv{background:#ddf4ff;color:#0969da}
+.tag-cl{background:#fff4db;color:#9a6700}
+.tag-lg{background:#eef7ff;color:#0066cc}
+.tag-ro{background:#f2e8ff;color:#6a30a3}
+.tag-ai{background:#dcf7e8;color:#1a7f37}
+.tag-ml{background:#ffeef0;color:#cf222e}
+.tag-cc{background:#fff8e1;color:#b7791f}
+.github-section{margin-top:32px}
+.project{background:#fff;border:1px solid #d0d7de;border-radius:8px;padding:16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.project-info{flex:1}
+.project-name{font-size:15px;font-weight:600;color:#0969da;text-decoration:none}
+.project-name:hover{text-decoration:underline}
+.project-desc{font-size:13px;color:#57606a;margin-top:4px}
+.project-stats{white-space:nowrap;text-align:right;margin-left:16px}
+.star-today{font-size:18px;font-weight:700;color:#f85149}
+.star-total{font-size:12px;color:#57606a}
+footer{margin-top:48px;padding-top:20px;border-top:1px solid #d0d7de;text-align:center;font-size:13px;color:#57606a}
+.code-link{color:#1a7f37;text-decoration:none;font-size:13px}
+.code-link:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>AI Research Briefing</h1>
+<div class="date">2026年8月12日 星期二 | arXiv papers submitted 2026-08-11</div>
+</header>
+
+<section class="section">
+<h2 class="section-title">精选论文 (Top 12)</h2>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11181" class="paper-title">How to Verify Consistency of Probabilistic Claims</a>
+<span class="stars">★★★★★★★ 7.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Orr Paradise, Oliver Richardson, Yoshua Bengio, Shafi Goldwasser<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11181">2608.11181</a> [cs.CC, cs.AI, cs.LG]<br>
+<span class="tag tag-cc">cs.CC</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span>
+</div>
+<div class="paper-abstract">
+提出一种交互式PCP协议来验证概率预测器的自洽性——给定概率电路P和置信度电路Q，多项式时间验证器只需在少量点上评估即可验证近似一致性。该工作为AI安全中的诚实性验证奠定了复杂性理论基础，是迈向"训练预测模型证明自身一致性"的第一步。两位图灵奖得主（Bengio + Goldwasser）合作，理论深度与AI安全意义兼具。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11149" class="paper-title">PRMU: A Corpus-Free Benchmark for Person-Centric Knowledge Unlearning in Multimodal Large Language Models</a>
+<span class="stars">★★★★★★ 6.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Huafeng Chen, Yueming Lyu, Ziyuan Chen, Wenda Tan, Chenyang Si, Liucheng Guo, Caifeng Shan<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11149">2608.11149</a> [cs.CV]<br>
+<strong>代码</strong>: <a href="https://github.com/2231122/PRMU" class="code-link">github.com/2231122/PRMU</a><br>
+<span class="tag tag-cv">cs.CV</span>
+</div>
+<div class="paper-abstract">
+针对多模态大模型(MLLM)的机器遗忘问题，提出首个无需原始语料的person-centric遗忘基准PRMU。现有方法假设可访问遗忘/保留语料，这在实际删除场景中往往不成立。同时提出SGPE(Similarity-Gated Projection Editing)作为轻量级无语料遗忘基线，具有知识位移保护和局部性感知的多模态控制。在代表性MLLM上的实验揭示了现有方法的遗忘-局部性权衡困境。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11204" class="paper-title">Surgical WAM: A World-Action Model for Data-Efficient Surgical Robot Learning</a>
+<span class="stars">★★★★★★ 6.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Wenrui Bao, Tianyun Jiang, Zhiben Chen, Ser-Nam Lim, Peter D. Peng, Yuzhang Shang<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11204">2608.11204</a> [cs.RO, cs.AI, cs.CV]<br>
+<span class="tag tag-ro">cs.RO</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-cv">cs.CV</span>
+</div>
+<div class="paper-abstract">
+提出Surgical WAM，一个基于Cosmos Policy的统一生成模型，联合预测未来内窥镜观测和可执行的手术机器人动作块。核心问题是：在固定动作标注数据预算下，无动作视频预训练能否改善闭环手术操作？在四个模拟手术任务上，视频预训练将平均成功率从63.5%提升至77.8%，PegTransfer任务提升20个百分点。证明了无动作视频可为数据稀缺的手术机器人学习提供可迁移的视觉动力学先验。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11195" class="paper-title">Long-Horizon AI Research for Grothendieck Constant: A Case Study in Human-AI Mathematical Collaboration</a>
+<span class="stars">★★★★★★ 6.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Alan Li, Rahul Saha, Anton Xue, Swarat Chaudhuri, Adam Klivans, Pravesh K Kothari, Raghu Meka<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11195">2608.11195</a> [cs.AI, cs.CC, cs.HC, math.FA]<br>
+<span class="tag tag-ai">cs.AI</span><span class="tag tag-cc">cs.CC</span>
+</div>
+<div class="paper-abstract">
+详细案例研究：利用AI研究系统改进Grothendieck常数K_G的上下界。团队近期将最佳已知界限收紧到 6π/11 ≤ K_G ≤ π/(2log(1+√2)) - 10⁻⁴，这些改进由AI系统自主发现并被领域专家认定为新颖洞察。论文深入讨论了AI用于数学研究的经验、优势与局限，以及创造AI突破性洞察理想条件的方法论。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11146" class="paper-title">The Illusion of Cross-Lingual Safety in Low-Resource Languages</a>
+<span class="stars">★★★★★★ 6.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Abigail Oppong, P Sam Sahil, Tadesse Destaw Belay, Maryam Ibrahim Mukhtar, Esmael Ahmed Abdu, Tassallah Abdullahi, Jessica Oparebea, Saminu Mohammad Aliyu, Idris Abdulmumin, Abubakar Juma Chilala, Nicholaus Dismas Ladislaus, Alfred Malengo Kondoro, Lemofouet Valdini Douglace, Shamsuddeen Hassan Muhammad, Seid Muhie Yimam<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11146">2608.11146</a> [cs.CL]<br>
+<span class="tag tag-cl">cs.CL</span>
+</div>
+<div class="paper-abstract">
+揭示LLM跨语言安全对齐在低资源语言中的严重缺陷。提出LoDNA安全数据集（包含字面翻译和文化本地化提示），并创新性地提出潜在几何框架来探测隐状态拒绝表征。在四种非洲语言(Twi, Hausa, Amharic, Swahili)上的实验表明：有害提示保留了不到10%的英语拒绝信号。字面和局部化提示语义高度对齐(cosine 0.95-0.996)但在各层间漂移——模型编码了概念但未将其路由到安全机制。强有力证据表明当前多语言安全对齐是表面的。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11191" class="paper-title">Test-Time Self-Evolving GUI Visual Grounding via Reflection-Guided On-Policy Self-Distillation</a>
+<span class="stars">★★★★★ 5.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Shiyu Xuan, Zechao Li<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11191">2608.11191</a> [cs.CV, cs.AI, cs.CL]<br>
+<span class="tag tag-cv">cs.CV</span><span class="tag tag-ai">cs.AI</span>
+</div>
+<div class="paper-abstract">
+首次将on-policy自蒸馏用于GUI视觉接地的测试时自适应。提出探索-评估-反思-内化的闭环框架：MLLM-based Reflector评估生成的接地结果并提供推理反思，Reflection-Guided On-Policy Self-Distillation将高层推理转化为稠密token级监督，Contrastive Calibration防止错误前缀污染监督信号。六个基准上平均准确率提升7.4%。填补了GUI Agent部署后自适应能力的空白。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11150" class="paper-title">CausalSplat: Towards Comprehensive Hierarchical Reasoning in 3D Gaussian Splatting</a>
+<span class="stars">★★★★★ 5.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Jiayu Ding, Meilu Song, Yun Chen, Wei Gao, Ge Li<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11150">2608.11150</a> [cs.CV]<br>
+<span class="tag tag-cv">cs.CV</span>
+</div>
+<div class="paper-abstract">
+提出推理3D高斯分割新任务，构建Causal-LERF和Causal-ScanNet两个基准，系统评估常识、空间、affordance和反事实推理能力。现有SOTA方法在这些推理挑战上表现不佳。CausalSplat框架将VLM与3D场景图集成，解耦显式结构感知与隐式逻辑推理。在推理基准上达到SOTA，同时在标准referencing和开放词汇3D分割任务上展现强泛化性。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11205" class="paper-title">AdvFD: Boosting Visual Generation via Adversarial Fréchet Distance Loss</a>
+<span class="stars">★★★★★ 5.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Mingju Gao, Jingkai Zhou, Kun Gai, Changqian Yu, Hao Tang<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11205">2608.11205</a> [cs.CV]<br>
+<span class="tag tag-cv">cs.CV</span>
+</div>
+<div class="paper-abstract">
+指出现有Fréchet距离优化的"Fréchet hacking"问题——目标指标持续改善但视觉质量停滞。归因于静态预训练特征空间提供不完整且固定的视角。提出Adversarial Fréchet Distance (AdvFD)，用对抗学习的可校准表征补充静态FD目标：可学习表征对抗性地最大化真实/生成样本间的Fréchet差异，而生成器最小化该差异。引入real-feature whitening防止特征放大。在JiT和pMF骨干及不同模型规模上一致改善单步生成器后训练。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11201" class="paper-title">VidForensics-M1: Meta-Detection Reinforcement Learning with Verifiable Temporal Grounding for AI-Generated Video Forensics</a>
+<span class="stars">★★★★★ 5.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Bowei Liu, Zheng Lu, Yuhan Bian, Xinchen Zhang, Xingming Shui, Yuesheng Huang, Xuhuan Li, Zihao Liu, Yifan Yang, Jun Zhou, Xiu Li<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11201">2608.11201</a> [cs.CV]<br>
+<span class="tag tag-cv">cs.CV</span>
+</div>
+<div class="paper-abstract">
+首次将meta-detection引入AI生成视频检测，在强化学习中联合优化预测标签和支持证据。相比依赖外部模型的文本rationale，提出用时序定位作为更客观可验证的证据信号。自动化数据构建管线通过边界帧条件化视频生成模型替换时序片段来生成配对的真/假视频。提出Evidence-Guided Reward Redistribution进行证据感知的信用分配。实验证明该方法实现了鲁棒且可泛化的AI生成视频检测。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11174" class="paper-title">VIScore: Diagnosing Planning-Relevant Quality in Latent World Models</a>
+<span class="stars">★★★★★ 5.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Haiyu Wu, Randall Balestriero, Morgan Levine<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11174">2608.11174</a> [cs.RO]<br>
+<span class="tag tag-ro">cs.RO</span>
+</div>
+<div class="paper-abstract">
+发现SIGReg和VISReg两种正则化损失函数虽以各向同性高斯分布为目标但规划效果迥异——前者在SSL中有益但对规划无帮助，后者在OOD数据集上改善规划成功。提出VIScore (Veracity-Influence-Sobriety score)度量，量化给定编码特征的预测器可达性和容量以及搜索式规划器的幻觉程度。相比straightness、物理状态探测和empowerment，VIScore在可见和不可见模型/数据集上Spearman相关性始终超过0.75，且校准误差在所有测试场景中低于常数拟合。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11162" class="paper-title">Hierarchical Empirical-Bayes Naive Bayes: Minimax Smoothing and Calibration with AODE Extension</a>
+<span class="stars">★★★★★ 5.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Nguyen Thai Anh, Truong Viet Vu, Tran Thien Thanh, Vo Nguyen Quoc Bao, Ngo Hoang Tu<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11162">2608.11162</a> [cs.LG]<br>
+<span class="tag tag-lg">cs.LG</span>
+</div>
+<div class="paper-abstract">
+经典Naive Bayes的平滑规则(Laplace等)忽略特征基数、样本量和类别不平衡。提出HEB-NB，每个类-特征条件概率由Dirichlet先验平滑，其浓度参数通过Type-II极大似然数据自适应学习，实现跨类的原则性信息共享同时保持闭式推断。理论上建立非渐近ℓ₁误差界匹配经验分布minimax率加vanishing数据自适应偏差，以及与Laplace的有限样本严格分离。31个UCI/OpenML基准上概率指标最优，高基数数据集log-loss降低达22.1%。
+</div>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.11200" class="paper-title">ConVAWG: A Retrieval-Grounded Framework for Controlled Synthetic Dialogue Generation in Violence Against Women and Girls</a>
+<span class="stars">★★★★★ 5.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Chen Lyu, Xingwei Tan, Simon Cullen, Shelley Wilson, Lois Arthurs, Arshad Jhumka, Gabriele Pergola<br>
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.11200">2608.11200</a> [cs.CL, cs.AI, cs.LG]<br>
+<span class="tag tag-cl">cs.CL</span><span class="tag tag-ai">cs.AI</span>
+</div>
+<div class="paper-abstract">
+关注暴力侵害妇女和女孩(VAWG)场景的多轮对话建模。提出ConVAWG框架，从persona种子、UK国家统计局人口模式、官方犯罪定义和Domestic Homicide Review案例构建场景，转换为分层事件时间线，生成多场景角色扮演对话，并应用针对性activation-steered毒性控制。发布6000+多轮对话事件覆盖200个场景，含丰富的场景/事件/轮次级元数据。人工评估和LLM-as-Judge显示强对话质量和领域保真度。
+</div>
+</div>
+
+</section>
+
+<section class="section github-section">
+<h2 class="section-title">GitHub Trending AI 项目 (今日新增⭐降序)</h2>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/msitarzewski/agency-agents" class="project-name">msitarzewski/agency-agents</a>
+<div class="project-desc">Complete AI agency — frontend wizards to Reddit ninjas, each agent a specialized expert with personality and proven deliverables</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+958 ⭐</div>
+<div class="star-total">143,320 total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/semantica-agi/semantica" class="project-name">semantica-agi/semantica</a>
+<div class="project-desc">Graph-Native Infrastructure for Context and Accountable AI Systems</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+893 ⭐</div>
+<div class="star-total">4,930 total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/stablyai/orca" class="project-name">stablyai/orca</a>
+<div class="project-desc">Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription.</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+875 ⭐</div>
+<div class="star-total">42,841 total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/HKUDS/DeepTutor" class="project-name">HKUDS/DeepTutor</a>
+<div class="project-desc">DeepTutor: Lifelong Personalized Tutoring.</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+812 ⭐</div>
+<div class="star-total">34,768 total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/paperclipai/paperclip" class="project-name">paperclipai/paperclip</a>
+<div class="project-desc">The open-source app everyone uses to manage agents at work</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+748 ⭐</div>
+<div class="star-total">77,197 total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/PrimeIntellect-ai/prime-agent" class="project-name">PrimeIntellect-ai/prime-agent</a>
+<div class="project-desc">A self-improving RLM agent for coding workflows and long-running autonomous tasks.</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+1,138 ⭐</div>
+<div class="star-total">14,148 total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/addyosmani/agent-skills" class="project-name">addyosmani/agent-skills</a>
+<div class="project-desc">Production-grade engineering skills for AI coding agents.</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+578 ⭐</div>
+<div class="star-total">86,246 total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/anthropics/skills" class="project-name">anthropics/skills</a>
+<div class="project-desc">Public repository for Agent Skills</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+485 ⭐</div>
+<div class="star-total">168,161 total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/calesthio/OpenMontage" class="project-name">calesthio/OpenMontage</a>
+<div class="project-desc">World's first open-source agentic video production system. 12 pipelines, 100+ tools, 700+ agent skill files.</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+458 ⭐</div>
+<div class="star-total">47,374 total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/vitali87/code-graph-rag" class="project-name">vitali87/code-graph-rag</a>
+<div class="project-desc">The ultimate RAG for your monorepo. Query, understand, and edit multi-language codebases with AI and knowledge graphs</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+341 ⭐</div>
+<div class="star-total">3,845 total</div>
+</div>
+</div>
+
+</section>
+
+<footer>
+AI Research Briefing | Generated automatically | <a href="https://yenanjing.github.io/ai-briefings/" style="color:#0969da">Archive</a>
+</footer>
+</div>
+</body>
+</html>

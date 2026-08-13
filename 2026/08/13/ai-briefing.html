@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-13</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;color:#24292f;background:#f6f8fa}
+.container{max-width:900px;margin:0 auto;padding:40px 24px}
+header{border-bottom:2px solid #d0d7de;padding-bottom:24px;margin-bottom:32px}
+h1{font-size:28px;color:#1f2328;margin-bottom:8px}
+.date{color:#57606a;font-size:14px}
+.section{margin-bottom:36px}
+.section-title{font-size:22px;color:#1f2328;border-bottom:1px solid #d0d7de;padding-bottom:8px;margin-bottom:20px}
+.paper{background:#fff;border:1px solid #d0d7de;border-radius:8px;padding:20px;margin-bottom:16px}
+.paper-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.paper-title{font-size:16px;font-weight:600;color:#0969da;text-decoration:none}
+.paper-title:hover{text-decoration:underline}
+.stars{font-size:14px;white-space:nowrap;margin-left:12px}
+.paper-meta{font-size:13px;color:#57606a;margin-bottom:8px}
+.paper-meta strong{color:#24292f}
+.paper-abstract{font-size:13.5px;color:#424a56;line-height:1.7}
+.tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:500;margin-right:4px}
+.tag-cv{background:#ddf4ff;color:#0969da}
+.tag-cl{background:#fff4db;color:#9a6700}
+.tag-lg{background:#eef7ff;color:#0066cc}
+.tag-ro{background:#f2e8ff;color:#6a30a3}
+.tag-ai{background:#dcf7e8;color:#1a7f37}
+.tag-ml{background:#ffeef0;color:#cf222e}
+.tag-cr{background:#fff0f0;color:#cf222e}
+.tag-se{background:#f0f4ff;color:#3b5998}
+.tag-mm{background:#f5f0ff;color:#6a30a3}
+.tag-ph{background:#f0fff4;color:#1a7f37}
+.tag-q-fin{background:#fff8e1;color:#b7791f}
+.tag-cy{background:#fff4ec;color:#d9531e}
+.github-section{margin-top:32px}
+.project{background:#fff;border:1px solid #d0d7de;border-radius:8px;padding:16px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.project-info{flex:1}
+.project-name{font-size:15px;font-weight:600;color:#0969da;text-decoration:none}
+.project-name:hover{text-decoration:underline}
+.project-desc{font-size:13px;color:#57606a;margin-top:4px}
+.project-stats{white-space:nowrap;text-align:right;margin-left:16px}
+.star-today{font-size:18px;font-weight:700;color:#f85149}
+.star-total{font-size:12px;color:#57606a}
+footer{margin-top:48px;padding-top:20px;border-top:1px solid #d0d7de;text-align:center;font-size:13px;color:#57606a}
+.code-link{color:#1a7f37;text-decoration:none;font-size:13px}
+.code-link:hover{text-decoration:underline}
+.summary-box{background:#fff;border:1px solid #d0d7de;border-radius:8px;padding:20px;margin-bottom:20px}
+.summary-box h3{font-size:16px;color:#1f2328;margin-bottom:12px}
+.summary-box ul{padding-left:20px;font-size:14px;color:#424a56}
+.summary-box li{margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<h1>AI Research Briefing</h1>
+<div class="date">2026年8月13日 星期四 | arXiv papers submitted 2026-08-12</div>
+</header>
+
+<section class="section">
+<h2 class="section-title">精选论文 (Top 12)</h2>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12282" class="paper-title">VAKRA: Evaluating Multi-Hop Reasoning Across APIs and Retrieval Under Tool-Use Policies</a>
+<span class="stars">★★★★★★★★ 8.8🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Ankita Rajaram Naik, Anupama Murthi, Benjamin Elder, Siyu Huo, Raavi Gupta... | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12282" style="color:#0969da">2608.12282</a>
+ | <strong>代码</strong>: <a href="https://github.com/IBM/VAKRA" class="code-link">GitHub</a> | <a href="https://huggingface.co/datasets/ibm-research" class="code-link">HuggingFace</a>
+</div>
+<div><span class="tag tag-ai">cs.AI</span></div>
+<p class="paper-abstract">Agents deployed in enterprise settings must reason across structured APIs and document collections, yet existing benchmarks evaluate these capabilities in isolation. We introduce VAKRA (e\textbf{V}aluating \textbf{A}PI and \textbf{K}nowledge \textbf{R}etrieval \textbf{A}gents), a benchmark of over $8{,}000$ executable APIs across $62$ domains with tasks spanning three settings of increasing diffic...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12253" class="paper-title">One Frozen Simulator Is Not Enough: Simulator Collapse in Multi-Agent RL</a>
+<span class="stars">★★★★★★★★ 8.5🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Simon Yu, Nicholas Tomlin, Marwa Abdulhai, Ximing Lu, Derek Chong... | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12253" style="color:#0969da">2608.12253</a>
+
+</div>
+<div><span class="tag tag-cl">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span></div>
+<p class="paper-abstract">Multi-agent reinforcement learning for human-AI interaction typically relies on a single large language model to simulate user behavior. We show that this approach systematically fails to generalize, and trace the failure to simulator collapse: because the simulator LLM is mode-collapsed, an LLM policy trained against it overfits to narrow strategies that exploit the simulator's dominant mode, and...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12307" class="paper-title">AI4AI at Test-Time: Strong-to-Weak Capability Transfer via Harnesses</a>
+<span class="stars">★★★★★★★ 7.7🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Cheng Qian, Wenting Zhao, Liangwei Yang, Heng Wang, Jielin Qiu... | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12307" style="color:#0969da">2608.12307</a>
+
+</div>
+<div><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-cl">cs.CL</span></div>
+<p class="paper-abstract">Recent work on distillation transfers the capabilities of large models to smaller ones often by updating the latter's parameters, through teacher forcing, on-policy distillation, and related training-time methods. In this paper, we ask whether such transfer can instead occur at test time. We study strong-to-weak scaffolding: whether a stronger builder model can construct inference-time harnesses t...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12246" class="paper-title">VICBench: A Multi-Language Benchmark for Code Vulnerability Detection</a>
+<span class="stars">★★★★★★★ 7.4🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Jin Lu, Xuening Han, Yang Zhong, Lin Tan, Kevin Luo... | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12246" style="color:#0969da">2608.12246</a>
+
+</div>
+<div><span class="tag tag-cr">cs.CR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-cl">cs.CL</span><span class="tag tag-se">cs.SE</span></div>
+<p class="paper-abstract">Evaluating security vulnerability detection tools requires benchmark datasets with vulnerability-inducing commits (VICs) - the commits that first introduce vulnerabilities into codebases. VICs are essential for determining the full range of vulnerable software versions. Existing vulnerability datasets suffer from limited programming language coverage, restricted patch complexity, and narrow projec...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12271" class="paper-title">Earth observation embeddings are effective sub-grid descriptors for probabilistic weather downscaling</a>
+<span class="stars">★★★★★★★ 7.3🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Pedro Sousa, Will Tebbutt, Sadiq Jaffer, Robin Young, Anil Madhavapeddy... | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12271" style="color:#0969da">2608.12271</a>
+
+</div>
+<div><span class="tag tag-lg">cs.LG</span><span class="tag tag-ph">physics.ao-ph</span></div>
+<p class="paper-abstract">Global weather reanalyses and forecasts resolve the evolving atmospheric state on coarse grids, but site-specific applications require predictions at arbitrary locations where near-surface conditions also depend on unresolved terrain and land-surface properties. Existing probabilistic downscalers address this gap using hand-crafted topographic descriptors. We ask instead whether Earth observation ...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12279" class="paper-title">Curvature-Aware Zeroth-Order Optimization for Memory-Efficient Test-Time Adaptation</a>
+<span class="stars">★★★★★★★ 7.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Junming Zhang, Shuyu Yin, Peilin Liu, Rendong Ying, Fei Wen | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12279" style="color:#0969da">2608.12279</a>
+ | <strong>代码</strong>: <a href="https://github.com/Hollyming/CAZO" class="code-link">GitHub</a>
+</div>
+<div><span class="tag tag-cv">cs.CV</span></div>
+<p class="paper-abstract">Test-time adaptation (TTA) aims to enhance the cross-domain performance of pre-trained models by adapting to unlabeled test data. While most existing TTA methods rely on backpropagation (BP) for finetuning, BP-free methods such as zeroth-order (ZO) methods are more desired in practical on-device scenarios. ZO methods rely only on forward computation, which can largely reduce the complexity and mem...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12302" class="paper-title">A Framework for Designing Reward Functions: From Objectives to Features to Human-Aligned Reward Functions</a>
+<span class="stars">★★★★★★ 6.8🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Di Yang Shi, W. Bradley Knox | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12302" style="color:#0969da">2608.12302</a>
+
+</div>
+<div><span class="tag tag-lg">cs.LG</span></div>
+<p class="paper-abstract">We present a formal process to enable non-experts to instantiate and iterate on human-aligned reward functions, i.e. reward functions that adhere to a given preference ordering over trajectories. Given a task described in natural language, our process produces a linear reward function in three steps: distill the task's objectives into a set of fundamental objectives and derive measurable outcome v...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12273" class="paper-title">Convergent Detour Hijacking: Task-Preserving Resource Amplification in Skill-Based LLM Agents</a>
+<span class="stars">★★★★★★ 6.8🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Junliang Liu, Ruoyu Li, Wenxin Tang, Jingyu Xiao, Zhenyu Liu... | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12273" style="color:#0969da">2608.12273</a>
+
+</div>
+<div><span class="tag tag-cr">cs.CR</span><span class="tag tag-ai">cs.AI</span></div>
+<p class="paper-abstract">LLM agents increasingly rely on third-party skills, using natural-language descriptions for selection and instruction bodies for planning. This progressive-disclosure design exposes two sequential control points to untrusted publishers: a static skill may steer an otherwise correct task onto an unnecessarily costly trajectory. Prior work studies selection manipulation, malicious skill instructions...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12276" class="paper-title">XYZFlow: Scaling Multi-dimensional Shortcut Flows for Efficient Generative Modeling</a>
+<span class="stars">★★★★★★ 6.7🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Jinxiu Liu, Xuanming Liu, Kangfu Mei, Yandong Wen, Weiyang Liu | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12276" style="color:#0969da">2608.12276</a>
+
+</div>
+<div><span class="tag tag-cv">cs.CV</span></div>
+<p class="paper-abstract">High-fidelity image generation faces a trade-off between speed and quality. Diffusion models produce strong visuals but require costly iterative sampling. Existing efficient methods mainly distill pretrained models into few-step samplers, a challenging process that depends heavily on teacher-model quality. In this paper, we introduce XYZFlow, a framework that rethinks efficient generation through ...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12313" class="paper-title">AVA-Encoder: Towards Agent-Native Video Representation Learning</a>
+<span class="stars">★★★★★★ 6.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Chuyue Li, Jinpeng Yu, Haozhe Wang, Tian Xueyun, Zhijing Zhang... | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12313" style="color:#0969da">2608.12313</a>
+
+</div>
+<div><span class="tag tag-cv">cs.CV</span><span class="tag tag-cl">cs.CL</span></div>
+<p class="paper-abstract">Creative agents still lack an effective way to learn from high-quality human films, limiting their ability to produce cinematic-grade videos. A key challenge is the absence of a structured video representation that is both faithful to film content and directly usable for agentic reasoning and manipulation. To address the challenge, we propose the Agentic Video Auto-Encoder (AVA-Encoder), a framewo...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12306" class="paper-title">Redistribution-based Cost Inference Improves Sparse Safe Offline RL</a>
+<span class="stars">★★★★★★ 6.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Ebenezer Gelo, Geraud Nangue Tasse, Steven James, Benjamin Rosman | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12306" style="color:#0969da">2608.12306</a>
+
+</div>
+<div><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span></div>
+<p class="paper-abstract">Safe offline RL typically assumes access to dense per-step cost annotations, but in practice supervisors provide only trajectory-level stop-feedback: a binary signal at the first unsafe transition, with no per-step attribution. We frame this as a temporal credit assignment problem and propose the Redistribution-based Cost Inference (RCI) framework, which converts sparse stop-feedback into dense pe...</p>
+</div>
+
+<div class="paper">
+<div class="paper-header">
+<a href="https://arxiv.org/abs/2608.12290" class="paper-title">Beyond Trial-and-Error: Agentic Optimization for Image-to-Video Adherence</a>
+<span class="stars">★★★★★★ 6.0🌟</span>
+</div>
+<div class="paper-meta">
+<strong>作者</strong>: Aman Tyagi, Hemanth Boinpally, Jonathan Chen, Douglas Gebert, Steven Hickson | 
+<strong>arXiv</strong>: <a href="https://arxiv.org/abs/2608.12290" style="color:#0969da">2608.12290</a>
+
+</div>
+<div><span class="tag tag-cv">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-mm">cs.MM</span></div>
+<p class="paper-abstract">Modern black-box Image-to-Video (I2V) models offer powerful capabilities in automated content creation, yet their lack of fine-grained control and reliability presents significant challenges in professional workflows. Their inherent stochasticity causes minor variations in textual prompts or hyperparameters to yield drastically different outputs often necessitating inefficient, brute-force trial-a...</p>
+</div>
+
+</section>
+
+<section class="section github-section">
+<h2 class="section-title">GitHub Trending AI 项目</h2>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/msitarzewski/agency-agents" class="project-name">msitarzewski/agency-agents</a>
+<div class="project-desc">A complete AI agency at your fingertips - specialized expert agents</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+1873 ⭐ today</div>
+<div class="star-total">144642 ⭐ total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/stablyai/orca" class="project-name">stablyai/orca</a>
+<div class="project-desc">Orca is the ADE for working with a fleet of parallel agents</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+1235 ⭐ today</div>
+<div class="star-total">44021 ⭐ total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/semantica-agi/semantica" class="project-name">semantica-agi/semantica</a>
+<div class="project-desc">Graph-Native Infrastructure for Context and Accountable AI Systems</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+845 ⭐ today</div>
+<div class="star-total">5793 ⭐ total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/paperclipai/paperclip" class="project-name">paperclipai/paperclip</a>
+<div class="project-desc">The open-source app everyone uses to manage agents at work</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+571 ⭐ today</div>
+<div class="star-total">77777 ⭐ total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/NVIDIA-NeMo/Switchyard" class="project-name">NVIDIA-NeMo/Switchyard</a>
+<div class="project-desc">NVIDIA NeMo Switchyard - AI model framework</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+421 ⭐ today</div>
+<div class="star-total">875 ⭐ total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/cactus-compute/needle" class="project-name">cactus-compute/needle</a>
+<div class="project-desc">14MB foundation model for tiny devices; phones, wearables, smart home, and robots</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+315 ⭐ today</div>
+<div class="star-total">4308 ⭐ total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/shiyu-coder/Kronos" class="project-name">shiyu-coder/Kronos</a>
+<div class="project-desc">Kronos: A Foundation Model for the Language of Financial Markets</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+266 ⭐ today</div>
+<div class="star-total">36961 ⭐ total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/infiniflow/ragflow" class="project-name">infiniflow/ragflow</a>
+<div class="project-desc">RAGFlow is a leading open-source RAG engine with Agent capabilities</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+139 ⭐ today</div>
+<div class="star-total">87594 ⭐ total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/Lightricks/LTX-2" class="project-name">Lightricks/LTX-2</a>
+<div class="project-desc">Official Python inference and LoRA trainer for LTX-2 audio-video generative model</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+65 ⭐ today</div>
+<div class="star-total">8736 ⭐ total</div>
+</div>
+</div>
+
+<div class="project">
+<div class="project-info">
+<a href="https://github.com/embabel/embabel-agent" class="project-name">embabel/embabel-agent</a>
+<div class="project-desc">Agent framework for the JVM</div>
+</div>
+<div class="project-stats">
+<div class="star-today">+40 ⭐ today</div>
+<div class="star-total">4236 ⭐ total</div>
+</div>
+</div>
+
+</section>
+
+<footer>
+AI Research Briefing | Generated automatically | <a href="https://yenanjing.github.io/ai-briefings/" style="color:#0969da">Back to index</a>
+</footer>
+</div>
+</body>
+</html>

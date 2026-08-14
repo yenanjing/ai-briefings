@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing — 2026-08-14</title>
+<style>
+:root { --bg: #0d1117; --card: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e; --accent: #58a6ff; --green: #3fb950; --orange: #d29922; --red: #f85149; --purple: #a371f7; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; max-width: 960px; margin: 0 auto; }
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 0.8rem; margin-bottom: 0.5rem; }
+.subtitle { color: var(--muted); margin-bottom: 2rem; font-size: 0.95rem; }
+.section-title { font-size: 1.3rem; margin: 2rem 0 1rem; padding-left: 0.5rem; border-left: 4px solid var(--accent); color: var(--accent); }
+.paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.2rem; margin-bottom: 1rem; transition: border-color 0.2s; }
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 0.6rem; }
+.star-rating { font-size: 1.1rem; flex-shrink: 0; min-width: 3rem; }
+.paper-title { font-size: 1rem; font-weight: 600; color: var(--text); }
+.badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-decoration: none; }
+.badge.code { background: rgba(56,139,253,0.15); color: var(--accent); }
+.badge.code a { color: inherit; text-decoration: none; }
+.meta-row { display: flex; font-size: 0.85rem; margin-bottom: 0.2rem; }
+.meta-row .label { color: var(--muted); min-width: 4rem; flex-shrink: 0; }
+.meta-row a { color: var(--accent); text-decoration: none; }
+.paper-summary { margin-top: 0.5rem; font-size: 0.88rem; color: var(--muted); line-height: 1.7; }
+.gh-item { display: flex; gap: 0.8rem; padding: 0.7rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin-bottom: 0.5rem; align-items: center; }
+.gh-rank { font-size: 1.1rem; font-weight: 700; color: var(--orange); min-width: 2.5rem; }
+.gh-info { flex: 1; }
+.gh-name { font-weight: 600; color: var(--accent); text-decoration: none; font-size: 0.9rem; }
+.gh-stars { color: var(--green); font-size: 0.8rem; margin-left: 0.5rem; }
+.gh-desc { font-size: 0.82rem; color: var(--muted); margin-top: 0.15rem; }
+.footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); text-align: center; font-size: 0.75rem; color: var(--muted); }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<h1>📰 AI Research Briefing</h1>
+<p class="subtitle"><strong>日期</strong>: 2026-08-14 (周五) &nbsp;|&nbsp; <strong>arXiv 批次</strong>: 2026-08-13 提交 &nbsp;|&nbsp; <strong>精选论文</strong>: 12 篇 &nbsp;|&nbsp; <strong>GitHub Trending</strong>: 10 个项目</p>
+
+<div class="section-title">📄 Top 12 论文</div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">1🌟</span>
+            <h3 class="paper-title">OmniScientist: An Omni-Modal Omni-Discipline AI Scientist</h3>
+            
+        </div>
+        <div class="meta-row"><span class="label">机构</span><span>National University of Singapore</span></div>
+        <div class="meta-row"><span class="label">作者</span><span>Bobo Li, Hao Fei, Tianjie Ju, Mong-Li Lee, Wynne Hsu</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13558" target="_blank">2608.13558</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.AI, cs.CL</span></div>
+        <div class="paper-summary">端到端全模态AI科学家系统，从原始多模态数据（图像/信号/音频/视频/3D结构/轨迹/表格/公式/图）自动完成科研全流程：假设生成→实验→论文撰写。在36个跨5大学科案例中全部完成全流程，直接感知相比预计算特征在所有7个评估维度上提升，85%成对比较胜出。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">2🌟</span>
+            <h3 class="paper-title">Intern-S2-Preview: Scientific Agentic Foundation Model</h3>
+            
+        </div>
+        
+        <div class="meta-row"><span class="label">作者</span><span>Lei Bai, Jiaqi Cao, Chiyu Chen, Guanzhou Chen, Kai Chen et al.</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13505" target="_blank">2608.13505</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.LG, cs.CL, cs.CV</span></div>
+        <div class="paper-summary">科学智能体基础模型系列，能推理异构多模态科学证据、与科学工具和环境交互、在长任务周期内持续推进。面向科学研究自动化。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">3🌟</span>
+            <h3 class="paper-title">AutoDesign: Meta-Harness Optimization for Long-Horizon Agentic Design</h3>
+            <span class="badge code"><a href="https://github.com/Yaxin9Luo/AutoDesign" target="_blank">Code</a></span>
+        </div>
+        
+        <div class="meta-row"><span class="label">作者</span><span>Yaxin Luo, Haobin Jiang, Jialv Zou, Xu Huang, Wenhao Yan et al.</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13560" target="_blank">2608.13560</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.CV, cs.AI, cs.CL</span></div>
+        <div class="paper-summary">元harness优化框架，指导代码Agent基于rollout反馈递归改进harness。在学术论文→海报生成任务上构建PosterBench基准（100篇论文），得分78.32超越Claude Design 7.45分。集成后平均分数从54.99提升至67.39（+12.4%）。全自动循环中40分钟内执行253次工具调用和11轮编辑，成本<$3。开源。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">4🌟</span>
+            <h3 class="paper-title">V-RAE: Rethinking Video Latent Spaces for Generation</h3>
+            
+        </div>
+        
+        <div class="meta-row"><span class="label">作者</span><span>Minghui Guo, Shengqiong Wu, Hao Fei</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13556" target="_blank">2608.13556</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.CV</span></div>
+        <div class="paper-summary">视频表示自编码器，在冻结视觉基础模型表征之上构建紧凑生成立即空间。轻量时间池化模块去除时间冗余同时保留语义结构。在K600上达到2.13 rFVD，超越所有评估的大规模预训练视频VAE。匹配生成设置下gFVD 117.86 (UCF101) / 19.16 (K600)，收敛速度快6倍。提出tFVD时间一致性诊断指标。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">5🌟</span>
+            <h3 class="paper-title">Vero: Can AI Agents Build Formally Verified Software Repositories?</h3>
+            <span class="badge code"><a href="https://github.com/sunblaze-ucb/vero" target="_blank">Code</a></span>
+        </div>
+        <div class="meta-row"><span class="label">机构</span><span>UC Berkeley</span></div>
+        <div class="meta-row"><span class="label">作者</span><span>Zhe Ye, Hantao Lou, Yuechun Sun, Peiyang Song, Zhengxu Yan et al.</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13522" target="_blank">2608.13522</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.LG, cs.AI, cs.LO, cs.PL, cs.SE</span></div>
+        <div class="paper-summary">探索AI Agent能否构建形式化验证的软件仓库——同时生成实现和机器可验证的正确性证明。在Sunblaze@UC Berkeley实验室开展，为可信AI代码生成提供更强路径。开源。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">6🌟</span>
+            <h3 class="paper-title">PlayWorld: Benchmarking World Models with Agent Players over Long-Horizon Objectives</h3>
+            <span class="badge code"><a href="https://github.com/kxding/PlayWorld" target="_blank">Code</a></span>
+        </div>
+        
+        <div class="meta-row"><span class="label">作者</span><span>Kaixin Ding, Xi Chen, Minghong Cai, Zhiyuan Xu, Yiyang Wang et al.</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13552" target="_blank">2608.13552</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.CV</span></div>
+        <div class="paper-summary">用Agent玩家评估视频世界模型的长程目标达成能力。解决交互式世界模型公平比较难题，避免人类评估的主观性和高成本。开源基准。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">7🌟</span>
+            <h3 class="paper-title">DFM Mimir v1: An Open HRM Delivering Frontier Performance at 1B Parameters Using Only Permissible Post-Training Data</h3>
+            <span class="badge code"><a href="https://huggingface.co/danish-foundation-models/DFM-Mimir" target="_blank">Model</a></span>
+        </div>
+        <div class="meta-row"><span class="label">机构</span><span>Danish Foundation Models</span></div>
+        <div class="meta-row"><span class="label">作者</span><span>Peter Schneider-Kamp, Jacob Nielsen, Gianluca Barmina, Kenneth Enevoldsen, Lukas Galke Poech</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13517" target="_blank">2608.13517</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.CL</span></div>
+        <div class="paper-summary">10亿参数HRM架构语言模型，仅使用合规许可的后训练数据即达到前沿性能。由Danish Foundation Models发布，HuggingFace开源模型权重。降低开源研究门槛。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">8🌟</span>
+            <h3 class="paper-title">QuoteBench: How Matched Scores Can Hide Command-Path Failures</h3>
+            
+        </div>
+        
+        <div class="meta-row"><span class="label">作者</span><span>Shangao Li, Yao Zhang, Volker Tresp, Yuanyuan Yang</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13547" target="_blank">2608.13547</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.AI, cs.SE</span></div>
+        <div class="paper-summary">揭示LLM代码Agent的Bash命令生成错误与接口序列化错误的边界问题。通过精确最终状态验证测量这一边界，展示匹配执行分数无法区分的失败模式。Volker Tresp参与。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">9🌟</span>
+            <h3 class="paper-title">SCULPT: Subtractive Composition for 3D Part Generation</h3>
+            <span class="badge code"><a href="https://github.com/sculpt-part/SCULPT" target="_blank">Code</a></span>
+        </div>
+        
+        <div class="meta-row"><span class="label">作者</span><span>Sikuang Li, Chen Yang, Jiemin Fang, Jiazhong Cen, Yuhe Wei et al.</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13541" target="_blank">2608.13541</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.CV, cs.GR</span></div>
+        <div class="paper-summary">3D部件减法组合生成方法，在原生生成循环内施加结构约束，支持编辑、材质分配、动画和复用。开源。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">10🌟</span>
+            <h3 class="paper-title">LittleLearner: Language Models Under Pedagogically Controlled Knowledge Exposure</h3>
+            
+        </div>
+        
+        <div class="meta-row"><span class="label">作者</span><span>Fanfei Li, Jana Zeller, Manuel Prada-Corral, Thaddäus Wiedemer, Prasanna Mayilvahanan et al.</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13545" target="_blank">2608.13545</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.CL, cs.AI, cs.LG</span></div>
+        <div class="paper-summary">引入LITTLECURRICULUM——精心策划的88B token预训练语料库，在教育控制的知识暴露下研究语言模型的知识和技能获取。解决web规模异质语料难以追踪先验暴露的问题。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">11🌟</span>
+            <h3 class="paper-title">The Data Geometry of Masking Diffusion: Certified-Optimal Schedules via Unmasking Growth Complexity</h3>
+            
+        </div>
+        
+        <div class="meta-row"><span class="label">作者</span><span>Martin J. Wainwright</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13520" target="_blank">2608.13520</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.LG, cs.AI, cs.IT, math.ST, stat.ML</span></div>
+        <div class="paper-summary">研究离散采样的masking diffusion，提出路径分辨的数据几何度量"unmasking growth complexity"(UGC)。其局部增量直接控制KL散度离散化误差，统一分析Bernoulli采样和连续时间极限。Martin Wainwright（UC Berkeley统计学/EECS教授）独著。</div>
+    </div>
+
+    <div class="paper-card">
+        <div class="paper-header">
+            <span class="star-rating">12🌟</span>
+            <h3 class="paper-title">HumanTracker: Towards Comprehensive and Human-Aligned Motion Tracking Benchmark</h3>
+            
+        </div>
+        
+        <div class="meta-row"><span class="label">作者</span><span>Dairu Liu, Zekun Qi, Jiayu Zeng, Ruixi Yu, Yu Guan et al.</span></div>
+        <div class="meta-row"><span class="label">arXiv</span><span><a href="https://arxiv.org/abs/2608.13555" target="_blank">2608.13555</a></span></div>
+        <div class="meta-row"><span class="label">分类</span><span>cs.RO, cs.AI, cs.CV</span></div>
+        <div class="paper-summary">人形机器人运动跟踪的全面人机对齐评估基准。指出现有运动学误差指标忽略物理伪影（支撑不稳定、接触错误），提出更符合人类感知的评估方式。</div>
+    </div>
+
+
+<div class="section-title">🔥 GitHub Trending AI 项目（按当日新增 Star 排序）</div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#1</span>
+        <div class="gh-info">
+            <a href="https://github.com/macro-inc/macro" target="_blank" class="gh-name">macro-inc/macro</a>
+            <span class="gh-stars">+1,239 today</span>
+            <p class="gh-desc">统一团队工作区：邮件/聊天/文档/任务/Agent/通话/CRM，共享AI记忆</p>
+        </div>
+    </div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#2</span>
+        <div class="gh-info">
+            <a href="https://github.com/msitarzewski/agency-agents" target="_blank" class="gh-name">msitarzewski/agency-agents</a>
+            <span class="gh-stars">+778 today</span>
+            <p class="gh-desc">完整AI代理公司——专业化Agent</p>
+        </div>
+    </div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#3</span>
+        <div class="gh-info">
+            <a href="https://github.com/cactus-compute/needle" target="_blank" class="gh-name">cactus-compute/needle</a>
+            <span class="gh-stars">+769 today</span>
+            <p class="gh-desc">14MB基础模型用于微型设备</p>
+        </div>
+    </div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#4</span>
+        <div class="gh-info">
+            <a href="https://github.com/semantica-agi/semantica" target="_blank" class="gh-name">semantica-agi/semantica</a>
+            <span class="gh-stars">+713 today</span>
+            <p class="gh-desc">图原生基础设施，上下文和可问责AI系统</p>
+        </div>
+    </div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#5</span>
+        <div class="gh-info">
+            <a href="https://github.com/infiniflow/ragflow" target="_blank" class="gh-name">infiniflow/ragflow</a>
+            <span class="gh-stars">+465 today</span>
+            <p class="gh-desc">开源RAG引擎，融合RAG与Agent能力</p>
+        </div>
+    </div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#6</span>
+        <div class="gh-info">
+            <a href="https://github.com/NVIDIA-NeMo/Switchyard" target="_blank" class="gh-name">NVIDIA-NeMo/Switchyard</a>
+            <span class="gh-stars">+408 today</span>
+            <p class="gh-desc">LLM跨模型路由，保留API兼容</p>
+        </div>
+    </div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#7</span>
+        <div class="gh-info">
+            <a href="https://github.com/unslothai/unsloth" target="_blank" class="gh-name">unslothai/unsloth</a>
+            <span class="gh-stars">+328 today</span>
+            <p class="gh-desc">本地UI运行和训练LLM及扩散模型</p>
+        </div>
+    </div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#8</span>
+        <div class="gh-info">
+            <a href="https://github.com/anthropics/skills" target="_blank" class="gh-name">anthropics/skills</a>
+            <span class="gh-stars">+312 today</span>
+            <p class="gh-desc">Anthropic Agent Skills公开仓库</p>
+        </div>
+    </div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#9</span>
+        <div class="gh-info">
+            <a href="https://github.com/kepano/obsidian-skills" target="_blank" class="gh-name">kepano/obsidian-skills</a>
+            <span class="gh-stars">+292 today</span>
+            <p class="gh-desc">Obsidian的Agent技能</p>
+        </div>
+    </div>
+
+    <div class="gh-item">
+        <span class="gh-rank">#10</span>
+        <div class="gh-info">
+            <a href="https://github.com/holaboss-ai/holaOS" target="_blank" class="gh-name">holaboss-ai/holaOS</a>
+            <span class="gh-stars">+241 today</span>
+            <p class="gh-desc">开源一体化AI Agent工作区</p>
+        </div>
+    </div>
+
+
+<div class="footer">
+    AI Research Briefing | 由自动化流程生成 | 数据来源: arXiv API + GitHub Trending<br>
+    <a href="https://yenanjing.github.io/ai-briefings/" target="_blank">返回首页</a>
+</div>
+</body>
+</html>

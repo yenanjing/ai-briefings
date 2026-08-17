@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-17</title>
+<style>
+:root { --bg:#fff; --text:#1a1a1a; --muted:#666; --accent:#2563eb; --border:#e5e5e5; --card:#f8f9fa; --star:#f59e0b; --tag-bg:#dbeafe; --tag-text:#1d4ed8; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding:2rem; max-width:900px; margin:0 auto; }
+h1 { font-size:1.8rem; margin-bottom:.5rem; }
+.subtitle { color:var(--muted); font-size:.9rem; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid var(--border); }
+h2 { font-size:1.3rem; margin:2rem 0 1rem; padding-bottom:.5rem; border-bottom:2px solid var(--accent); color:var(--accent); }
+.paper { background:var(--card); border-radius:8px; padding:1.25rem; margin-bottom:1rem; border:1px solid var(--border); }
+.ph { display:flex; gap:.75rem; align-items:flex-start; margin-bottom:.5rem; }
+.score { background:var(--accent); color:#fff; padding:.15rem .5rem; border-radius:4px; font-weight:700; font-size:.85rem; white-space:nowrap; height:fit-content; }
+.pt { font-weight:600; font-size:1rem; }
+.pm { font-size:.82rem; color:var(--muted); margin:.25rem 0; }
+.pm b { color:var(--text); }
+.inn { font-size:.85rem; margin-top:.5rem; padding:.5rem; background:#fffbeb; border-left:3px solid #f59e0b; border-radius:0 4px 4px 0; }
+.tag { display:inline-block; font-size:.7rem; padding:.1rem .4rem; border-radius:3px; background:var(--tag-bg); color:var(--tag-text); margin-right:.3rem; }
+.ghi { padding:.6rem 0; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+.ghi:last-child { border-bottom:none; }
+.ghn { font-weight:600; color:var(--accent); text-decoration:none; font-size:.9rem; }
+.ghs { color:var(--star); font-weight:700; font-size:.85rem; white-space:nowrap; }
+.ghd { font-size:.8rem; color:var(--muted); margin-top:.15rem; }
+.foot { margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border); text-align:center; font-size:.8rem; color:var(--muted); }
+a { color:var(--accent); text-decoration:none; }
+</style>
+</head>
+<body>
+<h1>📰 AI Research Briefing</h1>
+<div class="subtitle"><b>2026-08-17</b> · 12 篇论文 · 3 个 GitHub 项目<br>arXiv: 2026-08-14（周五批次）· <a href="https://yenanjing.github.io/ai-briefings/2026/08/17/ai-briefing.html" target="_blank">在线版</a></div>
+<h2>📄 Top 12 论文</h2>
+<div class="paper"><div class="ph"><span class="score">7.8🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14530" target="_blank">Marionette: Predicting World States, Rendering Geometry, Painting Appearance</a></div></div>
+<div class="pm"><b>作者</b>: Zian Meng, Zhen Li, Chuanhao Li, Qiang Li, Kaipeng Zhang</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14530" target="_blank">2608.14530</a> · <span class="tag">cs.CV</span><span class="tag">cs.AI</span></div>
+<div class="inn">💡 首次将世界状态显式化+零参数几何渲染+神经外观合成的三模块解耦架构，解决了隐式latent世界模型长程一致性脆弱问题。状态可编辑性和可修复性是核心贡献。</div></div>
+<div class="paper"><div class="ph"><span class="score">7.6🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14528" target="_blank">Handover of In-Context Learning State Across Session Boundaries</a></div></div>
+<div class="pm"><b>作者</b>: Masahiro Kato, Taka Kato</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14528" target="_blank">2608.14528</a> · <span class="tag">cs.AI</span><span class="tag">stat.ML</span></div>
+<div class="inn">💡 首个将会话交接形式化为ICL状态转移的理论框架，给出了固定长度比特需求的充分条件和Gaussian/nonparametric下的精确界限。对多Agent协作和长上下文系统的设计有指导意义。</div></div>
+<div class="paper"><div class="ph"><span class="score">7.5🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14546" target="_blank">CPI-Bench: A Comprehensive, Practical and Intelligent Benchmark for Real-World Image Editing</a></div></div>
+<div class="pm"><b>作者</b>: Qinye Zhou et al. (20 authors)</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14546" target="_blank">2608.14546</a> · <span class="tag">cs.CV</span></div>
+<div class="inn">💡 首个同时覆盖通用编辑+实际部署+推理编辑三大维度的图像编辑基准，特别是多图编辑评估的引入填补了空白。与Arena的人类偏好高度对齐使其成为可靠的代理指标。</div></div>
+<div class="paper"><div class="ph"><span class="score">7.4🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14496" target="_blank">Generating Benchmark Health Data Using a Tabular Diffusion Transformer</a></div></div>
+<div class="pm"><b>作者</b>: Yubo Zhang, Yiyao Liu, Xiaodong Wang</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14496" target="_blank">2608.14496</a> · <span class="tag">cs.LG</span><span class="tag">stat.ME</span></div>
+<div class="inn">💡 将扩散Transformer应用于表格健康数据生成是一个新颖的方向，兼顾了数据效用和隐私保护。对医疗AI研究的数据稀缺问题有实际价值。</div></div>
+<div class="paper"><div class="ph"><span class="score">7.3🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14492" target="_blank">Approximate Muon with Low-Rank Adapters</a></div></div>
+<div class="pm"><b>作者</b>: Unknown</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14492" target="_blank">2608.14492</a> · <span class="tag">cs.LG</span></div>
+<div class="inn">💡 将低秩适配技术应用于优化器近似是一个巧妙的思路，直接降低了Muon优化器的使用门槛。对大模型训练效率有实际意义。</div></div>
+<div class="paper"><div class="ph"><span class="score">7.2🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14472" target="_blank">LP-NAS: Linear Programming-Based Neural Architecture Search</a></div></div>
+<div class="pm"><b>作者</b>: Unknown</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14472" target="_blank">2608.14472</a> · <span class="tag">cs.LG</span><span class="tag">cs.AI</span></div>
+<div class="inn">💡 用线性规划框架重新表述NAS问题是一个新颖的视角，理论上保证了最优性且计算效率高。如果实验验证充分，可能成为NAS领域的重要进展。</div></div>
+<div class="paper"><div class="ph"><span class="score">7.1🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14452" target="_blank">SheetCompass: Hierarchical Relation Graphs for Agentic Spreadsheet Reasoning</a></div></div>
+<div class="pm"><b>作者</b>: Unknown</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14452" target="_blank">2608.14452</a> · <span class="tag">cs.AI</span></div>
+<div class="inn">💡 将层次关系图引入电子表格Agent推理是一个实用的创新。电子表格是企业中最常见的数据结构之一，提升Agent在此场景的能力有广泛的实际应用价值。</div></div>
+<div class="paper"><div class="ph"><span class="score">7.0🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14509" target="_blank">Split the Labor: Separating Evidence Interpretation from Decision Aggregation</a></div></div>
+<div class="pm"><b>作者</b>: Zhelun Wu</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14509" target="_blank">2608.14509</a> · <span class="tag">cs.AI</span><span class="tag">cs.CL</span><span class="tag">cs.LG</span></div>
+<div class="inn">💡 提出了一个简洁而深刻的原则性框架，揭示了多源信息融合中的系统性偏差(count-scale drift)。解决方案是纯算术的而非架构性的，适用于语言模型之外的一类系统。独著论文显示了理论的优雅性。</div></div>
+<div class="paper"><div class="ph"><span class="score">6.9🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14543" target="_blank">MagnifiQ: Patch-Aware Text Guided Progressive Upscaling for High-Resolution Image Restoration</a></div></div>
+<div class="pm"><b>作者</b>: Mahesh Reddy, Yashesh Savani, Antoine Mercier, Hong Cai, Fatih Porikli, Guillaume Berger</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14543" target="_blank">2608.14543</a> · <span class="tag">cs.CV</span></div>
+<div class="inn">💡 渐进式上采样+patch级文本引导的组合设计有效解决了4K扩散恢复的计算和一致性问题。将SDXL的self-attention替换为卷积实现线性复杂度增长是实用的工程贡献。</div></div>
+<div class="paper"><div class="ph"><span class="score">6.8🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14522" target="_blank">Participatory Moral AI Is Not Neutral: The Invisible Hand of Developers</a></div></div>
+<div class="pm"><b>作者</b>: Taenyun Kim, Edyta Bogucka, Daniele Quercia</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14522" target="_blank">2608.14522</a> · <span class="tag">cs.AI</span></div>
+<div class="inn">💡 系统性地揭示了道德AI elicitation管道中三个关键决策点的隐性偏差，N=809的两阶段实证研究提供了扎实的证据。对AI伦理和治理有重要的政策含义。</div></div>
+<div class="paper"><div class="ph"><span class="score">6.7🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14490" target="_blank">Twin: Playing an Unknown Game with a Test-Time Digital Twin</a></div></div>
+<div class="pm"><b>作者</b>: Unknown</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14490" target="_blank">2608.14490</a> · <span class="tag">cs.AI</span><span class="tag">cs.LG</span></div>
+<div class="inn">💡 将数字孪生概念引入test-time适应是一个有趣的想法，特别是对zero-shot游戏playing场景。如果能在多种环境中验证有效性，对generalist agent的发展有意义。</div></div>
+<div class="paper"><div class="ph"><span class="score">6.6🌟</span><div class="pt"><a href="https://arxiv.org/abs/2608.14498" target="_blank">Rollplex: Cross-Phase GPU Spatial Sharing for Vision Language Model Power-Efficient Serving</a></div></div>
+<div class="pm"><b>作者</b>: Unknown</div>
+<div class="pm"><b>arXiv</b>: <a href="https://arxiv.org/abs/2608.14498" target="_blank">2608.14498</a> · <span class="tag">cs.DC</span><span class="tag">cs.LG</span></div>
+<div class="inn">💡 针对VLM服务的跨阶段资源复用是一个实用且有价值的优化方向。随着VLM部署规模的增长，这类系统级优化具有重要的工业应用价值。</div></div>
+<h2>🔥 GitHub Trending AI 项目</h2><div style="background:var(--card);border-radius:8px;padding:1rem;border:1px solid var(--border);"><div class="ghi"><div><a href="https://github.com/unslothai/unsloth" class="ghn" target="_blank">unslothai/unsloth</a><div class="ghd">Local UI to run/train LLMs & diffusion models</div></div><span class="ghs">⭐ +572 today</span></div><div class="ghi"><div><a href="https://github.com/ToolJet/ToolJet" class="ghn" target="_blank">ToolJet/ToolJet</a><div class="ghd">Open-source AI agent & internal tools platform</div></div><span class="ghs">⭐ +452 today</span></div><div class="ghi"><div><a href="https://github.com/cactus-compute/needle" class="ghn" target="_blank">cactus-compute/needle</a><div class="ghd">14MB foundation model for tiny devices</div></div><span class="ghs">⭐ +443 today</span></div></div><div class="foot">AI Research Briefing · 每日 AI 研究简报</div></body></html>

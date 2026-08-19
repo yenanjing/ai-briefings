@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-19</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+.code-link {
+    display: inline-block; margin-top: 0.5rem; color: #3fb950;
+    text-decoration: none; font-size: 0.85rem;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-19（周三）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-19</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 6 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/19/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/19/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>Hydra-0: Action Flow for Generalist World Modeling and Control</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Hongyu Li, Bowen Wen, Xinghao Zhu 等</span><span class="meta-item">🏷️ cs.RO</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18077" target="_blank">2608.18077</a></span>
+            </div>
+            <p class="paper-abstract">提出以 action flow（将机器人动作表示为像素运动）为条件的通用世界模型，跨具身/任务/环境/视频骨干学习动作后果。最佳配置相比动作条件基线降低 90.4% 机器人运动误差与 60.2% 物体运动误差；RoboLab 上回放成功率与参考成功率 Pearson 相关达 r=0.96。还发现该接口的涌现逆模式：世界动作模型可从人类示范迁移的期望物体流预测兼容机器人运动，无需任务专属专家示范。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">🔓 开源</span>
+            </div>
+            <div class="paper-title"><strong>Deep Academic Survey (DAS): Stateful Agentic Closed-Loop Paradigm for Academic Survey Automation</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhikai Xu, Zhucun Xue, Teng Hu 等</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18034" target="_blank">2608.18034</a></span>
+            </div>
+            <p class="paper-abstract">将有状态 Agent 框架用于生成可发表学术综述，将可复用论文分析与主题特定稿件构建分离。基于 DAS-2M（约 200 万篇论文动态元数据湖），通过候选锚定分类规划、逆向论文到章节路由、层次化声明与引用规划维护显式状态。在 30 主题 DAS-Bench 四维度均居首（总体 4.34 vs 最强对手 4.03），盲审专家 30 主题中 27 个偏好 DAS 胜过 Naive RAG。</p>
+            <a class="code-link" href="https://zhikaixu24.github.io/projects/DAS/" target="_blank">💻 代码: https://zhikaixu24.github.io/projects/DAS/</a>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>Chain-of-Experience (CoE) for Continual LLM Improvement</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Haoqin Tu, Yunhao Fang, Yizhong Wang 等</span><span class="meta-item">🏷️ cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18027" target="_blank">2608.18027</a></span>
+            </div>
+            <p class="paper-abstract">研究 LLM 在测试时通过迭代经验持续学习（CoE），模型累积经验轨迹形成超越零样本推理的持续改进循环。在 GPT-5、Gemini-2.5 Pro、Claude-4.5 Sonnet 等 8 个模型、数学/代码/知识领域评测中，仅自反馈即带来显著增益，整体提升 5.6% 且 API 成本降低 19%。基础能力与改进能力正相关，模型在弱/虚假反馈下仍保持鲁棒。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>From Corpora to Co-Evolving Capabilities: Capability-Centric Data Design for Generalist Image Generation</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Xingjian Wang, Zhao Wang, Taihang Hu 等</span><span class="meta-item">🏷️ cs.CV, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18076" target="_blank">2608.18076</a></span>
+            </div>
+            <p class="paper-abstract">提出能力驱动的数据基础设施，将能力特定监督构建与能力对齐课程调度耦合。三个专业化数据引擎为文图接地、图间变换、图像-知识关联构建互补关系监督，多阶段课程联合演化任务组成、视觉概念分布、数据质量与分辨率。规模上策展 4.4 亿图文 T2I 语料、1.2 亿编辑对、2700 万+图像实体对，从零训练 3B/6B 多模态扩散模型并在 CPI-Bench 验证。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>EDITBRIDGE: Towards Faithful and Efficient Ultra-High-Resolution Image Editing</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Jiayi Song, Shijie Huang, Fangtai Wu 等</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18063" target="_blank">2608.18063</a></span>
+            </div>
+            <p class="paper-abstract">针对超高分辨率编辑受限于二次注意力复杂度与显存的问题，提出扩散桥框架，将精修建模为从低分辨率编辑结果到其高清对应物的结构化 data-to-data 翻译，并显式以原始 HR 源为条件保留真实细节。引入先验引导块级稀疏注意力利用首阶段编辑语义对应约束跨图交互。最高 4K 实现高保真编辑，2K 提速 3.6–8.4×，4K 编辑 61 秒完成。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>The IOL-AI Challenge: An Open Challenge towards Advancing Linguistic Reasoning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Eduardo Sánchez, Rita Berrada, Dan-Mircea Mirea 等</span><span class="meta-item">🏷️ cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18011" target="_blank">2608.18011</a></span>
+            </div>
+            <p class="paper-abstract">基于国际语言学奥林匹克（IOL）2026 个人赛未见题目的开放科学竞赛，首次由 IOL 官方评审团按人类选手相同评分标准打分。731 支队伍提交、严格算力预算（单张 T4、30 分钟）。Claude Opus 4.8 获相当于金牌的评审分；14B 系统超越两倍体量模型，增益来自解码与输出处理而非容量。自动指标与评审团排序完全一致但压缩分差（弱系统虚高约 13 分）。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>On the Fragility of Self-Improving Agents: Variance, Task Order, and Underspecification</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Qinyuan Ye, Yu Li, Yada Pruksachatkun 等</span><span class="meta-item">🏷️ cs.AI, cs.CL, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18066" target="_blank">2608.18066</a></span>
+            </div>
+            <p class="paper-abstract">对记忆型自改进 Agent 进行可靠性重评估，沿多轮运行量化方差、随机打乱任务探究顺序影响两条轴展开。发现一：复杂环境中 Agent 评测本身噪声大，叠加自改进循环会放大噪声；发现二：改进高度依赖任务顺序，默认顺序隐含课程成为成功隐藏前提。加入详细 rubric 与环境反馈可部分弥补缺陷但仍有显著差距，呼吁更严格评测协议与有效人类监督接口。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>StagedWorkspace: A Versioned Workspace for Knowledge-Work Agents</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yining Hua, Hongbin Na, Yifan Zhou 等</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18050" target="_blank">2608.18050</a></span>
+            </div>
+            <p class="paper-abstract">将知识工作 Agent 的解析视图、原生文件编辑、变更审查、提交工件可能指向同一产品不同版本的问题形式化为工作区状态契约。StagedWorkspace 将解析记录与审查 diff 绑定到变化中原生文件的内容哈希。OfficeQA Pro 与 APEX-Agents 上双访问均为各模型最优点估计，OfficeQA Pass@1 提升 8.3–12.1 分；SW-AGENT 在 Gemini 3.1 Pro 上达 63.9%（已发表同模型 29.3%）。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>TokEval: A Tokenizer Evaluation Suite</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Clara Meister</span><span class="meta-item">🏷️ cs.CL, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18062" target="_blank">2608.18062</a></span>
+            </div>
+            <p class="paper-abstract">提出超越 fertility/压缩率标准度量、捕捉语言学与结构有意义属性的 tokenizer 评估框架（如 UTF-8 字符边界完整性、数字位值边界对齐）。通过受控预训练实验验证指标对下游性能的预测力：信息论指标预测语言建模能力（Spearman rho 高达 0.80），结构敏感指标（数字/换行处理）与任务准确率相关，有望用内在测量替代预训练扫描。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>Optimize Your Sampling: Tuned Diffusion Sampling with Bayesian Optimization</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Travis Zhang, Christian Belardi, Justin Lovelace 等</span><span class="meta-item">🏷️ cs.LG, cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18040" target="_blank">2608.18040</a></span>
+            </div>
+            <p class="paper-abstract">将扩散采样时间步选择视为黑箱优化问题，直接用贝叶斯优化优化目标质量指标（而非理论代理）。OYS 在文生图上优于默认调度与 Align Your Steps，在修复及其他图像任务同样改善，无需额外训练且适用于蒸馏模型。5 步 OYS 调度保留 50 步质量的 89%–94%，同时推理成本降低 10×。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐</span>
+                
+            </div>
+            <div class="paper-title"><strong>Can Large Language Models Explain Flight Safety Events? FlightLLM</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Lu Xu, Xu Li, Linjiang Zheng 等</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18017" target="_blank">2608.18017</a></span>
+            </div>
+            <p class="paper-abstract">提出先验引导语义 LLM 方法 FlightLLM 用于可解释飞行安全分析。通过特征工程解决模态不一致，Semantic Discretization 模块将抽象数值模式转为定性描述；引入 CatBoost 作为统计专家注入先验引导，结合对比少样本学习与结构化提示嵌入航空领域知识。在 704 个真实 A320 航班样本上以硬着陆为锚点，实现有竞争力分类性能并生成直接合理的事件成因解释。</p>
+            
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">🔓 开源</span>
+            </div>
+            <div class="paper-title"><strong>Primitive Representation Learning for Unsupervised Dynamic Contrast Enhanced MRI Reconstruction</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Veronika Spieker, Wenqi Huang, Cemre Ariyurek 等</span><span class="meta-item">🏷️ eess.IV, cs.CV, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.18055" target="_blank">2608.18055</a></span>
+            </div>
+            <p class="paper-abstract">提出多维原语框架用于动态对比增强 MRI 重建，将底层解剖、动态对比增强与残余运动解耦到独立时间基函数中，实现表征的几何解释。架构在重建质量与主动脉/肾脏增强曲线提取精度上与传统方法竞争，模块化分层设计可自然扩展到额外动态因素与更高加速率。</p>
+            <a class="code-link" href="https://github.com/compai-lab/2026-GaborDCE-spieker" target="_blank">💻 代码: https://github.com/compai-lab/2026-GaborDCE-spieker</a>
+        </div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目（按当日新增 Star 降序）</h2>
+
+<table>
+    <thead>
+        <tr><th>项目</th><th>当日新增</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/MoneyPrinterTurbo</a></td>
+                <td><span class="star-badge">+2304 ⭐ today</span></td>
+                <td class="gh-desc">AI 大模型一键生成高清短视频</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank">mukul975/Anthropic-Cybersecurity-Skills</a></td>
+                <td><span class="star-badge">+730 ⭐ today</span></td>
+                <td class="gh-desc">817 项 AI Agent 网络安全技能，映射 6 大框架</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/akitaonrails/ai-memory" target="_blank">akitaonrails/ai-memory</a></td>
+                <td><span class="star-badge">+648 ⭐ today</span></td>
+                <td class="gh-desc">Agent 编码 CLI 长期记忆与跨厂商交接方案</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/jundot/omlx" target="_blank">jundot/omlx</a></td>
+                <td><span class="star-badge">+370 ⭐ today</span></td>
+                <td class="gh-desc">Apple Silicon 上的 LLM 推理服务器（连续批处理+SSD 缓存）</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/chaitanyagiri/munder-difflin" target="_blank">chaitanyagiri/munder-difflin</a></td>
+                <td><span class="star-badge">+306 ⭐ today</span></td>
+                <td class="gh-desc">本地多 Agent harness</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/volcengine/OpenViking" target="_blank">volcengine/OpenViking</a></td>
+                <td><span class="star-badge">+213 ⭐ today</span></td>
+                <td class="gh-desc">火山引擎面向 AI Agent 的自进化上下文数据库（记忆+RAG+技能）</td>
+            </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <p>由 AI Research Briefing 自动化生成 · 数据来源 arXiv API &amp; GitHub Trending</p>
+    <p>📅 2026-08-19</p>
+</div>
+
+</body>
+</html>

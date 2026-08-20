@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-20</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+.code-link {
+    display: inline-block; margin-top: 0.5rem; color: #3fb950;
+    text-decoration: none; font-size: 0.85rem;
+}
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-20（周四）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-20</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 8 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/20/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/20/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+            </div>
+            <div class="paper-title"><strong>Beyond the Transcript: Detecting Covert Coordination in Latent Multi-Agent Communication</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Ramneet Kaur, Pradyumna Chari, Ramesh Raskar, Jugad Singh, Sumit Kumar Jha</span><span class="meta-item">🏷️ cs.AI, cs.CR</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19161" target="_blank">2608.19161</a></span>
+            </div>
+            <p class="paper-abstract">提出 Verifiable Latent Alignments (VLA) 框架，用于监控和引导语言模型 Agent 的私有潜在通信通道。三层监控器（表征异常检测+反事实行动分布影响+稀疏自编码器解释）在_homogeneous_ Agent 上 AUROC 达 0.993，heterogeneous_ 配对 0.854。白盒引导实现 100% 出价分布恢复并显著降低共谋低价行为。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+            </div>
+            <div class="paper-title"><strong>SPADE: Self-Play in Adaptive Synthetic Executable Environments</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Bo Liu, Simon Yu, Yiding Jiang, Ao Qu, Andrew Zhao</span><span class="meta-item">🏷️ cs.CL, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19197" target="_blank">2608.19197</a></span>
+            </div>
+            <p class="paper-abstract">自我博弈 RL 框架，单个 LLM 同时扮演 Environment Designer（生成可执行训练环境代码）和 Reasoning Agent 两个角色。通过文档 grounding 和环境记忆，30B 模型在 8 个 held-out 数学/科学/代码/推理基准上平均超越最强固定环境基线 +5.3。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+            </div>
+            <div class="paper-title"><strong>Interpretable AI predicts a 2026 summer dry anomaly in central China</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Anran Wang, Wen Shi, Yong Luo, Jianbin Huang, Lijuan Chen</span><span class="meta-item">🏷️ physics.ao-ph, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19163" target="_blank">2608.19163</a></span>
+            </div>
+            <p class="paper-abstract">深度学习模型将动力环流预测转化为降水估计，预测 2026 年夏季中国中部干旱异常。LRP 可解释性独立识别偏北风为主驱动因子，扰动测试验证移除 LRP 识别特征即可消除干旱预测。为 AI 气候预测提供物理可解释框架。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Pre-Compiled Pipeline Shards for Distributed LLM Inference on Intel AI PC Fleets</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Tate Berenbaum, Muthaiah Venkatachalam</span><span class="meta-item">🏷️ cs.DC, cs.AI, cs.SE</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19147" target="_blank">2608.19147</a></span>
+            </div>
+            <p class="paper-abstract">利用 Intel AI PC 闲置 GPU/NPU 通过流水线并行服务超越单机能力的大模型。预编译 OpenVINO 图+IndirectKVCache 融合+投机解码+微批处理，两节点 8B INT4 服务双用户达单用户 1.79× 吞吐，四节点 Lunar Lake 可交互运行 70B 模型。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>ADEPT: Accelerating Dexterity via Pre-Training and Post-Training using Reinforcement Learning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Jayjun Lee, Jessica Yin, Asif Rana, Nicholas Blauch, Sam Mady</span><span class="meta-item">🏷️ cs.RO, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19182" target="_blank">2608.19182</a></span>
+            </div>
+            <p class="paper-abstract">大规模 RL 框架学习可 sim-to-real 迁移的高自由度灵巧操作。预训练通用物体 reposong 策略+稳定后训练配方（行为克隆蒸馏+评论家预热+保守 on-policy 更新）+关节空间 Geometric Fabric。23/29 DoF 机器人从原始视觉-触觉感知零样本 sim-to-real 完成长程任务。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Beyond Teacher Likelihood: Group-Calibrated On-Policy Distillation for Long-Context Reasoning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhu Zhang, Jixun Wang, Xiaoang Xu, Xiaorong Wang, Zihan Zhou</span><span class="meta-item">🏷️ cs.LG, cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19181" target="_blank">2608.19181</a></span>
+            </div>
+            <p class="paper-abstract">诊断长上下文任务中 token 级教师支持与任务级验证器奖励的错位，提出 GC-OPD 在 rollout 组内分别归一化后以差异作为有符号残差，RACA 按相对优势分配 token 信用。Qwen3-4B/8B 五基准平均分别从 29.08→40.47、35.12→44.65。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Learned, Then Lost: A Measured Single-Example Counterfactual in Pre-training</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zachary Speck, Asa Shepard</span><span class="meta-item">🏷️ cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19168" target="_blank">2608.19168</a></span>
+            </div>
+            <p class="paper-abstract">首次严格测量单样本预训练贡献：在 32 个 GPT-2 124M 模型上运行 24 次反事实实验。注入的 passage 在 50 步后被学习（cross-entropy 降低 0.039/0.044 nats，p<10⁻⁴），但最终步骤衰减消失。预注册对比未检测到显著插值损失壁垒差异。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>SCORE: Subject Coordinate Recovery for Label-Free Cross-Subject EEG-to-Image Retrieval</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhenyao Cui, Siyuan Kan, Siyang Li, Ziwei Wang, Dongrui Wu</span><span class="meta-item">🏷️ cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19134" target="_blank">2608.19134</a></span>
+            </div>
+            <p class="paper-abstract">无目标标签跨被试脑电到图像检索框架。训练时通过 recovery-aware 源训练对齐公共图像空间并模拟未见被试恢复；部署时冻结编码器，通过 hubness 校正匹配选择可靠 landmark 并估计正交变换恢复目标坐标。THINGS-EEG2 200-way Top-1/Top-5 达 53.23%/83.55%。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="paper-title"><strong>Open-MOPD: Diagnosing and Fixing Capability Imbalance in Multi-Teacher On-Policy Distillation</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Huan-ang Gao, Haohan Chi, Yong Yan, Shiyuan Feng, Hanlin Wu</span><span class="meta-item">🏷️ cs.LG, cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19098" target="_blank">2608.19098</a></span>
+            </div>
+            <p class="paper-abstract">在 SmolLM3-3B-Base 上建立受控 M-OPD 基准，揭示标准 M-OPD 仅捕获 35.6% 可用 headroom，失败源于 token 级优化预算严重错配（非梯度冲突）。提出 token-share 平衡+gap-aware 动态预算分配+学生奖励刷新，恢复跨域平衡。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐✨</span>
+            </div>
+            <div class="paper-title"><strong>Lévy Attention: Single-Pass Predictive Uncertainty for Continuous-Time Attention</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Sotirios P. Chatzis, Loukas Papadoulas</span><span class="meta-item">🏷️ cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19171" target="_blank">2608.19171</a></span>
+            </div>
+            <p class="paper-abstract">将注意力层重构为随机积分算子，输出为对非齐次泊松随机测度的积分。期望上退化为 mollified cosine-kernel 注意力，同时以闭式提供证据 Λ_q 和分歧 tr Σ_V(q) 作为不确定性估计，无需训练额外 head。t-PatchGNN 上精度损失≤5.6%。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐✨</span>
+            </div>
+            <div class="paper-title"><strong>Grouping the Stochastic Machine: Precision, Not Capability, as the Frontier Metric for AI Systems</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ George Andrikopoulos</span><span class="meta-item">🏷️ cs.AI, cs.CY, cs.LG, cs.SE</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19140" target="_blank">2608.19140</a></span>
+            </div>
+            <p class="paper-abstract">论证前沿 AI 系统差异化轴应是精度（precision，输出集中度）而非能力（capability，平均表现）。提出固定温度多次运行确定性评分任务计算 per-task 一致性的测量方法，区分一致失败（可纠正）与分散失败（需换模型），并定义 grouping 指标指导人机协作。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐✨</span>
+            </div>
+            <div class="paper-title"><strong>PGFS++: Molecular Property Improvement under Synthesis and Diversity Constraints</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Boqiao Zhang, Godbless James, Sai Krishna Gottipati, Andrew Fitzgibbon</span><span class="meta-item">🏷️ cs.LG, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.19121" target="_blank">2608.19121</a></span>
+            </div>
+            <p class="paper-abstract">合成感知 RL 分子改进框架，将输入分子视为前向合成轨迹起点，应用学习反应模板与兼容 building block 生成性质改进分子。解决 PGFS+ 中强反应物搜索导致输出多样性崩溃的 reward-hacking 问题，保持高输出多样性同时改进目标性质。</p>
+        </div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目（按当日新增 Star 降序）</h2>
+
+<table>
+    <thead>
+        <tr><th>项目</th><th>当日新增</th><th>说明</th></tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/MoneyPrinterTurbo</a></td>
+                <td><span class="star-badge">+2221 ⭐ today</span></td>
+                <td class="gh-desc">AI 大模型一键生成高清短视频</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></td>
+                <td><span class="star-badge">+1894 ⭐ today</span></td>
+                <td class="gh-desc">面向真实工程师的 Agent Skills 集合</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/volcengine/OpenViking" target="_blank">volcengine/OpenViking</a></td>
+                <td><span class="star-badge">+804 ⭐ today</span></td>
+                <td class="gh-desc">火山引擎面向 AI Agent 的自进化上下文数据库（记忆+RAG+技能）</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/chaitanyagiri/munder-difflin" target="_blank">chaitanyagiri/munder-difflin</a></td>
+                <td><span class="star-badge">+795 ⭐ today</span></td>
+                <td class="gh-desc">本地多 Agent harness</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/mukul975/Anthropic-Cybersecurity-Skills" target="_blank">mukul975/Anthropic-Cybersecurity-Skills</a></td>
+                <td><span class="star-badge">+766 ⭐ today</span></td>
+                <td class="gh-desc">817 项 AI Agent 网络安全技能，映射 6 大框架</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></td>
+                <td><span class="star-badge">+557 ⭐ today</span></td>
+                <td class="gh-desc">Agentic skills 框架与软件开发方法论</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/jundot/omlx" target="_blank">jundot/omlx</a></td>
+                <td><span class="star-badge">+472 ⭐ today</span></td>
+                <td class="gh-desc">Apple Silicon 上的 LLM 推理服务器（连续批处理+SSD 缓存）</td>
+            </tr>
+            <tr>
+                <td><a href="https://github.com/santifer/career-ops" target="_blank">santifer/career-ops</a></td>
+                <td><span class="star-badge">+198 ⭐ today</span></td>
+                <td class="gh-desc">开源 AI 求职搜索：扫描职位+评估+定制简历</td>
+            </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <p>由 AI Research Briefing 自动化生成 · 数据来源 arXiv API &amp; GitHub Trending</p>
+    <p>📅 2026-08-20</p>
+</div>
+
+</body>
+</html>

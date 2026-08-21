@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-21</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-21（周五）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-21</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/21/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/21/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.4🌟</span>
+            </div>
+            <div class="paper-title"><strong>AI4AI-Bench: Benchmarking LLM Agents in Algorithmic Design for Recursive Self-Improvement</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yizhe Chi, Wenyi Li, Deyao Hong, Xiaoqiu Wang, Mingju Gao, Kaisen Yang, Bingxiang He, Youjie Zheng, Calvin Xiao, Qinhuai Na</span><span class="meta-item">🏷️ cs.AI, cs.CL, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20318" target="_blank">2608.20318</a></span>
+            </div>
+            <p class="paper-abstract">提出 AI4AI-Bench：10 个冻结的研究仓库覆盖 10 类训练算法家族，Agent 在单张 B300 上有 4 小时重写训练算法，代码从零重跑最长 12 小时并由对 Agent 隐藏的固定评测器打分，与原仓库算法同流程对比。29 个配置×6 个系统上均值仅 0.166，最强系统仅达 0.250——即便最强者也弥合了不足五分之一的「已有算法到最优」距离，为递归自我改进（RSI）可行性提供首个隔离「算法设计能力」的基准。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.3🌟</span>
+            </div>
+            <div class="paper-title"><strong>Inducing Task Models from Computer-Use Traces</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yucheng Jiang, Zora Zhiruo Wang, Ruishi Chen, Diyi Yang</span><span class="meta-item">🏷️ cs.CL, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20319" target="_blank">2608.20319</a></span>
+            </div>
+            <p class="paper-abstract">提出 Task Model Induction（TMI），从被动记录的截图与鼠标/键盘动作等自然计算机使用轨迹中（i）发现潜在任务、解耦并发活动，（ii）为每个任务归纳「层次目标模型+控制流过程模型」。在受控人与 Agent 轨迹上以 0.974 一致度恢复交织任务、重建 74.9% 执行步骤，远超强基线；由其派生的技能在 held-out 任务上准确率较最强基线提升 30.0%。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+            </div>
+            <div class="paper-title"><strong>MidTool: Mid-training Data Synthesis for Agentic Tool Use</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Fengqing Jiang, Yite Wang, Boyi Liu, Zhaoyang Wang, Canwen Xu, Zhewei Yao, Radha Poovendran, Yuxiong He</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20314" target="_blank">2608.20314</a></span>
+            </div>
+            <p class="paper-abstract">提出 MidTool——面向通用工具使用能力的 mid-training 开放语料构造管线，融合大规模 web/PDF/代码数据与来自真实工具 API、MCP 技能、文档工作流的合成监督，教模型识别工具 affordance、基于上下文接地参数、编排调用工作流并从信息缺失中恢复。在 Qwen3-4B/8B-Base 上 mid-train 后接 SFT/RL，在 BFCL、tau2-Bench、MCP Universe 上持续超越基线。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+            </div>
+            <div class="paper-title"><strong>DreamHand: Repurposing Video Diffusion Models for Occlusion-Robust Egocentric 3D Hand Motion Recovery</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yufei Liu, Xixi Wang, Hao Li, Ganlong Zhao, Kaitong Cai, Chengkai Jin, Chunxiao Liu, Jianbo Liu, Siyuan Huang, Xingang Pan, Hongsheng Li</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20308" target="_blank">2608.20308</a></span>
+            </div>
+            <p class="paper-abstract">将视频扩散模型（VDM）重新用作确定性几何编码器：对干净 latent 单次前向即可暴露当前观测之外的场景内容（含被遮挡/出画的手）。DreamHand 是离线 clip 级框架，用 Deterministic Clean-Latent Encoder 提取特征、Bidirectional Spatiotemporal Decoder 解码连续双手轨迹，无需外部检测器。在 5 个第一视角基准上 MPJPE-p 在 ARCTIC 降 30%、HOT3D 降 40%，含出画手时增益达 46%-61%。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+            </div>
+            <div class="paper-title"><strong>Phantom Gains: Auditing Self-Improvement Against a Measured Null</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Cheng Xu, Nan Yan, Liming Chen, M-Tahar Kechadi</span><span class="meta-item">🏷️ cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20290" target="_blank">2608.20290</a></span>
+            </div>
+            <p class="paper-abstract">对 Qwen3-8B 三轮 rank-32 LoRA 自训练做审计，对照经相同管线的冻结控制组，识别出 7 类测量失败——任一在缺少对照时都会反转结论。单次贪心解码构建的 ledger 会在未训练模型上「制造」能力变化；提出 per-problem 精确检验（FDR 控制）在 held-out 重复上检测不到任何变化。外部蒸馏提升的是基座很少触及的问题，而三种自训练并未做到。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>Swift-Image: Exploring the Performance Frontier of Compact Unified Image Generation Models</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Taihang Hu, Zhao Wang, Zuan Gao, Tao Liu, Hao Yan, Zhengze Xu 等</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20334" target="_blank">2608.20334</a></span>
+            </div>
+            <p class="paper-abstract">Swift-Image 是紧凑统一模型，支持文生图、单图编辑与多图编辑。采用高效 6B 单流 DiT + 渐进训练管线（从广语义覆盖到高分辨率/高质量/统一生成-编辑监督），后训练用并行专家 RL + 多教师 on-policy 蒸馏缓解异构目标干扰，并以 Prompt Enhancer 解耦高层推理与像素渲染。6B/243K GPU·h 达开源聚合 SOTA，压缩 3B 几乎无损。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>Pandora's AI Model Routing Box: Efficient Allocation with Costly Value Estimation</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Adam Fisch, Shubhendu Trivedi, Fantine Huot, William W. Cohen, Michael Kaisers, Mirella Lapata, Kate Larson, Jacob Eisenstein</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20316" target="_blank">2608.20316</a></span>
+            </div>
+            <p class="paper-abstract">将异构 AI 系统的路由建模为 Pandora's Box（带昂贵检查的最优搜索）：廉价估计器快但噪声、准确估计器贵。高斯信号模型下得到 closed-form 信息价值表达式，决定是否为某专家细化估计值得其成本。提出集中式 Pandora's Router 与去中心化 Pandora's Bidder，实验表明前者以远少得多的昂贵查询匹配穷尽估计的路由质量。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>4DAnyone: Create Anyone in 4D from a Casual Monocular Video</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yudong Jin, Tao Xie, Qihang Zhang, Zehong Shen, Zhen Xu, Yujun Shen, Hujun Bao, Xiaowei Zhou, Yinghao Xu</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20335" target="_blank">2608.20335</a></span>
+            </div>
+            <p class="paper-abstract">4DAnyone 从未标定单目视频重建 4D 人体：生成重建级多视角一致视频并提升为 4D Gaussian Splatting。将失败诊断为有界注意力上下文问题，提出 Reference Context Packing（RCP，O(1) 参考上下文复杂度）与 Target Context Routing（TCR，去噪中旋转分组共享上下文）。构建 MVGameHuman 数据集，在 DNA-Rendering 与 DyMVHumans 上超越先前方法。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+            </div>
+            <div class="paper-title"><strong>Inject, Align, Recover: Staged Post-Training for Retrieval-Free Document Knowledge Internalization</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Qian Kou, Xiaofeng Shi, Xiaosong Qiu, Hua Zhou</span><span class="meta-item">🏷️ cs.CL, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20281" target="_blank">2608.20281</a></span>
+            </div>
+            <p class="paper-abstract">研究「文档知识内化」：将固定语料转为可用参数知识以做无检索 QA。提出 IAR 三阶段后训练——Inject（结构化注入）、Align（答案监督对齐）、Recover（与基座指令模型合并恢复通用能力）。在 CC/CCI 与 Llama/Phi/Qwen/SmolLM 上，8 个数据-模型设置中 7 个四项指标均胜 Vanilla SFT，域 QA 平均 +3.6pp、通用能力 +12.1pp。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+            </div>
+            <div class="paper-title"><strong>ConceptGuard: Benchmarking Context-Sensitive Unlearning in Large Language Models</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Sahil Kale, Ian Harris</span><span class="meta-item">🏷️ cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20338" target="_blank">2608.20338</a></span>
+            </div>
+            <p class="paper-abstract">指出现有 unlearning 基准仅在独立事实上做遗忘/保留，无法衡量「消除有害行为同时保留有益用途」。引入 dual-use concepts（可有害也可无害的概念）构建 ConceptGuard，遗忘集与保留集在概念用法上显式互补，以意图敏感、最大化上下文分离为目标评估。实验表明现有 unlearning 技术在该设置下上下文分离弱、ROUGE 与概念级指标表现差。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+            </div>
+            <div class="paper-title"><strong>Break It Down, Pass It On: Cross-Task Skill Transfer in LLM Agents</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yiyang Feng, Biddut Sarker Bijoy, Niranjan Balasubramanian, Jiawei Zhou</span><span class="meta-item">🏷️ cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20274" target="_blank">2608.20274</a></span>
+            </div>
+            <p class="paper-abstract">系统研究 LLM Agent 诱导技能的跨任务迁移：任务级诱导大多使性能低于无记忆基线，而子任务级诱导平均提升至基线之上；文本技能迁移优于代码技能。提出 skill utility score（特异性×抽象性的组合），无需执行任务即可作为技能记忆的诊断指标，与迁移成功稳定相关。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+            </div>
+            <div class="paper-title"><strong>Inter-X++: A Comprehensive Benchmark for Multimodal Human-Human Interaction Analysis</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Liang Xu, Chengqun Yang, Zili Lin, Xintao Lv, Yichao Yan, Xin Jin, Zhibo Chen, Xiaokang Yang, Wenjun Zeng</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.20312" target="_blank">2608.20312</a></span>
+            </div>
+            <p class="paper-abstract">Inter-X++ 是大规模 HHI 分析基准：通过新型混合动捕系统采集 11,388 条高保真交互序列、超 810 万帧，含精确全身运动与手指关节细节，并附层次化细粒度文本描述、交互类别、因果顺序、关系/性格、顶点级接触图与物理正则约束。统一四类下游任务（生成+感知），标准化交互表征与评测协议。</p>
+        </div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目（按当日新增 Star 降序）</h2>
+
+<table>
+    <thead>
+        <tr><th>#</th><th>项目</th><th>简介</th><th>今日新增</th><th>总 Star</th></tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank">harry0703/MoneyPrinterTurbo</a></td>
+                <td class="gh-desc">利用 AI 大模型一键生成高清短视频</td>
+                <td><span class="star-badge">+2761⭐ today</span></td>
+                <td>113,020</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></td>
+                <td class="gh-desc">面向真实工程师的 Agent Skills 集合</td>
+                <td><span class="star-badge">+2192⭐ today</span></td>
+                <td>226,669</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://github.com/volcengine/OpenViking" target="_blank">volcengine/OpenViking</a></td>
+                <td class="gh-desc">Agent 自进化上下文数据库：统一记忆/RAG/技能</td>
+                <td><span class="star-badge">+950⭐ today</span></td>
+                <td>31,059</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://github.com/santifer/career-ops" target="_blank">santifer/career-ops</a></td>
+                <td class="gh-desc">开源 AI 求职：扫描职位+A-F 评分+定制简历</td>
+                <td><span class="star-badge">+816⭐ today</span></td>
+                <td>66,735</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></td>
+                <td class="gh-desc">Agentic 技能框架与软件开发方法论</td>
+                <td><span class="star-badge">+727⭐ today</span></td>
+                <td>274,977</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="https://github.com/chaitanyagiri/munder-difflin" target="_blank">chaitanyagiri/munder-difflin</a></td>
+                <td class="gh-desc">本地多 Agent harness</td>
+                <td><span class="star-badge">+507⭐ today</span></td>
+                <td>3,141</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="https://github.com/cursor/plugins" target="_blank">cursor/plugins</a></td>
+                <td class="gh-desc">Cursor 插件规范与官方插件</td>
+                <td><span class="star-badge">+449⭐ today</span></td>
+                <td>4,104</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="https://github.com/akitaonrails/ai-memory" target="_blank">akitaonrails/ai-memory</a></td>
+                <td class="gh-desc">Agent 编码 CLI 长期记忆与跨厂商交接</td>
+                <td><span class="star-badge">+332⭐ today</span></td>
+                <td>3,642</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="https://github.com/JuliusBrussee/caveman" target="_blank">JuliusBrussee/caveman</a></td>
+                <td class="gh-desc">Claude Code 技能：用 caveman 风格省 65% token</td>
+                <td><span class="star-badge">+258⭐ today</span></td>
+                <td>99,665</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><a href="https://github.com/RyanCodrai/turbovec" target="_blank">RyanCodrai/turbovec</a></td>
+                <td class="gh-desc">基于 TurboQuant 的向量索引（Rust+Python）</td>
+                <td><span class="star-badge">+230⭐ today</span></td>
+                <td>15,964</td>
+            </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <p>由 WorkBuddy 自动生成 · 数据来源 arXiv API &amp; GitHub Trending · 2026-08-21</p>
+    <p>论文均来自 2026-08-21 前一天（2026-08-20）arXiv 提交批次</p>
+</div>
+
+</body>
+</html>

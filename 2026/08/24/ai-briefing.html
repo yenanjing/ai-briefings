@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-24</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-24（周一）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-24</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/24/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/24/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.5🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>AI with Authority, from Application to Silicon</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Jason Hickey</span><span class="meta-item">🏷️ cs.SE, cs.AI, cs.AR</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21356" target="_blank">2608.21356</a></span>
+            </div>
+            <p class="paper-abstract">五周内一名研究者仅用消费级 AI 订阅，指挥一小队 AI Agent 从应用代码一路做到经形式化验证的编译器、执行器，直至在社区硅片班车（silicon shuttle）上流片出一颗 RISC-V 处理器——无一行 RTL 由人手编写、无一证明经人工审阅。核心是「Salt 方法」：数学声明作为 kernel-checked 工件在 Agent 间传递（Lean 4 kernel 到硅边界 SAT 等价性逐链验证），幻觉证明无法通过证明内核。发布完整账本（定理溯源、预注册 token 计量、错误台账编号至 #256）。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.4🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>Rethinking Expressivity and Efficiency in Test-Time Training</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zeyun Zhong, Joya Chen, Manuel Martin, Frederik Diederichs, Juergen Gall</span><span class="meta-item">🏷️ cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21308" target="_blank">2608.21308</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/zeyun-zhong/E2-TTT" target="_blank">代码</a></span>
+            </div>
+            <p class="paper-abstract">提出 E²-TTT（Expressive and Efficient TTT），在 chunk-start 权重取梯度的标准近似下推导出 closed-form 状态转移，精确复现逐 token 循环的 chunk-end 快权重与动量状态，从而在保持更新规则时序结构的同时实现 chunk 级完全并行训练。从零训练至 1.3B 参数，在「Needle in a Haystack」passkey 测试中于 8× 训练上下文长度下仍保持 90%+ 准确率，长度外推优势显著。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.3🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Asymmetric Capacity Allocation in Self-Refinement Pipelines</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhuoyi Yang, Ian G. Harris, Salar Hashemitaheri, Cassie Huang, Yuangang Li</span><span class="meta-item">🏷️ cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21345" target="_blank">2608.21345</a></span>
+            </div>
+            <p class="paper-abstract">首个针对自精炼管线（生成-批评-修订）的阶段级模型规模研究，用 Qwen3 六种规模 + Gemma 3 四种规模在 5 个基准上验证。结论：更大生成器/修订器通常提升管线，但过小的修订器反而有害；而批评器规模几乎不敏感——即便很小的 critic 也稳定优于完全不加批评。证明模型容量不应在管线各阶段均匀分配。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>OmniAssistBench: Assistant-style Interaction Benchmark for Omni-LLMs</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Xianyun Sun, Chaoyou Fu, Zhengye Zhang, Feiyang Duan, Qingyuan Cao 等</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21360" target="_blank">2608.21360</a></span>
+            </div>
+            <p class="paper-abstract">面向全模态大模型实时视频助手交互的评测基准。针对「同一目标多种达成路径」的发散问题，用源视频预定义先验要求模型沿相同路线引导用户；通过逆向工程现有网络视频构建多轮交互片段。该数据集构建耗时 1000+ 专家人时，评测显示 Gemini-3-Pro 等前沿模型在主动引导任务上仍有明显不足。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>SPARCL: Spectral Partitioned Analytic Continual Learning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ James Hartley, Zeropy Surio, Daniel Whitmore, Hannah Clarke, Thomas Reed</span><span class="meta-item">🏷️ cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21307" target="_blank">2608.21307</a></span>
+            </div>
+            <p class="paper-abstract">指出无样本解析持续学习的遗忘根源是「谱干扰」——所有任务的联合 ridge 分类器共享逆自相关算子 $(R+λI)^{-1}$，新任务样本加载到旧主导特征方向会稀释谱并扰动旧类 logit。提出 SPARCL 将运行自相关分解为高能核心+残差补集，冻结旧类核心子空间、仅用递归最小二乘更新残差块，给出旧 logit 核心贡献的可证明不变性保证。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Prompt-Model Interaction Reaches the Fixed Points: A deterministic, task-free structural readout</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Nicolás Vera Zúñiga</span><span class="meta-item">🏷️ cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21315" target="_blank">2608.21315</a></span>
+            </div>
+            <p class="paper-abstract">在无任务的读出上研究 prompt-模型交互的短窗 argmax 不动点结构（96 起点普查）。发现交互在完整量级上抵达该读出：九个条件 token 即可移动不动点比例的大部分、改变四路结构类并重排模型，而值 60.5 IFEval 点的指令微调对结构类零影响；且该效应非单调于前缀长度。为「prompt 效应是条件分布本身的事实」提供任务无关的结构性证据。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>AUSO: Action-Level Unified Skill Optimization from Internalization to Utilization</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Huizu Lin, Chengkai Huang, Tianqi Gao, Tao Huang, Daijiao Liu</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21292" target="_blank">2608.21292</a></span>
+            </div>
+            <p class="paper-abstract">将技能在 Agent 策略演化中的生命周期（先提供可学知识→支持能力形成→仅在提升单步决策时被调用）建模为动作级统一优化。训练初期联合从教师指导与环境结果学习，随后强调基于结果的策略优化巩固自主能力，成熟后在技能条件/无技能两种上下文下评估每个采样动作，实现从技能内化到技能利用的渐进统一。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Re$^3$Cap: Retrieval-Guided Refinement for Image Captioning Enhancement via Reinforcement Learning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Haonan Jia, Shichao Dong, Zenghui Sun, Jiawen Zheng, Ziqi Miao</span><span class="meta-item">🏷️ cs.CV, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21305" target="_blank">2608.21305</a></span>
+            </div>
+            <p class="paper-abstract">主张多模态检索可作为图像描述精炼的有效推理信号，提出检索引导推理策略 Re³Cap（Caption Refinement Suggester + Caption Quality Assessor），无需额外标注即可识别描述中的幻觉与遗漏。在 COCO-LN500 上关系推理平均超越 GRPO 8.64%，甚至超过监督微调（SFT）。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Move by Move: Measuring and Steering How LLMs Conduct Psychotherapy</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Afonso Baldo, Hugo Pitorro, Areti Vassilopoulos, Anabela C. Areias, Maya D'Eon</span><span class="meta-item">🏷️ cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21325" target="_blank">2608.21325</a></span>
+            </div>
+            <p class="paper-abstract">基于 MULTI-60 量表构建十种心理治疗动作本体，经五名持证心理学家验证并用 judge-based 方法规模化。对比真实咨询转录与前沿模型主导会话，发现模型以高达人类三倍频率过度使用询问、忽视心理教育，且强烈上下文锚定（延续而非主动发起策略）。将该本体暴露为工具集可使与人类动作分布的平均偏差减半、轮次对齐提升 7-9pp，无需微调。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>ViTacPhys: Physical Property-Aware Grasping from Human Visual-Tactile Demonstrations</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yiwen Liu, Yujun Zhu, Kui Jia, Zhao Liao, Yangwei You</span><span class="meta-item">🏷️ cs.RO</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21355" target="_blank">2608.21355</a></span>
+            </div>
+            <p class="paper-abstract">视觉-触觉框架从人类操作演示中估计物体质量、摩擦系数类别与连续刚度。结合时序视觉-触觉建模、交叉注意力多模态融合与 VLM 语义先验，在 60 个刚/柔物体上训练：seen 物体质量分类 97.2%、摩擦 98.8%、刚度 MAPE 5.51%。通过有限机器人遥操作数据+机器人风格视频增强实现人→机迁移，作为在线模块用于自适应抓取。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>When Adaptation Hurts: Connecting Representational Drift to OOD Failures in MedSAM Fine-Tuning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Marko Haralović, Sounic Akkaraju, Carlo Baretta, Vasil Zapryanov, Alexia Briassouli</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21300" target="_blank">2608.21300</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/ImSounic/medsam-vpt" target="_blank">代码</a></span>
+            </div>
+            <p class="paper-abstract">系统考察 MedSAM 在六种适应策略（全模型/仅编码器 LoRA、浅/深 VPT、仅解码器/全微调）下的泛化。在 ISIC 2018 训练后于 IN/close-OOD(PH2)/far-OOD(BUSI/CBIS-DDSM) 上评测，发现适应提升 IN 与近 OOD 但常损害远 OOD；仅编码器 LoRA 是最强参数高效方案。用 Center Kernel Alignment 将表征漂移与 OOD 失败关联。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.7🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>NeSAM: Neuro-Symbolic Kinodynamics with Soil Adaptation for Off-Road Mobility</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Chenhui Pan, Tong Xu, Francesco Cancelliere, Xuesu Xiao</span><span class="meta-item">🏷️ cs.RO</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.21330" target="_blank">2608.21330</a></span>
+            </div>
+            <p class="paper-abstract">神经符号框架将可微 Bekker-Wong 地面力学与学习到的地形表征、Transformer 残差动力学模型结合，用于长时域六自由度越野运动学预测。从地形观测估计物理意义土壤参数并用扩展卡尔曼滤波在线更新。在 Chrono 多物理引擎 Verti-Bench 仿真器中预测精度提升达 30%，并在物理 Verti-4-Wheeler 平台上验证（真实提升 29%）。</p>
+        </div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目（按当日新增 Star 降序）</h2>
+
+<table>
+    <thead>
+        <tr><th>#</th><th>项目</th><th>简介</th><th>今日新增</th><th>总 Star</th></tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://github.com/openai/codex" target="_blank">openai/codex</a></td>
+                <td class="gh-desc">OpenAI 终端编码 Agent</td>
+                <td><span class="star-badge">+2715⭐ today</span></td>
+                <td>115,582</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></td>
+                <td class="gh-desc">面向真实工程师的 Agent Skills 集合</td>
+                <td><span class="star-badge">+2447⭐ today</span></td>
+                <td>234,021</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://github.com/Alishahryar1/free-claude-code" target="_blank">Alishahryar1/free-claude-code</a></td>
+                <td class="gh-desc">免费使用 Claude Code 的工具</td>
+                <td><span class="star-badge">+1081⭐ today</span></td>
+                <td>48,049</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></td>
+                <td class="gh-desc">NousResearch 开源 Agent 框架</td>
+                <td><span class="star-badge">+454⭐ today</span></td>
+                <td>235,068</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></td>
+                <td class="gh-desc">Agent 技能与 harness 集合</td>
+                <td><span class="star-badge">+427⭐ today</span></td>
+                <td>242,596</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="https://github.com/virgiliojr94/book-to-skill" target="_blank">virgiliojr94/book-to-skill</a></td>
+                <td class="gh-desc">将书籍转化为 Agent 技能</td>
+                <td><span class="star-badge">+417⭐ today</span></td>
+                <td>24,735</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">freestylefly/awesome-gpt-image-2</a></td>
+                <td class="gh-desc">GPT 图像生成资源合集</td>
+                <td><span class="star-badge">+401⭐ today</span></td>
+                <td>13,091</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="https://github.com/anthropics/claude-plugins-community" target="_blank">anthropics/claude-plugins-community</a></td>
+                <td class="gh-desc">Anthropic Claude 社区插件</td>
+                <td><span class="star-badge">+225⭐ today</span></td>
+                <td>1,001</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="https://github.com/Comfy-Org/ComfyUI" target="_blank">Comfy-Org/ComfyUI</a></td>
+                <td class="gh-desc">节点式 AI 图像/视频工作流</td>
+                <td><span class="star-badge">+201⭐ today</span></td>
+                <td>129,451</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank">VoltAgent/awesome-agent-skills</a></td>
+                <td class="gh-desc">Agent 技能资源汇总</td>
+                <td><span class="star-badge">+156⭐ today</span></td>
+                <td>31,357</td>
+            </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <p>由 WorkBuddy 自动生成 · 数据来源 arXiv API &amp; GitHub Trending · 2026-08-24</p>
+    <p>论文均来自 2026-08-21（周五）arXiv 提交批次（周末无新公告）</p>
+</div>
+
+</body>
+</html>

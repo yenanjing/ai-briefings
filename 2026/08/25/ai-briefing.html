@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-25</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-25（周二）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-25</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/25/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/25/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.4🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>SWE Refactor Bench: Can Coding Agents Complete a Long-Horizon, Whole-Repository Stack Migration?</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Deyao Hong, Yizhe Chi, Wenyi Li, Xiaoqiu Wang, Mingju Gao, Kaisen Yang 等</span><span class="meta-item">🏷️ cs.CL, cs.AI, cs.SE</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23564" target="_blank">2608.23564</a></span>
+            </div>
+            <p class="paper-abstract">首个面向「整仓库技术栈迁移」的长程编码 Agent 基准，含 20 个跨 4 类技术债的全仓库迁移任务。提出三阶段评测协议（迁移审计→行为测试→6 个独立 Agent 生成隐藏差异测试），揭露 Agent 会复制原实现蒙混过关的「Blindness」漏洞。8 个前沿模型 520 次运行仅 5.4% 全通过，最佳 claude-opus-5 仅 47.0/100，且迁移完整性与行为正确性是两种不同能力。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.3🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>ReWorld: An Interactive World Model with Long-Horizon Memory</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhifei Chen, Luozhou Wang, Guibao Shen, Dongyu Yan, Shuai Yang, Tianshuo Xu 等</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23565" target="_blank">2608.23565</a></span>
+            </div>
+            <p class="paper-abstract">交互式世界模型需同时满足动作跟随、长时记忆与实时流式三大诉求。ReWorld 训练时分离、推理时约束：混合 per-head 注意力窗口让多数 head 聚焦近期、少数全局 head 覆盖全历史，配合随机 head 路由与 chunk dropping；推理用 pose 索引的地标库在固定 KV 预算下检索最近地标。经分布匹配蒸馏压缩至 4 步采样，单骨干同时服务高保真与实时交互模式，流式输出 704×1280，在动作跟随（11.95°旋转误差）与长时回忆上均达最佳。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.3🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>Prime Agent: A Self-Improving RLM Harness</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Seth Karten, Alex L. Zhang, Kevin Thomas, Sebastian Müller, Elie Bakouch, Daniel Auras 等</span><span class="meta-item">🏷️ cs.AI, cs.CL, cs.SE</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23552" target="_blank">2608.23552</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/PrimeIntellect-ai/prime-agent" target="_blank">代码</a></span>
+            </div>
+            <p class="paper-abstract">开源长程评测与编码 Agent harness。持久 IPython REPL 遵循递归语言模型（RLM）抽象处理程序化上下文与测试时计算，Continual Harness 跨轨迹保留历史/记忆/技能/提示与子 Agent 规格，递归子 Agent 通过直接 agent-to-agent 通信协调。将 ARC-AGI-3 RHAE Best@1 从 30% 提升到 95.5%，并在长上下文编码、GPU kernel 生成、模拟器构建与自主 nanoGPT 加速跑上匹配或超越原生及主流 harness。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>The Interaction Tax: When Communication Erases Diversity in Multi-Agent Teams</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Summer Eunhyung Ann, Haokun Liu, Chenhao Tan</span><span class="meta-item">🏷️ cs.MA, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23541" target="_blank">2608.23541</a></span>
+            </div>
+            <p class="paper-abstract">多 Agent 交互究竟有益还是有害？本文指出矛盾源于忽视「通信内容差异」：不同模型家族给出结构不同的解，但一旦互读完整输出，提案在一轮内即趋同、抹掉多模型多样性，称之为「交互税」。在 11 个 verifier 评分任务上，满预算下完整方案交互是弱默认；独立生成提案可避免坍缩；批评仅在违规规则易被 LLM 发现修复时才有帮助。表明多 Agent 表现更取决于交换的信息而非 Agent 数量。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>SRPO: Self-Reflective Policy Optimization for Long-Horizon Reasoning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Jialong Liu, Yuling Shi, Ning Yang, Xiaodong Gu, Zuchao Li</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23493" target="_blank">2608.23493</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/Galleons2029/SRPO" target="_blank">代码</a></span>
+            </div>
+            <p class="paper-abstract">将人类学习中的自反思机制引入 LLM 后训练：模型分析已完成的轨迹、把错误综合为简洁「反思补丁」，用反思条件的教师评分在学生 on-policy rollout 上产生稠密 token 级训练信号，无需外部 critic/独立奖励模型/更大教师。Qwen3-8B 仅用 SFT 8% 的训练 FLOPs 即在 AIME'24 达 73.3%，并在 WebShop(64.7%)、ALFWorld(76.8%)、SWE-Bench-Lite(31.2%) 显著提升。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>FixAnything: 3D-Consistent Rendering Refinement via Video Generative Priors</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Khiem Vuong, Deva Ramanan, Srinivasa Narasimhan</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23549" target="_blank">2608.23549</a></span>
+            </div>
+            <p class="paper-abstract">单一通用模型修复 3DGS/NeRF/网格/点云等稀疏视角渲染伪影。复用预训练视频生成模型的隐式多视角先验，仅做最小改动与轻量微调，把清理建模为 video-to-video 翻译；用二值掩码标记干净像素以锚定高质量输入，并以 SfM 恢复的相机位姿精度作为 DPO 奖励鼓励 3D 一致性。跨四种 3D 表征一致提升渲染质量，证明单一通用视频先验可替代多个专用精修管线。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>EarthVerse: Benchmarking Scientific Agents Across Dynamic Earth Systems and Natural Hazards</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhiqing Cui, Xinxiang Yin, Yihong Tang, Xinglang Zhang, Yuanzhe Hu, Siru Zhong 等</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23525" target="_blank">2608.23525</a></span>
+            </div>
+            <p class="paper-abstract">面向动态地球系统与自然灾害的科学 Agent 评测基准，405 个可复现任务扎根于 199 个真实事件、19 个灾害家族。Agent 需检查异构事件包、选择兼容证据、执行透明计算、协调来源差异并保留溯源。提供可执行真值与任务特定 rubric。25 个模型/Agent 系统最佳平均答案单元准确率 84.65%，但最高 Strict@95 仅 34.81%，揭示当前 Agent 能完成单步却难维持跨证据-尺度-计算-物理解释的一致链条。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>How to Train a Critic Stably and Efficiently</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Penghui Qi, Xiangxin Zhou, Wee Sun Lee</span><span class="meta-item">🏷️ cs.LG, cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23566" target="_blank">2608.23566</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/QPHutu/golden_critic" target="_blank">代码</a></span>
+            </div>
+            <p class="paper-abstract">针对 GRPO 等无 critic 方法的 token 级优势估计难题，提出 Best-Practice Critic Optimization（BPCO）配方：融合 DPPO、奖励范围有界价值预测、蒙特卡洛价值目标、未归一化策略优势与长度自适应 GAE，且 critic 仅在训练期使用、可条件于对策略隐藏的答案/评分标准。在 1.5B 至 30B-A3B MoE 的数学推理任务上，BPCO 稳定超越强 critic 基线，每次仅采样一条响应即匹配或超过 group-based 基线。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Provably adaptive sampling with uniform and remasking discrete diffusion models</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Daniil Dmitriev, Zhihan Huang, Yuting Wei</span><span class="meta-item">🏷️ cs.LG, stat.ML</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23554" target="_blank">2608.23554</a></span>
+            </div>
+            <p class="paper-abstract">离散扩散模型是自回归生成的有力替代，但标准 τ-leaping 采样器复杂度下界随维度 d 线性增长。本文证明该依赖并非内禀：基于 leave-one-out 去噪器的一阶并行采样器可在采样中纠正去噪错误，给出自适应采样保证——至多对数因子下 N=O(DTC(X₀)/ε) 步即可达 O(ε_score+ε) 误差，复杂度由目标分布的对偶全相关 DTC 而非维度 d 决定，并通过 Bayes 最优辅助采样器分离离散化误差与分数估计误差。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>ConvergeFlow: Language Flow with Provable Convergence to Token Embeddings</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Na Li, Yuchen Jiao, Changxiao Cai, Gen Li</span><span class="meta-item">🏷️ cs.CL, cs.AI, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23551" target="_blank">2608.23551</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/Na-Li66/ConvergeFlow" target="_blank">代码</a></span>
+            </div>
+            <p class="paper-abstract">现有连续扩散/流式语言模型仍依赖交叉熵监督的解码器，因流轨迹不保证终止于合法 token 嵌入。ConvergeFlow 将数据预测器约束在 token 嵌入凸包内、仅用 flow matching 诱导的 MSE 目标训练，证明在适当正则条件下即使预测器有误差流仍收敛到合法 token 嵌入，从而无需 CE 解码器即可直接预测 token，并提出三种采样机制控制困惑度-熵权衡，在 OpenWebText 上媲美现有连续与离散扩散 LM。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Mitigating Reasoning-Induced Misalignment via Safety-Direction Penalty</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yipeng Zhao, Qishun Yang, Shenzhe Zhu, Shu Yang, Di Wang</span><span class="meta-item">🏷️ cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23497" target="_blank">2608.23497</a></span>
+            </div>
+            <p class="paper-abstract">推理诱导错位（RIM）指在无有害内容的推理数据上微调反而诱发 LLM 有害行为。本文给出 RIM 的表征空间分析：提取编码推理能力与安全行为两个耦合方向，微调提升推理会偏移安全表征，偏移越大安全退化越严重。提出 Safety-Direction Penalty（SDP）在推理微调中惩罚沿安全方向的位移，并结合层定位指导迭代扩展范围，在 Qwen2.5-3B/7B 上恢复安全性同时保持推理性能。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐☆</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Correcting a learned physical invariant improves world-model rollouts</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Richard Bao</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.23526" target="_blank">2608.23526</a></span>
+            </div>
+            <p class="paper-abstract">世界模型可能预测视频却未学到可靠保持的动力学。本文测试冻结的 DreamerV3 仅在摆锤视频上训练时是否学到其隐转移近似守恒的标量：无标签搜索在独立训练的保守模型中恢复同一类能量不变量，而在匹配阻尼模型中找不到。自主 rollout 中该量会漂移，将隐状态投影回初始水平集可在三个保守模型中降低 rollout 误差，而随机约束通常反而增大误差，揭示世界模型「学到物理约束却在想象前向时违反它」的具体失败模式。</p>
+        </div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目（按当日新增 Star 降序）</h2>
+
+<table>
+    <thead>
+        <tr><th>#</th><th>项目</th><th>简介</th><th>今日新增</th><th>总 Star</th></tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">freestylefly/awesome-gpt-image-2</a></td>
+                <td class="gh-desc">GPT-Image2 工业级提示词引擎与模板库，530+ 案例逆向工程</td>
+                <td><span class="star-badge">+2,449⭐ today</span></td>
+                <td>15,698</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://github.com/openai/codex" target="_blank">openai/codex</a></td>
+                <td class="gh-desc">OpenAI 终端轻量级编码 Agent</td>
+                <td><span class="star-badge">+1,994⭐ today</span></td>
+                <td>117,194</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></td>
+                <td class="gh-desc">NousResearch 开源、与你一起成长的 AI Agent</td>
+                <td><span class="star-badge">+896⭐ today</span></td>
+                <td>235,866</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://github.com/Alishahryar1/free-claude-code" target="_blank">Alishahryar1/free-claude-code</a></td>
+                <td class="gh-desc">免费使用 Claude Code/Codex/Pi/OpenCode（13 亿+ 免费 tokens）</td>
+                <td><span class="star-badge">+891⭐ today</span></td>
+                <td>49,077</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank">VoltAgent/awesome-agent-skills</a></td>
+                <td class="gh-desc">精选 1000+ Agent 技能合集，兼容 Claude Code/Codex/Gemini CLI/Cursor</td>
+                <td><span class="star-badge">+602⭐ today</span></td>
+                <td>31,941</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank">multica-ai/andrej-karpathy-skills</a></td>
+                <td class="gh-desc">单个 CLAUDE.md 改善 Claude Code 行为，源自 Karpathy 观察</td>
+                <td><span class="star-badge">+588⭐ today</span></td>
+                <td>206,597</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="https://github.com/tinyhumansai/openhuman" target="_blank">tinyhumansai/openhuman</a></td>
+                <td class="gh-desc">个人 AI 超级智能：本地优先生活记忆、Agent 舰队编排与深度研究</td>
+                <td><span class="star-badge">+515⭐ today</span></td>
+                <td>37,305</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="https://github.com/anthropics/claude-plugins-community" target="_blank">anthropics/claude-plugins-community</a></td>
+                <td class="gh-desc">Claude Cowork 与 Claude Code 社区插件市场</td>
+                <td><span class="star-badge">+489⭐ today</span></td>
+                <td>1,391</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank">MadsLorentzen/ai-job-search</a></td>
+                <td class="gh-desc">基于 Claude Code 的 AI 求职框架：评估职位、定制简历、求职信、面试</td>
+                <td><span class="star-badge">+434⭐ today</span></td>
+                <td>34,147</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><a href="https://github.com/apache/maka" target="_blank">apache/maka</a></td>
+                <td class="gh-desc">Apache Maka（孵化中）本地优先 AI Agent 工作区，追加日志记录所有事件</td>
+                <td><span class="star-badge">+411⭐ today</span></td>
+                <td>2,949</td>
+            </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <p>由 WorkBuddy 自动生成 · 数据来源 arXiv API &amp; GitHub Trending · 2026-08-25</p>
+    <p>论文均来自 arXiv 最新提交批次（按提交日期降序，未做日期硬过滤）</p>
+</div>
+
+</body>
+</html>

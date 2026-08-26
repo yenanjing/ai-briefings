@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-26</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-26（周三）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-26</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 9 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/26/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/26/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.3🌟</span>
+            </div>
+            <div class="paper-title"><strong>Recursive Experiential-Working Memory Evolution for Long-Horizon Agent Harnesses</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhaochen Yu, Yingcheng Wu, Zhenfei Yin, Kaiyuan Chen, Zhe Zhao 等</span><span class="meta-item">🏷️ cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24876" target="_blank">2608.24876</a></span>
+            </div>
+            <p class="paper-abstract">递归自改进（RSI）在长程任务中仍具挑战，增长的历史会遮蔽任务状态并误导技能调用。提出 Recuris，一种递归经验-工作记忆架构：工作记忆追踪任务进度并从经验记忆中引导技能选择，将执行转化为结构化证据以定位失败到特定记忆组件。固定 Meta-Agent 将这些证据转化为局部化修复，在长程编码与工具使用任务上持续提升。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+            </div>
+            <div class="paper-title"><strong>BrowserForge: Scaling Web Episode via Parallel Browser Sandboxes</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Fei Tang, Huawen Shen, Zhiqiong Lu, Zhengxi Lu, Pengyuan Lyu 等</span><span class="meta-item">🏷️ cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24848" target="_blank">2608.24848</a></span>
+            </div>
+            <p class="paper-abstract">像素级 Web Agent 训练依赖大量高质量交互轨迹，但公开数据集仅覆盖数千条轨迹和极窄网站集合。BrowserForge 通过并行浏览器沙箱框架大规模合成 Web 交互数据，突破预定义站点列表限制，使训练数据中网站多样性大幅增长，显著提升像素级 Web Agent 的泛化能力。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+            </div>
+            <div class="paper-title"><strong>StarHarness: Evolving Harnesses with Stratified Search for Enterprise Environments</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Esakkivel Esakkiraja, Denis Akhiyarov, Vikas Yadav, Sai Rajeswar, Patrice Bechard 等</span><span class="meta-item">🏷️ cs.AI, cs.SE</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24804" target="_blank">2608.24804</a></span>
+            </div>
+            <p class="paper-abstract">提出 StarHarness 框架，在保持模型权重固定的同时进化环境特定的 Agent harness（含提示、工具接口、技能、MCP 提供者、子 Agent 结构与循环配置）。通过按基线失败行为分层任务、分离提议者可见/隐藏搜索任务、预留留出任务评估泛化，在 ITBench SRE、EnterpriseOps-Gym ITSM 与 AutomationBench Finance 上显著提升。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+            </div>
+            <div class="paper-title"><strong>Do Robotic World Models Really Follow Actions? Diagnosing and Aligning Action-Conditioned Generation for Policy Learning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Sixiang Chen, Jiaming Liu, Jixian Wu, Yichen Guo, Tinghao Wang 等</span><span class="meta-item">🏷️ cs.RO, cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24885" target="_blank">2608.24885</a></span>
+            </div>
+            <p class="paper-abstract">动作条件世界模型被用作策略评估与改进的学习模拟器，但其有效性依赖于未经验证的假设：生成未来忠实反映任意有效动作。提出 WorldEcho，用视觉完整性与 SE(3) 轨迹对齐探测更广泛动作分布上的动作跟随。诊断显示当前世界模型在专家演示动作上表现合理，但在离专家动作上显著退化，并提出对齐方法改善。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+            </div>
+            <div class="paper-title"><strong>SPO++: Stream-Aligned Policy Optimization for Asynchronous Agentic RL</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Kai Ruan, Jinghao Lin, Qianshan Wei, Ziqi Zhou, Zihe Huang</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24870" target="_blank">2608.24870</a></span>
+            </div>
+            <p class="paper-abstract">Group-relative RL 需等待同 prompt 的兄弟 rollout，对长且可变工具使用轨迹代价高昂。SPO 用持久 prompt 级价值估计消除该依赖，但其方案在每个轨迹上白化一个 advantage 再优化 token-mean actor loss。本文证明轨迹居中通常不会使 token 加权量居中，通过 action-token 度量下标准化终端结果 advantage 修复不匹配，并组织 prompt 证据提升异步 Agentic RL 效率。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+            </div>
+            <div class="paper-title"><strong>Latent Action as Intention Enables Efficient Future Imagination for World Action Models</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Xiang Li, Yupeng Zheng, Songen Gu, Huailiang Ma, Feng Yu 等</span><span class="meta-item">🏷️ cs.RO</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24882" target="_blank">2608.24882</a></span>
+            </div>
+            <p class="paper-abstract">World Action Models 通过建模观测演化改善机器人控制，但测试时生成未来观测产生大量延迟。Fast-WAM 移除此过程以提升效率，但匹配实现显示其泛化性低于未来感知替代方案。提出 LAWA，用紧凑潜在动作作为未来意图的操作表征，实现高效测试时未来想象，在稀缺机器人演示与 OOD 场景下弥合效率-泛化鸿沟。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+            </div>
+            <div class="paper-title"><strong>Effective Learning Rate Governs Loss Dynamics in Language Model Pretraining</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zihan Liu, Ruiheng Zheng, Shaobo Zhang, Changxin Tian, Kunlong Chen 等</span><span class="meta-item">🏷️ cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24814" target="_blank">2608.24814</a></span>
+            </div>
+            <p class="paper-abstract">揭示语言模型预训练中的 ELR collapse 现象：学习率与参数范数主要通过其比值（有效学习率 ELR）调控损失动态。当 ELR 匹配时，尽管 LR 和参数范数差异显著，损失轨迹在整个训练过程中坍缩一致。跨优化器、架构、数据集与模型规模，平均坍缩误差通常在 10⁻³ 量级，低于代表性配置中的种子间变异。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>What FID Hides: Detecting, Ranking, and Diagnosing Deviations in Generative Evaluation</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Hao Chen</span><span class="meta-item">🏷️ stat.ML, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24881" target="_blank">2608.24881</a></span>
+            </div>
+            <p class="paper-abstract">生成模型常用 FID/KID 排名，但 FID 的一二阶矩摘要可能遗漏分布差异，标量差距本身不是针对采样变化的校准检验。在 ImageNet 上，仅匹配参考 Inception 均值/协方差的视觉不可辨图像获得 FID 24.7，而留出真实图像为 58.6。提出检测、排序与诊断生成评估偏差的系统框架，揭示 FID/KID 作为标量差异在交换样本时不变的固有局限。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>LeFlow: Generative Latent Flow Planning for World Models</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Hsiang-Wei Huang, Jianxu Shangguan, Junbin Lu, Jenq-Neng Hwang</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24855" target="_blank">2608.24855</a></span>
+            </div>
+            <p class="paper-abstract">潜在世界模型是强编码器，但现有方法仍依赖在线轨迹优化进行动作规划：每个状态-目标对都从头运行迭代优化器。提出 LeFlow，问规划本身能否在潜在世界模型学习后被摊销。通过生成式潜在流匹配学习规划分布，避免每步重规划的全迭代优化代价，且不跨查询复用规划经验。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>LAION-BVD: A 10-Million-Hour Open Video Dataset for Multimodal Pre-training</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Andreas Hochlehnert, Marianna Nezhurina, Mehdi Cherti, Andrej Radonjic, Thaddäus Wiedemer 等</span><span class="meta-item">🏷️ cs.CV, cs.AI, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24845" target="_blank">2608.24845</a></span>
+            </div>
+            <p class="paper-abstract">LAION-BVD 是大规模开放视频数据集，含 13 亿平台特定视频 URL（来自 CommonCrawl），下载 8000 万视频总计 1000 万小时。使用内容感知场景检测提取片段并合成视频/音频字幕。在这些数据上训练的模型在标准视频-文本与音频-文本基准上达到竞争性能，且随训练规模扩大持续改善。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>Reading Is Not Using: Retrieval, Judgment, and the Design of AI Financial Research Workflows</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Miao Liu, Zhizhe Liu</span><span class="meta-item">🏷️ cs.CL, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24842" target="_blank">2608.24842</a></span>
+            </div>
+            <p class="paper-abstract">LLM 越来越多部署为 AI 分析师处理金融披露，但系统通常以检索能力而非检索信息是否影响判断来评估。识别长上下文金融分析中的检索-整合鸿沟：固定焦点公司信息、仅变化无关上下文从 2K 到 128K token，发现风险披露对投资判断的影响降至实验噪声水平，即使直接检索仍然准确。提出重新设计 AI 金融研究工作流。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>Structurally-bounded Agentic Graph Exploration for Evidence-Grounded Scholarly DeepSearch</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Rima Hazra, Sayan Layek, Somnath Banerjee, Soumen Chakrabarti, Animesh Mukherjee</span><span class="meta-item">🏷️ cs.CL, cs.IR</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.24809" target="_blank">2608.24809</a></span>
+            </div>
+            <p class="paper-abstract">提出 Crase，一种有界且可检查的学术深度搜索替代方案。Crase 仅查询搜索引擎一次获取种子论文，沿 1.5-hop 引用邻域扩展，剪除缺乏蕴含支持的引用边，用 recency-aware 随机游走排序剩余论文。候选集、保留原因与停止条件在推理前显式固定。在 LitSearch 与 500K 论文 arXiv 语料上超越深度研究 Agent。</p>
+        </div>
+<h2 class="section-title">🔥 GitHub Trending AI 项目</h2>
+<table>
+<thead><tr><th>项目</th><th>今日 ⭐</th><th>总 ⭐</th><th>描述</th></tr></thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">freestylefly/awesome-gpt-image-2</a></td>
+<td><span class="star-badge">+1698⭐</span></td>
+<td>18,140</td>
+<td class="gh-desc">GPT-Image2 工业级提示词引擎与模板库，530+ 案例逆向工程，20+ 套工业级模板</td>
+</tr>
+<tr>
+<td><a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank">MadsLorentzen/ai-job-search</a></td>
+<td><span class="star-badge">+1265⭐</span></td>
+<td>35,354</td>
+<td class="gh-desc">基于 Claude Code 的 AI 求职框架，在本地运行的求职自动化</td>
+</tr>
+<tr>
+<td><a href="https://github.com/openai/codex" target="_blank">openai/codex</a></td>
+<td><span class="star-badge">+1181⭐</span></td>
+<td>118,161</td>
+<td class="gh-desc">运行在终端中的轻量级编码 Agent</td>
+</tr>
+<tr>
+<td><a href="https://github.com/DietrichGebert/ponytail" target="_blank">DietrichGebert/ponytail</a></td>
+<td><span class="star-badge">+982⭐</span></td>
+<td>111,116</td>
+<td class="gh-desc">让你的 AI Agent 像最懒的资深开发者一样思考</td>
+</tr>
+<tr>
+<td><a href="https://github.com/multica-ai/andrej-karpathy-skills" target="_blank">multica-ai/andrej-karpathy-skills</a></td>
+<td><span class="star-badge">+830⭐</span></td>
+<td>207,250</td>
+<td class="gh-desc">源自 Karpathy 对 LLM 编程陷阱观察的 Claude Code 行为改进配置</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AgriciDaniel/claude-obsidian" target="_blank">AgriciDaniel/claude-obsidian</a></td>
+<td><span class="star-badge">+813⭐</span></td>
+<td>12,765</td>
+<td class="gh-desc">Obsidian + Claude Code 的自组织 AI 第二大脑</td>
+</tr>
+<tr>
+<td><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></td>
+<td><span class="star-badge">+569⭐</span></td>
+<td>49,037</td>
+<td class="gh-desc">从零学习 AI 工程：学会、构建、交付</td>
+</tr>
+<tr>
+<td><a href="https://github.com/apache/maka" target="_blank">apache/maka</a></td>
+<td><span class="star-badge">+543⭐</span></td>
+<td>3,368</td>
+<td class="gh-desc">Apache Maka (Incubating) 本地优先的 AI Agent 工作区</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tinyhumansai/openhuman" target="_blank">tinyhumansai/openhuman</a></td>
+<td><span class="star-badge">+542⭐</span></td>
+<td>37,799</td>
+<td class="gh-desc">你的个人 AI 超级智能体</td>
+</tr>
+
+</tbody>
+</table>
+
+<div class="footer">
+    <p>Generated on 2026-08-26 | <a href="https://yenanjing.github.io/ai-briefings/2026/08/26/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/08/26/ai-briefing.html</a></p>
+</div>
+
+</body>
+</html>

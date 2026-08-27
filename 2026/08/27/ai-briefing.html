@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-27</title>
+<style>
+
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-27（周四）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-27</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/27/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/27/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.3🌟</span>
+            </div>
+            <div class="paper-title"><strong>One Policy, Many Embodiments: Unified Camera-Centric Action Geometry Pre-training for Heterogeneous Embodied Manipulation</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️  Xiaomi Embodied Intelligence Team, University of Macau,  :, Shaoqing Xu, Fang Li 等</span><span class="meta-item">🏛️ Xiaomi Embodied Intelligence Team, University of Macau</span><span class="meta-item">🏷️ cs.RO</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26058" target="_blank">2608.26058</a></span>
+            </div>
+            <p class="paper-abstract">小米具身智能团队+澳门大学，提出 UCAG-P 相机中心统一动作几何预训练，结构性对齐异构具身数据，单策略跨多机器人形态/相机配置/低维控制信号</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+            </div>
+            <div class="paper-title"><strong>Prefix Sliding for efficient test-time scaling</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Niklas Muennighoff, Zhengyang Wang, Zeyi Chen, Weijia Shi, Binyuan Hui 等</span><span class="meta-item">🏷️ cs.CL, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26070" target="_blank">2608.26070</a></span><span class="meta-item">💻 <a href="https://github.com/Muennighoff/prefix-sliding" target="_blank">github.com/Muennighoff/prefix-sliding</a></span>
+            </div>
+            <p class="paper-abstract">Niklas Muennighoff(Stanford) 提出 Prefix Sliding，用固定长度前缀滑窗替代全长度累积，显著降低 test-time scaling 显存开销，开源代码</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+            </div>
+            <div class="paper-title"><strong>VBVR-Pro: A Scalable and Verifiable Suite for Native Visual Reasoning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Junxiang Xu, Ruisi Wang, Fanyi Pu, Maijunxian Wang, Ran Ji 等</span><span class="meta-item">🏷️ cs.CV, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26105" target="_blank">2608.26105</a></span>
+            </div>
+            <p class="paper-abstract">VBVR-Pro 闭环测试台：300 个程序化生成任务+可验证奖励打分器，解决原生视觉推理训练/验证/优化难题，跨 7 个外部基准强迁移</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>Zero-WAM: In-Context World-Action Modeling from Human Videos for Open-Ended Task Generalization</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Jiaming Zhou, Qihang Zhang, Gangwei Xu, Cunxin Fan, Yujie Zhao 等</span><span class="meta-item">🏷️ cs.RO, cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26103" target="_blank">2608.26103</a></span>
+            </div>
+            <p class="paper-abstract">Zero-WAM：从人类视频做 in-context 世界-动作建模，无需任务特定训练即可零样本跨任务泛化到未见操作任务</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>RefVideo-6M: A Reliable Reference-Based Dataset for Instructional Video Editing</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Bojia Zi, Xiaoyan Yang, Yu Zhou, Ruijie Sun, Lihan Zhang 等</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26101" target="_blank">2608.26101</a></span><span class="meta-item">💻 <a href="https://huggingface.co/datasets/RefVideo6M/RefVideo6M" target="_blank">huggingface.co/datasets/RefVideo6M/RefVideo6M</a></span>
+            </div>
+            <p class="paper-abstract">RefVideo-6M：600 万级可靠参考式指令视频编辑数据集，解决现有数据集目标视频污染与参考缺失问题，HuggingFace 开源</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>TraceML: An Empirical Analysis of Human-Agent Planning in Machine Learning Development</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Jiarui Yan, Weiwei Sun, Sijie Li, Wenhan Li, Yiming Yang</span><span class="meta-item">🏷️ cs.LG, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26086" target="_blank">2608.26086</a></span><span class="meta-item">💻 <a href="https://huggingface.co/datasets/jerryyan/TraceML" target="_blank">huggingface.co/datasets/jerryyan/TraceML</a></span>
+            </div>
+            <p class="paper-abstract">TraceML：首个对人类-Agent 在 ML 开发中规划行为的实证分析，揭示 Agent 在数据/模型/验证联合修订上的短板，HuggingFace 数据集开源</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>SwarmWorld: Stigmergic technological evolution in societies of language-model agents</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Subhadeep Pal, Fiona Y. Wang, Markus J. Buehler</span><span class="meta-item">🏷️ cs.AI, cond-mat.mtrl-sci</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26081" target="_blank">2608.26081</a></span>
+            </div>
+            <p class="paper-abstract">SwarmWorld：语言模型 Agent 社会通过共享环境局部交互涌现集体智能与技术演化，多智能体自组织研究</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>$R^3$: Training Robots to Reason in Natural Language via Reinforcement Learning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Lehong Wu, Yuxiao Qu, Zheyuan Hu, Ivan Zhang, Limin Wei 等</span><span class="meta-item">🏷️ cs.RO, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26053" target="_blank">2608.26053</a></span>
+            </div>
+            <p class="paper-abstract">R³：用强化学习训练机器人在自然语言中推理，将 LLM test-time compute 推理能力引入机器人控制</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+            </div>
+            <div class="paper-title"><strong>StreamPI: Streaming Multimodal Temporal Modeling for Vision-Language-Action Models</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhe Liu, Jinghua Hou, Yuxiang Lu, Zhenya Yang, Xianzhe Fan 等</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26067" target="_blank">2608.26067</a></span>
+            </div>
+            <p class="paper-abstract">StreamPI：流式多模态时序建模突破 pi0.5 单帧范式，让 VLA 模型利用历史帧提升操作表现</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+            </div>
+            <div class="paper-title"><strong>ICON Decomposition: Multivariate Concept-Level Explanations of Deep Representations for Model Auditing</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Roshan Prakash Rane, Marco Simnacher, Manuel Pfeuffer, Marc-Andre Schulz, Nys Tjade Siegel 等</span><span class="meta-item">🏷️ cs.LG, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26083" target="_blank">2608.26083</a></span>
+            </div>
+            <p class="paper-abstract">ICON Decomposition：多元概念级深度表征解释，突破单概念筛选范式，系统检测 shortcut learning</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+            </div>
+            <div class="paper-title"><strong>Finding and using interpretable latents in a neutrino foundation model with sparse autoencoders</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Raphaël Bonnet-Guerrini, Johann Ioannou-Nikolaides, Inar Timiryasov, Vincenzo Piuri</span><span class="meta-item">🏷️ astro-ph.HE, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26090" target="_blank">2608.26090</a></span>
+            </div>
+            <p class="paper-abstract">首次将稀疏自编码器(SAE)机制可解释性应用于粒子物理，在 IceCube 中微子基础模型中发现可解释潜变量</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+            </div>
+            <div class="paper-title"><strong>A Visual Dependence-Aware Framework for Multimodal Unsupervised Continual Post-Training</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Kaichen Li, Zhilin Zhu, Jianhao Huang, Zhengqin Lai, Baochen Xiong 等</span><span class="meta-item">🏷️ cs.CV, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.26095" target="_blank">2608.26095</a></span>
+            </div>
+            <p class="paper-abstract">提出多模态无监督持续后训练(MU-CPT)新任务，让已部署 MLLM 从流式无标签数据持续演化</p>
+        </div>
+<h2 class="section-title">🔥 GitHub Trending AI 项目</h2>
+<table>
+<thead><tr><th>项目</th><th>今日 ⭐</th><th>总 ⭐</th><th>描述</th></tr></thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">freestylefly/awesome-gpt-image-2</a></td>
+<td><span class="star-badge">+4050⭐</span></td>
+<td>21,565</td>
+<td class="gh-desc">GPT-Image2 工业级提示词引擎与模板库，530+ 案例逆向工程，20+ 套工业级模板</td>
+</tr>
+<tr>
+<td><a href="https://github.com/DietrichGebert/ponytail" target="_blank">DietrichGebert/ponytail</a></td>
+<td><span class="star-badge">+1598⭐</span></td>
+<td>112,712</td>
+<td class="gh-desc">让你的 AI Agent 像最懒的资深开发者一样思考——最好的代码是你从未写过的代码</td>
+</tr>
+<tr>
+<td><a href="https://github.com/MadsLorentzen/ai-job-search" target="_blank">MadsLorentzen/ai-job-search</a></td>
+<td><span class="star-badge">+1300⭐</span></td>
+<td>36,554</td>
+<td class="gh-desc">基于 Claude Code 的 AI 求职框架：评估职位、定制简历、求职信、面试准备</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tt-a1i/archify" target="_blank">tt-a1i/archify</a></td>
+<td><span class="star-badge">+1035⭐</span></td>
+<td>18,191</td>
+<td class="gh-desc">Agent skill：生成美观、可验证的架构图/工作流图/序列图等自包含 HTML</td>
+</tr>
+<tr>
+<td><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></td>
+<td><span class="star-badge">+838⭐</span></td>
+<td>49,627</td>
+<td class="gh-desc">从零学习 AI 工程：学它、构建它、交付它</td>
+</tr>
+<tr>
+<td><a href="https://github.com/AgriciDaniel/claude-obsidian" target="_blank">AgriciDaniel/claude-obsidian</a></td>
+<td><span class="star-badge">+810⭐</span></td>
+<td>13,487</td>
+<td class="gh-desc">Obsidian + Claude Code 自组织 AI 第二大脑，AI 笔记与个人知识管理</td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-community" target="_blank">anthropics/claude-plugins-community</a></td>
+<td><span class="star-badge">+538⭐</span></td>
+<td>2,228</td>
+<td class="gh-desc">Claude Cowork 和 Claude Code 社区插件市场</td>
+</tr>
+<tr>
+<td><a href="https://github.com/Alishahryar1/free-claude-code" target="_blank">Alishahryar1/free-claude-code</a></td>
+<td><span class="star-badge">+536⭐</span></td>
+<td>50,434</td>
+<td class="gh-desc">免费使用 Claude Code、Codex、Pi、OpenCode（1.3B+ 免费 token）</td>
+</tr>
+<tr>
+<td><a href="https://github.com/tinyhumansai/openhuman" target="_blank">tinyhumansai/openhuman</a></td>
+<td><span class="star-badge">+525⭐</span></td>
+<td>38,248</td>
+<td class="gh-desc">个人 AI 超级智能：本地优先记忆、Agent 编队与工作流编排、深度研究</td>
+</tr>
+<tr>
+<td><a href="https://github.com/marin-community/marin" target="_blank">marin-community/marin</a></td>
+<td><span class="star-badge">+441⭐</span></td>
+<td>2,490</td>
+<td class="gh-desc">基础模型研发开源框架</td>
+</tr>
+</tbody>
+</table>
+
+<div class="footer">
+    <p>Generated on 2026-08-27 | <a href="https://yenanjing.github.io/ai-briefings/2026/08/27/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/08/27/ai-briefing.html</a></p>
+</div>
+
+</body>
+</html>

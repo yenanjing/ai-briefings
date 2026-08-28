@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-08-28</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-08-28（周五）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-08-28</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/08/28/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/08/28/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.5🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>LeVJEPA: Efficient & Scalable Video Pretraining without the Heuristics</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Lukas Kuhn, Lucas Maes, Giuseppe Serra, Quentin Le Lidec, Yann LeCun, Randall Balestriero 等</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27395" target="_blank">2608.27395</a></span>
+            </div>
+            <p class="paper-abstract">首个在 LeJEPA 无坍缩目标下训练的视频编码器，摒弃 EMA 目标编码器/stop-gradient/容量受限预测器等防坍缩启发式。单编码器用全局-局部视图不变性损失 + SIGReg 正则（带可证明保证排除坍缩），架构退化为编码器+投影器、仅一个超参。均匀随机 token 丢弃使预训练算力由观测 token 数主导，在相同数据/epoch 下以 5.6–20.8× 更少算力匹配或超越 V-JEPA 2（ViT-S/B/L）；等 FLOPs 下 ImageNet-1K 超最强视频基线 7.6 点，运动类基准接近翻倍 DINOv2。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.3🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>CLAP: Cross-Embodiment Video World Models are Zero-Shot Physical Simulators</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Kechen Liu, Ola Shorinwa</span><span class="meta-item">🏷️ cs.RO, cs.AI, cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27406" target="_blank">2608.27406</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://omni-clap.github.io" target="_blank">代码/项目</a></span>
+            </div>
+            <p class="paper-abstract">跨具身动作条件视频生成框架，可在人形与多种机器人异构互联网规模视频上训练。核心洞见是普适物理定律支配时空动力学、与执行者无关；用末端执行器位姿、语言指令与潜在动作三种动作空间调和异构动作，并提出课程式跨具身学习配方——先在无标注视频上用潜在动作学基础物理先验，再在末端执行器空间落地以实现真实任务零样本部署。在 DROID 等挑战环境逼近或超越单具身 SOTA，并通过少样本适配复合增益，开源全部代码与模型。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>CritICL: Inference-Time Weak-to-Strong Generalization from Small Language Model Failure Modes</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Yufan Wu, Yinghui He, Zhengyi Hu, Lang Wei, Ruichen Li, Qifan Yang 等</span><span class="meta-item">🏷️ cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27455" target="_blank">2608.27455</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/umwyf/CRITICL" target="_blank">代码/项目</a></span>
+            </div>
+            <p class="paper-abstract">提出推理时弱到强泛化框架：LLM 失败模式在同族不同规模模型间呈结构化规律，CritICL 把弱模型失败模式当作指导信号而非坏输出，通过基于批判的上下文示例注入推理。两个变体——CritICL-dynamic 自适应预测输入特定失败模式并检索批判、CritICL-static 用全局失败画像提供稳定指导。一致超越标准上下文学习，性能可与测试时扩展方法竞争甚至更优，同时生成次数与 token 成本显著更低。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Mechanistic Reaction Prediction via Discrete Flow Matching on Graph-Structured Electron Occupation (MAELLE)</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Nguyen Xuan-Vu, Octavian Susanu, Daniel Armstrong, Philippe Schwaller</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27429" target="_blank">2608.27429</a></span>
+            </div>
+            <p class="paper-abstract">将化学反应建模为电子占据向量上的离散流匹配，而非产物从头生成或启发式图编辑。把反应物-产物映射形式化为图结构整数电子占据空间上的连续时间马尔可夫链，用最优传输泛化离散流匹配混合路径生成可机理解释的编辑轨迹，无需基元步骤标注。在 USPTO-480K 上媲美领先反应预测模型，且在结构复杂度与反应类型两个分布外设置上保持强性能，并能恢复与已知化学一致的机理轨迹、预测副产物。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>TTPO: Test-Time Policy Optimization</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Aozhe Wang, Zhengxi Lu, Jianze Wang, Shangke Lv, Ying Liu, Weiming Lu 等</span><span class="meta-item">🏷️ cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27448" target="_blank">2608.27448</a></span>
+            </div>
+            <p class="paper-abstract">针对 RL/OPSD 依赖真值标签而无法做测试时训练的问题，提出非对称目标：与多数投票伪标签一致的 rollout 用 OPSD 蒸馏、不一致的用 Grouped RL 惩罚（因不一致 rollout 无论投票对错通常都是错的）。token 级选择进一步精修两分支。无需任何标签即在五个竞赛级基准匹配标签监督 OPSD，TTT 下把 Qwen3-1.7B 从 38.0% 提升到 45.2%，不思考设置提升 +25.2%~+36.4%，并具强跨任务泛化。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>UrbanGround: From Local Perception to Spatial Agency in a Real-Scale City</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Tianjie Ju, Zheng Wu, Yueqing Sun, Yuhan Cui, Bobo Li, Shengqiong Wu 等</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27456" target="_blank">2608.27456</a></span>
+            </div>
+            <p class="paper-abstract">首个在由全境 3D 地理空间数据构建的香港物理约束真实尺度城市副本中测试 MLLM 智能体「局部感知能否转化为可靠行动」的沙盒。支持第一人称闭环交互与交互式导航地图。分析随空间问题扩展的三种研究问题：局部场景 grounding、远距离导航、以及路线可用性与行人运动变化下的鲁棒性。发现当代 MLLM 在视觉识别与短程空间推理有原子能力，但定向与行人感知移动不可靠，核心失败出现在长时探索中局部能力无法组合为持续目标导向行为、误差累积。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>SWE-Prime: Fewer Trajectories, Better Performance</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Dewu Zheng, Ruizhe Ye, Yanlin Wang, Yang Ye, Hongyu Zhang, Ensheng Shi 等</span><span class="meta-item">🏷️ cs.SE, cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27449" target="_blank">2608.27449</a></span>
+            </div>
+            <p class="paper-abstract">针对成功轨迹仍含无效/冗余/风险步骤导致 SFT 噪声监督的问题，提出多粒度两阶段 SFT 数据选择：阶段一按过程质量、结果质量、数据代表性做轨迹级筛选；阶段二把连续步骤分组为语义段并按贡献、可学习性、风险做段级选择，SFT 时保留全部段以维持上下文、仅选中段贡献损失。在 SWE-Bench Pro/Verified 上用 10% 轨迹子集即超全量，相对提升最高 12.2% 与 24.2%。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>WikiSkill: Compiling Agent Experience into Persistent Knowledge for Skill Evolution</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Liyan Tang, Cyrus Rashtchian, Chun-Sung Ferng, Andrew Tomkins, Da-Cheng Juan, Tu Vu</span><span class="meta-item">🏷️ cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27454" target="_blank">2608.27454</a></span>
+            </div>
+            <p class="paper-abstract">提出技能与持久知识库（wiki）协同进化的框架，分离原始执行经验、累积知识与可执行技能，持续把经验整合进 wiki 供后续技能更新构建。跨多种基准与模型一致超越 SOTA 技能进化方法。发现技能进化与模型扩展互补：更大模型更受益、小模型配技能可超大模型无技能；进化技能可跨模型/家族迁移，他模型进化技能甚至优于自进化。消融证实 wiki 中持久知识累积是关键。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>FlashVLA: Streaming Action Decoding for Fast and Asynchronous VLA Inference</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zekai Li, Jiaming Tang, Zhijian Liu</span><span class="meta-item">🏷️ cs.RO</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27384" target="_blank">2608.27384</a></span>
+            </div>
+            <p class="paper-abstract">面向流匹配 VLA 模型的高推理延迟与不稳定异步执行瓶颈，提出统一流式动作解码框架。维护含多个不同噪声层级 chunk 的流式动作缓冲，用 chunk 级因果注意力解码，每推理步产出一个可执行动作 chunk；chunk 级自回归隐式保持动作连续性，无需额外未来状态条件即可平滑异步执行。仿真与真实实验大幅提速且保持强任务性能，单 GPU 可达 ≥30Hz 控制频率并平滑异步推理。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>RATIO: A Benchmark for Retrieval Across Typed Ideation Operations in Scientific Literature</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Maayan Sharon, Tom Hope</span><span class="meta-item">🏷️ cs.CL, cs.IR</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27394" target="_blank">2608.27394</a></span>
+            </div>
+            <p class="paper-abstract">面向科学文献「灵感检索」的大规模基准，把相关性定义为三种 ideation move：Address（检索解决已述问题的潜在方法）、Broaden（检索更一般化表述）、Specify（检索具体实例化）。从数百万 CS 全文论文经扩展话语标记远距监督到语料规模检索 + LLM 与人工审核构建。实验显示操作特定微调大幅提升检索器但仍留很大空间，为支撑文献驱动创意的检索组件提供可扩展训练/评测框架。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐☆</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>RedEvoAgent: Automatic Red-Teaming Agent with Experience-Driven Skill Evolution</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Junjie Zhang, Hui Liu, Kecheng Chen, Xianbo Mo, Changsheng Chen, Haoliang Li</span><span class="meta-item">🏷️ cs.CR, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27439" target="_blank">2608.27439</a></span>
+            </div>
+            <p class="paper-abstract">面向产品级执行 harness 的黑盒红队 Agent，把跨案例攻击轨迹蒸馏为简洁人可读的攻击技能。攻击技能通过工具有效性剖析与 Deciding-Tool Attribution 自适应进化，并用验证棘轮仅保留提升验证性能的更新。跨多基准、目标模型与目标执行 harness 实验显示超越固定与 Agent 基线、提升工具效率，并可跨攻击者模型与目标 harness 迁移。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐☆</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>CorporateBench: Large-Scale Q&A Benchmarking with Temporal Knowledge Bases</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Sil Hamilton, Albert Yu Sun, Oscar J. Romero, Carl-Leander Henneking, David Mimno, Bishan Yang 等</span><span class="meta-item">🏷️ cs.AI, cs.CL, cs.IR</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2608.27391" target="_blank">2608.27391</a></span>
+            </div>
+            <p class="paper-abstract">人工验证的多任务企业级 Q&A 基准，评测语料超 230,000 文档，规模逼近 LLM 在企业通信网络中遇到的真实条件。跨信息抽取与知识库查询两维度、通过 12 到 10,000 员工四家合成企业评测；每个语料从时序演化知识库采样、描述一致世界以保证跨文档逻辑一致。评测五个 LLM 揭示输入规模逼近真实时性能显著下降，填补企业通信推理评测空白。</p>
+        </div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目（按当日新增 Star 降序）</h2>
+
+<table>
+    <thead>
+        <tr><th>#</th><th>项目</th><th>简介</th><th>今日新增</th><th>总 Star</th></tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://github.com/tt-a1i/archify" target="_blank">tt-a1i/archify</a></td>
+                <td class="gh-desc">Agent 技能：生成美观可验证的架构/工作流/时序/数据流图，自包含 HTML 带动效与清晰导出</td>
+                <td><span class="star-badge">+4,239⭐ today</span></td>
+                <td>23,533</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://github.com/freestylefly/awesome-gpt-image-2" target="_blank">freestylefly/awesome-gpt-image-2</a></td>
+                <td class="gh-desc">GPT-Image2 工业级提示词引擎与模板库，530+ 案例逆向工程、20+ 工业模板</td>
+                <td><span class="star-badge">+2,096⭐ today</span></td>
+                <td>23,109</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://github.com/DietrichGebert/ponytail" target="_blank">DietrichGebert/ponytail</a></td>
+                <td class="gh-desc">让你的 AI Agent 像房间里最懒的资深开发那样思考——最好的代码是你没写的代码</td>
+                <td><span class="star-badge">+1,613⭐ today</span></td>
+                <td>114,108</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://github.com/calesthio/OpenMontage" target="_blank">calesthio/OpenMontage</a></td>
+                <td class="gh-desc">首个开源 Agent 化视频制作系统，12 条制作管线、100+ 工具、700+ Agent 技能文件</td>
+                <td><span class="star-badge">+1,292⭐ today</span></td>
+                <td>52,423</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="https://github.com/AgriciDaniel/claude-obsidian" target="_blank">AgriciDaniel/claude-obsidian</a></td>
+                <td class="gh-desc">Obsidian + Claude Code 自组织 AI 第二大脑，把任意来源读入连成 Markdown 知识图谱</td>
+                <td><span class="star-badge">+634⭐ today</span></td>
+                <td>14,039</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="https://github.com/rohitg00/ai-engineering-from-scratch" target="_blank">rohitg00/ai-engineering-from-scratch</a></td>
+                <td class="gh-desc">从零学 AI 工程：Learn it. Build it. Ship it.</td>
+                <td><span class="star-badge">+552⭐ today</span></td>
+                <td>50,193</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank">K-Dense-AI/scientific-agent-skills</a></td>
+                <td class="gh-desc">把任意 AI Agent 变成 AI 科学家，163 个即用验证技能 + 100+ 科学数据库</td>
+                <td><span class="star-badge">+498⭐ today</span></td>
+                <td>35,344</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="https://github.com/ConardLi/garden-skills" target="_blank">ConardLi/garden-skills</a></td>
+                <td class="gh-desc">ConardLi 开源 Skills 合集：网页设计、知识检索、图像生成等</td>
+                <td><span class="star-badge">+415⭐ today</span></td>
+                <td>11,343</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><a href="https://github.com/JetBrains/go-modern-guidelines" target="_blank">JetBrains/go-modern-guidelines</a></td>
+                <td class="gh-desc">帮助 AI 编码 Agent 写出更现代的 Go</td>
+                <td><span class="star-badge">+300⭐ today</span></td>
+                <td>2,130</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><a href="https://github.com/anthropics/claude-plugins-official" target="_blank">anthropics/claude-plugins-official</a></td>
+                <td class="gh-desc">Anthropic 官方高质量 Claude Code 插件目录</td>
+                <td><span class="star-badge">+292⭐ today</span></td>
+                <td>34,704</td>
+            </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <p>由 WorkBuddy 自动生成 · 数据来源 arXiv API &amp; GitHub Trending · 2026-08-28</p>
+    <p>论文均来自 arXiv 最新提交批次（按提交日期降序，未做日期硬过滤）</p>
+</div>
+
+</body>
+</html>

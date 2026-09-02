@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-02</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.05rem; color: var(--yellow); }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-02（周三）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-02</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 8 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/02/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/09/02/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">1🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Uncovering Understanding-Generation Synergy in Native Unified Multimodal Models: From Representation, Task to System</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Penghao Wu, Haiwen Diao, Weichen Fan, Lewei Lu, Dahua Lin, Ziwei Liu</span><span class="meta-item">🏷️ cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01607" target="_blank">2609.01607</a></span></div>
+            <p class="paper-abstract">系统探究「原生统一多模态模型」中理解与生成是否真能互相增益。作者在受控、结构原生（非事后拼接）的设定下，从表征、任务、系统三层检验两个目标的关系——究竟是互相强化、争夺容量，还是仅仅共存，为原生统一模型的设计取舍提供了可复现依据。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">2🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>H3-World: Turning Language Understanding into World Control</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Danze Chen, Zeqing Wang, Ziyue Lin, Xingyi Yang, Yeying Jin</span><span class="meta-item">🏷️ cs.CV, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01560" target="_blank">2609.01560</a></span></div>
+            <p class="paper-abstract">把 33B 的 MiniMax-H3 视频生成器改造成可交互的世界模型。核心发现是视频生成器越强，「语言」越能成为自然的控制接口——MiniMax-H3 已能零样本控制角色行为与镜头运动，据此框架把语言理解高效转化为对世界的控制。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">3🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Facet-0: A Robotic Foundation Model for Contact-Rich Precise Manipulation</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Haoyuan Deng, Haichao Liu, Wenkai Guo, Yuan Ling, Zaijia Yang, Yuanjiang Xue 等</span><span class="meta-item">🏷️ cs.RO, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01596" target="_blank">2609.01596</a></span></div>
+            <p class="paper-abstract">面向亚毫米级容差的真实装配场景，提出能预测并「评估」自身动作接触后果的机器人基础模型。它把多模态表征学习与强化学习后训练统一到「动作-力螺旋」联合提案上，实现接触丰富的精密操作并具备对接触失败的鲁棒性。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">4🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Scaling Near-Optimal SFT-RL Annotation Budget Allocation from Small to Large LLMs</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Jingtan Wang, Arun Verma, Xiaoqiang Lin, Zhengyuan Liu, Nancy F. Chen, Daniela Rus 等</span><span class="meta-item">🏷️ cs.CL, cs.AI, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01573" target="_blank">2609.01573</a></span></div>
+            <p class="paper-abstract">在 LLM 后训练中，如何把固定标注预算在 SFT 与 RL 之间切分仍无原则性方案。作者把该问题形式化为可扩展的分配框架，并首次检验最优比例是否随模型规模（小模型到大模型）迁移，给出近似最优的预算分配策略。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">5🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>The Rise of Verbal Reinforcement Learning</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Kshitij Tayal, Arun Sharma, Genta Indra Winata, Anirban Das, Sambit Sahu</span><span class="meta-item">🏷️ cs.CL, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01597" target="_blank">2609.01597</a></span></div>
+            <p class="paper-abstract">首次给出「语言强化学习（Verbal RL）」的统一框架。自然语言正成为改进语言智能体的主要反馈通道，能传递意图、偏好与因果结构；文章沿「何时给出口头反馈」这一单轴组织整个新兴领域，厘清了范式边界。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">6🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Mechanism Design for Alignment and Control</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Dirk Bergemann, Andrew Koh, Stephen Morris</span><span class="meta-item">🏷️ econ.TH, cs.AI, cs.GT</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01595" target="_blank">2609.01595</a></span></div>
+            <p class="paper-abstract">用经济学机制设计框架处理「对齐与能力都未知」的 AI 智能体。要求机制同时激励「诚实」与「服从」，并在能力可隐瞒但不可伪造的「单边模仿」结构下证明启示原理、刻画可实现的机制集合，为 AI 对齐提供了经济学视角的形式化工具。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">7🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Can LLMs Discover Scientific Laws in Real and Parallel Worlds?</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Yiming Huang, Ziche Liu, Zhuohang Wu, Yiqian Wang, Junxia Cui, Xinkai Zou 等</span><span class="meta-item">🏷️ cs.AI, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01552" target="_blank">2609.01552</a></span></div>
+            <p class="paper-abstract">检验 LLM 能否在真实世界与「平行世界」中发现科学定律。通过科学约束下的「假设—观测—精炼」循环评测，探究 LLM 在 AI for Science 中到底是真发现还是模式模仿，给出其能力边界的证据。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">8🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>Beyond Scores: Understanding LLM-as-a-Judge Mechanisms in Summarization Evaluation</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Himil Vasava, Ming Jiang</span><span class="meta-item">🏷️ cs.CL, cs.LG</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01604" target="_blank">2609.01604</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/himil-v/judge-mech" target="_blank">代码/项目</a></span></div>
+            <p class="paper-abstract">拆解 LLM 评估器打分的内部机制。用八类攻击扰动分类法，在「可读性」与「充分性」两个 NLG 质量维度上机械性地研究评分过程并开源代码，为把 LLM-as-judge 当作训练信号提供机制性理解。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">9🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>Efficient SWE Agent Benchmarking via Trajectory-Aware Evaluation</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Kefeng Duan, Dewu Zheng, Yanlin Wang, Xiwen Wang, Ensheng Shi, Xilin Liu 等</span><span class="meta-item">🏷️ cs.SE, cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01603" target="_blank">2609.01603</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/DeepSoftwareAnalytics/PTA-IRT" target="_blank">代码/项目</a></span></div>
+            <p class="paper-abstract">现有高效评测方法只拟合「通过/失败」结果矩阵，丢弃了 agent 的解题轨迹。本文提出轨迹感知的高效评测，用更少任务估计全基准表现，显著降低软件工程 agent 的评测成本。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">10🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>Adaptive Critical Token-Aware Retrieval for Repository-Level Code Generation</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Kefeng Duan, Dewu Zheng, Yanlin Wang, Terry Yue Zhuo, Mingwei Liu, Jianxing Yu 等</span><span class="meta-item">🏷️ cs.SE, cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01601" target="_blank">2609.01601</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/DeepSoftwareAnalytics/ACToR" target="_blank">代码/项目</a></span></div>
+            <p class="paper-abstract">仓库级代码生成依赖 RAG 检索上下文，但检索并未针对「关键 token」优化。提出自适应关键 token 感知检索，让检索到的上下文更精准地服务代码合成，从而提升生成代码与仓库上下文的一致性。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">11🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>CordisBench: Can Language Models Reason About Component Lifecycles in Dynamic Agent Harnesses?</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Damien Sileo, Dimitri Kachler</span><span class="meta-item">🏷️ cs.CL, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01600" target="_blank">2609.01600</a></span></div>
+            <p class="paper-abstract">动态 agent harness 让模型能改动塑造自身执行的软件，带来组件生命周期的新推理负担。提出 1200 题的 benchmark，在受控形式化设定与真实执行环境上评测模型对「组件生命周期（依赖传播、清理）」的推理能力。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">12🌟</span>
+                
+            </div>
+            <div class="paper-title"><strong>Retrieved but not ranked: surface-form bias in structural retrieval, from mathematics to agent trajectories</strong></div>
+            <div class="paper-meta"><span class="meta-item">✍️ Nabira Rashid, Manolis Kellis</span><span class="meta-item">🏷️ cs.LG, cs.AI, cs.IR</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.01556" target="_blank">2609.01556</a></span></div>
+            <p class="paper-abstract">刻意把「表面形式」与「语义」拆开，评测嵌入检索在「结构相同、措辞不同」时的表现。跨竞赛数学与具身智能体轨迹两个无关领域统一协议，揭示检索器被表面形式误导的偏差，为结构检索的评测与改进提供基准。</p>
+        </div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目（按当日新增 Star 降序）</h2>
+
+<table>
+    <thead>
+        <tr><th>#</th><th>项目</th><th>简介</th><th>今日新增</th><th>总 Star</th></tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="https://github.com/THU-MAIC/OpenMAIC" target="_blank">THU-MAIC/OpenMAIC</a></td>
+                <td class="gh-desc">开源多智能体互动课堂，几秒内获得沉浸式多智能体学习体验</td>
+                <td><span class="star-badge">+3,128⭐ today</span></td>
+                <td>29,953</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="https://github.com/jingyaogong/minimind" target="_blank">jingyaogong/minimind</a></td>
+                <td class="gh-desc">2 小时从零训练 64M 参数 LLM 的极简教程</td>
+                <td><span class="star-badge">+1,005⭐ today</span></td>
+                <td>57,417</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="https://github.com/K-Dense-AI/scientific-agent-skills" target="_blank">K-Dense-AI/scientific-agent-skills</a></td>
+                <td class="gh-desc">把任意 AI Agent 变成 AI 科学家，#1 Agent Skills 科学库</td>
+                <td><span class="star-badge">+912⭐ today</span></td>
+                <td>41,828</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="https://github.com/firecrawl/pdf-inspector" target="_blank">firecrawl/pdf-inspector</a></td>
+                <td class="gh-desc">快速 Rust 库，用于 PDF 检查、分类与文本提取，智能检测扫描件</td>
+                <td><span class="star-badge">+541⭐ today</span></td>
+                <td>18,142</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="https://github.com/handsomestWei/patent-disclosure-skill" target="_blank">handsomestWei/patent-disclosure-skill</a></td>
+                <td class="gh-desc">中国专利 skill：专利点挖掘与交底书编写、政策动向嗅探、审查答复辅助</td>
+                <td><span class="star-badge">+501⭐ today</span></td>
+                <td>6,928</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><a href="https://github.com/browser-use/video-use" target="_blank">browser-use/video-use</a></td>
+                <td class="gh-desc">用编码 Agent 编辑视频</td>
+                <td><span class="star-badge">+472⭐ today</span></td>
+                <td>23,218</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><a href="https://github.com/Imbad0202/academic-research-skills" target="_blank">Imbad0202/academic-research-skills</a></td>
+                <td class="gh-desc">Claude Code 学术研究技能：研究→写作→审阅→修订→定稿</td>
+                <td><span class="star-badge">+193⭐ today</span></td>
+                <td>45,200</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><a href="https://github.com/Gitlawb/openclaude" target="_blank">Gitlawb/openclaude</a></td>
+                <td class="gh-desc">处处可运行、万事皆可用的 openclaude</td>
+                <td><span class="star-badge">+80⭐ today</span></td>
+                <td>31,592</td>
+            </tr>
+    </tbody>
+</table>
+
+<div class="footer">
+    <p>由 WorkBuddy 自动生成 · 数据来源 arXiv API &amp; GitHub Trending · 2026-09-02</p>
+    <p>论文均来自 arXiv 最新提交批次（按提交日期降序，未做日期硬过滤）</p>
+</div>
+
+</body>
+</html>

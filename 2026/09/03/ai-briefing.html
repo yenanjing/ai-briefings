@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-03</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-03（周四）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-03</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/03/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/09/03/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 精选论文</h2>
+
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">1</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.3🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>CivBench: A Long-Horizon Benchmark for Tool-Mediated Agents in Civilization VI</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Austin Tudor David Andrews, Liam Wilkinson, Jamie Heagerty, Harry Coppock, Jakob Nicolaus Foerster 等</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02459" target="_blank">2609.02459</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/lmwilki/civ6-mcp" target="_blank">代码/项目</a></span>
+            </div>
+            <p class="paper-abstract">首个通过 MCP 协议评估语言模型 Agent 长程工具调用的开源基准。单局跨越 300+ 回合、产出数千次工具调用、覆盖 76 个 MCP 工具与大规模动作空间，要求 Agent 在部分可观测下持续规划、状态监控与执行。环境暴露 76 个 MCP 工具与将视觉游戏状态转为结构化文本的叙述层，在 4 个模型家族的 23 次运行中刻画 Agent 行为，为长程工具型 Agent 评估树立标杆。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">2</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.2🌟</span>
+            </div>
+            <div class="paper-title"><strong>Before the Script, Set the Stage: How Worldview Simulation Amplifies Psychologically Grounded Persuasion in Multi-Turn Jailbreaking</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Siyu Chen, Haoran Wang, Xiaojian Li, Yao Huang, Yinpeng Dong, Wei Xu 等</span><span class="meta-item">🏷️ cs.CL, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02414" target="_blank">2609.02414</a></span>
+            </div>
+            <p class="paper-abstract">多轮越狱攻击表明有害意图可分散于对话中，但既有方法掩盖了驱动脆弱性的对话机制。提出 BLUEPRINT 安全评估框架，将因子化的社会影响策略空间与 WORLDVIEWSIM 跨轮情境模块分离，用蒙特卡洛树搜索在四轮轨迹上优化 18 个理论驱动影响因子的逐轮组合。在 6 个前沿模型上对主流开源与闭源模型达到接近天花板 ASR，揭示多轮对话中安全漏洞的心理机制。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">3</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>ProbeMatchDTI: Probe-Driven Multi-Scale Biochemical Pattern Matching for Drug-Target Interaction Prediction</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Quan Hao, Mengyue Fan, Zifan Dong, Youru Li, Jianduo Zhao, Lechuan Xu 等</span><span class="meta-item">🏷️ cs.LG, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02549" target="_blank">2609.02549</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/developer-hq/ProbeMatchDTI" target="_blank">代码/项目</a></span>
+            </div>
+            <p class="paper-abstract">药物-靶点相互作用（DTI）预测是 AI 驱动药物发现的重要任务。针对既有生化表征学习方法被动特征聚合偏向主导分子模式、抑制弱但结合相关信号的问题，提出探针驱动框架 ProbeMatchDTI，包含 IterProbe 与 BindingProbe 两个组件，显式保留上下文状态以捕获官能团、残基上下文模式等多尺度生化对应关系，克服被动聚合局限。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">4</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐✨</span>
+                <span class="badge badge-code">评分 7.1🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>Learn from Whoever Is Right: Answer-Verified Multi-Teacher Distillation for Multi-Domain LLMs</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Xixiang He, Xingming Li, Baiqi Wu, Qiyao Sun, Xuanyu Ji, Ao Cheng 等</span><span class="meta-item">🏷️ cs.LG, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02548" target="_blank">2609.02548</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/hexixiang/MT-SDPO" target="_blank">代码/项目</a></span>
+            </div>
+            <p class="paper-abstract">现代 LLM 依赖强化学习在单个域建立强能力，但将各域能力整合进单一可部署模型仍具挑战。既有方法按域标签路由教师，但域专长仅统计意义上成立——匹配教师未必对特定样本正确，他域教师有时反而正确。提出逐样本答案验证的多教师蒸馏，对每个样本选择实际正确的教师提供监督，可靠教师须逐样本而非逐域识别。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">5</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+            </div>
+            <div class="paper-title"><strong>Towards One-for-All Robustness Across a Continuum of Threat Levels</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Zhichao Hou, Xiaorui Liu</span><span class="meta-item">🏷️ cs.LG, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02440" target="_blank">2609.02440</a></span>
+            </div>
+            <p class="paper-abstract">对抗鲁棒模型常过拟合特定攻击预算，需为多样动态对抗环境部署多个专用模型，随威胁空间增长该策略根本不可扩展。提出 Threat Conditional Network（TCN），基于表征分解框架将学习分解为威胁不变共享骨干与轻量威胁条件适配器，以单一模型实现对连续威胁等级空间的强鲁棒性，条件化于连续威胁信号。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">6</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 7.0🌟</span>
+                <span class="badge badge-code">有代码</span>
+            </div>
+            <div class="paper-title"><strong>MultiGhostBench: A Multilingual Benchmark for Long-Form LLM-Generated Text Attribution under Distribution Shifts</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Matteo Greco, Anudeex Shetty, Andrea Tagarelli, Jey Han Lau</span><span class="meta-item">🏷️ cs.CL, cs.AI, cs.CY</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02379" target="_blank">2609.02379</a></span><span class="meta-item">🔗 <a class="arxiv-link" href="https://github.com/GrecoMT/MultiGhostBench" target="_blank">代码/项目</a></span>
+            </div>
+            <p class="paper-abstract">既有 LLM 作者归属检测（AA）虽有进展，但基准多聚焦英语、受控设置或较旧模型，少数多语言研究仅考虑较短文本。提出 MultiGhostBench，涵盖 5 个近期 LLM 生成、跨 6 种语言 3 种文字的 928 本书、平均约 59K 词/本，支持域、作者、语言偏移下评估。对代表性 AA 方法的评估显示其在分布偏移下显著脆弱。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">7</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+            </div>
+            <div class="paper-title"><strong>Diagnosing with Insights: Structured Analysis of Agent Failures via Behavioral Abstractions</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Jiayi Bi, Yanjie Gao, Yuanmin Xie, Liqun Li, Tianyin Xu, Fan Yang 等</span><span class="meta-item">🏷️ cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02371" target="_blank">2609.02371</a></span>
+            </div>
+            <p class="paper-abstract">随着 LLM Agent 普及，理解并诊断其失败对实现高效可信至关重要。Agent 失败常通过漫长复杂轨迹显现，人工大海捞针不可行；传统软件调试技术难以应对 LLM Agent 失败，而完全依赖 LLM 评判则产出不可靠诊断。提出 AGENTSCOPE 神经符号方法，通过行为抽象将长轨迹转化为可诊断的结构化表示，克服上述挑战。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">8</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+            </div>
+            <div class="paper-title"><strong>Scalable Kronecker-Fisher Approximation: Efficient Hessian Analysis for Billion-Parameter Language Models Compression</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Viacheslav Yusupov, Daria Cherniuk, Evgeny Frolov</span><span class="meta-item">🏷️ cs.LG, cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02451" target="_blank">2609.02451</a></span>
+            </div>
+            <p class="paper-abstract">提出可扩展 Kronecker 近似捕获跨层交互而无需存储完整 Fisher 矩阵，使全计算不可行的十亿参数网络也能进行实用 Hessian 分析。揭示一致脆弱性模式：值投影层在多个模型家族中表现出最高敏感度与最强跨层相关性，其他组件则呈现架构特定行为，在量化、稀疏化、层间损坏等实验中验证。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">9</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐⭐</span>
+                <span class="badge badge-code">评分 6.9🌟</span>
+            </div>
+            <div class="paper-title"><strong>Percolation Dynamics in Optimization: Variance Cascades and Discrete Scale Invariance</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Sai Niranjan Ramachandran, Suvrit Sra</span><span class="meta-item">🏷️ cs.LG, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02373" target="_blank">2609.02373</a></span>
+            </div>
+            <p class="paper-abstract">研究 SGD 动力学——已知其将深度网络导向对应更简单子网络的不变集。将随机梯度流建模为渗流过程，架构对称性迫使子网络以离散同步块合并而非逐个进行，这些结构转变在宏观序参量中表现为方差尖峰，呼应物理相变。进一步揭示该捕获机制导致离散标度不变性。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">10</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐☆</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+            </div>
+            <div class="paper-title"><strong>ViSAR: Training-Free Adaptive-k Retrieval for Visual Document Question Answering</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Adrien Mialland, Marc Plantevit, Julien Gallois, Céline Robardet</span><span class="meta-item">🏷️ cs.IR, cs.AI, cs.CL, cs.CV</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02486" target="_blank">2609.02486</a></span>
+            </div>
+            <p class="paper-abstract">文档视觉问答（DocVQA）常用 RAG，用 late-interaction 编码器检索相关页面后由 LVLM 生成答案。既有方法不论查询复杂度固定检索 top-k 页，增加 LVLM 延迟并可能降低精度。提出 ViSAR（Visual Semantic Activation Retrieval），无需训练的自适应 k 检索方法，通过视觉语义激活动态调整检索页数。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">11</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐☆</span>
+                <span class="badge badge-code">评分 6.8🌟</span>
+            </div>
+            <div class="paper-title"><strong>NE-R1: Enhancing Named Entity Recognition Model via Reinforcement Learning</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Meixuan Chen, Hehan Li, Ruizhi Zhao, Xin Lu, peizhi xu, Liwei Qian 等</span><span class="meta-item">🏷️ cs.CL, cs.AI</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02366" target="_blank">2609.02366</a></span>
+            </div>
+            <p class="paper-abstract">命名实体识别（NER）自 LLM 兴起取得长足进步，但长尾与领域特定实体识别仍因参数知识不足而困难。RAG 通过注入外部知识提供可行补救，但处理熟悉案例时引入噪声与不必要成本。提出 NE-R1 自适应检索增强 NER 框架，设计"按需检索"机制并用强化学习训练模型自适应决定是否检索。</p>
+        </div>
+        <div class="paper-card">
+            <div class="paper-header">
+                <span class="paper-rank">12</span>
+                <span class="paper-stars">⭐⭐⭐⭐⭐⭐☆</span>
+                <span class="badge badge-code">评分 6.7🌟</span>
+            </div>
+            <div class="paper-title"><strong>UTP-Bench: Uncertainty-aware Travel Planning Benchmark</strong></div>
+            <div class="paper-meta">
+                <span class="meta-item">✍️ Etcharla Revanth Rao, Priyanshu Karmakar, Shubhojit Mallick, Manish Gupta, Shreya Ghosh 等</span><span class="meta-item">🏷️ cs.AI, cs.CL</span><span class="meta-item">📎 <a class="arxiv-link" href="https://arxiv.org/abs/2609.02421" target="_blank">2609.02421</a></span>
+            </div>
+            <p class="paper-abstract">LLM 在自动旅行行程生成上表现强劲，但真实旅行规划本质上不确定：交通延误、人群波动与随机延迟常使可行计划失效。既有基准（TravelPlanner、TripCraft）假设确定性环境，仅评估静态约束满足。提出 UTP-Bench 大规模基准，引入不确定性评估生成计划在扰动下是否仍鲁棒。</p>
+        </div>
+
+<h2 class="section-title">💻 GitHub Trending AI 项目（按当日新增 Star 降序）</h2>
+
+<table>
+<thead>
+<tr><th>项目</th><th>描述</th><th>今日 ⭐</th></tr>
+</thead>
+<tbody>
+<tr><td><a href="https://github.com/DietrichGebert/ponytail" target="_blank">DietrichGebert/ponytail</a></td><td class="gh-desc">让 AI Agent 像最懒的资深开发者一样思考——最好的代码是你没写的代码</td><td><span class="star-badge">+1,354</span></td></tr>
+<tr><td><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></td><td class="gh-desc">面向真正工程师的 Agent Skills，来自其 .agents 目录</td><td><span class="star-badge">+1,166</span></td></tr>
+<tr><td><a href="https://github.com/pacifio/atlas" target="_blank">pacifio/atlas</a></td><td class="gh-desc">Agent 的源代码控制——用多个编码 Agent、追踪变更并集中查询</td><td><span class="star-badge">+888</span></td></tr>
+<tr><td><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a></td><td class="gh-desc">开源全本地 ElevenLabs 替代方案——克隆、设计、配音、听写、转写、有声书，646 语言</td><td><span class="star-badge">+832</span></td></tr>
+<tr><td><a href="https://github.com/Imbad0202/academic-research-skills" target="_blank">Imbad0202/academic-research-skills</a></td><td class="gh-desc">Claude Code 学术研究技能：研究→写作→审阅→修订→定稿</td><td><span class="star-badge">+799</span></td></tr>
+<tr><td><a href="https://github.com/Gitlawb/openclaude" target="_blank">Gitlawb/openclaude</a></td><td class="gh-desc">随处运行、使用一切的开放 Claude</td><td><span class="star-badge">+775</span></td></tr>
+<tr><td><a href="https://github.com/firecrawl/pdf-inspector" target="_blank">firecrawl/pdf-inspector</a></td><td class="gh-desc">快速 Rust PDF 检查库，智能分类扫描/文本 PDF 以支持路由决策</td><td><span class="star-badge">+586</span></td></tr>
+<tr><td><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></td><td class="gh-desc">与你共同成长的 Agent</td><td><span class="star-badge">+533</span></td></tr>
+<tr><td><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></td><td class="gh-desc">Agent harness 性能优化系统——技能、本能、记忆、安全与研究优先开发</td><td><span class="star-badge">+516</span></td></tr>
+<tr><td><a href="https://github.com/blader/humanizer" target="_blank">blader/humanizer</a></td><td class="gh-desc">去除 AI 生成文本痕迹的 Agent 技能</td><td><span class="star-badge">+374</span></td></tr>
+</tbody>
+</table>
+
+<div class="footer">
+    <p>📌 数据来源：arXiv（cs.AI / cs.LG / cs.CL / cs.CV / cs.RO / cs.NE / stat.ML，按提交日期降序）· GitHub Trending（daily）</p>
+    <p>🤖 由 AI 自动生成 · 生成时间：2026-09-03 11:00 CST</p>
+</div>
+
+</body>
+</html>

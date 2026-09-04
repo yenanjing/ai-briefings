@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-04</title>
+<style>
+
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-04（周五）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-04</span>
+    <span>📊 0 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/04/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/09/04/ai-briefing.html</a></span>
+</div>
+
+<div class="paper-card" style="border-color: var(--yellow);">
+    <div class="paper-header">
+        <span class="paper-rank" style="background: var(--yellow);">!</span>
+        <span class="badge badge-code" style="background: #9e6a03;">arXiv 限流</span>
+    </div>
+    <div class="paper-title"><strong>今日 arXiv API 返回 "Rate exceeded"，论文部分暂时空缺</strong></div>
+    <p class="paper-abstract">今日多次重试 arXiv API（export.arxiv.org）均返回 <code>Rate exceeded</code> 限流错误，已按规则跳过论文部分，仅记录一条空简报说明。arXiv 公告通常按工作日发布，今日（周五）的新一批论文可能尚未上线，或 API 端点临时限流。建议稍后手工补跑，或参考昨日（2026-09-03）简报中的 12 篇精选论文。</p>
+</div>
+
+<h2 class="section-title">💻 GitHub Trending AI 项目（Top 10 · 按当日新增 Star 降序）</h2>
+
+<table>
+<thead>
+<tr>
+    <th>#</th>
+    <th>项目</th>
+    <th>描述</th>
+    <th>今日新增 ⭐</th>
+    <th>总 ⭐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>1</td>
+    <td><a href="https://github.com/DietrichGebert/ponytail" target="_blank">DietrichGebert/ponytail</a></td>
+    <td class="gh-desc">让你的 AI Agent 像最懒的资深工程师一样思考——最好的代码就是你没写的代码</td>
+    <td><span class="star-badge">+2,128 ⭐</span></td>
+    <td>123,578</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td><a href="https://github.com/mattpocock/skills" target="_blank">mattpocock/skills</a></td>
+    <td class="gh-desc">给真正工程师用的 Skills，直接来自作者的 .agents 目录</td>
+    <td><span class="star-badge">+1,601 ⭐</span></td>
+    <td>247,601</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td><a href="https://github.com/blader/humanizer" target="_blank">blader/humanizer</a></td>
+    <td class="gh-desc">Agent skill：去除文本中的 AI 生成痕迹</td>
+    <td><span class="star-badge">+1,208 ⭐</span></td>
+    <td>41,585</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></td>
+    <td class="gh-desc">与你一同成长的 Agent</td>
+    <td><span class="star-badge">+774 ⭐</span></td>
+    <td>240,897</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></td>
+    <td class="gh-desc">Agent harness 性能优化系统：Skills、直觉、记忆、安全与研究优先开发，支持 Claude Code / Codex / Opencode / Cursor</td>
+    <td><span class="star-badge">+751 ⭐</span></td>
+    <td>247,267</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td><a href="https://github.com/JuliusBrussee/caveman" target="_blank">JuliusBrussee/caveman</a></td>
+    <td class="gh-desc">🪨 为什么用很多 token 当少量 token 就能搞定——Claude Code skill，像原始人一样说话节省 65% token</td>
+    <td><span class="star-badge">+543 ⭐</span></td>
+    <td>103,146</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td><a href="https://github.com/Imbad0202/academic-research-skills" target="_blank">Imbad0202/academic-research-skills</a></td>
+    <td class="gh-desc">Claude Code 学术研究 Skills：研究 → 写作 → 审阅 → 修订 → 定稿</td>
+    <td><span class="star-badge">+496 ⭐</span></td>
+    <td>46,017</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td><a href="https://github.com/obra/superpowers" target="_blank">obra/superpowers</a></td>
+    <td class="gh-desc">Agentic Skills 框架与软件开发方法论</td>
+    <td><span class="star-badge">+462 ⭐</span></td>
+    <td>281,382</td>
+</tr>
+<tr>
+    <td>9</td>
+    <td><a href="https://github.com/Gitlawb/openclaude" target="_blank">Gitlawb/openclaude</a></td>
+    <td class="gh-desc">随处运行，万物皆用</td>
+    <td><span class="star-badge">+451 ⭐</span></td>
+    <td>32,368</td>
+</tr>
+<tr>
+    <td>10</td>
+    <td><a href="https://github.com/anthropics/skills" target="_blank">anthropics/skills</a></td>
+    <td class="gh-desc">Anthropic 官方 Agent Skills 公开仓库</td>
+    <td><span class="star-badge">+281 ⭐</span></td>
+    <td>173,698</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="section-title">📝 备注</h2>
+<div class="paper-card">
+    <p class="paper-abstract">
+        今日 arXiv API 限流（Rate exceeded），多次重试（含 30s/60s/90s 间隔）均未恢复，按规则跳过论文部分。
+        GitHub Trending 抓取正常，今日 AI 主题明显集中在 <strong>Agent Skills 生态</strong>（mattpocock/skills、anthropics/skills、obra/superpowers、affaan-m/ECC、Imbad0202/academic-research-skills、JuliusBrussee/caveman、blader/humanizer 等 7 个相关项目上榜），反映社区对 Claude Code / Codex / Cursor 等 AI Coding Agent 的 Skills 标准化与工程化持续高涨的关注。
+    </p>
+</div>
+
+<div class="footer">
+    Generated by AI Research Briefing automation · <a href="https://yenanjing.github.io/ai-briefings/" target="_blank">查看全部简报</a>
+</div>
+
+</body>
+</html>

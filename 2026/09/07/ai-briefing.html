@@ -85,18 +85,185 @@ a:hover { text-decoration: underline; }
 
 <div class="meta-bar">
     <span>📅 2026-09-07</span>
-    <span>📊 0 篇精选论文</span>
+    <span>📊 12 篇精选论文</span>
     <span>💻 10 个 GitHub 项目</span>
-    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/07/ai-briefing.html" target="_blank">https://yenanjing.github.io/ai-briefings/2026/09/07/ai-briefing.html</a></span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/07/ai-briefing.html" target="_blank">yenanjing.github.io/ai-briefings/2026/09/07/ai-briefing.html</a></span>
 </div>
 
-<div class="paper-card" style="border-color: var(--yellow);">
+<h2 class="section-title">📄 arXiv 精选论文（Top 12 · 按评分降序）</h2>
+
+<div class="paper-card">
     <div class="paper-header">
-        <span class="paper-rank" style="background: var(--yellow);">!</span>
-        <span class="badge badge-code" style="background: #9e6a03;">arXiv 限流</span>
+        <span class="paper-rank">1</span>
+        <span class="paper-stars">8.3🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
     </div>
-    <div class="paper-title"><strong>今日 arXiv API 返回 "Rate exceeded"，论文部分暂时空缺</strong></div>
-    <p class="paper-abstract">今日多次重试 arXiv API（export.arxiv.org，间隔 30s/60s）均返回 <code>Rate exceeded</code> 限流错误，已按规则跳过论文部分，仅记录一条空简报说明。arXiv 公告通常按工作日发布，今日（周一）的新一批论文可能尚未上线，或 API 端点临时限流。建议稍后手工补跑，或参考上一工作日（2026-09-04）简报。</p>
+    <div class="paper-title"><strong>CUA-Universe: A Scalable and Dynamic Environment for Hybrid GUI+CLI Agents</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Haoting Shi, Wenhao Wang, Weicheng Fang 等 9 人</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05374" target="_blank">arXiv:2609.05374</a></span>
+    </div>
+    <p class="paper-abstract">把真实桌面软件自动改造成 GUI+CLI 混合操作环境：App-Forge 将应用封装为可复现虚拟机并自动发现/包装/生成命令行接口（已扩展到 16 个应用），Task-Weave 从可复用操作合成可控难度的混合任务，Path-Steer 引导 rollout 走高效混合路径并采集已验证轨迹用于后训练。在此数据上训练后，9B 模型在 CUA-Verse 上成功率与效率同步提升，行为从低效的纯 GUI 操作和脆弱的 CLI 脚本转向 GUI+CLI 协同编排。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">2</span>
+        <span class="paper-stars">8.1🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+        <span class="badge badge-code">开源</span>
+    </div>
+    <div class="paper-title"><strong>TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Zhibo Yang, Chen Zhang, Yuewei Zhang, Hao Wang</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05079" target="_blank">arXiv:2609.05079</a></span>
+        <span class="meta-item">💻 <a href="https://github.com/TruthInsight-stack/TruthInsightBench" target="_blank">github.com/TruthInsight-stack/TruthInsightBench</a></span>
+    </div>
+    <p class="paper-abstract">首个面向「发现」而非「复现」的科学发现 Agent 基准：40 个盲任务取自 10 个学科的 40 篇同行评议研究，只给出中立的科学目标和冻结数据，源结论、期望数值与分析路径全部隐藏，由 Agent 自行判断数据支持什么主张。固定 LLM 评判沿 6 个维度、29 项证据锚定条目为 Agent 自己的主张打「证据成熟度」分，聚合过程确定性自动完成、无需逐例人工评分，可随 Agent 演进而反复自动重跑。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">3</span>
+        <span class="paper-stars">7.9🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+        <span class="badge badge-code">开源</span>
+    </div>
+    <div class="paper-title"><strong>Think-Verify-Revise: Neuro-Symbolic Visual Reasoning with Vision-Language Models and Dynamic Logic Tensor Networks</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Homayoun Afshari, Pietro Basci, Alessandro Russo, Lia Morra</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05388" target="_blank">arXiv:2609.05388</a></span>
+        <span class="meta-item">💻 <a href="https://github.com/homayoun-afshari/nesy" target="_blank">github.com/homayoun-afshari/nesy</a></span>
+    </div>
+    <p class="paper-abstract">神经符号闭环：VLM 从少量标注视觉样本中按严格文法归纳一阶逻辑规则（Think），动态逻辑张量网络 D-LTN 在运行时自动组装规则、基于 CNN 视觉嵌入做可微验证（Verify），验证失败再反馈给 VLM 驱动下一轮假设修正（Revise）。在 ViSudo-PC 的四个视觉域（MNIST/EMNIST/KMNIST/FMNIST）上能归纳出有效的数独约束并显著提升推理表现。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">4</span>
+        <span class="paper-stars">7.7🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.RO</span>
+    </div>
+    <div class="paper-title"><strong>Same Trajectory, Contradictory Rewards (ROBORMBENCH): Paraphrase Fragility in Vision Language Reward Models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Wonje Jeung, Sangyeon Yoon, Hyesoo Hong 等 9 人</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05401" target="_blank">arXiv:2609.05401</a></span>
+    </div>
+    <p class="paper-abstract">揭示 VLM 充当机器人奖励函数时的「释义脆弱性」：仅改写指令措辞就能显著改变预测进度分数，甚至把同一条机器人轨迹在成功与失败之间翻转。为此构建含 2,390 条真实机器人轨迹、真值进度标签与 21,673 条校验过释义（词汇/句法/动作目标三类改写）的基准；跨闭源与开源 VLM 测试显示该不稳定性普遍且严重，改写差异越大越明显，模型规模与显式推理都不可靠缓解，而用轨迹接地监督专门训练的奖励模型稳定得多。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">5</span>
+        <span class="paper-stars">7.6🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.RO</span>
+    </div>
+    <div class="paper-title"><strong>Towards Neuro-Symbolic Procedural Reasoning for Long-Horizon Vision-Language-Action Manipulation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Vivek Chavan, Yahuan Shi, Oliver Heimann, Kevin Haninger, Jörg Krüger</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05369" target="_blank">arXiv:2609.05369</a></span>
+    </div>
+    <p class="paper-abstract">用显式任务图 + 多模态程序记忆为 VLA 补齐长程结构：任务图编码动作依赖、合法转移与分支条件，记忆维护当前步骤、已完成动作、文本上下文与任务相关视觉证据，共同指导物体选择、目标接地、子目标派发和状态转移校验；再用遥操作视频中标注的伪注视（pseudo-gaze）提供时空引导，用于 VLA 微调与推理。在工作区清理与手术器械处理两个长程操作域上系统评估。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">6</span>
+        <span class="paper-stars">7.5🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Does Your Agent's Memory Survive a Model Upgrade? A Controlled Study of Memory Portability</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Ankit Goyal, Jaideep Ray</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05339" target="_blank">arXiv:2609.05339</a></span>
+    </div>
+    <p class="paper-abstract">受控研究「模型升级后 Agent 记忆还剩下多少」：对比原文长上下文（LC-RAW）、RAG 分块、模型压缩笔记（NOTES）、固定 schema 知识图谱（KG-fixed）四种记忆形态，使用 48 条带随机答案码的合成历史、精确打分和两个 10B 以下开源模型。结果显示固定 schema 结构迁移稳定（更换写模型后 KG-fixed 准确率仅变化 +0.0004±0.0020），而压缩笔记与写模型强耦合，准确率随具体模型组合不对称漂移 +9.91 或 -13.28 个百分点。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">7</span>
+        <span class="paper-stars">7.4🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>WeAgent-MMGenEdit: A Full-Stack Recipe for Multimodal Agentic Image Generation and Editing</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Hui Zhang, Zongkai Liu, Liqiang Niu 等 9 人</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05171" target="_blank">arXiv:2609.05171</a></span>
+    </div>
+    <p class="paper-abstract">面向知识密集型图像生成与编辑的全栈 Agent 方案：WeAgent-Harness 多模态运行时提供持久化证据管理与专用校验/整合工具；可扩展数据管线产出 23K 条监督轨迹与 14.7K 个带三层可验证清单的 RL 任务；配套双语基准 WeBench-MMGenEdit 覆盖图像生成与多图编辑；SFT+RL 双侧后训练让 30B 总参 / 3B 激活的策略超过同等规模基线。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">8</span>
+        <span class="paper-stars">7.3🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Molecular Déjà Vu: Digit-Level Retrieval of Published Values in Frontier Language Models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Matthias Busch, Marius Tacke, Sviatlana V. Lamaka, Mikhail L. Zheludkevich 等</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05381" target="_blank">arXiv:2609.05381</a></span>
+    </div>
+    <p class="paper-abstract">审计 22 个前沿模型在 12 个分子性质回归基准上的「逐位复述」式记忆：5 个数据集中超过 50% 的模型出现逐字检索，其余数据集仅零星出现；在两档推理强度下对比，高推理档被判定为复述的次数比最低档多 89%；即便用变换后的 SMILES 干扰，最强模型仍能识别部分组合。结论是分子基准上的高分无法区分「预测」与「背答案」。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">9</span>
+        <span class="paper-stars">7.2🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+        <span class="badge badge-code">开源</span>
+    </div>
+    <div class="paper-title"><strong>First Things First: Teaching LLM-Based Agents to Prioritize Must-Haves before Nice-to-Haves</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Tianjie Ju, Xinyue Xu, Wanxuan Sun 等 7 人</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05224" target="_blank">arXiv:2609.05224</a></span>
+        <span class="meta-item">💻 <a href="https://github.com/claire62/FTF-RL" target="_blank">github.com/claire62/FTF-RL</a></span>
+    </div>
+    <p class="paper-abstract">让 MLLM Agent 学会「先硬约束、后软偏好」：把需求组织成三类场景（硬约束唯一确定解 / 多解由软偏好排序 / 无解时应主动弃答），构建 3,649 道贴近真实服务场景（电商、预订、地图与打车）的题目。评测显示现有 SOTA MLLM 普遍不会优先处理硬约束，也不擅长在该弃答时弃答。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">10</span>
+        <span class="paper-stars">7.1🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>WorldSculpt: Generating Compositional Worlds from Grounded Videos</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Muyao Niu, Jixuan He, Ruihan Yu 等 12 人</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05416" target="_blank">arXiv:2609.05416</a></span>
+    </div>
+    <p class="paper-abstract">组合式生成含数百个物体的杂乱场景：把强单物体 3D 生成先验（Pixal3D）扩展出多视角条件通路，使物体生成锚定在多个带位姿的观测上；模型只在规范化空间的单物体数据上微调，却能不做任何场景级训练就泛化到严重遮挡的大场景。同时发布 UE-MeshyScene —— 含数百物体、逐物体标注与真值网格的照片级真实感杂乱场景基准。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">11</span>
+        <span class="paper-stars">7.0🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>UniMate: One Unified Model to Animate Diverse Skeletons</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Linzhan Mou, Jiahui Lei, Zhiyang Dou 等 7 人</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05415" target="_blank">arXiv:2609.05415</a></span>
+    </div>
+    <p class="paper-abstract">统一骨骼动画基础模型：直接从已绑定的 3D 资产与文本提示为任意骨架合成运动，摆脱类别模板、逐骨架微调和推理期参考动作。配套 UniML3D 数据集含 13,006 条运动序列，覆盖双足、四足、鸟类、海洋、昆虫、蛇形与铰接刚体，统一规范化并配文本。在质量、泛化与效率上超过 SOTA 基线，支持零样本跨拓扑迁移、中间帧补全、动作扩展与文本引导编辑。</p>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">12</span>
+        <span class="paper-stars">6.9🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>Causal Foundation Models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Christopher Stith, Hossein Rahmani, Jesse C. Cresswell</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.03003" target="_blank">arXiv:2609.03003</a></span>
+    </div>
+    <p class="paper-abstract">把基础模型范式引入因果推断：因果基础模型（CFM）是预训练网络，靠上下文学习在全新数据集上估计平均处理效应等因果量，无需更新模型参数，从而取代「每个问题都要定制机制、挑选估计器、重新训练」的传统流水线。文章是这一新兴方向的实用导论，含背景梳理与示例代码、Jupyter Notebook。</p>
 </div>
 
 <h2 class="section-title">💻 GitHub Trending AI 项目（Top 10 · 按当日新增 Star 降序）</h2>
@@ -188,8 +355,9 @@ a:hover { text-decoration: underline; }
 <h2 class="section-title">📝 备注</h2>
 <div class="paper-card">
     <p class="paper-abstract">
-        今日 arXiv API 限流（Rate exceeded），多次重试（含 30s/60s 间隔）均未恢复，按规则跳过论文部分。
-        GitHub Trending 抓取正常，今日 AI 主题明显集中在 <strong>Agent Skills 生态</strong>（mattpocock/skills、humanlayer/skills、coreyhaines31/marketingskills、affaan-m/ECC、blader/humanizer、cathrynlavery/diagram-design 等 6 个相关项目上榜），反映社区对 Claude Code / Codex / Cursor 等 AI Coding Agent 的 Skills 标准化与垂直场景化持续高涨的关注。此外，<strong>本地推理</strong>（magnitudedev/magnitude）与 <strong>开源编码 Agent</strong>（anomalyco/opencode、NousResearch/hermes-agent）也保持活跃。
+        论文部分为<strong>当日补跑结果</strong>：10:55 定时任务执行时 export.arxiv.org 连续返回 <code>Rate exceeded</code>（7 分类 OR 复合查询被限流），已按旧规则跳过论文。14:20 改用单类别分批查询（cs.AI / cs.LG / cs.CL / cs.CV / stat.ML，各 25 篇，间隔 3 秒）成功取回 106 篇候选，去重后按四维度评分选出以上 12 篇。候选池提交日期为 2026-09-02 ～ 09-04（arXiv 周末不发布，周一新一批公告尚未上线）。
+        <br><br>
+        GitHub Trending 抓取正常，今日 AI 主题集中在 <strong>Agent Skills 生态</strong>（mattpocock/skills、humanlayer/skills、coreyhaines31/marketingskills、affaan-m/ECC、blader/humanizer、cathrynlavery/diagram-design 等 6 个相关项目上榜），另有本地推理（magnitudedev/magnitude）与开源编码 Agent（anomalyco/opencode、NousResearch/hermes-agent）保持活跃。
     </p>
 </div>
 

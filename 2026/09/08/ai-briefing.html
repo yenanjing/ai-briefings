@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-08</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-08（周二）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-08</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/08/ai-briefing.html" target="_blank">yenanjing.github.io/ai-briefings/2026/09/08/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 arXiv 精选论文（Top 12 · 按评分降序）</h2>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">1</span>
+        <span class="paper-stars">8.3🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>CUA-Universe: A Scalable and Dynamic Environment for Hybrid GUI+CLI Agents</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Haoting Shi, Wenhao Wang, Weicheng Fang 等 9 人</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05374" target="_blank">arXiv:2609.05374</a></span>
+    </div>
+    <p class="paper-abstract">把真实桌面软件自动改造成 GUI+CLI 混合操作环境：App-Forge 将应用封装为可复现虚拟机并自动发现/包装/生成命令行接口（已扩展到 16 个应用），Task-Weave 从可复用操作合成可控难度的混合任务，Path-Steer 引导 rollout 走高效混合路径并采集已验证轨迹用于后训练。在此数据上训练后，9B 模型在 CUA-Verse 上成功率与效率同步提升，行为从低效的纯 GUI 操作和脆弱的 CLI 脚本转向 GUI+CLI 协同编排。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">2</span>
+        <span class="paper-stars">8.1🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span> <span class="badge badge-code">开源</span>
+    </div>
+    <div class="paper-title"><strong>TruthInsightBench: An Evidence-Grounded Benchmark for Automated Evaluation of Open-Ended Scientific Discovery Agents</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Zhibo Yang, Chen Zhang, Yuewei Zhang, Hao Wang</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05079" target="_blank">arXiv:2609.05079</a></span><span class="meta-item">💻 <a href="https://github.com/TruthInsight-stack/TruthInsightBench" target="_blank">github.com/TruthInsight-stack/TruthInsightBench</a></span>
+    </div>
+    <p class="paper-abstract">首个面向「发现」而非「复现」的科学发现 Agent 基准：40 个盲任务取自 10 个学科的 40 篇同行评议研究，只给出中立的科学目标和冻结数据，源结论、期望数值与分析路径全部隐藏，由 Agent 自行判断数据支持什么主张。固定 LLM 评判沿 6 个维度、29 项证据锚定条目为 Agent 自己的主张打「证据成熟度」分，聚合过程确定性自动完成、无需逐例人工评分，可随 Agent 演进而反复自动重跑。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">3</span>
+        <span class="paper-stars">7.8🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Molecular Déjà Vu: Digit-Level Retrieval of Published Values in Frontier Language Models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Matthias Busch, Marius Tacke, Sviatlana V. Lamaka, Mikhail L. Zheludkevich 等</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05381" target="_blank">arXiv:2609.05381</a></span>
+    </div>
+    <p class="paper-abstract">审计 22 个前沿模型在 12 个分子性质回归基准上的「逐位复述」式记忆：5 个数据集中超过 50% 的模型出现逐字检索，其余数据集仅零星出现；在两档推理强度下对比，高推理档被判定为复述的次数比最低档多 89%；即便用变换后的 SMILES 干扰，最强模型仍能识别部分组合。结论是分子基准上的高分无法区分「预测」与「背答案」。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">4</span>
+        <span class="paper-stars">7.7🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.RO</span>
+    </div>
+    <div class="paper-title"><strong>Same Trajectory, Contradictory Rewards (ROBORMBENCH): Paraphrase Fragility in Vision Language Reward Models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Wonje Jeung, Sangyeon Yoon, Hyesoo Hong 等 9 人</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05401" target="_blank">arXiv:2609.05401</a></span>
+    </div>
+    <p class="paper-abstract">揭示 VLM 充当机器人奖励函数时的「释义脆弱性」：仅改写指令措辞就能显著改变预测进度分数，甚至把同一条机器人轨迹在成功与失败之间翻转。为此构建含 2,390 条真实机器人轨迹、真值进度标签与 21,673 条校验过释义（词汇/句法/动作目标三类改写）的基准；跨闭源与开源 VLM 测试显示该不稳定性普遍且严重，改写差异越大越明显，模型规模与显式推理都不可靠缓解，而用轨迹接地监督专门训练的奖励模型稳定得多。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">5</span>
+        <span class="paper-stars">7.6🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Does Your Agent's Memory Survive a Model Upgrade? A Controlled Study of Memory Portability</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Ankit Goyal, Jaideep Ray</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05339" target="_blank">arXiv:2609.05339</a></span>
+    </div>
+    <p class="paper-abstract">受控研究「模型升级后 Agent 记忆还剩下多少」：对比原文长上下文（LC-RAW）、RAG 分块、模型压缩笔记（NOTES）、固定 schema 知识图谱（KG-fixed）四种记忆形态，使用 48 条带随机答案码的合成历史、精确打分和两个 10B 以下开源模型。结果显示固定 schema 结构迁移稳定（更换写模型后 KG-fixed 准确率仅变化 +0.0004±0.0020），而压缩笔记与写模型强耦合，准确率随具体模型组合不对称漂移 +9.91 或 -13.28 个百分点。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">6</span>
+        <span class="paper-stars">7.5🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>RISE: Recursive Improvement via Self-Extrapolating Policy Distillation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Yang Li, Semih Yavuz, Shafiq Joty</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05295" target="_blank">arXiv:2609.05295</a></span>
+    </div>
+    <p class="paper-abstract">把 RLVR 训练轨迹本身变成教师：通过外推当前 checkpoint 与尾部 anchor 之间的位移（参数空间或输出 logit 空间），把稀疏的结果奖励转成稠密的 token 级监督目标，无需任何外部模型或特权条件。RISE 把 RLVR 与 on-policy 蒸馏组成互补闭环——结果奖励把外推锚定到正确推理，外推教师再细化 token 级决策；教师每轮随学生一起刷新，使蒸馏成为递归自我提升机制而非一次性压缩。在数学推理、多域 STEM、代码生成与多轮 Agent 任务上全面超过纯 RLVR 和自蒸馏。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">7</span>
+        <span class="paper-stars">7.4🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Multi-Step Tool-Calling over Korean Open Public APIs: A Benchmark and a Data-Synthesis Recipe</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Dain Kim, Eungi Cho, Kyumin Kim, Shinyeong Noh, Kyuseong Lim</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05395" target="_blank">arXiv:2609.05395</a></span>
+    </div>
+    <p class="paper-abstract">面向数据主权场景的多步工具调用基准 KOPA-Bench（145 个真实任务），并提出 EDGE——一个由真实执行驱动的动态图数据合成框架：只保留实际调用 live API 后成功连通的「输出→输入」链路，再遍历这些已验证链路合成可执行的多步轨迹。用 GRPO 在合成数据上微调后，9B 模型几乎追平同族未微调的 27B 模型，在 KOPA-Bench 与 BFCL 上均大幅提升。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">8</span>
+        <span class="paper-stars">7.3🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>GUT: Quantifying and Optimizing the Reasoning Uncertainty of LLMs via Graph Complexity</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Shuang Liang, Xin-Yu Hu, Xiang-Jun Ou, Shao-Qun Zhang</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05284" target="_blank">arXiv:2609.05284</a></span>
+    </div>
+    <p class="paper-abstract">用有向无环图刻画 LLM 推理链的所有潜在分支，把推理空间复杂度近似为图复杂度来量化「推理不确定性」（GUT-Q）；再把负的不确定性作为强化学习奖励函数来优化（GUT-O），从而压缩不合理、荒谬的推理分支。在 4 个 LLM、5 个数据集上验证有效性。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">9</span>
+        <span class="paper-stars">7.2🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Testing Interchangeability in LLM Agent Teams</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Jianxin Gao, Tianyi Yu, Linna Deng, Runze Li, Zining Wang</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05279" target="_blank">arXiv:2609.05279</a></span>
+    </div>
+    <p class="paper-abstract">实测多 Agent 团队「角色可替换」这一生产假设：每个设置独立组建 8 支队伍、每个 Agent 保留私有笔记跨 10 轮成型，再在队伍间调换角色匹配的 Agent。结果显示调换对任务分数影响不大，但单位进度的沟通开销上升 16–63%；在 Hanabi 中被调换的 Agent 比新手更贵（与旧搭档习得的惯例产生干扰）。Agent 在任务结果上比在协调效率上更具「可替代性」，成型历史越长调换代价越大。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">10</span>
+        <span class="paper-stars">7.2🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Don't Drop Dropout: Optimizing Layer Sparsity for Efficient LLM Training and Inference</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Mostafa Elhoushi, Alex Pretko, Nolan Dey 等 9 人</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05275" target="_blank">arXiv:2609.05275</a></span>
+    </div>
+    <p class="paper-abstract">系统论证 layer dropout（随机深度）应重回 SOTA LLM 预训练配方：在最优层分布、时间调度与优化器超参下，相同训练 FLOPs 下 layer dropout 带来更低 loss，相同步数下可省最多 25% 训练 FLOPs 而 loss 持平或更低；还能解锁早退、中间层跳过、自投机解码等后训练优化，带来最多 1.5× 推理加速且精度几乎无损。结论基于 2400+ 实验、271M–8.2B 参数规模，全部在 Cerebras CS-3 上跑。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">11</span>
+        <span class="paper-stars">7.1🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.RO</span> <span class="badge badge-code">开源</span>
+    </div>
+    <div class="paper-title"><strong>RoboSPA: Can VLA Models Go Beyond Simple Scenes and Short-Horizon Tasks?</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Zhenxuan Fan, Bo Zhang, Yutong Lin 等 12 人</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05324" target="_blank">arXiv:2609.05324</a></span><span class="meta-item">💻 <a href="https://github.com/fanzhenxuan/RoboSPA" target="_blank">github.com/fanzhenxuan/RoboSPA</a></span>
+    </div>
+    <p class="paper-abstract">大规模机器人操作诊断基准，聚焦「细粒度空间推理」与「长程程序规划」两个维度，覆盖 10 个任务类别、56 个基础任务，每个任务 5 个难度档共 280 个变体，跨多种本体与场景采集 527K 条轨迹。除二元成功率外引入诊断指标；实验显示当前 VLA 在复杂空间关系、精确低层执行与记忆密集规划上仍吃力。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">12</span>
+        <span class="paper-stars">7.0🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>PRICE: A Systematic Study of LLM Adaptation Choices for Bitcoin Price Forecasting</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Maryam Fakhari, Mehran Safayani</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.05235" target="_blank">arXiv:2609.05235</a></span>
+    </div>
+    <p class="paper-abstract">系统研究 LLM 适配短周期比特币价格预测的各项选择：基于 4-bit 量化的 LLaMA-3 8B，组合 LoRA 参数高效微调、递归多步推理、整数取整数值表示、CTF 提示与零温精确解码。消融显示每项组件都有贡献（CTF 提示优于 CoT/iCoT/少样本，零温解码提升递归预测稳定性）；对比 8 个 transformer 与时序基础模型，PRICE 在验证集与测试集上均取得最低预测误差。</p>
+</div>
+
+<h2 class="section-title">💻 GitHub Trending AI 项目（Top 10 · 按当日新增 Star 降序）</h2>
+
+<table>
+<thead>
+<tr>
+    <th>#</th>
+    <th>项目</th>
+    <th>描述</th>
+    <th>今日新增 ⭐</th>
+    <th>总 ⭐</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>1</td>
+    <td><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></td>
+    <td class="gh-desc">Agent harness 性能优化系统：Skills、直觉、记忆、安全与研究优先开发，支持 Claude Code / Codex / Opencode / Cursor</td>
+    <td><span class="star-badge">+1,897 ⭐</span></td>
+    <td>252,927</td>
+</tr><tr>
+    <td>2</td>
+    <td><a href="https://github.com/microsoft/markitdown" target="_blank">microsoft/markitdown</a></td>
+    <td class="gh-desc">把文件与 Office 文档转成 Markdown 的 Python 工具</td>
+    <td><span class="star-badge">+886 ⭐</span></td>
+    <td>180,396</td>
+</tr><tr>
+    <td>3</td>
+    <td><a href="https://github.com/coreyhaines31/marketingskills" target="_blank">coreyhaines31/marketingskills</a></td>
+    <td class="gh-desc">面向 Claude Code 与 AI Agent 的营销 Skills：CRO、文案、SEO、分析与增长工程</td>
+    <td><span class="star-badge">+580 ⭐</span></td>
+    <td>48,191</td>
+</tr><tr>
+    <td>4</td>
+    <td><a href="https://github.com/The-Swarm-Corporation/AutoHedge" target="_blank">The-Swarm-Corporation/AutoHedge</a></td>
+    <td class="gh-desc">用群体智能与 AI Agent 自动化市场分析、风控与交易执行的自主对冲基金框架</td>
+    <td><span class="star-badge">+517 ⭐</span></td>
+    <td>5,296</td>
+</tr><tr>
+    <td>5</td>
+    <td><a href="https://github.com/heygen-com/hyperframes" target="_blank">heygen-com/hyperframes</a></td>
+    <td class="gh-desc">写 HTML、渲染视频，为 Agent 而造</td>
+    <td><span class="star-badge">+474 ⭐</span></td>
+    <td>46,149</td>
+</tr><tr>
+    <td>6</td>
+    <td><a href="https://github.com/ruvnet/ruflo" target="_blank">ruvnet/ruflo</a></td>
+    <td class="gh-desc">Agent 元 harness：部署多智能体集群、协调自主工作流，带自适应记忆、自学习与 RAG，原生集成 Claude Code / Codex / Hermes</td>
+    <td><span class="star-badge">+394 ⭐</span></td>
+    <td>71,425</td>
+</tr><tr>
+    <td>7</td>
+    <td><a href="https://github.com/openai/skills" target="_blank">openai/skills</a></td>
+    <td class="gh-desc">Codex 的 Skills 目录</td>
+    <td><span class="star-badge">+351 ⭐</span></td>
+    <td>26,075</td>
+</tr><tr>
+    <td>8</td>
+    <td><a href="https://github.com/MoonTechLab/LunaTV" target="_blank">MoonTechLab/LunaTV</a></td>
+    <td class="gh-desc">CC BY-NC-SA 开源项目</td>
+    <td><span class="star-badge">+197 ⭐</span></td>
+    <td>9,795</td>
+</tr><tr>
+    <td>9</td>
+    <td><a href="https://github.com/bytedance/deer-flow" target="_blank">bytedance/deer-flow</a></td>
+    <td class="gh-desc">开源长程 SuperAgent harness：研究、编码与创作，含沙箱、记忆、工具、技能、子 Agent 与消息网关</td>
+    <td><span class="star-badge">+195 ⭐</span></td>
+    <td>81,879</td>
+</tr><tr>
+    <td>10</td>
+    <td><a href="https://github.com/jo-inc/camofox-browser" target="_blank">jo-inc/camofox-browser</a></td>
+    <td class="gh-desc">面向 AI Agent 的隐身无头浏览器，绕过 Cloudflare 与反爬，Puppeteer/Playwright 即插即用替代</td>
+    <td><span class="star-badge">+135 ⭐</span></td>
+    <td>9,789</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="section-title">📝 备注</h2>
+<div class="paper-card">
+    <p class="paper-abstract">
+        定时任务执行：arXiv 7 分类 OR 复合查询再次被限流（L1 两次均失败，第二次返回空响应），自动降级到 <strong>L2 单类别分批查询</strong>，成功取回 cs.AI / cs.LG / cs.CL 各 25 篇（cs.CV / cs.RO / cs.NE / stat.ML 当批被限流跳过），去重后 66 篇候选，按四维度评分选出以上 12 篇。候选池提交日期为 2026-09-04 前后。
+        <br><br>
+        GitHub Trending 抓取正常，今日 AI 主题集中在 <strong>Agent Skills / harness 生态</strong>（affaan-m/ECC、openai/skills、coreyhaines31/marketingskills、ruvnet/ruflo、bytedance/deer-flow），另有文档转换（microsoft/markitdown）、Agent 浏览器（jo-inc/camofox-browser）与视频生成（heygen-com/hyperframes）保持活跃。
+    </p>
+</div>
+
+<div class="footer">
+    Generated by AI Research Briefing automation · <a href="https://yenanjing.github.io/ai-briefings/" target="_blank">查看全部简报</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-10</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; font-weight: 600; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+<h1>AI Research Briefing <span class="date">2026-09-10</span></h1>
+
+<div class="meta-bar">
+  <span>📅 2026-09-10</span>
+  <span>📚 arXiv 最新论文</span>
+  <span>🔥 GitHub Trending</span>
+  <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/10/ai-briefing.html">在线版</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 论文</h2>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">1</span>
+    <span class="paper-stars">🌟🌟</span>
+    <span class="paper-title">Show-Harness：让 VLM Agent 直接「玩」机器人</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Yanzhe Chen, Zechen Bai, Zhijun Cao, Wenzheng Zeng, Kevin Qinghong Lin, Yiqi Lin et al.</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10522" class="arxiv-link">2609.10522</a></span>
+    <span class="meta-item">🏷️ cs.RO / cs.AI / cs.CV</span>
+    
+  </div>
+  <div class="paper-abstract">提出 Embodied Harness，将 VLM 的语义意图通过离散语义动作单元连接到机器人执行器；VLM 直接负责细粒度物理决策， embodiment-specific interpreter 确定性地将其落地为局部机器人动作。同一接口支持仿真与真实机器人，显著降低具身智能体的部署门槛。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">2</span>
+    <span class="paper-stars">🌟🌟</span>
+    <span class="paper-title">JarvisGUI：跨设备 GUI Agent 的动态任务组合基准</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Zixiang Chen, Yuheng Lu, Zihao Cheng, Zeming Liu, Jizeng Bai, Ziye Huang et al.</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10451" class="arxiv-link">2609.10451</a></span>
+    <span class="meta-item">🏷️ cs.AI</span>
+    
+  </div>
+  <div class="paper-abstract">首个面向跨设备工作流的 GUI Agent 动态基准，要求 Agent 在多设备/多平台间传递中间结果、维护共享状态并协调异构环境。突破现有单设备静态任务评测的局限，更真实地评估 Agent 在现实场景中的就绪程度。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">3</span>
+    <span class="paper-stars">🌟🌟</span>
+    <span class="paper-title">Programmable World Model：可编程世界模型</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Zheng-Hui Huang, Guixu Lin, Jiacheng Lin, Yi-Chuan Huang, Ruihan Yu, Muyao Niu et al.</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10540" class="arxiv-link">2609.10540</a></span>
+    <span class="meta-item">🏷️ cs.CV</span>
+    
+  </div>
+  <div class="paper-abstract">将世界状态演化与视觉观测生成解耦：Agent 将自然语言指令翻译为可执行程序，指定实体状态与状态转移规则，轻量引擎执行程序以更新世界状态，再由生成模型渲染视觉观测。支持对实体及其交互的直接控制，实现长程交互下的持久世界状态与可编程规则。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">4</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">Semigroup-JEPA：零样本物理泛化的潜在动力学一致性</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Andy Zeyi Liu, Haoran Sun, Lucas Baker, Randall Balestriero, John Sous</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10464" class="arxiv-link">2609.10464</a></span>
+    <span class="meta-item">🏷️ cs.LG / cs.AI / cs.CV</span>
+    
+  </div>
+  <div class="paper-abstract">在 LeWorldModel 框架基础上，通过动作条件化将物理参数注入时间模型，并联合训练编码器与预测器进行自回归潜在 rollout。引入半群一致性约束，使 JEPA 世界模型在分布外场景下仍能生成物理合理的动力学，首次系统评估 JEPA 学习物理的能力。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">5</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">IdeaAMBIG：研究想法规范中实现关键缺口的基准</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Yiling Ma, Yilun Zhao, Sihong Wu, Manasi Patwardhan, Arman Cohan</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10539" class="arxiv-link">2609.10539</a></span>
+    <span class="meta-item">🏷️ cs.CL</span>
+    
+  </div>
+  <div class="paper-abstract">研究「编码就绪度」——研究方法规范是否提供足够的方法论信息让胜任的实现者或编码 Agent 构建预期方法而无需 unsupported 假设。从论文、代码库、issue 线程与复现产物中构建证据锚定的规范及其支持解析，并引入 IdeaAMBIG 基准量化实现关键缺口。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">6</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">DUET-DINO：机器人操作的同步跨视角世界模型</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Nisarga Nilavadi, Ralf Römer, Moritz Reuss, Michael Krawez, Tobias Jülg, Angela P. Schoellig et al.</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10506" class="arxiv-link">2609.10506</a></span>
+    <span class="meta-item">🏷️ cs.RO / cs.CV</span>
+    
+  </div>
+  <div class="paper-abstract">同步跨视角潜在世界模型，通过跨视角条件化从静态侧视与腕部相机观测中联合学习动作条件预测。利用互补的全局场景与夹爪中心信息，在 7-DoF 末端执行器控制上实现更可靠的细粒度空间与旋转动作预测，支持零样本目标条件规划。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">7</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">Building Multilingual Bridges：数据混合作为语言内推理泛化的支柱</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Mehrnaz Mofakhami, Ananya Sahu, Alejandro R. Salamanca, Daniel D'souza, Alexandre Berard, Thomas Euyang et al.</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10445" class="arxiv-link">2609.10445</a></span>
+    <span class="meta-item">🏷️ cs.CL</span>
+    
+  </div>
+  <div class="paper-abstract">推进 L2 推理——模型以用户提示语言一致推理的能力，在提示与答案之间建立语言内桥梁。系统研究数据混合策略对多语言推理泛化的影响，为非英语用户的可及性与意图保留提供实证路径。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">8</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">IBIB：按服务路由而非模型标识符衡量企业 AI 系统的协议</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Blake Stenstrom, Charangan Vasantharajan, Brian Sathianathan</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10494" class="arxiv-link">2609.10494</a></span>
+    <span class="meta-item">🏷️ cs.CL / cs.AI / cs.LG</span>
+    
+  </div>
+  <div class="paper-abstract">指出现有 18 个审计基准均以「广告模型标识符」评分，忽视权重、服务路由、精度、输出契约与 harness 的联合影响。提出三部分组成协议：gold-blind 能力绑定预检、可靠性包含的首轮评分规则、结构性评分盲审的 adjudication，将测量误差变为可报告项。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">9</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">BrainTaskonomy：fMRI 基础模型的预训练组织与迁移学习</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Junfeng Xia, Wenhao Ye, Junxiang Zhang, Jiayu Zuo, Mo Wang, Quanying Liu</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10518" class="arxiv-link">2609.10518</a></span>
+    <span class="meta-item">🏷️ cs.CV / q-bio.NC</span>
+    
+  </div>
+  <div class="paper-abstract">提出 Brain-DiT 代理估计十个 fMRI 域的难度与定向促进，生成优先级引导的累积域课程结合高到低噪声时间步调度与联合巩固。在适应阶段用测量学习关系组织下游任务，无需修改 backbone 即可提升跨域迁移效率。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">10</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">Field Converter：足球转播中世界坐标球员姿态估计</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Simon Khan, Laurent Gajny, Jennyfer Lecompte, Sébastien Laporte</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10498" class="arxiv-link">2609.10498</a></span>
+    <span class="meta-item">🏷️ cs.CV</span>
+    
+  </div>
+  <div class="paper-abstract">几何初始化的时间残差框架，从标定足球转播中恢复世界坐标系下的 3D 球员姿态。先用相机与球场几何通过射线-地面交点初始化球员根节点，再从姿态、图像、相机与几何线索预测时间残差修正，在比赛分离评估上表现稳健。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">11</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">极限中的语言生成：有限见证与分离宽度层级</span>
+    <span class="badge badge-code">代码</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Xiaoyu Li, Andi Han, Jiaojiao Jiang, Junbin Gao</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10525" class="arxiv-link">2609.10525</a></span>
+    <span class="meta-item">🏷️ cs.FL / cs.LG</span>
+    <div class="meta-item">📦 <a href="https://github.com/xiaoyulics/language-generation-characterization" class="arxiv-link">GitHub</a></div>
+  </div>
+  <div class="paper-abstract">刻画「极限语言生成」任务——从未知无限语言的每个穷举正例呈现中生成有效未见元素。证明生成可行当且仅当每个目标可分配有限正例见证，且目标激活的有限样本存在无限公共交集。建立分离宽度层级并给出通用归一化结果。</div>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">12</span>
+    <span class="paper-stars"></span>
+    <span class="paper-title">gap-entropy 猜想的正面解决</span>
+    
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 P. M. Aronow, Nathan Kallus, Patrick Lopatto</span>
+    <span class="meta-item">📅 <a href="https://arxiv.org/abs/2609.10529" class="arxiv-link">2609.10529</a></span>
+    <span class="meta-item">🏷️ cs.LG / stat.ML</span>
+    
+  </div>
+  <div class="paper-abstract">证明固定置信 best-arm 识别在独立单位方差高斯臂、均值在 [0,1] 且唯一最优臂下的 gap-entropy 猜想。给出最优期望样本复杂度的紧确界，将 gap 的熵结构作为实例难度核心度量。</div>
+</div>
+
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目</h2>
+<table>
+<thead>
+<tr><th>#</th><th>项目</th><th>语言</th><th>今日⭐</th><th>总⭐</th><th>简介</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://github.com/ayghri/i-have-adhd" class="arxiv-link">ayghri/i-have-adhd</a></td>
+<td>Python</td>
+<td><span class="star-badge">+4,650⭐</span></td>
+<td>34,783</td>
+<td class="gh-desc">A skill to stop your coding agent from burying the answer. ADHD-friendly output.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><a href="https://github.com/cathrynlavery/diagram-design" class="arxiv-link">cathrynlavery/diagram-design</a></td>
+<td>HTML</td>
+<td><span class="star-badge">+2,249⭐</span></td>
+<td>36,660</td>
+<td class="gh-desc">38 editorial diagram types for Claude Code, Codex, and Pi. Self-contained HTML + SVG.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><a href="https://github.com/affaan-m/ECC" class="arxiv-link">affaan-m/ECC</a></td>
+<td>JavaScript</td>
+<td><span class="star-badge">+1,133⭐</span></td>
+<td>255,207</td>
+<td class="gh-desc">The agent harness performance optimization system. Skills, instincts, memory, security, research-first development.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><a href="https://github.com/freestylefly/awesome-gpt-image-2" class="arxiv-link">freestylefly/awesome-gpt-image-2</a></td>
+<td>JavaScript</td>
+<td><span class="star-badge">+705⭐</span></td>
+<td>30,095</td>
+<td class="gh-desc">Prompt as Code | GPT-Image2 工业级提示词引擎与模板库，530+ 案例逆向工程，20+ 套工业级模板。</td>
+</tr>
+<tr>
+<td>5</td>
+<td><a href="https://github.com/obra/superpowers" class="arxiv-link">obra/superpowers</a></td>
+<td>Shell</td>
+<td><span class="star-badge">+688⭐</span></td>
+<td>284,061</td>
+<td class="gh-desc">An agentic skills framework &amp; software development methodology that works.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="https://github.com/Tencent/teamai-cli" class="arxiv-link">Tencent/teamai-cli</a></td>
+<td>TypeScript</td>
+<td><span class="star-badge">+556⭐</span></td>
+<td>3,043</td>
+<td class="gh-desc">Make Every Team AI Native</td>
+</tr>
+<tr>
+<td>7</td>
+<td><a href="https://github.com/openai/plugins" class="arxiv-link">openai/plugins</a></td>
+<td>JavaScript</td>
+<td><span class="star-badge">+498⭐</span></td>
+<td>6,215</td>
+<td class="gh-desc">OpenAI Plugins</td>
+</tr>
+<tr>
+<td>8</td>
+<td><a href="https://github.com/vastsa/PI-Desktop" class="arxiv-link">vastsa/PI-Desktop</a></td>
+<td>TypeScript</td>
+<td><span class="star-badge">+417⭐</span></td>
+<td>1,696</td>
+<td class="gh-desc">Local-first AI coding agent desktop: Electron + Rust host core + pi Agent Harness + user-installable plugins</td>
+</tr>
+<tr>
+<td>9</td>
+<td><a href="https://github.com/TauricResearch/TradingAgents" class="arxiv-link">TauricResearch/TradingAgents</a></td>
+<td>Python</td>
+<td><span class="star-badge">+367⭐</span></td>
+<td>103,989</td>
+<td class="gh-desc">TradingAgents: Multi-Agents LLM Financial Trading Framework</td>
+</tr>
+<tr>
+<td>10</td>
+<td><a href="https://github.com/rohitg00/ai-engineering-from-scratch" class="arxiv-link">rohitg00/ai-engineering-from-scratch</a></td>
+<td>Python</td>
+<td><span class="star-badge">+343⭐</span></td>
+<td>53,726</td>
+<td class="gh-desc">Learn it. Build it. Ship it for others.</td>
+</tr>
+
+</tbody>
+</table>
+
+<div class="footer">
+  Generated at 2026-09-10 11:04:23 · <a href="https://yenanjing.github.io/ai-briefings/2026/09/10/ai-briefing.html">在线版</a>
+</div>
+</body>
+</html>

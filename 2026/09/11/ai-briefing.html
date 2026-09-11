@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-11</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; font-weight: 600; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+<h1>AI Research Briefing <span class="date">2026-09-11</span></h1>
+
+<div class="meta-bar">
+  <span>📅 2026-09-11</span>
+  <span>📚 arXiv 最新论文</span>
+  <span>🔥 GitHub Trending</span>
+  <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/11/ai-briefing.html">在线版</a></span>
+</div>
+
+<h2 class="section-title">📄 Top 12 论文</h2>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">1</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">SenseNova-U1.5：原生统一视觉智能</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Haiwen Diao, Jiahao Wang, Chenjing Ding, Hanming Deng 等</span>
+    <span class="meta-item">📂 cs.CV</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.11929">arXiv:2609.11929</a></span>
+  </div>
+  <p class="paper-abstract">8B-MoT 原生统一多模态模型，在 encoder-free 和 VAE-free 架构中同时实现视觉理解、推理与生成。通过空间相干 patch 重建强化视觉接口，配合精心策划的生成/编辑数据与结构提示增强进行训练扩展。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">2</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">Vidu S2：实时交互、可编辑、空间视频生成</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Jintao Zhang, Kai Jiang, Jintao Chen, Xu Wang 等</span>
+    <span class="meta-item">📂 cs.CV, cs.LG</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.11638">arXiv:2609.11638</a></span>
+  </div>
+  <p class="paper-abstract">包含 Vidu S2-Avatar（实时交互数字角色）和 Vidu S2-Editing（实时视频编辑），支持实时 720p 视频生成、动态参考生成、可编辑视频内容及空间视频生成探索。相比 Vidu S1 在实时性和交互性上大幅提升。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">3</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">MindTopo：基础模型能在拓扑空间中推理吗？</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Yunfei Ge, Anbang Liu, Qineng Wang, Johnalbert Garnica 等</span>
+    <span class="meta-item">📂 cs.AI, cs.CL, cs.CV</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.11900">arXiv:2609.11900</a></span>
+  </div>
+  <p class="paper-abstract">引入 MindTopo 基准，评估基础模型在拓扑空间中的推理能力。认知科学将拓扑关系视为空间理解的基础，但现有评估多聚焦度量或视角依赖关系。该工作填补了拓扑推理评估的空白。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">4</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">Caption-once, Frames-on-Demand：预算感知的长视频理解 Agent</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Weitong Cai, Hang Zhang, Yukai Huang, Yiqiao Xie 等</span>
+    <span class="meta-item">📂 cs.CV, cs.HC</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.11899">arXiv:2609.11899</a></span>
+  </div>
+  <p class="paper-abstract">发现视觉-文本二元性：语言记忆比密集帧更好地携带长程时间结构，而像素对属性级细节更具决定性。提出视觉需求路由机制，在边缘设备上实现预算感知的长视频理解 Agent。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">5</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">World in World：用世界模型探索世界</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Chenxi Song, Yanming Yang, Chi Zhang 等</span>
+    <span class="meta-item">📂 cs.CV</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.11548">arXiv:2609.11548</a></span>
+  </div>
+  <p class="paper-abstract">自回归视频世界模型，支持交互式长程探索。解决从新视角探索源视频时的同步性、视角内容放置、新暴露区域合理补全及重访时外观恢复等挑战。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">6</span>
+    <span class="paper-stars">🌟</span>
+    <span class="badge badge-code">开源</span>
+    <span class="paper-title">OmniKVQuant：全模态 LLM 的 KV Cache 量化</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Suho Yoo, Hyunjong Ok, Jongmin Choi, Jihoo Jung 等</span>
+    <span class="meta-item">📂 cs.CV</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.11582">arXiv:2609.11582</a></span>
+    <span class="meta-item"><a class="arxiv-link" href="https://github.com/kaistmm/omnikvquant">GitHub</a></span>
+  </div>
+  <p class="paper-abstract">首个针对全模态大语言模型（Omni-LLM）的 KV Cache 量化研究。分析 TurboQuant 在多模态缓存上的行为，识别两个关键问题并提出解决方案，降低音频+视频+文本同时输入时的内存开销。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">7</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">OmniHallu：多模态大语言模型的统一幻觉检测</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Jianjiang Yang, Peihang Li, Shanqing Xu, Mengchen Qian 等</span>
+    <span class="meta-item">📂 cs.CL, cs.CV</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.11244">arXiv:2609.11244</a></span>
+  </div>
+  <p class="paper-abstract">统一幻觉检测框架，覆盖跨模态理解与生成。现有研究多局限于单一模态或任务类型，OmniHallu 实现了多模态大语言模型的通用幻觉检测。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">8</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">Show-Harness：让 VLM Agent 直接「玩」机器人</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Yanzhe Chen, Zechen Bai, Zhijun Cao, Wenzheng Zeng 等</span>
+    <span class="meta-item">📂 cs.RO</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.10522">arXiv:2609.10522</a></span>
+  </div>
+  <p class="paper-abstract">具身 Harness 框架，通过紧凑的语义接口将意图链接到动作，使视觉语言模型（VLM）能够操控机器人。暴露离散语义动作单元，实现从智能到机器人控制的转化。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">9</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">HaWMPO：幻觉感知世界模型策略优化</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Zengjue Chen, Peidong Liu, Jiawei Li, Qi Wang 等</span>
+    <span class="meta-item">📂 cs.RO</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.09941">arXiv:2609.09941</a></span>
+  </div>
+  <p class="paper-abstract">幻觉感知世界模型策略优化，解决通用机器人策略在复杂长程场景中的成功率问题。通过世界模型进行在线强化学习，避免昂贵的物理交互训练。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">10</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">Belief-State Engine：部分可观测下的 LLM 规划增强</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Arnab Chattopadhayay, Debdipta Halder</span>
+    <span class="meta-item">📂 cs.RO</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.10036">arXiv:2609.10036</a></span>
+  </div>
+  <p class="paper-abstract">信念状态引擎，增强 LLM 在部分可观测环境下的规划能力。解决 LLM Agent 在环境部分可观测时的特征性失败：模糊反馈导致过早承诺、单次信息观测将不确定性坍缩到错误假设、策略漂移等问题。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">11</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">SurgicalRoomAgent：智能手术室语音交互多 Agent 系统</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Tianxiang Zhou</span>
+    <span class="meta-item">📂 cs.AI, cs.CL, cs.HC</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.11231">arXiv:2609.11231</a></span>
+  </div>
+  <p class="paper-abstract">基于 LLM 的语音交互多 Agent 系统，用于智能手术室。通过分层架构实现自然语言理解、设备控制、术中记录和手术报告生成，包含语音交互流水线（唤醒、ASR、轮次检测、Agent 推理、TTS）。</p>
+</div>
+
+<div class="paper-card">
+  <div class="paper-header">
+    <span class="paper-rank">12</span>
+    <span class="paper-stars">🌟</span>
+    <span class="paper-title">REVA：上下文高效 RAG 服务的可复用证据视图聚合</span>
+  </div>
+  <div class="paper-meta">
+    <span class="meta-item">👥 Tuan Nguyen, Qiran Hu, Banruo Liu, Khoa D. Doan 等</span>
+    <span class="meta-item">📂 cs.LG, cs.CL, cs.IR</span>
+    <span class="meta-item"><a class="arxiv-link" href="https://arxiv.org/abs/2609.11209">arXiv:2609.11209</a></span>
+  </div>
+  <p class="paper-abstract">可复用证据视图聚合，降低 RAG 服务的上下文成本。现有压缩器多为每个查询独立操作、依赖辅助模型或重写，REVA 通过可复用视图聚合减少延迟、KV 缓存内存和 token 成本。</p>
+</div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目</h2>
+
+<table>
+<thead>
+<tr><th>项目</th><th>今日⭐</th><th>简介</th></tr>
+</thead>
+<tbody>
+<tr>
+  <td><a href="https://github.com/ayghri/i-have-adhd">ayghri/i-have-adhd</a></td>
+  <td><span class="star-badge">3,882</span></td>
+  <td class="gh-desc">让编码 Agent 不再埋没答案的 ADHD 友好输出技能</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a></td>
+  <td><span class="star-badge">1,762</span></td>
+  <td class="gh-desc">浏览器中的间谍卫星模拟器，实时开源空间情报</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></td>
+  <td><span class="star-badge">1,294</span></td>
+  <td class="gh-desc">38 种编辑级图表类型，适用于 Claude Code/Codex/Pi</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/freestylefly/awesome-gpt-image-2">freestylefly/awesome-gpt-image-2</a></td>
+  <td><span class="star-badge">962</span></td>
+  <td class="gh-desc">GPT Image 2/2.5 提示词与案例库，530+ 案例</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/Tencent/teamai-cli">Tencent/teamai-cli</a></td>
+  <td><span class="star-badge">841</span></td>
+  <td class="gh-desc">让每个团队 AI 原生化</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/THU-MAIC/OpenMAIC">THU-MAIC/OpenMAIC</a></td>
+  <td><span class="star-badge">837</span></td>
+  <td class="gh-desc">开放多 Agent 交互课堂，一键获得沉浸式学习体验</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td>
+  <td><span class="star-badge">732</span></td>
+  <td class="gh-desc">Agent 技能框架与软件开发方法论</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/diegosouzapw/OmniRoute">diegosouzapw/OmniRoute</a></td>
+  <td><span class="star-badge">626</span></td>
+  <td class="gh-desc">免费 MIT AI 网关，352 家提供商 1200+ 模型</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/vastsa/PI-Desktop">vastsa/PI-Desktop</a></td>
+  <td><span class="star-badge">624</span></td>
+  <td class="gh-desc">本地优先 AI 编码 Agent 桌面应用</td>
+</tr>
+<tr>
+  <td><a href="https://github.com/alsk1992/CloddsBot">alsk1992/CloddsBot</a></td>
+  <td><span class="star-badge">277</span></td>
+  <td class="gh-desc">开源 AI 交易 Agent，跨 1000+ 市场自主运行</td>
+</tr>
+</tbody>
+</table>
+
+<div class="footer">
+  <p>简报生成时间：2026-09-11 11:00 CST</p>
+  <p>数据来源：arXiv (cs.CV/cs.LG/cs.CL API + cs.AI/cs.RO/cs.NE/stat.ML RSS) + GitHub Trending</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-14</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-14（周一）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-14</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/14/ai-briefing.html" target="_blank">yenanjing.github.io/ai-briefings/2026/09/14/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 arXiv 精选论文（Top 12 · 按评分降序）</h2>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">1</span>
+        <span class="paper-stars">8.3🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Rethinking Heterogeneous System Disaggregation for Subquadratic Attention</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Arya Tschand, Yaosheng Fu, Vikram Sharma Mailthody, Nicolai Oswald, Po-An Tsai, Ritchie Zhao, Oreste Villa, Vijay Janapa Reddi, Karu Sankaralingam</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.13134" target="_blank">arXiv:2609.13134</a></span>
+    </div>
+    <p class="paper-abstract">提出 SQD（SubQuadratic Disaggregation），针对次二次注意力 LLM 的细粒度异构分离方案。按注意力类型而非算子类型拆分 decode 阶段：稀疏注意力拆为 top-k 选择 + top-k 注意力+FFN；线性/滑窗注意力拆为 dense 层 + 次二次层+FFN。在 8×B200 异构系统上，GLM 5.2 tokens/J 提升 53%，Nemotron 3 Ultra 提升 31%，Gemma 4 31B 提升 56%；Rubin+LPX 系统分析显示延迟收紧 1.2–1.5×，吞吐提升最高 3.6×。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">2</span>
+        <span class="paper-stars">8.1🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>How Good Are Frontier Models at Physics? Expert Re-Grading Reveals Broken Evaluations and Near-Saturation of Leading Benchmarks</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Ali Ansari, Haoran Sun, Andy Zeyi Liu, Mark Jabbour, Yongshan Ding, Steven Girvin, Yu He, Sohrab Ismail-Beigi, Aleksander Kubica, Owen D. Miller</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.13009" target="_blank">arXiv:2609.13009</a></span>
+    </div>
+    <p class="paper-abstract">对 6 个主流物理基准进行专家复审，发现大量「模型答错」实为评分器错误、参考答案错误或题目歧义。经专家修正后，GPT-5.6-Sol 在 HLE-Physics 上从 47.3% 升至 78.7%，CMT-Benchmark 从 61.0% 升至 87.2%，CritPt 保留题 pass@4 达 94.4%。研究表明当前基准严重低估前沿模型的物理推理能力，呼吁更严格、专家验证的评测。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">3</span>
+        <span class="paper-stars">7.9🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.RO</span>
+    </div>
+    <div class="paper-title"><strong>Dynin-Robotics: Omnimodal Unified Diffusion Vision-Language-Action Model</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Hoeun Lee, Jaeik Kim, Jusang Oh, Jinhyeok Kim, Geon Choi, Hyeonggeun Kim, Jaeyoung Do</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.13053" target="_blank">arXiv:2609.13053</a></span>
+    </div>
+    <p class="paper-abstract">基于 Dynin-Omni 全模态掩码扩散骨干，将语言、视觉观测、目标和动作统一为离散 token。同一模型学习动作预测、动作条件下一观测预测、终端目标状态预测和轨迹到指令重建。在 48 个 Open X-Embodiment 数据集约 133 万轨迹上持续预训练，Franka Research 3 机器人 4 种操作条件平均成功率 78.4%，块并行实现加速动作解码最高 29.2×。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">4</span>
+        <span class="paper-stars">7.8🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>K-Bench: A Benchmark for LLM Unlearning in Agentic Deployments</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Guangsheng Yu, Yanna Jiang, Qin Wang, Baihe Ma, Xu Wang</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.12808" target="_blank">arXiv:2609.12808</a></span>
+    </div>
+    <p class="paper-abstract">首个针对 Agent 部署场景的 LLM 遗忘基准。检查 ReAct Agent 暴露的全部 6 个通道（CoT、工具调用、工具观测、摘要等）。发现 TOFU/MUSE 报告无泄漏时，部署 Agent 仍在 22–86% 查询中泄漏秘密；当秘密存在于权重中时，20 种已发表方法均无法真正移除。揭示模型级遗忘证书无法迁移到 Agent 级部署。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">5</span>
+        <span class="paper-stars">7.7🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Residual Vector-based Reconstruction as Long-Context Recall Regardless of Context Window Size</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 MyungHoon Ryu, XinYu Piao, Jong-Kook Kim</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.12686" target="_blank">arXiv:2609.12686</a></span>
+    </div>
+    <p class="paper-abstract">无需训练的长上下文召回方法，利用 LLM 前馈层中的残差向量（parameter activations）确定性重建查询相关事实。GPU 内存使用随上下文长度增长近乎恒定，可在 200 万 token 故事上下文中回答单事实问题，突破预训练上下文窗口限制。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">6</span>
+        <span class="paper-stars">7.6🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CL</span>
+    </div>
+    <div class="paper-title"><strong>LifeMem: Enabling Lifelong Experience Reuse for LLM Agents</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Yuli Qiu, Yutong Li, Wei Su, Zeming Liu, Wanxiang Che, Heyan Huang, Haifeng Wang, Yuang Guo</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.12655" target="_blank">arXiv:2609.12655</a></span>
+    </div>
+    <p class="paper-abstract">终身学习框架，使 Agent 能跨环境迁移可复用经验。学习阶段按底层工作流聚类交互轨迹提取可复用技能；推理时召回相关技能和轨迹指导行动。在 10 个环境、13k+ 任务上验证，实现跨任务迁移并减少灾难性遗忘。EMNLP 2026 Main Conference 接收。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">7</span>
+        <span class="paper-stars">7.5🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Embodied-BenchForge: A Closed-Loop Agentic Workflow for Embodied Benchmark Construction</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Baoyang Jiang, Fengchun Zhang, Leyuan Wang, Haotian Li, Yida Wang, Zhe Ji, Jinshan Lai, Xi Ren, Danyang Li, Zheng Yang</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.13082" target="_blank">arXiv:2609.13082</a></span>
+    </div>
+    <p class="paper-abstract">将具身基准构建形式化为闭环基准合成（Closed-Loop Benchmark Synthesis），集成前向工件合成与后向验证修复。技能编排工件合成将类型化可复用技能组合为可执行工作流；工件依赖图记录中间输出；需求引导验证修复在构建全程应用特定契约。构建 6 个 Offline EQA 基准 + 1 个含 220 可执行任务的交互式基准。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">8</span>
+        <span class="paper-stars">7.4🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Diffusion Models and Concept Formation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Zekun Wang, Karthik Singaravadivelan, Christopher J. MacLellan</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.13047" target="_blank">arXiv:2609.13047</a></span>
+    </div>
+    <p class="paper-abstract">论证扩散模型虽为图像合成设计，却隐式执行与 Cobweb 认知模型相同的概念形成计算。扩散模型的噪声边际是数据分布的高斯平滑，其模式形成与 Cobweb 概率原型树在四方面对应：均为分层密度模型、分层贝叶斯模型、将分类视为降低不确定性的分数跟随、均涌现基本水平。在 MNIST 和 Fashion-MNIST 上验证对应关系。Advances of Cognitive Systems 2026 Oral。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">9</span>
+        <span class="paper-stars">7.3🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>CanvasAnneal: Curriculum Reinforcement Learning for Diffusion Language Models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Blake Olson, Yuhang Song, Emmett McQuinn, Yuan Shangguan</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.13060" target="_blank">arXiv:2609.13060</a></span>
+    </div>
+    <p class="paper-abstract">针对扩散语言模型（DLM）RL 探索瓶颈，提出课程引导的扩散 RL 框架。初始阶段用教师生成的推理轨迹热启动扩散画布，随训练逐步移除引导，要求模型独立生成更多推理轨迹。在 MATH500、Countdown、Tau2 等数学推理和工具使用基准上超越标准 diffu-GRPO。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">10</span>
+        <span class="paper-stars">7.2🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Skill Issue: Lessons from Optimizing Repository SKILLs for Coding Agents</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Mykhailo Kozyrev, Andrei Kozyrev, Anton Podkopaev</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.12742" target="_blank">arXiv:2609.12742</a></span>
+    </div>
+    <p class="paper-abstract">研究如何为编码 Agent 优化仓库级 SKILL 文档。挖掘比 prior work 更难的合并 PR 任务（在冻结基础提交上回滚），按同一 Agent 有/无文档的表现差异评分。在 3 个 Kotlin 仓库上，GEPA 找到的文档平均提升 4.9pp，而 SkillOpt 仅提升 0.1pp。维护者反馈文档中包含只有实际参与项目才能获得的知识。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">11</span>
+        <span class="paper-stars">7.1🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Autonomous Research for Open-Ended Problems: A Case Study on Telecom Ticket Retrieval</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Junghyun Min, Huseyin Uzunalioglu, Mohamed Trabelsi</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.13073" target="_blank">arXiv:2609.13073</a></span>
+    </div>
+    <p class="paper-abstract">探索自主研究框架在开放式行业级 ML 问题上的适配。电信工单检索案例显示：自主研究在窄超参数优化上表现优异，但缺乏人类直觉和创造力，且需要运营开销。在最少人工监督下，以每次 Cursor campaign 最高 200 美元的成本，在 10 周内达到 SOTA 的 90%（0.34 vs 0.38 Recall@1），而人类需 10 个月。建议人机协作。</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">12</span>
+        <span class="paper-stars">7.0🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Unified Agentic Video Editing Across Levels of Complexity and Creativity</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Surabhi S. Nath, Kim Ferres, Milan Petrović, Lion Schulz</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.12769" target="_blank">arXiv:2609.12769</a></span>
+    </div>
+    <p class="paper-abstract">报告跨三个不同编辑目标、复杂度和创造力级别的自动化视频编辑 Agent 工具方法：场景预览、视频摘要和电影级预告片。评估输出并讨论自动化与代理性的影响。</p>
+</div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目（Top 10 · 按当日新增 Star 排序）</h2>
+
+<table>
+<thead>
+<tr><th>#</th><th>项目</th><th>今日</th><th>总 Star</th><th>描述</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>1</td>
+    <td><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a></td>
+    <td><span class="star-badge">+2,632 today</span></td>
+    <td>27,025</td>
+    <td class="gh-desc">开源本地化 ElevenLabs 替代品，支持语音克隆、设计、配音、听写、转录、有声书，646 种语言</td>
+</tr><tr>
+    <td>2</td>
+    <td><a href="https://github.com/asgeirtj/system_prompts_leaks" target="_blank">asgeirtj/system_prompts_leaks</a></td>
+    <td><span class="star-badge">+706 today</span></td>
+    <td>66,109</td>
+    <td class="gh-desc">系统提示词泄露合集：Claude、ChatGPT/Codex、Gemini/Antigravity、Grok、Cursor、Kimi 等</td>
+</tr><tr>
+    <td>3</td>
+    <td><a href="https://github.com/vxcontrol/pentagi" target="_blank">vxcontrol/pentagi</a></td>
+    <td><span class="star-badge">+590 today</span></td>
+    <td>24,032</td>
+    <td class="gh-desc">全自主 AI Agent 系统，执行复杂渗透测试任务</td>
+</tr><tr>
+    <td>4</td>
+    <td><a href="https://github.com/SnailSploit/Claude-Red" target="_blank">SnailSploit/Claude-Red</a></td>
+    <td><span class="star-badge">+506 today</span></td>
+    <td>4,199</td>
+    <td class="gh-desc">Claude skills 攻击性安全技能库，涵盖 SQLi、shellcode、EDR 规避、漏洞利用开发</td>
+</tr><tr>
+    <td>5</td>
+    <td><a href="https://github.com/multimodal-art-projection/YuE" target="_blank">multimodal-art-projection/YuE</a></td>
+    <td><span class="star-badge">+487 today</span></td>
+    <td>7,807</td>
+    <td class="gh-desc">YuE2 前沿音乐生成：符号化规划、零样本翻唱、智能体音乐编辑</td>
+</tr><tr>
+    <td>6</td>
+    <td><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review</a></td>
+    <td><span class="star-badge">+443 today</span></td>
+    <td>23,621</td>
+    <td class="gh-desc">阿里巴巴混合架构代码审查：确定性流水线 + LLM Agent，行级注释，多语言规则集</td>
+</tr><tr>
+    <td>7</td>
+    <td><a href="https://github.com/calesthio/OpenMontage" target="_blank">calesthio/OpenMontage</a></td>
+    <td><span class="star-badge">+380 today</span></td>
+    <td>58,525</td>
+    <td class="gh-desc">全球首个开源智能体视频制作系统，12 条流水线、100+ 工具、700+ skill 文件</td>
+</tr><tr>
+    <td>8</td>
+    <td><a href="https://github.com/alphaXiv/OpenResearch" target="_blank">alphaXiv/OpenResearch</a></td>
+    <td><span class="star-badge">+289 today</span></td>
+    <td>2,126</td>
+    <td class="gh-desc">使用任意模型运行并行研究 Agent</td>
+</tr><tr>
+    <td>9</td>
+    <td><a href="https://github.com/tech-leads-club/agent-skills" target="_blank">tech-leads-club/agent-skills</a></td>
+    <td><span class="star-badge">+265 today</span></td>
+    <td>5,699</td>
+    <td class="gh-desc">专业 AI 编码代理的安全、已验证技能注册表，支持 Antigravity、Claude Code、Cursor、Copilot</td>
+</tr><tr>
+    <td>10</td>
+    <td><a href="https://github.com/jihe520/MathModelAgent" target="_blank">jihe520/MathModelAgent</a></td>
+    <td><span class="star-badge">+246 today</span></td>
+    <td>5,388</td>
+    <td class="gh-desc">数学建模 Agent & skills，自动完成建模并生成可提交论文</td>
+</tr>
+</tbody>
+</table>
+
+<div class="footer">
+    <p>AI Research Briefing · 自动生成于 2026-09-14 · <a href="https://yenanjing.github.io/ai-briefings/" target="_blank">历史简报</a></p>
+    <p>数据来源：arXiv recent 页面（API 限流 fallback）+ GitHub Trending</p>
+</div>
+
+</body>
+</html>

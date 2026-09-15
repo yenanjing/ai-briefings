@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-15</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.1rem; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-15（周二）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-15</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 8 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/15/ai-briefing.html" target="_blank">yenanjing.github.io/ai-briefings/2026/09/15/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 arXiv 精选论文（Top 12 · 按评分降序）</h2>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">1</span>
+        <span class="paper-stars">6.6</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CL</span>
+    </div>
+    <div class="paper-title"><strong>GraMRAG: Orchestrating Multi-Agent Multi-Step Reasoning via Graph Memory with Reinforcement Learning</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Zhongyu Wang</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.14066" target="_blank">arXiv:2609.14066</a></span>
+    </div>
+    <p class="paper-abstract">Although existing multi-agent Retrieval-Augmented Generation (RAG) systems have demonstrated promise on complex multimodal reasoning tasks, they remain fundamentally limited in reasoning depth and memory structure, suffering from inadequate retrieval and state blindness when answering knowledge-intensive questions.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">2</span>
+        <span class="paper-stars">6.5</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>Robust and Efficient Communication for Multi-Agent Learning</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Rafael Pina, Varuna De Silva, Corentin Artaud</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.15361" target="_blank">arXiv:2609.15361</a></span>
+    </div>
+    <p class="paper-abstract">Effective communication is a cornerstone of distributed intelligence in Multi-Agent Reinforcement Learning (MARL), yet ensuring that generated messages are both informative and robust to physical constraints remains a significant challenge. This paper introduces Multi-Agent Regularized Communication (MARC), a novel framework inspired by information-theoretic principles of conditional mutual information.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">3</span>
+        <span class="paper-stars">6.4</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>Impute-EM: Native Mixed-State Diffusion Models for Heterogeneous Data Imputation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Sergei Kholkin, Kirill Sokolov, Dmitry Baranchuk, Evgeny Burnaev, Alexander Korotin</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.15284" target="_blank">arXiv:2609.15284</a></span>
+    </div>
+    <p class="paper-abstract">Missing values are ubiquitous in heterogeneous data mining, where numerical, categorical, and binary variables often coexist. Many imputation methods, especially diffusion-based ones, treat discrete variables through continuous surrogates such as one-hot relaxations rather than modeling them natively. This creates a mismatch between the model state space and the mixed discrete and continuous structure of the data.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">4</span>
+        <span class="paper-stars">6.3</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>Concept-Grounded Reasoning with Prompt-Driven Localization for Interpretable Structured Report Generation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Xinyue Xu, Hongbin Lin, Juangui Xu, Hualiang Wang, Lehan Wang et al.</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.15334" target="_blank">arXiv:2609.15334</a></span>
+    </div>
+    <p class="paper-abstract">Medical imaging modalities such as ultrasound and X-ray are widely used in clinical practice, where diagnosis follows a structured, evidence-driven workflow aligned with standardized criteria. While multimodal large language models (MLLMs) show promise for automated medical report generation, most existing systems rely on end-to-end multimodal fusion without modeling clinically defined intermediate attributes, leading to limited grounding and interpretability.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">5</span>
+        <span class="paper-stars">6.2🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>On the role of the tokenizer in ECG transformer models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Jiawei Li, Fabio Bonassi, Johan Sundström, Thomas B. Schön, Antônio H. Ribeiro</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.15433" target="_blank">arXiv:2609.15433</a></span>
+    </div>
+    <p class="paper-abstract">Tokenization determines both the physiological content presented to an ECG Transformer and the sequence over which attention operates. We compare eight tokenization strategies across Transformer, Informer, Reformer, and FEDformer on the nine-label CPSC2018 classification task. The input projection and principal backbone capacity are controlled to isolate the effect of token construction.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">6</span>
+        <span class="paper-stars">6.2🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CL</span>
+    </div>
+    <div class="paper-title"><strong>Towards Evolving Context Parameterization for Large Language Models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Xiaobing Shi, Zherui Li, Yiming Jiang, Kun Wang, Yufei Guo</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.14168" target="_blank">arXiv:2609.14168</a></span>
+    </div>
+    <p class="paper-abstract">Context parameterization enables large language models (LLMs) to internalize contexts into reusable model parameters, avoiding repeated processing across subsequent queries. However, existing methods typically assume static contexts and lack explicit mechanisms for distinguishing validity states under continual updates.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">7</span>
+        <span class="paper-stars">6.2</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>MarKey: Marginal Utility Guided Greedy Keyframe Selection for Long Video Understanding</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Hongchang Shi, Jinpeng Hu, Ao Wang, Wenzheng Zhou, Hui Ma et al.</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.15408" target="_blank">arXiv:2609.15408</a></span>
+    </div>
+    <p class="paper-abstract">Long-video understanding remains challenging for multimodal large language models (MLLMs) because densely encoding long frame sequences is computationally expensive, while uniform sampling under a limited visual budget can miss sparse yet decisive evidence. Recent training-free keyframe selection methods have enabled more efficient inference and yielded promising performance gains.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">8</span>
+        <span class="paper-stars">6.2🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>End-to-End Cell Detection via Instance-aware Graph Modeling</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Ruochen Liu, Yalin Zheng, Jingxin Liu, Jianfeng Zhang, Shoujun Huang et al.</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.15354" target="_blank">arXiv:2609.15354</a></span>
+    </div>
+    <p class="paper-abstract">Accurate cell detection and classification are crucial for pathological analysis, directly affecting diagnostic accuracy and treatment planning. To capture complex cellular interactions beyond visual appearance within the tumor microenvironment, several approaches have employed graph neural networks to model spatial and relational patterns among cell nuclei, yielding promising results.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">9</span>
+        <span class="paper-stars">6.2</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>AlignUS: MRI-Guided Ultrasound Representation Learning for ALS Classification from Tongue Images</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Kadija Abdel Ghader, Emani Babe, Lorenzo Pettinari, Meya Haroune, Sidaty El Hadramy</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.15285" target="_blank">arXiv:2609.15285</a></span>
+    </div>
+    <p class="paper-abstract">Amyotrophic lateral sclerosis (ALS) is a progressive neurodegenerative disease in which early assessment remains challenging, particularly in low-resource settings where MRI is often unavailable. High-resolution ultrasound (HRUS) of the tongue offers a portable and low-cost alternative for evaluating bulbar involvement, but learning reliable diagnostic models is limited by small datasets and the difficulty of extracting robust representations from ultrasound alone.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">10</span>
+        <span class="paper-stars">6.1🌟</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CL</span>
+    </div>
+    <div class="paper-title"><strong>SpectralShift: Effective Context Window Extension of Gated DeltaNet via Spectral Reparameterization</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Zian Liu, Yiwen Hu, Zican Dong, Tian Xie, Wayne Xin Zhao et al.</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.14320" target="_blank">arXiv:2609.14320</a></span>
+    </div>
+    <p class="paper-abstract">Recently, linear attention layers have been increasingly adopted to replace softmax attention at scale for long-context modeling. However, existing context extension approaches typically apply continued pretraining directly without modifying these layers, overlooking the spectral properties of linear attention state dynamics.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">11</span>
+        <span class="paper-stars">6.1</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>Diffusion Trajectory Modeling for Semantic Correspondence</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Yusung Choi</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.15357" target="_blank">arXiv:2609.15357</a></span>
+    </div>
+    <p class="paper-abstract">Diffusion models generate images through an iterative diffusion process, and recent studies have demonstrated that the intermediate feature maps produced during this process contain rich visual representations, leading to their adoption across a variety of downstream tasks. However, most existing approaches are limited to either using a single feature map at a specific timestep or aggregating feature maps across multiple timesteps.</p>
+</div><div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">12</span>
+        <span class="paper-stars">6.1</span>
+        <span class="badge badge-code" style="background:#1f6feb;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>Robust Multi-Model Fitting through Learning Neighbor Regions</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Chang Nie, Guangming Wang, Zhe Liu, Hesheng Wang</span><span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.15348" target="_blank">arXiv:2609.15348</a></span>
+    </div>
+    <p class="paper-abstract">Multi-model fitting involves fitting multiple models accurately in a noisy environment. It is the basis for computer vision tasks such as scene reconstruction and mixed reality. However, its performance is often limited by insufficient feature utilization, inefficient optimization, model overlap, and the non-differentiable pipelines. To overcome these limitations, we introduce a robust coarse-to-fine framework called Learning Neighbor Regions (LNR).</p>
+</div>
+
+<h2 class="section-title">🔥 GitHub Trending（AI 相关 · 按当日新增 Star 排序）</h2>
+
+<table>
+<thead><tr><th>项目</th><th>描述</th><th>当日新增</th></tr></thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a></td>
+<td class="gh-desc">开源本地化 ElevenLabs 替代，语音克隆/设计/配音/转写，支持 646 种语言</td>
+<td><span class="star-badge">⭐ 2,776</span></td>
+</tr><tr>
+<td><a href="https://github.com/JustVugg/colibri" target="_blank">JustVugg/colibri</a></td>
+<td class="gh-desc">纯 C 零依赖在本地硬件运行前沿 MoE 模型，专家从磁盘流式加载</td>
+<td><span class="star-badge">⭐ 2,173</span></td>
+</tr><tr>
+<td><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review</a></td>
+<td class="gh-desc">阿里规模验证的混合架构代码审查工具：确定性流水线 + LLM Agent，行级评论</td>
+<td><span class="star-badge">⭐ 1,571</span></td>
+</tr><tr>
+<td><a href="https://github.com/ever-co/ever-gauzy" target="_blank">ever-co/ever-gauzy</a></td>
+<td class="gh-desc">开源业务管理平台（ERP/CRM/HRM/ATS/PM）</td>
+<td><span class="star-badge">⭐ 1,130</span></td>
+</tr><tr>
+<td><a href="https://github.com/666ghj/MiroFish" target="_blank">666ghj/MiroFish</a></td>
+<td class="gh-desc">简洁通用的群体智能引擎，预测万物</td>
+<td><span class="star-badge">⭐ 560</span></td>
+</tr><tr>
+<td><a href="https://github.com/multimodal-art-projection/YuE" target="_blank">multimodal-art-projection/YuE</a></td>
+<td class="gh-desc">YuE2：前沿音乐生成，符号规划、零样本翻唱、Agent 音乐编辑</td>
+<td><span class="star-badge">⭐ 559</span></td>
+</tr><tr>
+<td><a href="https://github.com/huggingface/transformers" target="_blank">huggingface/transformers</a></td>
+<td class="gh-desc">SOTA 机器学习模型框架，覆盖文本/视觉/音频/多模态</td>
+<td><span class="star-badge">⭐ 536</span></td>
+</tr><tr>
+<td><a href="https://github.com/tech-leads-club/agent-skills" target="_blank">tech-leads-club/agent-skills</a></td>
+<td class="gh-desc">面向 AI 编码 Agent 的安全经验证技能注册表</td>
+<td><span class="star-badge">⭐ 512</span></td>
+</tr>
+</tbody>
+</table>
+
+<div class="footer">
+    <p>本简报由自动化工作流生成 · 数据来源：arXiv（cs.LG / cs.CL / cs.CV）与 GitHub Trending</p>
+    <p>生成时间：2026-09-15</p>
+</div>
+
+</body>
+</html>

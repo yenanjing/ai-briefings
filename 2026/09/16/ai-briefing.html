@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-16</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.05rem; color: var(--yellow); font-weight: 600; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-16（周三）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-16</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/16/ai-briefing.html" target="_blank">yenanjing.github.io/ai-briefings/2026/09/16/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 arXiv 精选论文（Top 12 · 按评分降序）</h2>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">1</span>
+        <span class="paper-stars">9.0🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+        
+    </div>
+    <div class="paper-title"><strong>ScienceBuddy: Recursive-in-Recursive Self-Improvement for Interactive Scientific Agents</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Shuhan Xue, Jianyuan Zhong, Ziyuan Nan, Wenbin Li, Zhaochen Yu, Jinchao Ding et al.</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17523" target="_blank">📄 arXiv:2609.17523</a>
+    </div>
+    <div class="paper-abstract">提出&quot;递归中的递归自我改进&quot;范式，将 harness 进化与模型强化学习耦合：内层递归在模型固定时改进 harness，外层递归在改进后的 harness 下训练模型。发布交互式科学研究工作空间 ScienceBuddy，支持研究者将请求、反馈和执行证据转化为持续学习的任务与评估 rubric，覆盖四类科学任务家族。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">2</span>
+        <span class="paper-stars">8.6🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+        
+    </div>
+    <div class="paper-title"><strong>Agentic Societies Need a Social Harness</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Tapan Chugh, Vidushi Singh, Krish Jain, Arvind Krishnamurthy, Ratul Mahajan</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17527" target="_blank">📄 arXiv:2609.17527</a>
+    </div>
+    <div class="paper-abstract">指出智能体社会即使由诚实、有能力的 agent 组成，现有 harness 与消息原语也常导致协作失败；恶意 agent 可利用通信漏洞（&quot;speech&quot;）阻碍协作、影响结果。提出&quot;social harness&quot;分层架构，与每个 agent 的&quot;personal harness&quot;互补，可预防类失败、运行时检测无效消息，为多 agent 社会提供治理基础。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">3</span>
+        <span class="paper-stars">8.4🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+        
+    </div>
+    <div class="paper-title"><strong>Coding Agents Have Converged: Why the SWE-bench Leaderboard Can No Longer Order Its Top Entries</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Fengshuo Liu, Ying Liu, Ruize Sun, Lie Luo, Siyuan Guo</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17394" target="_blank">📄 arXiv:2609.17394</a>
+    </div>
+    <div class="paper-abstract">审计 254 份 SWE-bench 提交（4 个 split），发现排行榜前两名各解决 396/500 实例，前十共享 285 次成功与 51 次失败，仅 164 个实例可区分。前沿解集合中位嵌套度 0.935（基线 0.774），表明成功高度重叠；模型-scaffold 组合内差异可达 29.8 个百分点，远超前三十的 8.8 点差距。呼吁以新的度量替代单纯分数排序。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">4</span>
+        <span class="paper-stars">8.2🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+        
+    </div>
+    <div class="paper-title"><strong>JustFit: 200K-Token LLM Serving on a 24 GiB Laptop with Just-in-Time State Management</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Yuhua Chen</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17475" target="_blank">📄 arXiv:2609.17475</a>
+    </div>
+    <div class="paper-abstract">基于 MLX 的推理运行时，融合 KVExec（压缩 KV 执行）、PhaseSwap（组件驻留）与 StateTrans（状态保持服务转换），独立于权重量化。在 24 GiB M4 Pro MacBook 上运行 Qwen3.8-27B MXFP4，单请求完成上下文从基线 30,720 提升至 212,992（6.93×），32K 输入探测达 19.11 tokens/s。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">5</span>
+        <span class="paper-stars">8.0🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+        
+    </div>
+    <div class="paper-title"><strong>Large Language Models Develop Belief State Geometry In-Context</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Daniel Balcells, Andrew Jun Lee, Chirag Rastofi, Paul M. Riechers, Adam Shai, Xavier Poncini</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17376" target="_blank">📄 arXiv:2609.17376</a>
+    </div>
+    <div class="paper-abstract">在受控设定（HMM 生成数据）下探测 LLM 是否形成信念状态。六个开源 LLM 上，信念状态可从残差流激活线性解码，峰值 R² 达 0.83–0.99，跨早至晚层分布。通过 patching 与 steering 直接干预探测子空间，可改变下游预测，证明其功能相关性。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">6</span>
+        <span class="paper-stars">7.8🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+        
+    </div>
+    <div class="paper-title"><strong>PhysStream: Streaming Physics-Grounded Video Generation with Structured Scene Memory</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Chuhao Chen, Peter Wonka, Chaoyang Wang, Chen Wang, Qiao Feng, Sergey Tulyakov et al.</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17521" target="_blank">📄 arXiv:2609.17521</a>
+    </div>
+    <div class="paper-abstract">自回归物理约束图生视频模型，引入结构化场景记忆（位置图与物体追踪图，从已生成帧在线导出）与稀疏速度增量信号（编码物理量）。两阶段训练：先微调双向模型加入运动控制条件，再训练因果自回归模型，实现细粒度物理可控生成。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">7</span>
+        <span class="paper-stars">7.6🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+        
+    </div>
+    <div class="paper-title"><strong>Verifiable Social Reasoning for LLM Assistants (Fuse)</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Amir Taubenfeld, Zorik Gekhman, Avigail Grinstein-Dabush, Itay Laish, Ariel Goldstein, Marian Croak et al.</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17496" target="_blank">📄 arXiv:2609.17496</a>
+    </div>
+    <div class="paper-abstract">提出 Fuse 多 agent 仿真框架研究用户中介的社会推理：目标 agent 持有隐藏动机，与代表用户的 agent 交互，被评估助手据此推断动机，构造上提供可验证真值。24k 标注的人类研究验证仿真忠实度，在 12 个 LLM 上系统隔离关键因素。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">8</span>
+        <span class="paper-stars">7.4🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+        
+    </div>
+    <div class="paper-title"><strong>LimiX-2: A Contextual Mechanism Network Towards General Structured-Data Intelligence</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Xingxuan Zhang, Gang Ren, Hao Yuan, Hao Zou, Hongze Tan, Hui Wang et al.</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17488" target="_blank">📄 arXiv:2609.17488</a>
+    </div>
+    <div class="paper-abstract">LimiX 家族新成员，采用 Contextual Mechanism Networks（CMNs）范式与 Context-Conditional Masked Modeling（CCMM）预训练。将 in-context learning 的组织原则从 target-centric 预测转向 mechanism-oriented 联合建模，学习 p(x,y | D_context)。用结构因果模型（SCM）生成的合成数据预训练，在 TabArena、TALENT、BCCO 上表现优异。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">9</span>
+        <span class="paper-stars">7.2🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+        
+    </div>
+    <div class="paper-title"><strong>FlashVector: Agent for Hierarchical Model Serving Stack Optimization</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Qi Wu, Lohan Lemire, Kai Meng, Zhongmou Cai, Raphael Bargues, Petr Zhitnikov et al.</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17391" target="_blank">📄 arXiv:2609.17391</a>
+    </div>
+    <div class="paper-abstract">面向推荐系统模型服务的 agentic 优化系统，跨 GPU kernel、ML 框架计算图、模型服务器与按需特征处理四层联合优化。将单 kernel 优化的 AI agent 能力扩展至整个 serving stack，提供可扩展框架，解决跨层专家知识难以规模化获取的问题。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">10</span>
+        <span class="paper-stars">7.0🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+        
+    </div>
+    <div class="paper-title"><strong>Persistent Recurrent Memory Between Transformer Layers Improves Language Model Generalization</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Eduardo Novaes Hering</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17251" target="_blank">📄 arXiv:2609.17251</a>
+    </div>
+    <div class="paper-abstract">在 decoder-only transformer 的上下半部之间插入持久递归状态模块：通过 cross-attention 观察隐藏表示、GRU 更新、门控加法调制后续处理。仅增加 3.7% 参数，在 6 层 transformer 上将评估损失从 2.438 降至 1.743（-28.5%），泛化 gap 从 0.26 降至 0.12，5 个随机种子下统计显著（p&lt;0.01）。</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">11</span>
+        <span class="paper-stars">6.8🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.RO</span>
+        <span class="badge badge-code">+1🌟 开源</span>
+    </div>
+    <div class="paper-title"><strong>FluxVLA Engine: A One-Stop VLA Engineering Platform for Embodied Intelligence</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Yinhao Li, Weixin Mao, Zihan Lan, Jikun Rong, Qirui Hu, Yiming Zhang et al.</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17210" target="_blank">📄 arXiv:2609.17210</a>
+    </div>
+    <div class="paper-abstract">开放、配置驱动的具身智能平台，将异构具身策略组件（VLA、世界-动作模型、离线 RL）转化为可复现的 data-to-deployment 工作流。标准化数据集、视觉语言与世界模型、动作头、奖励/优势加权学习、分布式训练、仿真评估、优化推理与机器人操作接口，集成双臂仿真与可扩展异步 rollout。代码：https://github.com/FluxVLA/FluxVLA</div>
+</div>
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">12</span>
+        <span class="paper-stars">6.6🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+        <span class="badge badge-code">+1🌟 开源</span>
+    </div>
+    <div class="paper-title"><strong>ECHO: Early-layer Collaborative Hierarchical Orchestration with Bonus Logits in Speculative Decoding</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Ziyang Ma, Zihong Zhang, Zuchao Li, Lefei Zhang, Baoyuan Qi, Siqi Li et al.</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.17241" target="_blank">📄 arXiv:2609.17241</a>
+    </div>
+    <div class="paper-abstract">无 draft model 的投机解码分层双环框架，利用 LLM 层间功能不对称：早层判别效率高、末层分布权威。内环以早层 bonus logits 驱动高频多步 draft 树探索，外环通过状态复用执行权威全模型验证，并用末层 bonus logits 修正路径、补充高价值候选。代码：https://github.com/whucs21Mzy/ECHO</div>
+</div>
+
+<h2 class="section-title">🔥 GitHub Trending AI 项目（Top 10 · 按今日新增 Star 排序）</h2>
+<table>
+<thead>
+<tr><th>#</th><th>项目</th><th>描述</th><th>总 Star</th><th>今日新增</th></tr>
+</thead>
+<tbody>
+
+<tr>
+    <td>1</td>
+    <td><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review</a></td>
+    <td class="gh-desc">阿里开源代码审查工具：确定性流水线 + LLM Agent，行级精准评论，内置多语言规则集</td>
+    <td>28,831</td>
+    <td><span class="star-badge">+2,756 today</span></td>
+</tr>
+<tr>
+    <td>2</td>
+    <td><a href="https://github.com/debpalash/VoiceStudio" target="_blank">debpalash/VoiceStudio</a></td>
+    <td class="gh-desc">开源本地 ElevenLabs 替代：语音克隆、设计、视频配音、听写、转录、有声书，支持 646 种语言</td>
+    <td>31,093</td>
+    <td><span class="star-badge">+2,072 today</span></td>
+</tr>
+<tr>
+    <td>3</td>
+    <td><a href="https://github.com/JustVugg/colibri" target="_blank">JustVugg/colibri</a></td>
+    <td class="gh-desc">纯 C 零依赖在本地硬件运行前沿 MoE 模型，专家从磁盘流式加载</td>
+    <td>33,954</td>
+    <td><span class="star-badge">+2,026 today</span></td>
+</tr>
+<tr>
+    <td>4</td>
+    <td><a href="https://github.com/NationalSecurityAgency/ghidra" target="_blank">NationalSecurityAgency/ghidra</a></td>
+    <td class="gh-desc">NSA 开源软件逆向工程框架</td>
+    <td>76,771</td>
+    <td><span class="star-badge">+725 today</span></td>
+</tr>
+<tr>
+    <td>5</td>
+    <td><a href="https://github.com/ever-co/ever-gauzy" target="_blank">ever-co/ever-gauzy</a></td>
+    <td class="gh-desc">开源业务管理平台（ERP/CRM/HRM/ATS/PM）</td>
+    <td>6,716</td>
+    <td><span class="star-badge">+634 today</span></td>
+</tr>
+<tr>
+    <td>6</td>
+    <td><a href="https://github.com/alphaXiv/OpenResearch" target="_blank">alphaXiv/OpenResearch</a></td>
+    <td class="gh-desc">将编码 agent 转化为研究 agent</td>
+    <td>3,435</td>
+    <td><span class="star-badge">+531 today</span></td>
+</tr>
+<tr>
+    <td>7</td>
+    <td><a href="https://github.com/earendil-works/pi" target="_blank">earendil-works/pi</a></td>
+    <td class="gh-desc">AI agent 工具包：统一 LLM API、agent loop、TUI、编码 agent CLI</td>
+    <td>105,780</td>
+    <td><span class="star-badge">+458 today</span></td>
+</tr>
+<tr>
+    <td>8</td>
+    <td><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></td>
+    <td class="gh-desc">面向 AI 编码 agent 的生产级工程技能集</td>
+    <td>94,850</td>
+    <td><span class="star-badge">+307 today</span></td>
+</tr>
+<tr>
+    <td>9</td>
+    <td><a href="https://github.com/Homebrew/BrewUI" target="_blank">Homebrew/BrewUI</a></td>
+    <td class="gh-desc">Homebrew 官方 macOS GUI</td>
+    <td>1,420</td>
+    <td><span class="star-badge">+271 today</span></td>
+</tr>
+<tr>
+    <td>10</td>
+    <td><a href="https://github.com/danny-avila/LibreChat" target="_blank">danny-avila/LibreChat</a></td>
+    <td class="gh-desc">增强版 ChatGPT 克隆：Agents、MCP、Skills、多模型支持</td>
+    <td>43,876</td>
+    <td><span class="star-badge">+254 today</span></td>
+</tr>
+</tbody>
+</table>
+
+<div class="footer">
+    <p>由 AI Research Briefing 自动化流程生成 · 数据来源：arXiv (cs.AI/cs.LG/cs.CL/cs.CV/stat.ML/cs.RO/cs.NE) & GitHub Trending</p>
+    <p>arXiv 获取级别：L2（单类别查询，L1 OR 查询限流 429） · 候选池 154 篇</p>
+</div>
+
+</body>
+</html>

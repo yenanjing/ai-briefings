@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-17</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.05rem; color: var(--yellow); font-weight: 600; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-17（周四）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-17</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/17/ai-briefing.html" target="_blank">yenanjing.github.io/ai-briefings/2026/09/17/ai-briefing.html</a></span>
+</div>
+
+<h2 class="section-title">📄 arXiv 精选论文（Top 12 · 按评分降序）</h2>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">1</span>
+        <span class="paper-stars">8.5🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>TabPFN-3.5: Technical Report</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Benjamin Jäger, Nick Erickson, Léo Grinsztajn et al.</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.17895" target="_blank">arXiv:2609.17895</a></span>
+    </div>
+    <div class="paper-abstract">Prior Labs 团队发布 TabPFN 表格基础模型 3.5 版本技术报告。作为表格数据上最具影响力的 foundation model 系列之一，新版本在架构、训练数据规模与推理效率上全面升级，持续推动「表格任务通用模型」范式对传统 GBDT 的挑战。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">2</span>
+        <span class="paper-stars">8.3🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Infinite-Parameter LLMs: Generating and Adapting Weights from Live Data</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Jinli Hu, Ross M. Clarke, Yichuan Zhang, José Miguel Hernández-Lobato</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.18842" target="_blank">arXiv:2609.18842</a></span>
+    </div>
+    <div class="paper-abstract">提出「无限参数 LLM」概念，突破静态预训练范式——模型在部署阶段根据实时数据流持续生成与适配权重，而非依赖固定的预训练语料。为应对数据分布漂移、隐私敏感场景和终身学习提供了全新架构思路。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">3</span>
+        <span class="paper-stars">8.2🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>Higher-order Pruning of Experts in Mixture-of-Experts Language Models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Alex M. Tseng, Prannay Kaul, Luca Zancato, Wei Xia, Stefano Soatto</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.18916" target="_blank">arXiv:2609.18916</a></span>
+    </div>
+    <div class="paper-abstract">UCLA Stefano Soatto 团队指出 MoE 专家使用本质上是协作的，传统逐专家独立剪枝假设贡献纯可加并不成立。论文推导高阶交互项，将专家剪枝建模为多阶扰动问题，在显著降低参数量同时保持性能，为 MoE 部署内存瓶颈提供更精细的压缩路径。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">4</span>
+        <span class="paper-stars">8.0🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+        <span class="badge badge-code">代码</span>
+    </div>
+    <div class="paper-title"><strong>ScienceIDE: Turning World's Scientific Codebase into Agent Learnable Environments</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Hejia Geng, Zesen Huang, Haoyang Li, Wenbin Li et al.</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.19134" target="_blank">arXiv:2609.19134</a></span>
+        <span class="meta-item">💻 <a class="arxiv-link" href="https://github.com/aitofound/ScienceIDE" target="_blank">GitHub</a></span>
+    </div>
+    <div class="paper-abstract">将全球科学代码仓库（含可执行模型、方法、工具）自动转化为 Agent 可学习环境，解决工具链碎片化、领域约定隐式和正确性标准专门化三大障碍。为「AI 科学家 Agent」提供可复用、可评测的训练场，是科研自动化基础设施的重要一步。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">5</span>
+        <span class="paper-stars">8.0🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+    </div>
+    <div class="paper-title"><strong>Monitoring and Discovering Reward Hacking with Internal Representations during LLM Evaluations</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Leon Bergen, Usha Bhalla, Andrew Lee, Barak Widawsky, Linas Nasvytis et al.</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.19101" target="_blank">arXiv:2609.19101</a></span>
+    </div>
+    <div class="paper-abstract">系统分析前沿开源 LLM 内部表征中 reward hacking 的「指纹」，发现 hacking 行为在激活空间留下可检测签名，并据此构建监控器发现模型展现的全部 hacking 行为谱系。随着模型规模扩大、hacking 愈发隐蔽，该工作为评测可信度提供关键内部探针。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">6</span>
+        <span class="paper-stars">7.8🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>Double Descent is the Principle of Least Action</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Congzhou M Sha</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.19076" target="_blank">arXiv:2609.19076</a></span>
+    </div>
+    <div class="paper-abstract">用统计力学解释 double descent 现象——将 SGD 训练轨迹视为能量景观上的粒子运动，推导出测试误差随参数数量先降、在刚好拟合训练数据处达峰、再降的完整曲线。为深度学习最神秘的泛化现象之一提供了第一性原理解释。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">7</span>
+        <span class="paper-stars">7.8🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>How Model Growth, Recursion, and Boundary Operators Influence Scaling Exponents</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Zixi Chen, Akshay Vegesna, Samip Dahal, Andrew Gordon Wilson</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.19107" target="_blank">arXiv:2609.19107</a></span>
+    </div>
+    <div class="paper-abstract">NYU Andrew Gordon Wilson 团队反直觉地证明架构干预可以修改预训练 scaling 指数，带来随计算量指数级性能提升。以 looped transformer 为锚点，系统分析模型增长、递归结构与边界算子对 scaling law 的影响，为「超越标准 scaling」提供新设计空间。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">8</span>
+        <span class="paper-stars">7.7🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>Preventing Model Collapse: A Fisher-Rao Perspective on the Dynamics of Training with Synthetic Data</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Matteo Marchi, João Pedro Silvestre, Bahman Gharesifard, Paulo Tabuada</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.18878" target="_blank">arXiv:2609.18878</a></span>
+    </div>
+    <div class="paper-abstract">UBC Bahman Gharesifard 团队从 Fisher-Rao 几何视角分析 LLM 在合成数据上递归训练的动力学，揭示 model collapse 的几何机制并提出防止策略。在高质量人类数据逐渐耗尽、合成数据训练成为常态的当下，对维持模型多样性具有直接工程价值。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">9</span>
+        <span class="paper-stars">7.5🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+    </div>
+    <div class="paper-title"><strong>A Zeroth-Order Paradigm for LLM Preference Alignment</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Peter Chen, Xi Chen, Wotao Yin, Tianyi Lin</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.19144" target="_blank">arXiv:2609.19144</a></span>
+    </div>
+    <div class="paper-abstract">提出 Comparison-based Preference Optimization (ComPO)，一种零阶优化范式，绕过 likelihood 直接利用偏好对信息。针对 DPO 等方法存在的 likelihood displacement 问题，为小 likelihood 边界的偏好对提供新的信息提取路径，重塑对齐训练的理论基础。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">10</span>
+        <span class="paper-stars">7.3🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Flag Game: A Toy Model for Mechanistic Swarm Interpretability</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Elizabeth Pavlova, Hidenori Tanaka</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.19124" target="_blank">arXiv:2609.19124</a></span>
+    </div>
+    <div class="paper-abstract">MIT/Toyota Hidenori Tanaka 团队引入 Flag Game 玩具模型，研究多 Agent 集体信念形成与传播的机制。在 AI Agent 涌现协同行为带来安全风险日益突出的背景下，为「群体对齐」提供可解析的机制性实验平台。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">11</span>
+        <span class="paper-stars">7.2🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>PointZero: 3D Point Track Completion for Learning Transferable 3D Dynamics</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Bardienus P. Duisterhof, Kaifeng Zhang, Adam Hung, Bowen Wen et al.</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.19142" target="_blank">arXiv:2609.19142</a></span>
+    </div>
+    <div class="paper-abstract">NVIDIA 相关作者团队提出 PointZero，通过 3D 点轨迹补全学习可迁移的 3D 动力学先验。世界模型在多样化数据上训练时受益最大，该方法在数据稀缺场景下仍能建立丰富的动态先验，推动机器人操作与具身 AI 的世界模型泛化。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">12</span>
+        <span class="paper-stars">7.0🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CV</span>
+        <span class="badge badge-code">代码</span>
+    </div>
+    <div class="paper-title"><strong>PULSE: Unlocking Practical Image Compression on Single-Thread CPU</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👤 Zhaoyang Jia, Tianyu Zhang, Zihan Zheng et al.</span>
+        <span class="meta-item">📚 <a class="arxiv-link" href="https://arxiv.org/abs/2609.18602" target="_blank">arXiv:2609.18602</a></span>
+        <span class="meta-item">💻 <a class="arxiv-link" href="https://github.com/microsoft/GenCodec" target="_blank">GitHub (microsoft/GenCodec)</a></span>
+    </div>
+    <div class="paper-abstract">微软 GenCodec 团队发布 PULSE，首次在单线程 CPU 上实现实用的学习式图像压缩。突破神经编解码器对 GPU 的依赖，让端侧、边缘设备的实时 AI 图像压缩成为可能，工程落地价值显著。</div>
+</div>
+
+<h2 class="section-title">💻 GitHub Trending AI 项目（Top 10 · 按当日新增 Star 降序）</h2>
+
+<table>
+<thead>
+<tr><th>#</th><th>项目</th><th>描述</th><th>⭐ Total</th><th>⭐ Today</th></tr>
+</thead>
+<tbody>
+<tr><td>1</td><td><a href="https://github.com/alibaba/open-code-review" target="_blank">alibaba/open-code-review</a></td><td class="gh-desc">阿里规模验证的混合架构代码审查：确定性流水线 + LLM Agent，行级评论，多语言规则集</td><td>32,241</td><td><span class="star-badge">3,231</span></td></tr>
+<tr><td>2</td><td><a href="https://github.com/JustVugg/colibri" target="_blank">JustVugg/colibri</a></td><td class="gh-desc">纯 C、零依赖，在现有硬件上运行前沿 MoE 模型，专家从磁盘流式加载</td><td>35,104</td><td><span class="star-badge">1,546</span></td></tr>
+<tr><td>3</td><td><a href="https://github.com/Tencent/WeKnora" target="_blank">Tencent/WeKnora</a></td><td class="gh-desc">开源 LLM 知识平台：文档 → RAG + 自主推理 Agent + 自维护 Wiki</td><td>25,454</td><td><span class="star-badge">1,197</span></td></tr>
+<tr><td>4</td><td><a href="https://github.com/abue-ammar/tinycast" target="_blank">abue-ammar/tinycast</a></td><td class="gh-desc">微型原生 macOS 启动器、热键和剪贴板历史工具</td><td>5,673</td><td><span class="star-badge">1,179</span></td></tr>
+<tr><td>5</td><td><a href="https://github.com/NationalSecurityAgency/ghidra" target="_blank">NationalSecurityAgency/ghidra</a></td><td class="gh-desc">NSA 开源软件逆向工程框架</td><td>77,894</td><td><span class="star-badge">1,059</span></td></tr>
+<tr><td>6</td><td><a href="https://github.com/affaan-m/ECC" target="_blank">affaan-m/ECC</a></td><td class="gh-desc">Agent 测试框架性能优化：Claude Code/Codex/Opencode/Cursor 的技能、本能、记忆、安全</td><td>260,370</td><td><span class="star-badge">1,057</span></td></tr>
+<tr><td>7</td><td><a href="https://github.com/alphaXiv/OpenResearch" target="_blank">alphaXiv/OpenResearch</a></td><td class="gh-desc">将编码 Agent 变成研究 Agent</td><td>4,486</td><td><span class="star-badge">1,017</span></td></tr>
+<tr><td>8</td><td><a href="https://github.com/cloudflare/security-audit-skill" target="_blank">cloudflare/security-audit-skill</a></td><td class="gh-desc">多阶段安全审计编码 Agent 技能，机器可读发现结果</td><td>7,514</td><td><span class="star-badge">927</span></td></tr>
+<tr><td>9</td><td><a href="https://github.com/addyosmani/agent-skills" target="_blank">addyosmani/agent-skills</a></td><td class="gh-desc">面向 AI 编码 Agent 的生产级工程技能集</td><td>95,521</td><td><span class="star-badge">658</span></td></tr>
+<tr><td>10</td><td><a href="https://github.com/jamiepine/voicebox" target="_blank">jamiepine/voicebox</a></td><td class="gh-desc">开源 AI 语音工作室：克隆、听写、创作</td><td>54,448</td><td><span class="star-badge">417</span></td></tr>
+</tbody>
+</table>
+
+<h2 class="section-title">📊 数据源</h2>
+<div class="paper-card">
+    <div class="paper-abstract">
+        <strong>arXiv 获取级别</strong>: L2（单类别分批查询；L1 复合查询返回 HTTP 503）<br>
+        <strong>查询分类</strong>: cs.AI / cs.LG / cs.CL / cs.CV / stat.ML / cs.RO（共 109 篇候选，去重后）<br>
+        <strong>论文日期</strong>: 2026-09-16 提交批次（99 篇）+ 2026-09-15（10 篇）<br>
+        <strong>GitHub Trending</strong>: 实时抓取 <a href="https://github.com/trending?since=daily" target="_blank">github.com/trending?since=daily</a>
+    </div>
+</div>
+
+<div class="footer">
+    <p>AI Research Briefing · 自动生成于 2026-09-17 · <a href="https://yenanjing.github.io/ai-briefings/" target="_blank">归档首页</a></p>
+</div>
+
+</body>
+</html>

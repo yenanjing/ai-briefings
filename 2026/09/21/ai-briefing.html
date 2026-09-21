@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-21</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.05rem; color: var(--yellow); font-weight: 600; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-21（周日）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-21</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 10 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/21/ai-briefing.html" target="_blank">yenanjing.github.io/ai-briefings/2026/09/21/ai-briefing.html</a></span>
+</div>
+
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+    ℹ️ 论文来自 arXiv 2026-09-18（周五）最新提交，arXiv 周末不发布。
+</p>
+
+<h2 class="section-title">📄 arXiv 精选论文（Top 12 · 按评分降序）</h2>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">1</span>
+        <span class="paper-stars">8.9🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+        <span class="badge badge-code">有代码</span>
+    </div>
+    <div class="paper-title"><strong>CodeMidas: Scaling Agentic Coding RL Environments from Code Itself</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Bowen Ye, Lei Li, Shicheng Li, Zihao Yue, Linghao Zhang, Hanglong Lv, Yuanxin Liu, Wenhan Ma et al.</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22068" target="_blank">2609.22068</a></span>
+    </div>
+    <div class="paper-abstract">提出 CodeMidas，一个完全以源代码为输入、不依赖 issue/commit 等开发产物的 agentic 流水线，将已实现的功能转化为可执行的 RL 环境。智能体自主探索代码功能、构造基于执行的测试、并通过反复 rollout 验证筛选任务，最终从 3,185 个开源代码库（覆盖 23 种语言、15 个技术领域）构建出 5,545 个训练任务。用 GRPO 训练 MiMo-V2.5 后，DeepSWE +11.7%、ProgramBench +17%、Terminal-Bench v2.1 +8.5%，五项异构基准全面提升。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">2</span>
+        <span class="paper-stars">8.7🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CV</span>
+        <span class="badge badge-code">有代码</span>
+    </div>
+    <div class="paper-title"><strong>MintAct: A Unified Visual Agent for Digital Environments</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Mingfei Gao, Rui Tian, Haiming Gang, Bohan Zhai, Le Zhang, Yuanzheng Gong, Di Feng, Ege Özsoy et al.</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22083" target="_blank">2609.22083</a></span>
+    </div>
+    <div class="paper-abstract">一族在 2B/4B/8B 规模上统一 UI grounding、跨移动/桌面/Web 的多步导航与视觉工具使用的视觉语言模型。通过精心设计的异构环境、数据与训练配方，MintAct 在保持各能力域专才水准的同时实现跨域统一；配套构建支持数百并发实例的 RL 基础设施与异步训练框架，在 OSWorld-Verified 上取得 48.9 的同规模 SOTA。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">3</span>
+        <span class="paper-stars">8.7🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+        <span class="badge badge-code">有代码</span>
+    </div>
+    <div class="paper-title"><strong>RecreationWorld: Scalable and Verifiable Environments for Hybrid Computer-Use Agents</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Shuai Bai, Jiayong Deng, Yikun Fu, Chang Gao, Xuhao Hu, Mianqiu Huang, Yizhen Jiang, Yuheng Jing et al.</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22000" target="_blank">2609.22000</a></span>
+    </div>
+    <div class="paper-abstract">面向「混合 CUA」——需要在 GUI 交互与代码/命令行开发之间自主切换——的五平台（Ubuntu/macOS/Windows/Android/Web）可复现环境框架。以「复刻一个正在运行的参考应用」为任务，运行中的参考即隐藏行为测试的 oracle，提供执行接地的奖励。配套提出 RecreationBench（250 个跨域跨平台任务），训练出的模型在五项 OOD 编码与混合 CUA 基准上全面提升，并更频繁地主动验证渲染产物。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">4</span>
+        <span class="paper-stars">8.6</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Designer-RSI: Evolving Procedural Memory from User Traffic for Agentic Graphic Design</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Hongyang Du, Lan Yan, Christian Flores, Asim Kadav</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22086" target="_blank">2609.22086</a></span>
+    </div>
+    <div class="paper-abstract">面向专业平面设计这一长时序 agentic 任务，提出一个持续适应框架：冻结的前沿模型通过 230+ 工具操作专业设计软件，外部自然语言程序记忆库从经验中积累并修订可复用的设计流程。记忆通过「拓宽」（对新出现的子任务获取新流程）与「加深」（依据成功/失败执行修订已有流程）两个机制演化，并配合 matched replay gate 只接受「修复失败且不回退成功」的改动。五轮迭代、1,406 个真实用户 brief、1,869 条自动评分轨迹下，技能库从 76 增至 139，GenEval2 执行成功率从 72.7% 提升至 99.3%。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">5</span>
+        <span class="paper-stars">8.5</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.RO</span>
+    </div>
+    <div class="paper-title"><strong>SeeQ: Training Generalist Value Functions for Long-Horizon Robotic Manipulation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Saksham Singh, Zheyuan Hu, Max Sobol Mark, Jeffrey Yu, Zackory Erickson, Aviral Kumar</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22085" target="_blank">2609.22085</a></span>
+    </div>
+    <div class="paper-abstract">针对长时序、多阶段、需反复尝试的机器人操作任务，提出 SeeQ（Subtask-elicited Q-functions）：不为整段任务学 Q 值，而是为「当前活跃子任务」学 Q 值，从而缩短价值预测视界、使 TD 目标可有效学习。Q 函数架构在估计价值前先自回归预测自然语言形式的活跃子任务，免除测试时的人工标注或模块化子任务预测器。在两个双臂机器人平台的四项真实操作任务上，SeeQ 显著提升 best-of-N 策略成功率。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">6</span>
+        <span class="paper-stars">8.4</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.RO</span>
+    </div>
+    <div class="paper-title"><strong>LIMBO: Learning and Internalizing Model-Free Barrier Objectives for Agile and Safe Whole-Body Control</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Jake Gonzales, Arturo Flores Alvarez, Yu-Ming Chen, Aaron D. Ames, Lillian J. Ratliff, Manikantan Nambi</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22075" target="_blank">2609.22075</a></span>
+    </div>
+    <div class="paper-abstract">面向高维非线性动力学下的安全全身控制，提出 LIMBO：从黑盒状态转移与基于状态的失败规格中合成 state-action 控制障碍函数（Q-CBF），并将其安全结构蒸馏进任务策略。学习到的安全值既驱动「风险引导采样」探索可恢复性边界，又作为教师在策略学习中提供动作级安全反馈，部署时无需在线安全滤波器。在 29 自由度人形机器人上完成躲避球避障与低矮障碍物下 locomotion，展示了从蹲伏到「后仰 limbo」等多种安全策略。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">7</span>
+        <span class="paper-stars">8.3</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>PRIME: Perception Feedback with Situational Memory Embeddings in VLA Models</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Erik Deinzer, Naya Baslan, Luca Paparusso, Narunas Vaskevicius, Peter Knott, Luigi Palmieri</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22040" target="_blank">2609.22040</a></span>
+    </div>
+    <div class="paper-abstract">针对自动驾驶 VLA 模型「早期感知对下游推理与导航目标盲目」的问题，提出 PRIME：一种学习到的反馈机制，通过跨注意力聚合过去 L 步的感知、推理、导航目标与预测行为的潜在表示，形成「情境记忆」，并以最小计算代价（最多 +29.7M 参数，仅占 7.3B 基座的 0.41%）实现意图驱动的感知注意力。在 Bench2Drive 闭环基准上，Driving Score 达 82.47（较 ORION +4.73），成功率 60.00%（+5.38pp），为 Think2Drive 演示训练的 VLA 中最高 Driving Score。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">8</span>
+        <span class="paper-stars">8.2</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+    </div>
+    <div class="paper-title"><strong>An Interpretable Memory Decision Controller for LLM Agents Based on Three-Signal Complementarity (MDL)</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Yiming Zhang, Jinghong Zhang, Haoran Zhao, Yiren Ma, Chunlei Zhao</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22043" target="_blank">2609.22043</a></span>
+    </div>
+    <div class="paper-abstract">现有 LLM 记忆系统聚焦于「高效检索」，却忽视了「检索到的记忆是否应被信任」。受前额叶皮层记忆信号机制启发，提出 Memory Decision Layer（MDL）：一个位于检索与生成之间、零参数的记忆决策控制器。核心是三信号互补编码器，通过 QR 正交子空间投影将相关性、可靠性、任务风险与元工作记忆信号融合为可解释的决策表示，显式解耦 confidence 与 consistency，并引入 risk inversion 与显式 abstention。在主流 LLM 与多个开源数据集上，冲突记忆下的幻觉率平均降低约 56.04%，高风险场景接近零幻觉。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">9</span>
+        <span class="paper-stars">8.1</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>λ-Controlled GRPO: Turning Flow-Matching Ratio Instability into a Budgeted Resource</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Yufeng Wang, Parivesh Priye, Meeshawn Marathe, Ramit Pahwa</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22041" target="_blank">2609.22041</a></span>
+    </div>
+    <div class="paper-abstract">Flow-GRPO 将 RL 对齐扩展到 flow-matching 图像生成模型，但多步去噪过程中重要性比会系统性漂移、分散、被裁剪，导致可用样本越来越少。本文证明这些现象并非独立失效模式，而是源自单一 per-step 量——path variance，该量由采样器的高斯转移核精确决定，可在训练中廉价估计。λ-Controlled GRPO 据此校准重要性比行为、按预测代价分配各去噪步的梯度投入，两个尺度均由标准策略选择固定而非新增自由超参。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">10</span>
+        <span class="paper-stars">8.0</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CV</span>
+    </div>
+    <div class="paper-title"><strong>OmniVBench: A Benchmark and Large-Scale Dataset for Omni Reference-to-Video Generation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Wenxue Li, Peiyan Guan, Haoyang Jiang, Junxian Cai, Hualuo Liu, Chunjie Zhang, Chong Guan, Songlian Li et al.</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22069" target="_blank">2609.22069</a></span>
+    </div>
+    <div class="paper-abstract">面向「全参考到视频（omni R2V）」生成——参考控制正走向越来越通用、多模态——提出 OmniVBench 与 Omni-R2V 数据集。基准扩展了参考类型、细粒度控制任务与参考组合，覆盖内容/运动/风格/结构/叙事/多参考共 7 个任务族、18 个细粒度任务，并引入 factor-grounded 评估，用 12,172 个 case-specific checklist 项分别考察参考因子是否被忠实保留、正确解耦绑定到目标、并按指令正确实现。数据集则提供工业级训练资源。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">11</span>
+        <span class="paper-stars">7.9</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.LG</span>
+    </div>
+    <div class="paper-title"><strong>BrainWideBench: Benchmarking Large-Scale Pretraining and Across-Animal Transfer in Multi-Region Neural Recordings</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Alexandre Andre, Shivashriganesh P. Mahato, Vinam Arora, Keshav Balaji, Divyansha Lachi, Nanda H. Krishna, Jingyun Xiao, Yizi Zhang et al.</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22064" target="_blank">2609.22064</a></span>
+    </div>
+    <div class="paper-abstract">面向大规模多脑区神经记录，提出 BrainWideBench：基于国际脑实验室 Brainwide Map 数据集（139 只小鼠、276 个脑区、感觉引导决策任务下的神经与行为记录），围绕三类互补任务套件评估跨动物迁移——下游行为解码、掩码/未来神经活动预测、以及生物解剖结构恢复。系统评估显示预训练相较单会话基线确有提升，但迁移能力存在明显异质性，收益强烈依赖预训练目标与下游任务的对齐程度。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">12</span>
+        <span class="paper-stars">7.8</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.HC</span>
+    </div>
+    <div class="paper-title"><strong>Value-Sensitive Delegation in Everyday AI Agent Use: Evidence from OpenClaw</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Renkai Ma, Ruyuan Wan, Xuan Lu, Fan Yang, Chen Chen, Lingyao Li</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.22067" target="_blank">2609.22067</a></span>
+    </div>
+    <div class="paper-abstract">用户越来越多地将工作委派给自主 AI 智能体，但评估通常只衡量任务完成度而非用户所重视的价值。作者用 Value Sensitive Design 方法、借助 LLM 分析了 73,093 篇 Reddit 上关于 OpenClaw 使用的第一人称帖子，提炼出 21 项价值、六大价值组（自主/可靠/可负担运行、有界触达、可审查性、公平获取）。价值并非落在智能体输出上，而是聚集在用户围绕一次运行设定的「运行条件」上——在「智能体交付了什么」的描述中价值多半得到满足，而在「用户监督它」的描述中价值多半未被满足，作者将此模式概念化为 value-sensitive delegation。</div>
+</div>
+
+<h2 class="section-title">🔥 GitHub Trending（AI 相关 · 按当日新增 Star 排序）</h2>
+
+<table>
+<thead>
+<tr><th>#</th><th>项目</th><th>语言</th><th>今日 Star</th><th>简介</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>1</td>
+    <td><a href="https://github.com/cloudflare/security-audit-skill" target="_blank"><strong>cloudflare/security-audit-skill</strong></a></td>
+    <td>JavaScript</td>
+    <td><span class="star-badge">+2428 ⭐ today</span></td>
+    <td class="gh-desc">面向编码 Agent 的多阶段安全审计 skill，产出可独立验证、机器可读的发现。</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td><a href="https://github.com/trycua/cua" target="_blank"><strong>trycua/cua</strong></a></td>
+    <td>HTML</td>
+    <td><span class="star-badge">+1018 ⭐ today</span></td>
+    <td class="gh-desc">开源 computer-use 2.0：跨 OS 驱动、训练/评估/数据生成的 benchmark。</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td><a href="https://github.com/affaan-m/ECC" target="_blank"><strong>affaan-m/ECC</strong></a></td>
+    <td>JavaScript</td>
+    <td><span class="star-badge">+826 ⭐ today</span></td>
+    <td class="gh-desc">Agent harness 性能优化系统：技能、直觉、记忆、安全与研究优先开发，适配 Claude Code、Codex、Opencode、Cursor 等。</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td><a href="https://github.com/Open-Dev-Society/OpenStock" target="_blank"><strong>Open-Dev-Society/OpenStock</strong></a></td>
+    <td>TypeScript</td>
+    <td><span class="star-badge">+755 ⭐ today</span></td>
+    <td class="gh-desc">开源替代昂贵市场平台：实时价格、个性化告警、公司洞察，永久免费。</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td><a href="https://github.com/addyosmani/agent-skills" target="_blank"><strong>addyosmani/agent-skills</strong></a></td>
+    <td>JavaScript</td>
+    <td><span class="star-badge">+736 ⭐ today</span></td>
+    <td class="gh-desc">面向 AI 编码 Agent 的生产级工程 skill 集。</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td><a href="https://github.com/higgsfield-ai/higgsfield" target="_blank"><strong>higgsfield-ai/higgsfield</strong></a></td>
+    <td>Jupyter Notebook</td>
+    <td><span class="star-badge">+465 ⭐ today</span></td>
+    <td class="gh-desc">容错、高扩展的 GPU 编排与 ML 框架，面向十亿至万亿参数模型训练。</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td><a href="https://github.com/anthropics/claude-code" target="_blank"><strong>anthropics/claude-code</strong></a></td>
+    <td>TypeScript</td>
+    <td><span class="star-badge">+419 ⭐ today</span></td>
+    <td class="gh-desc">Claude Code：驻留在终端的 Agent 化编码工具，理解代码库，通过自然语言执行常规任务、解释复杂代码、处理 git 工作流。</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td><a href="https://github.com/coder/coder" target="_blank"><strong>coder/coder</strong></a></td>
+    <td>Go</td>
+    <td><span class="star-badge">+379 ⭐ today</span></td>
+    <td class="gh-desc">为开发者与其 Agent 提供安全环境。</td>
+</tr>
+<tr>
+    <td>9</td>
+    <td><a href="https://github.com/vercel-labs/json-render" target="_blank"><strong>vercel-labs/json-render</strong></a></td>
+    <td>TypeScript</td>
+    <td><span class="star-badge">+291 ⭐ today</span></td>
+    <td class="gh-desc">Generative UI 框架。</td>
+</tr>
+<tr>
+    <td>10</td>
+    <td><a href="https://github.com/anthropics/financial-services" target="_blank"><strong>anthropics/financial-services</strong></a></td>
+    <td>Python</td>
+    <td><span class="star-badge">+260 ⭐ today</span></td>
+    <td class="gh-desc">Anthropic 金融服务方向示例与工具集。</td>
+</tr>
+</tbody>
+</table>
+
+<div class="footer">
+    <p>由 AI Research Briefing 自动化生成 · 2026-09-21</p>
+    <p>数据源：arXiv API（cs.AI / cs.LG / cs.CL / cs.CV / cs.RO / cs.NE / stat.ML） · GitHub Trending</p>
+</div>
+
+</body>
+</html>

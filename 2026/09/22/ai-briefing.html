@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-22</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.05rem; color: var(--yellow); font-weight: 600; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-22（周一）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-22</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 8 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/22/ai-briefing.html" target="_blank">yenanjing.github.io/ai-briefings/2026/09/22/ai-briefing.html</a></span>
+</div>
+
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+    ℹ️ 论文来自 arXiv 2026-09-21（周一发布，覆盖上周五提交）。L1 OR 查询触发 429 限流，改用 L2 单类别分批查询成功获取 146 篇候选。
+</p>
+
+<h2 class="section-title">📄 arXiv 精选论文（Top 12 · 按评分降序）</h2>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">1</span>
+        <span class="paper-stars">8.8🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.RO</span>
+    </div>
+    <div class="paper-title"><strong>ME-Brain-1.0: Memory, Cognition and Action for Evolving Embodied Intelligence</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Jia Zeng, Jie Lu, Jiajun Cai, Jiajun Zhang, Jie Cao, Jie Wu, Jun Chen, Junbo Tan, Junjie Xie, Junyu Zhang, Pengfei Zhou, Qiming Zhu, Sheng Xu, Shijie Wang, Shilei Cao, Shizhuo Li, Shuai Fu, Shuang Xu, Shujie Zhang, Shuo Yang, Shuyang Yu, Shuyuan Yang, Shuzhe Wu, Shuzhen Li</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24271" target="_blank">2609.24271</a></span>
+    </div>
+    <div class="paper-abstract">提出 MachEmbodied-Brain (ME-Brain)，一个围绕「动作执行 → 经验获取 → 经验演化 → 改进执行」闭环组织的自演化具身系统。Evolvable Memory 持续整合多模态经验，Evolvable Cognition 通过在线学习调整世界模型与推理策略，使机器人在部署后仍能通过物理交互持续进化，突破当前具身系统依赖预训练固定能力的局限。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">2</span>
+        <span class="paper-stars">8.7🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CV</span>
+        <span class="badge badge-code">有代码</span>
+    </div>
+    <div class="paper-title"><strong>ME-VLM: A Unified VLM for Embodied Cognition and Agent Coordination</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24526" target="_blank">2609.24526</a></span>
+        <span class="meta-item">💻 <a class="arxiv-link" href="https://github.com/MachEmbodied/ME-VLM" target="_blank">github.com/MachEmbodied/ME-VLM</a></span>
+    </div>
+    <div class="paper-abstract">推出 MachEmbodied-VLM (ME-VLM)，提供 4B 与 35B-A3B 两个变体，将具身认知与多模态 Agent 能力统一到同一视觉语言模型中。强调物理世界约束、执行反馈与多 Agent 协调，为 Physical AI 提供可落地的统一基座。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">3</span>
+        <span class="paper-stars">8.6🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.RO</span>
+    </div>
+    <div class="paper-title"><strong>Bridge3D: Enabling Vision-Language-Action Models to See and Act in 3D</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24525" target="_blank">2609.24525</a></span>
+    </div>
+    <div class="paper-abstract">针对 VLA 模型主要基于 2D 观察训练、空间操作能力受限的问题，Bridge3D 让 VLA 在 3D 空间中"看"与"做"。相比以往引入隐式空间先验的方法，Bridge3D 显式构建 3D 感知与操作接口，显著提升精确空间操作任务的泛化能力。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">4</span>
+        <span class="paper-stars">8.5🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>ActGov: Governing LLM Agent Actions via Policy-Constrained Validation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24446" target="_blank">2609.24446</a></span>
+    </div>
+    <div class="paper-abstract">面对 LLM Agent 长时序工作流中不可信输出影响后续动作、超出用户授权的风险，ActGov 提出基于策略约束的验证机制来治理 Agent 动作。相比静态策略与预定义计划的脆弱性，ActGov 在动态工作流中更具鲁棒性，并可跨工作流规模扩展。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">5</span>
+        <span class="paper-stars">8.4🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+    </div>
+    <div class="paper-title"><strong>Data Agents: Agentic Data Systems</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24137" target="_blank">2609.24137</a></span>
+    </div>
+    <div class="paper-abstract">提出 Data Agent 新范式，用最少的人工干预来管理、处理与分析数据。Data Agent 自主理解异构数据的语义、动态规划处理流程、主动响应分析需求，突破传统数据系统依赖人工搭建管道、缺乏语义理解的局限。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">6</span>
+        <span class="paper-stars">8.3🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Conduit: An Experience Data Plane for Distributed Reinforcement Learning</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24456" target="_blank">2609.24456</a></span>
+    </div>
+    <div class="paper-abstract">分布式 RL 通过并行 Actor-Learner 与 Experience Buffer 扩展训练，但随着工作负载增长，Buffer 已不仅是回放队列，而是大带宽、低延迟的体验路径存储底座。Conduit 将 Experience Buffer 抽象为"体验数据平面"，系统化管理移动、变换、采样、批处理等全链路操作。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">7</span>
+        <span class="paper-stars">8.2🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>Information-Time Proximal Policy Optimization (InfoPPO)</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24380" target="_blank">2609.24380</a></span>
+    </div>
+    <div class="paper-abstract">RLVR 显著提升了 LLM 推理能力，但现有方法将 MDP 的时间进程按 token-by-token 参数化，忽略了自回归轨迹上信息流的非均匀性。InfoPPO 用信息论量重新参数化时间进程，让策略优化与真实信息积累对齐，提升 RLVR 训练效率与稳定性。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">8</span>
+        <span class="paper-stars">8.1🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>FoldQuantVLA: Native Low-Bit Quantization of Vision-Language-Action Models via Consistent Folding</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24433" target="_blank">2609.24433</a></span>
+    </div>
+    <div class="paper-abstract">面向机器人 VLA 模型的低比特推理需求，FoldQuantVLA 提出训练后量化框架，通过通道缩放 + 块 Hadamard 变换 + 动态 per-token 量化，在保持机器人行为的前提下显著降低观察-动作延迟，实现原生整数执行。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">9</span>
+        <span class="paper-stars">8.0🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.RO</span>
+    </div>
+    <div class="paper-title"><strong>Zeva-Ego: Egocentric Mid-Training with In-Context Causal Learning for Robot Manipulation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24411" target="_blank">2609.24411</a></span>
+    </div>
+    <div class="paper-abstract">以自我为中心的人类视频是物理交互经验的规模化来源，但转化为机器人可执行知识并持续适应仍困难。Zeva-Ego 用 Action-Centric Encoder (ACE) 将第一人称视觉转换映射为物理先验，并通过 in-context 因果学习实现持续演化。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">10</span>
+        <span class="paper-stars">7.9🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.AI</span>
+    </div>
+    <div class="paper-title"><strong>VLM-in-Sandbox: Visual Workspaces for Agentic Visual Reasoning</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24362" target="_blank">2609.24362</a></span>
+    </div>
+    <div class="paper-abstract">沙盒化计算机环境支持工具、可执行程序与持久文件的多步推理，但从语言模型扩展到 VLM 引入了独特的状态管理问题——视觉推理产生的中间图像证据（裁剪、掩码、叠加、缩放、分析渲染）必须可持久化与复用。VLM-in-Sandbox 为 Agentic 视觉推理提供可视化工作空间。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">11</span>
+        <span class="paper-stars">7.8🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.LG</span>
+        <span class="badge badge-code">有代码</span>
+    </div>
+    <div class="paper-title"><strong>1% of Tokens Can Be Enough: On Gradient Estimation in On-Policy Distillation</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24432" target="_blank">2609.24432</a></span>
+        <span class="meta-item">💻 <a class="arxiv-link" href="https://github.com/BruceSheng1202/IER-OPD" target="_blank">github.com/BruceSheng1202/IER-OPD</a></span>
+    </div>
+    <div class="paper-abstract">稀疏 on-policy 蒸馏 (OPD) 将教师监督分配给学生轨迹中的小部分 token，但从采样 next-token 估计梯度会引入噪声。作者在信息几何中研究该估计问题，提出基于信息效率比 (IER) 的度量，证明 1% 的 token 即可提供足够有效的梯度信号。</div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">12</span>
+        <span class="paper-stars">7.7🌟</span>
+        <span class="badge" style="background:#1f6feb;color:#fff;">cs.CL</span>
+        <span class="badge badge-code">有代码</span>
+    </div>
+    <div class="paper-title"><strong>Efficient Reasoning Exploration via State-Conditioned Latent Steering with Progress Guidance (SPS)</strong></div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 （详见原文）</span>
+        <span class="meta-item">📄 <a class="arxiv-link" href="https://arxiv.org/abs/2609.24066" target="_blank">2609.24066</a></span>
+        <span class="meta-item">💻 <a class="arxiv-link" href="https://github.com/rattlesnakey/SPS" target="_blank">github.com/rattlesnakey/SPS</a></span>
+    </div>
+    <div class="paper-abstract">Best-of-N 是复杂推理常用的推理策略，但后训练推理模型常出现"探索坍塌"——独立 rollout 反复沿相似推理路径行进。SPS 用状态条件的潜在引导 + 进度指导实现高效推理探索，显著提升采样多样性与高质量路径覆盖率。</div>
+</div>
+
+<h2 class="section-title">🔥 GitHub Trending（AI 相关 · 按当日新增 Star 排序）</h2>
+
+<table>
+<thead>
+<tr><th>#</th><th>项目</th><th>语言</th><th>今日 Star</th><th>简介</th></tr>
+</thead>
+<tbody>
+<tr>
+    <td>1</td>
+    <td><a href="https://github.com/trycua/cua" target="_blank"><strong>trycua/cua</strong></a></td>
+    <td>HTML</td>
+    <td><span class="star-badge">+609 ⭐ today</span></td>
+    <td class="gh-desc">开源 computer-use 2.0：跨 OS 驱动、训练/评估/数据生成 benchmark。</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td><a href="https://github.com/BuilderIO/agent-native" target="_blank"><strong>BuilderIO/agent-native</strong></a></td>
+    <td>TypeScript</td>
+    <td><span class="star-badge">+607 ⭐ today</span></td>
+    <td class="gh-desc">构建 agentic 应用的框架。</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td><a href="https://github.com/coder/coder" target="_blank"><strong>coder/coder</strong></a></td>
+    <td>Go</td>
+    <td><span class="star-badge">+460 ⭐ today</span></td>
+    <td class="gh-desc">为开发者与其 Agent 提供安全环境。</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td><a href="https://github.com/anthropics/financial-services" target="_blank"><strong>anthropics/financial-services</strong></a></td>
+    <td>Python</td>
+    <td><span class="star-badge">+424 ⭐ today</span></td>
+    <td class="gh-desc">Anthropic 金融服务方向示例与工具集。</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td><a href="https://github.com/Crosstalk-Solutions/project-nomad" target="_blank"><strong>Crosstalk-Solutions/project-nomad</strong></a></td>
+    <td>TypeScript</td>
+    <td><span class="star-badge">+394 ⭐ today</span></td>
+    <td class="gh-desc">离线优先的知识与教育服务器：Wikipedia、书籍、课程、地图与可选本地 AI，全部运行在自有硬件上。</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td><a href="https://github.com/zhouxiaoka/autoclip" target="_blank"><strong>zhouxiaoka/autoclip</strong></a></td>
+    <td>Python</td>
+    <td><span class="star-badge">+250 ⭐ today</span></td>
+    <td class="gh-desc">AI 智能高光提取与视频剪辑二创工具。</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td><a href="https://github.com/akitaonrails/ai-memory" target="_blank"><strong>akitaonrails/ai-memory</strong></a></td>
+    <td>Rust</td>
+    <td><span class="star-badge">+167 ⭐ today</span></td>
+    <td class="gh-desc">编码 Agent CLI 的长期记忆方案，支持跨 Agent 厂商的交接。</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td><a href="https://github.com/yynxxxxx/Codex-X" target="_blank"><strong>yynxxxxx/Codex-X</strong></a></td>
+    <td>Rust</td>
+    <td><span class="star-badge">+50 ⭐ today</span></td>
+    <td class="gh-desc">OpenAI Codex 桌面/CLI 可视化管理工具：Provider/API 切换、会话同步、提示词注入、Skills/MCP 管理、TOML 配置可视化。</td>
+</tr>
+</tbody>
+</table>
+
+<div class="footer">
+    <p>由 AI Research Briefing 自动化生成 · 2026-09-22</p>
+    <p>数据源：arXiv API（L2 单类别查询：cs.AI / cs.LG / cs.CL / cs.CV / stat.ML / cs.RO / cs.NE） · GitHub Trending</p>
+</div>
+
+</body>
+</html>

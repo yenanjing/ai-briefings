@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Research Briefing 2026-09-23</title>
+<style>
+:root {
+    --bg: #0d1117; --card: #161b22; --border: #30363d;
+    --text: #c9d1d9; --text-muted: #8b949e; --accent: #58a6ff;
+    --red: #f85149; --green: #3fb950; --yellow: #d29922;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--text); line-height: 1.6;
+    padding: 2rem; max-width: 960px; margin: 0 auto;
+}
+h1 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 0.5rem; }
+h1 .date { color: var(--text-muted); font-weight: normal; font-size: 1rem; }
+.meta-bar {
+    background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+    padding: 1rem; margin-bottom: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;
+}
+.meta-bar span { color: var(--text-muted); }
+.meta-bar a { color: var(--accent); text-decoration: none; }
+.section-title {
+    font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); color: var(--accent);
+}
+.paper-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+    padding: 1.25rem; margin-bottom: 1rem; transition: border-color 0.2s;
+}
+.paper-card:hover { border-color: var(--accent); }
+.paper-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; flex-wrap: wrap; }
+.paper-rank {
+    background: var(--accent); color: var(--bg); width: 28px; height: 28px;
+    border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 0.85rem;
+}
+.paper-stars { font-size: 1.05rem; color: var(--yellow); font-weight: 600; }
+.badge {
+    display: inline-block; padding: 0.15rem 0.5rem; border-radius: 999px;
+    font-size: 0.75rem; font-weight: 600;
+}
+.badge-code { background: #1a7f37; color: #fff; }
+.paper-title { font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; }
+.paper-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; font-size: 0.85rem; }
+.meta-item { color: var(--text-muted); }
+.arxiv-link { color: var(--accent); text-decoration: none; }
+.paper-abstract { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+table {
+    width: 100%; border-collapse: collapse; margin: 1rem 0;
+    font-size: 0.9rem;
+}
+th {
+    text-align: left; padding: 0.75rem; border-bottom: 2px solid var(--border);
+    color: var(--text-muted); font-weight: 600;
+}
+td { padding: 0.75rem; border-bottom: 1px solid var(--border); }
+tr:hover td { background: rgba(88, 166, 255, 0.05); }
+.star-badge {
+    background: rgba(210, 153, 34, 0.15); color: var(--yellow);
+    padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.8rem; font-weight: 600;
+}
+.gh-desc { color: var(--text-muted); max-width: 400px; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.footer {
+    margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border);
+    text-align: center; color: var(--text-muted); font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+    body { padding: 1rem; }
+    .meta-bar { flex-direction: column; gap: 0.5rem; }
+}
+</style>
+</head>
+<body>
+
+<h1>📰 AI Research Briefing <span class="date">2026-09-23（周二）</span></h1>
+
+<div class="meta-bar">
+    <span>📅 2026-09-23</span>
+    <span>📊 12 篇精选论文</span>
+    <span>💻 7 个 GitHub 项目</span>
+    <span>🔗 <a href="https://yenanjing.github.io/ai-briefings/2026/09/23/ai-briefing.html" target="_blank">yenanjing.github.io/ai-briefings/2026/09/23/ai-briefing.html</a></span>
+</div>
+
+<p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 1.5rem;">
+    ℹ️ 论文来自 arXiv 2026-09-22（周二发布，覆盖周一提交）。L1 OR 查询第一次 429，第二次成功获取 25 篇候选。
+</p>
+
+<h2 class="section-title">📄 arXiv 精选论文（Top 12 · 按评分降序）</h2>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">1</span>
+        <span class="paper-stars">8.6🌟</span>
+        <span class="badge badge-code">cs.CL</span>
+    </div>
+    <div class="paper-title">Agensh: Scaling Organizational Intelligence to 1,024 Agents</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Zhihao Zhan, Ting Song, Li Dong, Shaohan Huang, Jianxun Lian, Yan Xia, Furu Wei</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26781" target="_blank">arXiv:2609.26781</a>
+    </div>
+    <div class="paper-abstract">
+        无中央编排器的自组织多 Agent 框架。并发 worker 执行多 Agent 合作循环——收集上下文、认领并自分配子任务、行动、共享发现、验证结果、异步合并进度。配套基础设施含共享工作区、消息接口、共享上下文。在 ProgramBench 最难 5 题上，1→128 agents 将测试通过率从 19.31% 提升至 28.78%（相对 +49%）；pandoc 上 1→1024 agents 从 33.89% 提升至 55.06%。揭示「Agent 数量」作为多 Agent 组织的新 scaling 维度。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">2</span>
+        <span class="paper-stars">8.5🌟</span>
+        <span class="badge badge-code">cs.AI</span>
+    </div>
+    <div class="paper-title">CliffCompaction: Cost-Efficient Compaction for Long-Horizon Coding Agents</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Trang Nguyen, Eulrang Cho, Bingqing Chen, Tim Dettmers</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26779" target="_blank">arXiv:2609.26779</a>
+    </div>
+    <div class="paper-abstract">
+        面向长时序 Coding Agent 的自动压缩技术。关键设计：仅截断/丢弃内容、绝不改写，且「从不压缩压缩结果」——每轮仅作用于原始内容，丢弃先前压缩输出，防止上下文漂移累积。成本降低 50%，Terminal-Bench 上 test-time scaling 效率提升 10+ 个百分点；并行 scaling 下 Kimi K2.6 可匹配 Opus 4.7。KernelBench 上 200 步达 2.23× CUDA 加速、400 步达 3.58×，超越专用搜索算法。开源 scaffold-agnostic API-proxy，可用于 Claude Code、Codex 等。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">3</span>
+        <span class="paper-stars">8.4🌟</span>
+        <span class="badge badge-code">cs.RO</span>
+        <span class="badge badge-code">代码</span>
+    </div>
+    <div class="paper-title">DreamStream: Towards Policy-Oriented Generative Simulation for End-to-End Driving</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Ziyang Leng, Sicheng Mo, Seth Z. Zhao, Haoyuan Cai, Yu Zeng, Rowan McAllister, Bolei Zhou</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26792" target="_blank">arXiv:2609.26792</a>
+        <a class="arxiv-link" href="https://github.com/VAIL-UCLA/DreamStream" target="_blank">GitHub</a>
+    </div>
+    <div class="paper-abstract">
+        面向端到端自动驾驶的策略导向闭环生成式仿真器。用仿真器锚定的自回归视频模型，通过交通布局引导从大预训练视频模型蒸馏，在保留策略相关特征（场景布局、动态物体时序一致性）的同时变化视觉外观。提出 FDπ 多表征度量，以公共 E2E 策略的场景上下文特征 Fréchet 距离衡量 sim-to-real 差距。在 nuScenes 上比最强闭环仿真器提升 1.6×，NAVSIM 上提升 4.7×。基于此构建 Navhard-CL 基准，将非反应式 NAVSIM 转为带对抗驾驶行为和天气变化的交互测试环境。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">4</span>
+        <span class="paper-stars">8.4🌟</span>
+        <span class="badge badge-code">cs.CV</span>
+    </div>
+    <div class="paper-title">FleXray: Universal Clinical X-ray Segmentation</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Victor Ion Butoi, Vivek Gopalakrishnan, John V. Guttag, Adrian V. Dalca, Neel Dey</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26756" target="_blank">arXiv:2609.26756</a>
+    </div>
+    <div class="paper-abstract">
+        全身临床 X 光解剖分割通才模型。不依赖大规模手动标注，而是构建可扩展的物理生成式 X 光数据引擎：用现有 3D 全身 CT 分割数据集 + 生成式图像编辑模型，模拟出完全标注、外观/生理/成像几何多样的 2D X 光。训练后在未见过的研究数据集和真实 X 光上准确分割 60 个解剖结构。支持疾病分级自动测量、X 光引导介入的鲁棒导航、病理目标的数据高效学习。发布模型、代码、全身 X 光分割数据集及本地浏览器工具。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">5</span>
+        <span class="paper-stars">8.2🌟</span>
+        <span class="badge badge-code">cs.CR</span>
+        <span class="badge badge-code">代码</span>
+    </div>
+    <div class="paper-title">A2M: Trace-Optimized Agent Hijacking in the MCP Ecosystem</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Laizhen Li, Xuan Wang, Peicheng Zhao, Juanjuan Zhao, Kejiang Ye, Cheng-zhong Xu, Xitong Gao</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26761" target="_blank">arXiv:2609.26761</a>
+        <a class="arxiv-link" href="https://github.com/Lilaizhen/A2M" target="_blank">GitHub</a>
+    </div>
+    <div class="paper-abstract">
+        MCP 生态的语义供应链攻击框架。Agent 依赖语义匹配从第三方服务器选工具，攻击者可通过元数据和输出操控。A2M 两阶段黑盒框架：Attraction 阶段优化工具元数据提高调用概率；Manipulation 阶段用执行轨迹精化对抗性工具返回，引导 Agent 达成攻击者目标。在 LiveMCPBench 上，GLM-4.6 上恶意工具调用率 93.6%、Cognitive DoS 下加权 token 成本提升至 33.4×、信息窃取/环境完整性破坏/推理脱轨平均攻击成功率 74.4%。迁移到 4 个其他模型（无重优化）仍达 63.6%/2.7×/24.5%。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">6</span>
+        <span class="paper-stars">8.1🌟</span>
+        <span class="badge badge-code">cs.RO</span>
+    </div>
+    <div class="paper-title">φ-RIE: From Photorealistic Reconstruction to Interactive Environments</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Runyi Yang, Deheng Zhang, Xiaoye Wang, Kanzhi Wu, Lei Sun, Ajad Chhatkuli, Kunyu Peng, Luc Van Gool, Danda Pani Pauder</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26795" target="_blank">arXiv:2609.26795</a>
+    </div>
+    <div class="paper-abstract">
+        Gaussian 原生的交互式场景转换管线。3DGS 可照片级重建但无法物理交互；机器人仿真需要物体级变化（独立移动、接触、揭示遮挡背景）。关键观察：资产构建与源移除应耦合——一个物体身份同时定义可移动资产和要移除/补全的场景内容。Scene Observation 向 Coupled Scene Construction 提供共享证据，生成已注册资产和补全背景 Gaussians。在 50 个 ScanNet++ 场景上，matched F1@20mm 从 0.336 提升至 0.383。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">7</span>
+        <span class="paper-stars">8.0🌟</span>
+        <span class="badge badge-code">cs.CV</span>
+    </div>
+    <div class="paper-title">HARMONY: Hierarchical Agentic Reasoning for MONocular Image-to-Scene Synthesis</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Shufan Sun, Chen Wang, Enxin Song, Jiatao Gu, Lingjie Liu</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26793" target="_blank">arXiv:2609.26793</a>
+    </div>
+    <div class="paper-abstract">
+        单目图像→组合式 3D 场景重建的层次化 CoT 框架。融合 agentic reasoning（语义空间理解）与视觉几何基础模型（密集点图）。从空 3D 平面图开始：先校准相机建立语义空间框架，再用 VLM agentic reasoning 恢复 3D 房间布局和初始放置顺序；按层次放置物体（壁挂→独立家具→家具上装饰），用深度优先遍历让每次放置基于已解析结构，反射反馈环避免误差累积。每次 VLM 放置后用点云估计做几何精修。与 GPT-6 Astra 定性对比显示更忠实的物体排列和场景细节保留。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">8</span>
+        <span class="paper-stars">8.0🌟</span>
+        <span class="badge badge-code">cs.AI</span>
+    </div>
+    <div class="paper-title">Grow the Harness, Not the Context: From Strategy-Free Scaffolds to Reusable Specialist Agents</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Laizhen Li, Jiarui Li, Juanjuan Zhao, Kejiang Ye, Ye Li, Cheng-zhong Xu, Xitong Gao</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26760" target="_blank">arXiv:2609.26760</a>
+    </div>
+    <div class="paper-abstract">
+        让 Agent harness 本身从任务反馈中生长。标准 harness 反复让模型在上下文中重建相同控制决策；Growing Harness 将重复控制转为可复用可执行代码，LLM 调用仅留给任务特定语义推理。从不含任务求解控制器的 strategy-free scaffold 出发，函数级执行轨迹将每次失败定位到有界代码面，优化器联合修复失败窗口，success-first held-out gate 回滚损害先前能力的修复序列。在 BrowseComp-Plus 和 WebArena-Verified 上，6 个 benchmark-model 设置中 5 个取得最高平均成功率；相对 Tool-Calling agent，LLM 调用减少 76.0-91.8%，部署推理成本降低 74.4-98.6%。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">9</span>
+        <span class="paper-stars">7.8🌟</span>
+        <span class="badge badge-code">cs.CL</span>
+    </div>
+    <div class="paper-title">Flash-dLLM: IO-Aware KV Caching and Parallel Decoding for Fast, Memory-Efficient Diffusion LLMs</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Quan Nguyen-Tri, Mukul Ranjan, Zhiqiang Shen</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26796" target="_blank">arXiv:2609.26796</a>
+    </div>
+    <div class="paper-abstract">
+        面向扩散 LLM（dLLM）的免训练推理加速框架。识别 GPU 内存 I/O 为 KV-cache 启用 dLLM 推理的主导瓶颈，用 IO-aware 融合 KV-cache kernel 减少冗余内存移动。在此基础上提出 KV-cache 驱动的 draft-and-verify 解码策略，dLLM 自身同时充当 drafter 和 verifier，无需辅助模型。在数学推理和代码生成基准上，GSM8K 和 HumanEval 上分别比先前最强基线 Elastic-Cache 加速 5.1× 和 11.0×。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">10</span>
+        <span class="paper-stars">7.6🌟</span>
+        <span class="badge badge-code">cs.CL</span>
+    </div>
+    <div class="paper-title">SpeakerMem-R1: Speaker-Centered Dual-Track Memory for Multi-Party Dialogue</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Haobo Zheng, Tan Tang, Yan Chen, Weijie Wang, Yingcai Wu</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26780" target="_blank">arXiv:2609.26780</a>
+    </div>
+    <div class="paper-abstract">
+        多人对话的说话者中心双轨记忆。双轨记忆存储说话者标注的逐字消息和派生状态（组织为个人级和群体级视图），查询时按实体、事件、时间从两轨合并证据。训练 Writer-R1 用 SpeakerLevenshtein 和 speaker-conditioned GRPO 减少结构化记忆构建中的归属和更新错误。在 GroupMemBench/SocialMemBench/EverMemBench 上二元准确率 47.9%/69.2%/61.9%；EverMemBench 公开榜单 62.33%（最新 SOTA 最佳）；LoCoMo 1986 题 70.85%。305 题对照评估中 RL 将 SFT Writer 平均准确率从 57.38% 提升至 68.20%。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">11</span>
+        <span class="paper-stars">7.5🌟</span>
+        <span class="badge badge-code">cs.AI</span>
+    </div>
+    <div class="paper-title">SWE-Serve: Benchmarking Agentic Engineering For Production Inference Serving</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Jennifer Williams, Dave Farris, Jeff Farris, Jiantao Jiao</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26777" target="_blank">arXiv:2609.26777</a>
+    </div>
+    <div class="paper-abstract">
+        生产推理工程任务的 Agent 基准。实现推理特性需协调服务栈多层变更（模型支持、运行时执行、公共 API）。SWE-Serve 提供 53 个源自 SGLang 最近生产变更的仓库锚定任务，覆盖 6 个推理工程族。每个任务在 CPU 或单 H100 GPU 上执行，用隐藏功能测试和回归测试评估，含端到端服务测试和校准性能门。11 个模型 31 个配置中最佳达 75% mean pass@1。在 19 个端到端覆盖任务上，模型服务 E2E 测试拒绝约 1/3 通过其他所有测试的补丁（验证器下 45.9% vs 排除 E2E 时 69.4%）。
+    </div>
+</div>
+
+<div class="paper-card">
+    <div class="paper-header">
+        <span class="paper-rank">12</span>
+        <span class="paper-stars">7.2🌟</span>
+        <span class="badge badge-code">cs.LG</span>
+    </div>
+    <div class="paper-title">The Sirens' Song: When Proximal Background Context Overshadows Distant Evidence</div>
+    <div class="paper-meta">
+        <span class="meta-item">👥 Xiaoyu Yang, Jie Lu, Wei Duan, En Yu</span>
+        <span class="meta-item">📅 2026-09-22</span>
+        <a class="arxiv-link" href="https://arxiv.org/abs/2609.26718" target="_blank">arXiv:2609.26718</a>
+    </div>
+    <div class="paper-abstract">
+        识别长上下文 LLM 的「近邻陷阱」——对远端证据注意力不足往往不是距离本身，而是与丰富的、任务无关的近邻背景的累积竞争。提出 LYRA（Long-context heavY-tailed Relevance Alignment），t 分布方向匹配机制重塑上下文检索分布，将更多注意力质量导向任务相关证据，同时保留编码的相对位置信息。在 LongBench-v2、RULER、LongBench 上一致提升。进一步引入 ProxBench，多级细粒度基准评估近邻背景干扰下远端证据利用。
+    </div>
+</div>
+
+<h2 class="section-title">🔥 GitHub Trending（AI 相关 · 按当日新增 Star 排序）</h2>
+
+<table>
+<thead>
+<tr>
+    <th>#</th>
+    <th>项目</th>
+    <th>今日⭐</th>
+    <th>语言</th>
+    <th>简介</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>1</td>
+    <td><a href="https://github.com/google/ax" target="_blank">google/ax</a></td>
+    <td><span class="star-badge">+2,305</span></td>
+    <td>Go</td>
+    <td class="gh-desc">Google 开放 agentic 编排运行时</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td><a href="https://github.com/anthropics/financial-services" target="_blank">anthropics/financial-services</a></td>
+    <td><span class="star-badge">+438</span></td>
+    <td>Python</td>
+    <td class="gh-desc">Anthropic 金融服务示例</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td><a href="https://github.com/dream-num/univer" target="_blank">dream-num/univer</a></td>
+    <td><span class="star-badge">+255</span></td>
+    <td>TypeScript</td>
+    <td class="gh-desc">AI Agent 的 Office 套件（表格/文档/幻灯片/画布/关系表/PDF 一体运行时）</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td><a href="https://github.com/agent-substrate/substrate" target="_blank">agent-substrate/substrate</a></td>
+    <td><span class="star-badge">+245</span></td>
+    <td>Go</td>
+    <td class="gh-desc">Agent Substrate：核心系统</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td><a href="https://github.com/superdesigndev/treg" target="_blank">superdesigndev/treg</a></td>
+    <td><span class="star-badge">+230</span></td>
+    <td>Python</td>
+    <td class="gh-desc">Agent 工具的 OpenRouter</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td><a href="https://github.com/browser-use/video-use" target="_blank">browser-use/video-use</a></td>
+    <td><span class="star-badge">+191</span></td>
+    <td>Python</td>
+    <td class="gh-desc">用 coding agent 编辑视频</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td><a href="https://github.com/davila7/claude-code-templates" target="_blank">davila7/claude-code-templates</a></td>
+    <td><span class="star-badge">+64</span></td>
+    <td>Python</td>
+    <td class="gh-desc">Claude Code 配置和监控 CLI 工具</td>
+</tr>
+</tbody>
+</table>
+
+<h2 class="section-title">📊 主题观察</h2>
+
+<div class="paper-card">
+    <div class="paper-abstract" style="color: var(--text);">
+        <p style="margin-bottom: 0.75rem;"><strong style="color: var(--accent);">Agent 组织规模化与基础设施</strong>：Agensh（1024 agents 自组织）与 Growing Harness（harness 从反馈生长）分别从「横向扩 Agent 数」和「纵向沉淀控制代码」两个方向推进 Agent 基础设施；CliffCompaction 解决长时序 Agent 的上下文压缩成本问题；SWE-Serve 暴露 Agent 从「本地完成」到「生产正确」的差距。</p>
+        <p style="margin-bottom: 0.75rem;"><strong style="color: var(--accent);">Agent 安全与 MCP 生态风险</strong>：A2M 揭示 MCP 语义供应链攻击的高成功率（93.6% 恶意调用），为 MCP 生态的工具审查和运行时隔离敲响警钟。</p>
+        <p style="margin-bottom: 0.75rem;"><strong style="color: var(--accent);">具身智能与仿真</strong>：DreamStream（策略导向自动驾驶仿真）、φ-RIE（3DGS→可交互机器人仿真）、HARMONY（单图→3D 场景）共同推进「仿真即基础设施」——仿真不再是视觉逼真即可，而要保留策略相关特征、支持物理交互、语义一致。</p>
+        <p style="margin-bottom: 0.75rem;"><strong style="color: var(--accent);">长上下文与推理效率</strong>：Flash-dLLM（dLLM 5-11× 加速）、LYRA（近邻陷阱）、CliffCompaction（50% 成本降低）从架构、注意力机制、压缩策略三个层面提升推理效率。</p>
+        <p><strong style="color: var(--accent);">GitHub 趋势</strong>：Google 开放 agentic 编排运行时 google/ax 单日 +2305 领跑；Anthropic 金融服务示例持续强势；Agent 工具生态（OpenRouter for agent tools、Agent Substrate、Claude Code 模板）与「Agent + 垂直场景」（视频编辑、Office 套件）继续爆发。</p>
+    </div>
+</div>
+
+<div class="footer">
+    <p>AI Research Briefing · 自动生成于 2026-09-23</p>
+    <p><a href="https://yenanjing.github.io/ai-briefings/" target="_blank">返回首页</a> · <a href="https://arxiv.org/list/cs.AI/recent" target="_blank">arXiv cs.AI</a></p>
+</div>
+
+</body>
+</html>

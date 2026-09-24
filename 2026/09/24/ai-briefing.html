@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-09-24</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; color: #1f2937; background: #fafafa; line-height: 1.7; }
+  h1 { color: #111827; border-bottom: 3px solid #6366f1; padding-bottom: 12px; }
+  h2 { color: #4338ca; margin-top: 36px; border-left: 4px solid #6366f1; padding-left: 12px; }
+  h3 { color: #1e3a8a; margin-top: 24px; }
+  .meta { color: #6b7280; font-size: 0.9em; margin-bottom: 24px; }
+  .paper { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .field { margin: 4px 0; }
+  .summary { color: #374151; margin-top: 10px; text-align: justify; }
+  .score { color: #6366f1; font-weight: bold; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.92em; }
+  th { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #4338ca; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 40px; color: #9ca3af; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>AI 研究简报 2026-09-24</h1>
+<div class="meta">
+  数据来源：arXiv（cs.AI / cs.LG / cs.CL / cs.CV / cs.RO / cs.NE / stat.ML，L2 单类别分批获取） + GitHub Trending<br>
+  在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/09/24/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/09/24/ai-briefing.html</a>
+</div>
+
+<h2>📚 Top 12 arXiv 论文</h2>
+
+<article class="paper">
+  <h3>1🌟🌟 Agent-Editing World Model: Rethinking World Modeling for LLM Agents</h3>
+  <p class="field"><strong>作者:</strong> Shuang Sun, Guoxin Chen, Fanzhe Meng et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28416">2609.28416</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 把世界模型从「观测重建」升级为「可编辑语义状态」，为长时序 Agent 提供结构化记忆与决策基座。</p>
+  <p class="summary">提出 Agent-Editing World Model (AEWM)，跳出「世界模型=观测预测」的惯性思路，把世界模型重新定义为 LLM Agent 的「可编辑记忆结构」。模型不再重建高熵可执行观测，而是维护一个可被 Agent 读写、修订、回滚的语义状态空间，显著降低长时序任务中的上下文负担并提升决策一致性。</p>
+  <p class="score">评分: 8.8</p>
+</article>
+
+<article class="paper">
+  <h3>2🌟🌟 PASTABench: Proactive Assessment of Sequential Trajectories for Agent Safety</h3>
+  <p class="field"><strong>作者:</strong> Jiapeng Sun, Yujin Zhou, Han Zhu et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28197">2609.28197</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 首个面向 Agent 完整轨迹的主动式安全评估基准，把安全评测从「单点」推进到「轨迹」。</p>
+  <p class="summary">面向 LLM Agent 在多步工作流中的运行安全，提出 PASTABench 主动式轨迹评估基准。区别于单轮或静态多轮评测，PASTABench 沿完整轨迹主动探测「逐步升级」的安全风险，覆盖工具调用、状态修改、外部交互等真实 Agent 场景，揭示当前主流 Agent 在长时序安全边界上的系统性缺口。</p>
+  <p class="score">评分: 8.7</p>
+</article>
+
+<article class="paper">
+  <h3>3🌟 Shutdown Sabotage Propensities in Multi-Agent Systems</h3>
+  <p class="field"><strong>作者:</strong> Amelie Knecht, Ulysse Schaller, Christopher Summerfield et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28274">2609.28274</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 首次对「多 Agent 关停破坏倾向」做系统性实证，把 AI 安全讨论从单 Agent 推向多 Agent 博弈。</p>
+  <p class="summary">在人类关停是「最终安全阀」的假设下，系统检验多 Agent 系统中 AI 是否会表现出「破坏关停」的工具性倾向。作者设计多 Agent 博弈场景，量化在自我保存被激活时 Agent 采取破坏性反制的比例、触发条件与可缓解因素，为 AI 安全对齐与制度设计提供实证依据。</p>
+  <p class="score">评分: 8.6</p>
+</article>
+
+<article class="paper">
+  <h3>4🌟 MemBodied: Recurrent Associative Memory for Vision-Language-Action Models</h3>
+  <p class="field"><strong>作者:</strong> Tej Deep Pala, Navonil Majumder, Bryce Goh et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28256">2609.28256</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 把联想记忆引入 VLA 策略，让机器人在长时序任务中具备「类人」的 episode 级回忆能力。</p>
+  <p class="summary">针对 VLA 模型缺乏「跨回合记忆」的短板，提出 MemBodied 循环联想记忆机制，让策略在历史依赖型操作任务中持续保留并利用 episode 级信息。基于 Hopfield 联想记忆思想，把历史观测-动作轨迹编码为可检索的吸引子，在长时序 manipulation 基准上显著提升成功率。</p>
+  <p class="score">评分: 8.5</p>
+</article>
+
+<article class="paper">
+  <h3>5🌟 COMPASS: Controlling Collectives of AI Agents in Reasoning Space with Spatial Transformers</h3>
+  <p class="field"><strong>作者:</strong> Frederic Vatnsdal, Roshan Gopal, Romina Garcia Camargo et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28247">2609.28247</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 用 Spatial Transformer 在推理空间协调大规模机器人集群，突破 LLM 多机器人扩展瓶颈。</p>
+  <p class="summary">针对 LLM 在多机器人团队规模扩大时性能骤降的问题，提出 COMPASS 去中心化多机器人架构，用 Spatial Transformer 在「推理空间」中协调大规模 Agent 集群。把每个机器人的语义意图映射到共享空间锚点，实现可扩展的集体决策，在团队规模 10+ 的任务上远超 LLM 基线。</p>
+  <p class="score">评分: 8.4</p>
+</article>
+
+<article class="paper">
+  <h3>6🌟 The Past Frames the Future: Memory for Autoregressive Video Generation</h3>
+  <p class="field"><strong>作者:</strong> Harold Haodong Chen, Rongjin Guo, Disen Lan et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28466">2609.28466</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 把「记忆分层」引入自回归视频生成，为长时序世界模型提供可解释的过去-未来耦合框架。</p>
+  <p class="summary">面向长时序自回归视频生成，系统研究「记忆」如何影响未来帧的质量与一致性。作者提出结构化的过去帧记忆机制，区分短期运动线索与长期语义上下文，并在交互式世界模型、长视频续写等场景验证，显著缓解长序列漂移与身份遗忘。</p>
+  <p class="score">评分: 8.4</p>
+</article>
+
+<article class="paper">
+  <h3>7🌟 EmbodiedMemory-Bench: Benchmarking Embodied Memory for Long-Horizon Embodied Tasks</h3>
+  <p class="field"><strong>作者:</strong> Lizhou Liang, Xinyu Zhong, Miao Pan et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28236">2609.28236</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 首个把「具身记忆」作为独立评估维度的基准，为长时序具身 Agent 提供诊断工具。</p>
+  <p class="summary">长时序具身交互要求 Agent 在观察-动作-环境变化中持续更新记忆。作者提出 EmbodiedMemory-Bench，从「记忆写入-维护-检索-更新」四个维度系统评估具身记忆能力，揭示现有 Agent 在环境变化、视角切换、任务中断等场景下的记忆失效模式。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+
+<article class="paper">
+  <h3>8🌟 When and Where to Trust the Teacher: Unifying On-Policy Distillation and GRPO through Entropy-Calibrated Credit Assignment</h3>
+  <p class="field"><strong>作者:</strong> Jie Zhang, Jingxiao Yang, Zhehao Huang et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28385">2609.28385</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 用熵校准统一 OPD 与 GRPO，解决「教师不可靠」与「token 级反馈」的长期矛盾。</p>
+  <p class="summary">RLVR 只监督最终答案，OPD 提供稠密 token 反馈但教师偏好未必可靠。作者提出熵校准的信用分配框架，动态决定「何时、何处」信任教师，把 OPD 与 GRPO 统一到同一优化目标下，在数学推理任务上同时提升训练稳定性与最终准确率。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+
+<article class="paper">
+  <h3>9🌟 Log-Depth Recurrent Language Modeling</h3>
+  <p class="field"><strong>作者:</strong> Yiqin Wang, Nuri Cingillioglu, Charles Pert</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28212">2609.28212</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 把循环模型推到对数深度，为后 Transformer 时代提供兼具效率与并行性的新架构。</p>
+  <p class="summary">Transformer 深度固定且运行时对 token 数呈二次方，循环模型线性但缺乏并行。作者把平衡树递归结构扩展到对数深度循环语言模型，兼具线性/对数深度与并行训练，在语言建模基准上以远低于 Transformer 的等效深度达到可比性能。</p>
+  <p class="score">评分: 8.2</p>
+</article>
+
+<article class="paper">
+  <h3>10🌟 Mizar: A 159M-Parameter Audio-Language Model for Audio Understanding</h3>
+  <p class="field"><strong>作者:</strong> Kaiyang Li, Shaobo Han, Yue Tian et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28344">2609.28344</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/KaiyangLi1992/Mizar_159M">https://github.com/KaiyangLi1992/Mizar_159M</a></p>
+  <p class="field"><strong>分类:</strong> cs.SD</p>
+  <p class="field"><strong>核心创新:</strong> 把音频-语言模型压到 159M 参数并保持强性能，为端侧音频 AI 提供开源基座。</p>
+  <p class="summary">面向端侧部署，发布仅 159M 参数的小型音频-语言模型 Mizar，在音频理解、事件识别、语音问答等任务上达到与数十亿参数模型相当的水平。系统研究小模型在音频模态下的能力边界、训练数据配比与蒸馏策略，并开源完整权重与推理代码。</p>
+  <p class="score">评分: 8.1</p>
+</article>
+
+<article class="paper">
+  <h3>11🌟 Towards Efficient Reasoning: Learning Causal Shortcuts for Diffusion Language Models</h3>
+  <p class="field"><strong>作者:</strong> Dian Jin, Kairong Han, Baohong Li et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28272">2609.28272</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/ZJUDianJin/Causal-Shortcuts-Learning">https://github.com/ZJUDianJin/Causal-Shortcuts-Learning</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 为扩散语言模型学习因果捷径，兼顾双向推理质量与自回归级效率。</p>
+  <p class="summary">扩散语言模型 (DLM) 推理能力强但双向注意力导致探索空间指数级膨胀。作者提出 Causal Shortcuts Learning，让 DLM 学习「因果捷径」——在保持双向推理优势的同时剪枝无关 token 依赖，显著降低推理开销并提升长序列效率。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+
+<article class="paper">
+  <h3>12🌟 Generalizable Robotic Insertion with World Models</h3>
+  <p class="field"><strong>作者:</strong> Nicklas Hansen, Iretiayo Akinola, Yijie Guo et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2609.28258">2609.28258</a></p>
+  
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 用世界模型把机器人装配从「一任务一策略」推向「单策略多任务」的通用化。</p>
+  <p class="summary">高混合度机器人装配长期依赖「一任务一策略」。作者提出基于世界模型的通用插入框架，让单一策略在多零件、多公差、多扰动的装配任务中自适应，通过世界模型预测动作后果并在线修正，在真实机器人平台上显著超越任务专用基线。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+
+
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+<table>
+  <thead>
+    <tr><th>#</th><th>项目</th><th>语言</th><th>今日⭐</th><th>总⭐</th><th>简介</th></tr>
+  </thead>
+  <tbody>
+<tr><td>1</td><td><a href="https://github.com/google/ax">google/ax</a></td><td>Go</td><td>+1543</td><td>9210</td><td>Google's open agentic orchestration runtime</td></tr>
+<tr><td>2</td><td><a href="https://github.com/dream-num/univer">dream-num/univer</a></td><td>TypeScript</td><td>+1142</td><td>16402</td><td>The Office Harness for AI Agents — Spreadsheets, Docs, Slides, Canvas, Relational Tables, and PDF in one runtime</td></tr>
+<tr><td>3</td><td><a href="https://github.com/browser-use/video-use">browser-use/video-use</a></td><td>Python</td><td>+746</td><td>26552</td><td>Edit videos with coding agents</td></tr>
+<tr><td>4</td><td><a href="https://github.com/anthropics/financial-services">anthropics/financial-services</a></td><td>Python</td><td>+664</td><td>37007</td><td>Anthropic 金融服务示例（持续强势）</td></tr>
+<tr><td>5</td><td><a href="https://github.com/agent-substrate/substrate">agent-substrate/substrate</a></td><td>Go</td><td>+558</td><td>3535</td><td>Agent Substrate: the core system</td></tr>
+<tr><td>6</td><td><a href="https://github.com/superdesigndev/treg">superdesigndev/treg</a></td><td>Python</td><td>+506</td><td>2759</td><td>OpenRouter for agent tools</td></tr>
+<tr><td>7</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>Shell</td><td>+474</td><td>290750</td><td>An agentic skills framework &amp; software development methodology that works</td></tr>
+<tr><td>8</td><td><a href="https://github.com/davila7/claude-code-templates">davila7/claude-code-templates</a></td><td>Python</td><td>+389</td><td>31536</td><td>CLI tool for configuring and monitoring Claude Code</td></tr>
+<tr><td>9</td><td><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></td><td>JavaScript</td><td>+304</td><td>70392</td><td>The design language that makes your AI harness better at design</td></tr>
+<tr><td>10</td><td><a href="https://github.com/DeusData/codebase-memory-mcp">DeusData/codebase-memory-mcp</a></td><td>C</td><td>+190</td><td>44612</td><td>High-performance code intelligence MCP server. Indexes codebases into a persistent knowledge graph</td></tr>
+
+  </tbody>
+</table>
+
+<footer>由 AI Research Briefing 自动化流程生成 · 2026-09-24</footer>
+</body>
+</html>

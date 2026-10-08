@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-10-08</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; color: #1f2937; background: #fafafa; line-height: 1.7; }
+  h1 { color: #111827; border-bottom: 3px solid #6366f1; padding-bottom: 12px; }
+  h2 { color: #4338ca; margin-top: 36px; border-left: 4px solid #6366f1; padding-left: 12px; }
+  h3 { color: #1e3a8a; margin-top: 24px; }
+  .meta { color: #6b7280; font-size: 0.9em; margin-bottom: 24px; }
+  .paper { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .field { margin: 4px 0; }
+  .summary { color: #374151; margin-top: 10px; text-align: justify; }
+  .score { color: #6366f1; font-weight: bold; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.92em; }
+  th { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #4338ca; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 40px; color: #9ca3af; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>AI 研究简报 2026-10-08</h1>
+<div class="meta">
+  数据来源：arXiv（cs.AI / cs.LG / cs.CL / cs.CV / cs.RO / cs.NE / stat.ML，L1 OR 查询一次成功） + GitHub Trending<br>
+  在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/10/08/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/10/08/ai-briefing.html</a>
+</div>
+
+<h2>📚 Top 12 arXiv 论文</h2>
+
+<article class="paper">
+  <h3>1🌟 RoboJEPA: Scaling Robotic Latent World Models</h3>
+  <p class="field"><strong>作者:</strong> Artem Zholus, Nicolas Beltran-Velez, Jianhao Yuan, Sarath Chandar, Tushar Nagarajan, Daniel Severo et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10515">2610.10515</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI / cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 基于 JEPA 架构的机器人潜在世界模型，首次在机器人领域验证类似 LLM 的 scaling law。</p>
+  <p class="summary">在跨越 12 种机器人形态的大规模数据集上训练，发现「想象误差」（latent rollout error）遵循二阶幂律随算力下降，可预测更大模型/数据/计算的最优配置。在多个下游规划与控制任务上显著超越现有世界模型基线，为机器人基础模型的规模化提供原则性框架。</p>
+  <p class="score">评分: 8.7</p>
+</article>
+
+<article class="paper">
+  <h3>2🌟 Ledger: Persistent 3D Object Memory from Egocentric Videos</h3>
+  <p class="field"><strong>作者:</strong> Shravan Chaudhari, William Paul, Suchi Saria, Rama Chellappa, Homanga Bharadhwaj</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10538">2610.10538</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/LEDGER-3D/LEDGER">github.com/LEDGER-3D/LEDGER</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV / cs.AI / cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 面向具身助手的持久化 3D 物体记忆系统，从第一人称视频持续构建空间认知。</p>
+  <p class="summary">从第一人称视频中持续构建物体位置、历史轨迹与上下文描述的联合表征，即使在物体离开视野后仍保留记忆，支持跨片段关联与延迟任务需求。模拟人类「知道东西放在哪」的能力，为长期部署的家庭/工作机器人提供关键空间认知基础。</p>
+  <p class="score">评分: 8.5</p>
+</article>
+
+<article class="paper">
+  <h3>3🌟 Long-WAM: Scaling the Context of World-Action Models</h3>
+  <p class="field"><strong>作者:</strong> Wei Huang, Bohan Zhang, Chenzhi Liu, Isabella Liu, Shuai Yang, Weian Mao et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10528">2610.10528</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO / cs.AI / cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 面向实时机器人控制的世界-动作模型上下文扩展框架。</p>
+  <p class="summary">核心发现：历史访问 ≠ 历史利用——当视频基座采用自回归预训练时，更长历史带来显著更高收益。先从机器人/第一人称视频学习因果预测（无动作标签），再在 world-action 建模中保留 history-to-future 结构。在长时序操作任务上突破实时控制约束下的上下文瓶颈。</p>
+  <p class="score">评分: 8.4</p>
+</article>
+
+<article class="paper">
+  <h3>4🌟 EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory</h3>
+  <p class="field"><strong>作者:</strong> Hongru Cai, Ran Wei, Wenjie Wang, Chengfa Wu, Ning Song, Yongqi Li et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10533">2610.10533</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 基于 DeepSeek Engram 条件记忆架构的知识编辑方法。</p>
+  <p class="summary">利用输入 n-gram 查找学习到的 embedding，将事实知识存储与通用计算解耦，在保持 Transformer 主干固定的同时实现精准知识更新。解决不同表达激活不同 n-gram embedding 的冲突问题，为 LLM 持续学习与事实修正提供高效路径。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+
+<article class="paper">
+  <h3>5🌟 Decoupling Exploration from Optimization in RLVR</h3>
+  <p class="field"><strong>作者:</strong> Saif Punjwani, Micah Goldblum</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10536">2610.10536</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/SaifPunjwani/Exploration-Distillation">github.com/SaifPunjwani/Exploration-Distillation</a></p>
+  <p class="field"><strong>分类:</strong> cs.LG / cs.AI / cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 将 RLVR 中的探索与优化解耦，两阶段发现并蒸馏新推理策略。</p>
+  <p class="summary">指出强新颖性激励在 RLVR 中常失败甚至降低模型质量，因为可验证奖励仅监督模型知识/行为的狭窄切片。提出两阶段框架：先探索发现新推理策略，再蒸馏到稳定优化中，在数学推理基准上显著提升而不牺牲模型质量。</p>
+  <p class="score">评分: 8.2</p>
+</article>
+
+<article class="paper">
+  <h3>6🌟 EmbodiedRSI: Active Continual Robot Learning Through Hypothesis-Guided Co-Evolution</h3>
+  <p class="field"><strong>作者:</strong> Python Song, Zhixuan Liang, Kelsey Fu, Mengdi Wang, Junfeng Yang, Shilong Liu</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10498">2610.10498</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 自演化 agentic harness，让机器人基础模型在部署中自主决定探索方向。</p>
+  <p class="summary">区别于被动等待人类纠正或低效试错，EmbodiedRSI 用假设引导的协同进化机制高效利用机器人 trial，将物理交互转化为代码/技能更新，在物体位置/任务指令变化时持续适应，显著降低遥操作数据收集成本。</p>
+  <p class="score">评分: 8.2</p>
+</article>
+
+<article class="paper">
+  <h3>7🌟 RECAST: Learning to Compute the Right Context through Adaptive Evidence Routing</h3>
+  <p class="field"><strong>作者:</strong> Yilun Hao, Krishna Sayana, Isabella Ye, James S Ren, Sukhdeep Sodhi, Craig Boutilier et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10507">2610.10507</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 超越传统 RAG 的自适应证据路由框架，支持跨源项过滤、聚合与计算。</p>
+  <p class="summary">核心洞察：许多任务中所需证据不在任何单一源项中显式存在，而需通过跨多个源项的过滤、聚合或计算推导得出。RECAST 将证据需求路由到「计算/访问/合成」三种操作，在长文本、异构信息源任务上显著超越固定相似度检索和现有 agentic RAG。</p>
+  <p class="score">评分: 8.1</p>
+</article>
+
+<article class="paper">
+  <h3>8🌟 Tetris3D: 3D Scene Generation With Objects That Fit Together</h3>
+  <p class="field"><strong>作者:</strong> Jaeyeong Kim, Jinhyuk Jang, Jongmin Lee, Kyehong Park, Seungryong Kim</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10539">2610.10539</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 单图 3D 场景重建，显式条件化每个物体生成基于周围物体几何与物理关系。</p>
+  <p class="summary">区别于独立生成物体或隐式耦合的现有方法，Tetris3D 确保相邻物体间细粒度空间兼容性，产生物理和几何上连贯的场景。在室内外场景重建上显著提升物体间布局合理性。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+
+<article class="paper">
+  <h3>9🌟 RoboPrompt: Intuitive Robot Policy Steering with Sparse Human Input</h3>
+  <p class="field"><strong>作者:</strong> Yanwen Zou, Chenyang Shi, Guoxuan Xu, Wenye Yu, Wendi Chen, Ye Pan et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10534">2610.10534</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 通用轻量级机器人策略引导框架，无需专用硬件或架构修改。</p>
+  <p class="summary">仅用稀疏人类输入（如自然语言修正、少量示教）即可实时引导端到端模仿学习策略。在零样本真实部署中显著提升可靠性，降低共享自主方法的部署门槛。</p>
+  <p class="score">评分: 7.9</p>
+</article>
+
+<article class="paper">
+  <h3>10🌟 GRACE: Generation-aware latent compression for efficient video generation</h3>
+  <p class="field"><strong>作者:</strong> Jiyoung Kim, Paul Hyunbin Cho, Jisu Nam, Donghoon Lee, Hyunsung Go, Yeonkyeong Lee et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10524">2610.10524</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 面向视频扩散模型的高效潜在压缩方法。</p>
+  <p class="summary">解决高压缩率自编码器训练困难（重建质量下降、需要更多通道、DiT 收敛变慢）与预训练 DiT 不兼容问题。GRACE 在保持重建质量的同时显著加速视频生成，无需从头重训 DiT。</p>
+  <p class="score">评分: 7.8</p>
+</article>
+
+<article class="paper">
+  <h3>11🌟 QuadTok: Quadtree Visual Tokenizer for Autoregressive Image Generation</h3>
+  <p class="field"><strong>作者:</strong> Yucheng Mao, Zeyuan Chen, Xiaojun Shan, Xiang Zhang, Divyansh Srivastava, Bingnan Li et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10497">2610.10497</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/myc634/QuadTok">github.com/myc634/QuadTok</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 基于四叉树的分层视觉 tokenizer，桥接 2D 空间与 1D 序列。</p>
+  <p class="summary">动态为视觉复杂区域分配更多表征容量，均匀区域保持粗分辨率。在 ImageNet 上比固定 256-token 网格节省约 10% token，零样本迁移时节省 9%，同时提升自回归图像生成质量。</p>
+  <p class="score">评分: 7.7</p>
+</article>
+
+<article class="paper">
+  <h3>12🌟 SciExam for ENSO: Can AI Agents Build Climate Models?</h3>
+  <p class="field"><strong>作者:</strong> Yinling Zhang, Langchen Liu, Dongbin Xiu, Xueyan Zou, Xu Kuang, Mengdi Wang et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.10513">2610.10513</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/ylzhang2447/SciExam-ENSO-code">github.com/ylzhang2447/SciExam-ENSO-code</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI / cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 评估 AI Agent 能否从真实观测数据构建 ENSO 气候模型的开放科学基准。</p>
+  <p class="summary">区别于有标准答案或 rubric 的评测，SciExam 要求 Agent 在 6 小时内处理观测、编写诊断代码、开发并验证模型，测试 AI 在开放科学发现中的真实能力。</p>
+  <p class="score">评分: 7.6</p>
+</article>
+
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 排序）</h2>
+<table>
+  <thead>
+    <tr><th>项目</th><th>描述</th><th>今日⭐</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="https://github.com/morluto/rea">morluto/rea</a></td><td>用 Agent 逆向工程任何东西，从应用行为到原生二进制</td><td>+4,655</td></tr>
+    <tr><td><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></td><td>面向真正工程师的 Agent Skills，直接来自 .agents 目录</td><td>+1,403</td></tr>
+    <tr><td><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></td><td>面向 Claude Code/Codex/Copilot 的编辑级图表设计，42 种类型，自包含 HTML+SVG</td><td>+825</td></tr>
+    <tr><td><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></td><td>面向 AI 编码 Agent 的生产级工程技能</td><td>+677</td></tr>
+    <tr><td><a href="https://github.com/ayghri/i-have-adhd">ayghri/i-have-adhd</a></td><td>阻止编码 Agent 把答案埋掉的 Skill，ADHD 友好输出</td><td>+619</td></tr>
+    <tr><td><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></td><td>跨会话持久化上下文，捕获 Agent 会话行为并用 AI 压缩注入未来会话</td><td>+578</td></tr>
+    <tr><td><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></td><td>多阶段安全审计的编码 Agent Skill，独立验证、机器可读发现</td><td>+576</td></tr>
+    <tr><td><a href="https://github.com/trycua/cua">trycua/cua</a></td><td>开源 computer-use 2.0 驱动、跨 OS 舰队与训练/评估/数据生成基准</td><td>+228</td></tr>
+  </tbody>
+</table>
+
+<h2>📊 主题观察</h2>
+<p>今日 arXiv 论文集中在三大方向：</p>
+<ol>
+  <li><strong>世界模型与具身智能规模化</strong>：RoboJEPA 首次在机器人领域验证 scaling law，Long-WAM 解决实时控制下的长上下文瓶颈，Ledger 构建持久 3D 物体记忆，EmbodiedRSI 让机器人自主持续演化——世界模型正从「能预测」走向「可规模化、可记忆、可自演化」。</li>
+  <li><strong>Agent 基础设施与 RAG 进化</strong>：RECAST 将 RAG 从「检索」升级为「计算/路由/合成」，EngramEdit 用条件记忆解耦知识存储与计算，Decoupling Exploration 改进 RLVR 训练范式——Agent 的认知架构正在模块化、可编辑化。</li>
+  <li><strong>机器人策略的可引导性与效率</strong>：RoboPrompt 用稀疏人类输入实时引导策略，QuadTok 用四叉树压缩视觉 token，GRACE 加速视频生成——部署效率与可控性成为新的研究焦点。</li>
+</ol>
+<p>GitHub 趋势：<strong>Agent Skills 生态大爆发</strong>——morluto/rea（逆向工程 Agent）单日 +4,655 领跑，mattpocock/skills、addyosmani/agent-skills、cathrynlavery/diagram-design、cloudflare/security-audit-skill 等「Agent 技能包」集体上榜，显示 AI 编码工具正从「模型能力」竞争转向「可复用技能生态」竞争。claude-mem 的持久化记忆与 trycua/cua 的 computer-use 2.0 继续强势。</p>
+
+<footer>
+  本简报由自动化流程生成，论文数据来自 arXiv API，GitHub 数据来自 trending 页面。
+</footer>
+</body>
+</html>

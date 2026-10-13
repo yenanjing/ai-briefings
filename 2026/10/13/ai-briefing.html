@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-10-13</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; color: #1f2937; background: #fafafa; line-height: 1.7; }
+  h1 { color: #111827; border-bottom: 3px solid #6366f1; padding-bottom: 12px; }
+  h2 { color: #4338ca; margin-top: 36px; border-left: 4px solid #6366f1; padding-left: 12px; }
+  h3 { color: #1e3a8a; margin-top: 24px; }
+  .meta { color: #6b7280; font-size: 0.9em; margin-bottom: 24px; }
+  .paper { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .field { margin: 4px 0; }
+  .summary { color: #374151; margin-top: 10px; text-align: justify; }
+  .score { color: #6366f1; font-weight: bold; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.92em; }
+  th { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #4338ca; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 40px; color: #9ca3af; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>AI 研究简报 2026-10-13</h1>
+<div class="meta">
+  数据来源：arXiv（cs.AI / cs.LG / cs.CL / cs.CV / cs.RO / cs.NE / stat.ML，L1 OR 查询一次成功） + GitHub Trending<br>
+  论文日期：2026-10-09（arXiv 周末不发布）<br>
+  在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/10/13/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/10/13/ai-briefing.html</a>
+</div>
+
+<h2>📚 Top 12 arXiv 论文</h2>
+
+<article class="paper">
+  <h3>1🌟 Artisan: Towards Physically Grounded Articulated 3D Assets via a Multi-Agent Pipeline</h3>
+  <p class="field"><strong>作者:</strong> Xudong Cai, Ruijie Zhu, Haoliang Shang, Ruining Li, Marc Pollefeys, Shangzhe Wu, Andrea Vedaldi, Chuanxia Zheng</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13947">2610.13947</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 将铰接式 3D 资产生成从「复现外观」推进到「捕捉运动与功能」。</p>
+  <p class="summary">Artisan 在 Articraft 基础上引入带物理仿真反馈的多 Agent 流水线，除几何/外观外还优化无碰撞运动、重力下稳定性、质量与材质属性。同时构建覆盖空间保真度、物理合理性、下游任务、整体质量四方面的统一基准（100 参考资产 + 50 稳定性提示 + 50 ABO 物体）。作者含 Vedaldi（VGG）与 Pollefeys（ETH/微软），具身智能与 3D 生成方向重磅。</p>
+  <p class="score">评分: 8.7</p>
+</article>
+
+<article class="paper">
+  <h3>2🌟 Splat2Act: From Captured Scenes to Personalized VLA Manipulation</h3>
+  <p class="field"><strong>作者:</strong> Xiaomeng Ye, Krishna Jaganathan, Gyubeum Lim, Gunjan Chhablani, Muhammad Zubair Irshad, Zsolt Kira</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13945">2610.13945</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 用一次手持手机扫描 + 物体图像，实现建筑尺度室内场景级 VLA 个性化。</p>
+  <p class="summary">面向「把通用操作策略带进用户家里」的落地难题——π0.5 在真实部署场景抓取成功率 0%。Splat2Act 通过 3D Gaussian Splatting 构建建筑尺度室内数字孪生与碰撞几何，自动发现桌面/非桌面容器并生成可行操作，实现 real-to-sim-to-real 的场景级个性化，无需在每个用户环境采集真实示教。作者含 Zsolt Kira（Georgia Tech / Amazon）。</p>
+  <p class="score">评分: 8.5</p>
+</article>
+
+<article class="paper">
+  <h3>3🌟 Can Language Models Play the Wikipedia Game?</h3>
+  <p class="field"><strong>作者:</strong> Alexander Hickey, Joanna Knight, James Bishop</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13948">2610.13948</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 用「维基百科游戏」评测语言模型在超大规模文档集上的信息检索与导航能力。</p>
+  <p class="summary">在五种维基百科语言与五个学术文献数据集上，用 OpenAlex 构建超大本地图谱并开源构建/导航代码，让语言模型仅靠词条链接从起始页到达目标页，与人类及 TF-IDF 基准对比。为评估 LLM 在无法全部索引的文档集上的检索/导航能力提供稳健方法论。作者来自牛津大学。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+
+<article class="paper">
+  <h3>4🌟 RSI-Anything: Unlocking Recursive Self-Improvement with World Models</h3>
+  <p class="field"><strong>作者:</strong> Taoyong Cui, Pinxian Zeng, Wanghan Xu, Hao Xiao, Shuhan Xue, Qiang Gao, Wanli Ouyang, Pheng Ann Heng, Zhenfei Yin, Yingcheng Wu, Ling Yang</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13912">2610.13912</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 基于 JEPA-Anything 的通用递归自我改进框架，用预测性世界模型指导动作与数据选择。</p>
+  <p class="summary">观测反馈驱动策略/工作流改进与条件世界模型适配，组件与兼容性检查决定更新后策略-模型对的保留。代码修复中成功率从静态验证器 26.3% 提升到预测选择 29.2%、世界模型适配 31.2%（可比测试用量下）；GUI 评测同样提升。跨计算与科学领域的通用 RSI 范式。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+
+<article class="paper">
+  <h3>5🌟 AI Models Can Provably Hide Arbitrary Capabilities</h3>
+  <p class="field"><strong>作者:</strong> Andis Draguns, Sumeet Ramesh Motwani, Raymond Douglas, Christian Schroeder de Witt</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13928">2610.13928</a></p>
+  <p class="field"><strong>分类:</strong> cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 构造可证明难以触发的后门，将任意计算嵌入模型权重，挑战能力评估前提。</p>
+  <p class="summary">将加密神经网络嵌入宿主模型权重，仅在收到秘密触发器时解密执行。利用「数字储物柜」使隐藏电路在密码学假设下可证明难以触发与解释，即便完全访问权重亦然，将隐藏能力从固定字符串扩展到任意计算。在 PyTorch 实现并在微调、权重加噪、梯度触发搜索、潜在对抗训练下评估（化学反应预测为 CBRN 代理任务），对 AI 安全评估体系是重要警示。</p>
+  <p class="score">评分: 8.2</p>
+</article>
+
+<article class="paper">
+  <h3>6🌟 Prompteina: Designing Protein Structures from Natural Language</h3>
+  <p class="field"><strong>作者:</strong> Joseph Lee, Yanjing Li, Bo Qiang, Gregory Lau, Allyson Ettinger, Noah A. Smith, Rory Donovan-Maiye, David Baker, Hanna Hajishirzi, Pang Wei Koh</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13917">2610.13917</a></p>
+  <p class="field"><strong>分类:</strong> cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 首个支持自然语言指定设计目标的全原子蛋白质结构生成模型（类比文生图）。</p>
+  <p class="summary">构建 Prompteina-Data（180 万结构 + 5000 万+ 描述全局与残基级结构/功能属性的文本对），通过文本条件预训练与微调将残基与文本对齐。在 18 项结构属性中的 15 项超越基线。作者含 David Baker、Noah Smith、Hanna Hajishirzi（UW / IPD），蛋白质设计旗舰团队。</p>
+  <p class="score">评分: 8.2</p>
+</article>
+
+<article class="paper">
+  <h3>7🌟 InstantFusion: A Shared Latent Interface for Heterogeneous Image Generators</h3>
+  <p class="field"><strong>作者:</strong> Xuanlang Dai, Jiazi Bu, Yujie Zhou, Yuhong Liu, Beichen Zhang, Penghui Yang, Ziyu Liu, Yuhang Zang</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13944">2610.13944</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 揭示异构图像生成器间的跨模型潜在兼容性，提出即插即用共享潜在接口。</p>
+  <p class="summary">发现独立训练的扩散/flow 生成器潜在空间组织相似，未对齐模型间直接交接中间状态仍能保留粗粒度视觉内容。据此提出轻量共享潜在接口 InstantFusion，连接异构生成器的去噪轨迹，通过模型特定潜在映射实现灵活跨模型状态转换，为组合不同图像生成器开辟新路径。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+
+<article class="paper">
+  <h3>8🌟 Noise Space Learning for VLA Adaptation</h3>
+  <p class="field"><strong>作者:</strong> Junjie Lu, Chuheng Zhang, Yucen Wang, Yuhua Jiang, Xinyao Qin, Min Xu, Li Zhao</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13943">2610.13943</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 将噪声空间学习形式化为 VLA 适配的通用接口，保持预训练 VLA 固定。</p>
+  <p class="summary">学习上下文条件的噪声分布，兼容 PPO/SAC/AWR 等多种学习算法。给出信息论分析说明 NSL 如何实现高效适配，在 LIBERO、RoboTwin 及四个真实机器人操作任务上验证，在交互/算力/执行约束下平衡表现，为 VLA 低成本安全适配提供实用路径。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+
+<article class="paper">
+  <h3>9🌟 Chronos Policy: Learning Robot Policies on Physical Time</h3>
+  <p class="field"><strong>作者:</strong> Changhao Wang, Jaden Clark, Shuran Song</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13929">2610.13929</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 让机器人策略显式理解物理时间，条件于观测捕获与动作执行时刻。</p>
+  <p class="summary">针对固定频率观测-动作序列在观测率/延迟/推理时延变化时失效的问题，研究两种将时间注入 diffusion transformer 的方式，发现 time-aware RoPE 更鲁棒——注意力直接依赖物理时间而保持 token 内容不变。训练时随机化观测采样与动作块起始时刻，暴露策略于更广泛时间分布。作者含 Shuran Song（Columbia）。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+
+<article class="paper">
+  <h3>10🌟 Images Talk Back: Guiding MMDiTs by Suppressing Image-to-Text Feedback</h3>
+  <p class="field"><strong>作者:</strong> Yucheng Yang, Xiaoxiao Sun, Shusheng Yang, Jiakang Chen, Serena Yeung-Levy</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13941">2610.13941</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/yyc1215lll-creator/SFG">github.com/yyc1215lll-creator/SFG</a></p>
+  <p class="field"><strong>核心创新:</strong> 揭示 MMDiT 中图像→文本反馈会保留错误，抑制它可改善生成。</p>
+  <p class="summary">多模态扩散 transformer 中 evolving 图像通过联合注意力更新内部文本表示，进而引导后续图像更新。研究发现 I2T 反馈会保留已生成图像中的对象与属性（包括错误）；移植 I2T 消息可挽救失败或破坏成功。据此提出 Semantic Feedback Guidance（SFG），引导远离强化该反馈的辅助分支，原地变体 iSFG 直接抑制。作者含 Serena Yeung-Levy（Stanford）。</p>
+  <p class="score">评分: 7.9</p>
+</article>
+
+<article class="paper">
+  <h3>11🌟 RATED: Reliability-Aware AI Agent Tool Retrieval via Execution Dynamics</h3>
+  <p class="field"><strong>作者:</strong> Weiliang Chen, Song Liao</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13889">2610.13889</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/Elliotes/EcoAgent">github.com/Elliotes/EcoAgent</a></p>
+  <p class="field"><strong>核心创新:</strong> 将语义匹配与动态可靠性适配结合，感知工具执行时的实时可用性。</p>
+  <p class="summary">现有工具检索优化语义相关性却忽视执行时可用性。RATED 用冻结双编码器 + 对比微调做语义匹配，轻量上下文 bandit 依据实时执行反馈重排候选，无需昂贵重训即可适应运行时工具失败。同时发布 EcoAgent 基准（5,172 真实工具、21 万+ 查询-工具对）用于离线检索与动态可靠性评估。</p>
+  <p class="score">评分: 7.8</p>
+</article>
+
+<article class="paper">
+  <h3>12🌟 Can Machines Reason Non-verbally? GenVerOpt</h3>
+  <p class="field"><strong>作者:</strong> Shaheer U. Saeed, Zion Tse, Gregory Slabaugh, Daniel C. Alexander, Yipeng Hu</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13925">2610.13925</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 将生成、验证、优化统一为机器视觉非语言推理流水线。</p>
+  <p class="summary">指出现有机器（含 DeepSeek、ChatGPT、Gemini）在抽象模式补全、模糊感兴趣区 delineation 等视觉非语言推理上仍受限，且中间步骤隐式、难以验证。GenVerOpt 通过生成候选解、验证其正确性并优化，为无明确验证方法的视觉推理提供可落地路径。</p>
+  <p class="score">评分: 7.7</p>
+</article>
+
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 排序）</h2>
+<table>
+  <thead>
+    <tr><th>项目</th><th>描述</th><th>今日⭐</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="https://github.com/morluto/rea">morluto/rea</a></td><td>用 Agent 逆向工程任何东西，从应用行为到原生二进制</td><td>+45,327</td></tr>
+    <tr><td><a href="https://github.com/storytold/artcraft">storytold/artcraft</a></td><td>面向艺术家、设计师和电影人的意向性创作引擎</td><td>+4,095</td></tr>
+    <tr><td><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></td><td>面向 Claude Code/Codex/Copilot 的编辑级图表设计，44 种类型</td><td>+2,081</td></tr>
+    <tr><td><a href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a></td><td>浏览器里的间谍卫星模拟器，基于真实数据的 3D 地球空间情报</td><td>+1,895</td></tr>
+    <tr><td><a href="https://github.com/lyogavin/airllm">lyogavin/airllm</a></td><td>单张 4GB GPU 推理 2.8T 参数 LLM</td><td>+879</td></tr>
+    <tr><td><a href="https://github.com/Alishahryar1/free-claude-code">Alishahryar1/free-claude-code</a></td><td>免费使用 Claude Code/Codex/Pi 等多 harness（1.3B+ 免费 token）</td><td>+626</td></tr>
+    <tr><td><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></td><td>AI 编码 Agent 上下文窗口优化，沙箱化工具输出（98% 压缩）+ 会话记忆</td><td>+246</td></tr>
+    <tr><td><a href="https://github.com/open-webui/open-webui">open-webui/open-webui</a></td><td>用户友好 AI 界面（支持 Ollama、OpenAI API 等）</td><td>+157</td></tr>
+    <tr><td><a href="https://github.com/microsoft/BitNet">microsoft/BitNet</a></td><td>微软官方 1-bit LLM 推理框架</td><td>+97</td></tr>
+  </tbody>
+</table>
+
+<h2>📊 主题观察</h2>
+<p>今日 arXiv 论文集中在四大方向：</p>
+<ol>
+  <li><strong>具身智能与 3D 资产物理化</strong>：Artisan 多 Agent 流水线把铰接 3D 资产从「外观」推向「物理功能」、Splat2Act 用建筑尺度数字孪生实现 VLA 场景级个性化——具身智能从「能看」走向「可物理交互、可部署到真实家庭」。</li>
+  <li><strong>VLA 适配与部署鲁棒性</strong>：Noise Space Learning 将 VLA 适配形式化为噪声空间通用接口、Chronos Policy 让策略显式理解物理时间——低成本、抗时延的安全适配成为落地关键。</li>
+  <li><strong>Agent 自我改进与安全评估</strong>：RSI-Anything 用世界模型驱动递归自我改进、AI Models Can Provably Hide 证明模型可隐藏任意能力、RATED 可靠性感知工具检索——Agent 能力进化与安全风险并存，评估体系面临根本性挑战。</li>
+  <li><strong>生成模型机理与跨模态推理</strong>：InstantFusion 揭示异构图像生成器的跨模型潜在兼容性、SFG 抑制 MMDiT 图像→文本反馈、GenVerOpt 统一视觉非语言推理——对生成与推理内部机理的理解持续深化。</li>
+</ol>
+<p>GitHub 趋势：<strong>Agent 逆向工程与创作工具生态持续爆发</strong>——morluto/rea（用 Agent 逆向工程任何东西）单日 +45,327 一骑绝尘继续领跑，storytold/artcraft（创作引擎）+4,095、cathrynlavery/diagram-design（编辑级图表）+2,081 双双强势。空间情报（gods-eye-view +1,895）、LLM 推理降本（airllm 单 4GB GPU 跑 2.8T +879、微软 BitNet 1-bit 推理 +97）、多 harness 免费编码（free-claude-code +626）、上下文优化（context-mode +246）集体上榜，显示 AI 编码工具竞争全面转向「Agent 能力 + 成本效率 + 可复用技能」生态。</p>
+
+<footer>
+  本简报由自动化流程生成，论文数据来自 arXiv API，GitHub 数据来自 trending 页面。
+</footer>
+</body>
+</html>

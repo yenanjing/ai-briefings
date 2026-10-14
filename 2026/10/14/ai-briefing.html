@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-10-14</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; color: #1f2937; background: #fafafa; line-height: 1.7; }
+  h1 { color: #111827; border-bottom: 3px solid #6366f1; padding-bottom: 12px; }
+  h2 { color: #4338ca; margin-top: 36px; border-left: 4px solid #6366f1; padding-left: 12px; }
+  h3 { color: #1e3a8a; margin-top: 24px; }
+  .meta { color: #6b7280; font-size: 0.9em; margin-bottom: 24px; }
+  .paper { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .field { margin: 4px 0; }
+  .summary { color: #374151; margin-top: 10px; text-align: justify; }
+  .score { color: #6366f1; font-weight: bold; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.92em; }
+  th { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #4338ca; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 40px; color: #9ca3af; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>AI 研究简报 2026-10-14</h1>
+<div class="meta">
+  数据来源：arXiv（cs.LG / cs.CL / stat.ML / cs.RO / cs.NE 成功；cs.AI / cs.CV 限流，cs.AI 由 RSS 兜底补充 310 篇） + GitHub Trending<br>
+  论文日期：2026-10-09 至 2026-10-12（混合）<br>
+  在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/10/14/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/10/14/ai-briefing.html</a>
+</div>
+
+<h2>📚 Top 12 arXiv 论文</h2>
+
+<article class="paper">
+  <h3>1🌟 SEEK: Agentic Knowledge Graph Retrieval for Secure Code Generation</h3>
+  <p class="field"><strong>作者:</strong> Varun Gadey, Markus Tohn, Lichao Wu, Ahmad-Reza Sadeghi, Alexandra Dmitrienko</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.14968">2610.14968</a></p>
+  <p class="field"><strong>分类:</strong> cs.CR / cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 用知识图谱智能体检索在代码生成前主动修复安全漏洞。</p>
+  <p class="summary">LLM 能生成功能正确的代码却引入可利用的安全弱点，尤其在开发者未明确安全需求时。现有方法用外部安全知识但依赖扁平相似度检索，难以推断相关漏洞空间。SEEK 用知识图谱结构化地检索针对性安全知识，在代码生成前主动填补安全空白。在 CodeGuard+ 和 CybeREx 的 OOD 评估中，跨 5 个开源 LLM 均显著提升代码安全性。</p>
+  <p class="score">评分: 9.22</p>
+</article>
+
+<article class="paper">
+  <h3>2🌟 Think Before You Speak: Enabling Training-Free Latent Communication Between Language Models</h3>
+  <p class="field"><strong>作者:</strong> Rishi Khare</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.16165">2610.16165</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL / cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 无需训练，直接在语言模型间共享 KV cache，绕过文本瓶颈。</p>
+  <p class="summary">多智能体系统中 LLM 传统上通过文本交换通信，存在信息瓶颈和下游 agent 的 prefill 延迟。本文提出无需训练的潜在通信机制，直接在语言模型之间共享 KV cache，绕过文本瓶颈，实现更高效的 agent 协作，为多 agent 系统通信范式带来根本性改进。</p>
+  <p class="score">评分: 8.74</p>
+</article>
+
+<article class="paper">
+  <h3>3🌟 Phantom Merge: When Your Large Language Model Agents Pick One but Tell You About Another</h3>
+  <p class="field"><strong>作者:</strong> Wangshu Zhu, Qianwen Guo, Yushun Dong</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.16141">2610.16141</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI / cs.CL</p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/LabRAI/PhantomMerge">github.com/LabRAI/PhantomMerge</a></p>
+  <p class="field"><strong>核心创新:</strong> 识别并形式化 LLM agent 的实体-证据绑定失败新失效模式。</p>
+  <p class="summary">LLM agent 在多实体场景下需要保留证据与正确实体的关联。本文识别 Phantom Merge（PM）——agent 将不支持的声明错误归因到其承诺的实体上，即使任务本身完成正确。在 claim 级别形式化 PM，表征其在四个 agent 领域的普遍性和错误子类型，并提出实体感知约束声明校正方法。</p>
+  <p class="score">评分: 8.69</p>
+</article>
+
+<article class="paper">
+  <h3>4🌟 Training-Free Multi-Agent Cooperative Embodied Search from Uncertain Vision-Language Priors</h3>
+  <p class="field"><strong>作者:</strong> Fan Pu, Keshu Wu, Jiwan Jiang, Shiyu Shen, Zhiwen Fan et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.15038">2610.15038</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO / math.OC</p>
+  <p class="field"><strong>核心创新:</strong> 轻量级、无需训练、不确定性感知多智能体多目标搜索框架。</p>
+  <p class="summary">真实世界 VLN 要求 agent 在部分可观测下行动——地图结构、语义线索、目标位置可能不完整或被基础模型错误推断。本文提出轻量级、无需训练、不确定性感知的协作多 agent 多目标搜索框架，将高层语义推理与低层执行分离，在地图缺失环境中实现协作搜索，利用 VLM 先验但不依赖端到端导航策略学习。</p>
+  <p class="score">评分: 8.54</p>
+</article>
+
+<article class="paper">
+  <h3>5🌟 CoFlu-Brain: An fMRI Connectivity Foundation Model with Cofluctuation-Based Pretraining</h3>
+  <p class="field"><strong>作者:</strong> Ziteng Sui, Junfeng Xia, Wenhao Ye, Mo Wang, Quanying Liu</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.15450">2610.15450</a></p>
+  <p class="field"><strong>分类:</strong> cs.NE</p>
+  <p class="field"><strong>核心创新:</strong> 将 fMRI 连接组学提升到基础模型级别，捕捉帧级动态变异。</p>
+  <p class="summary">传统 fMRI 功能连接（FC）分析用单一 Pearson 相关矩阵表征每次扫描，忽略了帧级变化。观测到的 FC 矩阵不是固定脑图，而是由有限 BOLD 帧计算的统计估计。CoFlu-Brain 引入共波动预训练机制，捕捉区域交互的动态变异，为脑疾病诊断和脑功能解码提供新范式。</p>
+  <p class="score">评分: 8.49</p>
+</article>
+
+<article class="paper">
+  <h3>6🌟 Metric-Driven Reinforcement Learning for Object Hallucination Reduction in LVLM-Based Image Captioning</h3>
+  <p class="field"><strong>作者:</strong> Thanh Nguyen, Hee Suk Yoon, Tung Minh Luu, Eunseop Yoon, Chang D. Yoo</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.14976">2610.14976</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV / cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 度量驱动 RL 框架减少 LVLM 对象幻觉，无需昂贵人工参与。</p>
+  <p class="summary">LVLM 在图像描述中常产生对象幻觉（描述不存在的实体）。先前方法包括数据集增强监督训练和 RLHF，但依赖昂贵人工参与，限制可扩展性。本文提出度量驱动的强化学习框架，用图像-文本对齐度量作为奖励信号，在保持描述质量的同时显著降低幻觉率。</p>
+  <p class="score">评分: 8.08</p>
+</article>
+
+<article class="paper">
+  <h3>7🌟 Query Your Way Out: Benchmarking Multi-Turn Knowledge Reasoning through Generalized Puzzle Solving</h3>
+  <p class="field"><strong>作者:</strong> Xin Cheng, Junming Yang, Ning Xu</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.16133">2610.16133</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL / cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 泛化谜题求解评估 LLM 多轮知识推理的主动探测能力。</p>
+  <p class="summary">谜题为 LLM 推理提供天然测试床，但现有基准聚焦窄环境、刚性机制。本文引入 Active Probing Benchmark (APB)，将概念识别泛化为交互式推理任务，评估 LLM 在多轮知识推理中的主动探测能力。发现反直觉现象：多数开源推理模型显著弱于其标准指令对应版本。</p>
+  <p class="score">评分: 7.91</p>
+</article>
+
+<article class="paper">
+  <h3>8🌟 A Multi-Agent LLM System for Automated Tuning of Specialized Neural Network Models</h3>
+  <p class="field"><strong>作者:</strong> Ivan Moloshnikov, Dmitry Kunitsyn, Alexander Sboev, Maksim Skorokhodov, Roman Rybka et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.13663">2610.13663</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI / cs.CL / cs.LG / cs.MA / cs.NE</p>
+  <p class="field"><strong>核心创新:</strong> 多 agent LLM 框架自动调优神经网络组件，跨模型可迁移。</p>
+  <p class="summary">机器学习方法通常是两层的：专家选方法类，类内组件选择关键且通常手动。本文提出可跨不同模型迁移的多 agent LLM 框架，三角色（分析师、编码者、记录员）配合实验日志和沙盒执行环境，自动调优神经网络组件，无需人工干预即可跨模型迁移调优经验。</p>
+  <p class="score">评分: 7.91</p>
+</article>
+
+<article class="paper">
+  <h3>9🌟 EnactOpt: Diagnosis-Guided Harness Evolution for Embodied Agents</h3>
+  <p class="field"><strong>作者:</strong> ZhiYuan Feng, Zhuoshi Pan, Zhaolu Kang, Zhongxia Chen, Shuo Yang et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.14977">2610.14977</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 诊断引导的 harness 进化，不更新模型参数即可优化具身 agent。</p>
+  <p class="summary">具身 agent 的失败不仅源于模型能力有限，还源于执行 harness 如何组织证据和引导使用。这些模型外部机制提供适配目标但任务级交互经验收集昂贵。EnactOpt 通过诊断引导的 harness 进化，在不更新模型参数的情况下，用任务级交互经验自动优化 harness，降低人工调优成本。</p>
+  <p class="score">评分: 7.89</p>
+</article>
+
+<article class="paper">
+  <h3>10🌟 FENAS: A Few-Shot Meta-Ensembling Framework for Efficient Neural Architecture Search with Synergized Zero-Cost Proxies</h3>
+  <p class="field"><strong>作者:</strong> Yifeng Mao, Yuze Feng, Yutong Shen, Liyang Gao, Zhixiang He</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.15307">2610.15307</a></p>
+  <p class="field"><strong>分类:</strong> cs.LG / cs.LO / cs.NE</p>
+  <p class="field"><strong>核心创新:</strong> 少样本元集成框架协同多个零成本代理，提升 NAS 稳定性。</p>
+  <p class="summary">高效神经架构搜索（NAS）需要在有限评估预算下准确估计性能。现有零成本代理（ZCP）只捕捉架构的部分属性，跨数据集排名不稳定。GNN 预测器虽提升精度但依赖标记架构和昂贵表示学习。FENAS 用少样本元集成框架协同多个 ZCP，在不依赖昂贵 GNN 的情况下提升搜索稳定性。</p>
+  <p class="score">评分: 7.82</p>
+</article>
+
+<article class="paper">
+  <h3>11🌟 FoundationVIO: Enforcing Metric Scale in Feed-forward Visual-Inertial Odometry</h3>
+  <p class="field"><strong>作者:</strong> Jin Rhee, Yuhao Zhang, Frank Dellaert, Maurice Fallon</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.14951">2610.14951</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/ori-drs/FoundationVIO">github.com/ori-drs/FoundationVIO</a></p>
+  <p class="field"><strong>核心创新:</strong> 前馈视觉惯性里程计强制物理尺度，消费级笔记本 GPU 可运行。</p>
+  <p class="summary">前馈几何基础模型（GFM）直接从图像批次预测密集几何和相机位姿，但存在尺度模糊问题——独立预测局部一致但无物理测量约束。FoundationVIO 将连续 GFM 批次链接成密集点云地图，通过视觉惯性里程计强制物理尺度约束，在消费级笔记本 GPU 上运行，作者含 Frank Dellaert（Georgia Tech / NVIDIA）与 Maurice Fallon（Oxford）。</p>
+  <p class="score">评分: 7.82</p>
+</article>
+
+<article class="paper">
+  <h3>12🌟 CFG-Policy: Unified Diffusion Policy Learning Framework via Classifier-free Guidance</h3>
+  <p class="field"><strong>作者:</strong> Shutong Ding, Zhaoyang Liu, Yimiao Zhou, Jingya Wang, Jiayuan Gu et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.14936">2610.14936</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO / cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 借鉴 classifier-free guidance 统一扩散策略学习，保持探索能力。</p>
+  <p class="summary">扩散策略在机器人控制、VLA 模型和世界模型 agent 中广泛应用，其多模态动作分布为 RL 探索提供丰富机会。但 RL 优化会降低行为多样性并限制探索能力，直接微调预训练策略还会破坏其已获能力。CFG-Policy 借鉴图像生成中的 classifier-free guidance，提出统一框架在 RL 后训练中保持扩散策略的探索能力。</p>
+  <p class="score">评分: 7.80</p>
+</article>
+
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 排序）</h2>
+<table>
+  <thead>
+    <tr><th>项目</th><th>描述</th><th>今日⭐</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="https://github.com/morluto/rea">morluto/rea</a></td><td>用 Agent 逆向工程任何东西，从应用行为到原生二进制</td><td>+54,679</td></tr>
+    <tr><td><a href="https://github.com/storytold/artcraft">storytold/artcraft</a></td><td>面向艺术家、设计师和电影人的意向性创作引擎</td><td>+4,081</td></tr>
+    <tr><td><a href="https://github.com/bilawalsidhu/gods-eye-view">bilawalsidhu/gods-eye-view</a></td><td>浏览器里的间谍卫星模拟器，基于真实数据的 3D 地球空间情报</td><td>+1,961</td></tr>
+    <tr><td><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a></td><td>面向 Claude Code/Codex/Copilot 的编辑级图表设计，44 种类型</td><td>+1,815</td></tr>
+    <tr><td><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></td><td>开源本地 ElevenLabs 替代品，语音克隆/设计/配音/转录，646 种语言</td><td>+1,748</td></tr>
+    <tr><td><a href="https://github.com/xtool-org/xtool">xtool-org/xtool</a></td><td>跨平台 Xcode 替代品，Linux/Windows/macOS 上用 SwiftPM 构建 iOS 应用</td><td>+1,198</td></tr>
+    <tr><td><a href="https://github.com/lyogavin/airllm">lyogavin/airllm</a></td><td>单张 4GB GPU 推理 2.8T 参数 LLM</td><td>+1,001</td></tr>
+    <tr><td><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></td><td>AI 编码 Agent 上下文窗口优化，沙箱化工具输出（98% 压缩）+ 会话记忆</td><td>+969</td></tr>
+    <tr><td><a href="https://github.com/vercel-labs/skills">vercel-labs/skills</a></td><td>开放 Agent 技能工具 - npx skills</td><td>+190</td></tr>
+  </tbody>
+</table>
+
+<h2>📊 主题观察</h2>
+<p>今日 arXiv 论文集中在四大方向：</p>
+<ol>
+  <li><strong>Agent 安全与可靠性</strong>：SEEK 用知识图谱智能体检索修复代码安全漏洞、Phantom Merge 揭示 agent 实体-证据绑定失败的新失效模式、EnactOpt 通过诊断引导的 harness 进化提升具身 agent 可靠性——Agent 安全从「事后检测」走向「事前预防 + 过程诊断」。</li>
+  <li><strong>多智能体协作与通信</strong>：Think Before You Speak 提出无需训练的 KV cache 潜在通信绕过文本瓶颈、多 agent 协作具身搜索在不确定 VLM 先验下实现无地图导航、多 agent LLM 系统自动调优神经网络——多 agent 系统的通信效率和协作能力持续提升。</li>
+  <li><strong>基础模型与具身智能</strong>：CoFlu-Brain 将 fMRI 连接组学提升到基础模型级别、FoundationVIO 强制前馈视觉惯性里程计的物理尺度、CFG-Policy 统一扩散策略学习保持探索能力——基础模型向跨模态、跨领域、物理化方向深化。</li>
+  <li><strong>推理与基准</strong>：Query Your Way Out 泛化谜题求解评估多轮知识推理、Metric-Driven RL 减少 LVLM 对象幻觉、FENAS 少样本元集成提升 NAS 稳定性——评估体系与推理能力同步进化。</li>
+</ol>
+<p>GitHub 趋势：<strong>Agent 逆向工程与创作工具生态持续爆发</strong>——morluto/rea（用 Agent 逆向工程任何东西）单日 +54,679 继续一骑绝尘领跑，storytold/artcraft（创作引擎）+4,081、gods-eye-view（空间情报）+1,961、diagram-design（编辑级图表）+1,815 双双强势。VoiceStudio 开源语音 AI +1,748、xtool iOS 跨平台 +1,198、airllm 低资源推理 +1,001、context-mode 上下文优化 +969 集体上榜，显示 Agent 工具链从「能力」向「效率与可及性」深化。</p>
+
+<footer>
+  本简报由自动化流程生成，论文数据来自 arXiv API，GitHub 数据来自 trending 页面。
+</footer>
+</body>
+</html>

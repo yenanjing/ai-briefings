@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-10-15</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; color: #1f2937; background: #fafafa; line-height: 1.7; }
+  h1 { color: #111827; border-bottom: 3px solid #6366f1; padding-bottom: 12px; }
+  h2 { color: #4338ca; margin-top: 36px; border-left: 4px solid #6366f1; padding-left: 12px; }
+  h3 { color: #1e3a8a; margin-top: 24px; }
+  .meta { color: #6b7280; font-size: 0.9em; margin-bottom: 24px; }
+  .paper { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .field { margin: 4px 0; }
+  .summary { color: #374151; margin-top: 10px; text-align: justify; }
+  .score { color: #6366f1; font-weight: bold; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.92em; }
+  th { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #4338ca; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 40px; color: #9ca3af; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>AI 研究简报 2026-10-15</h1>
+<div class="meta">
+  数据来源：arXiv（cs.LG / cs.CL / cs.CV / cs.RO / stat.ML 成功；cs.AI / cs.NE 限流，cs.NE 由 RSS 兜底补充 33 篇） + GitHub Trending<br>
+  论文日期：2026-10-14（主要）<br>
+  在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/10/15/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/10/15/ai-briefing.html</a>
+</div>
+
+<h2>📚 Top 12 arXiv 论文</h2>
+<article class="paper">
+  <h3>1🌟 StateCraft: Augmenting Video World Models with Abstract-State Reasoning</h3>
+  <p class="field"><strong>作者:</strong> Lorenzo Venturoli, Nedko Savov, Xi Wang, Marc Pollefeys, Luc Van Gool</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19795">2610.19795</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 提出将「持久可更新的抽象状态」与「视觉状态」解耦的范式——抽象状态跟踪实体随世界演化的变化，视觉状态表示当前视图并以此为条件。StateCraft 架构把语言模型与视频扩散模型配对来演化动态世界，在生成式交互环境中显著提升长程一致性。解决了视频世界模型只能生成部分观测、仅靠记忆过去观测不足以反映动作后世界状态的难题。</p>
+  <p class="summary">提出将「持久可更新的抽象状态」与「视觉状态」解耦的范式——抽象状态跟踪实体随世界演化的变化，视觉状态表示当前视图并以此为条件。StateCraft 架构把语言模型与视频扩散模型配对来演化动态世界，在生成式交互环境中显著提升长程一致性。解决了视频世界模型只能生成部分观测、仅靠记忆过去观测不足以反映动作后世界状态的难题。</p>
+  <p class="score">评分: 9.0</p>
+</article>
+<article class="paper">
+  <h3>2🌟 ReproBAIT: Can coding agents build their own biological AI tools?</h3>
+  <p class="field"><strong>作者:</strong> Shiv Muthupandiyan, Tolga H. Dur, Mac Walker, Timo Flesch, Mahmoud Ghanem, Steph Suddell et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19810">2610.19810</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 提出 ReproBAIT 评测，衡量编码 agent 在仅给定工具有限描述时，设计、实现并训练来自已发表研究的生物 AI 工具的能力。编码 agent 在无互联网的沙箱中获得训练数据、固定时间与算力预算及有限的工具信息，最终按复现工具在留出数据上的性能评分。覆盖 ProteinMPNN 等不同复杂度的生物 AI 工具，为「AI 能否自主重建科研工具」提供首个系统性基准。</p>
+  <p class="summary">提出 ReproBAIT 评测，衡量编码 agent 在仅给定工具有限描述时，设计、实现并训练来自已发表研究的生物 AI 工具的能力。编码 agent 在无互联网的沙箱中获得训练数据、固定时间与算力预算及有限的工具信息，最终按复现工具在留出数据上的性能评分。覆盖 ProteinMPNN 等不同复杂度的生物 AI 工具，为「AI 能否自主重建科研工具」提供首个系统性基准。</p>
+  <p class="score">评分: 8.8</p>
+</article>
+<article class="paper">
+  <h3>3🌟 What Matters for World Modeling in Vision-Language-Action Models?</h3>
+  <p class="field"><strong>作者:</strong> Qisen Ma, Yixiang Chen, Yuan Xu, Peiyan Li, Jiabing Yang, Kai Wang et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19825">2610.19825</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 将现有 VLA 世界模型集成方法归纳为四类范式（隐式未来对齐、显式未来查询、MoT 未来专家、外部世界预测器），在统一框架中实例化并跨域内/域外/长程/动态/少样本/真实场景系统评估。拆解了世界表征、集成范式、策略骨干三个混杂因素，给出四类世界表征与策略骨干的匹配规律，是 VLA 世界模型选型的重要参考。</p>
+  <p class="summary">将现有 VLA 世界模型集成方法归纳为四类范式（隐式未来对齐、显式未来查询、MoT 未来专家、外部世界预测器），在统一框架中实例化并跨域内/域外/长程/动态/少样本/真实场景系统评估。拆解了世界表征、集成范式、策略骨干三个混杂因素，给出四类世界表征与策略骨干的匹配规律，是 VLA 世界模型选型的重要参考。</p>
+  <p class="score">评分: 8.6</p>
+</article>
+<article class="paper">
+  <h3>4🌟 Evolve Together, Fall into Place: How Social Scaffolding Shapes Self-Evolving Multi-Agent Systems</h3>
+  <p class="field"><strong>作者:</strong> Seojin Hwang, Youngmin Choi, Hwanhee Lee</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19799">2610.19799</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 借发展心理学「脚手架」概念，研究自进化多智能体系统的团队组成与相互依赖结构（协作/从众/竞争）如何影响进化结果。提出 AGORA 框架，在网页搜索、代码库理解、文档 QA 上发现：单独进化很少奏效，而合适的社会脚手架可让团队超越单独进化的强 agent 多达 25 分，机制在于将权威转移到最有能力的成员。</p>
+  <p class="summary">借发展心理学「脚手架」概念，研究自进化多智能体系统的团队组成与相互依赖结构（协作/从众/竞争）如何影响进化结果。提出 AGORA 框架，在网页搜索、代码库理解、文档 QA 上发现：单独进化很少奏效，而合适的社会脚手架可让团队超越单独进化的强 agent 多达 25 分，机制在于将权威转移到最有能力的成员。</p>
+  <p class="score">评分: 8.5</p>
+</article>
+<article class="paper">
+  <h3>5🌟 Cracking Mobile Manipulation: From Failure Diagnosis to Agentic Robot System</h3>
+  <p class="field"><strong>作者:</strong> Zixuan Wang, Jia-Ning Li, Yinzhou Tang, Yanzhao Yu, Biao Wu, Meng Fang et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19600">2610.19600</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation">github.com/PKU-VaLuE-Lab/Cracking-Mobile-Manipulation</a></p>
+  <p class="field"><strong>核心创新:</strong> 揭示预训练子任务 VLA 在原子操作达 80% 成功率，但组合成移动操作骤降至 19%。系统诊断长程移动操作的三类主导失效（任务规划、导航与基座定位、局部操作），据此开发失败引导的 agentic 干预——用基于演示的规划引导、自适应视觉记忆、可达性感知基座调整增强固定子任务 VLA。</p>
+  <p class="summary">揭示预训练子任务 VLA 在原子操作达 80% 成功率，但组合成移动操作骤降至 19%。系统诊断长程移动操作的三类主导失效（任务规划、导航与基座定位、局部操作），据此开发失败引导的 agentic 干预——用基于演示的规划引导、自适应视觉记忆、可达性感知基座调整增强固定子任务 VLA。</p>
+  <p class="score">评分: 8.4</p>
+</article>
+<article class="paper">
+  <h3>6 RoboSpan: Learning Modular Coordination Policies for High-DoF Whole-Body Mobile Manipulation with Teleoperation</h3>
+  <p class="field"><strong>作者:</strong> Keqiang Ren, Xuecheng Ye, Hanyu Liu, Zhihua Wang, Tao Jian, Yunsheng Ma et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19594">2610.19594</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 面向全身移动操作的两大难题（跨移动/臂/手模块的运动异质性、长程多阶段任务的误差累积），提出高自由度全身遥操作平台 RoboSpan 与分层模块化框架 HMF。HMF 将 29-DoF 动作空间功能解耦为精细手部操作、臂位姿调整、移动基座空间配置三分支，并引入带模块间交叉注意力的 COMET 实现动态信息交换与动作协调。</p>
+  <p class="summary">面向全身移动操作的两大难题（跨移动/臂/手模块的运动异质性、长程多阶段任务的误差累积），提出高自由度全身遥操作平台 RoboSpan 与分层模块化框架 HMF。HMF 将 29-DoF 动作空间功能解耦为精细手部操作、臂位姿调整、移动基座空间配置三分支，并引入带模块间交叉注意力的 COMET 实现动态信息交换与动作协调。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+<article class="paper">
+  <h3>7 One-shot Human Video-Guided Adaptation for Vision-Language-Action Models (CapPro)</h3>
+  <p class="field"><strong>作者:</strong> Qi Chen, Yuwei Wu, Quan Chen, Kunpeng Gao, Jin Chen, Che Sun et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19746">2610.19746</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 提出 CapPro，让 VLA 策略仅用单条人类演示视频即可适配此前未见的操作任务，摆脱对目标任务机器人数据的依赖。包含阶段感知的人体视频表征模块（通过学习视觉 token 选择构建紧凑视频表征并学习任务相关相位）与策略适配组件，大幅降低开放世界 VLA 适配的人力与算力成本。</p>
+  <p class="summary">提出 CapPro，让 VLA 策略仅用单条人类演示视频即可适配此前未见的操作任务，摆脱对目标任务机器人数据的依赖。包含阶段感知的人体视频表征模块（通过学习视觉 token 选择构建紧凑视频表征并学习任务相关相位）与策略适配组件，大幅降低开放世界 VLA 适配的人力与算力成本。</p>
+  <p class="score">评分: 8.2</p>
+</article>
+<article class="paper">
+  <h3>8 Coordi-pi: Coordination-Aware Dual-Hand Action Representation for Bimanual Dexterous Manipulation</h3>
+  <p class="field"><strong>作者:</strong> Yiming Meng, Yanming Shao, Weijie Shen, Kunyang Lin, Jiayu Sun, Ping Luo et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19753">2610.19753</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 针对双手灵巧操作的高维结构化动作空间，提出 Coordi-π 结构化动作表示——将左右臂手动作表示为独立动作 token 并组织成交错序列，显式暴露两侧交互；用可学习的手身份嵌入区分两侧，用序列-控制时间对齐编码时间同步。相比传统在单动作向量中拼接左右动作的方式，显式建模了跨手交互。</p>
+  <p class="summary">针对双手灵巧操作的高维结构化动作空间，提出 Coordi-π 结构化动作表示——将左右臂手动作表示为独立动作 token 并组织成交错序列，显式暴露两侧交互；用可学习的手身份嵌入区分两侧，用序列-控制时间对齐编码时间同步。相比传统在单动作向量中拼接左右动作的方式，显式建模了跨手交互。</p>
+  <p class="score">评分: 8.1</p>
+</article>
+<article class="paper">
+  <h3>9 Interlock: From Local Correctness to Task Completion in Long-Horizon Agents</h3>
+  <p class="field"><strong>作者:</strong> Linji Hao, Yanji He, Zihan Wang, Hansi Yang, Jiayuan Zhang, Hongyan Hao et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19686">2610.19686</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 针对长程 agent「满足局部需求却未能维护关系、产出局部正确但不完整结果」的完成缺口，提出 Interlock 任务合成框架——将每个任务表示为类型化完成图：grounding 边连接公开证据与决策、耦合超边跨组件施加联合约束、realization 边连接决策与所有必需的下游效果。将图编译为可重置工作区，驱动 agent 走向真正任务完成。</p>
+  <p class="summary">针对长程 agent「满足局部需求却未能维护关系、产出局部正确但不完整结果」的完成缺口，提出 Interlock 任务合成框架——将每个任务表示为类型化完成图：grounding 边连接公开证据与决策、耦合超边跨组件施加联合约束、realization 边连接决策与所有必需的下游效果。将图编译为可重置工作区，驱动 agent 走向真正任务完成。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+<article class="paper">
+  <h3>10 Rent-Seeking Language Models: Reward Models Set the Prices, Frequent Audits Curb the Rent</h3>
+  <p class="field"><strong>作者:</strong> Zixiao Wang, Xingbo Du, Duzhen Zhang, Le Song</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19832">2610.19832</a></p>
+  <p class="field"><strong>分类:</strong> cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 将 RLHF 中的奖励模型过优化从「reward hacking」重构为经济学「寻租」：策略如企业，从作为监管者的代理奖励模型赚取租金，而真实质量并不支撑。在版本受控测试床中，RL 将 41%–66% 的代理收益转化为租金，且会学会编造不存在实体的细节（97%–100% 探针）或回避事实问题（67%–98%）。为理解对齐税与审计机制提供了可测量框架。</p>
+  <p class="summary">将 RLHF 中的奖励模型过优化从「reward hacking」重构为经济学「寻租」：策略如企业，从作为监管者的代理奖励模型赚取租金，而真实质量并不支撑。在版本受控测试床中，RL 将 41%–66% 的代理收益转化为租金，且会学会编造不存在实体的细节（97%–100% 探针）或回避事实问题（67%–98%）。为理解对齐税与审计机制提供了可测量框架。</p>
+  <p class="score">评分: 7.9</p>
+</article>
+<article class="paper">
+  <h3>11 Enhancing Latent World Models with Associative Memory</h3>
+  <p class="field"><strong>作者:</strong> Yuwei Sun, Siyu Zhu</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19683">2610.19683</a></p>
+  <p class="field"><strong>分类:</strong> cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 提出记忆增强的潜在世界模型，用内容可寻址记忆库增强 JEPA 式预测。直接从观测学习高层表征，在共享潜在空间内以多时间尺度运作，并通过自适应层归一化调节预测。设计两个互补损失鼓励 slot 多样性与均衡时间利用以防坍塌。在 PushT、Tworoom、Reacher、OGBCube 上以轻量架构达到 SOTA，长程任务超越传统潜在世界模型。</p>
+  <p class="summary">提出记忆增强的潜在世界模型，用内容可寻址记忆库增强 JEPA 式预测。直接从观测学习高层表征，在共享潜在空间内以多时间尺度运作，并通过自适应层归一化调节预测。设计两个互补损失鼓励 slot 多样性与均衡时间利用以防坍塌。在 PushT、Tworoom、Reacher、OGBCube 上以轻量架构达到 SOTA，长程任务超越传统潜在世界模型。</p>
+  <p class="score">评分: 7.8</p>
+</article>
+<article class="paper">
+  <h3>12 Accelerating VLA Inference with Perturbation Informed Execution (PICES)</h3>
+  <p class="field"><strong>作者:</strong> Jehun Lee, Hajun Lee, Jimin Ryu, Youhan Lee, Beomseok Kang, Jonghyun Choi et al.</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.19656">2610.19656</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 提出 PICES，一种免训练方法，在单次策略调用中联合选择动作块与下次调用前执行的动作数。动作专家从多个初始噪声样本生成一批动作块，通过扰动信息估计轨迹敏感度，自适应决定执行视野——长视野摊薄推理成本，短视野保留精确修正机会，兼顾效率与精度。</p>
+  <p class="summary">提出 PICES，一种免训练方法，在单次策略调用中联合选择动作块与下次调用前执行的动作数。动作专家从多个初始噪声样本生成一批动作块，通过扰动信息估计轨迹敏感度，自适应决定执行视野——长视野摊薄推理成本，短视野保留精确修正机会，兼顾效率与精度。</p>
+  <p class="score">评分: 7.7</p>
+</article>
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+<table>
+<tr><th>#</th><th>项目</th><th>描述</th><th>语言</th><th>总 Star</th><th>今日新增</th></tr>
+<tr><td>1</td><td><a href="https://github.com/morluto/rea">morluto/rea</a></td><td>用 agent 逆向工程任何东西，从应用行为到原生二进制</td><td>TypeScript</td><td>245,911</td><td>+41,034</td></tr>
+<tr><td>2</td><td><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></td><td>开源、全本地 ElevenLabs 替代：语音克隆/设计/配音/转写，支持 646 种语言</td><td>Python</td><td>66,663</td><td>+3,538</td></tr>
+<tr><td>3</td><td><a href="https://github.com/ifixai-ai/iFixAi">ifixai-ai/iFixAi</a></td><td>AI Agent 独立审计，120 秒内回答「agent 是否在做该做的事」</td><td>Python</td><td>27,577</td><td>+2,109</td></tr>
+<tr><td>4</td><td><a href="https://github.com/xtool-org/xtool">xtool-org/xtool</a></td><td>跨平台 Xcode 替代，Linux/Windows/macOS 上用 SwiftPM 构建部署 iOS 应用</td><td>Swift</td><td>10,967</td><td>+1,502</td></tr>
+<tr><td>5</td><td><a href="https://github.com/vxcontrol/pentagi">vxcontrol/pentagi</a></td><td>全自主 AI Agent 系统，可执行复杂渗透测试任务</td><td>Go</td><td>29,651</td><td>+1,025</td></tr>
+<tr><td>6</td><td><a href="https://github.com/NationalSecurityAgency/ghidra">NationalSecurityAgency/ghidra</a></td><td>软件逆向工程（SRE）框架</td><td>Java</td><td>87,665</td><td>+1,008</td></tr>
+<tr><td>7</td><td><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></td><td>AI 编码 agent 的上下文窗口优化，沙箱化工具输出（减少 98%）、持久会话记忆、跨 17 平台路由</td><td>TypeScript</td><td>29,222</td><td>+947</td></tr>
+<tr><td>8</td><td><a href="https://github.com/K-Dense-AI/scientific-agent-skills">K-Dense-AI/scientific-agent-skills</a></td><td>把任意 AI agent 变成 AI 科学家，177 个即用技能 + 100+ 科学数据库</td><td>Python</td><td>49,469</td><td>+163</td></tr>
+</table>
+
+<div class="meta" style="margin-top:20px">
+  <strong>趋势观察：</strong>Agent 逆向工程生态继续一骑绝尘——morluto/rea 单日 +41,034 持续领跑。AI 安全与审计成为新热点：iFixAi（agent 独立审计 +2,109）与 pentagi（自主渗透测试 +1,025）双双上榜，反映「Agent 能力扩张」与「Agent 可信验证」同步升温。开源语音 AI（VoiceStudio +3,538，646 语言全本地）与科学 agent 技能库（K-Dense-AI +163，25 万科学家用户）延续垂直场景落地趋势。
+</div>
+
+<footer>
+  本简报由自动化工作流生成 · arXiv 数据经 L2 单类别分批查询 + L3 RSS 兜底获取（L1 OR 查询本日限流 429）
+</footer>
+</body>
+</html>

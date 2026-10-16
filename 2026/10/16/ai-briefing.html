@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-10-16</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; color: #1f2937; background: #fafafa; line-height: 1.7; }
+  h1 { color: #111827; border-bottom: 3px solid #6366f1; padding-bottom: 12px; }
+  h2 { color: #4338ca; margin-top: 36px; border-left: 4px solid #6366f1; padding-left: 12px; }
+  h3 { color: #1e3a8a; margin-top: 24px; }
+  .meta { color: #6b7280; font-size: 0.9em; margin-bottom: 24px; }
+  .paper { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .field { margin: 4px 0; }
+  .summary { color: #374151; margin-top: 10px; text-align: justify; }
+  .score { color: #6366f1; font-weight: bold; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.92em; }
+  th { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #4338ca; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 40px; color: #9ca3af; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>AI 研究简报 2026-10-16</h1>
+<div class="meta">
+  数据来源：arXiv（L2 单类别分批查询：cs.AI/cs.LG/cs.CL/cs.CV/stat.ML/cs.RO 各 25 篇成功，cs.NE 限流） + GitHub Trending<br>
+  论文日期：2026-10-15（主要）<br>
+  在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/10/16/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/10/16/ai-briefing.html</a>
+</div>
+
+<h2>📚 Top 12 arXiv 论文</h2>
+<article class="paper">
+  <h3>1🌟 Qwen-Audio-Jev: A Unified Interface for Audio Decisions</h3>
+  <p class="field"><strong>作者:</strong> Ying Fang, Zhifu Gao, Qing Gu, Jiajun He, Kangqi Jing, Xiangang Li, Yu Pu, Wupeng Wang</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21614">2610.21614</a></p>
+  <p class="field"><strong>分类:</strong> cs.SD</p>
+  <p class="field"><strong>核心创新:</strong> 在 Qwen-Audio-3.1-ASR-Flash-Next 基础上增加专用 Jev 决策头，用 CHOICE/NOUL/SCORE 三种决策原语统一选择、二元判断和评分任务。模型直接输出任务条件化概率分布或数值分数，避免自回归文本生成带来的计算开销和延迟，在 18 个标注配置上覆盖全部三类决策原语。阿里 Qwen 团队在音频大模型方向的最新延伸，把「理解决策」从文本生成范式推向类型化决策读出。</p>
+  <p class="summary">在 Qwen-Audio-3.1-ASR-Flash-Next 基础上增加专用 Jev 决策头，用 CHOICE/NOUL/SCORE 三种决策原语统一选择、二元判断和评分任务。模型直接输出任务条件化概率分布或数值分数，避免自回归文本生成带来的计算开销和延迟，在 18 个标注配置上覆盖全部三类决策原语。阿里 Qwen 团队在音频大模型方向的最新延伸，把「理解决策」从文本生成范式推向类型化决策读出。</p>
+  <p class="score">评分: 9.0</p>
+</article>
+<article class="paper">
+  <h3>2🌟 Reinforcement Learning-driven Diffusion Models: Language, Vision, and Beyond</h3>
+  <p class="field"><strong>作者:</strong> Zhiyuan Ma, Jiabao Wei, Tianyu Wang 等（多机构合作）</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21539">2610.21539</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/MAIR-Lab-HUST/Awesome-RL-for-Diffusion-Models">https://github.com/MAIR-Lab-HUST/Awesome-RL-for-Diffusion-Models</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 首篇 RL 驱动扩散模型的全面综述，提出新技术分类法，将 RL 在扩散模型中的角色从「奖励微调」扩展到经验中心化、目标导向生成的范式重塑。覆盖语言、视觉及跨模态场景，实证分析 RL 如何重塑扩散过程。对想理解「RLHF 范式如何迁移到生成模型」的研究者是必读参考。</p>
+  <p class="summary">首篇 RL 驱动扩散模型的全面综述，提出新技术分类法，将 RL 在扩散模型中的角色从「奖励微调」扩展到经验中心化、目标导向生成的范式重塑。覆盖语言、视觉及跨模态场景，实证分析 RL 如何重塑扩散过程。对想理解「RLHF 范式如何迁移到生成模型」的研究者是必读参考。</p>
+  <p class="score">评分: 8.8</p>
+</article>
+<article class="paper">
+  <h3>3🌟 QREF: Improving DeepSearch Agents by Aligning Search with Reasoning via Query Refinement and Evidence Filtering</h3>
+  <p class="field"><strong>作者:</strong> Yujia Chen, Yuhui Wang, Junzhe Wang, Shihan Dou, Di Liang 等（复旦团队）</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21512">2610.21512</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 即插即用的查询精炼器 + 证据过滤器，解决 DeepSearch Agent 的查询意图错位、约束不足和冗余问题。查询精炼器根据当前推理意图重写查询并确保批次内互补覆盖，证据过滤器保留与当前搜索批次和推理目标相关的证据。先用 SFT 初始化再通过 RL 优化，显著提升复杂信息检索任务的证据覆盖率和检索质量。</p>
+  <p class="summary">即插即用的查询精炼器 + 证据过滤器，解决 DeepSearch Agent 的查询意图错位、约束不足和冗余问题。查询精炼器根据当前推理意图重写查询并确保批次内互补覆盖，证据过滤器保留与当前搜索批次和推理目标相关的证据。先用 SFT 初始化再通过 RL 优化，显著提升复杂信息检索任务的证据覆盖率和检索质量。</p>
+  <p class="score">评分: 8.7</p>
+</article>
+<article class="paper">
+  <h3>4🌟 OPRD: On-Policy Reminder Distillation for Long-Horizon Coding Agents</h3>
+  <p class="field"><strong>作者:</strong> Yuechen Luo, Zhiyi Lai, Miao Ziqi 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21496">2610.21496</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 诊断发现长程编码 Agent 常忽略上下文中已有信息，而最终 Pass/Fail 仅提供稀疏过程监督。提出 On-Policy Reminder Distillation，结合多作用域提醒监督与基于结果的 routing：成功 rollout 提供自回归自模仿目标，失败 rollout 接受教师对相同前缀的 Reminder 条件化 reverse-KL 监督。Global Reminder 将最终测试诊断转化为轨迹级提醒，显著改善长程编码 Agent 的约束保持和工具反馈响应。</p>
+  <p class="summary">诊断发现长程编码 Agent 常忽略上下文中已有信息，而最终 Pass/Fail 仅提供稀疏过程监督。提出 On-Policy Reminder Distillation，结合多作用域提醒监督与基于结果的 routing：成功 rollout 提供自回归自模仿目标，失败 rollout 接受教师对相同前缀的 Reminder 条件化 reverse-KL 监督。Global Reminder 将最终测试诊断转化为轨迹级提醒，显著改善长程编码 Agent 的约束保持和工具反馈响应。</p>
+  <p class="score">评分: 8.6</p>
+</article>
+<article class="paper">
+  <h3>5🌟 Fast-VLA: You Only Think Once for Robot Manipulation</h3>
+  <p class="field"><strong>作者:</strong> Kehong Gong, Guanli Hou, Xiaoxu Zheng 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21389">2610.21389</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 指出 VLA 策略中任务理解变化远慢于机器人状态，却反复重算任务上下文。Fast-VLA 每个 episode 仅调用一次冻结的 4B VLM，将指令和初始视图上下文化为固定多层 KV 任务记忆。执行时轻量级在线 actor 融合时间/臂索引查询与当前视觉和本体感知反馈，从固定记忆检索任务上下文预测动作块，无需重跑基础模型。大幅降低 VLA 部署的计算成本。</p>
+  <p class="summary">指出 VLA 策略中任务理解变化远慢于机器人状态，却反复重算任务上下文。Fast-VLA 每个 episode 仅调用一次冻结的 4B VLM，将指令和初始视图上下文化为固定多层 KV 任务记忆。执行时轻量级在线 actor 融合时间/臂索引查询与当前视觉和本体感知反馈，从固定记忆检索任务上下文预测动作块，无需重跑基础模型。大幅降低 VLA 部署的计算成本。</p>
+  <p class="score">评分: 8.5</p>
+</article>
+<article class="paper">
+  <h3>6🌟 LTM: Latent Transition Based In-Context Memory for Vision-Language-Action Models</h3>
+  <p class="field"><strong>作者:</strong> Qixin Sun, WenLong Gao, Xiansheng Chen 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21362">2610.21362</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 机器人操作常需记忆已不可见的交互。LTM 将历史存储为连续观测间的紧凑潜在转移，实例化于 π₀.₅（LTM-π），使用冻结潜在动作编码器、轻量适配器和因果 KV 缓存实现增量推理，无需记忆特定语义标注或外部推理模型。在 RoboMME 达 58.54%、LIBERO-Mem 达 80.5%，为无外部推理模型基线中最优。消融实验支持转移编码的贡献。</p>
+  <p class="summary">机器人操作常需记忆已不可见的交互。LTM 将历史存储为连续观测间的紧凑潜在转移，实例化于 π₀.₅（LTM-π），使用冻结潜在动作编码器、轻量适配器和因果 KV 缓存实现增量推理，无需记忆特定语义标注或外部推理模型。在 RoboMME 达 58.54%、LIBERO-Mem 达 80.5%，为无外部推理模型基线中最优。消融实验支持转移编码的贡献。</p>
+  <p class="score">评分: 8.4</p>
+</article>
+<article class="paper">
+  <h3>7🌟 CarryOn: A Dual-Loop Harness for Personalized and Reliable Robot Assistance</h3>
+  <p class="field"><strong>作者:</strong> Zixuan Wang, Yuqi Liu, Yuxin Chen 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21453">2610.21453</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 通用 VLA 模型缺乏个性化和可靠执行两大能力。CarryOn 双环 harness 增强冻结 VLA 策略：规划环维持持久用户偏好以将子任务分解落地到个人化方案，执行环提供可解释的安全保证，主动预防危害并从物理失败中优雅恢复。直击 VLA 真实部署的两大痛点，是 harness 工程在机器人领域的典型实践。</p>
+  <p class="summary">通用 VLA 模型缺乏个性化和可靠执行两大能力。CarryOn 双环 harness 增强冻结 VLA 策略：规划环维持持久用户偏好以将子任务分解落地到个人化方案，执行环提供可解释的安全保证，主动预防危害并从物理失败中优雅恢复。直击 VLA 真实部署的两大痛点，是 harness 工程在机器人领域的典型实践。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+<article class="paper">
+  <h3>8🌟 Agent Status Protocol (ASP): A Lightweight Specification for State Reporting in Multi-Agent Systems</h3>
+  <p class="field"><strong>作者:</strong> Diego Gosmar, Deborah A. Dahl, Emmett Coin 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21538">2610.21538</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 为异构 AI Agent 定义轻量级状态上报协议：Agent 通过 HTTP POST 推送小型 JSON 事件，服务器通过 SSE 向观察者暴露聚合状态。关键设计：崩溃/挂起/被攻陷的 Agent 不可信自报，服务器从心跳缺失推断存活，可检测「存活但无进展」的 Agent，并接受来自监督者/护栏/操作者/同伴的观察（部分优先于 Agent 自述）。为多 Agent 系统的可观测性和安全治理提供标准化基础设施。</p>
+  <p class="summary">为异构 AI Agent 定义轻量级状态上报协议：Agent 通过 HTTP POST 推送小型 JSON 事件，服务器通过 SSE 向观察者暴露聚合状态。关键设计：崩溃/挂起/被攻陷的 Agent 不可信自报，服务器从心跳缺失推断存活，可检测「存活但无进展」的 Agent，并接受来自监督者/护栏/操作者/同伴的观察（部分优先于 Agent 自述）。为多 Agent 系统的可观测性和安全治理提供标准化基础设施。</p>
+  <p class="score">评分: 8.2</p>
+</article>
+<article class="paper">
+  <h3>9🌟 DocPilot: Interactive Agent Orchestration and Training for Long Visual Document Understanding</h3>
+  <p class="field"><strong>作者:</strong> Zhuowen Liang, Xiaotian Lin, Yuyu Luo, Haixun Wang, Nan Tang</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21327">2610.21327</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/HKUSTDial/DocPilot">https://github.com/HKUSTDial/DocPilot</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 多模态长文档问答需在跨页跨模态稀疏证据中推理。DocPilot 支持表达性编排，让复杂文档求解可被小语言模型学习。突破预定义工作流和粗粒度动作的限制，提供灵活细粒度的文档推理动作空间，并通过 Agent 编排和训练使 SLM 也能胜任长文档理解。</p>
+  <p class="summary">多模态长文档问答需在跨页跨模态稀疏证据中推理。DocPilot 支持表达性编排，让复杂文档求解可被小语言模型学习。突破预定义工作流和粗粒度动作的限制，提供灵活细粒度的文档推理动作空间，并通过 Agent 编排和训练使 SLM 也能胜任长文档理解。</p>
+  <p class="score">评分: 8.1</p>
+</article>
+<article class="paper">
+  <h3>10🌟 Perception or Reasoning? Diagnosing and Tackling Reinforcement Learning Bottlenecks in VLMs</h3>
+  <p class="field"><strong>作者:</strong> Zeyuan Yang, Zhuohao Chen, Jiaben Chen, Yao Zhang, Maohao Shen, Chuang Gan</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21380">2610.21380</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> RL 在语言模型推理上收益显著，但在视觉任务上提升不一致。提出 Perception and Reasoning Attribution (PARA)，通过比较「更准确视觉信息」与「更强推理器」各自能恢复多少当前错误，量化每个模型-基准对的感知/推理剩余空间。在 4 个 VLM 和 17 个多模态基准上，PARA 与现有 VLM 特征广泛一致，为针对性优化提供诊断工具。</p>
+  <p class="summary">RL 在语言模型推理上收益显著，但在视觉任务上提升不一致。提出 Perception and Reasoning Attribution (PARA)，通过比较「更准确视觉信息」与「更强推理器」各自能恢复多少当前错误，量化每个模型-基准对的感知/推理剩余空间。在 4 个 VLM 和 17 个多模态基准上，PARA 与现有 VLM 特征广泛一致，为针对性优化提供诊断工具。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+<article class="paper">
+  <h3>11🌟 Rethinking the Role of Tool Graph Memory in Multi-Turn Tool Use</h3>
+  <p class="field"><strong>作者:</strong> Uiji Hwang, Richeng Xuan, Taeuk Kim</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21571">2610.21571</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 对工具图记忆（tool graph memory）的负面结果研究。在 9 个模型和 2 个基准上评估发现：工具图记忆很少显著优于基线，且其收益（若有）的 LLM 调用成本翻倍以上；记忆引导常错误，随机或无引导保留了大部分收益，意味着收益来自额外计算而非记忆本身。即便给出正确下一工具，许多失败仍存在（如放弃或忽略建议）。对 Agent 记忆研究方向有重要警示价值。</p>
+  <p class="summary">对工具图记忆（tool graph memory）的负面结果研究。在 9 个模型和 2 个基准上评估发现：工具图记忆很少显著优于基线，且其收益（若有）的 LLM 调用成本翻倍以上；记忆引导常错误，随机或无引导保留了大部分收益，意味着收益来自额外计算而非记忆本身。即便给出正确下一工具，许多失败仍存在（如放弃或忽略建议）。对 Agent 记忆研究方向有重要警示价值。</p>
+  <p class="score">评分: 7.9</p>
+</article>
+<article class="paper">
+  <h3>12🌟 Do VLAs Really Follow Instructions? Diagnosing How-Level Instruction Following in Vision-Language-Action Models</h3>
+  <p class="field"><strong>作者:</strong> Sangwu Park, Wonjoong Kim, Yeonjun In, Chanyoung Park</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.21251">2610.21251</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 诊断 VLA 模型的 How 级指令遵循（指定如何执行任务，而非 What 级任务本身）。发现 How 级指令对当前 VLA 无帮助甚至降低任务成功率，假设根因是每个训练 episode 仅配对单一指令。训练时采用 segment 级丰富指令可使动作响应 How 级指令，但任务成功率未必持续提升。揭示 VLA 指令遵循的关键缺口，对 VLA 训练范式有启发。</p>
+  <p class="summary">诊断 VLA 模型的 How 级指令遵循（指定如何执行任务，而非 What 级任务本身）。发现 How 级指令对当前 VLA 无帮助甚至降低任务成功率，假设根因是每个训练 episode 仅配对单一指令。训练时采用 segment 级丰富指令可使动作响应 How 级指令，但任务成功率未必持续提升。揭示 VLA 指令遵循的关键缺口，对 VLA 训练范式有启发。</p>
+  <p class="score">评分: 7.8</p>
+</article>
+
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+<table>
+  <thead>
+    <tr><th>项目</th><th>描述</th><th>语言</th><th>总 Star</th><th>今日新增</th></tr>
+  </thead>
+  <tbody>
+  <tr><td><a href="https://github.com/morluto/rea">morluto/rea</a></td><td>用 Agent 逆向工程任意对象，从应用行为到原生二进制</td><td>TypeScript</td><td>273,426</td><td>+32,314</td></tr>
+  <tr><td><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></td><td>开源全本地 ElevenLabs 替代，646 语言语音克隆/设计/配音/转录</td><td>Python</td><td>69,288</td><td>+3,024</td></tr>
+  <tr><td><a href="https://github.com/K-Dense-AI/scientific-agent-skills">K-Dense-AI/scientific-agent-skills</a></td><td>把任意 AI Agent 变成 AI 科学家，25 万+科学家使用的技能库</td><td>Python</td><td>50,597</td><td>+1,091</td></tr>
+  <tr><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td>Agent harness 性能优化系统：技能/本能/记忆/安全/研究优先开发</td><td>JavaScript</td><td>280,490</td><td>+1,013</td></tr>
+  <tr><td><a href="https://github.com/mksglu/context-mode">mksglu/context-mode</a></td><td>AI 编码 Agent 上下文窗口优化，沙盒化工具输出（98% 缩减）+ 会话记忆持久化</td><td>TypeScript</td><td>29,836</td><td>+904</td></tr>
+  <tr><td><a href="https://github.com/xerj-org/xerj">xerj-org/xerj</a></td><td>AI 搜索数据的新方式，autoindex 激活 Agent 了解你的数据，比 grep 省 40x token</td><td>Rust</td><td>5,785</td><td>+715</td></tr>
+  <tr><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>有效的 Agentic 技能框架与软件开发方法论</td><td>Shell</td><td>299,997</td><td>+582</td></tr>
+  <tr><td><a href="https://github.com/JuliusBrussee/caveman">JuliusBrussee/caveman</a></td><td>编码 Agent 的 token 削减技能+代理，用「穴居人语言」砍掉 65% token</td><td>Go</td><td>112,646</td><td>+433</td></tr>
+  <tr><td><a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a></td><td>Anthropic 官方维护的高质量 Claude Code 插件目录</td><td>Python</td><td>39,220</td><td>+307</td></tr>
+  <tr><td><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></td><td>原始 Agent harness，部署智能多玩家集群、协调自主工作流</td><td>TypeScript</td><td>75,190</td><td>+147</td></tr>
+  </tbody>
+</table>
+
+<h2>📊 今日要点</h2>
+<div class="paper">
+  <p><strong>主题一：VLA 模型部署效率与记忆机制集中爆发。</strong>Fast-VLA「只思考一次」把 4B VLM 的任务上下文固定为多层 KV 记忆，执行时仅轻量 actor 检索；LTM 用潜在转移编码历史，在 π₀.₅ 上无需外部推理模型即达 RoboMME 58.54% / LIBERO-Mem 80.5%；CarryOn 双环 harness 同时解决个性化（持久用户偏好）与可靠执行（可解释安全保证）。三篇共同指向 VLA 从「实验室可用」走向「真实部署」的关键工程化路径。</p>
+  <p><strong>主题二：Agent 基础设施与协议标准化。</strong>ASP（Agent Status Protocol）为异构多 Agent 系统定义轻量级状态上报协议，关键设计是不信任 Agent 自报、从心跳缺失推断存活，为可观测性和安全治理提供基础设施；DocPilot 让长文档理解可被小模型学习，突破预定义工作流限制；QREF 用查询精炼+证据过滤即插即用地修复 DeepSearch Agent 的查询错位。</p>
+  <p><strong>主题三：RL 驱动生成模型与奖励建模。</strong>RL-driven Diffusion Models 综述（有代码）系统梳理 RL 如何从「奖励微调」升级为扩散模型的经验中心化、目标导向生成范式；CleanRM 用少量干净反馈通过最优传输校准样本级噪声比例，修复 RLHF 奖励建模的偏差；OPRD 用 on-policy 提醒蒸馏解决长程编码 Agent 的过程监督稀疏问题。</p>
+  <p><strong>主题四：Agent 记忆与工具使用的反思。</strong>Rethinking Tool Graph Memory 的负面结果极具价值——工具图记忆很少显著优于基线，收益多来自额外计算而非记忆本身；Do VLAs Really Follow Instructions 揭示 VLA 的 How 级指令遵循缺口，单一指令配对训练是根因。两篇共同警示：Agent 记忆/指令遵循的「直觉设计」需要更严格的实证检验。</p>
+  <p><strong>GitHub 趋势：</strong>Agent 逆向工程生态持续一骑绝尘——morluto/rea 单日 +32,314 继续领跑；Agent 技能/harness 生态集体强势（scientific-agent-skills +1,091、ECC +1,013、superpowers +582、ruflo +147）；上下文优化与 token 削减成新热点（context-mode +904、caveman 砍 65% token +433）；开源语音 AI VoiceStudio +3,024（646 语言全本地）延续垂直场景落地；Anthropic 官方 claude-plugins-official +307 显示大厂持续加码 Agent 插件生态。</p>
+</div>
+
+<footer>
+  生成时间：2026-10-16 ｜ 自动化脚本：git_auto/ai-research-briefing ｜ <a href="https://yenanjing.github.io/ai-briefings/">返回首页</a>
+</footer>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-10-19</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; color: #1f2937; background: #fafafa; line-height: 1.7; }
+  h1 { color: #111827; border-bottom: 3px solid #6366f1; padding-bottom: 12px; }
+  h2 { color: #4338ca; margin-top: 36px; border-left: 4px solid #6366f1; padding-left: 12px; }
+  h3 { color: #1e3a8a; margin-top: 24px; }
+  .meta { color: #6b7280; font-size: 0.9em; margin-bottom: 24px; }
+  .paper { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .field { margin: 4px 0; }
+  .summary { color: #374151; margin-top: 10px; text-align: justify; }
+  .score { color: #6366f1; font-weight: bold; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.92em; }
+  th { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #4338ca; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 40px; color: #9ca3af; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>AI 研究简报 2026-10-19</h1>
+<div class="meta">
+  数据来源：arXiv（L2 单类别分批查询：cs.AI/cs.LG/cs.CL/cs.CV/stat.ML/cs.RO/cs.NE 各 25 篇成功，共 153 篇去重候选） + GitHub Trending<br>
+  论文日期：2026-10-16（主要，116 篇）<br>
+  在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/10/19/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/10/19/ai-briefing.html</a>
+</div>
+
+<h2>📚 Top 12 arXiv 论文</h2>
+<article class="paper">
+  <h3>1🌟 LM2LM: Language Models Learn to Improve Language Models</h3>
+  <p class="field"><strong>作者:</strong> Minhua Lin, Zijun Wang, Zewen Liu 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23344">2610.23344</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 用强化学习训练 LLM 生成有效的语言模型改进方案。核心挑战是真实反馈训练成本极高（数万提案 × 完整训练），且代理反馈在分布偏移时会不可靠。LM2LM 提出研究世界模型（RWM）——一个冻结的 LLM 从真实实验记录中预测提案增益作为 RL 奖励模型，并周期性执行高排名提案将其结果加入上下文以维持可靠性。在 8 个自回归和扩散 LM 开发环境中，Qwen3.8-27B 超越 GPT-6-sol（即使后者获得 300 条真实实验记录），数据生成成本降低 33%，且能泛化到训练未见过的模型家族。这是递归自我改进路径上的重要实证。</p>
+  <p class="summary">用强化学习训练 LLM 生成有效的语言模型改进方案。研究世界模型（RWM）作为可扩展奖励模型，周期性执行高排名提案维持可靠性。Qwen3.8-27B 超越 GPT-6-sol，成本降低 33%。</p>
+  <p class="score">评分: 9.2</p>
+</article>
+<article class="paper">
+  <h3>2🌟 LAW: Unifying Language, Action, and World Modeling for Agentic Physical Intelligence</h3>
+  <p class="field"><strong>作者:</strong> Jiajun Cao, Kai Tang, Bohua Zhang 等 17 人</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23334">2610.23334</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 闭环 VLM-WAM 框架，通过语义子任务进度统一语言推理、动作生成和世界建模。混合专家 VLM 规划剩余子任务、估计并融合世界-动作模型提出的动作价值、异步评估执行状态。世界-动作模型内 Mixture-of-Transformer Experts 整合模态特定与共享计算，双流分层视觉记忆维持双模型时间上下文。在 50 个 RoboTwin 任务上达 94.21% 平均成功率，换用 OpenWAM-α 骨干后达 95.56% 创开源 SOTA；仅 2B 参数的 VLM 超越 Embodied-R1.5 和 GPT-5.5 High 变体；3 个长程真机任务 65% 成功率（π₀.₅ 为 28.33%）。</p>
+  <p class="summary">闭环 VLM-WAM 框架统一语言推理、动作生成和世界建模。2B 参数 VLM 超越 GPT-5.5 High，RoboTwin 95.56% 创开源 SOTA，真机长程任务 65%（π₀.₅ 28.33%）。</p>
+  <p class="score">评分: 9.0</p>
+</article>
+<article class="paper">
+  <h3>3🌟 OfficeTown: Generative Organizations for Evolving Agent Intelligence</h3>
+  <p class="field"><strong>作者:</strong> Hongchen Wei, Daohong Ying, Zhi Hong 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23194">2610.23194</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 生成式组织模拟框架，让 agent 在持续的专业组织工作中进化。从自然语言描述初始化组织，成员协调工作、委派有界任务给助手 agent 并审查交付物；工件、决策和未决事项持久化并塑造后续工作，职责和权限决定每个成员可见可做。构建 OfficeTown Bench（406 任务、4836 评估标准、23 个模拟组织跨 8 个专业领域）。前沿模型评估显示仍有大量提升空间；SFT 和 on-policy 蒸馏显著提升 Qwen3.5-9B 在外部专业工作基准（含 GDPval）上的表现。Principal-assistant harness 优于单/多 agent 基线。</p>
+  <p class="summary">生成式组织模拟框架让 agent 在持续专业工作中进化。406 任务基准显示前沿模型仍有大量提升空间；SFT/OPD 显著提升 Qwen3.5-9B 在 GDPval 等外部基准表现。</p>
+  <p class="score">评分: 8.8</p>
+</article>
+<article class="paper">
+  <h3>4🌟 Reasoning Models Can Control Their Chains of Thought When They Tell Themselves To</h3>
+  <p class="field"><strong>作者:</strong> Uriel Dolev, Idan Schwartz, Yoav Goldberg</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23257">2610.23257</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 指出先前工作测得的低 CoT 可控性可能不是推理模型的内在无能，而是朴素地在用户提示中指定约束所致。提出 Self-Instructed CoT Controllability——将约束作为自指令放入模型 CoT 内并测量其遵循能力。在自指令下模型可控性显著高于标准用户指令；甚至一个通用提醒遵循用户约束的提示也能大幅提升可控性。有效的自指令可通过用户提示中的简单指令引导进入推理。但在真实监控设置中，CoT 可控性可被用于监控规避，对 CoT 可监控性构成风险。</p>
+  <p class="summary">提出 Self-Instructed CoT Controllability：将约束作为自指令放入 CoT 内，可控性显著高于标准用户指令。但可控性可被用于监控规避，对 CoT 可监控性构成风险。</p>
+  <p class="score">评分: 8.7</p>
+</article>
+<article class="paper">
+  <h3>5🌟 NestedVLA: Learning to Consolidate and Generate Skills for Vision-Language-Action Models</h3>
+  <p class="field"><strong>作者:</strong> Guodong Du, Wanyu Lin</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23271">2610.23271</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/WanyuGroup/NeurIPS2026-NestedVLA">https://github.com/WanyuGroup/NeurIPS2026-NestedVLA</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 主张技能先独立学习再事后整合的范式，用参数生成替代参数聚合：嵌套超网络以目标任务为条件合成任务自适应动作专家参数，与冻结的基础 VLA 组合；任务特定压缩 VLM 残差单独保留。在三个 RL 基准（MetaWorld、ManiSkill、CALVIN）上，NestedVLA 平均超越最强模型合并基线 41 个百分点，在 ManiSkill 上与单任务微调差距在 1pp 内，在 CALVIN 上大幅缩小差距，指向存储高效的技能整合路径。</p>
+  <p class="summary">用参数生成替代参数聚合：嵌套超网络合成任务自适应动作专家参数。在 MetaWorld/ManiSkill/CALVIN 上超越最强合并基线 41pp，接近单任务微调。</p>
+  <p class="score">评分: 8.6</p>
+</article>
+<article class="paper">
+  <h3>6🌟 Agentic Image Generation in the Wild</h3>
+  <p class="field"><strong>作者:</strong> Yifan Li, Bowen Qin, Kun Zhou 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23269">2610.23269</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/RUCAIBox/Agentic-ImageGen-Wild">https://github.com/RUCAIBox/Agentic-ImageGen-Wild</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 研究「野外图像生成」——目标实体仅数天前出现、网络视觉证据有限、搜索结果充斥易混淆实体、目标罕见单独出现。构建自动化流水线从近期头条合成提示并仅保留真实搜索结果高度混淆的，得到 Savanna 基准（500 提示跨 16 子类）。在 Savanna 上，即使前沿模型 harness 框架也仅约半数提示检索到正确参考。提出 Locate-Corroborate-Isolate 范式：先文本搜索锁定目标身份、再对候选图像多源验证、最后裁剪干净参考给生成器。训练 15K 轨迹的 Ranger-8B 搜索分 67.2 超越前沿模型 harness，并在所有测试生成器上取得最佳生成质量。</p>
+  <p class="summary">研究「野外图像生成」新设定，构建 Savanna 基准（500 提示）。提出 Locate-Corroborate-Isolate 范式，Ranger-8B 搜索分 67.2 超越前沿模型 harness。</p>
+  <p class="score">评分: 8.5</p>
+</article>
+<article class="paper">
+  <h3>7🌟 TreeOPSD: Tree-Aware Posterior Distillation for Long-Horizon Agentic Reinforcement Learning</h3>
+  <p class="field"><strong>作者:</strong> Heming Zou, Qi Wang, Yixiu Mao 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23181">2610.23181</a></p>
+  <p class="field"><strong>分类:</strong> cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 无 critic、树感知的后验自蒸馏框架，解决长程 agentic RL 的两大挑战：终端奖励使轮级信用分配稀疏高方差，固定 rollout 批次顺序小批量更新引入策略陈旧。将每交互轮视为树节点，从共享前缀分支替代续并递归回传终端奖励为隐式轮级信用，再将每信用映射为以行为策略似然比参数化的闭式有界教师分布。最小化教师-学生散度恢复策略梯度方向同时将有界更新朝向有限目标。在多个竞争基准和模型规模上提升 agentic 能力，尤其长程任务（如 Qwen3-30B-A3B-Thinking-2507 在 Deep Research 设置上较 GRPO 提升 4.97 点）。</p>
+  <p class="summary">无 critic 树感知后验自蒸馏框架。将交互轮视为树节点递归回传终端奖励为隐式轮级信用。Qwen3-30B 在 Deep Research 上较 GRPO 提升 4.97 点。</p>
+  <p class="score">评分: 8.4</p>
+</article>
+<article class="paper">
+  <h3>8🌟 MambaAct: Efficient Mamba Action Experts for Flow-Matching Vision-Language-Action Models</h3>
+  <p class="field"><strong>作者:</strong> Khuyen Pham, Tran Nguyen Le, Edoardo Fazzari 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.22951">2610.22951</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/giakhuyendihoc/MambaAct">https://github.com/giakhuyendihoc/MambaAct</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 为 flow-matching VLA（如 π₀.₅）引入高效 Mamba 动作专家。保留 π₀.₅ 预训练视觉-语言前缀编码器，用紧凑 Mamba 动作专家替换其 transformer 动作专家；Mamba 作为动作混合器建模噪声连续动作序列依赖；轻量 Context Compressor 将 VLM 前缀 token 映射为紧凑条件信号门控调制每个 Mamba 动作块，避免重复 token 级交叉注意力。动作专家缩小 10 倍，flow-matching 去噪延迟在 LIBERO 降低 64.8%、真机部署降低 58.8%，同时 LIBERO 平均成功率提升 1.08 个百分点。</p>
+  <p class="summary">用 Mamba 替换 transformer 动作专家，缩小 10 倍，去噪延迟降低 64.8%（LIBERO）/58.8%（真机），成功率提升 1.08pp。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+<article class="paper">
+  <h3>9🌟 MultiAgent-OPD: End-to-End Training of Hierarchical Multi-Agent Systems with On-Policy Distillation</h3>
+  <p class="field"><strong>作者:</strong> Yuhan Sun, Jiaxin Zhao, Yongdong Luo 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23234">2610.23234</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 分层多 agent 系统中 Leader 分配任务、subagent 执行，最终答案仅给 subagent 间接反馈。MultiAgent-OPD 结合 on-policy 蒸馏与 RL 端到端联合训练共享参数的 Leader-Searcher-Answerer 团队。先在 Searcher-Answerer 工作流用答案正确性训练 Teacher；团队训练时冻结 Teacher 对学生生成的搜索和摘要 token 评分提供局部过程监督，Leader 从团队成功学习、Answerer 从候选正确性学习。在 7 个数据集上达 38.68% macro avg@4，超越 Prompted Critic 4.06pp、超越训练级联多 agent C-MAS+RL 2.61pp。</p>
+  <p class="summary">结合 on-policy 蒸馏与 RL 端到端联合训练分层多 agent 团队。在 7 个数据集上达 38.68% macro avg@4，超越 Prompted Critic 4.06pp。</p>
+  <p class="score">评分: 8.2</p>
+</article>
+<article class="paper">
+  <h3>10🌟 CoEvolve: Self-Evolving Code Policies from Skills to Strategies for Humanoid Robots</h3>
+  <p class="field"><strong>作者:</strong> Zicheng Liu, Haochen Wu, Jiawei He 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23288">2610.23288</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 将团队协作表示为固定机器人运动技能上的可执行代码。引入 Verifier Guided Coordination Evolution：多模态基础模型通过运动原语、语义目标、临时机器人角色和有界执行参数实例化协调策略；物理验证评估每次执行转移，被拒行为触发从已接受检查点的结构化协调修订，已验证经验保留以指导后续决策。在两个模拟 Unitree G1 人形机器人穿越受限走廊搬运自由支撑刚体的任务中，15 次基础任务运行完成 8 个，每个骨干均实现端到端成功。</p>
+  <p class="summary">将团队协作表示为可执行代码，Verifier Guided Coordination Evolution 通过物理验证和结构化修订实现自演化。Unitree G1 双机协作搬运任务端到端成功。</p>
+  <p class="score">评分: 8.1</p>
+</article>
+<article class="paper">
+  <h3>11🌟 InstAgent: A Recursively Self-Improving Agent Operating System for Heterogeneous Robot Collaboration</h3>
+  <p class="field"><strong>作者:</strong> Haoyang Luo, Junhao Qin, Jingyan Cao 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23098">2610.23098</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 面向异构机器人协作的递归自改进（RSI）Agent 操作系统。将团队行为组织为 agentic 行为树（BT），显式建模能力分配、机器人间依赖和交接检查；RSI 机制从执行反馈更新这些协作程序并保留成功修订供未来任务复用；共享多模态时空记忆为规划和交接验证提供上下文。在 20 个真实多机器人任务、三个高层模型上，任务成功率、首次完成率和执行效率均持续提升。</p>
+  <p class="summary">面向异构机器人协作的 RSI Agent OS。Agentic 行为树建模能力分配和交接，RSI 机制从执行反馈更新协作程序。20 个真机任务持续提升。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+<article class="paper">
+  <h3>12🌟 Xiaomi-Lens-0 Technical Report</h3>
+  <p class="field"><strong>作者:</strong> Pei Fu, Yike Liu, Yue Sun 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.23279">2610.23279</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 4B 多模态大语言模型，基于 Qwen3.5 构建，从自身视觉表征预测掩码。轻量解码器结合视觉编码器 patch 特征与视觉 latent（语言模型 mask-token 状态），使掩码监督到达共享骨干而无需额外分割编码器。因每个 latent 解码为掩码，模型可交错推理与区域特定 latent 从而「用视觉 latent 思考」，grounded 推理轨迹监督其 CoT 中访问的区域。在全部 8 个 RefCOCO/RefCOCO+/RefCOCOg 分割上，指代理解平均超越 Qwen3.5 5.6 点，取得对比模型中最高分割 cIoU，并在所有感知基准上超越 Qwen3.5。</p>
+  <p class="summary">4B MLLM 基于 Qwen3.5，从自身视觉表征预测掩码，「用视觉 latent 思考」。RefCOCO 系列指代理解平均超越 Qwen3.5 5.6 点，最高分割 cIoU。</p>
+  <p class="score">评分: 7.9</p>
+</article>
+
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+<table>
+  <thead>
+    <tr><th>项目</th><th>描述</th><th>语言</th><th>总 Star</th><th>今日新增</th></tr>
+  </thead>
+  <tbody>
+  <tr><td><a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></td><td>本地运行的 AI 求职申请框架（基于 Claude Code）：评估职位、定制简历、写求职信、准备面试</td><td>Python</td><td>53,472</td><td>+2,232</td></tr>
+  <tr><td><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></td><td>开源全本地 ElevenLabs 替代，646 语言语音克隆/设计/配音/转录</td><td>Python</td><td>75,558</td><td>+2,082</td></tr>
+  <tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>开源编码 agent</td><td>TypeScript</td><td>216,681</td><td>+1,414</td></tr>
+  <tr><td><a href="https://github.com/anthropics/claude-plugins-official">anthropics/claude-plugins-official</a></td><td>Anthropic 官方维护的高质量 Claude Code 插件目录</td><td>Python</td><td>42,754</td><td>+1,175</td></tr>
+  <tr><td><a href="https://github.com/stablyai/orca">stablyai/orca</a></td><td>多 agent 舰队工作平台，用自己的订阅运行任意编码 agent，支持桌面/移动/远程运行时</td><td>TypeScript</td><td>96,780</td><td>+1,146</td></tr>
+  <tr><td><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a></td><td>「让所有软件 agent 原生化」——CLI-Hub</td><td>Python</td><td>54,641</td><td>+589</td></tr>
+  <tr><td><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></td><td>原始 Agent harness，部署智能多玩家集群、协调自主工作流，原生集成 Claude Code/Codex/Hermes</td><td>TypeScript</td><td>76,566</td><td>+513</td></tr>
+  <tr><td><a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a></td><td>agent 编码 CLI 长期记忆方案，促进不同 agent 厂商间交接</td><td>Rust</td><td>10,543</td><td>+512</td></tr>
+  <tr><td><a href="https://github.com/android/skills">android/skills</a></td><td>Android 官方 skills（Kotlin）</td><td>Kotlin</td><td>8,806</td><td>+375</td></tr>
+  <tr><td><a href="https://github.com/cursor/plugins">cursor/plugins</a></td><td>Cursor 插件规范和官方插件</td><td>TypeScript</td><td>12,772</td><td>+350</td></tr>
+  </tbody>
+</table>
+
+<h2>📊 今日要点</h2>
+<div class="paper">
+  <p><strong>主题一：递归自我改进（RSI）从概念走向工程实证。</strong>LM2LM 用研究世界模型把「LM 改进 LM」从昂贵 RL 变为可行，Qwen3.8-27B 超越 GPT-6-sol；InstAgent 把 RSI 落到异构机器人协作的行为树修订；CoEvolve 用可执行代码策略让人形机器人团队自演化。三条路径（模型改进、agent OS、多机协作）同时推进，标志 RSI 从理论讨论进入工程实证阶段。</p>
+  <p><strong>主题二：VLA 部署效率与技能整合成竞争焦点。</strong>NestedVLA 用超网络生成任务自适应参数避免合并冲突（+41pp），MambaAct 用 Mamba 替换 transformer 动作专家削减 64.8% 延迟，LAW 用 2B 参数 VLM 超越 GPT-5.5 High——「小模型 + 巧架构」持续压制暴力扩容，VLA 从实验室走向真实部署的关键工程化路径逐渐清晰。</p>
+  <p><strong>主题三：Agent 记忆从检索走向编译与修订。</strong>TreeOPSD 无 critic 树感知蒸馏解决长程信用分配（Qwen3-30B 在 Deep Research 上 +4.97 点），MemCompile 查询条件化证据编译分离寻址与呈现，SkyAgent 可修订目标记忆消除错误候选持续性——记忆不再是被动存储而是主动加工，成为长程 agent 可靠性的关键组件。</p>
+  <p><strong>主题四：CoT 可控性双刃剑。</strong>Self-Instructed CoT 可控性显著提升但可被用于监控规避，Ignored Not Refused 揭示低攻击成功率下 76-80% 实为忽视而非拒绝——Agent 安全评估需更细粒度，CoT 可监控性的风险需引起重视。</p>
+  <p><strong>GitHub 趋势：</strong>AI 求职自动化（ai-job-search +2,232）首次领跑，反映 agent 在个人生产力场景的渗透；Agent harness/插件生态持续强势（claude-plugins-official +1,175、orca 多 agent 舰队 +1,146、ruflo +513、ai-memory 跨 agent 长期记忆 +512）；开源语音 AI VoiceStudio +2,082 延续垂直场景落地；CLI-Anything（让所有软件 agent 原生化）+589 显示 agent 与现有软件桥接成新热点。</p>
+</div>
+
+<footer>
+  生成时间：2026-10-19 ｜ 自动化脚本：git_auto/ai-research-briefing ｜ <a href="https://yenanjing.github.io/ai-briefings/">返回首页</a>
+</footer>
+</body>
+</html>

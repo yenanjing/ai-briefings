@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-10-20</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; color: #1f2937; background: #fafafa; line-height: 1.7; }
+  h1 { color: #111827; border-bottom: 3px solid #6366f1; padding-bottom: 12px; }
+  h2 { color: #4338ca; margin-top: 36px; border-left: 4px solid #6366f1; padding-left: 12px; }
+  h3 { color: #1e3a8a; margin-top: 24px; }
+  .meta { color: #6b7280; font-size: 0.9em; margin-bottom: 24px; }
+  .paper { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .field { margin: 4px 0; }
+  .summary { color: #374151; margin-top: 10px; text-align: justify; }
+  .score { color: #6366f1; font-weight: bold; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.92em; }
+  th { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #4338ca; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 40px; color: #9ca3af; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>AI 研究简报 2026-10-20</h1>
+<div class="meta">
+  数据来源：arXiv（L2 单类别分批查询：cs.AI/cs.LG/cs.CL/cs.CV/stat.ML/cs.RO/cs.NE 各 25 篇成功，共 156 篇去重候选） + GitHub Trending<br>
+  在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/10/20/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/10/20/ai-briefing.html</a>
+</div>
+
+<h2>📚 Top 12 arXiv 论文</h2>
+<article class="paper">
+  <h3>1🌟 Muse Glimmer 30B: An On-Device Agentic Model</h3>
+  <p class="field"><strong>作者:</strong> Arash Ebrahim Abtahizadeh, Muna Aghamelu, Adil Ahmed, Juan C. Angeles Acuna, Alexis Audran-Reiss 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.24628">2610.24628</a></p>
+  <p class="field"><strong>代码:</strong> 开源 30B 模型（摘要声明 open-source）</p>
+  <p class="field"><strong>分类:</strong> cs.AI, cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 开源 30B 参数因果语言模型，集成感知编码器，专为消费级硬件上的自主 agentic 任务设计。将多步推理、可靠工具调用与失败恢复整合进单一模型，本地运行无需云基础设施；接受文本与图像输入，在 100+ 语言数据上训练，量化至约 4GB 显存可部署。标志端侧 agent 模型进入可用阶段。</p>
+  <p class="summary">开源 30B 因果语言模型集成感知编码器，多步推理+工具调用+失败恢复整合进单一模型，本地运行无需云，量化至约 4GB 显存。</p>
+  <p class="score">评分: 9.0</p>
+</article>
+<article class="paper">
+  <h3>2🌟 What RL Brings to Reasoning: A Few Decisions the Base Model Would Not Make</h3>
+  <p class="field"><strong>作者:</strong> Siyu Zhang, Yuquan Lu, Yoshuya Y. Li, Yifan Ding, Kun Zeng 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.24663">2610.24663</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/CyrusZhang04/WhatRLBrings">github.com/CyrusZhang04/WhatRLBrings</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL, cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 通过一系列生成时干预在 Qwen3-4B-Base 上量化 RLVR 训练带来的增益。关键发现：相同 8192 token 上限的 power sampling 在 greedy 之外无增益；仅在两模型分歧的 token 处借用 RL 模型的 token 才能恢复大部分增益——说明 RL 主要改变了少数关键决策点，为理解 RL 如何改变推理提供因果证据。</p>
+  <p class="summary">用 token 借用干预量化 RLVR 增益：power sampling 无增益，仅在两模型分歧 token 处借用 RL 模型 token 才恢复大部分增益，RL 改变的是少数关键决策点。</p>
+  <p class="score">评分: 8.8</p>
+</article>
+<article class="paper">
+  <h3>3🌟 EvoSkill v2: Fully Agentic Skill Evolution from Benchmark Adaptation to a Stateful Evolver</h3>
+  <p class="field"><strong>作者:</strong> Dastin Huang, Baran Nama, Salaheddin Alzubi</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.25931">2610.25931</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI, cs.CL, cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 三 agent 系统编辑 agent 被赋予的指令（技能），保持模型与 harness 不变。用户描述 benchmark 并提供 grader，benchmark adaptor 转为插件；solver 尝试任务，evolver 读取训练 rollout 在每个 epoch 重写技能。创新点在于将 evolver 实现为全程持有 bash 工具的单一 stateful coding agent（区别于两 agent 分离设计），把技能进化从概念推向工程化。</p>
+  <p class="summary">三 agent 系统编辑 agent 技能（保持模型/harness 不变）；evolver 实现为全程持 bash 工具的单一 stateful coding agent，每 epoch 重写技能。</p>
+  <p class="score">评分: 8.6</p>
+</article>
+<article class="paper">
+  <h3>4🌟 The One-Pixel of Reasoning: One Truthful Relation Is Enough to Mislead LLM Agents</h3>
+  <p class="field"><strong>作者:</strong> Jinwei Hu, Youcheng Sun, Yi Dong, Xiaowei Huang</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.24873">2610.24873</a></p>
+  <p class="field"><strong>分类:</strong> cs.CR, cs.MA, cs.AI, cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 提出 one-relation attack（ORA），一种针对「证据→结论」单一隐式 warrant 的认知攻击。定位关键隐式 warrant 并用单条源锚定句子对其进行限定干预，即可引导 agent 走向错误信念。在 18 个模型上的生物医学推理与漏洞检测任务中验证，揭示 agent 推理链的脆弱性。</p>
+  <p class="summary">one-relation attack（ORA）针对单一隐式 warrant 的认知攻击，用单条句子限定即可操纵 agent 信念，18 个模型验证推理链脆弱性。</p>
+  <p class="score">评分: 8.5</p>
+</article>
+<article class="paper">
+  <h3>5🌟 EmbodiedWorld-200K: Toward Embodied World Agents via Embodied-Planning Dataset and Interactive World Models</h3>
+  <p class="field"><strong>作者:</strong> X. Feng, J. Tang, Z. Lin, L. Chen, S. Shao 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.25959">2610.25959</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 提出 Embodied World Agents（EWA）概念——能理解多样视觉环境并在开放世界中执行通用任务。发布 20 万轨迹规模的具身规划数据集与交互式世界模型，突破现有工作局限于单场景特定任务、难以迁移到新环境的瓶颈，推动具身智能规模化。</p>
+  <p class="summary">提出 Embodied World Agents 概念，发布 20 万轨迹具身规划数据集 + 交互式世界模型，突破单场景局限。</p>
+  <p class="score">评分: 8.4</p>
+</article>
+<article class="paper">
+  <h3>6🌟 Let Them Sleep: Recursive Self-Pruning Memory for Long-Horizon LLM Agents</h3>
+  <p class="field"><strong>作者:</strong> Kargi Chauhan, Sadiba Nusrat Nur, Pratibha Revankar, Kyle Montgomery, Chenguang Wang</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.25561">2610.25561</a></p>
+  <p class="field"><strong>分类:</strong> cs.NE</p>
+  <p class="field"><strong>核心创新:</strong> 提出 RSPM（Recursive Self-Pruning Memory），借鉴生物「睡眠」机制解决长程 agent 记忆问题。agent 周期性「睡眠」：聚类近期失败、将每簇蒸馏为简短规则、删除冗余轨迹。针对「存全部+最近邻检索」在后期被失败轨迹与过时事实淹没的问题，提供生物启发的记忆自维护方案。</p>
+  <p class="summary">RSPM 借鉴生物睡眠机制：周期性聚类失败、蒸馏为规则、删除冗余轨迹，解决长程 agent 记忆被失败/过时信息淹没问题。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+<article class="paper">
+  <h3>7🌟 Claim Laundering: When Agent Decision Models Trust Records Over Reality</h3>
+  <p class="field"><strong>作者:</strong> Tina Khezresmaeilzadeh, Seyedarmin Azizi, Erfan Baghaei Potraghloo, Mehdi Kamal, Massoud Pedram</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.25947">2610.25947</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 揭示 agent 决策模型的新失效模式：当动作静默失败时，agent 自身记录报告成功但环境显示未生效，两者冲突。在 Android 屏幕轨迹、ALFWorld、WebShop 上构造配对状态独立变化观测与记录动作，发现模型倾向信任自身记录而非现实观测，对 agent 状态感知可靠性提出警示。</p>
+  <p class="summary">揭示 agent 新失效模式：动作静默失败时模型倾向信任自身记录而非环境观测，Android/ALFWorld/WebShop 配对实验验证。</p>
+  <p class="score">评分: 8.2</p>
+</article>
+<article class="paper">
+  <h3>8🌟 DiffuPlan: Editable Planning State for Diffusion Language Model Agents</h3>
+  <p class="field"><strong>作者:</strong> Qisheng Zhou, Zhen Xiong, Qiaoyu Tan</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.24717">2610.24717</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI, cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 扩散语言模型（dLLM）agent 大多继承为 AR 设计的交互协议——中间状态写入后只能通过追加文本纳入新观测。DiffuPlan 利用 dLLM 的双向条件重构能力，让规划状态可编辑，支持在出现前后文时重构早期文本，为 dLLM agent 提供新交互范式。</p>
+  <p class="summary">利用 dLLM 双向条件重构能力让规划状态可编辑，突破 AR 式只能追加文本的交互协议局限。</p>
+  <p class="score">评分: 8.1</p>
+</article>
+<article class="paper">
+  <h3>9🌟 Are Self-Evolving Agents Continual Learners?</h3>
+  <p class="field"><strong>作者:</strong> Xiaoyin Chen, Yizheng Huang, Yinglun Xu, Ziyun Zhao, Emmett McQuinn 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.25858">2610.25858</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI, cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 将自演化 agent 置于持续学习视角审视。非参数自演化 agent 通过重写自身 harness（提示、记忆、技能）而非梯度更新来适应新任务。研究其在持续到来新知识/工具/工作流场景下，能否像持续学习器一样学习新任务而不遗忘旧任务，为自演化 agent 的评估提供持续学习框架。</p>
+  <p class="summary">从持续学习视角审视非参数自演化 agent（重写 harness 而非梯度更新），评估其学新不忘旧的能力。</p>
+  <p class="score">评分: 8.0</p>
+</article>
+<article class="paper">
+  <h3>10🌟 CondenseVLA: Learnable History Condensation for Efficient Multi-Frame VLA</h3>
+  <p class="field"><strong>作者:</strong> Feiyang Hong, Yujie Wei, Bo Zhao, Xiu Su, Hongxun Yao 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.25927">2610.25927</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/FeiyangHong/CondenseVLA">github.com/FeiyangHong/CondenseVLA</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO, cs.CV</p>
+  <p class="field"><strong>核心创新:</strong> 机器人操作依赖短时序线索（短暂接触、临时遮挡、中间物体状态），单帧无法分辨需时序整合。单纯扩大历史窗口计算昂贵且收益有限。CondenseVLA 提出可学习历史压缩，为多帧 VLA 提供任务自适应的灵活历史采样，降低冗余并提升部署效率。</p>
+  <p class="summary">可学习历史压缩为多帧 VLA 提供任务自适应灵活采样，解决扩大历史窗口计算昂贵收益有限问题。</p>
+  <p class="score">评分: 7.9</p>
+</article>
+<article class="paper">
+  <h3>11🌟 PaceVLA: Adaptive Temporal Action Quantization in Vision-Language-Action Models</h3>
+  <p class="field"><strong>作者:</strong> Hojin Jeon, Jimin Lee, Taekwan Kim, Nayoung Oh, Taeyoung Kim 等</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.25961">2610.25961</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI, cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> VLA 模型执行在时间上低效——策略从遥操作演示学到细粒度时序模式需大量低层动作步骤。时间动作量化可聚合连续步骤加速执行，PaceVLA 提出自适应量化，按动作段重要性动态分配粒度，兼顾执行速度与可靠性。</p>
+  <p class="summary">自适应时间动作量化按动作段重要性动态分配粒度，聚合连续步骤加速 VLA 执行，兼顾速度与可靠性。</p>
+  <p class="score">评分: 7.8</p>
+</article>
+<article class="paper">
+  <h3>12🌟 InteractAgent: Agentic Human Motion Interaction with Memory-Augmented Reflection</h3>
+  <p class="field"><strong>作者:</strong> Tao Zhang, Senhe Zhang, Zeyu Zhang, Yujia Zhang, Dong Gong</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.25649">2610.25649</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/AIGeeksGroup/InteractAgent">github.com/AIGeeksGroup/InteractAgent</a></p>
+  <p class="field"><strong>分类:</strong> cs.CV, cs.RO</p>
+  <p class="field"><strong>核心创新:</strong> 长程人-场景交互需协调空间推理、物理可行性并从累积执行错误中恢复。InteractAgent 是基于多模态 LLM 的 agentic 系统，用记忆增强反思闭环校正，突破文本驱动运动模型场景无关、几何条件方法依赖配对训练的局限。</p>
+  <p class="summary">基于多模态 LLM 的 agentic 系统，用记忆增强反思闭环校正长程人-场景交互，突破场景无关与配对训练局限。</p>
+  <p class="score">评分: 7.7</p>
+</article>
+
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+<table>
+  <thead>
+    <tr><th>排名</th><th>项目</th><th>描述</th><th>今日新增 ⭐</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td><a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></td><td>本地运行的 AI 求职框架（基于 Claude Code）：评估职位、定制简历、写求职信、准备面试</td><td>+3,856</td></tr>
+    <tr><td>2</td><td><a href="https://github.com/stablyai/orca">stablyai/orca</a></td><td>多 agent 舰队工作台，用自己的订阅运行任意编码 agent（Grok/Claude Code），桌面/移动/远程运行时</td><td>+1,590</td></tr>
+    <tr><td>3</td><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>开源编码 agent</td><td>+1,311</td></tr>
+    <tr><td>4</td><td><a href="https://github.com/Comfy-Org/ComfyUI">Comfy-Org/ComfyUI</a></td><td>最强模块化扩散模型 GUI/API/后端，图节点界面，全球最快本地推理引擎</td><td>+1,011</td></tr>
+    <tr><td>5</td><td><a href="https://github.com/akitaonrails/ai-memory">akitaonrails/ai-memory</a></td><td>agent 编码 CLI 长期记忆方案，促进不同 agent 厂商间 handoff</td><td>+666</td></tr>
+    <tr><td>6</td><td><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a></td><td>让所有软件 agent-native 的 CLI-Hub</td><td>+606</td></tr>
+    <tr><td>7</td><td><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></td><td>原始 agent harness，部署多玩家智能群体、协调自主工作流，含自适应记忆/自学习/federation/向量 RAG</td><td>+564</td></tr>
+    <tr><td>8</td><td><a href="https://github.com/Kruk2/jasna">Kruk2/jasna</a></td><td>视频修复工具</td><td>+498</td></tr>
+    <tr><td>9</td><td><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a></td><td>金融市场语言基础模型</td><td>+363</td></tr>
+    <tr><td>10</td><td><a href="https://github.com/headroomlabs-ai/headroom">headroomlabs-ai/headroom</a></td><td>压缩工具输出/日志/文件/RAG 块再送入 LLM，编码 agent 省 20% token，JSON 省 60-95%</td><td>+310</td></tr>
+  </tbody>
+</table>
+
+<h2>📊 趋势观察</h2>
+<ul>
+  <li><strong>Agent 技能自演化工程化</strong>：EvoSkill v2 把技能进化从「两 agent 分离」升级为「单一 stateful evolver 全程持 bash 工具」，Are Self-Evolving Agents Continual Learners 则从持续学习视角审视非参数 harness 重写——自演化正从概念走向可评估的工程系统。</li>
+  <li><strong>端侧 agentic 大模型开源</strong>：Muse Glimmer 30B 把感知编码器 + 多步推理 + 工具调用 + 失败恢复整合进单一 30B 模型，量化到 ~4GB 显存本地运行，标志端侧 agent 模型进入可用阶段。</li>
+  <li><strong>RL 增益归因精细化</strong>：What RL Brings to Reasoning 用 token 借用干预证明 RLVR 增益集中在少数关键决策点，为理解 RL 如何改变推理提供因果证据。</li>
+  <li><strong>Agent 认知安全新攻击面</strong>：ORA（单关系攻击）与 Claim Laundering（记录 vs 现实）揭示 agent 推理链与状态感知的两类脆弱性——一个句子即可操纵信念，静默失败会让模型信任自身记录而非环境。</li>
+  <li><strong>VLA 部署效率持续优化</strong>：CondenseVLA（可学习历史压缩）、PaceVLA（自适应时间动作量化）延续 VLA 从「能跑」到「高效部署」的转向。</li>
+  <li><strong>GitHub 趋势</strong>：AI 求职自动化继续一骑绝尘（ai-job-search +3,856）；agent harness/舰队生态强势（orca +1,590、opencode +1,311、ruflo +564、CLI-Anything +606）；agent 长期记忆（ai-memory +666）与 token 压缩（headroom +310）持续受关注；扩散模型 GUI ComfyUI +1,011 稳居基础设施。</li>
+</ul>
+
+<footer>
+  本简报由自动化流程生成 · 数据来源：arXiv（cs.AI/LG/CL/CV/RO/NE/stat.ML，L2 单类别获取 156 篇候选）+ GitHub Trending
+</footer>
+</body>
+</html>

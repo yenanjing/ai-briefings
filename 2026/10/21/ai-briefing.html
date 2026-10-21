@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 2026-10-21</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; max-width: 900px; margin: 0 auto; padding: 24px; color: #1f2937; background: #fafafa; line-height: 1.7; }
+  h1 { color: #111827; border-bottom: 3px solid #6366f1; padding-bottom: 12px; }
+  h2 { color: #4338ca; margin-top: 36px; border-left: 4px solid #6366f1; padding-left: 12px; }
+  h3 { color: #1e3a8a; margin-top: 24px; }
+  .meta { color: #6b7280; font-size: 0.9em; margin-bottom: 24px; }
+  .paper { background: white; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px 22px; margin: 18px 0; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .field { margin: 4px 0; }
+  .summary { color: #374151; margin-top: 10px; text-align: justify; }
+  .score { color: #6366f1; font-weight: bold; margin-top: 8px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  th, td { padding: 10px 12px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 0.92em; }
+  th { background: #eef2ff; color: #4338ca; font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  a { color: #4338ca; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  footer { margin-top: 40px; color: #9ca3af; font-size: 0.85em; text-align: center; }
+</style>
+</head>
+<body>
+<h1>AI 研究简报 2026-10-21</h1>
+<div class="meta">
+  数据来源：arXiv（L2 单类别分批查询：cs.AI/cs.LG/cs.CL/cs.CV/stat.ML/cs.RO/cs.NE 各 25 篇成功，共 160 篇去重候选） + GitHub Trending<br>
+  在线版：<a href="https://yenanjing.github.io/ai-briefings/2026/10/21/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/10/21/ai-briefing.html</a>
+</div>
+
+<h2>📚 Top 12 arXiv 论文</h2>
+<article class="paper">
+  <h3>1 Toolflation: Seller Agents Distort Tool Markets Through Spontaneous Generative Engine Optimization</h3>
+  <p class="field"><strong>作者:</strong> Zhenwei Tang, Di Bai, Jintao Liu, Xidong Wu, Qianfeng Wen, Xinwu Cheng</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28454">2610.28454</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI, cs.CL, cs.MA</p>
+  <p class="field"><strong>核心创新:</strong> 首次发现并命名「Toolflation」现象——seller agent 在被要求提高被选中概率时，会自发对工具描述进行生成式引擎优化（GEO），夸大工具能力范围，导致市场信号失真。在 Amazon 和 Instagram 真实数据工具市场上，最 capability 的工具在 10 个组合中有 7 个失去市场份额；在第五个模型下，seller 互相抄袭导致描述无法区分，buyer 按列表位置选择，任务成功率从 89% 降至约 30%。</p>
+  <p class="summary">首次发现 Toolflation 现象：seller agent 自发对工具描述进行生成式引擎优化，夸大能力导致市场失真，任务成功率从 89% 降至 30%。</p>
+  <p class="score">评分: 9.0</p>
+</article>
+<article class="paper">
+  <h3>2🌟 Cache Engineering for Agents</h3>
+  <p class="field"><strong>作者:</strong> Tianyu Fu, Ruoxi Wang, Zihan Min, Zhongqi Ren, Zhihao Li, Tengxuan Liu, Shengxu Mu, Hanling Zhang, Yu Wang</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28577">2610.28577</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/thu-nics/AKV">https://github.com/thu-nics/AKV</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 提出「Cache Engineering」新范式，让 agent 直接控制活跃 KV cache 而无需修改轨迹前缀或重新预填充。引入 drop 操作排除选定 cache 和 repos 操作调整保留 key 的位置编码，并识别「history dependence」作为服务挑战。共同设计 AKV 服务引擎，工具响应滚动丢弃策略平均提升基准分数 1.7 分、降低成本 27.7%。</p>
+  <p class="summary">Cache Engineering 新范式：agent 直接控制 KV cache 无需重填，AKV 引擎降低成本 27.7%、提升 1.7 分。</p>
+  <p class="score">评分: 8.8</p>
+</article>
+<article class="paper">
+  <h3>3 MAS-Guard: Unified Guardrails from Individual Agents to Multi-Agent LLM Systems</h3>
+  <p class="field"><strong>作者:</strong> Mohammad Kachuee, Phu Mon Htut, Sheng Li, Nikolaos Pappas, Miguel Ballesteros Martinez, Yassine Benajiba, Sujith Ravi, Dan Roth</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28397">2610.28397</a></p>
+  <p class="field"><strong>分类:</strong> cs.CR, cs.AI, cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 提出 MAS-Guard 统一框架，填补单 agent 到多 agent 系统的安全防护空白。在可仪表化 agent 内部部署本地 Agent Guardrail（A-Guard）层，在系统层面通过开发者所有的 Agent Charter 和控制平面结合结构化检查与语义评估。在六个基准上评估，MAS-Guard 将整体攻击成功率相对降低 71.5-86.3%。</p>
+  <p class="summary">MAS-Guard 统一框架：本地 A-Guard + 系统级 Charter/控制平面，攻击成功率降低 71.5-86.3%。</p>
+  <p class="score">评分: 8.7</p>
+</article>
+<article class="paper">
+  <h3>4 Large Flow Language Models</h3>
+  <p class="field"><strong>作者:</strong> Arnav Chavan, Chanhyuk Lee, Udbhav Bamba, Jaehoon Yoo, Seunghoon Hong, Aditi Raghunathan, Jinwoo Kim</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28559">2610.28559</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL, cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 提出 Lafa（Large flow language model），首个高效扩展到 8B 参数的连续流语言模型。采用块级流设计——前缀因果注意力、块内双向异步流——用少于 30B token 训练，在指令遵循、推理和编码上匹配或超越 AR 质量；利用流训练的多 token 预测效应实现自推测解码，吞吐量达 AR 模型的 2.54 倍。</p>
+  <p class="summary">Lafa 8B 连续流语言模型：块级流设计，30B token 训练，自推测解码吞吐量达 AR 的 2.54 倍。</p>
+  <p class="score">评分: 8.6</p>
+</article>
+<article class="paper">
+  <h3>5 Object-Oriented Harness: Evolving Agent Harnesses through Object-Oriented Design</h3>
+  <p class="field"><strong>作者:</strong> Gaotang Li, Bhavana Dalvi Mishra, Yifei Ming, Yanfei Chen, Zhongying CuiZhu, Lesly Miculicich, Long T. Le, Rui Meng, Chun-Liang Li, Hanghang Tong, Chen-Yu Lee, Tomas Pfister</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28380">2610.28380</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL, cs.SE</p>
+  <p class="field"><strong>核心创新:</strong> 提出 OO-Harness 框架，用面向对象设计进化 agent harness 层级体系。训练期间进化 agent 使用执行记录创建专门化 harness 家族（通过继承实现），测试时 harness 路由器为每个任务选择特定 harness。在三个长程基准上，OO-Harness 绝对提升最高 15%。</p>
+  <p class="summary">OO-Harness：面向对象设计进化 agent harness 层级，专门化子类 + 路由器，绝对提升最高 15%。</p>
+  <p class="score">评分: 8.5</p>
+</article>
+<article class="paper">
+  <h3>6🌟 BitMTP: When Multi-Token Prediction Meets Low-Bit Large Language Models</h3>
+  <p class="field"><strong>作者:</strong> Ning Zhang, Shihao Wang, Jinrui Zhang, Chaodong Xiao, Lei Zhang</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28500">2610.28500</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/PolyU-VCLab/BitMTP">https://github.com/PolyU-VCLab/BitMTP</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL, cs.AI, cs.DC, cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 提出 BitMTP 算法-系统协同设计框架，解决超低比特 LLM 骨干上的多 token 预测加速问题。联合 next-token 预测和 MTP 目标使单一模型同时具备自回归生成和块因果草稿能力。在 NVIDIA H20 上，BitNet b1.58-2B 实现 2.2 倍加速，1.7B-4B Bonsai 模型实现 2.1-2.4 倍加速。</p>
+  <p class="summary">BitMTP：超低比特 LLM 多 token 预测加速框架，H20 上 BitNet 2.2x 加速、Bonsai 2.1-2.4x。</p>
+  <p class="score">评分: 8.5</p>
+</article>
+<article class="paper">
+  <h3>7 GPT-6-Astra Understands Touch and Outperform Vision--Tactile--Language--Action Models</h3>
+  <p class="field"><strong>作者:</strong> Ziyong Wang, Yupei Lin, Runxuan Huang, Liang Lin, Dongyu Zhang, Guangrun Wang</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28457">2610.28457</a></p>
+  <p class="field"><strong>分类:</strong> cs.RO, cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 提出 GPT-as-Tactile-Policy（GPT-6-Astra），将专家演示总结为任务指导和触觉参考用于接触评估和纠正动作，无需额外机器人专用预训练或每任务策略微调。在五个 UniVTAC 任务上达到 93.8% 平均成功率；在 Insert Hole 任务上，触觉反馈将成功率从 31% 提升至 99%。</p>
+  <p class="summary">GPT-6-Astra：GPT 作为触觉策略，无需机器人预训练，UniVTAC 93.8% 成功率，Insert Hole 31%→99%。</p>
+  <p class="score">评分: 8.4</p>
+</article>
+<article class="paper">
+  <h3>8 Binary Discrete Diffusion: Candidate-Set Diffusion for Logic and Planning Tasks</h3>
+  <p class="field"><strong>作者:</strong> Rodrigo Casado Noguerales, Dimitri von Rütte, Bernhard Schölkopf, Thomas Hofmann, Aran Raoufi</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28543">2610.28543</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL, cs.AI, cs.LG, stat.ML</p>
+  <p class="field"><strong>核心创新:</strong> 提出 Binary Discrete Diffusion，噪声状态是每个位置的候选 token 集合（二进制成员向量）。与掩码和均匀扩散不同，二元扩散通过添加和移除改变候选集，允许信息逐渐丢失和恢复，扩散状态本身表示部分不确定性。在 Sudoku-Extreme、Boxoban 和图着色上持续优于强基线，最大增益出现在最难实例上。</p>
+  <p class="summary">Binary Discrete Diffusion：候选集表示部分不确定性，Sudoku/Boxoban/图着色上超越掩码/均匀基线。</p>
+  <p class="score">评分: 8.4</p>
+</article>
+<article class="paper">
+  <h3>9🌟 Reward Misspecification Degrades Chain-of-Thought Monitorability</h3>
+  <p class="field"><strong>作者:</strong> Tianyi Lorena Yan, John Hewitt</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28303">2610.28303</a></p>
+  <p class="field"><strong>代码:</strong> <a href="https://github.com/Lorenayannnnn/reward-misspecification-degrades-cot-monitorability">https://github.com/Lorenayannnnn/reward-misspecification-degrades-cot-monitorability</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 证明奖励错误指定本身即可降低 CoT 可监控性——即使模型在 CoT 中继续推理任务意图，输出却违反意图并获得奖励。提出缓解方法：收集跨训练步骤的多样奖励 rollout，用 LM 推断奖励描述并注入输入，将可监控性平均提升 24% 或 42%（绝对值）。</p>
+  <p class="summary">奖励错误指定降低 CoT 可监控性；奖励描述训练将可监控性提升 24-42%。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+<article class="paper">
+  <h3>10 GRADUS: Discovering and Recovering Agent Lessons from the Environment's Latent Syllabus</h3>
+  <p class="field"><strong>作者:</strong> Qing Ping, Wei Yang, Panpan Xu, Johannes Kirmayr, Lukas Stappen, Junjie Tang, Jun Huan</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.27781">2610.27781</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI</p>
+  <p class="field"><strong>核心创新:</strong> 提出 GRADUS，将固定环境视为潜在大纲，提取受保护的行为算子捕获动作如何依赖当前条件。将验证视为恢复信号而非终端过滤器，耦合覆盖引导探索与困难样本保留。在 τ²-Bench 上将 30B 模型从 59% 提升至 89%，在 CAR-Bench 上从 47% 提升至 83%。</p>
+  <p class="summary">GRADUS：环境潜在大纲提取行为算子，验证作为恢复信号，τ²-Bench 59%→89%，CAR-Bench 47%→83%。</p>
+  <p class="score">评分: 8.3</p>
+</article>
+<article class="paper">
+  <h3>11 OptionWorld: A Benchmark for Diagnosing Failures of LLMs as Long-Term Personal Assistants</h3>
+  <p class="field"><strong>作者:</strong> Ruoyu Zhang, Zhaocen Liu, Weiyi Tian, Melissa Feng, Shilong Liu</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.28491">2610.28491</a></p>
+  <p class="field"><strong>分类:</strong> cs.CL</p>
+  <p class="field"><strong>核心创新:</strong> 引入 OptionWorld 基准，追踪模拟日常任务中的信息获取、判断、行动和结果。35.5% 的失败实例中关键事实仍保留在截止日期前的最后输入中。失败分析识别三大问题：所需信息未获取或组合、可用行动机会未利用、agent 施加任务未要求的限制。</p>
+  <p class="summary">OptionWorld 基准：35.5% 失败因关键事实未利用，三大问题——信息未组合、机会未利用、自加限制。</p>
+  <p class="score">评分: 7.9</p>
+</article>
+<article class="paper">
+  <h3>12 SAPD: Learning from Agent Experience without Environment Interaction</h3>
+  <p class="field"><strong>作者:</strong> Juncheng Diao, Haibin Wang, Wei Shi, Yifan Ding, Qingbin Li, Rongxiang Weng, Xunliang Cai</p>
+  <p class="field"><strong>arXiv:</strong> <a href="https://arxiv.org/abs/2610.27847">2610.27847</a></p>
+  <p class="field"><strong>分类:</strong> cs.AI, cs.LG</p>
+  <p class="field"><strong>核心创新:</strong> 提出 Step-Advantage Policy Distillation（SAPD），用相对步骤优势从离线轨迹学习，无需新环境观测或额外多轮交互。在 ALFWorld、WebShop 和 Search-based QA 上，SAPD 相比 SFT 缓解灾难性遗忘，每训练步骤运行速度至少比在线 OPD 快 4.7 倍。</p>
+  <p class="summary">SAPD：相对步骤优势从离线轨迹学习，比 SFT 缓解遗忘，比在线 OPD 快 4.7 倍。</p>
+  <p class="score">评分: 7.8</p>
+</article>
+
+<h2>🔥 GitHub Trending AI 项目</h2>
+<table>
+  <thead>
+    <tr><th>项目</th><th>描述</th><th>今日⭐</th><th>语言</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><a href="https://github.com/MadsLorentzen/ai-job-search">MadsLorentzen/ai-job-search</a></td><td>AI 求职申请框架：评估职位、定制简历、写求职信、准备面试</td><td>+3861</td><td>Python</td></tr>
+    <tr><td><a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></td><td>多阶段安全审计编码 agent 技能，独立验证、机器可读发现</td><td>+1712</td><td>JavaScript</td></tr>
+    <tr><td><a href="https://github.com/stablyai/orca">stablyai/orca</a></td><td>多 agent 舰队工作平台，支持 Grok Bot、Claude Code 等编码 agent</td><td>+1565</td><td>TypeScript</td></tr>
+    <tr><td><a href="https://github.com/anomalyco/opencode">anomalyco/opencode</a></td><td>开源编码 agent</td><td>+1240</td><td>TypeScript</td></tr>
+    <tr><td><a href="https://github.com/DietrichGebert/ponytail">DietrichGebert/ponytail</a></td><td>让 AI agent 像最懒的高级开发一样思考——最好的代码是不用写的代码</td><td>+1208</td><td>JavaScript</td></tr>
+    <tr><td><a href="https://github.com/Comfy-Org/ComfyUI">Comfy-Org/ComfyUI</a></td><td>最强大的模块化扩散模型 GUI、API 和后端，全球最快本地推理引擎</td><td>+1206</td><td>Python</td></tr>
+    <tr><td><a href="https://github.com/Graphify-Labs/graphify">Graphify-Labs/graphify</a></td><td>将代码库、文档、SQL 模式、配置和 PDF 转为可查询知识图谱</td><td>+802</td><td>Python</td></tr>
+    <tr><td><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a></td><td>金融市场语言基础模型</td><td>+733</td><td>Python</td></tr>
+    <tr><td><a href="https://github.com/ruvnet/ruflo">ruvnet/ruflo</a></td><td>原始 agent harness：部署智能多玩家集群、协调自主工作流</td><td>+684</td><td>TypeScript</td></tr>
+    <tr><td><a href="https://github.com/msitarzewski/agency-agents">msitarzewski/agency-agents</a></td><td>完整 AI 机构：从前端向导到 Reddit 社区忍者，每个 agent 是专门化专家</td><td>+562</td><td>Shell</td></tr>
+  </tbody>
+</table>
+
+<h2>📊 评分说明</h2>
+<p>按四个维度评分：作者/机构知名度(30%)、创新点价值(40%)、影响范围(20%)、完整度与严谨性(10%)，有开源代码额外 +1🌟。</p>
+
+<footer>
+  <p>由 WorkBuddy 自动生成 | <a href="https://yenanjing.github.io/ai-briefings/">返回首页</a></p>
+</footer>
+</body>
+</html>

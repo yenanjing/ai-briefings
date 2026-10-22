@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 研究简报 2026-10-22</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --star: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        header .date {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .summary {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .summary h2 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+        .summary p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        h2.section {
+            font-size: 1.4rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        .paper {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .paper h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .paper .meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .paper .meta a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .paper .meta a:hover {
+            text-decoration: underline;
+        }
+        .paper .innovation {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+        .github-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .github-item .rank {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 30px;
+            text-align: center;
+        }
+        .github-item .name {
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .github-item .name:hover {
+            text-decoration: underline;
+        }
+        .github-item .stars {
+            font-size: 0.85rem;
+            color: var(--star);
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .github-item .desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI 研究简报</h1>
+            <p class="date">2026-10-22</p>
+        </header>
+
+        <div class="summary">
+            <h2>📋 今日要点</h2>
+            <p>今日主题集中在「世界模型与具身智能的架构统一」（AW-0 首次将代码规划、视频预测和动作执行统一为三流耦合的 mixture-of-transformers、CADRE 系统研究世界模型自编码器的压缩策略、ALPS 统一物理状态/语言/像素三种表示、PhysiCalWorld 通过 in-context 物理校准解决世界模型漂移）、「Agent 探索与蒸馏新范式」（ASTEROID 非对称 on-policy 蒸馏学习测试时探索，比 RL 少 100 倍交互、Environment Duels 揭示 LLM 共演化中求解与创建是不同技能）、「AI 辅助系统研究突破」（AI-greement harness 发现新共识协议 A-greement 超越人类数十年研究成果）、「VLA 长程操作与力控」（AtomicRL 原子任务 RL 提升 21.3%、CW-WAM 接触力预测将插入成功率从 25% 提升至 70%）、「LLM 推理与基准」（LongZero 零数据长上下文推理、Quant-Arena 量化交易基准无一模型跑赢市场）。</p>
+            <br>
+            <p><strong>GitHub 趋势：</strong>Agent 工程化生态持续爆发——ponytail「最懒高级开发」思维单日 +2,079 领跑；安全审计 skill +2,012、多 agent 舰队 orca +1,541、知识图谱 graphify +1,433 集体强势；扩散模型 GUI ComfyUI +939 稳居基础设施；金融基础模型 Kronos +575、token 压缩 headroom +474、LLM 推理引擎 vllm +441 持续受关注。</p>
+        </div>
+
+        <h2 class="section">📄 arXiv 论文 Top 12</h2>
+        
+            <div class="paper">
+                <h3>1🌟 Agentic World Action Models</h3>
+                <p class="meta"><strong>作者：</strong>Zhuoyang Liu, Dantong Niu, Botong Zhang, Boning Shao, Jing Wang, Ruijie Zheng, Yuvan Sharma, Runyu Lu, Jiaming Liu, Renrui Zhang, Roei Herzig, Yutong Bai, Ken Goldberg, Danfei Xu, Yuke Zhu, Guanzhi Wang, Linxi "Jim" Fan, Trevor Darrell</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30136" target="_blank">2610.30136</a> | <strong>分类：</strong>cs.RO</p>
+                <p class="meta"><strong>评分：</strong>9.0</p>
+                <p class="innovation"><strong>核心创新：</strong>提出 AW-0 框架，将代码规划与联合视频-动作预测统一为三个耦合生成流（代码/视频/动作）的 mixture-of-transformers 架构。代码既结构化多步预测与控制，又作为可复用技能程序供后续 agentic 执行。在 RoboTwin 2.0 和物理双臂操作任务上超越 VLA/WAM 基线。</p>
+            </div>
+            <div class="paper">
+                <h3>2 The End of Consensus Research?</h3>
+                <p class="meta"><strong>作者：</strong>Clément Burgelin, Rachid Guerraoui, Zicong Hong, Yinan Hu, Anne-Marie Kermarrec, Rafael Pires, Rasmus Moorits Veski, Martijn de Vos</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30114" target="_blank">2610.30114</a> | <strong>分类：</strong>cs.DC / cs.AI</p>
+                <p class="meta"><strong>评分：</strong>8.7</p>
+                <p class="innovation"><strong>核心创新：</strong>AI 辅助发现新共识协议 A-greement，在地理分布式状态机上显著超越现有方案（写密集延迟降低 12.2%，读密集降低 33.3%）。核心是 AI-greement agent harness，集成概念导向协议知识库、模块化实现骨架和 Lean 验证框架，可自动发现、实现、实验和验证候选协议。</p>
+            </div>
+            <div class="paper">
+                <h3>3 Asymmetric On-Policy Distillation Learns In-Context Exploration (ASTEROID)</h3>
+                <p class="meta"><strong>作者：</strong>Sriyash Poddar, Yanda Bao, Jacob Krantz, Matthew Chang, Xavier Puig, Roozbeh Mottaghi, Natasha Jaques, Abhishek Gupta</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30105" target="_blank">2610.30105</a> | <strong>分类：</strong>cs.AI / cs.RO / cs.LG</p>
+                <p class="meta"><strong>评分：</strong>8.6</p>
+                <p class="innovation"><strong>核心创新：</strong>提出 ASTEROID 师生框架，通过非对称 on-policy 蒸馏学习测试时探索行为。特权专家无需探索，但学生在部分可观测下收集 on-policy 上下文后蒸馏，学会系统性地解决不确定性。在 11 个环境中实现约 2 倍回报、比 RL 基线少约 100 倍交互，并成功迁移到真实机器人操作（+40% 成功率）。</p>
+            </div>
+            <div class="paper">
+                <h3>4 Rethinking Video Autoencoders for Interactive World Models (CADRE)</h3>
+                <p class="meta"><strong>作者：</strong>Adrien Ramanana Rahary, Yutong Bai, Nicolas Dufour, Patrick Pérez, David Picard</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30129" target="_blank">2610.30129</a> | <strong>分类：</strong>cs.CV</p>
+                <p class="meta"><strong>评分：</strong>8.5</p>
+                <p class="innovation"><strong>核心创新：</strong>构建 CADRE 开源因果扩散表示自编码器族，系统研究世界模型应在何处、如何、压缩多少。发现：强压缩下扩散解码器比感知回归更锐利；操作任务中时间压缩在自编码器中比在世界模型中更有效；操作与导航需要相反的压缩策略。代码和模型已开源。</p>
+            </div>
+            <div class="paper">
+                <h3>5🌟 Environment Duels: A Microcosm of LLM Co-Evolution</h3>
+                <p class="meta"><strong>作者：</strong>Shibo Jin, Zhiqiu Xu, Yiling Zou, Shangyu Gong, Mayur Naik</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30116" target="_blank">2610.30116</a> | <strong>分类：</strong>cs.AI / cs.CL</p>
+                <p class="meta"><strong>评分：</strong>8.5</p>
+                <p class="innovation"><strong>核心创新：</strong>提出动态 agentic 基准 Environment Duels，评估 LLM 作为环境创建者和求解者的双重能力。九个前沿 LLM 实验揭示：最强求解者不是最强创建者，小模型从他人玩法中学习更多。 pairwise 交互形成传递性排名，RL 实验中 hint lift 可预测训练收益。代码已开源。</p>
+            </div>
+            <div class="paper">
+                <h3>6 ALPS: Visual State Encoders for World Models</h3>
+                <p class="meta"><strong>作者：</strong>Yanqing Liu, Letian Zhang, Chengzhi Liu, Zijun Wang, Jieru Mei, Hongliang Fei, Yuyin Zhou, Cihang Xie</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30120" target="_blank">2610.30120</a> | <strong>分类：</strong>cs.CV</p>
+                <p class="meta"><strong>评分：</strong>8.4</p>
+                <p class="innovation"><strong>核心创新：</strong>提出 ALPS 预训练视觉状态编码器，在单一 patch token 集合中统一物理状态信息、语言对齐和像素重建。仅用静态图像和文本预训练 ViT-B/16，在 15 个公开编码器统一评估中达到 ViT-B 模型最低 LIBERO 状态探测误差（匹配 3.5 倍大的 V-JEPA 2-L），冻结 token 在 LIBERO 上达 85.5% 策略成功率。</p>
+            </div>
+            <div class="paper">
+                <h3>7 Multimodal Embodied Agents: A Unified Capability-centric Perspective (PAPAV)</h3>
+                <p class="meta"><strong>作者：</strong>Yanzhe Chen, Ziyi Yang, Jifeng Zhu, Qiming Huang, Ruihe An, Peiyao Xu, Hesen Yang, Runda Liu, Chang Gong, Zhijun Cao, Zechen Bai, Wenzheng Zeng, Yiqi Lin, Guoqiang Liang, Kevin Yuchen Ma, Kevin Qinghong Lin, Mike Zheng Shou</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30108" target="_blank">2610.30108</a> | <strong>分类：</strong>cs.CV / cs.AI / cs.RO</p>
+                <p class="meta"><strong>评分：</strong>8.4</p>
+                <p class="innovation"><strong>核心创新：</strong>定义多模态具身 agent（MMEA）并引入 PAPAV 统一能力框架：Perceive-Anticipate-Plan-Act-Verify 五大循环功能。跨 64 个基准分析发现：仅 5 个评估 Anticipate、3 个评估 Verify，两者 largely 隐藏在任务成功率背后。五个物理约束使错误更难逆转，为设计可靠物理 agent 提供共同基础。</p>
+            </div>
+            <div class="paper">
+                <h3>8 LongZero: Enhancing Long-Context Reasoning in LLMs from Zero Data</h3>
+                <p class="meta"><strong>作者：</strong>Zhennan Wan, Jianfei Chen</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30132" target="_blank">2610.30132</a> | <strong>分类：</strong>cs.CL / cs.LG</p>
+                <p class="meta"><strong>评分：</strong>8.3</p>
+                <p class="innovation"><strong>核心创新：</strong>提出 LongZero 方法，让 LLM 在零外部数据下提升长上下文推理能力。模型先以紧凑结构化形式自写问题和答案及支撑证据，再将证据展开为长多文档上下文，结合自写多跳推理和多轮检索任务用 GRPO 训练。在五个长上下文推理基准上超越外部语料合成基线。</p>
+            </div>
+            <div class="paper">
+                <h3>9 PhysiCalWorld: In-Context Physics Calibration for World Models</h3>
+                <p class="meta"><strong>作者：</strong>Yunhao Luo, Wentao He, Yinpei Dai, Hyelin Nam, Hongze Fu, Joyce Chai, Nima Fazeli, Jeong Joon Park</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30125" target="_blank">2610.30125</a> | <strong>分类：</strong>cs.CV / cs.AI / cs.RO</p>
+                <p class="meta"><strong>评分：</strong>8.3</p>
+                <p class="innovation"><strong>核心创新：</strong>提出 PhysiCalWorld，通过 in-context prompting 将动作条件世界模型校准到实例特定动力学，无需微调或解析物理建模。将探索性交互片段编码为紧凑物理描述符 token，仅用潜在预测损失端到端训练。在四个环境中大幅提升 rollout 预测精度和视觉规划成功率，学习到的描述符形成物理结构化潜在空间。</p>
+            </div>
+            <div class="paper">
+                <h3>10 AtomicRL: Atomic Reinforcement Learning for Long-Horizon Robotic Manipulation</h3>
+                <p class="meta"><strong>作者：</strong>Likui Zhang, Zhe Zhu, Zhihao Zhan, Yibo Bai, Hanlin Wang, Dongwei Li, Bin Wang, Tianle Zhang, Xiaodan Liang, Liang Lin</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30097" target="_blank">2610.30097</a> | <strong>分类：</strong>cs.CV / cs.AI / cs.RO</p>
+                <p class="meta"><strong>评分：</strong>8.3</p>
+                <p class="innovation"><strong>核心创新：</strong>提出 AtomicRL 框架，利用原子任务结构实现可靠信用分配和自适应探索。SAPO 用语义感知门控约束失败子任务的 TD 残差跨任务边界传播；BATE 根据子任务掌握程度动态协调采样和探索激励。在 LIBERO-LONG 上比 PPO 提升 3.6-4.0%，CALVIN ABC-D 提升 9.5%，真实世界平均提升 21.3%。</p>
+            </div>
+            <div class="paper">
+                <h3>11 Quant-Arena: Benchmarking LLM Agents for Quantitative Trading Research</h3>
+                <p class="meta"><strong>作者：</strong>Houde Qian, Zheng Jiang, Wenyi Li, Chenxi Xu, Xinjie Lin, Yuzhao Peng, Ruoyu Han, Youjie Zheng, Kaisen Yang, Qinhuai Na, You Fu, Calvin Xiao</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30113" target="_blank">2610.30113</a> | <strong>分类：</strong>cs.AI / cs.CE / cs.CL</p>
+                <p class="meta"><strong>评分：</strong>8.2</p>
+                <p class="innovation"><strong>核心创新：</strong>提出 Quant-Arena 基准和公开排行榜，评估 LLM 在真实 A 股市场数据上的端到端量化研究能力。模型构建特征和评分代码，仅在 2022-2023 反馈，冻结策略在密封的 2024 年评估。九个前沿模型中 GPT-6 Astra 得分最高，但无一在 2024 年跑赢等权市场。</p>
+            </div>
+            <div class="paper">
+                <h3>12 CW-WAM: A Structured Contact-Wrench World Action Model for Force-Sensitive Manipulation</h3>
+                <p class="meta"><strong>作者：</strong>Houzhu Ding, Xinda Qi, Luqi Wang, Ming Yang</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.30117" target="_blank">2610.30117</a> | <strong>分类：</strong>cs.RO</p>
+                <p class="meta"><strong>评分：</strong>8.0</p>
+                <p class="innovation"><strong>核心创新：</strong>提出 CW-WAM 世界动作模型，联合预测视频、运动和接触力。pair-causal 注意力机制结构化运动-力依赖，长固定长度力记忆保留历史交互信息。在 20Hz 导纳控制器配合下，方形销钉插入成功率从 25% 提升至 70%，电源适配器从 40% 提升至 95%，力参考 RMSE 显著降低。</p>
+            </div>
+
+        <h2 class="section">🔥 GitHub Trending (AI 相关)</h2>
+        
+            <div class="github-item">
+                <span class="rank">1</span>
+                <div class="info">
+                    <a href="https://github.com/DietrichGebert/ponytail" target="_blank" class="name">DietrichGebert/ponytail</a>
+                    <span class="stars">+2079 ⭐ today</span>
+                    <p class="desc">Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">2</span>
+                <div class="info">
+                    <a href="https://github.com/cloudflare/security-audit-skill" target="_blank" class="name">cloudflare/security-audit-skill</a>
+                    <span class="stars">+2012 ⭐ today</span>
+                    <p class="desc">A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">3</span>
+                <div class="info">
+                    <a href="https://github.com/stablyai/orca" target="_blank" class="name">stablyai/orca</a>
+                    <span class="stars">+1541 ⭐ today</span>
+                    <p class="desc">The place for working with a fleet of agents. Run any coding agent with your own subscription.</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">4</span>
+                <div class="info">
+                    <a href="https://github.com/Graphify-Labs/graphify" target="_blank" class="name">Graphify-Labs/graphify</a>
+                    <span class="stars">+1433 ⭐ today</span>
+                    <p class="desc">Turn any codebase into a queryable knowledge graph. Local deterministic AST parsing, no vector store.</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">5</span>
+                <div class="info">
+                    <a href="https://github.com/Comfy-Org/ComfyUI" target="_blank" class="name">Comfy-Org/ComfyUI</a>
+                    <span class="stars">+939 ⭐ today</span>
+                    <p class="desc">The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface.</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">6</span>
+                <div class="info">
+                    <a href="https://github.com/shiyu-coder/Kronos" target="_blank" class="name">shiyu-coder/Kronos</a>
+                    <span class="stars">+575 ⭐ today</span>
+                    <p class="desc">Kronos: A Foundation Model for the Language of Financial Markets</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">7</span>
+                <div class="info">
+                    <a href="https://github.com/headroomlabs-ai/headroom" target="_blank" class="name">headroomlabs-ai/headroom</a>
+                    <span class="stars">+474 ⭐ today</span>
+                    <p class="desc">Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents.</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">8</span>
+                <div class="info">
+                    <a href="https://github.com/vllm-project/vllm" target="_blank" class="name">vllm-project/vllm</a>
+                    <span class="stars">+441 ⭐ today</span>
+                    <p class="desc">A high-throughput and memory-efficient inference and serving engine for LLMs</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">9</span>
+                <div class="info">
+                    <a href="https://github.com/strelov1/freehire" target="_blank" class="name">strelov1/freehire</a>
+                    <span class="stars">+360 ⭐ today</span>
+                    <p class="desc">freehire — the open-source search engine for job seekers</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">10</span>
+                <div class="info">
+                    <a href="https://github.com/akitaonrails/ai-memory" target="_blank" class="name">akitaonrails/ai-memory</a>
+                    <span class="stars">+286 ⭐ today</span>
+                    <p class="desc">Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors</p>
+                </div>
+            </div>
+
+        <footer>
+            <p>数据来源：arXiv (L1 OR 查询，25 篇候选) | GitHub Trending (10 个 AI 项目)</p>
+            <p>自动生成于 2026-10-22</p>
+        </footer>
+    </div>
+</body>
+</html>

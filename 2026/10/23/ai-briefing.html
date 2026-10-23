@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 研究简报 2026-10-23</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --star: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        header .date {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .summary {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .summary h2 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+        .summary p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        h2.section {
+            font-size: 1.4rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        .paper {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .paper h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .paper .meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .paper .meta a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .paper .meta a:hover {
+            text-decoration: underline;
+        }
+        .paper .innovation {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+        .github-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .github-item .rank {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 30px;
+            text-align: center;
+        }
+        .github-item .name {
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .github-item .name:hover {
+            text-decoration: underline;
+        }
+        .github-item .stars {
+            font-size: 0.85rem;
+            color: var(--star);
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .github-item .desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI 研究简报</h1>
+            <p class="date">2026-10-23</p>
+        </header>
+
+        <div class="summary">
+            <h2>📋 今日要点</h2>
+            <p>今日主题集中在「3D 生成与具身智能表征」（FlexPart 统一可变粒度图像到 3D 部件生成、Sensorimotor Alignment 提出柏拉图表征假说下的运动-感知收敛代理指标、Gate3DGen 选择性预处理净化真实世界图像用于 3D 生成、HiP3R 分层位姿图解决长序列 3D 重建）、「Agent 安全与可靠性」（EpiSEM-Bench 评估缺失证据下 LLM agent 的不安全执行、SpectralCanary 主动式 T2I 数据集使用审计、CausalCoT 因果透明性推理框架消除注意力泄漏）、「测试时推理与元学习」（Direct Pass@$k$ 优化平衡思维剪枝的质量与多样性、METTA 双时间尺度记忆增强元 RL 适应）、「机器人触觉与物理构建」（OpenTac 开源触觉皮肤生态系统、BrickWright agent 创建物理可行 LEGO 构建）。</p>
+            <br>
+            <p><strong>GitHub 趋势：</strong>Agent 安全审计生态持续爆发——cloudflare/security-audit-skill 单日 +2,979 继续领跑；NVIDIA OpenShell 自主 agent 安全运行时 +211、Claude-Red 攻击性安全技能库 +209 双双上榜；Anthropic 官方 knowledge-work-plugins +303 持续加码知识工作者插件生态；OpenBMB VoxCPM2 无 tokenizer 多语言语音合成 +144 延续垂直场景落地。</p>
+        </div>
+
+        <h2 class="section">📄 arXiv 论文 Top 12</h2>
+        
+            <div class="paper">
+                <h3>1🌟 FlexPart: A Unified Framework for Image-to-3D Part Generation via Variable Granularity</h3>
+                <p class="meta"><strong>作者：</strong>Qiwen Gu, Xin Zhou, Xiwu Chen, Zhongyang Zhu, Zhuo Zhang, Junqiao Zhao</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31671" target="_blank">2610.31671</a> | <strong>分类：</strong>cs.CV</p>
+                <p class="meta"><strong>代码：</strong><a href="https://github.com/Gucci233/FlexPart" target="_blank">github.com/Gucci233/FlexPart</a></p>
+                <p class="innovation"><strong>核心创新：</strong>统一图像到 3D 部件生成框架，支持从稀疏点到密集边界框和掩码的可变粒度几何条件。通过门控自适应调制整合异构输入，解锁跨模态协同；非对称几何引导机制进一步提升生成质量，为数字资产创建提供灵活可控的流水线。</p>
+            </div>
+            <div class="paper">
+                <h3>2 Sensorimotor Alignment: A Platonic Proxy for Embodied Policy Success</h3>
+                <p class="meta"><strong>作者：</strong>Yunfei Xie, Howard H. Qian, Shiyi Lan, Kaiyu Hang, Chen Wei</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31670" target="_blank">2610.31670</a> | <strong>分类：</strong>cs.CV / cs.LG / cs.RO</p>
+                <p class="innovation"><strong>核心创新：</strong>基于柏拉图表征假说（PRH），提出 Sensorimotor Alignment (S²) 作为机器人策略成功的廉价离线代理指标。验证运动轨迹是否构成另一种模态：随着具身模型能力提升，其感知表征是否趋向物理运动结构。无需昂贵闭环测试即可评估模型能力。</p>
+            </div>
+            <div class="paper">
+                <h3>3 Direct Pass@$k$ Optimization for Thought Pruning: Balancing Quality and Diversity in Test-Time Reasoning</h3>
+                <p class="meta"><strong>作者：</strong>Mahdi Salmani, Adel Javanmard, Devansh Gupta, Meisam Razaviyayn</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31667" target="_blank">2610.31667</a> | <strong>分类：</strong>cs.AI / cs.CL</p>
+                <p class="innovation"><strong>核心创新：</strong>针对测试时缩放的思维剪枝问题，指出现有方法要么仅优化质量（丢弃多样性重要的候选），要么仅优化多样性（忽略质量）。提出直接 Pass@$k$ 优化，在候选池前缀剪枝阶段同时平衡解的质量和多样性，显著降低计算开销。</p>
+            </div>
+            <div class="paper">
+                <h3>4 Reliable AI-Assisted Decisions via Selective Auditing</h3>
+                <p class="meta"><strong>作者：</strong>Isaac Gibbs, Elise L. Han, Ryan J. Tibshirani, Tijana Zrnic</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31662" target="_blank">2610.31662</a> | <strong>分类：</strong>stat.ML / cs.LG</p>
+                <p class="innovation"><strong>核心创新：</strong>提出在线监控框架用于 AI 辅助决策系统。每轮中系统输出提议决策及置信度分数（可由不同模型产生），基于此决定自动接受或咨询人类专家。利用选择性审计实现可靠的人机协作决策流程，为高风险场景部署提供理论保证。</p>
+            </div>
+            <div class="paper">
+                <h3>5 OpenTac: An Open Ecosystem for Customizable, Scalable, and Transferable 3D Tactile Sensing</h3>
+                <p class="meta"><strong>作者：</strong>Ariel Slepyan, Geeta Chandra Raju Bethala, Jiafeng Gu, Anagha Rajendra Dangle, Yinzhe Zhou, Hongyuan Fu et al.</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31661" target="_blank">2610.31661</a> | <strong>分类：</strong>cs.RO</p>
+                <p class="innovation"><strong>核心创新：</strong>开源触觉皮肤生态系统，包含可扩展电阻式触觉皮肤（结构化可变形覆盖层将切向载荷转化为空间变化压力）和高度可定制的传感器设计工具。差分响应解码局部剪切向量，共模响应编码法向力，支持下游机器人控制和学习应用的即插即用部署。</p>
+            </div>
+            <div class="paper">
+                <h3>6 SpectralCanary: Embarrassingly Simple Low-Frequency Traces for T2I Dataset-Use Auditing</h3>
+                <p class="meta"><strong>作者：</strong>Sy-Tuyen Ho, Anirudh Satheesh, Soham Chawathe, Huy Nghiem, Yongkyun Lee, Andrew Adams Schoen et al.</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31659" target="_blank">2610.31659</a> | <strong>分类：</strong>cs.CV / cs.LG</p>
+                <p class="innovation"><strong>核心创新：</strong>主动式数据集使用审计方法，在发布前将共享信号植入数据集中，后续检查可疑模型生成输出中是否出现该信号。使用平滑低通掩码将固定金丝雀图像混入每张集合图像，兼顾可验证性、保真度、鲁棒性和可部署性，解决 T2I 模型微调审计难题。</p>
+            </div>
+            <div class="paper">
+                <h3>7 METTA: Memory-Enhanced Test-Time Adaptation for Meta-Reinforcement Learning</h3>
+                <p class="meta"><strong>作者：</strong>Ali Najar, Hosein Hasani, Amir Kooshan Fattah, Yasamin Rajabi, Mahdieh Soleymani Baghshah</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31656" target="_blank">2610.31656</a> | <strong>分类：</strong>cs.LG / cs.AI</p>
+                <p class="innovation"><strong>核心创新：</strong>将快速适应阶段分解为两个时间尺度：因果神经记忆执行细粒度回合内适应，慢速元学习模块跨回合整合知识。解决经典循环 agent 压缩经验为隐藏状态、transformer agent 二次内存开销的两难问题，实现高效元强化学习。</p>
+            </div>
+            <div class="paper">
+                <h3>8 BrickWright: Agentic Creation of Physically Feasible Brick Builds</h3>
+                <p class="meta"><strong>作者：</strong>Ava Pun, Kevin Dai, Sally Chen, Maxwell Jones, Ruixuan Liu, Kangle Deng et al.</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31651" target="_blank">2610.31651</a> | <strong>分类：</strong>cs.CV</p>
+                <p class="innovation"><strong>核心创新：</strong>为编码 agent 提供组装构建和验证物理可行性的工具，使其生成物理有效的 LEGO 砖块组件。解决前沿编码 agent 在构建物理世界物体时产生浮动、碰撞或断开部件的问题，证明工具增强的验证足以让 agent 产出物理有效且符合提示的组件。</p>
+            </div>
+            <div class="paper">
+                <h3>9 EpiSEM-Bench: Evaluating Safety and Evidence Recovery in LLM Agents under Missing Evidence</h3>
+                <p class="meta"><strong>作者：</strong>Qijin Zhang, Hanzhen Wang, Yuehan Zhao, Haoyu Dai, Yao Shu, Zhongxiang Dai et al.</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31650" target="_blank">2610.31650</a> | <strong>分类：</strong>cs.AI / cs.LG</p>
+                <p class="innovation"><strong>核心创新：</strong>可执行基准，评估 LLM agent 在缺失证据下的不安全执行、安全边界和证据恢复。包含 300 对匹配的 unsafe/safe 任务对，跨六个领域，通过系统性抑制关键事实来测量临界事实缺失时的不安全执行率，揭示工具响应遗漏安全相关事实的风险。</p>
+            </div>
+            <div class="paper">
+                <h3>10 Gate3DGen: A Pre-processing Model that Selectively Purifies Real-World Images for 3D Generation</h3>
+                <p class="meta"><strong>作者：</strong>Xiaolin Li, Zihao Huang, Fanpeng Meng, Chen Yang, Guanjun Wu, Kai Zhang et al.</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31649" target="_blank">2610.31649</a> | <strong>分类：</strong>cs.CV</p>
+                <p class="innovation"><strong>核心创新：</strong>选择性预处理模型，对现有 3D 生成器进行门控输入而无需重训。退化感知路由器绕过分类为干净的输入，提取特征指导其余输入的净化，解决真实世界图像不均匀光照、模糊和遮挡导致的单图 3D 生成质量急剧下降问题。</p>
+            </div>
+            <div class="paper">
+                <h3>11 Causal Chain of Thought: Mitigating Attention Leakage via Context Isolation</h3>
+                <p class="meta"><strong>作者：</strong>Gabriele Dominici, Teague McMillan, Fazl Barez, Marc Langheinrich, Martin Gjoreski</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31639" target="_blank">2610.31639</a> | <strong>分类：</strong>cs.LG / cs.AI</p>
+                <p class="innovation"><strong>核心创新：</strong>推理框架强制因果透明性，将问题分解为原子子问题的有向无环图，在隔离上下文中评估每个节点。解决标准自回归生成中密集注意力允许每步推理关注完整上下文、导致模型通过直接查找得出答案而生成看似合理但事后合理化解释的问题。</p>
+            </div>
+            <div class="paper">
+                <h3>12 HiP3R: Hierarchical Pose Graphs for Long-Horizon 3D Reconstruction</h3>
+                <p class="meta"><strong>作者：</strong>Zunnan Xu, Shangchen Zhou, Yihang Luo, Chen Change Loy</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.31635" target="_blank">2610.31635</a> | <strong>分类：</strong>cs.CV</p>
+                <p class="innovation"><strong>核心创新：</strong>分层位姿图方法解决长视频序列的前馈 3D 重建问题。将重叠块产生的独立局部重建（坐标框架不一致、共享相机重复估计）通过位姿图优化传播约束，实现全局一致性，处理数千帧的长序列而无需直接推理的计算和内存开销。</p>
+            </div>
+
+        <h2 class="section">🔥 GitHub Trending (AI 相关)</h2>
+        
+            <div class="github-item">
+                <span class="rank">1</span>
+                <div class="info">
+                    <a href="https://github.com/cloudflare/security-audit-skill" target="_blank" class="name">cloudflare/security-audit-skill</a>
+                    <span class="stars">+2,979 ⭐ today</span>
+                    <p class="desc">A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">2</span>
+                <div class="info">
+                    <a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank" class="name">Renhuai123/ziwei-doushu</a>
+                    <span class="stars">+547 ⭐ today</span>
+                    <p class="desc">紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">3</span>
+                <div class="info">
+                    <a href="https://github.com/anthropics/knowledge-work-plugins" target="_blank" class="name">anthropics/knowledge-work-plugins</a>
+                    <span class="stars">+303 ⭐ today</span>
+                    <p class="desc">Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">4</span>
+                <div class="info">
+                    <a href="https://github.com/NVIDIA/OpenShell" target="_blank" class="name">NVIDIA/OpenShell</a>
+                    <span class="stars">+211 ⭐ today</span>
+                    <p class="desc">OpenShell is the safe, private runtime for autonomous AI agents.</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">5</span>
+                <div class="info">
+                    <a href="https://github.com/SnailSploit/Claude-Red" target="_blank" class="name">SnailSploit/Claude-Red</a>
+                    <span class="stars">+209 ⭐ today</span>
+                    <p class="desc">Curated library of offensive security skills for the Claude skills system — from SQLi to shellcode, EDR evasion to exploit development</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">6</span>
+                <div class="info">
+                    <a href="https://github.com/OpenBMB/VoxCPM" target="_blank" class="name">OpenBMB/VoxCPM</a>
+                    <span class="stars">+144 ⭐ today</span>
+                    <p class="desc">VoxCPM2: Tokenizer-Free TTS for Multilingual Speech Generation, Creative Voice Design, and True-to-Life Cloning</p>
+                </div>
+            </div>
+
+        <footer>
+            <p>数据来源：arXiv (L1 OR 查询，25 篇候选) | GitHub Trending (6 个 AI 项目)</p>
+            <p>自动生成于 2026-10-23</p>
+        </footer>
+    </div>
+</body>
+</html>

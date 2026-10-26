@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 研究简报 2026-10-26</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --star: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        header .date {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+        .summary {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .summary h2 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+        .summary p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+        h2.section {
+            font-size: 1.4rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        .paper {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .paper h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text);
+        }
+        .paper .meta {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 6px;
+        }
+        .paper .meta a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .paper .meta a:hover {
+            text-decoration: underline;
+        }
+        .paper .innovation {
+            font-size: 0.9rem;
+            color: var(--text);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--border);
+        }
+        .github-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .github-item .rank {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            min-width: 30px;
+            text-align: center;
+        }
+        .github-item .name {
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        .github-item .name:hover {
+            text-decoration: underline;
+        }
+        .github-item .stars {
+            font-size: 0.85rem;
+            color: var(--star);
+            font-weight: 600;
+            margin-left: 10px;
+        }
+        .github-item .desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 AI 研究简报</h1>
+            <p class="date">2026-10-26</p>
+        </header>
+
+        <div class="summary">
+            <h2>📋 今日要点</h2>
+            <p>今日主题集中在「世界模型与具身智能的动作条件统一」（UniAction 把力/相机/手姿/机器人姿等异构动作统一为「离散语义 + 连续时空锚定」的稀疏元素集，单模型超越各动作专家；ViT-H 用扩散模型直接从视频生成人形参考动作并以 DPO 后训练，绕过重建-重定向-跟踪三阶段）、「Agent 自我进化与蒸馏新范式」（HarnessMM 用守护式决策复用 + RSI 把 harness token 消耗降低 29.54%–87.93%；Frontier-OPD 用「学习前沿」识别可被教师桥接提升的决策情境；On-Policy Self-Training 完全摆脱人造 prompt/答案，仅由高层主题描述驱动自合成课程）、「企业级多 Agent 知识与安全」（Reimagining Enterprise RAG 提出「先组织后检索」的 artifact 级知识层；SemantEq 针对自动形式化「证明器越强、等价越宽松」的失效模式提出更严格的等价关系）、「具身数据采集与机器人学习」（DexPort 用手持接口消除 embodiment gap，野外数据把任务成功率从 36% 提升至 78%；VERID 用语义数字孪生桥接 AI agent 与湿实验室物理现实；SceneBloom 用「视觉采样 + 契约编译」生成物理稳定的室内 3D 场景）、「LLM Agent 网络合作动力学」（The Butterfly Defects 在 IPD 中揭示合作对模型组成与微小语言变化高度敏感）、「鲁棒 RL 系统化」（RobustRLlib 统一 17 种鲁棒 RL 算法 + 273 扰动配置的能力图谱）。</p>
+            <br>
+            <p><strong>GitHub 趋势：</strong>Agent 安全审计生态继续领跑——cloudflare/security-audit-skill 单日 +2,878 高居榜首；AI harness/设计技能生态集体强势——Nutlope/hallmark 反 AI-slop 设计技能 +1,317、pbakaus/impeccable AI harness 设计语言 +1,092 双双上榜；开源语音 AI VoiceStudio +1,592（646 语言全本地）延续垂直场景落地；makecindy/cindy 开箱即用 AI Agent +675、pollen-robotics/microduck 微型双足机器人 +647 显示具身 agent 持续受关注；TauricResearch/TradingAgents 多 Agent LLM 金融交易框架 +381、AgriciDaniel/claude-seo 26 子技能 +197 显示 agent 技能生态向垂直行业纵深。</p>
+        </div>
+
+        <h2 class="section">📄 arXiv 论文 Top 12</h2>
+        
+            <div class="paper">
+                <h3>1🌟 UniAction: Unified Action Conditioning for World Models</h3>
+                <p class="meta"><strong>作者：</strong>Bowen Xue, Zizhang Li, Hong-Xing Yu, Jiajun Wu</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32977" target="_blank">2610.32977</a> | <strong>分类：</strong>cs.CV | <strong>评分：</strong>8.5</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>提出统一动作条件框架，将力、相机控制、手部姿态、机器人姿态等异构动作统一表示为「离散语义身份 + 连续时空锚定坐标」的稀疏动作元素集，映射到预训练视频模型的原生位置空间。单个联合训练模型超越各动作专属专家，证明异构动作数据可从统一模型与联合训练中受益。</p>
+            </div>
+            <div class="paper">
+                <h3>2🌟 HarnessMM: Recursive Self-Improvement for Harness Token Efficiency</h3>
+                <p class="meta"><strong>作者：</strong>Yuhua Jiang, Chang Xu, Feifei Gao, Li Zhao</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32813" target="_blank">2610.32813</a> | <strong>分类：</strong>cs.AI | <strong>评分：</strong>8.3</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>针对 agent harness 在工具反馈后重复调用推理的浪费问题，提出「守护式决策复用 + 递归自改进（RSI）」方法。Executable Decision Graph 存储精确动作、字面参数、因果依赖与公共守护条件；Certified Callback Substitution 通过原生接口执行并记录慢回调移除。在 HumanEval 上保持 Codex 90.82% 成功率的同时把 Tokens/task 从 66.72 降至 47.02（节省 29.54%）；DeepSeek Harness 成功率从 71.43% 升至 85.71%，Tokens/task 从 96.28 降至 11.62（节省 87.93%）。</p>
+            </div>
+            <div class="paper">
+                <h3>3🌟 Frontier-OPD: Discovering the Edge of Agent Capability and Teaching Agents to Go Beyond</h3>
+                <p class="meta"><strong>作者：</strong>Zheng Jiang, Yiming Chen, Houde Qian, Ling Li, Chaoyang Li, Lifeng Sun</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32802" target="_blank">2610.32802</a> | <strong>分类：</strong>cs.CL | <strong>评分：</strong>8.0</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>把 on-policy 蒸馏中的「学习前沿」操作化：识别学生当前「具挑战但经短暂教师引导后可自主延续」的决策情境。将 on-policy 经验组织为共享状态轨迹图，通过轨迹平衡聚合教师-学生分歧识别干预候选，用「桥接一致性 + 后续学生延续」对比评估短教师桥接。在 ALFWorld、WebShop、ScienceWorld 上，跨学生规模与教师配置均优于对比蒸馏基线。</p>
+            </div>
+            <div class="paper">
+                <h3>4 On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models</h3>
+                <p class="meta"><strong>作者：</strong>Leon Sick, Lukas Hoyer, Yannick Strümpler, Christian Reisswig, Timo Ropinski, Federico Tombari</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32770" target="_blank">2610.32770</a> | <strong>分类：</strong>cs.CL | <strong>评分：</strong>7.8</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>把 on-policy 自蒸馏重构为自训练框架：仅由粗粒度高层主题描述驱动，模型合成自身的查询与特权推理轨迹课程，无需任何人造 prompt 或答案。完全合成特权信息的自蒸馏让模型在多领域自我提升，同时保留未自训练领域的能力，并在文本与多模态（VQA）领域均展现一致的自我改进，表明基座模型蕴含可被放大的丰富潜在能力。</p>
+            </div>
+            <div class="paper">
+                <h3>5 ViT-H: Generative Video-To-Humanoid Control with Motion Tracking Feedback</h3>
+                <p class="meta"><strong>作者：</strong>Zimo He, Tianyi Bian, Zizhong Yang, Hongjie Li, Nan Jiang, Jieming Cui, Baoxiong Jia, Yizhou Wang, Siyuan Huang, Yixin Zhu</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32966" target="_blank">2610.32966</a> | <strong>分类：</strong>cs.RO | <strong>评分：</strong>7.8</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>提出「生成-跟踪」范式：用扩散模型直接从单目人体视频生成人形参考动作，绕过人体运动重建与重定向两阶段，并以运动跟踪结果通过直接偏好优化（DPO）后训练生成器。自回归变体实现 sub-400ms 延迟的实时人形视频遥操作。在 Unitree G1 上，ViT-H 在运动质量与可执行性上均超越 SOTA 重建-重定向-跟踪流水线，并展现良好的模型/数据规模缩放律。</p>
+            </div>
+            <div class="paper">
+                <h3>6 Reimagining Enterprise RAG for Multi-Agent Systems: A Knowledge Layer That Organizes Before It Retrieves</h3>
+                <p class="meta"><strong>作者：</strong>Garima Agrawal, Prasun Das, Akshay Sarvade, Priyanka L, Minisha N, Sravani Joshna, Hemath Manivannan, Lavanya Korada, Sambhrit Pattanayak, Srashti Gupta, Siddu R, Prasad Kalyanasundaram</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32851" target="_blank">2610.32851</a> | <strong>分类：</strong>cs.AI | <strong>评分：</strong>7.5</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>针对企业级多 agent 场景下扁平向量检索把「名称相似但操作迥异」的规则误召回的问题，提出「先组织后检索」的知识层：自描述目录 + 稀疏元数据注册表 + 基于 artifact 而非抽取实体的导航超图。查询先解析为 artifact 标识符约束向量搜索，使跨服务竞争规则结构性缺席而非仅被降权。已在 241 仓库 / 18 服务上处理，支持 100+ 生产缺陷根因分析与 35 个发布回归失败的归因。</p>
+            </div>
+            <div class="paper">
+                <h3>7 Semantic Representation for Agentic Self-Play in Automated Laboratories (VERID)</h3>
+                <p class="meta"><strong>作者：</strong>Yves Delley, John Coller, Zachary Cutts, Alexander Daryin, Mathias Bellaiche, Jun W. Kim, Oscar Donosa, Srinidhi B. Seshadri, Tanner Clary, Sandy Klemm, Avinatan Hassidim, Yossi Matias, Pooja Rao, Petar Sirkovic, Annalisa Pawlosky</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32755" target="_blank">2610.32755</a> | <strong>分类：</strong>cs.RO | <strong>评分：</strong>7.5</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>为弥合 AI agent 高层推理与湿实验室复杂物理现实之间的鸿沟，提出 VERID——实验室工作单元的持久高保真语义数字孪生，提供四项核心服务：可查询内省、时间压缩仿真、完整追踪持久化、安全执行框架。三个水性染料/去离子水混合案例验证了光学与流体基础，展示了实验协议关键错误的预防性检测、运行中状态化错误恢复与事后微妙物理失效识别。</p>
+            </div>
+            <div class="paper">
+                <h3>8 SceneBloom: Agentic Indoor Environment Generation with Realistic and Diverse Layouts for Embodied Learning</h3>
+                <p class="meta"><strong>作者：</strong>Yuhan Liu, Lianhui Qin, Shenji Wan</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32978" target="_blank">2610.32978</a> | <strong>分类：</strong>cs.CV | <strong>评分：</strong>7.3</p>
+                <p class="meta"><strong>代码：</strong><a href="https://github.com/Tinaliu0123/scenebloom" target="_blank">github.com/Tinaliu0123/scenebloom</a></p>
+                <p class="innovation"><strong>核心创新：</strong>把视觉布局采样与「契约引导的 3D 编译」结合：分层采样器用扩散先验在功能区内生成家具布置，编译器再用从每个提案抽取的关系引导几何拟合与局部姿态校正。在五种房型上，SceneBloom 取得最高视觉质量与物理稳定性，是唯一无网格碰撞与越界物体的方法，且其布局分布最接近真实房间。在这些真实场景训练的对象导航策略，在留出真实扫描上的成功率高于在同等数量真实训练扫描上训练的策略。</p>
+            </div>
+            <div class="paper">
+                <h3>9 SemantEq: Faithful Bidirectional Equivalence of Formal Statements</h3>
+                <p class="meta"><strong>作者：</strong>Xinrui Li, Pawan Sasanka Ammanamanchi, Siddharth Bhat, Rianna Jamdar, Yongxi Lin, Stella Biderman</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32919" target="_blank">2610.32919</a> | <strong>分类：</strong>cs.AI | <strong>评分：</strong>7.2</p>
+                <p class="meta"><strong>代码：</strong><a href="https://github.com/hlxr89/SemantEq" target="_blank">github.com/hlxr89/SemantEq</a></p>
+                <p class="innovation"><strong>核心创新：</strong>针对自动形式化中「证明器越强、逻辑等价越宽松」的失效模式（任意两个都被证明的 P、Q 都满足 P↔Q），提出更严格的关系：要求每个语句只能通过允许的推理步骤链（逻辑重排与库方程重写）相互转化。SemantEq-Eval（无模型搜索）在 ProofNetVerif 上达到 100% 精度 / 65.6% 召回；SemantEq-ProofAudit 把等价对召回从 65.4% 提升到 81.1%，且 104 个非等价对全部拒绝。</p>
+            </div>
+            <div class="paper">
+                <h3>10 The Butterfly Defects: Tracing Cooperation in LLM Agent Networks</h3>
+                <p class="meta"><strong>作者：</strong>Maria Sampani, Maria Lymperaiou, Angeliki Dimitriou, Giorgos Filandrianos, Chrysoula Zerva, Giorgos Stamou</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32726" target="_blank">2610.32726</a> | <strong>分类：</strong>physics.soc-ph | <strong>评分：</strong>7.0</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>在迭代囚徒困境（IPD）中，从二元交互扩展到同构与异构 LLM 网络，系统研究「个体合作是否转化为集体合作」。发现合作对模型组成与微小语言变化高度敏感：与相同同伴合作的模型在混合种群中会转向背叛；一个简单的不确定性线索即可增减合作、重分配成本并影响数个跳距外未暴露的 agent；甚至反转动作标签顺序也会显著改变行为。</p>
+            </div>
+            <div class="paper">
+                <h3>11 DexPort: A Hand-Held Skill Interface for Dexterous Hand Data Collection</h3>
+                <p class="meta"><strong>作者：</strong>Amber Xie, Jiawei Fu, Xiaofeng Guo, Carmelo Sferrazza, Guanya Shi, Haozhi Qi</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32969" target="_blank">2610.32969</a> | <strong>分类：</strong>cs.RO | <strong>评分：</strong>7.0</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>面向高自由度机器人手的便携数据采集接口：采集与部署使用同一手硬件，消除 embodiment gap，同时记录指令关节目标与实测关节状态。关键观察是少量技能可支撑多种灵巧任务——操作者移动手持接口指定手腕运动，选择/调整协调手指运动的技能，无需独立控制每个关节。在 4 个真实任务（多样物体 pick-and-place、手持工具旋拧、抽屉收纳、双手扫描）收集 2,500+ 演示，使用记录机器人指令相比状态提升 11%→64%，野外数据使任务成功率从 36% 提升至 78%。</p>
+            </div>
+            <div class="paper">
+                <h3>12 RobustRLlib: A Unified Library and Benchmark for Robust Reinforcement Learning Algorithms</h3>
+                <p class="meta"><strong>作者：</strong>Xi Chen, Fengqi Hu, Zeyu Shen, Jiaying Xu, Shangding Gu, Pan Xu, Anqi Liu, Laixi Shi</p>
+                <p class="meta"><strong>arXiv：</strong><a href="https://arxiv.org/abs/2610.32971" target="_blank">2610.32971</a> | <strong>分类：</strong>cs.LG | <strong>评分：</strong>6.8</p>
+                
+                <p class="innovation"><strong>核心创新：</strong>把 17 种代表性鲁棒在线/离线/安全 RL 算法统一到同一接口下，并配套覆盖多样真实世界扰动、先进人形与 VLA 任务的评估平台。对 273 种扰动配置的系统评估给出了当前鲁棒 RL 算法的最新能力图谱，揭示其在何处仍然有效、在何处仍存在显著鲁棒性缺口。开源、用户友好，为把现有方法应用到新问题与开发新鲁棒 RL 算法提供可复现、可扩展的代码基。</p>
+            </div>
+
+        <h2 class="section">🔥 GitHub Trending (AI 相关)</h2>
+        
+            <div class="github-item">
+                <span class="rank">1</span>
+                <div class="info">
+                    <a href="https://github.com/cloudflare/security-audit-skill" target="_blank" class="name">cloudflare/security-audit-skill</a>
+                    <span class="stars">+2,878 ⭐ today</span>
+                    <p class="desc">多阶段安全审计的编码 agent 技能，独立验证、机器可读的发现</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">2</span>
+                <div class="info">
+                    <a href="https://github.com/debpalash/VoiceStudio" target="_blank" class="name">debpalash/VoiceStudio</a>
+                    <span class="stars">+1,592 ⭐ today</span>
+                    <p class="desc">开源、完全本地的 ElevenLabs 替代品：声音克隆、声音设计、视频配音、听写、转写与有声书，支持 646 种语言</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">3</span>
+                <div class="info">
+                    <a href="https://github.com/Nutlope/hallmark" target="_blank" class="name">Nutlope/hallmark</a>
+                    <span class="stars">+1,317 ⭐ today</span>
+                    <p class="desc">面向 Claude Code、Cursor、Codex 的反 AI-slop 设计技能</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">4</span>
+                <div class="info">
+                    <a href="https://github.com/pbakaus/impeccable" target="_blank" class="name">pbakaus/impeccable</a>
+                    <span class="stars">+1,092 ⭐ today</span>
+                    <p class="desc">让 AI harness 在设计上表现更好的设计语言</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">5</span>
+                <div class="info">
+                    <a href="https://github.com/makecindy/cindy" target="_blank" class="name">makecindy/cindy</a>
+                    <span class="stars">+675 ⭐ today</span>
+                    <p class="desc">开源、开箱即用的 AI Agent：想到，就能做到</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">6</span>
+                <div class="info">
+                    <a href="https://github.com/pollen-robotics/microduck" target="_blank" class="name">pollen-robotics/microduck</a>
+                    <span class="stars">+647 ⭐ today</span>
+                    <p class="desc">微型双足鸭子机器人 🦆</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">7</span>
+                <div class="info">
+                    <a href="https://github.com/TauricResearch/TradingAgents" target="_blank" class="name">TauricResearch/TradingAgents</a>
+                    <span class="stars">+381 ⭐ today</span>
+                    <p class="desc">多 Agent LLM 金融交易框架</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">8</span>
+                <div class="info">
+                    <a href="https://github.com/Renhuai123/ziwei-doushu" target="_blank" class="name">Renhuai123/ziwei-doushu</a>
+                    <span class="stars">+199 ⭐ today</span>
+                    <p class="desc">紫微斗数开源排盘引擎——基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">9</span>
+                <div class="info">
+                    <a href="https://github.com/AgriciDaniel/claude-seo" target="_blank" class="name">AgriciDaniel/claude-seo</a>
+                    <span class="stars">+197 ⭐ today</span>
+                    <p class="desc">Claude Code 通用 SEO 技能：26 子技能 + 19 子 agent，覆盖技术 SEO、E-E-A-T、schema、GEO/AEO、agent 就绪、外链、本地 SEO、电商、国际 SEO、Google APIs、PDF/Excel 报告</p>
+                </div>
+            </div>
+            <div class="github-item">
+                <span class="rank">10</span>
+                <div class="info">
+                    <a href="https://github.com/coollabsio/coolify" target="_blank" class="name">coollabsio/coolify</a>
+                    <span class="stars">+152 ⭐ today</span>
+                    <p class="desc">开源、可自托管的 PaaS 替代品（Vercel/Heroku/Netlify），可在自有服务器上一键部署静态站点、数据库、全栈应用与 360+ 服务</p>
+                </div>
+            </div>
+
+        <footer>
+            <p>数据来源：arXiv (L2 单类别查询，6/7 类别成功，128 篇候选) | GitHub Trending (10 个 AI 项目)</p>
+            <p>自动生成于 2026-10-26</p>
+        </footer>
+    </div>
+</body>
+</html>

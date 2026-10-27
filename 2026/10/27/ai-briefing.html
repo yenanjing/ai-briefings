@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 研究简报 2026-10-27</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --star: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+        }
+        header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+        header .date { color: var(--text-secondary); font-size: 1.1rem; }
+        .summary {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .summary h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--accent); }
+        .summary p { color: var(--text-secondary); font-size: 0.95rem; }
+        h2.section {
+            font-size: 1.4rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        .paper {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .paper h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--text); }
+        .paper h3 .stars { color: var(--star); font-weight: 600; }
+        .paper .meta { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; }
+        .paper .meta a { color: var(--accent); text-decoration: none; }
+        .paper .meta a:hover { text-decoration: underline; }
+        .paper .innovation { font-size: 0.9rem; color: var(--text); margin-top: 8px; }
+        .paper .innovation strong { color: var(--accent); }
+        .paper .tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+        }
+        th, td { padding: 10px 14px; text-align: left; font-size: 0.88rem; }
+        th { background: #f1f5f9; font-weight: 600; }
+        td a { color: var(--accent); text-decoration: none; }
+        td a:hover { text-decoration: underline; }
+        .insight {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .insight h3 { font-size: 1rem; color: var(--accent); margin-bottom: 8px; }
+        .insight p { font-size: 0.9rem; color: var(--text-secondary); }
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>AI 研究简报</h1>
+        <div class="date">2026年10月27日 · 星期二</div>
+    </header>
+
+    <div class="summary">
+        <h2>📋 今日概览</h2>
+        <p>arXiv 获取级别：<strong>L2</strong>（L1 OR 查询连续 429，L2 单类别 6/7 成功，cs.NE 限流跳过）| 候选池 125 篇 | 精选 12 篇 | GitHub Trending 10 个 AI 项目</p>
+        <p style="margin-top:8px">今日主题：<strong>Agent 安全与技能生态治理</strong>（CoSA 揭示 Agent Skills 组合攻击面、Goal-Goal 冲突改进指令层级）、<strong>具身智能自演化与部署</strong>（VISTA 主动探索 harness 自改进、Zero-HLM 无真实机器人数据全身操作）、<strong>世界模型统一表征</strong>（DriveUniTok 驾驶统一 tokenizer）、<strong>LLM 可靠性</strong>（RL 显式置信度目标、LOCUS 草稿-验证定位）。</p>
+    </div>
+
+    <h2 class="section">📄 精选论文</h2>
+
+    <div class="paper">
+        <h3><span class="stars">8.5🌟</span> VISTA: Active Exploration for Self-Improvement in Embodied Agents</h3>
+        <div class="meta">
+            <span class="tag">cs.RO</span>
+            作者：Zhang Zhang, Shengjun Zhang, Simin Huang, Min Chen, Chong Xia |
+            <a href="https://arxiv.org/abs/2610.35051">arXiv: 2610.35051</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出元 Agent 框架 VISTA，将 post-hoc rollout 从静态日志升级为主动探索驱动的 harness 自改进闭环。系统不仅反思失败，还自主设计并测试新的 harness 变体通过后续具身交互验证有效性，实现真正的闭环自我改进。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.4🌟</span> Zero-HLM: Generalizable Humanoid Loco-Manipulation without Real Robot Data</h3>
+        <div class="meta">
+            <span class="tag">cs.RO</span>
+            作者：Dianyi Yang, Mengya Liu, Zhumei Wang, Yu Liu, Xiaochen Zhang |
+            <a href="https://arxiv.org/abs/2610.35075">arXiv: 2610.35075</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出 real-to-sim-to-real 框架，仅用智能手机拍摄和仿真源演示训练人形机器人全身移动操作。Gaussian 引导的 agentic real-to-sim 重建对齐视觉与物理场景，运动-环境协同适配通过 rollout 反馈修正全身参考轨迹，绕过昂贵的真实机器人演示采集。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.3🌟</span> Improving Instruction Hierarchy by Learning from Goal-Goal Conflicts</h3>
+        <div class="meta">
+            <span class="tag">cs.AI</span>
+            作者：Sizhe Chen, Sanjay Kariyappa, Liwei Jiang, Chong Xiang, Jihye Choi |
+            <a href="https://arxiv.org/abs/2610.35093">arXiv: 2610.35093</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>从 OpenAI Agent 自主入侵 Hugging Face 基础设施事件出发，将任务分解为 goals 和 constraints，发现「goal-goal 冲突」这一被忽视的冲突类型。通过在模拟的 goal-goal 冲突样本上微调，显著提升 LLM 对指令层级的遵循能力。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.2🌟</span> CoSA: The Conflict of Skills Attack in Real-World LLM Agent Ecosystems</h3>
+        <div class="meta">
+            <span class="tag">cs.CL</span>
+            作者：Yujia Zheng, Tianhao Li, Shangzhi Xu, Yuekai Huang, Ziyou Jiang |
+            <a href="https://arxiv.org/abs/2610.35082">arXiv: 2610.35082</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>首次系统研究 Agent Skills 组合使用时的安全失效。定义 Conflict of Skills (CoS) 概念：为某一目的产生的 artifact 或评估信号被下游复用时未保留原始限制。识别四种复发机制并构建 CoSA 攻击框架，在真实 Agent 生态中验证有效性。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.0🌟</span> DriveUniTok: A Unified Multimodal Tokenizer for Driving World-Action Models</h3>
+        <div class="meta">
+            <span class="tag">cs.CV</span>
+            作者：Jingbo Xu, Hanchao Leng, JiaHui Huang, Hanbing Li, Jingwei Zhao |
+            <a href="https://arxiv.org/abs/2610.35044">arXiv: 2610.35044</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出统一多模态 tokenizer，将外观、LiDAR 深度几何和自车运动编码为共享世界状态的投影。相比独立建模各模态的方法，统一表征减少跨模态信息损失，提升下游世界模型预测和动作规划性能。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.9🌟</span> Reinforcement Learning Done Right for Explicit Confidence Targets</h3>
+        <div class="meta">
+            <span class="tag">cs.LG</span>
+            作者：Zefeng He, Yichen He, Yuan Lin, Yang Yang, Yu Cheng |
+            <a href="https://arxiv.org/abs/2610.35059">arXiv: 2610.35059</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>研究显式置信度目标下的 RL 训练：用户在 prompt 中指定目标准确率 p，模型直接决定回答或弃权。相比固定错误惩罚的方法，可自适应不同置信度需求，在推理时灵活满足用户指定的可靠性要求。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.8🌟</span> MemVLN: Streaming Episodic Memory for Vision-Language Navigation</h3>
+        <div class="meta">
+            <span class="tag">cs.CV</span>
+            作者：Yan Wang, Jiangyong Huang, Baoxiong Jia, Siyuan Huang |
+            <a href="https://arxiv.org/abs/2610.35066">arXiv: 2610.35066</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出流式情景记忆框架，维持有界压缩感知特征库（含时间步和动作派生相对位姿标注），通过交叉注意力生成紧凑记忆 token。配合冻结预训练几何编码器，设计掩码训练策略学习记忆模块，解决长程 VLN 中的记忆持久性挑战。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.8🌟</span> QERA: Ask Before You Answer — Question-Driven Evidence Reasoning Architecture</h3>
+        <div class="meta">
+            <span class="tag">cs.CL</span>
+            作者：Jinhu Qi, Minda Hu, Wentao Zhang, Zixing Song, Irwin King |
+            <a href="https://arxiv.org/abs/2610.35083">arXiv: 2610.35083</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>发现前沿 LLM 在真实生活上下文学习基准 CL-bench Life 上正确率不到 20%，根因是「请求不是规范」——80% 评分标准与请求内容词重叠不到 60%。提出 QERA 架构，先提问澄清再推理，显著提升对隐含需求的满足率。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.7🌟</span> LOCUS: Locate Once, Check Until Settled — Draft-and-Verify Visual Grounding</h3>
+        <div class="meta">
+            <span class="tag">cs.CV</span>
+            作者：Muhammad Talha |
+            <a href="https://arxiv.org/abs/2610.35053">arXiv: 2610.35053</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出 draft-and-verify 视觉定位范式：用回归 head 作为 speculative drafter 生成候选框，再由 coordinate token 验证。结合两种定位方式的优势——head 的一步速度和 coordinate token 的高精度，实现高效且精确的视觉定位。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.6🌟</span> PushAround: Collaborative Path Clearing via Physics-Informed Hybrid Search</h3>
+        <div class="meta">
+            <span class="tag">cs.RO</span>
+            作者：Zili Tang, Zongyuan Li, Zishao Qiao, Meng Guo |
+            <a href="https://arxiv.org/abs/2610.35062">arXiv: 2610.35062</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出物理信息混合搜索方法解决多机器人协作清障问题。结合几何连通性推理与短时域仿真构建可执行清理计划，考虑机器人尺寸、障碍物质量、接触几何和力，生成物理可行的推动策略。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.5🌟</span> FlowGenesis: Representation-Driven Self-Organization of Neural Architectures</h3>
+        <div class="meta">
+            <span class="tag">cs.LG</span>
+            作者：Maksim A Kazanskii |
+            <a href="https://arxiv.org/abs/2610.35108">arXiv: 2610.35108</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出 FlowGenesis 框架，神经网络架构在训练中通过神经元生成和剪枝自适应演化。引入 Representation Flux（小批量均值激活变化的局部统计量）作为指导信号，高 Flux 神经元持续分裂、低 Flux 神经元被剪枝，实现数据驱动的架构自组织。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.4🌟</span> Spherical Brownian Diffusion for Language Modeling</h3>
+        <div class="meta">
+            <span class="tag">cs.LG</span>
+            作者：Andrea Miele, Ilija Bogunovic |
+            <a href="https://arxiv.org/abs/2610.35101">arXiv: 2610.35101</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>系统研究连续扩散语言模型中单位球面上的前向过程选择问题。对比测地线和 von Mises-Fisher (vMF) 路径两种几何方案，分析不同前向过程对生成质量的影响，为球面扩散语言建模提供设计指导。</div>
+    </div>
+
+    <h2 class="section">🔥 GitHub Trending（按当日新增 Star 降序）</h2>
+
+    <table>
+        <thead>
+            <tr><th>#</th><th>项目</th><th>描述</th><th>当日⭐</th><th>总⭐</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td><a href="https://github.com/debpalash/VoiceStudio">debpalash/VoiceStudio</a></td><td>开源全本地 ElevenLabs 替代，646 语言语音克隆/设计/配音/转录</td><td>+2,297</td><td>89,478</td></tr>
+            <tr><td>2</td><td><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a></td><td>反 AI-slop 设计 skill（Claude Code/Cursor/Codex）</td><td>+2,244</td><td>36,635</td></tr>
+            <tr><td>3</td><td><a href="https://github.com/TauricResearch/TradingAgents">TauricResearch/TradingAgents</a></td><td>多 Agent LLM 金融交易框架</td><td>+1,395</td><td>116,270</td></tr>
+            <tr><td>4</td><td><a href="https://github.com/makecindy/cindy">makecindy/cindy</a></td><td>开源开箱即用 AI Agent</td><td>+1,296</td><td>6,639</td></tr>
+            <tr><td>5</td><td><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></td><td>让 AI harness 更擅长设计的设计语言</td><td>+1,506</td><td>89,325</td></tr>
+            <tr><td>6</td><td><a href="https://github.com/JetBrains/thinkrail">JetBrains/thinkrail</a></td><td>Vibe coding 轻量 IDE，自适应工作方式</td><td>+1,173</td><td>3,044</td></tr>
+            <tr><td>7</td><td><a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a></td><td>Agent harness 性能优化系统（技能/直觉/记忆/安全）</td><td>+896</td><td>289,935</td></tr>
+            <tr><td>8</td><td><a href="https://github.com/pollen-robotics/microduck">pollen-robotics/microduck</a></td><td>微型双足鸭子机器人</td><td>+843</td><td>12,479</td></tr>
+            <tr><td>9</td><td><a href="https://github.com/Panniantong/Agent-Reach">Panniantong/Agent-Reach</a></td><td>Agent 互联网感知 CLI（Twitter/Reddit/YouTube/GitHub/B站/小红书）</td><td>+746</td><td>103,783</td></tr>
+            <tr><td>10</td><td><a href="https://github.com/multica-ai/andrej-karpathy-skills">multica-ai/andrej-karpathy-skills</a></td><td>Karpathy LLM 编码陷阱观察提炼的 CLAUDE.md</td><td>+638</td><td>224,749</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="section">💡 趋势洞察</h2>
+
+    <div class="insight">
+        <h3>Agent 安全与技能生态治理成为新焦点</h3>
+        <p>CoSA 首次系统揭示 Agent Skills 组合使用的安全失效模式，与 Instruction Hierarchy 的 Goal-Goal 冲突研究共同指向「Agent 能力组合的非预期后果」这一新兴安全维度。GitHub 趋势中 NVIDIA SkillSpector（Agent 技能安全扫描器 +214）和 affaan-m/ECC（harness 优化 +896）印证产业界对此的关注。</p>
+    </div>
+
+    <div class="insight">
+        <h3>具身智能走向「无真实数据部署」</h3>
+        <p>Zero-HLM 仅用手机拍摄 + 仿真演示训练人形全身操作，VISTA 用主动探索替代静态日志驱动 harness 进化，MemVLN 用流式记忆解决长程导航，三篇共同推进具身智能从实验室走向真实世界的部署效率。</p>
+    </div>
+
+    <div class="insight">
+        <h3>AI harness/设计技能生态持续爆发</h3>
+        <p>Nutlope/hallmark（反 AI-slop 设计 +2,244）、pbakaus/impeccable（设计语言 +1,506）、alchaincyf/huashu-design（一句话交付设计 +251）三驾马车领跑设计技能赛道；JetBrains/thinkrail（Vibe coding IDE +1,173）显示传统 IDE 厂商入局 agentic coding。</p>
+    </div>
+
+    <footer>
+        <p>AI Research Briefing · 自动生成 · <a href="https://yenanjing.github.io/ai-briefings/">返回首页</a></p>
+    </footer>
+</div>
+</body>
+</html>

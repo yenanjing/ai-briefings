@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 研究简报 2026-10-29</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --star: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+        }
+        header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+        header .date { color: var(--text-secondary); font-size: 1.1rem; }
+        .summary {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .summary h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--accent); }
+        .summary p { color: var(--text-secondary); font-size: 0.95rem; }
+        h2.section {
+            font-size: 1.4rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        .paper {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .paper h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--text); }
+        .paper h3 .stars { color: var(--star); font-weight: 600; }
+        .paper .meta { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; }
+        .paper .meta a { color: var(--accent); text-decoration: none; }
+        .paper .meta a:hover { text-decoration: underline; }
+        .paper .innovation { font-size: 0.9rem; color: var(--text); margin-top: 8px; }
+        .paper .innovation strong { color: var(--accent); }
+        .paper .tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+        }
+        th, td { padding: 10px 14px; text-align: left; font-size: 0.88rem; }
+        th { background: #f1f5f9; font-weight: 600; }
+        td a { color: var(--accent); text-decoration: none; }
+        td a:hover { text-decoration: underline; }
+        .insight {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        }
+        .insight h3 { font-size: 1rem; color: var(--accent); margin-bottom: 8px; }
+        .insight p { font-size: 0.9rem; color: var(--text-secondary); }
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>AI 研究简报</h1>
+        <div class="date">2026年10月29日 · 星期四</div>
+    </header>
+
+    <div class="summary">
+        <h2>📋 今日概览</h2>
+        <p>arXiv 获取级别：<strong>L1</strong>（OR 查询一次成功，HTTP 200，64748 字节，25 篇候选）| 精选 12 篇 | GitHub Trending 10 个 AI 项目</p>
+        <p style="margin-top:8px">今日主题：<strong>Agent 训练科学化</strong>（SynthAPI 建立 tool-use agent scaling law、EnvSched 环境级调度提升 agent RL 效率、GEPA-Curator 修正反思式自改进）、<strong>Agent 安全结构性防御</strong>（Heads of Security 用 per-head attention gate 实现指令-数据分离）、<strong>世界模型与 VLA 从人类视频学习</strong>（ThinkWorld 用世界模型想象补齐动作标注）、<strong>视觉生成新范式</strong>（Know-then-Draw 拆分 AR 知识获取 + 扩散渲染、FVQ 证明离散视觉 token 可语义无损）。</p>
+    </div>
+
+    <h2 class="section">📄 精选论文</h2>
+
+    <div class="paper">
+        <h3><span class="stars">8.5🌟</span> Scaling Laws for Tool-Use Agents via Controllable Environment Synthesis</h3>
+        <div class="meta">
+            <span class="tag">cs.LG</span>
+            作者：Andrew Szot, Samira Abnar, Omar Attia, Abbas Kazerouni |
+            <a href="https://arxiv.org/abs/2610.37648">arXiv: 2610.37648</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出 SynthAPI 管线，沿工具、任务、环境复杂度三轴显式控制合成 tool-use 环境的多样性，首次系统研究数据组成对 LLM 工具使用 agent 训练的 scaling 行为，为 agent 训练数据配方提供可复现的 scaling law 实证。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.4🌟</span> GEPA-Curator: Curated Learning for Self Improving Agents</h3>
+        <div class="meta">
+            <span class="tag">cs.CL</span>
+            作者：Zack Yu, Nicholas Lee, Minjae Lee, Lakshya Agarwal |
+            <a href="https://arxiv.org/abs/2610.37651">arXiv: 2610.37651</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>指出 GEPA 等反思式 prompt 优化器从失败 rollout 学习的根本缺陷——失败可能源于 prompt 弱点、harness 限制、随机执行或噪声 judge，并非都有学习价值。提出策展式学习框架，区分「有信息量的失败」与「噪声失败」，提升自改进 agent 的样本效率。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.3🌟</span> ThinkWorld: World Imagination Reinforces Chain-of-Dynamics Reasoning</h3>
+        <div class="meta">
+            <span class="tag">cs.RO</span>
+            作者：Chaehyun Kim, Chi-Pin Huang, Jisoo Kim, Min-Hung Chen |
+            <a href="https://arxiv.org/abs/2610.37666">arXiv: 2610.37666</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出从人类视频学习 VLA 的新范式——用世界模型「想象」后续动力学状态作为中间推理步骤（Chain-of-Dynamics），绕过人类视频缺乏动作标注的根本矛盾，在可扩展数据与显式动作接地之间取得平衡。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.3🌟</span> EnvSched: Environment-Aware Scheduling for Rollout-Efficient Agent Reinforcement Learning</h3>
+        <div class="meta">
+            <span class="tag">cs.LG</span>
+            作者：Sihan Yang, Weichen Bai, Ruichuan An, Yiming Cheng |
+            <a href="https://arxiv.org/abs/2610.37609">arXiv: 2610.37609</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>将 agent RL 的效率瓶颈从「策略学习」上移到「环境级数据管理」，联合组织、评估、调度任务实例与生成它们的环境，在有限 rollout 预算下显著提升训练效率，为规模化 agent RL 提供系统级调度方案。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.2🌟</span> Heads of Security: Learned Attention Gates Improve Prompt Injection Robustness</h3>
+        <div class="meta">
+            <span class="tag">cs.LG</span>
+            作者：Igor Shilov, Xiaoxue Yang, Alexander Panfilov, Evgenii Kortukov |
+            <a href="https://arxiv.org/abs/2610.37657">arXiv: 2610.37657</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出 HoS 防御——通过少量学习的 per-head attention gate 强制指令-数据分离，让模型在阅读不可信内容时不跟随注入指令。在 Llama-3.3-70B 与 GPT-OSS-20B 上验证有效，是 attention-level 结构性防御而非 prompt-level 软防御。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.2🌟</span> Know, then Draw: A New Learning Paradigm for Visual Generation</h3>
+        <div class="meta">
+            <span class="tag">cs.CV</span>
+            作者：Yucheng Mao, Chongjian Ge, Zhuowen Tu, Hao Tan |
+            <a href="https://arxiv.org/abs/2610.37626">arXiv: 2610.37626</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出将视觉生成拆为「知识获取」（自回归预训练）与「高保真渲染」（扩散后训练）两阶段分工范式，系统研究知识获取与渲染的目标、表征与 scaling，为统一视觉生成模型设计提供新思路。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.0🌟</span> Can LLMs Uncover Hidden Physical Laws through Free Exploration?</h3>
+        <div class="meta">
+            <span class="tag">cs.CL</span>
+            作者：Zhen Yang, Wen Wang, Xander Xu, Ying-Cong Chen |
+            <a href="https://arxiv.org/abs/2610.37649">arXiv: 2610.37649</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出 LongChang 自动化框架，评估 LLM 在物理规律被改动的世界中能否自主注意到反常现象（如重物下落更慢）并通过实验发现规律——无需被告知调查什么，考察 LLM 的开放式科学发现能力。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.0🌟</span> Metacognitive Decoding: Efficient Inference for Diffusion Language Agents</h3>
+        <div class="meta">
+            <span class="tag">cs.CL</span>
+            作者：Mingyu Zhao, Shuhang Lin, Ligong Han, Xiaojing Yu |
+            <a href="https://arxiv.org/abs/2610.37642">arXiv: 2610.37642</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>为扩散语言模型 agent 提出元认知控制器，根据当前响应需求与 agent-环境交互状态动态决定「在哪里花算力」和「生成多少文本」，实现并行 token 生成下的高效交互。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.0🌟</span> VideoLVR: Latent Visual Reasoning over Grounded Video Evidence</h3>
+        <div class="meta">
+            <span class="tag">cs.CV</span>
+            作者：Shilong Li, Xingyuan Bu, Hao Shi, Yun Xing |
+            <a href="https://arxiv.org/abs/2610.37613">arXiv: 2610.37613</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>针对视频 MLLM 中 CoT 推理导致的「视觉遗忘」，提出在潜在空间中对锚定视频证据进行视觉推理，使模型在推理链中可持续回访相关视觉内容，而非仅依赖语言 trace。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.0🌟</span> Honeycomb-Surfels: Compact Hexagonal Primitives for Efficient Scene Rendering and Reconstruction</h3>
+        <div class="meta">
+            <span class="tag">cs.CV</span>
+            作者：Prakhar Kaushik, Soumava Paul, Alan Yuille |
+            <a href="https://arxiv.org/abs/2610.37668">arXiv: 2610.37668</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>提出 Hexels——平面六边形表面元素 + 一阶空间颜色场，作为 radiance field 与 splatting 之外的新 3D 场景表征，利用局部平面区域平滑变化的假设显著降低内存与计算开销，适配资源受限场景。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.8🌟</span> Attention as Lattice Gauge Theory: Relations Interact Only Through Wilson Loops</h3>
+        <div class="meta">
+            <span class="tag">cs.LG</span>
+            作者：Aakash Sarkar, Ananya Mukherjee, Motoshige Sato |
+            <a href="https://arxiv.org/abs/2610.37656">arXiv: 2610.37656</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>将 attention 中的关系组合映射为格点规范理论——若每个实体坐标系可独立旋转（per-entity frame freedom），则关系仅通过 Wilson loop 闭合相互作用，为关系推理的组合性与顺序性提供物理学启发的形式化解释。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.8🌟</span> Can Discrete Tokens Serve as Semantically Lossless Representations of Visual Signals?</h3>
+        <div class="meta">
+            <span class="tag">cs.CV</span>
+            作者：Jialv Zou, Xiaotong Li, Zhengrong Yue, Xu Huang |
+            <a href="https://arxiv.org/abs/2610.37662">arXiv: 2610.37662</a> |
+            <a href="https://github.com/hustvl/FVQ">GitHub: hustvl/FVQ</a>
+        </div>
+        <div class="innovation"><strong>核心创新：</strong>挑战「量化误差必然导致语义损失」的共识，证明离散视觉 token 可以作为语义无损表征，为多模态建模中「共享 next-token prediction」的离散接口提供理论支撑与实证。</div>
+    </div>
+
+    <h2 class="section">🐙 GitHub Trending（AI 相关 · 按当日新增 Star 降序）</h2>
+
+    <table>
+        <thead>
+            <tr><th>#</th><th>项目</th><th>描述</th><th>当日⭐</th><th>总⭐</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td><a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a></td><td>终身个性化 AI 导师</td><td>+2,371</td><td>48.2k</td></tr>
+            <tr><td>2</td><td><a href="https://github.com/elayadesign/ai-design-skills">elayadesign/ai-design-skills</a></td><td>AI 设计技能集</td><td>+2,139</td><td>11.3k</td></tr>
+            <tr><td>3</td><td><a href="https://github.com/Nutlope/hallmark">Nutlope/hallmark</a></td><td>反 AI-slop 设计 skill (Claude/Cursor/Codex)</td><td>+2,110</td><td>40.8k</td></tr>
+            <tr><td>4</td><td><a href="https://github.com/hmjz100/LinkSwift">hmjz100/LinkSwift</a></td><td>网盘直链下载助手（8 大网盘）</td><td>+1,616</td><td>35.0k</td></tr>
+            <tr><td>5</td><td><a href="https://github.com/togg53192-cmd/jailbreaks">togg53192-cmd/jailbreaks</a></td><td>LLM 越狱提示词合集</td><td>+1,477</td><td>7.3k</td></tr>
+            <tr><td>6</td><td><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></td><td>编码 agent 的设计词汇表</td><td>+1,472</td><td>92.9k</td></tr>
+            <tr><td>7</td><td><a href="https://github.com/JetBrains/thinkrail">JetBrains/thinkrail</a></td><td>Vibe coding IDE</td><td>+1,068</td><td>5.2k</td></tr>
+            <tr><td>8</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>Agentic skills 框架与开发方法论</td><td>+1,095</td><td>307k</td></tr>
+            <tr><td>9</td><td><a href="https://github.com/nightly-labs/openbot">nightly-labs/openbot</a></td><td>本地优先 AI teammate 桌面工作区</td><td>+1,054</td><td>3.3k</td></tr>
+            <tr><td>10</td><td><a href="https://github.com/makecindy/cindy">makecindy/cindy</a></td><td>开箱即用开源 AI Agent</td><td>+728</td><td>8.2k</td></tr>
+        </tbody>
+    </table>
+
+    <h2 class="section">💡 今日洞察</h2>
+
+    <div class="insight">
+        <h3>Agent 训练科学化</h3>
+        <p>SynthAPI 首次为 tool-use agent 建立可控合成环境下的 scaling law；EnvSched 把 agent RL 效率瓶颈从策略学习上移到环境级数据调度；GEPA-Curator 修正反思式自改进对「噪声失败」的浪费。</p>
+    </div>
+    <div class="insight">
+        <h3>Agent 安全结构性防御</h3>
+        <p>Heads of Security 用 per-head attention gate 实现指令-数据分离，从 attention 层面而非 prompt 层面防御注入攻击，在 70B 级模型上验证有效。</p>
+    </div>
+    <div class="insight">
+        <h3>世界模型与 VLA 从人类视频学习</h3>
+        <p>ThinkWorld 用世界模型「想象」补齐人类视频缺失的动作标注，Chain-of-Dynamics 作为中间推理步骤，绕过人类视频缺乏动作标注的根本矛盾。</p>
+    </div>
+    <div class="insight">
+        <h3>视觉生成新范式</h3>
+        <p>Know-then-Draw 拆分「知识获取（AR）+ 高保真渲染（扩散）」两阶段；FVQ 证明离散视觉 token 可语义无损，为统一多模态接口提供理论支撑。</p>
+    </div>
+
+    <footer>
+        <p>Generated at 2026-10-29 11:00 CST | arXiv L1 OR query (HTTP 200, 64748 bytes, 25 candidates) | 12 papers selected</p>
+        <p><a href="https://yenanjing.github.io/ai-briefings/">← 返回简报索引</a></p>
+    </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 研究简报 2026-10-30</title>
+    <style>
+        :root {
+            --bg: #fafafa;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-secondary: #555;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --star: #f59e0b;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container { max-width: 900px; margin: 0 auto; }
+        header {
+            text-align: center;
+            padding: 40px 0 30px;
+            border-bottom: 2px solid var(--border);
+            margin-bottom: 30px;
+        }
+        header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+        header .date { color: var(--text-secondary); font-size: 1.1rem; }
+        .summary {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .summary h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--accent); }
+        .summary p { color: var(--text-secondary); font-size: 0.95rem; }
+        h2.section {
+            font-size: 1.4rem;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+        }
+        .paper {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .paper h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--text); }
+        .paper h3 .stars { color: var(--star); font-weight: 600; }
+        .paper .meta { font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; }
+        .paper .meta a { color: var(--accent); text-decoration: none; }
+        .paper .meta a:hover { text-decoration: underline; }
+        .paper .innovation { font-size: 0.9rem; color: var(--text); margin-top: 8px; }
+        .paper .innovation strong { color: var(--accent); }
+        .paper .tag {
+            display: inline-block;
+            background: #eff6ff;
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 6px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 20px;
+        }
+        th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: #f8fafc; font-weight: 600; font-size: 0.85rem; color: var(--text-secondary); }
+        td { font-size: 0.9rem; }
+        td a { color: var(--accent); text-decoration: none; font-weight: 500; }
+        td a:hover { text-decoration: underline; }
+        .stars-today { font-weight: 600; color: #059669; }
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>AI 研究简报</h1>
+        <div class="date">2026-10-30</div>
+    </header>
+
+    <div class="summary">
+        <h2>📋 今日概览</h2>
+        <p>arXiv 获取级别：L1（OR 查询一次成功，25 篇候选）| 论文日期：2026-10-28 | 精选 12 篇 | GitHub Trending：10 个 AI 项目</p>
+        <p style="margin-top:8px;"><strong>今日主题</strong>：推理效率与解码加速（CopyLoop 免训练循环 Transformer 加速、CACPU CPU 注意力 kernel 2x 加速）、Agent 经验管理与安全（Routed CL 跨 Agent 经验分区复用、ASD 对抗自蒸馏、CoM 课程式越狱发现）、轻量化基础模型（Foundational-NCA 211K 参数医学分割）、Agentic AI for Science（QUANTA 自主量子测量）</p>
+    </div>
+
+    <h2 class="section">📄 精选论文（12 篇）</h2>
+
+    <div class="paper">
+        <h3><span class="stars">8.5🌟</span> CopyLoop: Fast Looped Transformer Decoding via Context Copying and Shallow Screening</h3>
+        <div class="meta">
+            <strong>作者</strong>: Wenyu Du, Stephen Chung<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38822">2610.38822</a> |
+            <strong>分类</strong>: <span class="tag">cs.CL</span><span class="tag">cs.AI</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 CopyLoop，一种免训练解码算法，结合低成本上下文复制提案与浅层筛选，通过连续递归调度实现 Looped Transformer 的高效解码。不同于逐步生成，CopyLoop 从重复上下文中提出多 token 后缀，在浅层递归深度提前评估以过滤错误分支，同时并发处理新旧块，显著降低循环深度带来的解码开销。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.3🌟</span> A 211K Parameter Foundation Model: Genetic Prompting in Neural Cellular Automata</h3>
+        <div class="meta">
+            <strong>作者</strong>: John Kalkhof, Niklas Ihm, Daniel Kirste, Anirban Mukhopadhyay<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38776">2610.38776</a> |
+            <strong>分类</strong>: <span class="tag">cs.CV</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 Foundational-NCA，仅 211K 参数的基础模型，基于神经细胞自动机（NCA）结合梯度学习与潜在任务空间上的遗传优化，通过紧凑任务向量引导预测，实现无需重训练即可适配多种医学分割任务。在低资源环境下挑战了 SAM 等大模型对高端基础设施的依赖。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.2🌟</span> Routed Continual Learning</h3>
+        <div class="meta">
+            <strong>作者</strong>: Michael Philip, Mahesh Balakrishnan, David Geraghty, David Mao, Vidhya Venkat, Ilya Mironov<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38796">2610.38796</a> |
+            <strong>分类</strong>: <span class="tag">cs.LG</span><span class="tag">cs.MA</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 Routed CL 架构，解决大规模部署 Agent 间经验共享问题。将历史轨迹聚类，每个簇维护独立记忆系统（完整历史或压缩表征），路由机制决定新问题应查询哪个簇的经验。平衡了全局历史的成本与单一压缩表征的信息丢失，实现跨问题类型的经验有效复用。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.0🌟</span> Autonomous Quantum Measurement with Agentic AI</h3>
+        <div class="meta">
+            <strong>作者</strong>: Eunbi Rha, Abhijatmedhi Chotrattanapituk, Mouyang Cheng 等<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38850">2610.38850</a> |
+            <strong>分类</strong>: <span class="tag">cond-mat.mtrl-sci</span><span class="tag">cs.AI</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 QUANTA，面向自主量子材料表征的 Agent 框架。结合文献检索增强、实验协议与历史测量数据，配备实验规划、故障排除、数据解释等专用 Agent，并以确定性控制层验证仪器操作。在 PPMS 平台上实现从实验设计到数据解读的全流程自动化。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">8.0🌟</span> Adversarial Self-Distillation</h3>
+        <div class="meta">
+            <strong>作者</strong>: Mohammad Sadegh Akhondzadeh, Soroush H. Zargarbashi, Aleksandar Bojchevski<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38732">2610.38732</a> |
+            <strong>分类</strong>: <span class="tag">cs.LG</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 ASD（Adversarial Self-Distillation），将模型自身的安全行为扩展到对抗扰动空间。教师（模型在干净 prompt 下的输出）默认拒绝有害请求，学生则学习在对抗扰动下也保持拒绝。解决了传统对抗训练中模板拒绝微调无法真正教会模型拒绝的问题——攻击者注入合规前缀即可绕过防护。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.8🌟</span> Discovering Jailbreaks via Curriculum of Models</h3>
+        <div class="meta">
+            <strong>作者</strong>: Michał Burzyński, Noah T. Rossi, Shomit Basu, Andy Arditi<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38833">2610.38833</a> |
+            <strong>分类</strong>: <span class="tag">cs.LG</span><span class="tag">cs.AI</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 Curriculum of Models（CoM），一种自动化越狱发现的新方法。不同于直接对安全对齐目标训练 investigator（稀疏奖励问题），CoM 构建从宽松到严格的目标模型课程，让 investigator 逐步学习生成有效越狱 prompt，避免了 PRBO 等代理奖励方法的局限性。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.8🌟</span> Causal Attention on CPU: A Cache-Aware and Load-Balanced Scheduling Kernel for Prefill</h3>
+        <div class="meta">
+            <strong>作者</strong>: Kwun Fung Lau, Frost Mitchell, Kanya Mo, Emani Ashok<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38809">2610.38809</a> |
+            <strong>分类</strong>: <span class="tag">cs.LG</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 CACPU，面向 CPU 的高性能因果注意力 kernel，采用分层缓存阻塞与内核级任务调度机制。相比 PyTorch SDPA、FlexAttention 和 SGLang attention 实现最高 2.01x 加速；集成到 SGLang 后将 Llama-3.1-8B 的 TTFT 降低最高 1.74x，为多 Agent 并发长上下文预填充提供 CPU 替代方案。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.6🌟</span> RuleForge: Inferring and Instantiating Latent Visual Rules as Executable Programs</h3>
+        <div class="meta">
+            <strong>作者</strong>: Weifeng Xu, Yaxiong Wang, Zhedong Zheng<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38737">2610.38737</a> |
+            <strong>分类</strong>: <span class="tag">cs.CV</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 Bongard-Forge100k 基准（108,797 问题）与 RuleForge 框架，联合学习视觉规则理解与规则条件化可执行程序生成。填补了视觉规则理解与可靠规则实例化之间关系的研究空白，包含熟悉规则测试与保持规则组合测试。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.5🌟</span> AtomTree: A Hierarchical Framework for State-Aware Embodied Instruction Following with LLMs</h3>
+        <div class="meta">
+            <strong>作者</strong>: Haotian Zhai, Tianming Sha, Junnan Li<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38744">2610.38744</a> |
+            <strong>分类</strong>: <span class="tag">cs.RO</span><span class="tag">cs.AI</span><span class="tag">cs.CL</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 AtomTree，面向状态感知任务规划的分层框架。LLM 在每步根据当前符号状态决定是否进一步分解子目标或输出底层动作，增量构建子目标-动作树。相比一次性生成完整计划的方案，AtomTree 通过轻量记忆模块持续更新状态感知，提升长程任务的鲁棒性。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.5🌟</span> Skillful and realistic precipitation forecasting with reinforced diffusion</h3>
+        <div class="meta">
+            <strong>作者</strong>: Ozan Sener, Anand Avati, David Hafner 等<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38775">2610.38775</a> |
+            <strong>分类</strong>: <span class="tag">cs.LG</span><span class="tag">physics.ao-ph</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 提出 FitzRoy，首个同时实现 SOTA 预测技能与物理真实性的降水预报系统。通过强化扩散框架——条件离散扩散模型经强化学习精炼——有效解决逐点精度与结构保真度之间的长期权衡。在 24 小时预报时效内匹配或超越现有模型，同时保持结构真实性和极端事件捕获能力。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.4🌟</span> Loss is Not Behavior: A Unified Output-Space Analysis of Gradient-Based Machine Unlearning</h3>
+        <div class="meta">
+            <strong>作者</strong>: Xingjian Zhao, Mohammad Mohammadi Amiri, Malik Magdon-Ismail<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38784">2610.38784</a> |
+            <strong>分类</strong>: <span class="tag">cs.LG</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 在线性回归中推导梯度式机器遗忘与仅用保留数据训练模型之间输出空间差距的闭式表达式，并通过广义 Gauss-Newton 扩展到非线性模型。将多种梯度式遗忘方法统一到由几何、重加权和投影参数化的框架中，揭示高遗忘损失不等于重训练类似行为。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="stars">7.3🌟</span> Rennala NSGD: Asynchronous Stochastic Optimization Beyond Euclidean Geometry</h3>
+        <div class="meta">
+            <strong>作者</strong>: Igor Sokolov, Alexander Tyurin, Peter Richtárik<br>
+            <strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.38773">2610.38773</a> |
+            <strong>分类</strong>: <span class="tag">cs.LG</span><span class="tag">cs.DC</span><span class="tag">math.OC</span>
+        </div>
+        <div class="innovation"><strong>核心创新</strong>: 分析任意范数空间中 minibatch SGD 的分布式随机优化，利用 κ-正则范数空间框架推导高概率 oracle 复杂度界。为 Muon、Shampoo 等矩阵感知优化器的非欧几何优势提供理论基础，首次在分布式设定下给出对偶范数诱导的轻尾条件下的复杂度分析。</div>
+    </div>
+
+    <h2 class="section">🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+
+    <table>
+        <thead><tr><th>#</th><th>项目</th><th>描述</th><th>当日 ⭐</th></tr></thead>
+        <tbody>
+
+        <tr><td>1</td><td><a href="https://github.com/pbakaus/impeccable">pbakaus/impeccable</a></td><td>编码 Agent 的设计词汇表，捕获 AI slop</td><td class="stars-today">+2,870</td></tr>
+
+        <tr><td>2</td><td><a href="https://github.com/HKUDS/DeepTutor">HKUDS/DeepTutor</a></td><td>终身个性化 AI 导师</td><td class="stars-today">+1,930</td></tr>
+
+        <tr><td>3</td><td><a href="https://github.com/togg53192-cmd/jailbreaks">togg53192-cmd/jailbreaks</a></td><td>LLM 越狱集合</td><td class="stars-today">+1,594</td></tr>
+
+        <tr><td>4</td><td><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a></td><td>开源 Grok Bot 替代品</td><td class="stars-today">+1,199</td></tr>
+
+        <tr><td>5</td><td><a href="https://github.com/elayadesign/ai-design-skills">elayadesign/ai-design-skills</a></td><td>AI 设计技能包</td><td class="stars-today">+1,187</td></tr>
+
+        <tr><td>6</td><td><a href="https://github.com/JetBrains/thinkrail">JetBrains/thinkrail</a></td><td>Vibe coding IDE</td><td class="stars-today">+1,117</td></tr>
+
+        <tr><td>7</td><td><a href="https://github.com/obra/superpowers">obra/superpowers</a></td><td>Agent 技能框架与软件开发方法论</td><td class="stars-today">+1,034</td></tr>
+
+        <tr><td>8</td><td><a href="https://github.com/nightly-labs/openbot">nightly-labs/openbot</a></td><td>本地优先 AI teammate 桌面工作区</td><td class="stars-today">+709</td></tr>
+
+        <tr><td>9</td><td><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a></td><td>Claude Code 游戏开发工作室（49 Agent + 72 技能）</td><td class="stars-today">+353</td></tr>
+
+        <tr><td>10</td><td><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></td><td>Agent 跨会话持久化记忆</td><td class="stars-today">+336</td></tr>
+
+        </tbody>
+    </table>
+
+    <footer>
+        <p>AI Research Briefing | 由 WorkBuddy 自动生成 | <a href="https://yenanjing.github.io/ai-briefings/">返回首页</a></p>
+    </footer>
+</div>
+</body>
+</html>

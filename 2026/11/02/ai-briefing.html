@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Briefing - 2026-11-02</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a2e;
+            --accent: #6c5ce7;
+            --accent-light: #a29bfe;
+            --card-bg: #f8f9fa;
+            --border: #e9ecef;
+            --tag-bg: #6c5ce7;
+            --tag-text: #fff;
+            --star-color: #fdcb6e;
+            --code-bg: #f1f2f6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 2rem;
+        }
+        .header h1 { font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .header .meta { color: #636e72; font-size: 0.9rem; }
+        .header .badges { margin-top: 0.8rem; }
+        .badge {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.2rem 0.7rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin: 0 0.2rem;
+        }
+        h2 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .paper {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover { box-shadow: 0 2px 12px rgba(108,92,231,0.1); }
+        .paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+        .paper h3 .star { color: var(--star-color); }
+        .paper .field { font-size: 0.85rem; margin: 0.2rem 0; color: #636e72; }
+        .paper .field strong { color: var(--text); }
+        .paper a { color: var(--accent); text-decoration: none; }
+        .paper a:hover { text-decoration: underline; }
+        .paper .innovation { font-size: 0.9rem; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px dashed var(--border); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+        th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); color: white; font-weight: 600; }
+        tr:hover { background: var(--card-bg); }
+        td a { color: var(--accent); text-decoration: none; }
+        td a:hover { text-decoration: underline; }
+        .summary {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f0fe 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .summary p { margin: 0.5rem 0; font-size: 0.9rem; }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: #636e72;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .header h1 { font-size: 1.4rem; }
+            table { font-size: 0.75rem; }
+            th, td { padding: 0.4rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🤖 AI Research Briefing</h1>
+        <div class="meta">2026-11-02（周一） | arXiv L1 获取 | 12 篇论文 + 10 个 GitHub 项目</div>
+        <div class="badges">
+            <span class="badge">arXiv L1</span>
+            <span class="badge">12 Papers</span>
+            <span class="badge">10 Repos</span>
+        </div>
+    </div>
+
+    <h2>📄 论文精选</h2>
+
+    <div class="paper">
+        <h3><span class="star">⭐9</span> From Training Exposure to Membership Evidence: A Controlled Study of OLMo 2</h3>
+        <div class="field"><strong>作者</strong>: Ali Banaei, Muhammad Shahab Shahzad, Gerald Q. Maguire, Marco Chiesa, Dejan Kostić</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41732">2610.41732</a> | <strong>代码</strong>: <a href="https://github.com/ali-bana/OLMo-Twin">github.com/ali-bana/OLMo-Twin</a></div>
+        <div class="field"><strong>分类</strong>: cs.CR / cs.CL / cs.LG</div>
+        <div class="innovation"><strong>核心创新</strong>: 首次通过重跑 OLMo 2 1B 的 500 亿 token 中间训练阶段，用配对实验设计建立反事实参照模型，将成员推断从"事后收集"升级为严格对照实验。发现单次曝光平均提升文档似然但极少能识别个体（AUC 0.767 但 1% FPR 下仅捕获 3.8% 成员）。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐8.9</span> Locality-Controlled Out-of-Distribution Guidance for Robust Regulatory DNA Sequence Design</h3>
+        <div class="field"><strong>作者</strong>: Dabin Jeong, Marwane Bourdim, Mo Lotfollahi</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41736">2610.41736</a> | <strong>代码</strong>: <a href="https://github.com/Lotfollahi-lab/LocoGen">github.com/Lotfollahi-lab/LocoGen</a></div>
+        <div class="field"><strong>分类</strong>: cs.LG / q-bio.GN</div>
+        <div class="innovation"><strong>核心创新</strong>: 将扩散模型引导重新表述为"局部性"问题而非"幅度"问题。LOCOGEN 通过序列级不变性学习自动识别 motif 位置并保护其免受扰动，仅对背景区域施加 OOD 阻尼，在冻结扩散骨干上采样时运行无需重训练。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐8.4</span> WorkIng: A Real-World and Synthetic Highway Work-Zone Benchmark Dataset for Autonomous Navigation</h3>
+        <div class="field"><strong>作者</strong>: Xujun Xie, Dominik Rößle, Adithya Mohan, Daniel Cremers, Torsten Schön</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41772">2610.41772</a> | <strong>代码</strong>: <a href="https://github.com/cvims/WorkIng">github.com/cvims/WorkIng</a></div>
+        <div class="field"><strong>分类</strong>: cs.CV</div>
+        <div class="innovation"><strong>核心创新</strong>: 首个双域（真实+仿真）高速公路施工区基准。WorkIng-Highway 提供 32km 360° 多模态数据（128 线 LiDAR + 6 RGB + RTK-GPS），12,000+ 标注帧和 227,399 个跟踪 3D 框；WorkIng-CARLA 提供 24 个法规感知场景跨 6 种拓扑和 6 种国际交通标准。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐8.2</span> Hard Sample-Conditioned Decorrelated Attention for Robust Face Recognition</h3>
+        <div class="field"><strong>作者</strong>: Tahar Chettaoui, Guray Ozgur, Eduarda Caldeira, Naser Damer, Fadi Boutros</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41789">2610.41789</a> | <strong>代码</strong>: <a href="https://github.com/TaharChettaoui/Hard-Sample-Conditioned-Attention-for-FR">github.com/TaharChettaoui/Hard-Sample-Conditioned-Attention-for-FR</a></div>
+        <div class="field"><strong>分类</strong>: cs.CV</div>
+        <div class="innovation"><strong>核心创新</strong>: 提出按样本难度条件化注意力头去相关：对靠近竞争身份中心的困难样本施加更强的头去相关正则化，在身份歧义最高处强制特化。IJB-B/IJB-C/TinyFace Rank-1 达到 ViT 方法 SOTA，无架构修改或推理开销。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐8.0</span> Hierarchical Residuals: A Minimalist Decoupling of Residual Width from Compute Width</h3>
+        <div class="field"><strong>作者</strong>: Ziteng Wang, Jianqiao Lu, Xinyu Ma, Jintao Zhang, Jun Zhu, Yiyuan Ma, Jianfei Chen</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41711">2610.41711</a></div>
+        <div class="field"><strong>分类</strong>: cs.LG</div>
+        <div class="innovation"><strong>核心创新</strong>: 将 Transformer 中残差连接隐式绑定的"残差宽度"与"计算宽度"解耦：块内保留标准 d 维 PreNorm 层，块间用更宽的 D 维 PostNorm 外残差连接。拟合 scaling law 显示 1.30 倍 FLOPs 效率提升，OLMoE-1B-7B 500B token 预训练损失降低 0.0208。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐7.6</span> GraphNIAH: A Benchmark for Long-Context Reasoning over Real-World Graphs</h3>
+        <div class="field"><strong>作者</strong>: Minh-Nam Tran, Abulhair Saparov</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41704">2610.41704</a></div>
+        <div class="field"><strong>分类</strong>: cs.CL</div>
+        <div class="innovation"><strong>核心创新</strong>: 首个基于真实引用关系构建的动态长上下文 NIAH 基准，利用模型知识截止日期后发表的论文消除基准污染。评估发现 GPT-5.6 和 Qwen3.5 在推理深度 16/32 时对 YES/NO 问题接近随机猜测，表明 LLM 在找到答案前就停止搜索上下文。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐7.6</span> Leveraging Quantum Measurement Randomness for Shot-Efficient Diffusion Models</h3>
+        <div class="field"><strong>作者</strong>: Tianhao Guo, Dianxin Zheng, Yuhua Qian, Yaohui Zheng, Yuzhi Yang, Merouane Debbah, Chau Yuen</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41721">2610.41721</a></div>
+        <div class="field"><strong>分类</strong>: quant-ph / cs.LG</div>
+        <div class="innovation"><strong>核心创新</strong>: 首次将量子测量噪声从"负担"转化为"资源"——用测量本身产生的噪声替代扩散采样器需注入的部分噪声。在 8 维高斯混合上以 303 shots 达到 1.6×10⁶ shots 参考质量的生成（约 5300× 减少）。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐7.5</span> Latent-Lens: Visual Perception in Small Language Models Through Latent Communication</h3>
+        <div class="field"><strong>作者</strong>: Mo Shahdloo, Faegheh Sardari, Mathew Salvaris</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41751">2610.41751</a></div>
+        <div class="field"><strong>分类</strong>: cs.LG / cs.AI</div>
+        <div class="innovation"><strong>核心创新</strong>: 在冻结 VLM 和冻结 SLM 之间直接在潜在空间通信的轻量编解码器（仅 1.6M 参数，0.2% 模型大小），绕过离散文本瓶颈。在 CLEVR 上 +30.2pp、GQA 上 +3.6pp 相比文本通信。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐7.5</span> Peeling the Matryoshka: Extracting Ontological Structure from Retrieval Embeddings</h3>
+        <div class="field"><strong>作者</strong>: Eunchan Kim, Inwhee Joe</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41785">2610.41785</a></div>
+        <div class="field"><strong>分类</strong>: cs.CL / cs.IR / cs.LG</div>
+        <div class="innovation"><strong>核心创新</strong>: 发现 MRL 嵌入中前缀长度与分类学粗到细粒度对齐——仅用概念词汇表，通过 order-embedding 目标训练最小探针即可从冻结嵌入中恢复高保真分类 DAG，跨域迁移无需目标边监督。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐7.4</span> Simple Features Beat Most AI Control Monitors</h3>
+        <div class="field"><strong>作者</strong>: Shubhrangshu Debsarkar, Valmik Nahata</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41713">2610.41713</a></div>
+        <div class="field"><strong>分类</strong>: cs.CR / cs.AI</div>
+        <div class="innovation"><strong>核心创新</strong>: 揭示标准 AI 控制评估数据集存在两类标签泄露（风格泄露 + 题目泄露），简单特征无需运行代码即超越 24 个开源模型中 20 个的监控表现，表明高评分不等于真正的破坏检测能力。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐7.4</span> Task Vectors Can Be Linearly Decomposed into Interpretable and Controllable Components</h3>
+        <div class="field"><strong>作者</strong>: Yukiya Horiba, Hakaze Cho, Takahiro Yakoh</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41743">2610.41743</a></div>
+        <div class="field"><strong>分类</strong>: cs.LG / cs.CL</div>
+        <div class="innovation"><strong>核心创新</strong>: 首次将 Task Vector 从"原子化方向"分解为 TR（Task Recognition）/ TL（Task Learning）/ 残差三个功能组件，用贝叶斯优化搜索干预方向，在多个模型族和任务上超越原始 TV。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐7.3</span> Higher-Order Kinematic Derivatives for Aspect-Preserving Real-Time Numerical Inverse Kinematics</h3>
+        <div class="field"><strong>作者</strong>: Steffan Lloyd</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2610.41752">2610.41752</a></div>
+        <div class="field"><strong>分类</strong>: cs.RO</div>
+        <div class="innovation"><strong>核心创新</strong>: 利用串联机器人高阶运动学导数推导 QuIK4/QuIK5 求解器（四阶/五阶收敛），配合保形步长限制器和 Hermite 插值认证器，将失败率降低最多四个数量级。发布 C++ 库并集成 ROS 2。</div>
+    </div>
+
+    <h2>🔥 GitHub Trending（按当日新增 Star 降序）</h2>
+    <table>
+        <thead>
+            <tr><th>#</th><th>项目</th><th>描述</th><th>总 Star</th><th>今日</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a></td><td>TypeScript 编码工具</td><td>38,232</td><td>+3,094</td></tr>
+            <tr><td>2</td><td><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></td><td>Agent 跨会话持久上下文</td><td>109,416</td><td>+1,526</td></tr>
+            <tr><td>3</td><td><a href="https://github.com/patchy631/ai-engineering-hub">patchy631/ai-engineering-hub</a></td><td>LLM/RAG/Agent 实战教程</td><td>40,342</td><td>+1,191</td></tr>
+            <tr><td>4</td><td><a href="https://github.com/anomalyco/hex">anomalyco/hex</a></td><td>本地语音听写</td><td>3,374</td><td>+1,179</td></tr>
+            <tr><td>5</td><td><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a></td><td>Claude Code 游戏开发工作室</td><td>32,395</td><td>+967</td></tr>
+            <tr><td>6</td><td><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a></td><td>开源 Grok Bot 替代品</td><td>10,623</td><td>+922</td></tr>
+            <tr><td>7</td><td><a href="https://github.com/lightpanda-io/browser">lightpanda-io/browser</a></td><td>AI 无头浏览器</td><td>40,251</td><td>+825</td></tr>
+            <tr><td>8</td><td><a href="https://github.com/togg53192-cmd/jailbreaks">togg53192-cmd/jailbreaks</a></td><td>LLM 越狱集合</td><td>13,020</td><td>+726</td></tr>
+            <tr><td>9</td><td><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a></td><td>金融市场基础模型</td><td>45,448</td><td>+630</td></tr>
+            <tr><td>10</td><td><a href="https://github.com/beenuar/AiSOC">beenuar/AiSOC</a></td><td>开源 AI 安全运营中心</td><td>6,277</td><td>+446</td></tr>
+        </tbody>
+    </table>
+
+    <div class="summary">
+        <h2 style="border:none;margin-top:0;">📊 今日主题</h2>
+        <p><strong>论文趋势</strong>：模型可解释性与安全审计（OLMo 2 成员推断对照实验、AI 控制监控标签泄露、Task Vectors 分解）、架构效率创新（HiRes 解耦残差宽度 1.30× FLOPs 效率、UpLoop 免额外计算训练循环 Transformer）、跨模态通信新范式（Latent-Lens 冻结 VLM-SLM 潜在通信仅 0.2% 参数）、生成引导精细化（LOCOGEN 将扩散引导重构为局部性问题）。</p>
+        <p><strong>GitHub 趋势</strong>：Agent 基础设施与编码生态持续领跑——t3code 编码工具 +3,094 领跑；claude-mem Agent 跨会话记忆 +1,526；Claude-Code-Game-Studios 49 Agent + 72 技能游戏开发工作室 +967 显示 Agent 编排向垂直场景纵深；安全研究关注持续（jailbreaks +726、AiSOC +446）；lightpanda-io/browser AI 无头浏览器 +825 显示 AI 自动化基础设施需求旺盛。</p>
+    </div>
+
+    <div class="footer">
+        <p>Generated by AI Research Briefing Automation | <a href="https://yenanjing.github.io/ai-briefings/">← 返回索引</a></p>
+    </div>
+</body>
+</html>

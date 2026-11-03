@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Briefing - 2026-11-03</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a2e;
+            --accent: #6c5ce7;
+            --accent-light: #a29bfe;
+            --card-bg: #f8f9fa;
+            --border: #e9ecef;
+            --tag-bg: #6c5ce7;
+            --tag-text: #fff;
+            --star-color: #fdcb6e;
+            --code-bg: #f1f2f6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 2rem;
+        }
+        .header h1 { font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .header .meta { color: #636e72; font-size: 0.9rem; }
+        .header .badges { margin-top: 0.8rem; }
+        .badge {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.2rem 0.7rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin: 0 0.2rem;
+        }
+        h2 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .paper {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover { box-shadow: 0 2px 12px rgba(108,92,231,0.1); }
+        .paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+        .paper h3 .star { color: var(--star-color); }
+        .paper .field { font-size: 0.85rem; margin: 0.2rem 0; color: #636e72; }
+        .paper .field strong { color: var(--text); }
+        .paper a { color: var(--accent); text-decoration: none; }
+        .paper a:hover { text-decoration: underline; }
+        .paper .innovation { font-size: 0.9rem; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px dashed var(--border); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+        th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); color: white; font-weight: 600; }
+        tr:hover { background: var(--card-bg); }
+        td a { color: var(--accent); text-decoration: none; }
+        td a:hover { text-decoration: underline; }
+        .summary {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f0fe 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .summary p { margin: 0.5rem 0; font-size: 0.9rem; }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: #636e72;
+            font-size: 0.85rem;
+        }
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .header h1 { font-size: 1.4rem; }
+            table { font-size: 0.75rem; }
+            th, td { padding: 0.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>AI 研究简报</h1>
+    <div class="meta">2026-11-03 | arXiv + GitHub Trending 每日精选</div>
+    <div class="badges">
+        <span class="badge">arXiv L1</span>
+        <span class="badge">12 篇论文</span>
+        <span class="badge">10 个项目</span>
+    </div>
+</div>
+
+<h2>📊 今日论文精选（Top 12）</h2>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">9.0🌟</span> XLA from the Trenches: Correctness on TPU Workloads at Scale</div>
+<div class="paper-field"><strong>机构</strong>: Google</div>
+<div class="paper-field"><strong>作者</strong>: Ignacio Cano, Amir Saadat, Eli Bendersky 等 22 人</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00624">2611.00624</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.AI / cs.LG / cs.PL</div>
+<div class="paper-field"><strong>核心创新</strong>: Google 团队公开 XLA:TPU 编译器在超大规模生产环境中的正确性验证方法论。结合模糊测试与生产 trace，编排 AI agent 集群自主生成压力测试、复现失败并起草修复方案，配合分层差分流水线将大图二分至融合 kernel 内单个失败操作。已驱动 142 个编译器 bug 修复（另有 103 项发现待审），是编译器正确性工程化的标杆性工作。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">8.8🌟</span> Evidence-grounded LLMs Guide Perovskite Solar Cell Design and Optimization</div>
+<div class="paper-field"><strong>作者</strong>: YanKai Chen, Zhi Wan, ZiHao Li, Tao Jing</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00633">2611.00633</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.AI</div>
+<div class="paper-field"><strong>核心创新</strong>: 建立 PSM-Bench（800 题钙钛矿光伏科学推理基准）与 OpenPerov 框架，从 4,532 篇文献重建专家校准证据记录。结构化证据适配优于传统 QA 训练，OpenPerov Flash 在 13 个闭卷系统中排名第一。实验验证中模型选择的 K 类似物超越专家偏好的 Na 类似物，器件 PCE 达 27.05%，1,000h 暗态热老化后保持 96.74% 效率。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">8.6🌟</span> Enhancing Language Model Reasoning with Structured Multi-Level Modeling</div>
+<div class="paper-field"><strong>作者</strong>: Siheng Xiong, Ali Payani, Faramarz Fekri</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00616">2611.00616</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.CL</div>
+<div class="paper-field"><strong>核心创新</strong>: 提出 Multi-Level Reasoning (MLR)，将长 CoT 生成重构为两层随机过程：高层 planner 生成结构化步骤描述符（推理模式+语义子目标），低层 executor 生成详细推理。引入迭代 Step-DPO 利用 Twisted Sequential Monte Carlo 提供可扩展的逐步监督。仅用 10% SFT + 5% 偏好数据即超越 DeepSeek-R1 蒸馏与强 RL 基线，长程推理退化更慢。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">8.5🌟</span> X-World 1.6: Building Controllable Virtual Cities with World Models</div>
+<div class="paper-field"><strong>机构</strong>: XPeng（小鹏汽车）</div>
+<div class="paper-field"><strong>作者</strong>: Boyang Wang, Boyi Sun, Chaoda Zheng 等 35 人</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00596">2611.00596</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.AI</div>
+<div class="paper-field"><strong>核心创新</strong>: 小鹏汽车自动驾驶世界模型升级版，支持交通语义（红绿灯、道路标线）细粒度控制与跨相机空间一致性。Virtual City 能力扩展至基于 2D/3D 参考的多条件场景构建，支持从单张图像生成多相机未来视频。后训练框架实现因果少步生成，长 rollout 质量保持与人类偏好对齐均有提升。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">8.4🌟</span> Editing the Goal: Per-Token SAE Steering and Its Depth Limits in π₀.₅</div>
+<div class="paper-field"><strong>作者</strong>: Rocio Perales Valdes, Animesh Garg</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00602">2611.00602</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.AI</div>
+<div class="paper-field"><strong>核心创新</strong>: 首次证明在机器人基础模型 π₀.₅ 中，仅替换单个目标词的 SAE 特征（指令文本不变）即可将机器人重定向至替代任务。Layer 0 BatchTopK 特征交换在 20/20 rollout 中成功重定向，随机特征交换则为 0。层-wise 激活 patching 揭示目标词编辑在 object location 有效至 layer 6、object identity 有效至 layer 2（覆盖 camera tokens 时均至 layer 13）。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">8.3🌟</span> Discovering Models for Experimental Quantum Systems with Agentic AI</div>
+<div class="paper-field"><strong>机构</strong>: 斯坦福大学（James Zou, Jelena Vučković 课题组）</div>
+<div class="paper-field"><strong>作者</strong>: Hannah C. Kleidermacher, Bennet Windt, Miguel Bello, James Zou, Jelena Vučković</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00620">2611.00620</a></div>
+<div class="paper-field"><strong>分类</strong>: quant-ph / cs.AI</div>
+<div class="paper-field"><strong>核心创新</strong>: LLM-based agent 配备工具与结构化工作流，自主提出候选 Hamiltonian/Lindbladian 模型、生成计算工具并定量评估竞争物理假设。应用于三个已发表的金刚石与碳化硅色心 cavity-QED 实验数据集，成功识别物理模型并表征无序。可复现性分析发现 run-to-run 变异集中在研究计划生成步骤，计算分析本身高度一致。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">8.2🌟</span> ECG2Gene: Deep Learning-Based Germline Tumor Susceptibility Gene Risk Assessment Using ECGs</div>
+<div class="paper-field"><strong>作者</strong>: Shanwei Zhang, Qinghao Zhao, Shenda Hong 等 19 人</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00614">2611.00614</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.LG</div>
+<div class="paper-field"><strong>核心创新</strong>: 两阶段框架从常规 12 导联 ECG 推导遗传性肿瘤易感基因数字表型并预测未来癌症风险。Stage 1 以 ATM/BRIP1/CHEK2/PALB2/BRCA1/BRCA2 致病变异监督多任务模型生成六个 ECG 基因评分；Stage 2 XGBoost 整合评分与临床变量。UK Biobank 中乳腺癌/卵巢癌/前列腺癌 AUROC 分别 0.683/0.633/0.660，中国 Kadoorie Biobank 外部验证前列腺癌 AUROC 0.709。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">8.0🌟</span> Words Before Pixels: Selective Modality Routing for Vision-Language Model Unlearning</div>
+<div class="paper-field"><strong>作者</strong>: Laura Yao, Haochen Zhang, Jinhao Duan, Sijia Liu, Tianlong Chen</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00608">2611.00608</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.CV / cs.AI</div>
+<div class="paper-field"><strong>核心创新</strong>: 挑战 VLM unlearning 中「像素出现在输入就应保留像素」的隐含假设。构建模态分解版 VLM 基准，发现不安全指令遵循行为通过文本表征比图像更有效抑制。提出 ModRoute，梯度引导的逐样本模态路由策略，将高视觉压力样本转为纯文本形式。VLGuard + LLaVA-1.5-7B 上综合 unlearning-utility 得分 0.847，比最佳随机切换高 2.5%，比纯多模态或纯文本 unlearning 高 ≥46%。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">8.0🌟</span> Roz: A Taste Test for World Model Latents</div>
+<div class="paper-field"><strong>作者</strong>: Kenneth Ge, Dhruv Sheth, Kunvar Thaman</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00612">2611.00612</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.RO / cs.LG</div>
+<div class="paper-field"><strong>核心创新</strong>: 揭示当前主流潜在动力学世界模型在图像相似性任务上表现强劲，但遗忘场景中物体的质量、形变、摩擦、弹性等关键物理属性。定义世界模型应编码的物理量，引入 10 个对比任务 + 3 个连续任务（共 1734 场景）的评估方法。仅需能处理静帧/视频的模型、潜在提取与距离函数即可运行，单次前向完成。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">7.8🌟</span> Dataset Mismatch Matters in GRPO for RLVR</div>
+<div class="paper-field"><strong>作者</strong>: Zhen-Yu Zhang, Jiandong Zhang, Huaxiu Yao, Gang Niu, Masashi Sugiyama</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00586">2611.00586</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.LG</div>
+<div class="paper-field"><strong>核心创新</strong>: 提出 L2RR（Learning-to-Rewrite Rollout），显式将目标端性能反馈纳入 GRPO。通过双层优化学习源 prompt 上的离散采样分布，最大化 held-out 目标集准确率同时惩罚低增量学习信息的 rollout。6 个数学推理基准 × 3 个模型规模验证有效提升目标域性能与 rollout 效率。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">7.8🌟</span> TVP: TV is Almost All You Need for Speculative Decoding</div>
+<div class="paper-field"><strong>作者</strong>: Aaryam Sharma</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00588">2611.00588</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.LG / cs.CL</div>
+<div class="paper-field"><strong>核心创新</strong>: 证明在匹配且调优良好的训练下，Total Variation (TV) 距离匹配或超越已发表的 drafter 训练目标。识别 TV 在欠覆盖 token 上的梯度消失与 acceptance-length 目标中前缀乘积饥饿问题，推导 TVP 损失族（基于期望接受长度，power 参数在覆盖与接受导向目标间插值）。微调时接受长度比 CE 提升 9.8%，比公开 DFlash2 训练配方提升 6.2-12.9%。</div>
+</div>
+
+<div class="paper-card">
+<div class="paper-title"><span class="stars">7.6🌟</span> Conic Certification of Transformer Attention</div>
+<div class="paper-field"><strong>作者</strong>: Masoud Ataei</div>
+<div class="paper-field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.00585">2611.00585</a></div>
+<div class="paper-field"><strong>分类</strong>: cs.LG / cs.AI / cs.CL / math.OC</div>
+<div class="paper-field"><strong>核心创新</strong>: 建立注意力认证的锥规划理论，证明认证难度不在 softmax 而在变化 query 与 keys 的双线性交互——使 box 上的认证为 NP-hard。固定 query 或列出 token 替换则精确最坏情况高效可计算。指数锥矩松弛以扰动半径的二次误差认证注意力头，GPT-2 实验验证理论在训练模型上成立，比线性界传播更紧。</div>
+</div>
+
+<h2>🚀 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+
+<table class="github-table">
+<thead>
+<tr><th>#</th><th>项目</th><th>描述</th><th>当日⭐</th><th>总⭐</th><th>语言</th></tr>
+</thead>
+<tbody>
+
+<tr><td>1</td><td><a href="https://github.com/pingdotgg/t3code">pingdotgg/t3code</a></td><td>编码工具</td><td class="star-count">+3,229</td><td>42,180</td><td>TypeScript</td></tr>
+
+<tr><td>2</td><td><a href="https://github.com/vercel-labs/agent-desktop">vercel-labs/agent-desktop</a></td><td>AI Agent 桌面 CLI（Computer Use）</td><td class="star-count">+2,275</td><td>10,136</td><td>Rust</td></tr>
+
+<tr><td>3</td><td><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></td><td>Agent 跨会话持久记忆</td><td class="star-count">+1,803</td><td>110,847</td><td>TypeScript</td></tr>
+
+<tr><td>4</td><td><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a></td><td>49 Agent + 72 技能游戏开发工作室</td><td class="star-count">+1,379</td><td>33,678</td><td>Shell</td></tr>
+
+<tr><td>5</td><td><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></td><td>工程师 Agent 技能集</td><td class="star-count">+858</td><td>310,334</td><td>Shell</td></tr>
+
+<tr><td>6</td><td><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a></td><td>金融市场基础模型</td><td class="star-count">+857</td><td>46,043</td><td>Python</td></tr>
+
+<tr><td>7</td><td><a href="https://github.com/JustVugg/colibri">JustVugg/colibri</a></td><td>纯 C 零依赖 MoE 推理引擎</td><td class="star-count">+675</td><td>46,642</td><td>C</td></tr>
+
+<tr><td>8</td><td><a href="https://github.com/FlashML-org/FreeToken">FlashML-org/FreeToken</a></td><td>桌面级数据中心规模模型服务</td><td class="star-count">+653</td><td>16,146</td><td>Python</td></tr>
+
+<tr><td>9</td><td><a href="https://github.com/p-e-w/heretic">p-e-w/heretic</a></td><td>免训练 LLM 修改（去审查/去谄媚）</td><td class="star-count">+420</td><td>38,154</td><td>Python</td></tr>
+
+<tr><td>10</td><td><a href="https://github.com/paperclipai/paperclip">paperclipai/paperclip</a></td><td>开源工作 Agent 管理平台</td><td class="star-count">+412</td><td>110,461</td><td>TypeScript</td></tr>
+
+</tbody>
+</table>
+
+<h2>📌 今日主题总结</h2>
+
+
+<p><strong>AI for Science 集中爆发</strong>：OpenPerov（钙钛矿太阳能电池 27.05% PCE）、Agentic AI for Quantum Systems（斯坦福 cavity-QED 模型发现）、ECG2Gene（ECG→癌症风险评估）、LM6-CastBench（铸造热场预测）四篇论文覆盖能源、量子、医学、材料四大领域，显示 LLM/Agent 在科学发现中从辅助工具走向自主推理。</p>
+<p><strong>编译器与系统正确性工程化</strong>：Google XLA:TPU 论文公开超大规模编译器验证方法论（AI agent 集群自主生成测试），配合 State-Aware Activation Recomputation 与 Guarded Adam Compression 两篇系统论文，反映大模型训练基础设施从「能跑」走向「可验证正确」。</p>
+<p><strong>Agent 可解释性与安全</strong>：Per-Token SAE Steering 首次证明单 token 特征交换即可重定向机器人目标（安全风险），SAE Attribution Graphs 揭示归因图在边际处决定，ModRoute 从数据模态路由角度解决 VLM unlearning，Multi-Estimate Elicitation 发现多估计引导不能统一去偏。</p>
+<p><strong>推理效率与训练优化</strong>：MLR 两层随机过程重构长 CoT、TVP 用 TV 距离优化 speculative decoding drafter、L2RR 解决 GRPO 中源-目标数据分布不匹配，三者从架构、解码、数据调度三个层面推进效率边界。</p>
+<p><strong>GitHub 趋势</strong>：Agent 编码生态持续领跑——pingdotgg/t3code 编码工具 +3,229 领跑；vercel-labs/agent-desktop Computer Use CLI +2,275 显示 Agent 桌面自动化需求旺盛；thedotmack/claude-mem Agent 跨会话持久记忆 +1,803 延续记忆管理热点；Donchitos/Claude-Code-Game-Studios 49 Agent 游戏开发工作室 +1,379 显示 Agent 编排向垂直场景纵深；本地推理引擎（colibri 纯 C MoE +675、FreeToken +653）与金融基础模型 Kronos +857 持续受关注。</p>
+
+
+<div class="footer">
+    <p>Generated by AI Research Briefing Automation | <a href="https://yenanjing.github.io/ai-briefings/">返回首页</a></p>
+</div>
+
+</body>
+</html>

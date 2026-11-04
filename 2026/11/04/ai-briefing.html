@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Briefing - 2026-11-04</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a2e;
+            --accent: #6c5ce7;
+            --accent-light: #a29bfe;
+            --card-bg: #f8f9fa;
+            --border: #e9ecef;
+            --tag-bg: #6c5ce7;
+            --tag-text: #fff;
+            --star-color: #fdcb6e;
+            --code-bg: #f1f2f6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 2rem;
+        }
+        .header h1 { font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .header .meta { color: #636e72; font-size: 0.9rem; }
+        .header .badges { margin-top: 0.8rem; }
+        .badge {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.2rem 0.7rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin: 0 0.2rem;
+        }
+        h2 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .paper {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover { box-shadow: 0 2px 12px rgba(108,92,231,0.1); }
+        .paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+        .paper h3 .star { color: var(--star-color); }
+        .paper .field { font-size: 0.85rem; margin: 0.2rem 0; color: #636e72; }
+        .paper .field strong { color: var(--text); }
+        .paper a { color: var(--accent); text-decoration: none; }
+        .paper a:hover { text-decoration: underline; }
+        .paper .innovation { font-size: 0.9rem; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px dashed var(--border); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+        th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); color: white; font-weight: 600; }
+        tr:hover { background: var(--card-bg); }
+        td a { color: var(--accent); text-decoration: none; }
+        .summary {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .summary ul { margin: 0.5rem 0 0 1.2rem; }
+        .summary li { margin: 0.4rem 0; font-size: 0.9rem; }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: #636e72;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>AI 研究简报</h1>
+        <div class="meta">2026-11-04 · arXiv L2 · 12 篇论文 · 10 个 GitHub 项目</div>
+        <div class="badges">
+            <span class="badge">cs.AI</span>
+            <span class="badge">cs.LG</span>
+            <span class="badge">cs.CL</span>
+            <span class="badge">cs.CV</span>
+            <span class="badge">cs.RO</span>
+            <span class="badge">cs.CR</span>
+            <span class="badge">stat.ML</span>
+        </div>
+    </div>
+
+    <h2>📄 精选论文</h2>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 9.0</span> Say the Same, Act Differently: Diagnosing and Steering Text-Action Divergence in Reasoning VLAs</h3>
+        <div class="field"><strong>作者</strong>: Zihao Feng, Qingzhao Zhang, Chunyu Xia, Bo Yu, Z. Morley Mao, Ramesh Govindan</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04166">2611.04166</a> · <strong>分类</strong>: cs.LG</div>
+        <div class="innovation">首次揭示推理 VLA 存在「文本-动作分歧」新失效模式——视觉扰动可在保持 rationale 逐字不变的前提下改变物理动作。TNAS 诊断证明最具动作敏感性的方向与文本损失梯度近似正交（1.87%/5.28% 范数重叠），沿该方向干预对动作的偏移是文本梯度扰动的 4.64×–47.8×。对 VLA 安全监控具有根本性意义。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.9</span> Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training</h3>
+        <div class="field"><strong>作者</strong>: Kangning Zhang, Wenxiang Jiao, Bowen Fang, Shuai Shao, Jiachen Zhu, Rong Shan</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04277">2611.04277</a> · <strong>分类</strong>: cs.AI</div>
+        <div class="innovation">提出 harness 进化三定律（Locality/Complementarity/Nonstationarity），拒绝寻找普适最优 harness。Directional Harness Evolution 沿不同修复方向训练专用 sibling harness 形成固定池；Complementary Harness Rescue Training 仅在 base harness 全部初始尝试失败时调用池，用辅助轨迹替换失败组做 RL，将 sibling 能力蒸馏回单一策略。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.7</span> DoGNAVY-Exploit: Harnessing Parallel Open-Weight Agents for Stage-Aware Vulnerability Exploitation</h3>
+        <div class="field"><strong>作者</strong>: Yuxuan Wang, Dadi Guo, Weijie Guo, Zikai Xu, Chen Lu, Yizhe Zhuang</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04196">2611.04196</a> · <strong>分类</strong>: cs.AI</div>
+        <div class="innovation">针对开源权重模型在长链漏洞利用中「无法跨阶段维持进度、无法在正确阶段应用安全知识」的问题，提出阶段感知分解 + 渐进式专家知识披露 + 分层编排并行探索的多 agent harness。用可配置里程碑把长程利用重铸为短、可验证的能力跃迁。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.6</span> DualWorldBench: Can Agents Plan Deliveries across Symbolic and Grounded Worlds?</h3>
+        <div class="field"><strong>作者</strong>: Yang Chen, Bin Wen, Danyang Peng, Hong-Jie You, Zi-Qiao Shang, Lan-Zhe Guo</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04228">2611.04228</a> · <strong>分类</strong>: cs.AI</div>
+        <div class="innovation">统一评估 agent 在「符号-时间」与「落地-拓扑」两个复杂度轴上的规划能力。围绕共享取送接口构建 TextWorld（符号规划）、SimWorld（落地路径规划）、DualWorld-VQA（诊断套件）三组件，系统揭示当前多模态 agent 在时间/物理/多模态约束下多目标规划的脆弱性。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.5</span> Where Did the Update Go? Certifying Declared Change Envelopes for Model Updates</h3>
+        <div class="field"><strong>作者</strong>: Muhammad Usama, Muhammad Saad Qadir</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04192">2611.04192</a> · <strong>代码</strong>: <a href="https://github.com/Usama1002/declared-change-envelopes">Usama1002/declared-change-envelopes</a> · <strong>分类</strong>: cs.LG</div>
+        <div class="innovation">形式化「声明变更包络」问题——区别于「变化多少」的界限，「变化在哪里」是不同统计问题。开发者训练前承诺输入区域，区域外任何决策变化计为泄漏；可用 anytime-valid 检验从无标注流量认证，单次认证可组合为生命周期漂移上界。覆盖 LoRA/全参微调/偏好优化/RL。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.4</span> Tokenizer Myths and Where To Find Them</h3>
+        <div class="field"><strong>作者</strong>: Rylan Schaeffer, Sanmi Koyejo</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04215">2611.04215</a> · <strong>分类</strong>: cs.CL</div>
+        <div class="innovation">系统挑战 tokenization 研究三大迷思：BPB 对 tokenizer/词表大小不敏感、低 BPB 意味着更好模型、不同「tokenizer 无关」指标给出一致结果。用未训练模型证明 BPB 强烈偏好某些 tokenizer/词表大小，与下游性能仅弱相关，对评估方法论有直接修正价值。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.3</span> SPOD: Recovering Suppressed Temporal Evidence in Video-LLMs via Single-Pass Orthogonal Decomposition</h3>
+        <div class="field"><strong>作者</strong>: Yangguang Lin, Quan Fang, Xiaoyan Liu, Zefan Xu</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04728">2611.04728</a> · <strong>代码</strong>: <a href="https://github.com/VioAgnes/SPOD">VioAgnes/SPOD</a> · <strong>分类</strong>: cs.CV</div>
+        <div class="innovation">发现 Video-LLM 时间证据已编码在隐藏表示中但未被标准推理充分利用。提出免训练单次前向框架，通过 Frame Distinctiveness Analysis + 正交分解恢复被抑制的时间证据，无需重训或多 pass 推理即可缓解时间幻觉。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.2</span> AceAction-5M: Hierarchical Goals for Generalist Action Learning Across 3D Game Worlds</h3>
+        <div class="field"><strong>作者</strong>: Kailing Li, Ruoxuan Zhang, Zheyuan Zhou, Boyang Chu, Yingshan Lei, Hongxia Xie</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04241">2611.04241</a> · <strong>分类</strong>: cs.AI</div>
+        <div class="innovation">5M 规模 VLA 数据集，跨多个 3D 游戏世界，围绕完整任务组织演示（总指令→有序子目标→局部技能指令→对齐的视觉观测与键鼠动作）。开发 VLM 流水线从目标变化识别子目标、将导航目标锚定到可识别路标点，解决现有游戏数据集覆盖窄、语言监督稀疏的问题。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.1</span> When Debate Amplifies Risk: Social-Bias Vulnerabilities in Multi-Agent Safety Deliberation</h3>
+        <div class="field"><strong>作者</strong>: Qinghua Mao, Xi Lin, Yuxin Qi, Zihao Xu, Jinze Gu, Yuliang Chen</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04289">2611.04289</a> · <strong>分类</strong>: cs.CR</div>
+        <div class="innovation">首次系统揭示多 agent 辩论（MAD）中「社会结构反而放大 Web 潜在安全风险」这一反直觉现象。提出 SafeConflict-Bias 受控反事实诊断协议，覆盖六类 Web 风险，在严格保持查询与证据不变的前提下隔离从众压力、权威线索、信心不对称三类社会偏差。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.0</span> Reliability Stress Testing of RAG Retrieval under Query-Relevant Corpus Poisoning</h3>
+        <div class="field"><strong>作者</strong>: Janet Sung, Kainan Zhou, Gangzhen Qian, Hang Xiao, Lu Yi</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04264">2611.04264</a> · <strong>分类</strong>: cs.AI</div>
+        <div class="innovation">系统压力测试 RAG 检索准入环节。在 BEIR 623 查询上，每查询 5 篇目标毒化文档使经典检索器 nDCG@10 下降 40.2–61.5%；识别「全查询锚定」是 BM25 退化主因，附加文本则改变 LSA 与 Hybrid 排名。BGE-small 验证显示查询锚定仍是主导攻击向量。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.0</span> Agentic Path Maps: Exposing an Agent's Traversal Through the Garden of Forking Paths</h3>
+        <div class="field"><strong>作者</strong>: Madeleine Grunde-McLaughlin, Hafsah Usman, Daniel Mitroshkov, Emily Reif 等</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04183">2611.04183</a> · <strong>分类</strong>: cs.HC</div>
+        <div class="innovation">提出面向 underspecified 任务执行后的「替代路径」通信设计空间，并测量「显示替代路径数量」对用户理解的影响。48 人用户研究显示：用户很少主动考虑替代路径，但可视化后 AI 过度依赖降低，为 agent 透明性与用户校准提供 HCI 视角。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 7.9</span> LoopKV: Loop-Aware KV Cache Compression for Serving Looped Transformers</h3>
+        <div class="field"><strong>作者</strong>: Tianle Zhou, Yang Zhang, Tianyu Wu, Zhuohan Wang, William Nixon, Juncheng Yang</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.04137">2611.04137</a> · <strong>分类</strong>: cs.LG</div>
+        <div class="innovation">针对 Ouro 等循环 Transformer 每个 loop 独立 KV cache 导致显存限制 batch size 的问题，发现量化敏感性与共享损伤在 (loop, layer) 单元上差异显著。LoopKV 用一次性离线 profile 为每个单元选择 4-bit/2-bit/复用末轮 KV，在预算下最小化读取。</div>
+    </div>
+
+    <h2>🐙 GitHub Trending（按当日新增 Star 降序）</h2>
+    <table>
+        <thead><tr><th>#</th><th>项目</th><th>简介</th><th>当日⭐</th><th>总⭐</th><th>语言</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td><a href="https://github.com/vercel-labs/agent-desktop">vercel-labs/agent-desktop</a></td><td>Computer use CLI for AI agents</td><td>+3,791</td><td>13,007</td><td>Rust</td></tr>
+            <tr><td>2</td><td><a href="https://github.com/D4Vinci/Scrapling">D4Vinci/Scrapling</a></td><td>全能 Web Scraping 框架</td><td>+1,658</td><td>95,008</td><td>Python</td></tr>
+            <tr><td>3</td><td><a href="https://github.com/Donchitos/Claude-Code-Game-Studios">Donchitos/Claude-Code-Game-Studios</a></td><td>49 AI agent + 72 技能游戏开发工作室</td><td>+1,182</td><td>34,745</td><td>Shell</td></tr>
+            <tr><td>4</td><td><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></td><td>Skills for Real Engineers</td><td>+1,164</td><td>311,581</td><td>Shell</td></tr>
+            <tr><td>5</td><td><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></td><td>Agent 跨会话持久记忆</td><td>+1,139</td><td>112,017</td><td>TypeScript</td></tr>
+            <tr><td>6</td><td><a href="https://github.com/JustVugg/colibri">JustVugg/colibri</a></td><td>纯 C MoE 分层推理引擎</td><td>+802</td><td>47,302</td><td>C</td></tr>
+            <tr><td>7</td><td><a href="https://github.com/p-e-w/heretic">p-e-w/heretic</a></td><td>免训练 LLM 修改：去审查/降谄媚</td><td>+701</td><td>38,865</td><td>Python</td></tr>
+            <tr><td>8</td><td><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a></td><td>金融市场语言基础模型</td><td>+503</td><td>46,562</td><td>Python</td></tr>
+            <tr><td>9</td><td><a href="https://github.com/floci-io/floci">floci-io/floci</a></td><td>免费 AWS 本地模拟器</td><td>+482</td><td>28,882</td><td>Java</td></tr>
+            <tr><td>10</td><td><a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a></td><td>Git worktree 管理 CLI（并行 AI agent 工作流）</td><td>+438</td><td>10,561</td><td>Rust</td></tr>
+        </tbody>
+    </table>
+
+    <h2>📌 今日主题</h2>
+    <div class="summary">
+        <ul>
+            <li><strong>Agent 安全与可解释性集中爆发</strong>：Say the Same, Act Differently 揭示推理 VLA 文本-动作分歧通道可被视觉扰动绕过（动作偏移 4.64×–47.8×）；When Debate Amplifies Risk 首次证明多 agent 辩论的社会结构反而放大 Web 安全风险；Agentic Path Maps 从 HCI 视角让用户看见 agent 未走的路。</li>
+            <li><strong>Agent harness 训练科学化</strong>：Harness-S 提出 harness 进化三定律并拒绝寻找普适最优 harness；DoGNAVY-Exploit 用阶段感知分解 + 渐进知识披露解决开源模型长链漏洞利用。</li>
+            <li><strong>模型更新与评估方法论</strong>：Declared Change Envelopes 形式化「变化在哪里」的认证问题；Tokenizer Myths 系统挑战 BPB 三大迷思。</li>
+            <li><strong>Agent 应用与基础设施</strong>：AceAction-5M 跨 3D 游戏世界 VLA 数据集；RAG 检索毒化压力测试量化准入环节脆弱性；LoopKV 循环 Transformer KV cache 压缩。</li>
+            <li><strong>GitHub 趋势</strong>：Agent 桌面自动化与编码生态继续领跑——vercel-labs/agent-desktop Computer Use CLI +3,791 领跑；D4Vinci/Scrapling +1,658、Claude-Code-Game-Studios 49 agent 游戏工作室 +1,182、mattpocock/skills +1,164、claude-mem Agent 跨会话记忆 +1,139 集体强势；本地推理引擎 colibri 纯 C MoE +802、免训练 LLM 修改 heretic +701 显示模型层创新持续受关注；金融基础模型 Kronos +503 稳居垂直场景。</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Generated by AI Research Briefing Automation · <a href="https://yenanjing.github.io/ai-briefings/">Archive</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Briefing - 2026-11-05</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1a1a2e;
+            --accent: #6c5ce7;
+            --accent-light: #a29bfe;
+            --card-bg: #f8f9fa;
+            --border: #e9ecef;
+            --tag-bg: #6c5ce7;
+            --tag-text: #fff;
+            --star-color: #fdcb6e;
+            --code-bg: #f1f2f6;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 2rem 1rem;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 2px solid var(--accent);
+            margin-bottom: 2rem;
+        }
+        .header h1 { font-size: 1.8rem; color: var(--accent); margin-bottom: 0.5rem; }
+        .header .meta { color: #636e72; font-size: 0.9rem; }
+        .header .badges { margin-top: 0.8rem; }
+        .badge {
+            display: inline-block;
+            background: var(--tag-bg);
+            color: var(--tag-text);
+            padding: 0.2rem 0.7rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin: 0 0.2rem;
+        }
+        h2 {
+            color: var(--accent);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .paper {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            transition: box-shadow 0.2s;
+        }
+        .paper:hover { box-shadow: 0 2px 12px rgba(108,92,231,0.1); }
+        .paper h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+        .paper h3 .star { color: var(--star-color); }
+        .paper .field { font-size: 0.85rem; margin: 0.2rem 0; color: #636e72; }
+        .paper .field strong { color: var(--text); }
+        .paper a { color: var(--accent); text-decoration: none; }
+        .paper a:hover { text-decoration: underline; }
+        .paper .innovation { font-size: 0.9rem; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px dashed var(--border); }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+        th, td { padding: 0.6rem 0.8rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--accent); color: white; font-weight: 600; }
+        tr:hover { background: var(--card-bg); }
+        td a { color: var(--accent); text-decoration: none; }
+        .summary-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f0fe 100%);
+            border-left: 4px solid var(--accent);
+            padding: 1.2rem;
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+        }
+        .summary-box h3 { color: var(--accent); margin-bottom: 0.8rem; }
+        .summary-box ul { padding-left: 1.2rem; }
+        .summary-box li { margin-bottom: 0.5rem; font-size: 0.9rem; }
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            color: #636e72;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🧠 AI Research Briefing</h1>
+        <div class="meta">2026-11-05 · 每日 AI 研究简报</div>
+        <div class="badges">
+            <span class="badge">arXiv L1</span>
+            <span class="badge">12 篇论文</span>
+            <span class="badge">10 个 GitHub 项目</span>
+        </div>
+    </div>
+
+    <h2>📄 今日精选论文</h2>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 9.0</span> A 3D foundation model unifying CT interpretation and segmentation</h3>
+        <div class="field"><strong>作者</strong>: Yulu Xie, Zilong Li, Shen Xu, Yifan Bai, Liuhong Shi, Jiao Chen, et al.</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06471">2611.06471</a> | <strong>分类</strong>: cs.CV</div>
+        <div class="innovation">提出 HoloCT，首个统一 CT 解读与体素级分割的 3D 基础模型。构建 HoloDATA（195,921 例 CT、73 个公开数据集、620 万指令对话、280 万 CT-mask 对），在 346 个任务上覆盖分割/病灶筛查/VQA/报告生成。多中心验证（11,455 例、5 家医院）中病灶分割和报告生成分别超越竞争模型 18.2 和 15.3 点；甲状腺肿瘤和结肠病灶筛查准确率 85.1%，超过所有 4 位参与放射科医生。首次证明语言引导分割与 3D mask 生成之间存在双向语义-空间协同。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.8</span> What Does Multi-Turn Reinforcement Learning Really Improve in LLM Agents?</h3>
+        <div class="field"><strong>作者</strong>: Kejian Zhu, Zhuoran Jin, Shangqing Tu, Kang Liu, Jun Zhao et al.</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06483">2611.06483</a> | <strong>分类</strong>: cs.LG, cs.CL</div>
+        <div class="field"><strong>项目页</strong>: <a href="https://rethinking-agentic-rl.github.io/">rethinking-agentic-rl.github.io</a></div>
+        <div class="innovation">通过 Pass@(K,T) 框架系统评估多轮 agentic RL 增益，发现轨迹级 RL 优势高度依赖交互预算（turn budget），预算收紧时增益显著衰减。揭示 agentic RL 并非均匀提升单步决策质量，而是集中在错误恢复与长程韧性。提出 BudgetMix RL，训练时变化交互预算以获得跨执行设置的鲁棒性能。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.7</span> SUMONE: A Simple and Efficient Summarizer for Plug-and-Play Agent Memory</h3>
+        <div class="field"><strong>作者</strong>: Jizhe Zhang, Ang Li, Chenheng Zhang, Yisen Wang</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06445">2611.06445</a> | <strong>分类</strong>: cs.AI</div>
+        <div class="innovation">提出独立摘要器 SumOne，通过掩码重建自监督训练——冻结重建器从摘要恢复原始轨迹的随机掩码部分，结合长度惩罚作为任务无关奖励用 GRPO 优化。推理时仅保留轻量摘要器，即插即用压缩 agent 上下文。在 DeepSearchQA 上降低推理成本约 78%、SWE-bench Verified 上降低 75%，绝对性能仅下降 0.04。同一 checkpoint 可跨下游模型和 harness 迁移。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.6</span> DreamRealm: Exploring and Materializing Hallucination Worlds for Trustworthy Vision-Language Models</h3>
+        <div class="field"><strong>作者</strong>: Benlei Cui, Chunyang Chai, Yiliang Zhang, Haiwen Hong et al.</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06433">2611.06433</a> | <strong>分类</strong>: cs.CV</div>
+        <div class="innovation">提出 DreamRealm 后训练框架，灵感来自人类纠正错误认知——探索模型潜在幻觉响应，最小编辑原图使其成为有效对应，训练模型为每个响应分配支撑图像。RealmForgePipe 从目标模型挖掘显式与潜在幻觉并通过图像编辑物质化。RealmMatch 构建图像-响应似然矩阵结合双向对比损失。Qwen3.5-9B 上 HallusionBench +7.26pp、MMVP +11.34pp。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.5</span> ArcRAG: Agentic Compositional Retrieval over Knowledge Graphs</h3>
+        <div class="field"><strong>作者</strong>: Jyotin Goel, Abhinav Arun, Tejas Prakash Agarwal, Bhaskarjit Sarmah, Stefano Pasquali</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06481">2611.06481</a> | <strong>分类</strong>: cs.CL, cs.AI, cs.IR</div>
+        <div class="innovation">研究跨构建可移植性——一个检索流程在不同图构建方式下是否保持有效。ArcRAG 在推理时诱导查询局部图接口（节点标签、关系描述、属性键），规划多跳遍历并以 Cypher 执行修复。在 MuSiQue/HotpotQA/TriviaQA 上分别以 schema-guided 和 open-IE 两种构建方式验证，发现检索无需与图构建共同设计。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.4</span> EvoGuard: Mitigating Degradation in Online Skill Evolution</h3>
+        <div class="field"><strong>作者</strong>: Yanli Wang, Zichen Bai, Tianyue Jiang, Nan Duan, Peng Cao et al.</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06444">2611.06444</a> | <strong>分类</strong>: cs.CL</div>
+        <div class="innovation">针对在线技能进化中的退化问题，提出成对技能选择器 EvoGuard。通过拒绝采样保留有明确效用差的技能对训练选择器，部署时单次前向传播决策。相比无脑采纳新技能，ALFWorld +11.0%、ScienceWorld +5.9%、LiveCodeBench +2.7%。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.3</span> $A^3$-VLA: Automatic Perception-Guided Attention Alignment for Robot Manipulation</h3>
+        <div class="field"><strong>作者</strong>: Shengzhe Zhang, Qi Zhang, Dazhong Shen, Hui Xiong et al.</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06447">2611.06447</a> | <strong>分类</strong>: cs.RO</div>
+        <div class="innovation">提出从操作过程本身自动导出任务特定视觉引导的框架。从交互诱导的视觉变化生成候选区域，离线用分割模型精炼，通过注意力分配损失和对比学习损失两个互补目标提供显式感知引导。多 VLA backbone 平均成功率提升 6.5%–25.2%。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.3</span> Understanding the Out-of-Distribution Generalization of Chain-of-Thought Reasoning in LLMs</h3>
+        <div class="field"><strong>作者</strong>: Nuo-Jing Liang, Xiao-Tong Yuan, Pan Zhou</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06438">2611.06438</a> | <strong>分类</strong>: cs.LG, stat.ML</div>
+        <div class="field"><strong>代码</strong>: <a href="https://github.com/maxliang114514/CoT-OOD">github.com/maxliang114514/CoT-OOD</a></div>
+        <div class="innovation">将 CoT 建模为组合 OOD 泛化问题，证明 CoT 通过重复应用共享单步预测器组合可复用 ID 转移实现泛化。理论表明 OOD 任务风险由 ID 子任务风险之和乘以 O(k) 系数控制（独立于步数 T），Rademacher 分析估计项为 O(√(T/n)) 而非线性 T。实验在 Atom-Task 和 GSM8K 验证理论。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.2</span> Robocasa-Mem: Benchmarking Environment and Process Memory in Long-Horizon Mobile Manipulation</h3>
+        <div class="field"><strong>作者</strong>: Sihang Chen, Chen Ye, Wei Chen, Houqiang Li, Yanyong Zhang et al.</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06475">2611.06475</a> | <strong>分类</strong>: cs.RO</div>
+        <div class="innovation">提出移动操作记忆基准，包含 9 个需要交互历史的任务，分环境记忆（空间位置/物体属性/关系）和过程记忆（单任务进度/多任务调度）两类。引入行为条件评估从机器人早期动作推导后续约束。开发 HMAP 基线，高层规划器用结构化实体/过程记忆生成子任务，低层 VLA 控制器用子目标条件查询融合 VGGT-Omega 几何。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.2</span> Model Merging Does Not Require Uniform LoRA Ranks</h3>
+        <div class="field"><strong>作者</strong>: Zirong Xie, Zainab Afolabi, Nikita Kozodoi, Jack Butler</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06486">2611.06486</a> | <strong>分类</strong>: cs.LG, cs.AI</div>
+        <div class="innovation">挑战模型合并中「所有专家使用相同 LoRA rank」的惯例，证明这是合并方法的属性而非合并本身的约束。36 个专家 × 3 域 × 4 rank × 3 模型规模实验表明，按损失影响而非幅值选择分量可保留所有专家，在 8× rank 范围内精度几乎平坦（0.7pp vs TIES 6.7pp）。揭示 instruction adapter 因最小奇异值被 TIES 几乎完全丢弃导致 IFEval 下降 16-25pp。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.0</span> TwinBridge: Digital Twin-Driven Policy and Reward Transfer for Real-World RL in Laboratory Robotics</h3>
+        <div class="field"><strong>作者</strong>: Shu'ang Sun, Yibo Qiu, Haoliang Ye, Mingzhai Sun et al.</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06442">2611.06442</a> | <strong>分类</strong>: cs.RO</div>
+        <div class="innovation">提出数字孪生驱动框架，结合 3D 高斯泼溅与物理仿真构建数字孪生，为真实世界在线学习提供策略初始化和密集视觉奖励。模拟器状态在物理前提和顺序约束下提供任务事件和几何进度，蒸馏为视觉奖励模型。5 个真实实验室任务平均自主成功率 98%，每任务最多 25 分钟真实交互。</div>
+    </div>
+
+    <div class="paper">
+        <h3><span class="star">⭐ 8.0</span> CoDecide: Content-Adaptive Video Decoding for High-Throughput Video Analytics</h3>
+        <div class="field"><strong>作者</strong>: Shristy Shah, Thomas B. Moeslund, Kamal Nasrollahi</div>
+        <div class="field"><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.06455">2611.06455</a> | <strong>分类</strong>: cs.CV</div>
+        <div class="field"><strong>代码</strong>: <a href="https://github.com/shristy51/CoDecide">github.com/shristy51/CoDecide</a></div>
+        <div class="innovation">提出回顾式分析系统，仅解码有新内容出现的帧。用冻结 DINOv2 教师的无标签新颖性信号监督轻量压缩域学生模型，区分运动与语义新内容。检测从解码帧通过运动向量传播到跳过帧。VIRAT/MEVA/ShanghaiTech 留一数据集评估中，比逐帧解码管线加速 15-24×。</div>
+    </div>
+
+    <h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+    <table>
+        <thead><tr><th>#</th><th>项目</th><th>描述</th><th>当日⭐</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td><a href="https://github.com/vercel-labs/agent-desktop">vercel-labs/agent-desktop</a></td><td>Computer use CLI for AI agents</td><td>+2,470</td></tr>
+            <tr><td>2</td><td><a href="https://github.com/NVIDIA/auto-ontology">NVIDIA/auto-ontology</a></td><td>语义图推理层框架，为 LLM/agent 提供确定性查询生成与可解释 AI</td><td>+2,050</td></tr>
+            <tr><td>3</td><td><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></td><td>Skills for Real Engineers - 来自 .agents 目录的工程技能</td><td>+1,379</td></tr>
+            <tr><td>4</td><td><a href="https://github.com/thedotmack/claude-mem">thedotmack/claude-mem</a></td><td>Agent 跨会话持久记忆</td><td>+1,172</td></tr>
+            <tr><td>5</td><td><a href="https://github.com/harry0703/MoneyPrinterTurbo">harry0703/MoneyPrinterTurbo</a></td><td>AI 大模型一键生成高清短视频</td><td>+617</td></tr>
+            <tr><td>6</td><td><a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a></td><td>Git worktree 管理 CLI，面向并行 AI agent 工作流</td><td>+531</td></tr>
+            <tr><td>7</td><td><a href="https://github.com/FareedKhan-dev/kimi-k3-in-c">FareedKhan-dev/kimi-k3-in-c</a></td><td>2.78T 参数 Kimi K3 单 CPU 8.24GB RAM 推理（纯 C99）</td><td>+351</td></tr>
+            <tr><td>8</td><td><a href="https://github.com/garrytan/gstack">garrytan/gstack</a></td><td>Garry Tan 的 Claude Code 配置：23 个工具</td><td>+290</td></tr>
+            <tr><td>9</td><td><a href="https://github.com/The-PR-Agent/pr-agent">The-PR-Agent/pr-agent</a></td><td>开源 PR Reviewer</td><td>+280</td></tr>
+            <tr><td>10</td><td><a href="https://github.com/scenario-labs/skills">scenario-labs/skills</a></td><td>Agent 生成生产级图像/视频/音频/3D 的技能包</td><td>+224</td></tr>
+        </tbody>
+    </table>
+
+    <div class="summary-box">
+        <h3>📊 今日主题总结</h3>
+        <ul>
+            <li><strong>Agent 训练科学与记忆工程</strong>：Multi-Turn RL 分析揭示 agentic RL 增益集中在错误恢复而非单步决策质量、SUMONE 用掩码重建自监督实现即插即用 agent 记忆压缩（成本降 78%）、EvoGuard 用成对选择器解决在线技能进化退化。</li>
+            <li><strong>AI for 医学影像基础模型</strong>：HoloCT 首个统一 CT 解读与分割的 3D 基础模型（195K 扫描、346 任务、多中心验证超越放射科医生），标志医学影像基础模型从单任务走向通用临床决策。</li>
+            <li><strong>VLM 幻觉治理新范式</strong>：DreamRealm 首次将幻觉物质化为可训练对比信号（最小编辑原图使幻觉响应有效），从图像输入侧设计监督信号而非仅从响应侧纠正。</li>
+            <li><strong>GitHub 趋势</strong>：Agent 桌面自动化与基础设施持续领跑——vercel-labs/agent-desktop +2,470 领跑；NVIDIA/auto-ontology 语义图推理层 +2,050 显示大厂加码 agent 可解释性基础设施；kimi-k3-in-c 纯 C 单 CPU 跑 2.78T 参数 +351 显示极致推理效率持续受关注。</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Generated by AI Research Briefing Automation | <a href="https://yenanjing.github.io/ai-briefings/">返回首页</a></p>
+    </div>
+</body>
+</html>

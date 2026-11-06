@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Briefing — 2026-11-06</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #6b7280;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --card-bg: #f9fafb;
+            --star: #f59e0b;
+            --code-bg: #f3f4f6;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--fg);
+            background: var(--bg);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.4rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+        h3 { font-size: 1.1rem; margin-top: 1.8rem; color: var(--accent); }
+        .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .theme-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .paper {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+        }
+        .paper h3 { margin-top: 0; }
+        .paper .star { color: var(--star); font-weight: bold; }
+        .paper ul { margin: 0.5rem 0; padding-left: 1.2rem; }
+        .paper li { margin: 0.3rem 0; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        th, td { padding: 0.6rem 0.8rem; border: 1px solid var(--border); text-align: left; }
+        th { background: var(--card-bg); font-weight: 600; }
+        .insight {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
+        }
+        .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+        code { background: var(--code-bg); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<h1>🧠 AI Research Briefing</h1>
+<div class="meta">📅 2026-11-06（周五）| arXiv Level: L1（OR 查询一次成功）| 25 篇候选 → 12 精选 | GitHub Trending: 10 个 AI 项目</div>
+
+<div class="theme-box">
+<h2>📝 今日主题</h2>
+<p><strong>AI 安全与前沿模型评估集中爆发</strong>——TCSExam 姚期智团队首次构建覆盖理论计算机科学全谱系的基准（含开放猜想）GPT-6 Astra 71.9 分、Loss of Control 框架将失控风险分解为三因子 13 前沿模型前瞻验证、Circe 免训练通过注意力-FFN 组件交互一致性自评估。</p>
+<p><strong>Agent 基础设施与训练科学化</strong>——QRAE 用证据评估头在线压缩 DeepSearch agent 上下文、CoRD 用投机解码最大耦合填补 on-policy 蒸馏盲区、ChemE-as-Code 开源化工 agentic 平台（$224 API 成本完成初步基础工程包）。</p>
+<p><strong>3D 生成与具身智能</strong>——DCAP 将 3D 放置重构为 drop-to-equilibrium 过程、Bri3D 用实例感知体素场景锚点桥接单图 3D 场景生成、QMapAnything 揭示几何 Transformer PTQ 的 token-blind 结构性判据。</p>
+<p><strong>表征学习理论</strong>——EARL 区分状态空间压缩与参数空间压缩两种涌现模式、KAN 线性区域紧致渐近界。</p>
+</div>
+
+<h2>📄 精选论文（Top 12）</h2>
+
+<div class="paper">
+<h3><span class="star">9.2🌟</span> TCSExam: Evaluating Frontier LLMs on the Full Range of TCS Research</h3>
+<ul>
+<li><strong>机构</strong>: 清华大学（姚期智 Andrew Chi-Chih Yao）</li>
+<li><strong>作者</strong>: Yifan Luo, Zhengying Liu, Yang Yuan, Zhilin Yang, Andrew Chi-Chih Yao</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07962">2611.07962</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 首个覆盖理论计算机科学全谱系的统一基准，评估定理证明、求解器工程、构造与直接尝试解决开放猜想四大维度。TCSExam-Full 含 100 个专家评审任务（Lean kernel 或可执行 checker 验证），Lite 版减少 80% 尝试次数。GPT-6 Astra 领跑 Full（71.9），Opus 5.5 领跑 Lite（72.3）。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.8🌟</span> A Behavioural Framework for Predicting and Understanding Loss of Control in Frontier AI Systems</h3>
+<ul>
+<li><strong>作者</strong>: Yao Huang, Yichi Zhang, Yifan Wang, Yitong Sun, Haoyu Dong, Jifan Ma et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07953">2611.07953</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 将前沿 AI 失控风险分解为三因子——misaligned motive、harm-enabling capability、monitoring evasion，通过 13 个可测量维度和 29 个评估任务操作化。在 13 个前沿模型上验证 LoC 分数具有强前瞻效度，与实际失败率相关。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.6🌟</span> QRAE: Query-Relevant Attention Entropy for Context Compression in DeepSearch Agents</h3>
+<ul>
+<li><strong>作者</strong>: Yingjie Tan, Haiquan Qiu, Quanming Yao, Manyi Zhong, Xianzhi Yu, Yaqing Wang</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07976">2611.07976</a></li>
+<li><strong>分类</strong>: cs.LG</li>
+<li><strong>核心创新</strong>: 提出 Query-Relevant Attention Entropy 在线上下文压缩方法，用稀疏证据评估头通过成对 prefill 评分——query-free 对照抑制共享注意力响应，归一化熵度量 chunk 内正向响应广度。高分 chunk 进入持久证据白名单，不确定 chunk 保留在候选缓存中供后续重评估。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.5🌟</span> CoRD: Coupled Rollouts Fill the Blind Spot of On-Policy Distillation</h3>
+<ul>
+<li><strong>作者</strong>: Guhan Chen, Bohan Li, Jun Rao, Hejin Wang, Songtao Tian, Yexin Xie et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07959">2611.07959</a></li>
+<li><strong>分类</strong>: cs.LG</li>
+<li><strong>核心创新</strong>: 发现 on-policy 蒸馏训练学生仅在其自身 rollout 状态上，教师能到达但学生未到达的状态很少被监督。CoRD 通过投机解码最大耦合从学生-教师几何插值中抽取 rollout，保持 on-policy 损失同时将训练状态分布移向教师。在 Qwen3/Qwen3.5 0.6B-4B 六个学生上平均 pass@1 超过 on-policy 蒸馏。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.4🌟</span> Circe: Training-Free LLM Self-Evaluation via Component Interaction Consistency</h3>
+<ul>
+<li><strong>作者</strong>: Shuyi Miao, Zheng Li, Xu Xie, Linrui Xu, Fei Shen, Xiaoyu Du et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07948">2611.07948</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 免训练 LLM 自评估方法，发现现有内部状态方法仅分析跨层 hidden-state 轨迹（只记录 attention+FFN 联合更新），忽略组件间交互。Circe 通过组件交互一致性提取互补正确性信号，无需参考答案即可评估响应正确性。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.3🌟</span> Deformable Contact-Aware 3D Object Placement (DCAP)</h3>
+<ul>
+<li><strong>作者</strong>: Songhe Wang, David Miller, Charles A. Kamhoua</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.08005">2611.08005</a></li>
+<li><strong>分类</strong>: cs.CV</li>
+<li><strong>核心创新</strong>: 将语言引导 3D 物体放置从静态 6-DoF 位姿预测重构为 drop-to-equilibrium 过程。DCAP 构建语义释放状态（指定下落位置、物体尺度、可变形组件），由耦合刚体-可变形模拟器在重力与摩擦下让物体自然沉降。在 2,063 个 prompt-asset-scene 案例上 VLM Physics &amp; Naturalness 提升 21.2 分。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.2🌟</span> Invariance before structure: two modes of emergent compression in representation learning (EARL)</h3>
+<ul>
+<li><strong>作者</strong>: Hardik Rajpal, Dan Goodman</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07952">2611.07952</a></li>
+<li><strong>分类</strong>: cs.LG</li>
+<li><strong>核心创新</strong>: 提出 Emergent Adaptive Representation Learning 框架区分两种涌现模式——状态空间压缩（表征获得超越网络单元个体预测能力的自未来预测力）与参数空间压缩（不同微观参数收敛到相同表征）。将两者形式化为 Fisher 敏感度并引入集成级信息论度量。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.2🌟</span> ChemE-as-Code: An Open-Source Platform for Agentic AI in Chemical Engineering</h3>
+<ul>
+<li><strong>作者</strong>: Artur M. Schweidtmann</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07947">2611.07947</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 开源环境让 LLM agent 执行化学工程工作（催化→过程模拟→工厂布局→HAZOP→生命周期评估），工程文件 Git 版本化、计算在 LLM 外运行、每个值记录来源。氨案例中 agent 以 $224 API 成本完成初步基础工程包（模拟文件、P&amp;IDs、布局、HAZOP、数据表、泄压）。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.1🌟</span> Bri3D: Bridging the Object-Scene Gap in Single-Image 3D Generation via Scene-Anchor</h3>
+<ul>
+<li><strong>作者</strong>: Hongye Hou, Shuai Zhang, Hongjie Li, Zhuoxiao Li, Haiping Wang, Yuan Liu et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07961">2611.07961</a></li>
+<li><strong>分类</strong>: cs.CV</li>
+<li><strong>核心创新</strong>: 通过实例感知体素场景锚点桥接场景级结构推理与物体级生成先验。预测彩色编码场景脚手架编码粗粒度物体几何与空间排列，每个实例作为场景锚点提取并送入物体生成器，保持实例尺度、朝向与位姿。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.0🌟</span> Leakage- and Label-Aware Benchmarking of Class-Imbalance Strategies for Multimodal CXR and EHR Classification</h3>
+<ul>
+<li><strong>作者</strong>: Dang-Khoa Bui, Quang-Huy Tran, Minh-Khoi Nguyen-Bui, Duc-Tuan Ngo, Thanh-Trong Tran, Tuan-Khoi Nguyen et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07950">2611.07950</a></li>
+<li><strong>分类</strong>: cs.LG</li>
+<li><strong>核心创新</strong>: 审计 29,083 张 MIMIC-CXR 影像（10,479 患者）的多模态分类基准，揭示 record-level split 误导性——一个复制开发集同 EHR 向量标签的查找表几乎匹配最佳模型，在未见患者上所有模型降至全预测阳性水平。追溯标签来源发现每患者标签为单次入院诊断码关键词匹配，复制到所有影像。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">7.9🌟</span> IDPrior: Decoupling Identity Generation from Facial Image Synthesis</h3>
+<ul>
+<li><strong>作者</strong>: Fadi Boutros, Meriç Demirörs, Darian Tomašević, Vitomir Štruc, Naser Damer</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07941">2611.07941</a></li>
+<li><strong>代码</strong>: <a href="https://github.com/fdbtrs/IDperturb">github.com/fdbtrs/IDperturb</a></li>
+<li><strong>分类</strong>: cs.CV</li>
+<li><strong>核心创新</strong>: 两阶段框架将身份生成从人脸图像合成中解耦。首先在预训练人脸识别模型嵌入空间学习扩散先验建模面部身份分布并生成新身份嵌入，再用这些嵌入条件化预训练图像生成器合成对应人脸图像，无需预定义类别标签。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">7.8🌟</span> Rotation Is Token-Blind: A Structural Criterion for Post-Training Quantization of Feed-Forward Geometry Transformers</h3>
+<ul>
+<li><strong>作者</strong>: Huanfei He, Bohao Zhang, Jiaxin Zhang, Wei Sui, John See, Zeyd Boukhers et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.07955">2611.07955</a></li>
+<li><strong>分类</strong>: cs.CV</li>
+<li><strong>核心创新</strong>: 揭示前馈 3D 几何 Transformer 中异构 token 类型共享同一激活量化网格时，少数特殊 token 对全局输出具有高杠杆但仅被部分 block 更新。Token-blind 变换（对所有 token 施加相同变换）减少整体量化误差但无法消除跨 token 类型的差异化退化。提出 QMapAnything 结构性判据。</li>
+</ul>
+</div>
+
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+
+<table>
+<thead><tr><th>#</th><th>项目</th><th>当日⭐</th><th>总⭐</th><th>描述</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><a href="https://github.com/NVIDIA/auto-ontology">NVIDIA/auto-ontology</a></td><td>+2,679</td><td>7,546</td><td>语义图推理层框架，确定性查询生成</td></tr>
+<tr><td>2</td><td><a href="https://github.com/vercel-labs/agent-desktop">vercel-labs/agent-desktop</a></td><td>+2,173</td><td>17,029</td><td>AI Agent Computer Use CLI</td></tr>
+<tr><td>3</td><td><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></td><td>+2,071</td><td>315,418</td><td>真实工程师的 Agent 技能集</td></tr>
+<tr><td>4</td><td><a href="https://github.com/scenario-labs/skills">scenario-labs/skills</a></td><td>+667</td><td>3,124</td><td>AI Agent 生产级图像/视频/音频/3D 生成技能</td></tr>
+<tr><td>5</td><td><a href="https://github.com/garrytan/gstack">garrytan/gstack</a></td><td>+612</td><td>140,016</td><td>Garry Tan 的 Claude Code 配置：23 个工具</td></tr>
+<tr><td>6</td><td><a href="https://github.com/max-sixty/worktrunk">max-sixty/worktrunk</a></td><td>+546</td><td>11,561</td><td>Git worktree 管理 CLI，面向并行 AI Agent 工作流</td></tr>
+<tr><td>7</td><td><a href="https://github.com/Usagi-org/ai-goofish-monitor">Usagi-org/ai-goofish-monitor</a></td><td>+240</td><td>17,707</td><td>Playwright + AI 闲鱼多任务实时监控与智能分析</td></tr>
+<tr><td>8</td><td><a href="https://github.com/microsoft/VibeVoice">microsoft/VibeVoice</a></td><td>+223</td><td>56,045</td><td>开源前沿语音 AI</td></tr>
+<tr><td>9</td><td><a href="https://github.com/google/skills">google/skills</a></td><td>+211</td><td>22,426</td><td>Google 产品与技术 Agent 技能</td></tr>
+<tr><td>10</td><td><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a></td><td>+150</td><td>45,970</td><td>AI Agent 浏览器自动化 CLI</td></tr>
+</tbody>
+</table>
+
+<div class="insight">
+<h2>📊 趋势洞察</h2>
+<p><strong>Agent 技能生态与基础设施三驾马车领跑</strong>——NVIDIA/auto-ontology 语义图推理层 +2,679 领跑显示大厂加码 agent 可解释性基础设施；vercel-labs/agent-desktop Computer Use CLI +2,173 与 agent-browser +150 双双上榜显示 Vercel 构建 agent 桌面+浏览器自动化工具链；mattpocock/skills +2,071 延续 agent 技能生态爆发；garrytan/gstack 23 工具 CEO/Designer/EM/Release/Doc/QA 角色 +612、scenario-labs/skills 多模态生成技能 +667 显示技能包向垂直角色纵深；max-sixty/worktrunk Git worktree 并行 agent 工作流 +546 显示开发工具适配 agent 多任务范式；microsoft/VibeVoice 开源前沿语音 AI +223、google/skills 官方 agent 技能 +211 显示大厂持续加码。</p>
+</div>
+
+<div class="footer">
+<p>Generated at 2026-11-06 11:00 CST | <a href="https://yenanjing.github.io/ai-briefings/">← 返回索引</a></p>
+<p>arXiv Level: L1 | Papers: 25 candidates → 12 selected | GitHub Trending: 10 AI projects</p>
+</div>
+
+</body>
+</html>

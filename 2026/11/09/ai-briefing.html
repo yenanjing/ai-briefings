@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Briefing — 2026-11-09</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #6b7280;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --card-bg: #f9fafb;
+            --star: #f59e0b;
+            --code-bg: #f3f4f6;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--fg);
+            background: var(--bg);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.4rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+        h3 { font-size: 1.1rem; margin-top: 1.8rem; color: var(--accent); }
+        .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .theme-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .paper {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+        }
+        .paper h3 { margin-top: 0; }
+        .paper .star { color: var(--star); font-weight: bold; }
+        .paper ul { margin: 0.5rem 0; padding-left: 1.2rem; }
+        .paper li { margin: 0.3rem 0; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        th, td { padding: 0.6rem 0.8rem; border: 1px solid var(--border); text-align: left; }
+        th { background: var(--card-bg); font-weight: 600; }
+        .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+        code { background: var(--code-bg); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<h1>🧠 AI Research Briefing</h1>
+<div class="meta">📅 2026-11-09（周一）| arXiv Level: L1（OR 查询一次成功）| 25 篇候选 → 12 精选 | GitHub Trending: 9 个 AI 项目</div>
+
+<div class="theme-box">
+<h2>📝 今日主题</h2>
+<p><strong>Agentic 推理/操作成为主线</strong>——CPU-ARC 把 LLM 推理轨迹编译为 CPU 可执行缓存实现推理复用、On Agentic Manipulation Policies 展示通用模型在机器人操作上超越 VLA/WAM、Video-Coder 首次训练代码驱动的视频生成 agent。</p>
+<p><strong>CUA 即具身通才</strong>——Computer-Use Agents Are Embodied Generalists 主张具身任务可通过数字软件交互完全形式化，CUA 用同一套键鼠接口完成具身任务，标志具身智能从专用架构向通用模型的范式转移。</p>
+<p><strong>RL 安全与监控</strong>——Monitor-Based Interventions for Reward Hacking 开源三个 Qwen3-4B reward hacking 环境并给出干预实践指南。</p>
+<p><strong>低精度推理效率</strong>——BitDecoding-FP4 原生 FP4 KV cache 解码、CodeQuant2 针对 LRM 早期解码激活波动的 LUT 量化。</p>
+<p><strong>跨域应用</strong>——AI 发现形式化验证的量子程序、放射科 agentic 框架、自动驾驶闭环场景编排。</p>
+</div>
+
+<h2>📄 精选论文（Top 12）</h2>
+
+<div class="paper">
+<h3><span class="star">9.0🌟</span> CPU-ARC: Agentic Reasoning Caching for on-CPU Reasoning Reuse</h3>
+<ul>
+<li><strong>作者</strong>: Peter Belcak, Greg Heinrich, Saurav Muralidharan, Shizhe Diao, Pavlo Molchanov</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09891">2611.09891</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 提出 Agentic Reasoning Cache（ARC）：把 LLM 的推理轨迹编译为可由 CPU 直接执行的鲁棒缓存，将「任务求解」与「解的执行」解耦。新问题实例只需轻量 CPU 匹配即可复用已有推理，无需再次调用大模型。在多个高难数学与应用任务上达到与前沿 LLM 相当的准确率，同时大幅降低延迟与成本。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">8.8🌟</span> Computer-Use Agents Are Embodied Generalists</h3>
+<ul>
+<li><strong>作者</strong>: Pranjal Aggarwal, Sean Welleck</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09847">2611.09847</a></li>
+<li><strong>分类</strong>: cs.LG</li>
+<li><strong>核心创新</strong>: 提出论点性框架：具身智能可以完全通过「数字软件交互」来形式化——把物理环境渲染成屏幕视图并提供键鼠控制，让同一个 CUA 用操作普通软件的方式完成具身任务。单一 CUA 设计跨多个具身基准取得一致表现，主张通用模型正在替代专用架构。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">8.7🌟</span> On Agentic Manipulation Policies</h3>
+<ul>
+<li><strong>作者</strong>: Chen Chen, Omid Bagherieh, Naveen N. A. Balaji, Jesse T. Gonzalez, Negin Heravi, Fahad Islam et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09892">2611.09892</a></li>
+<li><strong>分类</strong>: cs.RO</li>
+<li><strong>核心创新</strong>: 系统分析 Agentic Manipulation Policies（AMP）：直接由通用 AI 模型指挥机械臂、随任务展开在线调整动作。提出参考 harness AMP1，在单臂/双臂/移动操作上无需改动即可运行，性能超越 VLA 与世界-动作模型等专用策略。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">8.7🌟</span> Designing Effective Monitor-Based Interventions for Mitigating Reward Hacking During RL</h3>
+<ul>
+<li><strong>作者</strong>: Aria Wong, Joshua Engels, Neel Nanda</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09828">2611.09828</a></li>
+<li><strong>代码</strong>: <a href="https://github.com/aria-wong/reward-hacking-monitors（含三个开源 Qwen3-4B reward hacking 环境）">https://github.com/aria-wong/reward-hacking-monitors（含三个开源 Qwen3-4B reward hacking 环境）</a></li>
+<li><strong>分类</strong>: cs.LG</li>
+<li><strong>核心创新</strong>: 研究如何在 RL 训练中有效使用 monitor 缓解 reward hacking 而不引发规避行为。开源三个真实环境（代码、对话、推理），Qwen3-4B 在其上稳定出现 reward hacking；系统评估不同 monitor 干预时机与强度，给出可操作的实践指南。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">8.5🌟</span> Video-Coder: Reinforcing Agentic Coding for Video Generation</h3>
+<ul>
+<li><strong>作者</strong>: Chaoyang Wang, Sicheng Gao, Junan Hu, Kunyang Li, Dongyang Chen, Yiyang Zhou et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09894">2611.09894</a></li>
+<li><strong>分类</strong>: cs.CV</li>
+<li><strong>核心创新</strong>: 首个训练「代码驱动的视频生成 agent」的工作：agent 自主编写并执行代码构建动态 3D 场景（Draft Video），为下游视频生成器提供结构与运动信号。配套设计数据管线与强化学习目标，提升空间结构、运动一致性与可控场景合成。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">8.4🌟</span> BitDecoding-FP4: Native FP4 KV Cache Decoding via Algorithm-System Co-Design</h3>
+<ul>
+<li><strong>作者</strong>: Dayou Du, Woon Yee Ng, Guangming Sheng, Nick Lau, Jianyi Cheng, Luo Mai</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09825">2611.09825</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 算法-系统协同设计原生 FP4 KV cache 解码：现有 FP4 系统使用 vanilla 量化导致精度骤降，而面向精度的 4-bit 算法依赖向量 codebook lookup 拖慢吞吐。BitDecoding-FP4 在 NVFP4/MXFP4 Tensor Core 上实现高效精确的原生 FP4 attention，长上下文服务显存与带宽显著下降。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">8.2🌟</span> CodeQuant2: Enhanced Outlier Mitigation and Adaptive Clustering for Low-Precision LRMs</h3>
+<ul>
+<li><strong>作者</strong>: Xingyu Liu, Xiangyang Yin, Tianhua Xia, Haiyu Wang, Sai Qian Zhang</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09868">2611.09868</a></li>
+<li><strong>分类</strong>: cs.CL</li>
+<li><strong>核心创新</strong>: 针对大型推理模型（LRM）早期解码步骤激活波动更大的观察，提出基于聚类的 LUT 量化框架 CodeQuant2，专门覆盖被常规校准忽略的早期状态激活异常。显著改善低精度下推理任务的准确率。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">8.1🌟</span> Scenario Orchestration for Closed-loop Policy Evaluation of Autonomous Driving</h3>
+<ul>
+<li><strong>作者</strong>: Frieda Rong, Zhaoyue Wang, Veer Kapadia, Vishaka Rajani, Aren A. Babikian, Xujie Si et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09888">2611.09888</a></li>
+<li><strong>分类</strong>: cs.RO</li>
+<li><strong>核心创新</strong>: 提出自动驾驶闭环评测的场景编排器：持续监测联合交通状态，通过重定时、重路由和角色重新分配自适应调节非 ego actor，使脚本化场景在被测策略响应后仍能保持预期交互意图，弥合固定脚本与纯反应式学习 actor 之间的鸿沟。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">8.0🌟</span> FlowMoP: Stochastic Multi-Person Motion Prediction</h3>
+<ul>
+<li><strong>作者</strong>: Aadya Agrawal, Ho Kei Cheng, Alexander Schwing</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09882">2611.09882</a></li>
+<li><strong>分类</strong>: cs.CV</li>
+<li><strong>核心创新</strong>: 首次将条件流匹配引入多人 3D 运动预测，联合建模全局轨迹与根相对姿态的多样未来分布。B 样条重参数化压缩生成状态空间，突破现有确定性方法只能输出固定数量样本的限制。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">8.0🌟</span> Discovering formally verified quantum programs with AI</h3>
+<ul>
+<li><strong>作者</strong>: Sergey Shirobokov, Ben Jaderberg, Katerina Hristova, George Tsoukalas, Johannes Bausch, Eric Wieser</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09822">2611.09822</a></li>
+<li><strong>分类</strong>: quant-ph</li>
+<li><strong>核心创新</strong>: 将自动化发现循环从经典算法扩展到量子程序：在无法用经典计算机完整评估的大规模情形下，AI 自动发现形式化验证的量子程序，包含若干数量级的改进。对量子算法研究范式具有跨领域影响。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">7.9🌟</span> On the Reliability of Majority-Vote Pseudo-Labels in Test-Time Reinforcement Learning</h3>
+<ul>
+<li><strong>作者</strong>: Haoyu Wang, Ru Wang, Yuanyuan Wang, Jiaxian Guo, Mingming Gong</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09872">2611.09872</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 对 TTRL 中多数投票伪标签的可靠性做理论分解：误差分为总体多数偏差与 prompt 相关的有限 rollout 变异两部分。指出总体偏差在外部监督缺失时不可识别，并提出 Prompt-Conditional Distributional 校正以缓解下游影响。</li>
+</ul></div>
+<div class="paper">
+<h3><span class="star">7.8🌟</span> Can Agentic Systems Close the Gap in Radiology with Production AI Tools?</h3>
+<ul>
+<li><strong>作者</strong>: Aubin Charley, Julien Khlaut, Charles Corbière, Pierre Manceron, Corentin Dancette, Léo Machado et al.</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.09836">2611.09836</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 描述一个跨模态/跨部位的放射科 agentic 框架：标准化 orchestrator 如何调用模块化工具生成结构化报告，并用它量化在生产级专用 AI 工具组合下 agentic 系统能够弥补多少临床差距，而非局限于单一模态或身体部位。</li>
+</ul></div>
+
+<h2>🔥 GitHub Trending（按当日新增 Star 降序）</h2>
+<table>
+<thead><tr><th>#</th><th>项目</th><th>简介</th><th>总 Star</th><th>当日新增</th></tr></thead>
+<tbody>
+
+<tr><td>1</td><td><a href="https://github.com/meta/astryx">meta/astryx</a></td><td>Agent-ready 可定制开源设计系统（Meta 出品）</td><td>18,278</td><td>+3,324 ⭐</td></tr>
+<tr><td>2</td><td><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a></td><td>开源 Grok Bot 替代品，内置供 bot 使用的虚拟机</td><td>19,150</td><td>+1,589 ⭐</td></tr>
+<tr><td>3</td><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td>Anthropic 官方 Agent Skills 公共仓库</td><td>190,119</td><td>+1,052 ⭐</td></tr>
+<tr><td>4</td><td><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a></td><td>面向 AI Agent 的浏览器自动化 CLI（Rust）</td><td>48,104</td><td>+914 ⭐</td></tr>
+<tr><td>5</td><td><a href="https://github.com/google-deepmind/mujoco">google-deepmind/mujoco</a></td><td>多关节接触动力学通用物理仿真器（具身智能基础设施）</td><td>16,706</td><td>+579 ⭐</td></tr>
+<tr><td>6</td><td><a href="https://github.com/anthropics/claude-quickstarts">anthropics/claude-quickstarts</a></td><td>Claude API 快速上手示例集合</td><td>19,720</td><td>+560 ⭐</td></tr>
+<tr><td>7</td><td><a href="https://github.com/ZhuLinsen/daily_stock_analysis">ZhuLinsen/daily_stock_analysis</a></td><td>LLM 驱动的多市场股票智能分析系统</td><td>68,436</td><td>+505 ⭐</td></tr>
+<tr><td>8</td><td><a href="https://github.com/garrytan/gbrain">garrytan/gbrain</a></td><td>OpenClaw/Hermes Agent Brain（Garry Tan 观点化配置）</td><td>31,845</td><td>+215 ⭐</td></tr>
+<tr><td>9</td><td><a href="https://github.com/homeassistant-ai/ha-mcp">homeassistant-ai/ha-mcp</a></td><td>用 Claude/ChatGPT 等 AI 助手配置与自动化 Home Assistant</td><td>5,537</td><td>+31 ⭐</td></tr>
+
+</tbody>
+</table>
+
+<div class="footer">
+<p>Generated on 2026-11-09 | 数据来源：<a href="https://arxiv.org">arXiv</a> · <a href="https://github.com/trending">GitHub Trending</a></p>
+<p>📚 完整归档见 <a href="https://yenanjing.github.io/ai-briefings/">AI Research Briefings 主页</a></p>
+</div>
+
+</body>
+</html>

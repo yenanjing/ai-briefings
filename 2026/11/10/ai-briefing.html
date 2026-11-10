@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Research Briefing — 2026-11-10</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #1a1a1a;
+            --muted: #6b7280;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+            --card-bg: #f9fafb;
+            --star: #f59e0b;
+            --code-bg: #f3f4f6;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--fg);
+            background: var(--bg);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        h1 { font-size: 1.8rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.4rem; margin-top: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+        h3 { font-size: 1.1rem; margin-top: 1.8rem; color: var(--accent); }
+        .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .theme-box {
+            background: var(--card-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.2rem;
+            margin: 1.5rem 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .paper {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.2rem 0;
+        }
+        .paper h3 { margin-top: 0; }
+        .paper .star { color: var(--star); font-weight: bold; }
+        .paper ul { margin: 0.5rem 0; padding-left: 1.2rem; }
+        .paper li { margin: 0.3rem 0; }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        th, td { padding: 0.6rem 0.8rem; border: 1px solid var(--border); text-align: left; }
+        th { background: var(--card-bg); font-weight: 600; }
+        .footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--border); color: var(--muted); font-size: 0.85rem; }
+        code { background: var(--code-bg); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<h1>🧠 AI Research Briefing</h1>
+<div class="meta">📅 2026-11-10（周二）| arXiv Level: L1（OR 查询一次成功）| 25 篇候选 → 12 精选 | GitHub Trending: 10 个 AI 项目</div>
+
+<div class="theme-box">
+<h2>📝 今日主题</h2>
+<p><strong>Agent 认知与探索理论</strong>——Sampling Is Not Curiosity 论证当前 LLM agent 的探索是「随机采样」而非「好奇调查」并提出形式化框架；Value-Policy Dissociation 揭示 agent 能从隐藏状态线性解码候选动作价值却无法可靠转化为策略选择，Natural Value Transport 干预可改善任务结果。</p>
+<p><strong>Agentic RAG 与 RL 基础设施</strong>——PatternBloom 将 agentic RAG 的检索单位从「内容」升级为「推理逻辑」，7B 模型在 27 基线上 +15.0 Avg-OOD EM；BunshinRL 通过活体工作区 fork 削减 agentic RL 峰值内存 43%、延迟 23%。</p>
+<p><strong>本地推理与系统效率</strong>——Hibana 面向 DGX Spark 统一内存设备协同优化模型表示/内存管理/解码策略，125B 模型 agentic 吞吐 3.4×；GEAR 将 NN 验证的线性边界传播迁移至全局 NLP，超越 Gurobi/BARON/SCIP。</p>
+<p><strong>模型编辑与知识可恢复性</strong>——Memento 证明编辑后知识可仅通过 prompt 空间干预恢复 80.07%，揭示编辑抑制而非消除知识的可恢复性。</p>
+<p><strong>具身智能触觉替代视觉</strong>——手指触觉传感器在接触密集操作中提升 31.7-60.0pp，超越腕部相机策略。</p>
+</div>
+
+<h2>📄 精选论文（Top 12）</h2>
+
+<div class="paper">
+<h3><span class="star">9.0🌟</span> PatternBloom: Empowering Agentic RAG with Externalized RL-Distilled Graph Patterns</h3>
+<ul>
+<li><strong>作者</strong>: Yi Ge; Heng Huang</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10477">2611.10477</a></li>
+<li><strong>代码</strong>: <a href="https://github.com/EllenYiGe/PatternBloom">github.com/EllenYiGe/PatternBloom</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 将 agentic RAG 的检索单位从「内容（读什么）」升级为「逻辑（怎么推理）」。第一阶段 RL 用冻结 oracle 的信息增益（IDR）给证据图打分，高奖励轨迹蒸馏为类型抽象的推理骨架库（GPM）；第二阶段 RL 用 Pattern-Augmented Reward 耦合策略与记忆。7B 模型在 27 个基线上 +15.0 Avg-OOD EM，增益随推理深度复合增长。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.8🌟</span> Sampling Is Not Curiosity: Why LLM Agents Should Investigate</h3>
+<ul>
+<li><strong>作者</strong>: Alfonso Amayuelas; Piotr Piękos; Xin Eric Wang; William Yang Wang</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10501">2611.10501</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 立场论文，论证当前 LLM agent 的探索是「随机采样」而非「好奇调查」。从 RL 好奇心文献出发，提出 LLM agent 好奇心的形式化框架：需要预测性环境模型、在线改进、通过预测改进驱动动作选择、超越上下文窗口持续存在，并在开放式设定下自主发起调查目标。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.8🌟</span> Hibana: Fast Agentic Inference on Unified-Memory Devices</h3>
+<ul>
+<li><strong>作者</strong>: Yahya Emara; Chi-Chih Chang; Anthony Fei; Ahmed F. AbouElhamayed</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10469">2611.10469</a></li>
+<li><strong>代码</strong>: <a href="https://github.com/sharar-project/hibana">github.com/sharar-project/hibana</a></li>
+<li><strong>分类</strong>: cs.CL, cs.AI</li>
+<li><strong>核心创新</strong>: 面向统一内存设备（DGX Spark）的推理引擎，协同优化模型表示（model surgery 缩减内存与数据搬运）、内存管理（跨轮次保留 agent 状态实现即时恢复）、解码策略（自适应投机）。单卡 DGX Spark 服务 125B 模型，agentic 任务吞吐 3.4×、解码吞吐 3.9× 超越 vLLM/llama.cpp。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.5🌟</span> GEAR: A GPU-Accelerated Global Solver for Bounded Continuous Nonlinear Programs</h3>
+<ul>
+<li><strong>作者</strong>: Duo Zhou; Hesun Chen; Xiangru Zhong; Grani A. Hanasusanto</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10487">2611.10487</a></li>
+<li><strong>分类</strong>: math.OC, cs.LG</li>
+<li><strong>核心创新</strong>: 受神经网络验证中线性边界传播框架启发的 GPU 加速全局 NLP 求解器。将线性边界视为非线性约束的松弛，用于下界、不可行检测与原始解搜索；提出双线性/商/三角函数的更紧线性松弛与投影增广拉格朗日法。在 GAMS/MINLPLib 基准 180s 限制内解决 421/505 题，超越 Gurobi/BARON/SCIP 等 6 个求解器，16 题为唯一求解。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.5🌟</span> BunshinRL: Splitting Live Agent Workspaces for Memory-Efficient Agentic RL</h3>
+<ul>
+<li><strong>作者</strong>: Yutong Huang; Vikranth Srivatsa; Alex Asch; Yiying Zhang</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10453">2611.10453</a></li>
+<li><strong>分类</strong>: cs.AI, cs.OS</li>
+<li><strong>核心创新</strong>: Agentic RL rollout 系统，通过内存共享、工具前缀缓存、投机工具执行三项技术利用共享环境状态与重复工具调用。底层 BunshinFork 实现容器级活体工作区 fork（重建进程树、写时复制共享内存、保留文件/通信/GUI 状态）。峰值内存降 43%、总内存降 51%、端到端 rollout 延迟降 23%。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.4🌟</span> Represented but Not Used: Value-Policy Dissociation in LLM Agents</h3>
+<ul>
+<li><strong>作者</strong>: Yuzhang Luo; Mohamed Aghzal; Liangming Pan; Ziyu Yao</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10457">2611.10457</a></li>
+<li><strong>分类</strong>: cs.AI</li>
+<li><strong>核心创新</strong>: 发现 LLM agent 中存在「价值-策略解离」：候选动作的相对价值可从中间隐藏状态线性解码（包括策略选择劣动作的状态），但该表征未被可靠转化为策略选择。提出 Natural Value Transport (NVT) 从隐藏状态变化学习变换，比直接沿价值读出方向干预更一致地影响动作偏好，闭环控制器可改善任务结果。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.3🌟</span> Test-Time Scaling for Diffusion Language Models with Frequency-Aware Remasking</h3>
+<ul>
+<li><strong>作者</strong>: Bowen Zuo; Yue Yu; Dongruo Zhou; Yinglun Zhu</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10486">2611.10486</a></li>
+<li><strong>分类</strong>: cs.CL, cs.AI</li>
+<li><strong>核心创新</strong>: 将 DLM 测试时扩展形式化为推理计算与解码策略的自适应分配。两阶段方法：快速基础采样器解决简单问题，对难题应用频率感知重掩码——追踪每个 token 预测在去噪步骤中的变化频率，优先提交频繁变化的 token 鼓励探索替代推理路径。LLaDA-8B MATH-500 +3.73pp、Dream-7B +7.33pp。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.3🌟</span> The Truth Beneath the Tokens: Prompt-Space Recovery of Knowledge Edits in Language Models</h3>
+<ul>
+<li><strong>作者</strong>: Manit Baser; Rachel Yeo Hui Min; Aditya Nawal; Dinil Mon Divakaran</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10450">2611.10450</a></li>
+<li><strong>分类</strong>: cs.CL, cs.AI</li>
+<li><strong>核心创新</strong>: 证明模型编辑的预编辑知识可仅通过输入空间干预恢复，无需修改权重。Memento 学习可复用恢复信号（连续前缀或离散文本 prompt）引导编辑后模型回到预编辑响应，跨 3 个 LLM 与 5 种编辑技术恢复 80.07% 保留事实。在未编辑 LLM 上平均事实召回 +53.9%，揭示编辑抑制而非消除知识的可恢复性。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.2🌟</span> Tactile Sensors Are an Effective Substitute for Wrist Cameras in Contact-Rich Manipulation</h3>
+<ul>
+<li><strong>作者</strong>: Aijia Yang; Arsh Tangri; Sergey Zakharov; Krishna Murthy Jatavallabhula</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10490">2611.10490</a></li>
+<li><strong>分类</strong>: cs.RO</li>
+<li><strong>核心创新</strong>: 证明手指安装的触觉传感器可有效替代腕部相机。在 visuotactile ACT 策略中集成两个低成本触觉阵列（训练与部署均无腕部图像），在三类接触密集任务上，腕部相机提升 18.3-28.3pp，触觉传感提升 31.7-60.0pp 且在所有三任务上超越仅视觉+腕部相机策略。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.2🌟</span> Can General-Purpose Generative AI Supply Training Data for Medical Vision Models?</h3>
+<ul>
+<li><strong>作者</strong>: Jiachuan Peng; Kyle Lam; Jierui Qu; Lin Li</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10484">2611.10484</a></li>
+<li><strong>分类</strong>: cs.CV, cs.AI</li>
+<li><strong>核心创新</strong>: 回顾性研究评估 Nano Banana 作为合成医学影像来源。仅合成数据训练的模型在肺炎/视网膜脱离/肾结石 AUROC 0.711-0.963 与真实数据模型相当，但校准与净收益不一致。混合训练的颈动脉超声模型产生血管年龄指数分层 633 名外部受试者。强调合成数据价值需用校准、决策曲线分析与临床审查评估，不能仅看区分度。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.1🌟</span> LongCapHarness: Capability-Guided Auto-Harnessing for Long-Context Reasoning</h3>
+<ul>
+<li><strong>作者</strong>: Tao Zhang; Yuhang He</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10463">2611.10463</a></li>
+<li><strong>分类</strong>: cs.CL</li>
+<li><strong>核心创新</strong>: 不依赖数据合成与 LLM 后训练，通过递归自我改进在开发集上修订能力原语实现、能力状态与控制逻辑来 harness 长上下文推理的潜在能力。应用于 Llama3-8B 并迁移至 Qwen2.5-3B，在 HELMET/RULER 上超越数据合成基线，开发成本不到 NExtLong/PolicyLong 训练成本的 50%。</li>
+</ul>
+</div>
+
+<div class="paper">
+<h3><span class="star">8.0🌟</span> MuCa-ViT: Disentangling Channel Semantics in Vision Transformers</h3>
+<ul>
+<li><strong>作者</strong>: Daeun Kim; Hyesong Choi; Hyejin Park; Dongbo Min</li>
+<li><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.10497">2611.10497</a></li>
+<li><strong>代码</strong>: <a href="https://github.com/kimdanni/MuCa-ViT">github.com/kimdanni/MuCa-ViT</a></li>
+<li><strong>分类</strong>: cs.CV</li>
+<li><strong>核心创新</strong>: 发现多通道 ViT 中 context token 在高通道冗余下坍缩到少数主导通道。提出 Factorial Token Learning (FTL) 强制 context token 去相关 + Channel Composition-Aware Modulation (CAM) 用精炼 [CLS] 作语义锚生成样本级调制信号。在 JUMP-CP/CHAMMI/So2Sat 三基准超越先前多通道 ViT，改进幅度与通道冗余度正相关。</li>
+</ul>
+</div>
+
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+
+<table>
+<tr><th>#</th><th>项目</th><th>语言</th><th>总 Star</th><th>当日新增</th><th>说明</th></tr>
+<tr><td>1</td><td><a href="https://github.com/meta/astryx">meta/astryx</a></td><td>TypeScript</td><td>20,218</td><td>+3,278</td><td>Agent-ready 可定制开源设计系统</td></tr>
+<tr><td>2</td><td><a href="https://github.com/milind-soni/OpenMausBot">milind-soni/OpenMausBot</a></td><td>TypeScript</td><td>19,750</td><td>+1,587</td><td>开源 Grok 替代品，含虚拟机</td></tr>
+<tr><td>3</td><td><a href="https://github.com/anthropics/skills">anthropics/skills</a></td><td>Python</td><td>191,054</td><td>+1,038</td><td>Agent Skills 官方仓库</td></tr>
+<tr><td>4</td><td><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a></td><td>Rust</td><td>48,527</td><td>+916</td><td>AI Agent 浏览器自动化 CLI</td></tr>
+<tr><td>5</td><td><a href="https://github.com/google-deepmind/mujoco">google-deepmind/mujoco</a></td><td>C++</td><td>16,938</td><td>+574</td><td>多关节接触动力学物理仿真器</td></tr>
+<tr><td>6</td><td><a href="https://github.com/anthropics/claude-quickstarts">anthropics/claude-quickstarts</a></td><td>Python</td><td>20,043</td><td>+551</td><td>Claude API 快速上手项目集</td></tr>
+<tr><td>7</td><td><a href="https://github.com/ZhuLinsen/daily_stock_analysis">ZhuLinsen/daily_stock_analysis</a></td><td>Python</td><td>68,913</td><td>+506</td><td>LLM 驱动多市场股票智能分析系统</td></tr>
+<tr><td>8</td><td><a href="https://github.com/garrytan/gbrain">garrytan/gbrain</a></td><td>TypeScript</td><td>32,186</td><td>+216</td><td>OpenClaw/Hermes Agent Brain</td></tr>
+<tr><td>9</td><td><a href="https://github.com/ruvnet/RuView">ruvnet/RuView</a></td><td>Rust</td><td>103,497</td><td>+172</td><td>WiFi 信号实时空间智能/生命体征监测</td></tr>
+<tr><td>10</td><td><a href="https://github.com/homeassistant-ai/ha-mcp">homeassistant-ai/ha-mcp</a></td><td>Python</td><td>6,025</td><td>+31</td><td>用 Claude/ChatGPT 配置自动化 Home Assistant</td></tr>
+</table>
+
+<div class="footer">
+<p>生成时间：2026-11-10 | 数据来源：<a href="https://arxiv.org">arXiv</a> / <a href="https://github.com/trending">GitHub Trending</a></p>
+<p>论文日期：2026-11-07 | arXiv 获取级别：L1（OR 查询一次成功，未触发限流）</p>
+</div>
+
+</body>
+</html>

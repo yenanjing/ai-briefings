@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 研究简报 · 2026-11-11</title>
+<style>
+
+:root { --bg:#ffffff; --fg:#1f2328; --muted:#57606a; --accent:#0969da; --border:#d0d7de; --card:#f6f8fa; --star:#cf222e; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--fg); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif; line-height:1.7; }
+.wrap { max-width:860px; margin:0 auto; padding:40px 24px 80px; }
+h1 { font-size:2em; border-bottom:2px solid var(--border); padding-bottom:12px; margin-bottom:8px; }
+.meta { color:var(--muted); font-size:0.92em; margin-bottom:28px; }
+.meta a { color:var(--accent); text-decoration:none; }
+h2 { font-size:1.4em; margin-top:40px; border-bottom:1px solid var(--border); padding-bottom:8px; }
+.paper { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:18px 20px; margin:16px 0; }
+.paper h3 { margin:0 0 8px; font-size:1.08em; }
+.paper .star { color:var(--star); font-weight:700; }
+.paper ul { margin:6px 0 0; padding-left:20px; }
+.paper li { margin:3px 0; }
+.paper a { color:var(--accent); text-decoration:none; }
+.gh-list { list-style:none; padding:0; }
+.gh-list li { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:12px 16px; margin:10px 0; }
+.gh-list .name { font-weight:700; }
+.gh-list .name a { color:var(--accent); text-decoration:none; }
+.gh-list .stars { color:var(--star); font-weight:600; }
+.gh-list .desc { color:var(--muted); font-size:0.92em; margin-top:4px; }
+.topic { background:var(--card); border-left:4px solid var(--accent); border-radius:6px; padding:12px 16px; margin:12px 0; }
+.footer { margin-top:48px; padding-top:16px; border-top:1px solid var(--border); color:var(--muted); font-size:0.85em; text-align:center; }
+
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>AI 研究简报 · 2026-11-11</h1>
+<div class="meta">arXiv 获取级别：<strong>L1（OR 查询一次成功）</strong> · 25 篇候选，精选 12 篇 · GitHub Trending 9 个 AI 项目 · <a href="https://yenanjing.github.io/ai-briefings/2026/11/11/ai-briefing.html">在线版</a></div>
+<h2>📄 今日精选论文（Top 12）</h2>
+<div class="paper">
+<h3><span class="star">9🌟</span> LaST0.5: A Generalist World Action Model with Interaction-Centric Latent Reasoning</h3>
+<ul>
+<li><strong>作者</strong>：Xuheng Zhang, Yiming Zhang, Jialin Gao, Hao Chen, Jiaming Liu 等</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14048">2611.14048</a></li>
+<li><strong>分类</strong>：cs.RO</li>
+<li><strong>核心创新</strong>：针对现有 World Action Model 直接把全局场景表征迁移到动作生成、忽略交互局部性的问题，提出以「交互为中心」的潜在推理范式，让模型在潜在空间中围绕物体交互区域做定向推理，再落地到动作序列，在通用操作任务上取得更强的泛化与成功率。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">9🌟</span> Can KV Cache Be Reused Across Model Updates? A DeepSeek-V4-Flash Case Study</h3>
+<ul>
+<li><strong>作者</strong>：Zhikun Tao, Fangyong Jin, Junping Zhao</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14051">2611.14051</a></li>
+<li><strong>分类</strong>：cs.DC / cs.AI</li>
+<li><strong>核心创新</strong>：首次系统研究「模型权重更新后 KV cache 能否跨版本复用」这一被忽视的工程问题，在 DeepSeek-V4-Flash 到 Flash-0731 四次版本迭代上做实证，发现 cache 可在权重变化后保留有效任务信息，为推理服务在模型热更新时避免重复计算共享上下文提供依据。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">9🌟</span> Coding Agent Memory Post-Training II: Unlocking the Memory Potential of Pre-trained File Operations via On-Policy Distillation</h3>
+<ul>
+<li><strong>作者</strong>：Lirui Luo, Kelong Mao, Xinwei Yang, Rongqing Li, Luyu Chen</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14009">2611.14009</a></li>
+<li><strong>分类</strong>：cs.LG / cs.AI</li>
+<li><strong>核心创新</strong>：面向长时程编码任务，把「何时写记忆、读什么、何时读」纳入策略本身，用 on-policy distillation 让预训练模型自带的文件操作能力转化为可控的记忆控制行为，摆脱对外部固定 compaction 协议的依赖，显著改善长上下文 agent 的记忆效率。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">9🌟</span> Margin-Guided Token Credit for Reinforcement Learning with Verifiable Rewards (MCPO)</h3>
+<ul>
+<li><strong>作者</strong>：Chi Liu, Xin Chen, Yuchuan Weng, Srinivasan Manoharan</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14015">2611.14015</a></li>
+<li><strong>分类</strong>：cs.LG / cs.AI</li>
+<li><strong>核心创新</strong>：指出 GRPO 把最终奖励均摊给每个 token 的粗粒度问题，提出 Margin-Credit Policy Optimization：用 top-2 概率差 M=p1−p2 度量模型「犹豫程度」，把信用精确分配到决策分歧最大的 token 上，在可验证奖励任务上提升训练效率与最终准确率。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">8🌟</span> Personalized Memory Rubrics: Learning What to Remember per User via Rubric-Guided Credit Assignment</h3>
+<ul>
+<li><strong>作者</strong>：Yupeng Han, Kai Zhang, Shuochen Liu, Ze Liu 等</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14017">2611.14017</a></li>
+<li><strong>分类</strong>：cs.AI</li>
+<li><strong>核心创新</strong>：针对长程个性化 agent 记忆更新只靠终端 QA 准确率给出粗反馈、无法区分中间写入/修改/丢弃操作价值的问题，提出「记忆评分准则」框架，用 rubric 引导的信用分配把用户特定的更新效用显式建模，实现按用户学习「该记什么」。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">8🌟</span> Program-Aided Patchable Skill Evolution</h3>
+<ul>
+<li><strong>作者</strong>：Jiahao Wang, Yuqi Xiong, Qing Yang, Zhipeng Xu, Zhenghao Liu</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14019">2611.14019</a></li>
+<li><strong>分类</strong>：cs.CL / cs.AI</li>
+<li><strong>核心创新</strong>：把 agent skill 从「整段文本重写」升级为「可打补丁的程序化演化」：将技能表示为可组合的程序单元，从执行轨迹中蒸馏可复用经验并以补丁形式精确修改，避免整篇重写带来的副作用，在交互式任务上提升技能适配的稳定性与效率。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">8🌟</span> Where Do Vision-Language Models Get Left and Right? Position-Code Counterfactuals in Qwen2.5-VL, Qwen3-VL and InternVL3</h3>
+<ul>
+<li><strong>作者</strong>：Enhao Cui, Junzhi Yang, Yaoshun Lin, Yuhan Feng, Zijian Chen</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14060">2611.14060</a></li>
+<li><strong>分类</strong>：cs.CV / cs.LG</li>
+<li><strong>核心创新</strong>：通过仅镜像位置编码的反事实干预，系统定位 VLM 的左右方向感来自图像 patch 内容、ViT 位置码还是 LLM token 顺序。在 Qwen2.5-VL-7B、Qwen3-VL-4B、InternVL3-2B 上验证 ViT 宽度位置码是必要且充分的来源，为 VLM 空间推理的可解释性给出清晰归因。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">8🌟</span> Few-Step Streaming Video Generation via Condition Shifting</h3>
+<ul>
+<li><strong>作者</strong>：Deyuan Liu, Jungang Li, Kaiwen Zheng, Kai Jiang, Jintao Chen</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14033">2611.14033</a></li>
+<li><strong>分类</strong>：cs.CV / cs.AI</li>
+<li><strong>核心创新</strong>：针对 Distribution Matching Distillation 需要额外 fake-score 网络、训练显存与计算开销大的问题，提出 condition shifting 直接在生成器内部估计生成分布的速度场，把 APEX 扩展到流式视频生成，实现少步采样下的低成本高质量流式输出。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">8🌟</span> Specify Privacy Yourself: Assessing Inference-Time Personalized Privacy Preservation of LVLMs</h3>
+<ul>
+<li><strong>作者</strong>：Xingqi Wang, Xiaoyuan Yi, Xing Xie, Jia Jia</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.13997">2611.13997</a></li>
+<li><strong>代码</strong>：<a href="https://github.com/achernarwang/specify-privacy-yourself">https://github.com/achernarwang/specify-privacy-yourself</a></li>
+<li><strong>分类</strong>：cs.CV / cs.AI</li>
+<li><strong>核心创新</strong>：指出隐私本质上是「个人化且情境相关」的，而现有 LVLM 只对通用隐私（如信用卡号）对齐良好。构建推理时个性化隐私保护评测，让用户自定义敏感边界，系统揭示主流 LVLM 在个性化隐私场景下的对齐缺口。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">8🌟</span> Generalizing Causal Decision-Making: Markov Equivalence, Transportability and Counterfactuals</h3>
+<ul>
+<li><strong>作者</strong>：Min Woo Park, Sanghack Lee</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14066">2611.14066</a></li>
+<li><strong>分类</strong>：cs.LG</li>
+<li><strong>核心创新</strong>：把因果 bandit 从完全已知因果结构推广到部分已知结构、可利用其他环境信息与可实现的反事实动作。给出 Markov 等价类下最小干预集的图判据，刻画「可能最优」的最小干预集，并建立跨环境可迁移性与反事实决策的统一框架。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">8🌟</span> ScaleBrain: A Scale-Consistent Framework for EEG Foundation Models</h3>
+<ul>
+<li><strong>作者</strong>：Minyu Zhou, Yajing Wu, Yongqiang Tang, Wang Jia, Wensheng Zhang</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.14035">2611.14035</a></li>
+<li><strong>分类</strong>：cs.LG / eess.SP</li>
+<li><strong>核心创新</strong>：指出 EEG 基础模型用固定长度 patch 构造多尺度表征时存在尺度不一致问题，提出尺度一致框架让不同时间尺度在表征空间保持结构对齐，提升脑机接口场景下 EEG 表征学习的跨尺度泛化能力。</li>
+</ul>
+</div>
+<div class="paper">
+<h3><span class="star">8🌟</span> Lipschitz-Controlled Flow Matching for Robust Image Restoration (LipsFlower)</h3>
+<ul>
+<li><strong>作者</strong>：Sedjro Salomon Hotegni, Konstantin Sonntag, Paul-Christian Bürkner, Sebastian Peitz</li>
+<li><strong>arXiv</strong>：<a href="https://arxiv.org/abs/2611.13995">2611.13995</a></li>
+<li><strong>分类</strong>：cs.CV</li>
+<li><strong>核心创新</strong>：发现 flow-matching 图像修复的 learned dynamics 会放大输入扰动导致重建不稳定，提出 LipsFlower 通过 Lipschitz 常数控制给出 Flow-from-Y 与观测条件后验两条路径的稳定性界，从理论上约束并实证降低放大效应。</li>
+</ul>
+</div>
+<h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+<ul class="gh-list">
+<li>
+<span class="name"><a href="https://github.com/meta/astryx">meta/astryx</a></span> <span class="stars">+3,108⭐</span> <span style="color:var(--muted)">(总 23,144)</span>
+<div class="desc">Agent-ready 可定制开源设计系统，Meta 出品，面向 AI agent 的组件与设计规范。</div>
+</li>
+<li>
+<span class="name"><a href="https://github.com/anthropics/skills">anthropics/skills</a></span> <span class="stars">+1,679⭐</span> <span style="color:var(--muted)">(总 192,426)</span>
+<div class="desc">Anthropic 官方 Agent Skills 公共仓库，Agent 技能生态核心基础设施。</div>
+</li>
+<li>
+<span class="name"><a href="https://github.com/mattpocock/skills">mattpocock/skills</a></span> <span class="stars">+1,225⭐</span> <span style="color:var(--muted)">(总 321,032)</span>
+<div class="desc">面向真实工程师的 Agent 技能集，直接来自作者 .agents 目录。</div>
+</li>
+<li>
+<span class="name"><a href="https://github.com/homeassistant-ai/ha-mcp">homeassistant-ai/ha-mcp</a></span> <span class="stars">+790⭐</span> <span style="color:var(--muted)">(总 6,731)</span>
+<div class="desc">用 Claude/ChatGPT 等 AI 助手通过 MCP 配置与自动化 Home Assistant。</div>
+</li>
+<li>
+<span class="name"><a href="https://github.com/vercel-labs/agent-browser">vercel-labs/agent-browser</a></span> <span class="stars">+780⭐</span> <span style="color:var(--muted)">(总 49,299)</span>
+<div class="desc">面向 AI agent 的浏览器自动化 CLI（Rust），延续 Agent 基础设施热点。</div>
+</li>
+<li>
+<span class="name"><a href="https://github.com/anthropics/claude-quickstarts">anthropics/claude-quickstarts</a></span> <span class="stars">+531⭐</span> <span style="color:var(--muted)">(总 20,540)</span>
+<div class="desc">Anthropic 官方 Claude API 快速上手示例集，帮助开发者快速构建可部署应用。</div>
+</li>
+<li>
+<span class="name"><a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></span> <span class="stars">+465⭐</span> <span style="color:var(--muted)">(总 115,244)</span>
+<div class="desc">面向 AI 编码 agent 的生产级工程技能集。</div>
+</li>
+<li>
+<span class="name"><a href="https://github.com/google-deepmind/mujoco">google-deepmind/mujoco</a></span> <span class="stars">+456⭐</span> <span style="color:var(--muted)">(总 17,417)</span>
+<div class="desc">通用物理仿真器，具身智能与机器人学习核心工具持续受关注。</div>
+</li>
+<li>
+<span class="name"><a href="https://github.com/ranxianglei/billion-context">ranxianglei/billion-context</a></span> <span class="stars">+375⭐</span> <span style="color:var(--muted)">(总 6,387)</span>
+<div class="desc">月级长会话上下文压缩插件，100K 窗口即可处理十亿级 token，节省 5 倍 token。</div>
+</li>
+</ul>
+<h2>🧭 今日主题速览</h2>
+<div class="topic"><strong>Agent 记忆与技能工程化</strong>：Coding Agent Memory Post-Training II 用 on-policy 蒸馏把记忆控制纳入策略、Personalized Memory Rubrics 用 rubric 信用分配学习「按用户记什么」、Program-Aided Patchable Skill Evolution 把技能演化升级为程序化补丁，三者共同把 agent 记忆/技能从启发式走向可训练。</div>
+<div class="topic"><strong>RLVR 信用分配精细化</strong>：MCPO 用 top-2 概率差把奖励信用集中到模型最犹豫的 token，直击 GRPO 均摊奖励的粗粒度缺陷。</div>
+<div class="topic"><strong>世界模型与具身智能</strong>：LaST0.5 提出交互中心的潜在推理，让 World Action Model 聚焦物体交互区域而非全局场景迁移。</div>
+<div class="topic"><strong>推理系统效率</strong>：DeepSeek-V4-Flash 案例首次实证 KV cache 可跨模型版本复用，为热更新推理服务降本提供依据。</div>
+<div class="topic"><strong>VLM 可解释性</strong>：位置码反事实干预定位 VLM 左右方向感来源，ViT 宽度位置码被证明是必要且充分来源。</div>
+<div class="footer">生成时间 2026-11-11 · 数据来源 arXiv API / GitHub Trending · <a href="https://yenanjing.github.io/ai-briefings/2026/11/11/ai-briefing.html">完整在线版</a></div>
+</div>
+</body>
+</html>

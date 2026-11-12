@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-12</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo .lang { background: #f0f0f5; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; color: #666; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 AI Research Briefing</h1>
+      <div class="date">2026-11-12</div>
+      <div class="stats">12 篇论文 · 7 个 GitHub Trending 项目 · arXiv L1</div>
+    </header>
+
+    <section>
+      <h2>📝 论文精选</h2>
+      
+    <div class="paper">
+      <h3>9🌟 A Theory of Policy Optimization in Post-Training: Coverage Collapse and Reference Resets</h3>
+      
+      <p><strong>作者</strong>: Audrey Huang, Nan Jiang, Sham M. Kakade, Sadhika Malladi, Akshay Krishnamurthy 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14467v1">2611.14467v1</a></p>
+      
+      <p><strong>分类</strong>: cs.LG, stat.ML</p>
+      <p><strong>核心创新</strong>: 重新审视 LM post-training 中策略优化的理论基础，提出 coverage-preserving 算法类，用 base model 的响应覆盖率（response coverage）刻画样本与梯度步复杂度边界。揭示 coverage collapse 现象并证明 reference reset 可恢复覆盖率，为 RLHF/DPO 等后训练方法提供首个统一理论框架。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Is Your Robot's Memory Just a Clock? Temporal Shortcuts in Memory-Augmented VLA Policies</h3>
+      
+      <p><strong>作者</strong>: Chubin Zhang, Bo An</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14488v1">2611.14488v1</a></p>
+      
+      <p><strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 揭示记忆增强 VLA 策略中的时间捷径问题：均匀时间采样+时间步标记使策略将「等待」误认为「工作」。通过在 RoboMME 计数任务中引入 null event（暂停/手腕抖动）证明策略依赖时间而非实际事件内容，为 VLA 记忆机制设计提出关键警示。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 AutoScaffold: AI-Guided Scaffolding for Reinforcement Learning of Language Models</h3>
+      
+      <p><strong>作者</strong>: Zijian Zhang, Rizhen Hu, Jiangweizhi Peng, Shiyang Li, Sujay Bhatt 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14515v1">2611.14515v1</a></p>
+      
+      <p><strong>分类</strong>: cs.LG, cs.CL</p>
+      <p><strong>核心创新</strong>: 提出统一的 AI-for-AI 框架，将 RLVR 训练中丰富的经验信息（而非仅用 outcome reward 的单一标量）自动转化为训练时 scaffold（策略提示/hints），实现 scaffold 设计的自动化与跨领域泛化，释放 RLVR 训练信号中被浪费的信息。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 ReTrace: Distilling Tool-Using Agents into Planner-Free Workflows</h3>
+      
+      <p><strong>作者</strong>: Kaiyuan Hou, Yang Ping Kuo, Indranil Bhattacharya, Rohith Nama, Arushi Gupta 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14492v1">2611.14492v1</a></p>
+      
+      <p><strong>分类</strong>: cs.AI, cs.LG, cs.MA</p>
+      <p><strong>核心创新</strong>: 将 LLM agent 的 SOP 执行蒸馏为可复用 workflow，推理时用代码而非 LLM 选择下一步操作，消除每步调用 LLM 的延迟与成本。从 agent 日志中提取决策逻辑编译为确定性工作流，在业务流程自动化场景中大幅降低推理开销。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Contrastive Discovery: Open-Ended Scientific Discovery over Competing Explanations</h3>
+      
+      <p><strong>作者</strong>: Ziang Liu, James J. Kim, Yijia Dai, Jennifer J. Sun</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14514v1">2611.14514v1</a></p>
+      
+      <p><strong>分类</strong>: cs.AI, cs.CL, cs.LG</p>
+      <p><strong>核心创新</strong>: 针对 LLM agent 科学发现中逐点假设检验的局限（仅测试 h vs ¬h），提出 Contrastive Discovery 框架：用互斥解释的 contrast set 替代单一假设，使 agent 在证据拒绝某解释时能识别证据支持哪个替代解释，实现更有效的开放式科学发现。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Re-Search: Dissecting LLM Ideation Through a Two-Player Questioning Game</h3>
+      
+      <p><strong>作者</strong>: Muhan Gao, Hangxiao Zhu, Xinqi Su, Yu Zhang, Daniel Khashabi 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14487v1">2611.14487v1</a></p>
+      
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 将 Twenty Questions 游戏格式适配为研究 ideation 评估：给定已发表论文的研究问题，模型通过是/否问题重新发现论文核心思想。基于 200 篇 ICML 论文构建基准，揭示 LLM 在研究思路空间中探索的模式与瓶颈。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Mechanistic Interpretability Needs a Logic of Inference</h3>
+      
+      <p><strong>作者</strong>: Zhimin Hu, Chen Jiang, Hanbo Xie, N. Apurva Ratan Murty, Sashank Varma</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14483v1">2611.14483v1</a></p>
+      
+      <p><strong>分类</strong>: cs.CL, cs.CV</p>
+      <p><strong>核心创新</strong>: 立场论文，论证机制可解释性（MI）领域需要从「能观察什么」转向「观察如何支持机制解释」的推理逻辑。提出将 MI 发现视为科学推断问题，需要形式化的推断框架来区分相关性与因果性、避免事后解释偏差。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Comparative Analysis of Agent Evaluation Frameworks: Stability, Detection, and Discovery in Enterprise Analytics Agents</h3>
+      
+      <p><strong>作者</strong>: Howard Zhang, Chuck Arvin, Logan Brown, Mihir Bhatia, Neelu Choudhary 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14493v1">2611.14493v1</a></p>
+      
+      <p><strong>分类</strong>: cs.AI, cs.CL, cs.LG, cs.SE</p>
+      <p><strong>核心创新</strong>: 首次系统比较三种 agent 评估范式（trace-based LLM judging / text-only LLM judging with red-teaming / deterministic heuristics）在企业分析 agent 上的稳定性、检测能力与发现能力，用冻结执行轨迹控制变量，为企业 agent 评估提供实证指导。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 RS-JEPA: Remote Sensing Joint-Embedding Predictive Architecture with Scan-Path Views for Cross-Sensor Image Retrieval</h3>
+      
+      <p><strong>作者</strong>: Tanishq Rachamalla, Srishti Kaushik, Muhammad Attique Khan, Gustau Camps-Valls, Swalpa Kumar Roy</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14496v1">2611.14496v1</a></p>
+      <p><strong>代码</strong>: <a href='https://github.com/Tanishq251/RSJEPA'>https://github.com/Tanishq251/RSJEPA</a></p>
+      <p><strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 面向跨传感器遥感图像检索的紧凑 JEPA 框架，用 scan-path views 替代大参数量 Transformer（仅 118-173M），无需手动标签即可在 SAR/optical、PAN/MS 等异构传感器间检索相同内容场景，参数量与计算量远低于现有方法。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 TorchCurves: Differentiable Parametric Curves</h3>
+      
+      <p><strong>作者</strong>: Alex Shtoff</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14516v1">2611.14516v1</a></p>
+      <p><strong>代码</strong>: <a href='https://github.com/alexshtf/torchcurves'>https://github.com/alexshtf/torchcurves</a></p>
+      <p><strong>分类</strong>: cs.LG, stat.ML</p>
+      <p><strong>核心创新</strong>: 将向量值参数曲线作为可学习原语的 PyTorch 库，支持 B-spline 与 Legendre 多项式基，输入与系数均可微分。曲线系数可与周围模型联合优化或由另一网络生成，为曲线拟合、轨迹优化等任务提供可微分层。</p>
+    </div>
+    <div class="paper">
+      <h3>7🌟 Emergent Biological Capabilities in a Foundation Model for Molecular Interactions</h3>
+      
+      <p><strong>作者</strong>: Adi Mashiach</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14504v1">2611.14504v1</a></p>
+      
+      <p><strong>分类</strong>: cs.LG, q-bio.BM</p>
+      <p><strong>核心创新</strong>: Bonbon：在约 3.2 万亿 token 的蛋白-配体序列对上预训练的分子交互基础模型，从单一表示空间展现三级零样本涌现能力——功能级（作用机制）、残基级（结合位点定位）、分子级（性质预测），将涌现能力范式扩展至多模态生物学。</p>
+    </div>
+    <div class="paper">
+      <h3>7🌟 Continual-ARC: Measuring Skill Acquisition over a Working Lifetime</h3>
+      
+      <p><strong>作者</strong>: Daniel Lenton</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14505v1">2611.14505v1</a></p>
+      
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 从三个 ARC-AGI 版本构建终身学习流基准，任务无需领域知识，首次在同一尺度上比较 memory-based 与 weight-based 系统。解决现有 benchmark 仅关注单一领域、单次使用、单一学习器家族的局限，为 agent harness 持续学习提供统一评测框架。</p>
+    </div>
+    </section>
+
+    <section>
+      <h2>🔥 GitHub Trending</h2>
+      
+    <div class="repo">
+      <a href="https://github.com/meta/astryx"><strong>meta/astryx</strong></a>
+      <span class="stars">+2776⭐</span> <span class='lang'>TypeScript</span>
+      <p>Agent-ready 可定制开源设计系统</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/addyosmani/agent-skills"><strong>addyosmani/agent-skills</strong></a>
+      <span class="stars">+787⭐</span> <span class='lang'>JavaScript</span>
+      <p>AI 编码 agent 生产级工程技能库</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/vercel-labs/agent-browser"><strong>vercel-labs/agent-browser</strong></a>
+      <span class="stars">+708⭐</span> <span class='lang'>Rust</span>
+      <p>AI agent 浏览器自动化 CLI</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/homeassistant-ai/ha-mcp"><strong>homeassistant-ai/ha-mcp</strong></a>
+      <span class="stars">+645⭐</span> <span class='lang'>Python</span>
+      <p>用 Claude/ChatGPT 等 AI 助手配置自动化 Home Assistant</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/shadcn/improve"><strong>shadcn/improve</strong></a>
+      <span class="stars">+361⭐</span>
+      <p>用最强模型审计代码库并生成计划供低成本模型执行</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/ZhuLinsen/daily_stock_analysis"><strong>ZhuLinsen/daily_stock_analysis</strong></a>
+      <span class="stars">+278⭐</span> <span class='lang'>Python</span>
+      <p>LLM 驱动的多市场股票智能分析系统</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/openai/codex-security"><strong>openai/codex-security</strong></a>
+      <span class="stars">+52⭐</span> <span class='lang'>TypeScript</span>
+      <p>OpenAI Codex Security CLI 与 SDK，用于发现/验证/修复安全漏洞</p>
+    </div>
+    </section>
+
+    <footer>
+      <p>Generated by AI Research Briefing Automation</p>
+      <p><a href="https://yenanjing.github.io/ai-briefings/2026/11/12/ai-briefing.html">https://yenanjing.github.io/ai-briefings/2026/11/12/ai-briefing.html</a></p>
+    </footer>
+  </div>
+</body>
+</html>

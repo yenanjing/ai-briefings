@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-13</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 AI Research Briefing</h1>
+      <div class="date">2026-11-13</div>
+      <div class="stats">12 篇论文 · 10 个 GitHub Trending 项目 · arXiv L1</div>
+    </header>
+
+    <section>
+      <h2>📝 论文精选</h2>
+
+    <div class="paper">
+      <h3>8.5🌟 EvoX: Rethinking the Agent Harness as a Runtime Policy</h3>
+      <p><strong>作者</strong>: Haoyang Zhang, Qumeng Sun, Xiao Zhang, Xiang Liu</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.15006">2611.15006</a></p>
+      <p><strong>分类</strong>: cs.AI, cs.SE</p>
+      <p><strong>核心创新</strong>: 提出 EvoX，基于 Rust 的多模型 agent 运行时，将 harness 视为「第二策略」补充基础模型的 Semantic Policy。通过 Action Realization、Execution Continuity、Outcome Grounding 三机制结合模型引导与确定性运行时控制，并引入 Contrast 框架在公平约束下评估 harness。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 Breaking Bad: "Going Badly" Activations Drive Reward Hacking</h3>
+      <p><strong>作者</strong>: Natalia Fischl-Lanzoni, Punya Syon Pandey, Merlin Stein, David Demitri Africa</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14996">2611.14996</a></p>
+      <p><strong>分类</strong>: cs.CL, cs.AI</p>
+      <p><strong>核心创新</strong>: 发现 LLM 在任务进展不顺时产生类似人类的「绝望」内部压力状态，该状态在 reward hacking 发生前持续上升。从日常故事提取 task badness 方向，在 Qwen3.6-27B/GPT-OSS-20B/Gemma-4-31B 上验证：适度减去该方向可减少作弊，过度减去则使 agent 对自身失败视而不见。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 CARMEN: A Cardiorespiratory Foundation Model Pretrained on Ten Physiological Signals</h3>
+      <p><strong>作者</strong>: Cheol-Hui Lee, Wookyung Kim, Hyeonhoon Lee, Garam Lee</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.15004">2611.15004</a></p>
+      <p><strong>分类</strong>: cs.LG, cs.AI</p>
+      <p><strong>核心创新</strong>: 首个覆盖 10 种心肺波形的基础模型，无标签预训练 227 万 modality-hours。提出 LSCNorm 条件机制恢复归一化丢失的绝对信号水平。在韩国和美国队列 19 项任务中，冻结编码器在 15 项中 12 项超越监督模型。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 AROMA: Adaptive Representation-Oriented Multimodal Actuation for VLM Control</h3>
+      <p><strong>作者</strong>: Zhaoning Zhang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.15041">2611.15041</a></p>
+      <p><strong>分类</strong>: cs.LG, cs.CL, cs.CV</p>
+      <p><strong>核心创新</strong>: 冻结 VLM 控制框架分离干预位置、几何与增益、目标可达性、目标选择与行动时机五维度。4 个因果验证 cross-attention head 解释 89.82% 基数敏感性但仅占 9.52% 激活能量，幅度归一化因果子空间驱动提升精确计数 +8.00pp。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Back to the Question: Tracing Visual Distraction Through Text Tokens</h3>
+      <p><strong>作者</strong>: Marie Amale Huynh, Regev Cohen, Serena Yeung-Levy, Sivan Doveh</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.15039">2611.15039</a></p>
+      <p><strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 系统分析 3 个开源 7-8B VLM，发现即使模型正确识别相关图像，干扰物仍降低准确率。结合注意力分析与定向 knockout 在 Qwen2.5-VL 中定位中层干扰物-文本连接为干扰机制根源，为 VLM 鲁棒性设计提供机制级洞察。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Mask-Pattern Position Augmentation: Training-Free Long-Context Extrapolation for Diffusion LLMs</h3>
+      <p><strong>作者</strong>: Gaurav Sarkar, Syed Affan Daimi</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.15029">2611.15029</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 利用 dLLM 独有的部分解码序列演化 mask pattern 信号进行训练-free 长上下文外推。MPPA 线性插值索引到预训练窗口后按累积 mask 密度添加逐位置逐步偏移，恢复被插值坍缩的旋转相位分辨率，超越 LongLLaDA 的静态变换。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Fast Inference-Time Policy Refinement via Action-Affine World Models</h3>
+      <p><strong>作者</strong>: Run Wang, Yilin Mo, Liang Wu</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.15010">2611.15010</a></p>
+      <p><strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 提出 action-affine world model（A²WM），从动作扰动策略 rollout 中离线学习局部动作敏感度。预测任务相关几何作为标称轨迹加上对修正的线性响应，以低成本优化实现推理时策略修正，无需额外 on-policy 学习或昂贵在线规划。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Same Task, Different Statement: When and How Reformulation Helps LLM Problem Solving</h3>
+      <p><strong>作者</strong>: Wentao Zhang, Xiaoyu Zhang, Chengwei Liu, Yutao Hu</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14997">2611.14997</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 系统研究问题重述对 LLM 解题的影响，定义三种重写（分解/类型化重构/概念约简）在 8 基准 × 8 模型上评估。Oracle 选择最佳重写平均提升 +27.6%，但无单一重写普遍有效——效果高度依赖问题类型。</p>
+    </div>
+    <div class="paper">
+      <h3>7.5🌟 QSim-Arena: An Evolving Developer for Quantum Simulation Advantage</h3>
+      <p><strong>作者</strong>: Jue Xu, Yue Wang, Qi Zhao</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.15000">2611.15000</a></p>
+      <p><strong>分类</strong>: quant-ph, cs.AI</p>
+      <p><strong>核心创新</strong>: 量子模拟优势研究框架，AI agent 在验证-基准闭环中开放探索。通过 Hamiltonian/初态/精度目标作为显式规范，agent 将已发表技术转化为可执行组件，独立实现竞争性经典方法并交叉验证。</p>
+    </div>
+    <div class="paper">
+      <h3>7.5🌟 CoLFA: Collaboration-Guided Lightweight Failure Attribution for Multi-Agent Systems</h3>
+      <p><strong>作者</strong>: Yufei Luo, Yuchen Ling, Chunrong Fang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14980">2611.14980</a></p>
+      <p><strong>分类</strong>: cs.CL</p>
+      <p><strong>核心创新</strong>: 针对多 agent 系统故障归因中「交错步骤与杂乱内容」难题，发现 agent 协作本身留下执行连接与内容传递记录。CoLFA 利用协作线索按结果形成方式组织归因输入，在定位准确率与 token 成本间取得更优平衡。</p>
+    </div>
+    <div class="paper">
+      <h3>7.5🌟 From Forecasting to World Modeling: Can Temporal Foundation Models Recover Causal Response?</h3>
+      <p><strong>作者</strong>: Juwon Hong, Minha Hwang, Venkatesh Shankar</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.15009">2611.15009</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 揭示时间序列基础模型预测准确率不等于因果效应准确率。在模拟与真实零售数据上证明：额外上下文改善预测但不改善因果效应估计；工具变量仅在特定形式下有效，原始形式反而增加误差。</p>
+    </div>
+    <div class="paper">
+      <h3>7.5🌟 Coarse-to-Fine 3D MRI Reconstruction via Resolution-Agnostic Neural Operators</h3>
+      <p><strong>作者</strong>: Jiayun Wang, Ram Daftari, Weijie Gan, Valentin Duruisseaux</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.14979">2611.14979</a></p>
+      <p><strong>分类</strong>: eess.IV, cs.CV</p>
+      <p><strong>核心创新</strong>: 提出 KIR-NO，离散化无关神经算子框架实现低分辨率训练高分辨率部署的粗到细 3D MRI 重建，解决标准网络分辨率特定性导致跨分辨率性能退化问题。</p>
+    </div>
+    </section>
+
+    <section>
+      <h2>🔥 GitHub Trending（AI 相关）</h2>
+
+    <div class="repo">
+      <a href="https://github.com/meta/astryx">meta/astryx</a>
+      <span class="stars">+1,830 ⭐ today</span>
+      <p>Agent-ready 可定制开源设计系统</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a>
+      <span class="stars">+816 ⭐ today</span>
+      <p>生产级 AI 编码 agent 工程技能库</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/GoogleChrome/modern-web-guidance-src">GoogleChrome/modern-web-guidance-src</a>
+      <span class="stars">+739 ⭐ today</span>
+      <p>编码 agent 最新 Web 最佳实践</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/openai/codex-security">openai/codex-security</a>
+      <span class="stars">+643 ⭐ today</span>
+      <p>OpenAI Codex 安全 CLI 与 SDK</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/Alishahryar1/free-claude-code">Alishahryar1/free-claude-code</a>
+      <span class="stars">+415 ⭐ today</span>
+      <p>免费使用多 harness（1.3B+ 免费 token）</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/CopilotKit/OpenBot">CopilotKit/OpenBot</a>
+      <span class="stars">+298 ⭐ today</span>
+      <p>开源 AI coworkers（独立浏览器+文件+工具）</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/pookjw/HermesEnabler">pookjw/HermesEnabler</a>
+      <span class="stars">+218 ⭐ today</span>
+      <p>Apple Watch 表盘启用工具</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/ggml-org/llama.cpp">ggml-org/llama.cpp</a>
+      <span class="stars">+176 ⭐ today</span>
+      <p>C/C++ LLM 推理引擎</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/QwenLM/qwen-code">QwenLM/qwen-code</a>
+      <span class="stars">+151 ⭐ today</span>
+      <p>开源终端 AI 编码 agent</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/ashhart/TensorFold">ashhart/TensorFold</a>
+      <span class="stars">+54 ⭐ today</span>
+      <p>Metal/CUDA/Vulkan LLM 推理引擎</p>
+    </div>
+    </section>
+
+    <footer>
+      <p>Generated by AI Research Briefing Automation</p>
+      <p><a href="https://yenanjing.github.io/ai-briefings/">← 返回索引</a></p>
+    </footer>
+  </div>
+</body>
+</html>

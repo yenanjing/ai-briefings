@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-16</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 AI Research Briefing</h1>
+      <div class="date">2026-11-16</div>
+      <div class="stats">12 篇论文 · 10 个 GitHub Trending 项目 · arXiv L1</div>
+    </header>
+
+    <section>
+      <h2>📝 论文精选</h2>
+
+    <div class="paper">
+      <h3>8🌟 Gamer: A Generalist Vision-Language-Action Foundation Model for Long-Horizon Real-Time Game Agent</h3>
+      <p><strong>作者</strong>: Run Luo, Kuan Zhang, Qi Deng, Yukun Chen</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18397">2611.18397</a></p>
+      <p><strong>分类</strong>: cs.CL</p>
+      <p><strong>核心创新</strong>: 提出面向长时序复杂交互环境的通用 agent 框架，端到端架构统一感知、记忆管理与多步推理，共享训练与部署管线同时支持 2D 图形界面与 3D 仿真世界。先在大型数据集上继续预训练建立通用游戏理解能力，再通过多阶段训练对齐长时序决策行为。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 VelServe: Taming Decode Jitters in LLM Inference with Tail-Calibrated Scheduling</h3>
+      <p><strong>作者</strong>: Ishaan Datta, Alind Khare, Koushik Kumar Dey, Ratnesh Jamidar</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18392">2611.18392</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 识别聚合与分离式 LLM 服务中的 decode jitter 问题——单个 jitter 延迟整批请求，长响应跨越数百步导致尾部延迟严重。提出尾部校准调度机制，为 TTFT 与 TBT 提供 SLO 保障，对流式与软实时应用尤为关键。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 CoPre-MoE: Consolidating and Preserving MoE for Multimodal Continual Instruction Tuning</h3>
+      <p><strong>作者</strong>: Tao Hu, Ling-Xiang Zhang, Da-Wei Zhou</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18417">2611.18417</a></p>
+      <p><strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 针对多模态持续指令调优中的灾难性遗忘问题，提出 CoPre-MoE 框架。现有 MoE 方法通过为每个任务分配独立专家避免覆写共享参数但导致参数膨胀，CoPre-MoE 通过专家整合与保留策略在缓解任务干扰的同时控制参数增长。</p>
+    </div>
+    <div class="paper">
+      <h3>7🌟 LECAT: Measuring LLM Category Learning from Pretraining Data</h3>
+      <p><strong>作者</strong>: Jimin Mun, Maarten Sap, Yanai Elazar</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18419">2611.18419</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 提出两阶段框架分析 LLM 如何习得类别知识——人类知道「飞机很快」可推广到「红色飞机很快」但不适用于「坏掉的飞机」。区分模型从预训练数据中学到的类别知识与推理时应用的类别知识，为 LLM 可解释性提供新视角。</p>
+    </div>
+    <div class="paper">
+      <h3>7🌟 Callo: Serving Cache-Miss Requests with Speculative Decoding on Invalidated KV under Prefill-Decode Disaggregation</h3>
+      <p><strong>作者</strong>: Jianjun Ou, Matthew Lentz</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18459">2611.18459</a></p>
+      <p><strong>分类</strong>: cs.DC</p>
+      <p><strong>核心创新</strong>: 针对 agent 会话中频繁上下文编辑导致 KV 缓存失效的问题，提出分离式服务系统 Callo。利用失效 KV 生成投机草稿降低延迟，在 prefill 完成后用精确 KV 验证草稿再提交 token，有效利用 decode 空闲期。</p>
+    </div>
+    <div class="paper">
+      <h3>7🌟 WeatherDreamer: Learning a World Model from Multimodal Earth Observations</h3>
+      <p><strong>作者</strong>: Kate Duffy, Elise Penn, Tristan Ballard, August Posch</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18393">2611.18393</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 提出观测到观测的世界模型，绕过对独立数据同化（DA）系统的依赖。大多数观测到观测模型省略了让 DA 系统在稀疏不规则观测中携带背景状态的递归滤波循环，WeatherDreamer 恢复这一循环，实现从多模态地球观测直接学习天气模型。</p>
+    </div>
+    <div class="paper">
+      <h3>7🌟 Black-Box Uncertainty Quantification for Large Language Models via Ensemble-of-Ensembles</h3>
+      <p><strong>作者</strong>: Wang Ma, Debarun Bhattacharjya, Junkyu Lee, Nhan H Pham</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18453">2611.18453</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 提出无需白盒访问的 LLM 不确定性量化方法，通过 ensemble-of-ensembles 分离 prompt 内在歧义（aleatoric）与知识缺口（epistemic）。现有黑盒方法压缩为单一标量丢失分解信息，该方法在 LLM 规模上实现计算可行的贝叶斯分解。</p>
+    </div>
+    <div class="paper">
+      <h3>7🌟 Graph Diffusion Transformer for Interpretable Generation and Inverse Design of Disordered Atomic Structures</h3>
+      <p><strong>作者</strong>: Jiani Hu, Chenyan Wang, Yongkun Yang, Guanyu Hou</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18420">2611.18420</a></p>
+      <p><strong>分类</strong>: cond-mat.mtrl-sci</p>
+      <p><strong>核心创新</strong>: 提出 GaDiT（Graph Amorphous Diffusion Transformer），结合动态周期图、掩码条件与区间加权训练噪声分布，生成无序原子结构。解决原子无序带来的巨大构型空间导致结构-性质关系 obscured 的问题，支持可解释生成与逆向设计。</p>
+    </div>
+    <div class="paper">
+      <h3>7🌟 Do Underwater Image Quality Metrics Agree with Human Perception? A Benchmark with Human Choices, Simple Edits and Generative Drift</h3>
+      <p><strong>作者</strong>: Rishii Kumar Singh, Abhinav Rajput, Dinesh Kumar Vishwakarma</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18429">2611.18429</a></p>
+      <p><strong>代码</strong>: <a href="https://github.com/TrustUIQA/TrustUIQA">github.com/TrustUIQA/TrustUIQA</a></p>
+      <p><strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 系统评估 73 种水下图像质量指标（手工/学习/视觉语言/通用）与人类偏好的对齐程度，覆盖五种参考失真类型。揭示现有 NR-IQA 指标与人类判断的系统性分歧，开源数据集 TrustUIQA 包含人类选择、简单编辑与生成漂移三类标注。</p>
+    </div>
+    <div class="paper">
+      <h3>7🌟 Fuse-PINN: Combining Finite Element Methods and Physics-Informed Neural Networks to Enable Massively Parallel Simulations of Non-linear PDEs</h3>
+      <p><strong>作者</strong>: Stanislas Pamela, Nicolas Pailliez, Emmanuel Franck, Victor Michel-Dansac</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18409">2611.18409</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 提出融合 FEM 与 PINN 的框架解决 PINN 在 HPC 架构上无法扩展的瓶颈。传统 PINN 难以处理大规模非线性物理模型（如湍流动力学），Fuse-PINN 利用 FEM 网格离散化处理空间复杂性，PINN 处理物理约束，实现大规模并行仿真。</p>
+    </div>
+    <div class="paper">
+      <h3>6🌟 When to Trust Simulated Patient Responses: Support-Gated World Models for Vasopressor Decision Support</h3>
+      <p><strong>作者</strong>: Yifan Jin, Tao Liu</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18458">2611.18458</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 提出支持门控世界模型决策支持框架，解决临床世界模型对低支持度治疗或陌生医院模拟不可靠的问题。循环动力学集成预测去甲肾上腺素剂量对生理响应的短时影响，支持门控机制判断何时信任模拟结果。</p>
+    </div>
+    <div class="paper">
+      <h3>6🌟 Deep Neural Networks Training Efficiency: Does Grokking Modify its Dynamics?</h3>
+      <p><strong>作者</strong>: Eduardo Cueto-Mendoza, John D. Kelleher</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.18396">2611.18396</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 研究 grokking（延迟泛化）是否改变 DNN 训练效率（单位能量精度）。在模运算与 MNIST 两个经典设置下分析 16/32/64 位精度下的训练动态，使用 Orthograd 测试 grokking 是否本质上改变能效曲线形态。</p>
+    </div>
+
+    </section>
+
+    <section>
+      <h2>🔥 GitHub Trending（按当日新增 Star 降序）</h2>
+
+    <div class="repo">
+      <a href="https://github.com/GoogleChrome/modern-web-guidance-src">GoogleChrome/modern-web-guidance-src</a>
+      <span class="stars">⭐ +1,219 today</span>
+      <p>编码 agent Web 最佳实践</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/dream-num/univer">dream-num/univer</a>
+      <span class="stars">⭐ +988 today</span>
+      <p>AI Office SDK，编辑/计算/协作为 AI agent 服务</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/backnotprop/plannotator">backnotprop/plannotator</a>
+      <span class="stars">⭐ +866 today</span>
+      <p>Agent 工作区：规划/决策/标注/审查一键反馈</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">ChromeDevTools/chrome-devtools-mcp</a>
+      <span class="stars">⭐ +717 today</span>
+      <p>Chrome DevTools for coding agents</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/tradermonty/claude-trading-skills">tradermonty/claude-trading-skills</a>
+      <span class="stars">⭐ +706 today</span>
+      <p>Claude Code 交易技能：市场分析/技术图表/策略开发</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a>
+      <span class="stars">⭐ +691 today</span>
+      <p>混合架构代码审查：确定性管线 + LLM Agent</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/Tencent/LoopForge">Tencent/LoopForge</a>
+      <span class="stars">⭐ +423 today</span>
+      <p>编码 agent 交付自托管工作流编排</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/ag-ui-protocol/ag-ui">ag-ui-protocol/ag-ui</a>
+      <span class="stars">⭐ +355 today</span>
+      <p>Agent-User 交互协议，将 Agent 引入前端应用</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a>
+      <span class="stars">⭐ +247 today</span>
+      <p>Stitch MCP 服务器 Agent Skills 库</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/NVIDIA/SkillEvaluator">NVIDIA/SkillEvaluator</a>
+      <span class="stars">⭐ +122 today</span>
+      <p>多层 AI agent 技能评估框架</p>
+    </div>
+
+    </section>
+
+    <section>
+      <h2>📌 今日主题</h2>
+      <div class="paper">
+        <p><strong>Agent 工程化与基础设施持续深化</strong>：今日论文集中在 Agent 系统工程化（Gamer 通用游戏 agent 端到端架构、Callo 解决 agent 会话 KV 缓存失效、VelServe 保障 agent 服务 SLO）与多模态持续学习（CoPre-MoE 解决 MLLM 灾难性遗忘）。LLM 可解释性与可靠性方面，LECAT 探索类别知识习得机制、Black-Box UQ 提出无需白盒访问的不确定性分解。AI for Science 方面 GaDiT 推进无序材料逆向设计、Fuse-PINN 突破 PINN 在 HPC 上的扩展瓶颈。</p>
+        <p style="margin-top:12px"><strong>GitHub 趋势</strong>：<strong>Agent 基础设施与编码生态三驾马车领跑</strong>——GoogleChrome/modern-web-guidance-src 编码 agent Web 最佳实践 +1,219 领跑；dream-num/univer AI Office SDK +988、backnotprop/plannotator Agent 工作区 +866 显示 Agent 应用层持续爆发；ChromeDevTools/chrome-devtools-mcp +717 稳居编码 agent 基础设施；alibaba/open-code-review +691 延续代码审查 Agent 热点；Tencent/LoopForge 编码 agent 工作流编排 +423 显示大厂加码 Agent 交付基础设施。</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Generated by AI Research Briefing Automation</p>
+      <p><a href="https://yenanjing.github.io/ai-briefings/">← 返回简报索引</a></p>
+    </footer>
+  </div>
+</body>
+</html>

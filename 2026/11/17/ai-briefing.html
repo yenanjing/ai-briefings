@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-17</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 AI Research Briefing</h1>
+      <div class="date">2026-11-17</div>
+      <div class="stats">12 篇论文 · 10 个 GitHub Trending 项目 · arXiv L1</div>
+    </header>
+
+    <section>
+      <h2>📝 论文精选</h2>
+
+    <div class="paper">
+      <h3>9🌟 Where Should LLM Agents Adapt at Test Time? In Context, in Weights, or Both</h3>
+      <p><strong>作者</strong>: Parsa Mirtaheri, Mohammadreza Armandpour, Keivan Alizadeh, Iman Mirzadeh, Parshin Shojaee, Aryo Lotfi</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19700">2611.19700</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 系统比较 LLM agent 在同一环境中重复工作时两条测试时适应通道——上下文内学习（ICL）与权重更新（RL 微调）——各自的贡献与互补条件。回答了 agent 记忆工程中最基础的「经验该放上下文还是放权重」问题，对 agent 持续学习设计有直接指导意义。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 When AI Agents Should Repair, Replan, or Abandon: A Threshold Theory of Plan Commitment</h3>
+      <p><strong>作者</strong>: Gaurav Tewari</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19663">2611.19663</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 针对 agent 执行中发现计划被破坏（动作失败、工具被撤回）的场景，推导出最优策略：以「有效破坏深度」为阈值，在修复（部分重置保留结构）、重规划（完全重置）、放弃之间切换。首次为 plan commitment 给出理论最优解，替代 retry 循环等经验约定。</p>
+    </div>
+    <div class="paper">
+      <h3>8.6🌟 Cache or Denoise Less? Residual Reuse in a Flow-Matching World Action Model</h3>
+      <p><strong>作者</strong>: Abhinav Gupta, Nissan Pow</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19709">2611.19709</a></p>
+      <p><strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 在 6B 参数世界动作模型 Fast-WAM 上系统对比跨周期缓存（C³ache）与减少去噪步数两种加速路径，发现仅 2 步非缓存去噪即可在全部 500 个初始状态上保持 10 步成功率（差距 2pp 内），且把单次重规划从 202ms 大幅削减。对 VLA/世界模型推理部署有直接工程价值。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 Data Attribution Should Steer Pretraining</h3>
+      <p><strong>作者</strong>: Glenn Matlin, Chandreyi Chakraborty, Mohammed Rehan Parwani, Saehee Eom, Anthony Wen-Ming Zang, Akhil Theerthala</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19698">2611.19698</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 提出数据归因应从「为单次运行排序文档」升级为「发现可复用的数据属性作为预训练筛选准则」——文档排名被单次运行消费，而解释出的数据属性可跨语料库与 checkpoint 反复检验。重新定义了 pretraining data curation 的方法论。</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 MathaMAGICal: Validating Trajectory Data Attribution During Capability Acquisition</h3>
+      <p><strong>作者</strong>: Jason Lee, Dikshanta Pokhrel, Phonn Nay Khant, Victor Lee, Moritz Weckbecker, Sebastian Lapuschkin</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19692">2611.19692</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 以重训练为金标准验证轨迹数据归因方法 MAGIC，发现 86M 模型全量运行归因因数值溢出而失效（LDS 仅 0.17-0.22），而短 checkpoint 窗口在能力获取阶段显著更可靠。为训练动态归因的适用边界给出实证结论。</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 Joint Learning of Factual and Counterfactual Worlds for Causal Prior-data Fitted Networks</h3>
+      <p><strong>作者</strong>: Furkan Danisman, Luke Zhang, Zhijing Jin, Dehan Kong</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19710">2611.19710</a></p>
+      <p><strong>分类</strong>: stat.ML</p>
+      <p><strong>核心创新</strong>: 利用 PFN「纯合成数据预训练迁移到真实预测」的范式，绕开真实数据中事实/反事实结果无法同时观测的根本限制，在合成世界联合学习两个世界以估计处理效应。为因果推断提供了新训练范式。</p>
+    </div>
+    <div class="paper">
+      <h3>8.3🌟 Physics-Grounded STL Monitoring from Image Observations</h3>
+      <p><strong>作者</strong>: Xinpei Ni, Glen Chou, Samuel Coogan</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19688">2611.19688</a></p>
+      <p><strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 从多视角图像学习共享潜在表征并解码出物理上有意义的谓词裕度（距离/间隙），替代为每条 STL 公式单独训练视觉监控器；编码器与谓词解码器协同训练提升性能。解决机器人任务时序逻辑监控中物理裕度不可直接观测的问题。</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 Mesoscale Neural Operators: Learning Nonlinear Constitutive Laws from Molecular Dynamics for Scalable Fracture Predictions</h3>
+      <p><strong>作者</strong>: Yue Yu, Jihong Wang, Stewart Silling, Ziwei Yang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19658">2611.19658</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 提出介观神经算子（MNO），直接从 MD 加载-位移数据学习数据驱动非局部本构模型，把原子级断裂物理外推到 MD 无法企及的长度/时间尺度，同时保证预测响应的物理一致性。AI for 材料断裂预测的规模化路径。</p>
+    </div>
+    <div class="paper">
+      <h3>8.1🌟 RIFT: Reward Improvement Field Transfer for Cross-Domain Offline RL</h3>
+      <p><strong>作者</strong>: Jinhee Won, Mardavij Roozbehani, Munther Dahleh</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19681">2611.19681</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 跨域离线 RL 中不直接复用源域转移（动力学差异导致不可靠），而是学习「低奖励与高奖励源转移如何不同」：共享潜空间 + 最优传输配对 + 仿射场拟合位移，再将该场作用于目标域低奖励锚点。以奖励改进场实现跨动力学知识迁移。</p>
+    </div>
+    <div class="paper">
+      <h3>8.1🌟 Score-Based Stochastic Closure Modeling via Offline Indirect Learning and Online Data Assimilation</h3>
+      <p><strong>作者</strong>: Xinghao Dong, Huchen Yang, Jin-Long Wu</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19676">2611.19676</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 针对随机闭合建模中闭合数据难以从测量获得或第一性原理计算代价过高的问题，提出离线间接学习 + 在线数据同化组合，用 score-based 模型学习随机闭合项。适用于数字孪生与世界模型等降阶场景。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Early Readability of Trajectory Quality in Diffusion Driving Planners</h3>
+      <p><strong>作者</strong>: Xiang Zhang, Ziyang Leng, Yuxin Bao, Zhihao Zhao, Bolei Zhou, Xugui Zhou</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19684">2611.19684</a></p>
+      <p><strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 在 Alpamayo、ReCogDrive-IL、HDP 三个预训练扩散驾驶规划器中，用线性探针从第一次去噪评估的中间状态预测最终轨迹质量，证明候选轨迹排序/选择可在去噪完成前完成。为自动驾驶扩散规划器提供早退/候选筛选机制。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 BadGCL: Towards Persistent Backdoor Attack on Graph Continual Learning Systems</h3>
+      <p><strong>作者</strong>: Dong Li, Yufei Han, Xintao Wu, Xujiang Zhao, Wei Cheng, Chen Zhao</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.19656">2611.19656</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 揭示图持续学习（GCL）的反直觉脆弱性：知识保持机制在毒化更新与被保留的干净任务信号兼容时，会同时保住早期注入的后门——持续更新并不天然削弱恶意关联。为 GCL 系统安全敲响警钟。</p>
+    </div>
+    </section>
+
+    <section>
+      <h2>🔥 GitHub Trending（按当日新增 Star 降序）</h2>
+
+    <div class="repo">
+      <a href="https://github.com/dream-num/univer">1. dream-num/univer</a>
+      <span class="stars">+1828⭐ today</span>
+      <p>Univer Office SDK：把编辑、计算、协作、文件处理带进产品，为人与 AI agent 服务</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/elementalsouls/Claude-BugHunter">2. elementalsouls/Claude-BugHunter</a>
+      <span class="stars">+1094⭐ today</span>
+      <p>Claude Code 漏洞挖掘与外部红队技能包：82 技能、15 斜杠命令、681 披露报告模式、24 类核心漏洞</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/alibaba/open-code-review">3. alibaba/open-code-review</a>
+      <span class="stars">+951⭐ today</span>
+      <p>混合架构代码审查工具：确定性流水线 + LLM Agent，行级精确评论，内置多语言规则集</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/NVIDIA/SkillEvaluator">4. NVIDIA/SkillEvaluator</a>
+      <span class="stars">+873⭐ today</span>
+      <p>AI agent 技能与插件多层级评估框架：质量门控、语义重叠检测、合成评估数据集、活体 agent 评估</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp">5. ChromeDevTools/chrome-devtools-mcp</a>
+      <span class="stars">+841⭐ today</span>
+      <p>Chrome DevTools for coding agents</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/tradermonty/claude-trading-skills">6. tradermonty/claude-trading-skills</a>
+      <span class="stars">+837⭐ today</span>
+      <p>面向股票投资者与交易员的 Claude Code 技能包：市场分析、技术图表、经济日历、筛选器、交易策略开发</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/ag-ui-protocol/ag-ui">7. ag-ui-protocol/ag-ui</a>
+      <span class="stars">+791⭐ today</span>
+      <p>AG-UI：Agent-User 交互协议，把 Agent 带入前端应用</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/backnotprop/plannotator">8. backnotprop/plannotator</a>
+      <span class="stars">+696⭐ today</span>
+      <p>Agent 工作区：塑形、决策、规划、标注、代码审查，一键把反馈发给 agent</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/google-labs-code/stitch-skills">9. google-labs-code/stitch-skills</a>
+      <span class="stars">+529⭐ today</span>
+      <p>Stitch MCP server 的 Agent Skills 库，兼容 Antigravity、Gemini CLI、Claude Code、Cursor</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/kajisho5/ffmpeg-skill">10. kajisho5/ffmpeg-skill</a>
+      <span class="stars">+367⭐ today</span>
+      <p>面向 coding agents 的本地视频编辑器：42 个 FFmpeg 工具 + 机器可读契约 + MCP server</p>
+    </div>
+    </section>
+
+    <footer>
+      <p>Generated on 2026-11-17 · <a href="https://github.com/yenanjing/ai-briefings">GitHub Repo</a></p>
+    </footer>
+  </div>
+</body>
+</html>

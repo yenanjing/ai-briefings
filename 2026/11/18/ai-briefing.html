@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-18</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 AI Research Briefing</h1>
+      <div class="date">2026-11-18</div>
+      <div class="stats">12 篇论文 · 10 个 GitHub Trending 项目 · arXiv L1</div>
+    </header>
+
+    <section>
+      <h2>📝 论文精选</h2>
+
+    <div class="paper">
+      <h3>9🌟 RAG in a Trenchcoat: When Minimal Memory Is Enough for Agentic Systems, and When It Isn't</h3>
+      <p><strong>作者</strong>: Jingyu Liu, Zongze Li, Zach Xu, Zhanhui Zhou, Tahseen Rabbani, Dawn Song</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22179">2611.22179</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 用刻意极简的 BRIDGE 记忆（链式观察笔记 + BM25/余弦混合检索 + 时间序渲染）在 LongMemEval-S/BEAM 上追平此前 SOTA，在 EverMemBench 上超最佳基线 5.7-6.3 分，且每查询仅 5-7K token、单次 LLM 调用。进一步提出五个对抗性探针，证明「记忆基准衡量的是检索到了什么，而非记忆让 agent 能做什么」——原子事实抽取器与块摘要记忆在规则应用与模式归纳上互有胜负。为 agentic 记忆评估范式提供了根本性反思。</p>
+    </div>
+    <div class="paper">
+      <h3>9🌟 The Only Edge Was Memorized in Training: LLM Trading Agents Around Earnings and Bad News</h3>
+      <p><strong>作者</strong>: Jackson Wang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22177">2611.22177</a></p>
+      <p><strong>分类</strong>: cs.AI, cs.MA</p>
+      <p><strong>核心创新</strong>: 在无前视偏差基准上测试 LLM 交易 agent 于 598 次财报前与 409 次坏消息暴跌后的决策，发现跨 4 家厂商 5 个模型无一跑赢简单策略；财报前 agent 只是「无脑买入」，暴跌后 Gemini agent 几乎把每次下跌都当超调。唯一收益来自训练期记忆——仅凭代码与日期，GPT 模型在训练截止前预测 59.2% 财报方向、截止后降至 53.3%。给出可操作结论：事件 agent 必须与简单策略对比并在训练截止后盲测。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 Not All Evidence Is Admissible: Evidence Governance for Tool-Augmented Medical Agents</h3>
+      <p><strong>作者</strong>: Runxun Zhang, Onofrio Antonio Catalano, Jinqiao Wang, Jingwei Wei</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22169">2611.22169</a></p>
+      <p><strong>分类</strong>: cs.AI, cs.CV</p>
+      <p><strong>核心创新</strong>: 揭示「证据劫持」现象——医疗工具静默失败时，冻结 reasoner 无法忽略进入上下文的错误工具输出，导致原本答对的案例被翻错；用 V-information 理论形式化「忽略选项的丧失」。提出 CIEG 框架：每个工具输出写成可核查卡片，独立 checker 仅凭输入与卡片决定准入，reasoner 只从准入证据作答，全程免训练。在医疗 QA、眼底青光眼筛查、胸片肺炎分类上以更低成本超越同规模 SOTA 工具型 agent。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 Readie: Low-Latency Code Sandboxes for AI Agents</h3>
+      <p><strong>作者</strong>: Arjun Sivaraman, Zhaoheng Li, Alan Shi, Sanjay Malisetty, Eugene Wu, Yongjoo Park</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22171">2611.22171</a></p>
+      <p><strong>分类</strong>: cs.AI, cs.DB, cs.SE</p>
+      <p><strong>核心创新</strong>: 指出代码沙箱启动慢的根因是单一快照难以同时紧凑且覆盖多样 agent 代码，提出「学习型启动快照集合」——将快照构建形式化为优化问题并用近似算法求解，每个快照小而快、覆盖一部分工作负载，集合覆盖整体。在 15K 公开与 LLM 合成脚本上，同等存储预算下启动延迟降低 3-22×、端到端运行时降低 1.3-3.3×。Agent 基础设施层的扎实系统工作。</p>
+    </div>
+    <div class="paper">
+      <h3>8.6🌟 EchoMoE: Communicate the Change: Efficient Expert Parallelism via Activation Compression</h3>
+      <p><strong>作者</strong>: Fengyuan Liu, Jay Gala, Siva Reddy, Dzmitry Bahdanau</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22215">2611.22215</a></p>
+      <p><strong>分类</strong>: cs.LG, cs.AI, cs.DC</p>
+      <p><strong>核心创新</strong>: 利用 transformer 残差流增量更新的观察，让 MoE 专家并行只传输当前隐状态与早期参考态的压缩差值而非全量，周期性刷新参考态。仅需约 8,500 分之一预训练 token 即可改造现有 MoE：节点间通信量降 58%、吞吐升 22.6%、18 基准平均性能损失 3.8pp 内；带宽受限以太网下推理吞吐最高 2.38×，为广域分布式推理铺路。已开源 vLLM 集成。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 CueClash: Frontier Vision-Language Models Judge 3-D Relations Close to the Picture Plane</h3>
+      <p><strong>作者</strong>: Soham Dan</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22180">2611.22180</a></p>
+      <p><strong>分类</strong>: cs.CV, cs.AI, cs.RO</p>
+      <p><strong>核心创新</strong>: 构造 2-D 图画线索与 3-D 地面布局恰好一半语句冲突的渲染场景 CueClash，测得 Claude Opus 5.5、GPT-5.5、Gemini 3.6 Flash 的捷径差距达 +18 至 +37pp；给定地面坐标与关系定义则答对 99-100%，失败点精确定位在「从图画到布局」的推理步骤。模型自绘俯视地图保留深度顺序但像图画一样压缩深度，Opus 5.5 的修正程度接近人类真实场景观察者。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 HandRSI: Recursive Self-Improvement for Hand Pose Estimation</h3>
+      <p><strong>作者</strong>: Zhekai Wang, Luqing Luo, Wenhao Yao, Junjie Lu, Huanan Zhu, Feifei Gao</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22164">2611.22164</a></p>
+      <p><strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 将 RSI 闭环应用于「视频估计器 + 可执行推理 harness」系统：编码 agent 每轮改进 harness，仅当十项基准指标复合提升且无显著回退才接受，再通过选择性蒸馏反哺估计器并重新验证 harness。五轮后 HOT3D MPJPE-p 降 35%、ARCTIC 降 11%、抖动约减半，超越同数据微调版本 16%。代码/评估器/harness/权重全部公开，RSI 工程化的高质量范例。</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 Is 4-Bit Quantization More Than Noise to a Chat Model's Safety Behaviour?</h3>
+      <p><strong>作者</strong>: Ege Kaya</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22186">2611.22186</a></p>
+      <p><strong>分类</strong>: cs.CR, cs.CL</p>
+      <p><strong>核心创新</strong>: 预注册配对实验发现 4-bit 量化对安全行为产生两个符号相反的位移：Qwen2.5-3B 在预填合规回复下更多续写有害内容，Llama-3.2-3B 在留出越狱上服从率降 10.3pp。用匹配扰动（打乱/高斯误差均值近零、缩放真实误差近线性改变行为）证明：4-bit 下的拒绝行为取决于特定舍入误差，而非比特数或似然——每个构建版本都必须与其原模型单独审计。</p>
+    </div>
+    <div class="paper">
+      <h3>8.3🌟 Sample-efficient Personalization of LLM Alignment with Multidimensional User Preference Data</h3>
+      <p><strong>作者</strong>: Zhen-Yu Zhang, Jerry Huang, Gang Niu, Takashi Ishida, Masashi Sugiyama</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22210">2611.22210</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 指出现有在线偏好对齐的不确定性量化站在 LLM 视角而非用户视角，提出 MPG-DPO：用自动验证器的低成本多维评估在用户历史比较上构建个性化偏好锥，丢弃被锥支配的响应、仅比较锥内竞争且分歧最强的响应对。理论证明花在被支配响应上的查询比例随学习趋于零，多 LLM 家族实验验证同预算下更优。</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 An Optimization Framework for Denoising Generation</h3>
+      <p><strong>作者</strong>: Xinyu Zhou, Jiawei Zhang, Stephen J. Wright</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22202">2611.22202</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 将噪声无条件去噪生成严格重构为固定 log-density 景观上的梯度上升优化问题，证明轨迹几乎必然收敛到带 reach τ 的 m 维参考流形 O(mσ²/τ) 邻域内，并给出源-汇恒等式证明有限分辨率区域覆盖。在仿射构造中识别出经验分数优化可避免训练样本记忆化同时保持多样性的正带宽区间，为「去噪生成是否记忆化」提供首个优化视角理论刻画。</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 RISA: Recoverable Sparse Attention for Block-Diffusion Language Models</h3>
+      <p><strong>作者</strong>: Xinrui Zhong, Fanjiang Ye, Yuke Wang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22191">2611.22191</a></p>
+      <p><strong>分类</strong>: cs.CL, cs.LG</p>
+      <p><strong>核心创新</strong>: 针对块扩散语言模型长上下文推理的 KV cache 瓶颈，利用「块内历史 KV 固定、查询随去噪步演化」的性质构建共享读计划：历史组织为精确优先/恢复两层，种子查询建立受保护的有界读计划在块内复用，分离历史保存与重复读取。DreamReasoner-8B 上 32K 注意力加速 2.67×、128K 达 5.53×，匹配 KL 下解码快于 MAGE/QUEST/LoSA。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 SRED: Sparse Regional Evidence Distillation Across Magnifications in Whole-Slide Imaging</h3>
+      <p><strong>作者</strong>: Zhiyuan Yang, Jiahao Cheng, Vincent Quoc-Huy Trinh, Mahdi S. Hosseini</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.22189">2611.22189</a></p>
+      <p><strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 用稀疏自编码器从 20× 教师特征学习事件字典，逻辑 OR 池化记录区域级事件出现（无需切片级标签），微调 5× 编码器预测这些区域目标——只蒸馏低倍率「可达」的高层细节交互。七个分类/分级队列 macro-F1 平均 +1.1、五个生存队列 C-index +1.7，运行时与原生 5× 持平、较 20× 提速 11.58×，且字典组件可对应可识别组织学模式支持解释。</p>
+    </div>
+    </section>
+
+    <section>
+      <h2>💻 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+
+    <div class="repo">
+      <a href="https://github.com/obra/superpowers">1. obra/superpowers</a>
+      <span class="stars">+1,917⭐ today</span>
+      <p>agentic 技能框架与软件开发方法论</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/dream-num/univer">2. dream-num/univer</a>
+      <span class="stars">+1,774⭐ today</span>
+      <p>AI Office SDK，为人和 AI agent 提供编辑/计算/协作/文件处理</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/ag-ui-protocol/ag-ui">3. ag-ui-protocol/ag-ui</a>
+      <span class="stars">+1,445⭐ today</span>
+      <p>AG-UI：Agent-User 交互协议，把 Agent 带入前端应用</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/elementalsouls/Claude-BugHunter">4. elementalsouls/Claude-BugHunter</a>
+      <span class="stars">+1,005⭐ today</span>
+      <p>Claude Code 漏洞挖掘/红队技能包：82 技能、15 命令、681 披露报告模式</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/affaan-m/ECC">5. affaan-m/ECC</a>
+      <span class="stars">+883⭐ today</span>
+      <p>agent harness 性能优化系统：技能、直觉、记忆、安全</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/alibaba/open-code-review">6. alibaba/open-code-review</a>
+      <span class="stars">+763⭐ today</span>
+      <p>混合架构代码审查工具：确定性流水线 + LLM Agent，阿里规模实战验证</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/mvanhorn/last30days-skill">7. mvanhorn/last30days-skill</a>
+      <span class="stars">+696⭐ today</span>
+      <p>跨 Reddit/X/YouTube/HN/Polymarket 研究任意主题并综合的 agent 技能</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/backnotprop/plannotator">8. backnotprop/plannotator</a>
+      <span class="stars">+691⭐ today</span>
+      <p>与 agent 保持同步的工作区：塑形、决策、规划、标注、审查，一键反馈</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/getarcaneapp/arcane">9. getarcaneapp/arcane</a>
+      <span class="stars">+618⭐ today</span>
+      <p>现代 Docker 管理平台</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/Tencent/LoopForge">10. Tencent/LoopForge</a>
+      <span class="stars">+591⭐ today</span>
+      <p>编码 agent 交付自托管工作流编排：CodeBuddy/Codex/Claude Code + 人工审批门</p>
+    </div>
+    <p style="color:#888;font-size:0.9em;margin-top:12px;">另值得关注：google-research/paper-orchestra（多 agent 自动写论文框架，+1,072）、google-labs-code/stitch-skills（Google 官方 agent 技能库，+350）。</p>
+    </section>
+
+    <footer>
+      <p>Generated on 2026-11-18 · <a href="https://github.com/yenanjing/ai-briefings">GitHub Repo</a></p>
+    </footer>
+  </div>
+</body>
+</html>

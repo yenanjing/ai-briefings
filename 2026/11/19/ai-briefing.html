@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-19</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 AI Research Briefing</h1>
+      <div class="date">2026-11-19</div>
+      <div class="stats">12 篇论文 · 10 个 GitHub Trending 项目 · arXiv L1</div>
+    </header>
+
+    <section>
+      <h2>📝 论文精选</h2>
+
+    <div class="paper">
+      <h3>9🌟 RSIBench-Infra: Can Agents Optimize Their Own Training and Inference Infrastructure at Production Scale?</h3>
+      <p><strong>作者</strong>: Hanlin Wu, Yifei Wang, Zhicheng Cai, Huan-ang Gao, Wei-Ying Ma, Ya-Qin Zhang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24395">2611.24395</a></p>
+      <p><strong>分类</strong>: cs.LG, cs.AI</p>
+      <p><strong>核心创新</strong>: 首个面向生产规模端到端基础设施优化的 agent 基准：20 个训练/推理任务，覆盖 NVIDIA GPU 与昇腾 NPU（最高 32 加速器），agent 可跨引擎/内核/指令层修改软件栈，OCI 镜像层提交协议保证可复现部署。结果显示 66.2% 任务超过 1.10× 验证加速，但 agent 难以将局部优化一致转化为端到端收益——为 RSI（递归自我改进）落地给出生产级标尺。</p>
+    </div>
+    <div class="paper">
+      <h3>9🌟 PIPETTE: Prompt Injection Purple-Teaming for Robust LLM Agents</h3>
+      <p><strong>作者</strong>: Lipeng He, Yihan Wang, Jiawen Zhang, N. Asokan</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24362">2611.24362</a></p>
+      <p><strong>分类</strong>: cs.CR, cs.AI</p>
+      <p><strong>核心创新</strong>: 首次系统揭示 RL 红队方法（RL-Hammer/PISmith）存在模式坍塌——高攻击成功率不等于对抗训练后的鲁棒性收益。提出紫队框架 PIPETTE：字典学习奖励鼓励攻击策略覆盖度 + on-policy 对抗训练管线。AgentDojo/ASB 上静态攻击近零成功率、可抵御自适应攻击，良性任务效用几乎无损。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 Semantic Context Handoff with On-Demand Evidence for Long-Horizon Agents</h3>
+      <p><strong>作者</strong>: Guolong Zheng, Chen Hou, Xu Yang, Jianshan Zhang, Tao Huang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24357">2611.24357</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 提出「状态-证据分离」的上下文交接抽象：紧凑语义状态承载当前解释，历史动作-观测证据保持可寻址、可在后续执行需要时重新进入上下文，无需摘要或检索模型调用。SWE-bench 150 任务 Pass@1 从 80.0% 提升至 86.9%，同时比最强基线少用 43% token、41% 墙钟时间。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 CanopyKV: Remember beyond the Crop for Fast Active Visual Reasoning</h3>
+      <p><strong>作者</strong>: Lei Yang, Dayan Wu, Yiliang Zhu 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24373">2611.24373</a></p>
+      <p><strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 针对主动视觉推理中 KV cache 压缩，首次区分「局部被替换的证据」与「未来探索所需的互补信息」：利用父子 crop 关系保留互补证据、保持历史稳定并保护推理状态，工具元数据提供保留信号免去额外注意力打分。MME-Lite 上仅保留 Dense 约 1/4 KV，准确率反升 10.5pp，端到端加速 1.64×。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 WACO: Towards Pose-Robust Few-Shot Vision-Language-Action Models</h3>
+      <p><strong>作者</strong>: Wenhao Li, Zhongyi Han, Yuhao Wei, Liang Han, Yilong Yin, Liqiang Nie</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24360">2611.24360</a></p>
+      <p><strong>分类</strong>: cs.RO, cs.AI, cs.CV</p>
+      <p><strong>核心创新</strong>: 揭示 VLA 少样本微调的隐性假设——相机/基座外参被策略记忆化，被碰三脚架或挪动几厘米即失效。提出世界锚定规范化：机械臂前向运动学作度量标定目标、静态场景作世界锚区分相机移动与机器人移动，单帧 RGB-D 无需真值外参即可估计双偏移。发布首个分级位姿偏移基准 LIBERO-PoseShift，真实 UR5e 成功率 +36.7pp。</p>
+    </div>
+    <div class="paper">
+      <h3>8.6🌟 When Figures Disagree with Text: Evaluating Autonomous Visual Evidence Verification in Scientific Papers</h3>
+      <p><strong>作者</strong>: Guijia Zhang, Hongbo Qiu, Jiajun Zha 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24353">2611.24353</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 首个自主视觉证据核查评测：不给模型指出哪张图有问题，要求其在完整论文中自行找到值得核查的图并诊断矛盾。31 篇含审稿人记录不一致的完整稿件上，60.6% 评审提及问题图但仅 3.3% 被判为诊断出矛盾；「说出图名」即可从 4.3% 提升至 20.4%——「决定核查什么」是主要难点，多模态文档理解应评测「提出核查对象」的能力。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 MoE-Context: Show the Model Only What It Needs</h3>
+      <p><strong>作者</strong>: Vedant Navale</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24379">2611.24379</a></p>
+      <p><strong>分类</strong>: cs.AI, cs.CL, cs.LG</p>
+      <p><strong>核心创新</strong>: 将上下文分块，每步前快速二值判断所需块，其余以单行注释形式保留在单一 KV cache 中（掩码而非删除），支持撤销失败尝试与子 agent 免新上下文运行两种廉价模式。Qwen3-1.7B 笔记本上查找任务 93→119/120；同时坦诚报告模型自选块是弱点（线性探针 80→110 但关键词搜索完美且探针不迁移）——负结果报告值得肯定。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 Teaching VLMs What to Say, Not How to Reason: Rethinking Counterfactual Reasoning in Autonomous Driving</h3>
+      <p><strong>作者</strong>: Hayeon Oh, Donghwan Lee</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24376">2611.24376</a></p>
+      <p><strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 对 VLM 自动驾驶中的反事实（CF）推理做系统性祛魅：CF 推理仅将动作分布推向保守并增加不确定性，视觉注意力与因果干预实验均表明其未建立基于视觉证据的真正因果推理，而是「语言捷径」——教模型说什么而非怎么推理。该效应在 RL 微调后仍持续，警示语言推理可能只是把捷径学习从视觉转移到语言层。</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 Tell Me How Sure You Are: Communicating Uncertainty in Auxiliary Evidence to Foundation Models</h3>
+      <p><strong>作者</strong>: Soumyajit Chatterjee, Baturalp Buyukates, Abhirup Ghosh</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24351">2611.24351</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 首次系统证明：向基础模型传达辅助证据的不确定性（而非丢弃）能提供有效决策线索。5 个下游模型 × 3 数据集上 macro-F1 最高提升 26.18pp，并发现辅助不确定性本身包含下游决策正确性的预测信息——为不确定性通信进入推理管线提供实证基础。</p>
+    </div>
+    <div class="paper">
+      <h3>8.3🌟 AdaREPA: Where Should a Diffusion Transformer Meet Its Teacher?</h3>
+      <p><strong>作者</strong>: Zhuoqi Hu, Shiwei Li, Haozhao Wang 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24380">2611.24380</a></p>
+      <p><strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 发现 REPA 蒸馏中最有效的对齐层随训练阶段漂移，提出以流匹配与对齐目标的梯度兼容性在线度量、softmax 概率路由自适应选择监督层。ImageNet-256 上加速收敛并提升生成质量，训练开销极小、推理零开销。</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 SearchDiffusion: Information-Guided Diffusion Planning for Object Search</h3>
+      <p><strong>作者</strong>: Sausar Karaf, Dmitrii Plotnikov, Alexey Kotcov, Dzmitry Tsetserukou</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24375">2611.24375</a></p>
+      <p><strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 将物体搜索规划重构为扩散轨迹生成：学习密集效用图（几何可达性 + 有效可见性 + 语义进度）同时作为条件与采样引导目标。24 布局 90 仿真任务 95.6% 检出率，10 次真实四足试验 8 次成功且零真实数据微调。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 automodel: A Skill for Agentic Model Discovery</h3>
+      <p><strong>作者</strong>: Marco Virgolin, Harry Desmond, Ester Bergantin 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.24347">2611.24347</a></p>
+      <p><strong>代码</strong>: <a href="https://github.com/unlayer-ai/automodel">github.com/unlayer-ai/automodel</a></p>
+      <p><strong>分类</strong>: cs.AI, astro-ph 等</p>
+      <p><strong>核心创新</strong>: 将「模型发现方法论」编码为可移植 agent skill，让 Claude Code/OpenAI Codex 等通用编码 agent 直接发现或改进科学模型。天体物理、心血管动力学、精准农业、交通流、轮胎动力学五个案例验证，为领域专用自动发现管线提供简单通用的替代方案。</p>
+    </div>
+    </section>
+
+    <section>
+      <h2>🐙 GitHub Trending</h2>
+
+    <div class="repo">
+      <a href="https://github.com/google-research/paper-orchestra">google-research/paper-orchestra</a>
+      <span class="stars">+1,524 ⭐ today</span>
+      <p>多 agent 自动化 AI 研究论文写作框架</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/affaan-m/ECC">affaan-m/ECC</a>
+      <span class="stars">+1,108 ⭐ today</span>
+      <p>Agent harness 性能优化系统（技能/本能/记忆/安全/研究）</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a>
+      <span class="stars">+1,059 ⭐ today</span>
+      <p>跨 Reddit/X/YouTube/HN/Polymarket 研究任意话题的 agent skill</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/obra/superpowers">obra/superpowers</a>
+      <span class="stars">+822 ⭐ today</span>
+      <p>Agentic 技能框架与软件开发方法论</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a>
+      <span class="stars">+389 ⭐ today</span>
+      <p>让所有软件 Agent-Native 的 CLI 化方案</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a>
+      <span class="stars">+365 ⭐ today</span>
+      <p>Stitch MCP server 的 Agent Skills 库</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/n8n-io/n8n">n8n-io/n8n</a>
+      <span class="stars">+325 ⭐ today</span>
+      <p>原生 AI 能力的工作流自动化平台</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/NVIDIA/SkillEvaluator">NVIDIA/SkillEvaluator</a>
+      <span class="stars">+312 ⭐ today</span>
+      <p>多层 AI agent 技能/插件评估框架（质量门/语义重叠）</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/appwrite/appwrite">appwrite/appwrite</a>
+      <span class="stars">+232 ⭐ today</span>
+      <p>面向 agent 与开发者的开源云（Auth/DB/存储/函数）</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/punkpeye/awesome-mcp-servers">punkpeye/awesome-mcp-servers</a>
+      <span class="stars">+53 ⭐ today</span>
+      <p>MCP 服务器合集</p>
+    </div>
+    </section>
+
+    <section>
+      <h2>📌 今日主题</h2>
+      <div class="paper">
+        <p><strong>1. Agent 基础设施工程化持续深化</strong>：RSIBench-Infra 把 agent 自优化推到生产级基础设施、SCH 解决长程上下文交接、MoE-Context 探索按需展示上下文——上下文/基础设施管理成为主线。</p>
+        <p><strong>2. Agent 安全从攻击转向防御闭环</strong>：PIPETTE 揭示 RL 红队模式坍塌并给出红队→紫队→鲁棒性的完整转化管线。</p>
+        <p><strong>3. 「祛魅」类研究集中出现</strong>：CF 推理是语言捷径、自主证据核查难点在「决定核查什么」、MoE-Context 坦诚报告负结果——方法论反思成为今日显著风格。</p>
+        <p><strong>4. VLA/具身智能</strong>：WACO 解决位姿鲁棒性并发布首个分级位姿偏移基准；SearchDiffusion 将扩散规划引入物体搜索。</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Generated by AI Research Briefing Automation · <a href="https://yenanjing.github.io/ai-briefings/">Archive</a></p>
+    </footer>
+  </div>
+</body>
+</html>

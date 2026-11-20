@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-20</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 AI Research Briefing</h1>
+      <div class="date">2026-11-20</div>
+      <div class="stats">12 篇论文 · 10 个 GitHub Trending 项目 · arXiv L1</div>
+    </header>
+
+    <section>
+      <h2>📝 论文精选</h2>
+
+    <div class="paper">
+      <h3>9🌟 System-One RSI: Building Muscle Memory for Interactive Agents through Guided Practice</h3>
+      <p><strong>作者</strong>: Qingxu Fu, Xuanfa Jin, Ziqian Chen, Zhaoyang Liu, Bolin Ding</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26007">2611.26007</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 将递归自我改进（RSI）落到「系统一」反应式控制：在线内循环用 27B 决策模型 + 决策树完成亚秒级 OODA 动作（不调推理模型），离线外循环由推理 agent 团队复盘交互记录、修订提示与决策树并再训练。无需专家演示、不改环境、不沙箱：Snake 1.30→7.35，《黑神话:悟空》闪避策略存活时间 11×、进攻胜率 0%→66.7%——「肌肉记忆外置化」是交互 agent 的实用 RSI 路径。</p>
+    </div>
+    <div class="paper">
+      <h3>9🌟 AI agents can redesign engineering parts with more than a thousand CAD parameters and nonlinear simulations</h3>
+      <p><strong>作者</strong>: Alexandra Starostina, Alexander Hermann, Mahish Guru, Kartik Bali, Roland Aydin, Christian C. Cyron</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26003">2611.26003</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 证明通用 LLM（GPT-6 Astra）可同时满足工程重设计的三个苛刻条件：千级 CAD 参数、极少仿真次数、协同重设计而非局部打磨。镁合金支架 1,650 参数、15 次仿真预算内将应变目标降 32%（工业优化器 Tosca 同预算仅 10% 后停滞）；独立高保真全链路验证应变再降 14%、最大损伤点承载损伤减少 63%。LLM 知识 + 仿真反馈的工程化范式验证。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 Evaluating safeguarding in multi-turn conversations with AI assistants</h3>
+      <p><strong>作者</strong>: Charlotte Peart, Franziska Sofia Hafner, Luc Rocher 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26009">2611.26009</a></p>
+      <p><strong>分类</strong>: cs.CL</p>
+      <p><strong>核心创新</strong>: 与 3 位社区心理支持工作者共建 9 个场景金标准，7,400+ 对话实测 6 个主流模型：当抑郁/精神病性/家暴线索从「单条集中」变为「渐进分散」时，GPT-5.5/Grok 4.3/DeepSeek V4/Llama 4 Maverick 达标率从 26-59% 崩至 3-6%；Claude Opus 5 最稳（59-87%）但仍有 13% 缺口。证明「显式单轮」安全评估系统性高估防护能力，评估必须贴合真实沟通方式。</p>
+    </div>
+    <div class="paper">
+      <h3>8.6🌟 FrontierReplay: Split-Free Exact Prefix Caching for Hybrid Language Models</h3>
+      <p><strong>作者</strong>: Zekun Wang, Yizhuo Wang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26020">2611.26020</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 解决混合架构（注意力+循环层）前缀缓存难题：循环层原地状态更新使精确前缀复用必须保存检查点，而现有细粒度方案需切断 prefill、调度开销反噬收益。FrontierReplay 观察到复用几乎总终止于可预测的结构边界（轮次结束/分支点），不切断前向、只记录短窗循环层输入并用跨层 state-only replay 内核重建状态（每 token 便宜 6-37×）。中位 TTFT 降 16-89%（最高 8.9×），goodput 最高 4.26×，且避免近似方法长上下文 17% 精度损失。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 Streaming-AAA: Streaming AAA Game Video Generation at High Resolution, High Frame Rate, and Low Latency</h3>
+      <p><strong>作者</strong>: Zhihao Hu, Jianqi Ma, Jun Zhang, Jiayang Bai, Haifeng Shi, Yanxiang Zhuang 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26040">2611.26040</a></p>
+      <p><strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 可控流式游戏视频生成达到「可玩」门槛：1080p @ 43 FPS、端到端交互延迟 198ms，单张 A800 实现长时程无崩坏。三大设计：重设计 VAE 支撑 1080p 实时解码、diffusion forcing 预训练大幅扩展时序训练视野获得持久记忆、后训练蒸馏+记忆压缩。交互式 AAA 游戏模拟从演示走向实用的关键一步。</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 Does the Workspace Do the Work? A Causal Protocol for Verifying Global-Workspace Computation in a Language Model</h3>
+      <p><strong>作者</strong>: Diaoxuan He, Linqian Wu</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26018">2611.26018</a></p>
+      <p><strong>分类</strong>: cs.LG, cs.AI, q-bio.NC</p>
+      <p><strong>核心创新</strong>: 给全局工作空间理论（GWT）造出可检验协议：移植一条来自其他输入的广播消息，使「忽略/转发/重组」预测三个不同答案，从而判定模块间谁在计算。训练出的 workspace 模型三种结局都出现——有的广播几乎未被使用；AFGW 语言模型 97% 案例为重组。把意识理论的核心主张变成训练模型的可测性质，方法论漂亮。</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 ForeSeek: Foresight-Driven Reasoning for Long-Form Video Understanding</h3>
+      <p><strong>作者</strong>: Yuchen Sun, Siyuan Cheng, Shi-Zhe Chen, Yixin Qin, Jinwen Luo, Zheng Wei</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26024">2611.26024</a></p>
+      <p><strong>代码</strong>: <a href="https://github.com/harry0021/ForeSeek">github.com/harry0021/ForeSeek</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 将长视频 agent 从「反应式检索」转为「预测性探索」：先对未看过的时域形成视觉锚定的预期，再定向观测验证，失败预期成为有信息量的回溯信号；两阶段训练赋予 MLLM 前瞻推理与高效决策。5 个长视频基准上以 2.5-4.4× 更少的观测帧达到持平或更优精度。</p>
+    </div>
+    <div class="paper">
+      <h3>8.3🌟 Serialization Tax in Shared-Latent Exchangeable Decisions</h3>
+      <p><strong>作者</strong>: Siming Zhang, Zhehui Shen, Shijie Chen, Xinle Gu, Yansen Yu, Hang Yu</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26029">2611.26029</a></p>
+      <p><strong>代码</strong>: <a href="https://github.com/SiminChang/Serialization-Tax-in-Shared-Latent-Exchangeable-Decisions">github.com/SiminChang/Serialization-Tax</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 命名并形式化「序列化税」：物品共享隐状态时，逐物品独立边缘化保均值但抹掉聚合后验的依赖结构，导致组级决策（展示 slate/面板审查/批量检验）系统性失真。用凸序比较给出比任何独立补全更分散的精确计数分布，TaxScore 路由高不确定块到更强后验头。MovieLens 1M/10M 审计 NLL/效用一致改善。</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 From AI Surrogate to Engineering Tool: Toward Production Use of Fiber-Orientation Prediction in Crash CAE</h3>
+      <p><strong>作者</strong>: Osamu Ito, Yoshikazu Nakagawa, Tomoaki Tatsukawa</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.25991">2611.25991</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 罕见的 AI 代理模型「上线复盘」：纤维取向预测从 25 小时树脂流分析压缩到 3 分钟后，真正落地靠的不是模型精度而是工程化配套——注入口设置支持（90% 闸数准确率）、体素化、自动映射到碰撞 CAE、报告生成一体化 GUI。工作流从 25 小时降至 0.1 小时（-99.6%），峰值力误差 19.0%→11.4%。对「代理模型 ≠ 工程工具」的教训极有价值。</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 Reinforcing Few-Step Diffusion Models via Shadow Posterior Matching</h3>
+      <p><strong>作者</strong>: Jingqiao Xiu, Yicong Li</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.25998">2611.25998</a></p>
+      <p><strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 直击少步扩散 RL 的两个结构难题：少步生成器是采样器而非 score 模型（速度非前向速度）、与教师无共享转移。SPM 将生成样本重新加噪为 shadow 输入，从 shadow 后验取奖励信用，由 KL 正则奖励目标导出回归损失同时锚定教师并对齐部署输入。4 步生成器上更高奖励且更少 reward hacking。</p>
+    </div>
+    <div class="paper">
+      <h3>8.1🌟 Agentic Scaling of Embodied Tasks in Simulation for Synthetic Data Collection and Policy Evaluation</h3>
+      <p><strong>作者</strong>: Kang Wang, Xiaolei Zhou, Xiaoyu Wu, Zhendong Wang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26046">2611.26046</a></p>
+      <p><strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 用双 agent（任务生成 + 任务执行）在仿真中规模化扩展具身任务集：以「交互需求 ↔ 物体/部件绑定 + 场景/机器人配置 + 完成判据」为中心表征，生成 agent 复用交互结构构造变体、按验证反馈修正。RoboCasa 上 20,323 次构建尝试保存 16,450 个任务实例（吞吐 166.97 个/小时，62.26% 通过物理检查），为具身合成数据提供可度量的生产管线。</p>
+    </div>
+    <div class="paper">
+      <h3>8🌟 Reference-Free Humanoid Skateboarding via Termination-Shaped Reinforcement Learning</h3>
+      <p><strong>作者</strong>: Ganeshvar Soenessardien, Michael Przystupa, Kevin Sebastian Luck</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.26054">2611.26054</a></p>
+      <p><strong>分类</strong>: cs.RO, cs.LG</p>
+      <p><strong>核心创新</strong>: 首次让人形机器人（K1）无参考、无演示学会滑板——物体介导运动需同时协调地面与被动可动平台。方法核心是「终止塑形」：一组阻断投机行为（脱板脚、双脚站板、过度扭转、板失稳）的终止条件，其训练中占比变化自然产生从姿态控制到持续滑行的隐式课程。model-free、零先验数据。</p>
+    </div>
+    </section>
+
+    <section>
+      <h2>🐙 GitHub Trending</h2>
+
+    <div class="repo">
+      <a href="https://github.com/obra/superpowers">obra/superpowers</a>
+      <span class="stars">+2,028 ⭐ today</span>
+      <p>Agentic 技能框架与软件开发方法论</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a>
+      <span class="stars">+1,349 ⭐ today</span>
+      <p>82 技能/15 命令的 Claude Code 漏洞挖掘与红队技能包</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a>
+      <span class="stars">+954 ⭐ today</span>
+      <p>跨 Reddit/X/YouTube/HN/Polymarket 研究任意话题的 agent skill</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a>
+      <span class="stars">+898 ⭐ today</span>
+      <p>让所有软件 Agent-Native 的 CLI 化方案</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a>
+      <span class="stars">+825 ⭐ today</span>
+      <p>Agent 知识基础设施：搜索/抓取/550+ 数据源单 API</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/cursor/plugins">cursor/plugins</a>
+      <span class="stars">+384 ⭐ today</span>
+      <p>Cursor 插件规范与官方插件</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/mjmirza/app-store-compliance">mjmirza/app-store-compliance</a>
+      <span class="stars">+377 ⭐ today</span>
+      <p>117 种上架拒审模式与修复，含 EU AI Act 截止期跟踪与 agent skill</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a>
+      <span class="stars">+302 ⭐ today</span>
+      <p>Stitch MCP server 的 Agent Skills 库（开放标准兼容）</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a>
+      <span class="stars">+271 ⭐ today</span>
+      <p>面向编码 agent 的 45 类编辑级图表设计（HTML+SVG）</p>
+    </div>
+    <div class="repo">
+      <a href="https://github.com/openvinotoolkit/openvino">openvinotoolkit/openvino</a>
+      <span class="stars">+246 ⭐ today</span>
+      <p>AI 推理优化与部署开源工具包</p>
+    </div>
+    </section>
+
+    <section>
+      <h2>📌 今日主题</h2>
+      <div class="paper">
+        <p><strong>1. RSI 从概念走向「系统一」工程化</strong>：System-One RSI 把递归自我改进拆成高频反应式内循环 + 离线推理外循环，在真实游戏（黑神话:悟空）验证；与昨日 RSIBench-Infra 呼应，RSI 落地路径日益清晰。</p>
+        <p><strong>2. LLM 进入真实工程闭环</strong>：GPT-6 Astra 千参数 CAD 重设计超越工业优化器、Honda 纤维取向代理模型上线复盘——两篇论文共同指向「模型知识 + 仿真验证 + 工程化配套」的落地范式。</p>
+        <p><strong>3. 安全评估方法论升级</strong>：多轮渐进线索下主流模型防护达标率从 26-59% 崩至 3-6%，显式单轮评估系统性高估安全性；欧盟 AI Act 在 Hugging Face 上的实践影响首次被实证扫描。</p>
+        <p><strong>4. 系统效率与生成质量并进</strong>：FrontierReplay 解决混合架构前缀缓存、Streaming-AAA 把游戏视频生成推到 1080p@43FPS/198ms 可玩门槛、SPM 修复少步扩散 RL 的结构性缺陷。</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Generated by AI Research Briefing Automation · <a href="https://yenanjing.github.io/ai-briefings/">Archive</a></p>
+    </footer>
+  </div>
+</body>
+</html>

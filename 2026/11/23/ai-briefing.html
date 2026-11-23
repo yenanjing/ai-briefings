@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-23</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 AI Research Briefing</h1>
+      <div class="date">2026-11-23</div>
+      <div class="stats">12 篇论文 · 10 个 GitHub Trending 项目 · arXiv L1</div>
+    </header>
+
+    <section>
+      <h2>📝 论文精选</h2>
+
+    <div class="paper">
+      <h3>9.0🌟 Hy-MT3: More Accurate, Robust and Practical Multilingual Translation Models in the Wild</h3>
+      <p><strong>作者</strong>: Mao Zheng, Zheng Li, Fangxu Liu 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27673">2611.27673</a></p>
+      <p><strong>分类</strong>: cs.CL, cs.AI</p>
+      <p><strong>核心创新</strong>: 混元多语言翻译模型第三代（1.8B/7B/30B-A3B MoE），语言覆盖 38→102 语种；真实场景数据误译减少 43%、漏译增译减少 74%、指令遵循错误减少 40%；MoE 版仅 3B 激活参数即逼近大模型质量，工业级多语言翻译的实用性标杆。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 Embodied-Harness: Towards Recursive Self-Improvement for Robotic Manipulation</h3>
+      <p><strong>作者</strong>: Zhenxuan Fan, Zhuoya Wang, Yuqian Yuan 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27689">2611.27689</a></p>
+      <p><strong>分类</strong>: cs.RO, cs.AI, cs.CV</p>
+      <p><strong>核心创新</strong>: 将 RSI 引入机器人操作：Actor-Reflector 双 agent 框架，Reflector 把执行证据转化为可复用操作指导，分层记忆架构维护短期执行上下文与长期经验，不改模型参数只进化执行 harness——直击 VLM agent 记忆组织差、失败归因难、经验不复用三大痛点。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 AutoOntologyBench: A Task-Grounded Benchmark for Agentic Knowledge Engineering</h3>
+      <p><strong>作者</strong>: Minye Shao, Chenghao Xiao, Xingyue Zhao, Yang Long</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27734">2611.27734</a></p>
+      <p><strong>代码</strong>: <a href="https://github.com/VinyehShaw/AutoOntologyBench">github.com/VinyehShaw/AutoOntologyBench</a></p>
+      <p><strong>分类</strong>: cs.CL, cs.AI, cs.CV</p>
+      <p><strong>核心创新</strong>: 首个以「任务实效」为锚点的 agent 本体构建基准：不再评本体正确性本身，而是评 agent 构建的本体能否真正帮助解决下游任务、相对其他知识表示是否有可测收益——把知识工程从「构建正确」转向「构建有用」，呼应 agent 从 SWE 向自主科研扩展的趋势。</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 Beyond Math, Code, and Logic: Do Reasoning Models Transfer to Scientific Argumentation?</h3>
+      <p><strong>作者</strong>: Buse Sibel Korkmaz, Antonio del Rio Chanona</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27722">2611.27722</a></p>
+      <p><strong>分类</strong>: cs.LG, cs.CL</p>
+      <p><strong>核心创新</strong>: 首个系统评估推理模型向科学论证迁移的研究：覆盖论证挖掘、反驳生成、语篇级推理 7 类任务，语料来自论文/同行评审/基金申请书。发现前沿推理模型在数学/代码/逻辑上的强表现并不能迁移到科学论证——「推理能力」并非单一通用能力。</p>
+    </div>
+    <div class="paper">
+      <h3>8.3🌟 RoSci: Exploring Robustness in Science VLMs</h3>
+      <p><strong>作者</strong>: Junying Wang, Yijin Guo, Yalun Wu 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27751">2611.27751</a></p>
+      <p><strong>分类</strong>: cs.CL, cs.AI, cs.CV</p>
+      <p><strong>核心创新</strong>: 提出「科学模型鲁棒性」概念：模型面对信息错误（不一致）与信息缺失（不充分）时检测异常、评估可解性、自我校准的能力；RoSci-Bench 提供诊断性评测——科学 VLM 评估普遍假设输入完整准确，本文补上「野外脏输入」这一缺失维度。</p>
+    </div>
+    <div class="paper">
+      <h3>8.3🌟 Average-Depth Variable Execution via Request-Local Token Routing</h3>
+      <p><strong>作者</strong>: Pengjie Zheng, Mengwei Xie, Huan Yang 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27738">2611.27738</a></p>
+      <p><strong>分类</strong>: cs.AI, cs.DC, cs.LG</p>
+      <p><strong>核心创新</strong>: 层跳过推理新粒度：让同一请求内不同 token 执行不同层数，路由器逐层决定是否执行 Transformer 块，使请求平均执行深度精确匹配连续预算；跳层 token 走轻量残差适配器且不写 KV——单 checkpoint 同时服务多个推理预算，免去按预算部署多模型。</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 Abstract What Varies, Reuse Longer Patterns: Efficient Offline Chain-of-Thought Compression</h3>
+      <p><strong>作者</strong>: Shibo Wang, Yuzhe He, Yifeng Zhao 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27710">2611.27710</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: CRAFT 将题目特定细节抽象为槽位，挖掘「部分词汇化表达模板」（PLETs）并聚类措辞变体，每个模板族只压缩一次代表——突破逐样本压缩器反复处理相似表达、以及精确文本复用无法跨越变量替换的两大瓶颈，显著节省压缩预算。</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 MetaRigor: From Agentic Automation to Verifiable End-to-End Meta-Analysis Through Scientific Decision Boundaries</h3>
+      <p><strong>作者</strong>: Yifeng Xie, Chenke Li, Yangshuo Miao 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27715">2611.27715</a></p>
+      <p><strong>分类</strong>: cs.AI, cs.SE</p>
+      <p><strong>核心创新</strong>: 可验证的端到端 LLM 元分析框架：以 Study×Target 单元组织研究结果，通过 Task Contracts、程序化规则与源绑定在任务级落地「科学决策边界」，保证结果身份（研究/对比/人群/结局/时点）跨阶段一致——把 agent 自动化从「抽取准确」升级为「可审计」。</p>
+    </div>
+    <div class="paper">
+      <h3>8.1🌟 VeilGS: Solving Darkness as a Veil of 2D Basis Maps over Retinex 3DGS</h3>
+      <p><strong>作者</strong>: Mohab Kishawy, Chengzhou Tang, Shahram Shirani, Jun Chen</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27719">2611.27719</a></p>
+      <p><strong>分类</strong>: cs.CV, cs.GR</p>
+      <p><strong>核心创新</strong>: 低光 3DGS 新视角合成：把黑暗建模为覆盖在 Retinex 3DGS 之上的 2D 基底图「面纱」，逐像素光照相关而非全局单一色调曲线，也不把黑暗存进 3D 表示吸收场景细节——同时规避两类现有方法的根本缺陷。</p>
+    </div>
+    <div class="paper">
+      <h3>8.0🌟 Can Vision-Language Models Synthesize Executable Game-Playing Programs?</h3>
+      <p><strong>作者</strong>: Yao Tong, Jiaxin Qi, Dingyu Zhang, Jianqiang Huang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27741">2611.27741</a></p>
+      <p><strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 超越逐步交互范式：评估 VLM 能否直接合成可执行的游戏程序，而非每步看图选动作——指出逐步交互在部署中的两大根本局限，把「VLM 玩游戏」问题重构为「VLM 写游戏策略程序」。</p>
+    </div>
+    <div class="paper">
+      <h3>7.8🌟 Budgeted Subset Selection with a Transferable Learned Value Model</h3>
+      <p><strong>作者</strong>: Jade Lejeune Herman, Johan A. K. Suykens, Peter Goos</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27751">2611.27751</a></p>
+      <p><strong>分类</strong>: stat.ML, cs.LG</p>
+      <p><strong>核心创新</strong>: SALVES 框架统一子集选择中的价值估计与冗余控制：学习可迁移的价值模型替代应用特定的组合方式，覆盖主动学习/波段选择/实验设计等多领域——把碎片化的子集选择方法收敛为统一框架。</p>
+    </div>
+    <div class="paper">
+      <h3>7.6🌟 Solving the pre-image problem in kernel PCA: The reproducing property is all you need</h3>
+      <p><strong>作者</strong>: Joel-Pascal Ntwali N'konzi, Stefan Klus</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.27718">2611.27718</a></p>
+      <p><strong>分类</strong>: cs.LG, stat.ML</p>
+      <p><strong>核心创新</strong>: 用再生性质直接构造 kernel PCA 的重建映射，绕开既有方法对非线性优化（数值不稳定）或预图像近似（不精确）的依赖——经典问题被一个被忽视的基本性质干净解决。</p>
+    </div>
+    </section>
+
+    <section>
+      <h2>🐙 GitHub Trending（按当日新增 Star 降序）</h2>
+
+    <div class="repo"><a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a><span class="stars">+1,716 ⭐</span><p>Claude Code 漏洞挖掘/红队技能包：82 技能、681 披露报告模式</p></div>
+    <div class="repo"><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a><span class="stars">+915 ⭐</span><p>Agent 知识基础设施：一个 API 接入 550+ 数据源</p></div>
+    <div class="repo"><a href="https://github.com/obra/superpowers">obra/superpowers</a><span class="stars">+788 ⭐</span><p>Agentic 技能框架与软件开发方法论</p></div>
+    <div class="repo"><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a><span class="stars">+699 ⭐</span><p>让所有软件 Agent-Native</p></div>
+    <div class="repo"><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a><span class="stars">+668 ⭐</span><p>跨 Reddit/X/YouTube/HN 研究任意话题的 agent skill</p></div>
+    <div class="repo"><a href="https://github.com/zhouxiaoka/autoclip">zhouxiaoka/autoclip</a><span class="stars">+641 ⭐</span><p>长视频一键剪成短视频，生成字幕/封面/文案</p></div>
+    <div class="repo"><a href="https://github.com/mjmirza/app-store-compliance">mjmirza/app-store-compliance</a><span class="stars">+621 ⭐</span><p>124 种上架被拒模式 + AI coding agent skill</p></div>
+    <div class="repo"><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a><span class="stars">+518 ⭐</span><p>编码 agent 的编辑级图表设计，45 种图型</p></div>
+    <div class="repo"><a href="https://github.com/google-labs-code/stitch-skills">google-labs-code/stitch-skills</a><span class="stars">+494 ⭐</span><p>Google Stitch MCP 的 Agent Skills 库</p></div>
+    <div class="repo"><a href="https://github.com/jingyaogong/minimind">jingyaogong/minimind</a><span class="stars">+473 ⭐</span><p>两小时从 0 训出 64M 大模型</p></div>
+    </section>
+
+    <footer>
+      <p>Generated by AI Research Briefing · <a href="https://yenanjing.github.io/ai-briefings/">Archive</a></p>
+    </footer>
+  </div>
+</body>
+</html>

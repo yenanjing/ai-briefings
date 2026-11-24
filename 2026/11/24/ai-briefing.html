@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-24</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>AI 研究简报</h1>
+    <div class="date">2026-11-24</div>
+    <div class="stats">12 篇精选论文 · 10 个 GitHub 趋势项目 · arXiv 获取级别 L1</div>
+  </header>
+
+  <section>
+    <h2>📌 今日主题</h2>
+    <div class="paper">
+      <p><strong>1. 临床 Agent 过程级评估</strong>：WARD 揭示临床 LLM「证据识别远超状态判断与行动决策」的结构性鸿沟，仅 11.46% 执行动作推进参考转归。</p>
+      <p><strong>2. 触觉/力控操作基础设施化</strong>：Tacinf 全栈开源（仿真合成→VTLA→手持采集→sim2real，r=0.998）、Force2Act 混合力-位策略真机 94.2%、FunGrasp-Zero 首个零样本跨本体灵巧功能抓取。</p>
+      <p><strong>3. 可信推理验证</strong>：Ziv+Sumcheck 首次对浮点 LLM 推理做零知识证明（GPT-2 全前向 19 分钟）。</p>
+      <p><strong>4. 训练机理与优化器理论</strong>：DCT-Rep 定位自适应优化器大核失败根源（均值放大 1/k²），DCT 基是唯一可对角化平稳梯度统计的正交基。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📄 论文精选（12 篇）</h2>
+
+    <div class="paper">
+      <h3>9.0🌟 Seeing Is Not Acting: WARD Diagnoses the Evidence-to-State-to-Action Gap in Longitudinal Clinical Agents</h3>
+      <p><strong>作者</strong>: Chao Ding, Yidong Jiang, Junzhi Ning, Juncheng Wu, Yuyin Zhou 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29243">2611.29243</a> · <strong>代码</strong>: <a href="https://github.com/Dingsuper-creator/WARD">github.com/Dingsuper-creator/WARD</a> · <strong>分类</strong>: cs.CL, cs.AI</p>
+      <p><strong>核心创新</strong>: 首个面向纵向临床护理的过程级基准：4,560 任务 / 240 checkpoints / 40 条纵向轨迹（95 次住院），含纵向证据累积 Track 与端到端工具交互 Track（271 可验证证据项）。12 个模型实测显示证据识别持续领先状态判断与行动决策（关联证据无响应达 74.47–90.90%），Interactive Track 仅 11.46% 执行动作推进参考转归，直指「证据→状态→行动」鸿沟。</p>
+    </div>
+
+    <div class="paper">
+      <h3>9.0🌟 Tacinf: A Unified Tactile Infrastructure for Robot Manipulation</h3>
+      <p><strong>作者</strong>: Qiwei Wu, Xiangyu Chen, Renjing Xu, Junjie Lai 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29240">2611.29240</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 低成本模块化触觉操作全栈基础设施：仿真数据合成 + 触觉基准 Tabero + 视觉-触觉-语言-动作（VTLA）策略 + 与部署同夹爪的手持采集 Tacumi + 任务对齐 sim2real 评估 Taco。仅用触觉仿真数据微调的基础模型零样本迁移真机，8 个策略变体仿真-真机成功率 Pearson r=0.998；混合遥操/仿真/Tacumi 数据将真机成功率 20%→60%。全栈开源。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.8 Force2Act: A Force-Aware Visuomotor Policy for Generalizable Compliant Robot Manipulation</h3>
+      <p><strong>作者</strong>: Keerthi Vasan Murugan, Fangguo Zhao, Jiafei Duan</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29208">2611.29208</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 混合力-位策略解决「演示外力需求」泛化：全局力策略以相对测量力的表示规划动作块级力，块内 Mixture of Force Experts 反应式柔顺策略逐步识别力专家并调节。仿真 93.8% vs 最强基线 77.0%，真机 4 任务平均 94.2% vs 基线最高 27.5%；发布 Force2Act-Bench 五任务接触密集基准。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.8 FunGrasp-Zero: Field-Conditioned Graph Attention Policy for Zero-Shot Cross-Embodiment Dexterous Functional Grasping</h3>
+      <p><strong>作者</strong>: Yanhan Lin, Yuliang Wu, Wei-Shi Zheng 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29195">2611.29195</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 首个零样本跨本体灵巧功能抓取 RL 框架：以物体中心跨本体一致接触图捕获功能意图，手-物体势场产生吸引/排斥引导向量，Field-Conditioned GAT 协调多指运动。4 本体共训统一策略在 5 个未见手上新物体抓取 86% 成功率，部署 4 种未见真手（Leap/Inspire/Sharpa/Wuji）零微调 80%；发布 X-FunBench。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.6 Ziv Meets Sumcheck: Zero-Knowledge Proofs of Floating-Point LLM Inference</h3>
+      <p><strong>作者</strong>: Hassan Khodaiemehr, Khadijeh Bagheri, Chen Feng</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29188">2611.29188</a> · <strong>分类</strong>: cs.LG, cs.CR, cs.IT</p>
+      <p><strong>核心创新</strong>: 首次对实际部署的浮点 LLM 推理做零知识证明：绕开「逐加法舍入依赖顺序」难题，改为证明正确舍入积（点积精确计算后一次舍入），与硬件无关。承诺值比逐操作浮点电路少约千倍，扩展至 transformer 全部层；GPT-2 small 全前向（12 块 + 全词表输出）2 核 19 分钟证明、21 秒验证，拒绝全部 236 次攻击。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.5 GameAnything: From Any Inspirations to Playable Game Worlds</h3>
+      <p><strong>作者</strong>: Wenyi Wu, Siqi Liu, Biwei Huang 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29238">2611.29238</a> · <strong>分类</strong>: cs.AI, cs.CL, cs.LG</p>
+      <p><strong>核心创新</strong>: 开源 agentic 游戏开发平台：多模态灵感→现有游戏的可玩扩展，集成编码 agent + 独立试玩 critic + 持久开发状态 + 可复用经验记忆；配套 GameAnything-Bench 覆盖多参考模态与探索性试玩评估。9 种编码 agent 配置实测：当前 agent 能适配参考内容但在可玩交互与精确修改上仍吃力，迭代精炼收益因 agent 而异。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.5 Why Adaptive Optimizers Struggle with Large Convolution Kernels</h3>
+      <p><strong>作者</strong>: Tianyu Ding, Jiachen Jiang, Luming Liang 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29232">2611.29232</a> · <strong>分类</strong>: cs.CV, cs.LG</p>
+      <p><strong>核心创新</strong>: 定位大核卷积训练难根源：输入特征均值非零使核内权重共享公共梯度，Adam 类逐权重归一化使 k×k 核均值移动距离放大 k 倍，最大学习率被迫按 1/k² 下降。证明 DCT 基是唯一能对角化所有镜像边界平稳梯度统计的正交基；DCT-Rep 仅几行代码、零推理开销，ConvNeXt-T 大核 +0.79% top-1、COCO +1.4 AP，增益随核尺寸增长。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.4🌟 PartPO: Part-Level Policy Optimization for Shape-to-Program Generation</h3>
+      <p><strong>作者</strong>: Hannuo Zhang, Zhixiang Chi, Xinxin Zuo 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29213">2611.29213</a> · <strong>代码</strong>: <a href="https://github.com/HannuoZ/PartPO">github.com/HannuoZ/PartPO</a> · <strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 利用形状程序「自描述」性质解决 RL 长程序信用分配：按语义命名的部件切分程序，部件级奖励只作用于对应代码块、类别奖励只作用于物体名、形状级奖励作用于整体。部件监督免人工标注——用模型自身输出 prompt-tune 开放词汇分割模型锚定部件名。MeshCoder 上超越基线/拒绝采样微调/轨迹级 RL，泛化到未见 HSSD。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.4 DriveTTO: Understanding Search and Selection in Test-Time Trajectory Optimization for End-to-End Driving</h3>
+      <p><strong>作者</strong>: Xinyao Rao, Zecheng Tang, Wei Li 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29205">2611.29205</a> · <strong>分类</strong>: cs.RO, cs.CV</p>
+      <p><strong>核心创新</strong>: 免训练测试时轨迹优化：围绕原生提议搜索、以保留轨迹校验每个细化提议，冻结 scorer 在轨迹实际到达的端点评估并引导逐步缩小的邻域重采样；规划器分支与控制扰动分支在双 scorer 同时预测增益时才接受融合。Navtest 零分案例 51.35% 恢复非零 PDMS，零分率 1.63%→1.13%，单冻结 scorer 即改进全部 6 个规划器。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.2 Ego-HMB: Human Motion Bridging from Egocentric Images via A Motion Bridge Diffusion Model</h3>
+      <p><strong>作者</strong>: Gaoge Han, Shaoli Huang, Tongliang Liu 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29218">2611.29218</a> · <strong>代码</strong>: <a href="https://github.com/gaogehan/Ego-HMB">github.com/gaogehan/Ego-HMB</a> · <strong>分类</strong>: cs.CV, cs.AI</p>
+      <p><strong>核心创新</strong>: 新任务「自我中心人体运动桥接」：从两张端点第一人称图像生成连贯 3D 运动序列，无需结构化 3D 端点位姿，直接服务 VR/AR 与机器人可穿戴场景。单模型统一端点位姿估计与时序一致运动填充：分层课程自我中心→规范空间预训练 + 端点/物理感知的 Motion Bridge 扩散训练，端点精度与生成质量一致超越一阶段与两阶段基线。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.0 NANO: Unifying Missingness and Input Uncertainty in Tabular Learning</h3>
+      <p><strong>作者</strong>: Kuangdai Leng, Maria Tsekhmistrenko, Tarje Nissen-Meyer 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29214">2611.29214</a> · <strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 统一表格缺失与输入不确定性两个被忽视维度：输入从「无证据」到「完全可信观测」连续谱，贝叶斯证据加权按置信度调节取值影响，零置信估计统一映射 N.O. 表示；N.A. 独立表示编码「不适用」及其模式定义原因。11 数据集 × 9 骨干验证混合置信训练单模型跨推理置信水平泛化。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.0 Tenlai-TTS 2.0: Continuous-Representation LLM-Based TTS System with End-to-End Training</h3>
+      <p><strong>作者</strong>: Changfeng Gao, Yong Ren, Zhengkun Tian, Shidong Shang 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.29226">2611.29226</a> · <strong>分类</strong>: cs.SD, cs.AI</p>
+      <p><strong>核心创新</strong>: 端到端联合训练连续语音表征（区别于传统「先学潜空间再冻结」）：容量受控高斯瓶颈 + 能量归一化/固定方差噪声给出信息率闭式上界，重建/识别/下一 patch 预测三目标联合优化，LLM+AR-DiT 经 FM 解码器与识别模型可微反馈进一步优化。test-hard-zh CER 8.32%→7.08%（RL 后 6.29%），说话人相似度 0.766–0.811。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🔥 GitHub Trending（AI 相关，按当日新增 Star 降序）</h2>
+
+    <div class="repo"><a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a><span class="stars">⭐ +2,029</span><p>Claude Code 漏洞挖掘/红队技能包：84 skills、681 披露报告模式</p></div>
+    <div class="repo"><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a><span class="stars">⭐ +924</span><p>Agent 知识基础设施：一个 API 接入 550+ 数据源</p></div>
+    <div class="repo"><a href="https://github.com/zhouxiaoka/autoclip">zhouxiaoka/autoclip</a><span class="stars">⭐ +907</span><p>开源 AI 视频剪辑：长视频一键成片+字幕+封面+文案</p></div>
+    <div class="repo"><a href="https://github.com/obra/superpowers">obra/superpowers</a><span class="stars">⭐ +840</span><p>Agentic skills 框架与软件开发方法论</p></div>
+    <div class="repo"><a href="https://github.com/jingyaogong/minimind">jingyaogong/minimind</a><span class="stars">⭐ +828</span><p>2 小时从 0 训练 64M 大模型</p></div>
+    <div class="repo"><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a><span class="stars">⭐ +797</span><p>跨 Reddit/X/YouTube/HN 研究任意话题的 agent skill</p></div>
+    <div class="repo"><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a><span class="stars">⭐ +790</span><p>让所有软件 Agent-Native</p></div>
+    <div class="repo"><a href="https://github.com/mjmirza/app-store-compliance">mjmirza/app-store-compliance</a><span class="stars">⭐ +761</span><p>124 个应用商店拒审模式与修复的开源 playbook</p></div>
+    <div class="repo"><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a><span class="stars">⭐ +620</span><p>编辑级图表设计 skill：52 种图型，HTML+SVG</p></div>
+    <div class="repo"><a href="https://github.com/toeverything/AFFiNE">toeverything/AFFiNE</a><span class="stars">⭐ +595</span><p>隐私优先开源知识库（Notion+Miro 替代）</p></div>
+  </section>
+
+  <section>
+    <h2>📈 趋势观察</h2>
+    <div class="paper">
+      <p><strong>Agent 安全/红队技能包持续领跑</strong>：Claude-BugHunter 连续多日霸榜（+2,029），安全审计与红队技能生态热度不减。</p>
+      <p><strong>Agent 基础设施三线并进</strong>：知识接入（firecrawl）、技能框架（superpowers/CLI-Anything/last30days-skill）、设计交付（diagram-design）集体强势。</p>
+      <p><strong>AI 教育与轻量训练受关注</strong>：minimind（2 小时训 64M 模型）显示从零训练教学需求旺盛。</p>
+      <p><strong>论文侧</strong>：触觉/力控操作今日集中爆发（Tacinf/Force2Act/FunGrasp-Zero 三篇），从「位置控制」走向「力感知+跨本体泛化」的基础设施化拐点明显。</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>生成时间：2026-11-24 11:00 CST · arXiv 获取级别：L1（第二次尝试成功）</p>
+    <p><a href="https://yenanjing.github.io/ai-briefings/">返回简报索引</a></p>
+  </footer>
+</div>
+</body>
+</html>

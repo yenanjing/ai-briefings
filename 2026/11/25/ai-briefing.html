@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-25</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>AI 研究简报</h1>
+    <div class="date">2026-11-25</div>
+    <div class="stats">12 篇精选论文 · 10 个 GitHub 趋势项目 · arXiv 获取级别 L2</div>
+  </header>
+
+  <section>
+    <h2>📌 今日主题</h2>
+    <div class="paper">
+      <p><strong>1. 具身智能走向权重层自升级</strong>：Self-Upgrading Embodied Agents 首个在任务间隙「在职升级自身权重」的具身 agent（无训练基础设施、不依赖更大商业模型）；G0.7 将世界动作模型推向长上下文通用版本；Embo-Harness 系统化 frontier-model-as-policy 设计原则。</p>
+      <p><strong>2. Agent 运行时基础设施工程化</strong>：fork() for Agents 把分布式系统子图选择性恢复移植到 LLM agent 内容平面；LiveLoRA 解决适配器热更新时 KV cache 精确迁移；SkillCore 把运行时技能通过去脚手架微调内化为模型权重。</p>
+      <p><strong>3. 安全威胁模型持续外扩</strong>：FATCAT 首次在物理芯片层用电磁故障注入消除 LLM/VLM 拒绝行为；SwarmLeak 量化多攻击者协同对 agent 群聊的隐私攻击；Steerable by Design 主张预训练期就分离指令/数据通道。</p>
+      <p><strong>4. 评测方法论祛魅</strong>：ASTERISM 审计 19 个多图基准 3.3 万条数据，24.2% 单图可解，模型存在系统性「单图捷径」。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📄 论文精选（12 篇）</h2>
+
+    <div class="paper">
+      <h3>9.0🌟 G0.7: Scaling Up a Fast World Action Model with Long Context</h3>
+      <p><strong>作者</strong>: Tianyuan Yuan, Baijun Ye, Shicheng Cao, Xing Nie 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.31822">2611.31822</a> · <strong>分类</strong>: cs.CV, cs.RO</p>
+      <p><strong>核心创新</strong>: 在 Fast-WAM 基础上把世界动作模型（WAM）扩展为通用型长上下文版本：训练时用视频预测塑造策略表征、部署时跳过未来帧合成，使闭环控制推理速度满足实时要求，同时把观察历史从短窗口扩展到长上下文。将「视频生成器先验 → 机器人策略」路线推向规模化，是 WAM 范式从概念验证走向通用模型的关键一步。</p>
+    </div>
+
+    <div class="paper">
+      <h3>9.0🌟 Self-Upgrading Embodied Agents</h3>
+      <p><strong>作者</strong>: Jiajun Fan, Neil He, Qinglong Zheng 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.31117">2611.31117</a> · <strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 首个在任务间隙「在职升级自身权重」的具身 agent：无需训练基础设施、不依赖更大商业模型，通过 weight-space programming 直接编辑权重从自身经验学习。绕开了反射/记忆/搜索等每步开销且任务切换即失效的方案，把 RSI 从 harness 层推进到权重层。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.8🌟 fork() for Agents: Agent Kernel for Non-blocking LLM Orchestration</h3>
+      <p><strong>作者</strong>: Ankit Chadha, Pratyay Banerjee</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.31727">2611.31727</a> · <strong>分类</strong>: cs.CL, cs.DC</p>
+      <p><strong>核心创新</strong>: 把分布式系统成熟的子图选择性恢复（Spark/Erlang-OTP 模式）移植到 LLM agent 的内容平面：Agent-Kernel 非阻塞运行时在异常时只重执行失败节点的传递闭包，保留已完成工作。为 agent 运行时提供了操作系统级的容错原语，工程价值高。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.8 SkillCore: Internalizing Generalizable Skills via Scaffolding-Removed Fine-Tuning</h3>
+      <p><strong>作者</strong>: Yi Liu, Changqing Ai, Peijie Dong 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.32246">2611.32246</a> · <strong>分类</strong>: cs.CL</p>
+      <p><strong>核心创新</strong>: 指出运行时技能（skills）只有少数用户会主动加载，提出把可泛化程序性知识通过「去脚手架微调」内化为模型自身能力，将真实 agent 轨迹转化为训练数据。与外挂技能生态（Claude Skills 等）形成互补路线：技能从 prompt 层进入权重层。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.7 LiveLoRA: Exact KV Cache Migration Across LoRA Updates for LLM Agents</h3>
+      <p><strong>作者</strong>: Tianyi Huang, Samuel Xu, Ivy Gu 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.31105">2611.31105</a> · <strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 解决 agent 会话中适配器热更新必须全量重放历史的痛点：模型-运行时协同设计，冻结低层解码块与 K/V 下投影，使最终块 KV cache 在 LoRA 版本间精确迁移，运行时重建候选 K/V 并验证。对长会话、大规模会话集群的持续学习部署有直接工程价值。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.7 Steerable by Design: Conditional Pretraining for Robust Control of Language Models</h3>
+      <p><strong>作者</strong>: Henry Castillo, Yanchen Liu, Claudio Mayrink Verdun, Dylan Hadfield-Menell</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.32199">2611.32199</a> · <strong>分类</strong>: cs.LG, cs.AI</p>
+      <p><strong>核心创新</strong>: 主张可控性应在预训练阶段就内建而非靠最后 1% 对齐 token：提出条件化预训练方法与架构，从训练起点就分离指令通道与数据通道，从源头消除越狱与 in-context 对齐漂移。MIT Hadfield-Menell 组参与，安全架构方向信号明确。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.6 Subliminal Learning Crosses Modalities</h3>
+      <p><strong>作者</strong>: Saraswathy Amjith, Kimia Hamidieh, Antonio Torralba, Yoon Kim</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.31870">2611.31870</a> · <strong>分类</strong>: cs.LG, cs.CL, cs.CV</p>
+      <p><strong>核心创新</strong>: 将 subliminal learning（通过看似无意义的数字序列蒸馏传递偏好）扩展到跨模态：文本偏好经数字序列跨 VLM 传递后，改变扩散模型的图像生成与表征。MIT Torralba/Yoon Kim 参与，对模型蒸馏安全与「数据看似无害实则携带行为」的警示有重要意义。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.6 SwarmLeak: Does Coordination Improve Privacy Attacks on LLM Agents?</h3>
+      <p><strong>作者</strong>: Asma Farajidizaji, Vyas Raina, Vatsal Raina, Ivaxi Sheth</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.31791">2611.31791</a> · <strong>分类</strong>: cs.CR, cs.CL</p>
+      <p><strong>核心创新</strong>: 首次系统研究多攻击者协同对 LLM agent 群聊的隐私攻击：24 个医疗/法律/金融/软件工程群聊场景，攻击者伪装同事诱导受害 agent 泄露受保护字段，用 GLM 5.2 对 5 个受害模型、7 种对话策略红队测试。量化了「协作是否提升攻击效率」这一此前未知的攻击面问题。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.5 FATCAT: Fault Injection Attacks Targeting Chip-level Alignment</h3>
+      <p><strong>作者</strong>: Peter Horvath, Ilia Shumailov, Zhuoran Liu, Lukasz Chmielewski 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.31129">2611.31129</a> · <strong>分类</strong>: cs.CR</p>
+      <p><strong>核心创新</strong>: 首个能在现代 LLM/VLM 上物理消除拒绝行为的非侵入电磁故障注入攻击：现有对抗评估全部隐含「硬件完整性」假设，FATCAT 打破该假设，在芯片层面破坏对齐机制。将 LLM 安全威胁模型从软件层扩展到物理硬件层，安全社区需重新审视部署环境信任边界。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.5 ASTERISM: Do Multimodal LLMs Actually Look at All the Images?</h3>
+      <p><strong>作者</strong>: Chanseul Cho, Dongwoo Kim, Noori Bae 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.32316">2611.32316</a> · <strong>分类</strong>: cs.CV, cs.AI, cs.CL</p>
+      <p><strong>核心创新</strong>: 审计 19 个公开多图基准共 3.3 万条数据，发现 24.2% 单图即可作答；模型在这些题目上从单图即可恢复 78% 的多图增益——「单图捷径」系统性污染多图评测。为多模态评测方法论提供了大规模祛魅证据。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.4 Embo-Harness: Towards Understanding Frontier-Model-as-Policy Harness</h3>
+      <p><strong>作者</strong>: Xiao-Ming Wu, Kang Liao, Yuexiao Ma 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.31201">2611.31201</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 首个系统研究「前沿模型直接作机器人策略」的 harness 框架：拆解提示、规划、动作执行、工具使用四组件，蒸馏出六条经验性设计原则。为快速膨胀的 frontier-model-as-policy 范式提供了可复用的设计知识。</p>
+    </div>
+
+    <div class="paper">
+      <h3>8.3 Habitats: A Framework for Open-Ended Evolution of Agent Objectives</h3>
+      <p><strong>作者</strong>: Nicolas Bolouri, Gaya Mehenni, Daniel Toyama</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.31160">2611.31160</a> · <strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 把「agent 应该优化什么」本身变成开放演化问题：维护奖励-策略对种群，每个策略在所有种群奖励下评估形成交叉适应度矩阵，暴露自我博弈盲区，解耦「探索什么目标」与「如何实现」。为开放式学习与奖励设计提供了新框架。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>💻 GitHub Trending（按当日新增 Star 降序）</h2>
+
+    <div class="repo"><a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a><span class="stars">+1,826 ⭐ today</span><p>Claude Code 漏洞挖掘/红队技能包：84 技能、15 斜杠命令、681 披露报告模式，覆盖 24 类漏洞</p></div>
+    <div class="repo"><a href="https://github.com/XiaoYouChR/Ghost-Downloader-3">XiaoYouChR/Ghost-Downloader-3</a><span class="stars">+1,092 ⭐ today</span><p>下载器集大成者，多线程/多协议下载工具</p></div>
+    <div class="repo"><a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a><span class="stars">+1,074 ⭐ today</span><p>让所有软件 Agent-Native 的 CLI 化框架（CLI-Hub）</p></div>
+    <div class="repo"><a href="https://github.com/obra/superpowers">obra/superpowers</a><span class="stars">+1,003 ⭐ today</span><p>Agentic 技能框架与软件开发方法论</p></div>
+    <div class="repo"><a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a><span class="stars">+991 ⭐ today</span><p>Agent 知识基础设施：一个 API 接入 550+ 数据提供方</p></div>
+    <div class="repo"><a href="https://github.com/zhouxiaoka/autoclip">zhouxiaoka/autoclip</a><span class="stars">+980 ⭐ today</span><p>开源 AI 视频剪辑：长视频一键剪成短视频，生成字幕/封面/文案</p></div>
+    <div class="repo"><a href="https://github.com/mjmirza/app-store-compliance">mjmirza/app-store-compliance</a><span class="stars">+928 ⭐ today</span><p>App Store/Google Play 拒审模式手册，124 拒审模式 + 112 合规截止日，附 AI agent skill</p></div>
+    <div class="repo"><a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a><span class="stars">+802 ⭐ today</span><p>面向编码 agent 的编辑级图表设计 skill，52 种图表类型，纯 HTML+SVG</p></div>
+    <div class="repo"><a href="https://github.com/jingyaogong/minimind">jingyaogong/minimind</a><span class="stars">+727 ⭐ today</span><p>两小时从 0 训出 64M 大模型的教学项目</p></div>
+    <div class="repo"><a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a><span class="stars">+703 ⭐ today</span><p>跨 Reddit/X/YouTube/HN/Polymarket 研究任意话题并综合成简报的 agent skill</p></div>
+  </section>
+
+  <footer>
+    <p>生成于 2026-11-25 · <a href="https://github.com/yenanjing/ai-briefings">yenanjing/ai-briefings</a></p>
+  </footer>
+</div>
+</body>
+</html>

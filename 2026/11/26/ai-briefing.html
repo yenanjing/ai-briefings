@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-26</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>AI 研究简报</h1>
+    <div class="date">2026-11-26</div>
+    <div class="stats">12 篇精选论文 · 10 个 GitHub 趋势项目 · arXiv 获取级别 L1</div>
+  </header>
+
+  <section>
+    <h2>📌 今日主题</h2>
+    <div class="paper>
+      <p><strong>1. VLA 指令跟随与人类视频学习</strong>：Wormhole 免训练最优传输「虫洞」解决指令黑洞（切换成功率 1.2%→93.1%）；CamAct 证明无操作演示的野外视频相机运动即可监督 VLA；DataForgeVLA 全合成演示微调 GR00T 达 80% 真机成功率。</p>
+      <p><strong>2. 世界模型工程化</strong>：CoWM 跨具身共享潜动力学实现单条人类视频零样本技能迁移；RehearsalWorld 3D 排练+2D 渲染解耦物理一致性与视觉合成。</p>
+      <p><strong>3. Agent 安全与技能工程</strong>：Chasm 揭示跨模型 KV cache 潜在通信摧毁安全对齐（注入遵循 0.4%→44.2%）；MedSkill-E² 发现技能「可用但不用」（EBU）缺口 43.94pp。</p>
+      <p><strong>4. Agent 评估基准</strong>：Crucible 首个可执行化学研究环境 DMTA 全流程基准（最优模型仅 0.545）；BOT-Scale 可追溯机器人操作评分。</p>
+      <p><strong>5. 系统与效率</strong>：Libtt 把 PyTorch/JAX 生态带到 Tenstorrent；TORE 扩散加速 4.31×；Looped MoE 等预算 scaling 规律。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📄 论文精选（12 篇）</h2>
+    <div class="paper">
+      <h3>9.0🌟 Wormhole: Escaping the Instruction Blackhole of VLA Policies via Optimal-Transport Wormholes</h3>
+      <p><strong>作者</strong>: Xuetao Li, Chen Liu, Jing Wu, Sheng Liu, Miao Li</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34280">2611.34280</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 首次识别并形式化 VLA 的「指令黑洞」——策略一旦承诺任务，新指令被吸收，机器人完成旧任务或冻结；用传输比和事件视界量化，并证明这是静态模仿学习的盲区。提出免训练插件 Wormhole：最优传输选择新任务的接近阶段状态，限速遍历携带机器人到达，未修改策略接管。LIBERO 上 pi/pi0.5 承诺切换成功率从最高 1.2% 提升至 93.1%，动作不连续性仅为脚本化撤退重启的 1/5。</p>
+    </div>
+    <div class="paper">
+      <h3>9.0🌟 Chasm: Latent-in-the-Middle — On the Security of Cross-Model Latent Communication in Multi-Agent Systems</h3>
+      <p><strong>作者</strong>: Manit Baser, Vyoman Jain, Rachel Yeo Hui Min 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34278">2611.34278</a> · <strong>分类</strong>: cs.CR</p>
+      <p><strong>核心创新</strong>: 首次系统研究跨模型 KV cache 潜在通信的安全含义，提出 Chasm 框架刻画源模型/mapper/交接机制三类新攻击面。实验揭示潜在交接大幅削弱安全对齐：原生仅遵循 0.4% 注入的目标模型经 mapper 传输后遵循率达 44.2%；白盒优化经 mapper 攻击成功率 92.5%（普通 GCG 仅 37.5%）。提出轻量目标侧 cache guard 修复传输缓存恢复拒绝行为。</p>
+    </div>
+    <div class="paper">
+      <h3>9.0🌟 Crucible: Evaluating LLM Agents in Executable Chemistry Research Environments</h3>
+      <p><strong>作者</strong>: Yinjun Liu, Xinye Li, Ruisen Peng 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34254">2611.34254</a> · <strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 首个覆盖 DMTA（设计-制造-测试-分析）全流程四阶段的可执行化学研究 Agent 基准：1078 任务/12 任务族/18 数据集，75 个领域工具经 MCP 接入 7 个隔离环境，沙箱化评分器验证合成路线与实验方案。14 个 LLM 中最优仅 0.545，合成规划与闭环优化最难；整体排名与优化能力脱钩（第 12 名模型闭环优化最高），揭示「工具跑通≠化学有效」。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 Co-World Model (CoWM): Human-Video-to-Robot Transfer via Co-Constructed Shared Latent Dynamics</h3>
+      <p><strong>作者</strong>: Xuetao Li, Xuan Jiang, Chen Liu 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34302">2611.34302</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 将观测解耦为共享物体-关系状态与具身特定上下文，用 effect-swap 与动作敏感度目标按「对物体的预测效果」而非运动学对齐跨具身潜在动作；相位感知滚动时域控制器将人类动作先验投影到机器人动作支撑密度。配对但不同步的人类/机器人双流联合优化，两个真机平台验证单条人类演示零样本技能迁移。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 MedSkill-E²: Evaluating and Evolving Skills for Medical Agents</h3>
+      <p><strong>作者</strong>: Jingjing Hua, Shaocong Wei, Jianghan Shen 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34250">2611.34250</a> · <strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 首次量化 Agent 技能「可用但不用」（EBU）现象：自主执行与显式引导使用同一技能的准确率差平均 43.94pp，同模型跨 harness 差异达 38.96pp 且排名可变。EBU-Evolve 用自主与引导执行的反馈蒸馏有效指导为可复用技能指令，自主使用准确率提升 33.33-55.17pp，可跨模型与 harness 迁移。</p>
+    </div>
+    <div class="paper">
+      <h3>8.6🌟 RehearsalWorld: Rehearse in 3D, Render in 2D — Physically Consistent and Editable Robot World Models</h3>
+      <p><strong>作者</strong>: Guangyu Liu, Hanzhang Wang, Huijia Zhang 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34288">2611.34288</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 将机器人世界模型解耦为「3D 排练 + 2D 渲染」：预训练 3D 点流模型作运动先验，经响应感知物体分组、持久抓取记忆与接触结构精炼保证结构/物理一致；几何投影作时间条件微调视频生成器。物理响应与视觉合成解耦后支持材质/视角独立编辑。真实 DROID 抓取序列上夹爪相对偏移较 PointWorld 降 79-84%。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 WebVibe: Multimodal Interactive Website Generation via Reverse Synthesis and Visual Self-Distillation</h3>
+      <p><strong>作者</strong>: Tianxiang Jiang, Sheng Xia, Yilin Long 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34292">2611.34292</a> · <strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 诊断出前向合成（先写规格后执行）会留下未实现需求作监督噪声、RL 标量奖励丢弃回放状态转移两大瓶颈；反转为 Y→X 逆向合成，浏览器验证交互后从回放确认状态构建 31542 站点语料。Interactive-SDPO 用共享权重自教师+状态转移蒙太奇提供 token 级监督零推理开销。9B 模型单次通过匹配 1T 参数编码 agent（参数少 111×、token 少 78×）。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 Navigent: A Geometry-Grounded Agentic Framework for Vision Language Navigation</h3>
+      <p><strong>作者</strong>: Xinyu Zhou, Weiren Cai, Yitong Chen 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34249">2611.34249</a> · <strong>分类</strong>: cs.AI</p>
+      <p><strong>核心创新</strong>: 冻结 MLLM + 几何接地执行批评器（GEC）双检查：动作-运动一致性（实测位移 vs 指令）与运动-地标一致性（世界坐标视觉锚点/入口跟踪），不一致即中断重观测或节点恢复；离线自改进只调 prompt 与 GEC 逻辑不动权重。R2R-CE/RxR-CE unseen 达 84.0%/86.0% SR。代码：github.com/MarsLab-Navigent/Navigent</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 TORE: Token-Wise Taylor Order Selection via Decomposed Residual Error Estimation for Diffusion Acceleration</h3>
+      <p><strong>作者</strong>: Lei Tang, Baoquan Zhang, Yakun Zhang, Yunming Ye</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34261">2611.34261</a> · <strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 定位 token 自适应扩散加速的代理-目标失配：浅层代理分数选的 Taylor 阶并非全模型残差最优阶。TORE 将预测误差分解为截断误差与有限差分导数误差，从缓存残差估计两者贡献预选逐 token 阶。FLUX.1-dev 4.31×、Wan2.1 4.18× 加速保持质量。</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 Libtt: A Compiler and Runtime for Tenstorrent Processors</h3>
+      <p><strong>作者</strong>: Philipp Moritz, Sarah Dong</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34273">2611.34273</a> · <strong>分类</strong>: cs.DC</p>
+      <p><strong>核心创新</strong>: 为 Tenstorrent 硬件实现 PJRT 接口（XLA 驱动 Google TPU 的同一接口），JAX 直接运行、PyTorch 经 TorchTPU 运行，编译器到多芯片运行时全栈打包为单一共享库；已通过大部分 JAX/TorchTPU 测试套件，跑通 SGLang/TorchTitan/Miles 覆盖服务/微调/RL。开源 AI 加速器生态向「软件栈即插即用」演进的重要一步。</p>
+    </div>
+    <div class="paper">
+      <h3>8.3🌟 Scaling Looped MoE Language Models under Matched Budgets</h3>
+      <p><strong>作者</strong>: Shipeng Bai, Jiayu Qin, Hong Liu 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34276">2611.34276</a> · <strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 首次在严格等参数/等 FLOP 约束下系统研究 Looped MoE 配置规律：门控内环状态更新+跨阶段残差连接改进信息流；核心深度取展开深度 25-35% 并将节省参数重分配为逐层额外路由专家，零额外计算提升性能。1T token 预训练的 69B MLA/51B KDA 模型超越等预算非循环基线 1.16/2.29pp。代码：github.com/lxi01766/Scaling-Looped-MoE-Language-Models-under-Matched-Budgets-Information-Flow-and-Parameter-Allocation</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 BOT-Scale: A Traceable Evaluation Methodology for Robotic Manipulation</h3>
+      <p><strong>作者</strong>: Yunfei Xue, Kemi Chen, Weiling Chen 等</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34297">2611.34297</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 让操作评分可追溯：分数定义为保留行为因子记录上的结果条件惩罚之和，解释与分数共享同一计算，每个因子级扣分对应可检查偏差；借鉴医学行为评估量表组织 12 候选因子为 4 层，数据驱动筛选保留 7 因子。发布 BOT-Events 数据集（8 评分者质量分+因子事件标注）与 BOTScorer 自动评分系统。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🔥 GitHub Trending（按当日新增 Star 降序）</h2>
+    <div class="repo">
+      <span>1.</span>
+      <a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a>
+      <span class="stars">+1652 today</span>
+      <p>A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.</p>
+    </div>
+    <div class="repo">
+      <span>2.</span>
+      <a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a>
+      <span class="stars">+1141 today</span>
+      <p>Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.</p>
+    </div>
+    <div class="repo">
+      <span>3.</span>
+      <a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a>
+      <span class="stars">+1135 today</span>
+      <p>Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.</p>
+    </div>
+    <div class="repo">
+      <span>4.</span>
+      <a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a>
+      <span class="stars">+1106 today</span>
+      <p>"CLI-Anything: Making ALL Software Agent-Native" -- CLI-Hub: https://clianything.cc/</p>
+    </div>
+    <div class="repo">
+      <span>5.</span>
+      <a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a>
+      <span class="stars">+945 today</span>
+      <p>AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary</p>
+    </div>
+    <div class="repo">
+      <span>6.</span>
+      <a href="https://github.com/obra/superpowers">obra/superpowers</a>
+      <span class="stars">+903 today</span>
+      <p>An agentic skills framework & software development methodology that works.</p>
+    </div>
+    <div class="repo">
+      <span>7.</span>
+      <a href="https://github.com/zhouxiaoka/autoclip">zhouxiaoka/autoclip</a>
+      <span class="stars">+880 today</span>
+      <p>AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.</p>
+    </div>
+    <div class="repo">
+      <span>8.</span>
+      <a href="https://github.com/mjmirza/app-store-compliance">mjmirza/app-store-compliance</a>
+      <span class="stars">+858 today</span>
+      <p>Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 114 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.</p>
+    </div>
+    <div class="repo">
+      <span>9.</span>
+      <a href="https://github.com/jingyaogong/minimind">jingyaogong/minimind</a>
+      <span class="stars">+826 today</span>
+      <p>🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.</p>
+    </div>
+    <div class="repo">
+      <span>10.</span>
+      <a href="https://github.com/toeverything/AFFiNE">toeverything/AFFiNE</a>
+      <span class="stars">+574 today</span>
+      <p>There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>由自动化流程生成 · <a href="https://github.com/yenanjing/ai-briefings">GitHub 仓库</a></p>
+  </footer>
+</div>
+</body>
+</html>

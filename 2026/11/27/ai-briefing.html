@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Research Briefing - 2026-11-27</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f8f9fa; color: #1a1a2e; line-height: 1.7; }
+    .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+    header { text-align: center; margin-bottom: 40px; padding: 40px 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; color: white; }
+    header h1 { font-size: 2.2em; margin-bottom: 10px; }
+    header .date { font-size: 1.2em; opacity: 0.9; }
+    header .stats { margin-top: 15px; font-size: 0.95em; opacity: 0.85; }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.5em; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #667eea; color: #1a1a2e; }
+    .paper { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+    .paper h3 { color: #1a1a2e; margin-bottom: 12px; font-size: 1.1em; }
+    .paper p { margin-bottom: 6px; font-size: 0.92em; color: #4a4a5a; }
+    .paper a { color: #667eea; text-decoration: none; }
+    .paper a:hover { text-decoration: underline; }
+    .repo { background: white; border-radius: 12px; padding: 16px 24px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .repo a { color: #667eea; text-decoration: none; font-size: 1.05em; }
+    .repo .stars { color: #f39c12; font-weight: bold; }
+    .repo p { width: 100%; color: #4a4a5a; font-size: 0.9em; margin-top: 4px; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; color: #888; font-size: 0.9em; }
+    footer a { color: #667eea; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>AI 研究简报</h1>
+    <div class="date">2026-11-27</div>
+    <div class="stats">12 篇精选论文 · 10 个 GitHub 趋势项目 · arXiv 获取级别 L1</div>
+  </header>
+
+  <section>
+    <h2>📌 今日主题</h2>
+    <div class="paper">
+      <p><strong>1. 冻结 VLA 的测试时干预</strong>：Cairn 用物体级 3D 轨迹先验在测试时"导航"冻结 π0.5，LIBERO 换位/障碍场景 24.5%→95.1%，超过微调版；DexLink 用稀疏手-物交互模板链合成灵巧操作策略。</p>
+      <p><strong>2. 实时长视频生成 + Agent 记忆</strong>：Agentic LongLive 首个由 LLM agent 维护文本+图像实体记忆的实时视频生成器（8×B200 上 34.3 FPS，14 分钟故事身份一致性大幅提升）。</p>
+      <p><strong>3. 架构与效率创新</strong>：MoLT 环形混合 Transformer 400B token 预训练超越 OLMo3（700M 达 1.7× token 效率）；LiveVAE 因果窗口注意力让流式视频 VAE 编码快 5.2-6.2×、端到端 13.4×。</p>
+      <p><strong>4. 安全评估方法论警示</strong>：Attack Policy Selection 用已退役 OpenAI monitor 实证：攻击策略选择与优化程度让漏报率在 0.5%-23% 之间波动，弱攻击评估会给出虚假信心。</p>
+      <p><strong>5. 理论祛魅</strong>：Tokenisation is not in APX 证明除非 P=NP，分词器优化不存在常数因子近似算法；实证研究系统性表明"生成图像辅助视觉推理"平均降低准确率 3.7pp。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>📄 论文精选（12 篇）</h2>
+    <div class="paper">
+      <h3>9.0🌟 Cairn: Object-Centric 3D Trajectory Priors for Steering Frozen VLAs</h3>
+      <p><strong>作者</strong>: Agelos Kratimenos, Kostas Daniilidis, Evangelos Chatzipantazis</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34920">2611.34920</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 保持 VLA 冻结，在测试时用小型先验模型从点云+抓取位姿+指令采样物体级 SE(3) 轨迹，与 VLA 构成双向反馈的分层规划器：VLA 意图运动选择/重塑轨迹，轨迹以 waypoint 拉动 VLA 去噪输出。1941 个换位/障碍 LIBERO 场景上冻结 π0.5 成功率 24.5%→95.1%，超过在新布局上微调的 π0.5；LIBERO-PRO 27.3%→38.0%；真机 Franka 纯仿真先验成功引导极限位放置。</p>
+    </div>
+    <div class="paper">
+      <h3>9.0🌟 Agentic LongLive: Asynchronous Agentic Memory for Long Video Generation</h3>
+      <p><strong>作者</strong>: Shaoteng Liu, Shuai Yang, Wei Huang, Luozhou Wang, Song Han, Yukang Chen</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34907">2611.34907</a> · <strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 首个由 LLM agent 维护记忆的实时长视频生成器：记忆 agent 在独立 GPU 上只读已揭示的 prompt（从不读生成视频），为每个人/物/场景维护文本状态+演化图像，在下一镜头开始前预填充进生成器 attention sink，视频永不等待记忆、视频错误不回写记忆。LongStory-Online 基准（25 故事 857 镜头）上持久状态准确率 +26.3、主角身份 +44.9、地点一致性 +40.4，仅 ~1% 额外耗时；8×B200 单节点 34.3 FPS 超实时。</p>
+    </div>
+    <div class="paper">
+      <h3>9.0🌟 Mixture-of-Loops Transformer (MoLT)</h3>
+      <p><strong>机构</strong>: 华中科技大学（hustvl）</p>
+      <p><strong>作者</strong>: Lianghui Zhu, Shijie Wang, Xinggang Wang, Jinze Bai, Bo Wang, Xiang Bai</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34923">2611.34923</a> · <strong>代码</strong>: <a href="https://github.com/hustvl/MoLT">hustvl/MoLT</a> · <strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 重新设计环形 Transformer 相邻循环间的连接机制：MoLA 用 KV 作跨深度/循环选择性复用的记忆，MoLT-R 保留残差流读跨环局部 KV（表达力），MoLT-KV 消除同位置跨环依赖并配 loop forcing 并行训练解锁单次遍历 MoL 解码（效率）；U-MoLT 分离记忆构建与预测读出、跳过无用 decoder 遍历。400B token 预训练在 700M/1.5B dense 与 3B MoE 上全面超越 OLMo3：700M 达 1.7× 验证 CE token 效率，3B MoE 10 任务准确率 +2.1pp；推理延迟与非环形 OLMo3 持平。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 Attack Policy Selection can Mislead Monitor Evaluators</h3>
+      <p><strong>作者</strong>: Charlie Griffin, Oliver Makins, Asa Cooper Stickland, Alessandro Abate, Yarin Gal, Abby D'Cruz et al.</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34934">2611.34934</a> · <strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 以已退役 OpenAI 生产 monitor 为案例，实证 AI monitor 评估的"攻击策略选择"问题：同一 RL 方法不同优化程度下漏报率 0.5%→20.8%，不同方法间 6.4%→23.0%，且所有攻击仅对代理 monitor 开发即迁移到 held-out GPT-5.4。论证用弱攻击得到的"monitor 很强"是虚假信心，将代理结果解读为部署证据需要独立的合法性论证——当前 monitor 评估方法论的结构性缺口。</p>
+    </div>
+    <div class="paper">
+      <h3>8.8🌟 Tokenisation is not in APX</h3>
+      <p><strong>作者</strong>: Violeta Kastreva, Philip Whittington, Dennis Komm, Tiago Pimentel</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34938">2611.34938</a> · <strong>分类</strong>: cs.CL</p>
+      <p><strong>核心创新</strong>: 复杂度理论结果：除非 P=NP，不存在多项式时间算法能找到目标值在最优常数因子内的分词器，即分词优化不属于 APX——对直接与自底向上分词、压缩与 unigram 对数似然目标、二元及更大字母表均成立；进一步证明即使一元字母表上直接分词也是 APX-hard，不存在 PTAS。为"分词器质量为何难以优化"提供首个严格计算复杂性解释。</p>
+    </div>
+    <div class="paper">
+      <h3>8.6🌟 AnyCam: Anything Can Represent Camera for Video Generation</h3>
+      <p><strong>作者</strong>: Weijie Lyu, Zhixin Shu, Yuntian Ke, Ming-Hsuan Yang</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34944">2611.34944</a> · <strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 用场景中的锚定物体表示相机：将物体 3D 重建后沿目标轨迹渲染，得到尺度感知、视角完备、相对物体易于指定的相机信号，绕过单目相机参数尺度歧义与点云/深度在大视角变化下崩溃两大瓶颈。视频扩散模型经 H-Concat 布局在时间上对齐源/目标帧，可蒸馏为 AnyCam-AR 流式少步生成器实现即时相机控制。</p>
+    </div>
+    <div class="paper">
+      <h3>8.6🌟 Tracking Any Point with Agentic Visual Reasoning (AgenTAP)</h3>
+      <p><strong>作者</strong>: Xuweiyi Chen, Jin Yao, Linzhan Mou, Lei Gong, Di Liu, Cheng Zhang et al.</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34943">2611.34943</a> · <strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 将点对应（跨观测像素级定位同一物理表面点）从专用模型任务转为 VLM agent 的主动视觉推理：agent 自主选择检查什么、用证据验证点身份并修正预测。GPT-6 Astra 驱动下无需对应任务微调即在点定位与可见性预测上超越专家视觉模型；构建长真实第一人称视频 3D 点轨迹数据集 EgoTAP-4D，加入 D4RT 训练提升平均 3D 跟踪性能。</p>
+    </div>
+    <div class="paper">
+      <h3>8.5🌟 LiveVAE: Causal Window Attention Makes Efficient Streaming Video VAE</h3>
+      <p><strong>作者</strong>: Jiachen An, Sijie Zhao, Le Li, Hongyu Liu, Zhiyuan Li, Tianyu Yang et al.</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34912">2611.34912</a> · <strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 通过分析预训练视频 VAE 有效感受野发现编解码几乎只依赖时空邻居，据此用因果窗口注意力构建流式编解码器：逐帧计算削减且时间 KV cache 有界；解耦蒸馏+联合微调保持预训练潜空间，可作 drop-in 替换。MiniMax-H3 上编码快 5.2-6.2×、解码 3.0-3.3× 且 PSNR 更高，配合专用推理基础设施端到端 13.4× 加速几乎无质量损失。</p>
+    </div>
+    <div class="paper">
+      <h3>8.4🌟 Diverse Alternative Reasoning Traces (DART)</h3>
+      <p><strong>作者</strong>: Lukas Aichberger, Adam Golinski, Arno Blaas, Arwen Bradley, Jacob Springer, Mehrdad Farajtabar et al.</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34928">2611.34928</a> · <strong>分类</strong>: cs.CL</p>
+      <p><strong>核心创新</strong>: 针对困难数学题验证通过的推理轨迹在独立 MC 采样下极稀缺的问题，提出从"被拒绝轨迹"挖掘训练数据：分解为推理步骤、按位置加权不确定性排序、用参考答案引导+元思维生成刻意不同的替代候选再补全轨迹。DeepMath-103K 贪心未解题上，同等生成量比 MC 多恢复 37% 问题，每接受轨迹成本降 30%；后训练 Llama-3.1-8B 在 MATH-500/AIME 六项评估中五项点估计最高。</p>
+    </div>
+    <div class="paper">
+      <h3>8.3🌟 Improving and Expanding Video Editing Capabilities Without Videos (I2VT)</h3>
+      <p><strong>作者</strong>: Ji Xie, Yanhao Jia, Xiangpeng Yang, Martin Q. Ma, Sihan Xu, Erik Cambria et al.</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34941">2611.34941</a> · <strong>分类</strong>: cs.CV</p>
+      <p><strong>核心创新</strong>: 绕开配对视频数据瓶颈：让视频编辑器"角色扮演"图像编辑器——把单帧图像当一帧视频编辑，图像编辑器在每个去噪步引导视频编辑器预测，仅用单张图像完成无架构改动的后训练，测试时能力迁移到整段视频并保持时间一致性。发布 OpenVE++ 基准新增四类任务，三个视频编辑器上双基准 SOTA。</p>
+    </div>
+    <div class="paper">
+      <h3>8.3🌟 Can image generation help visual reasoning? An empirical study</h3>
+      <p><strong>作者</strong>: Xueyang Yu, Yifan Jing, Taiming Lu, Linrong Cai, Zhipeng Cai, Yunyang Xiong et al.</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34935">2611.34935</a> · <strong>分类</strong>: cs.LG</p>
+      <p><strong>核心创新</strong>: 系统性负面结果：跨 13 对 VLM×生成器测试"描述所需辅助图像→生成→结合原图作答"范式，生成辅助图像平均降低准确率 3.7pp，10 任务中 9 个下降；VSTAR 上同一规划提示加生成图像降 10.47pp。为"多模态模型用图像思考"这一流行假设提供严格反证与任务边界刻画。</p>
+    </div>
+    <div class="paper">
+      <h3>8.2🌟 Memory Is Not Ground Truth: Revising Navigation Authority under Unreliable VLM Evidence</h3>
+      <p><strong>作者</strong>: Sumukh Shrote, Shenbagaraj Kannapiran, Eric Eaton, Camillo Jose Taylor</p>
+      <p><strong>arXiv</strong>: <a href="https://arxiv.org/abs/2611.34915">2611.34915</a> · <strong>分类</strong>: cs.RO</p>
+      <p><strong>核心创新</strong>: 用 Boston Dynamics Spot + 持久时空视觉记忆实证 VLM 负验证证据的歧义性：假阴性率跨物体差异巨大、邻近重访常复现同一检测结果、目标存在/移除实验可产生完全相同的未命中历史。提出依赖感知的可逆记忆更新机制：避免重复计入相关未命中、停止把无支撑记忆直接作导航目标但不宣称物体不存在。真机三场景中基线全部选中陈旧记忆，本方法全部选中语义边界。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>🔥 GitHub Trending（按当日新增 Star 降序）</h2>
+    <div class="repo">
+      <span>1.</span>
+      <a href="https://github.com/elementalsouls/Claude-BugHunter">elementalsouls/Claude-BugHunter</a>
+      <span class="stars">+1597 today</span>
+      <p>A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.</p>
+    </div>
+    <div class="repo">
+      <span>2.</span>
+      <a href="https://github.com/firecrawl/firecrawl">firecrawl/firecrawl</a>
+      <span class="stars">+1046 today</span>
+      <p>Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.</p>
+    </div>
+    <div class="repo">
+      <span>3.</span>
+      <a href="https://github.com/cathrynlavery/diagram-design">cathrynlavery/diagram-design</a>
+      <span class="stars">+955 today</span>
+      <p>Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG.</p>
+    </div>
+    <div class="repo">
+      <span>4.</span>
+      <a href="https://github.com/obra/superpowers">obra/superpowers</a>
+      <span class="stars">+854 today</span>
+      <p>An agentic skills framework &amp; software development methodology that works.</p>
+    </div>
+    <div class="repo">
+      <span>5.</span>
+      <a href="https://github.com/zhouxiaoka/autoclip">zhouxiaoka/autoclip</a>
+      <span class="stars">+774 today</span>
+      <p>AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案。</p>
+    </div>
+    <div class="repo">
+      <span>6.</span>
+      <a href="https://github.com/mvanhorn/last30days-skill">mvanhorn/last30days-skill</a>
+      <span class="stars">+759 today</span>
+      <p>AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary</p>
+    </div>
+    <div class="repo">
+      <span>7.</span>
+      <a href="https://github.com/HKUDS/CLI-Anything">HKUDS/CLI-Anything</a>
+      <span class="stars">+746 today</span>
+      <p>"CLI-Anything: Making ALL Software Agent-Native" -- CLI-Hub: https://clianything.cc/</p>
+    </div>
+    <div class="repo">
+      <span>8.</span>
+      <a href="https://github.com/jingyaogong/minimind">jingyaogong/minimind</a>
+      <span class="stars">+702 today</span>
+      <p>🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.</p>
+    </div>
+    <div class="repo">
+      <span>9.</span>
+      <a href="https://github.com/mjmirza/app-store-compliance">mjmirza/app-store-compliance</a>
+      <span class="stars">+562 today</span>
+      <p>Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, and a skill for AI coding agents.</p>
+    </div>
+    <div class="repo">
+      <span>10.</span>
+      <a href="https://github.com/toeverything/AFFiNE">toeverything/AFFiNE</a>
+      <span class="stars">+525 today</span>
+      <p>There can be more than Notion and Miro. AFFiNE is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>由自动化流程生成 · <a href="https://github.com/yenanjing/ai-briefings">GitHub 仓库</a></p>
+  </footer>
+</div>
+</body>
+</html>
